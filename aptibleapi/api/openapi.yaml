@@ -2970,7 +2970,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3038,7 +3038,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3106,7 +3106,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3174,7 +3174,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3242,7 +3242,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3310,7 +3310,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3378,7 +3378,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3446,7 +3446,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3514,7 +3514,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3582,7 +3582,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3650,7 +3650,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -3718,7 +3718,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOperationForApp_request'
+              $ref: '#/components/schemas/CreateOperationRequest'
       responses:
         "201":
           content:
@@ -7731,7 +7731,27 @@ components:
       - per_page
       - total_count
       type: object
-    CreateOperationForApp_request:
+    CreateOperationRequest:
+      example:
+        container_size: 1
+        destination_account_id: 5
+        certificate: certificate
+        destination_region: destination_region
+        interactive: true
+        disk_size: 0
+        handle: handle
+        private_key: private_key
+        instance_profile: instance_profile
+        type: type
+        env: "{}"
+        docker_ref: docker_ref
+        container_count: 6
+        command: command
+        automated: true
+        provisioned_iops: 5
+        key_arn: key_arn
+        git_ref: git_ref
+        destination_account: https://openapi-generator.tech
       properties:
         type:
           type: string
@@ -7773,8 +7793,11 @@ components:
           type: string
         instance_profile:
           type: string
+        provisioned_iops:
+          type: integer
       required:
       - type
+      title: CreateOperationRequest
       type: object
     ListPermissionsForAccount_200_response__embedded:
       properties:

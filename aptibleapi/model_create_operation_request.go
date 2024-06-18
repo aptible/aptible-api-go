@@ -15,11 +15,11 @@ import (
 	"fmt"
 )
 
-// checks if the CreateOperationForAppRequest type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CreateOperationForAppRequest{}
+// checks if the CreateOperationRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CreateOperationRequest{}
 
-// CreateOperationForAppRequest struct for CreateOperationForAppRequest
-type CreateOperationForAppRequest struct {
+// CreateOperationRequest struct for CreateOperationRequest
+type CreateOperationRequest struct {
 	Type string `json:"type"`
 	GitRef *string `json:"git_ref,omitempty"`
 	DiskSize *int32 `json:"disk_size,omitempty"`
@@ -38,31 +38,32 @@ type CreateOperationForAppRequest struct {
 	Automated *bool `json:"automated,omitempty"`
 	KeyArn *string `json:"key_arn,omitempty"`
 	InstanceProfile *string `json:"instance_profile,omitempty"`
+	ProvisionedIops *int32 `json:"provisioned_iops,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _CreateOperationForAppRequest CreateOperationForAppRequest
+type _CreateOperationRequest CreateOperationRequest
 
-// NewCreateOperationForAppRequest instantiates a new CreateOperationForAppRequest object
+// NewCreateOperationRequest instantiates a new CreateOperationRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateOperationForAppRequest(type_ string) *CreateOperationForAppRequest {
-	this := CreateOperationForAppRequest{}
+func NewCreateOperationRequest(type_ string) *CreateOperationRequest {
+	this := CreateOperationRequest{}
 	this.Type = type_
 	return &this
 }
 
-// NewCreateOperationForAppRequestWithDefaults instantiates a new CreateOperationForAppRequest object
+// NewCreateOperationRequestWithDefaults instantiates a new CreateOperationRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCreateOperationForAppRequestWithDefaults() *CreateOperationForAppRequest {
-	this := CreateOperationForAppRequest{}
+func NewCreateOperationRequestWithDefaults() *CreateOperationRequest {
+	this := CreateOperationRequest{}
 	return &this
 }
 
 // GetType returns the Type field value
-func (o *CreateOperationForAppRequest) GetType() string {
+func (o *CreateOperationRequest) GetType() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -73,7 +74,7 @@ func (o *CreateOperationForAppRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetTypeOk() (*string, bool) {
+func (o *CreateOperationRequest) GetTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -81,12 +82,12 @@ func (o *CreateOperationForAppRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *CreateOperationForAppRequest) SetType(v string) {
+func (o *CreateOperationRequest) SetType(v string) {
 	o.Type = v
 }
 
 // GetGitRef returns the GitRef field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetGitRef() string {
+func (o *CreateOperationRequest) GetGitRef() string {
 	if o == nil || IsNil(o.GitRef) {
 		var ret string
 		return ret
@@ -96,7 +97,7 @@ func (o *CreateOperationForAppRequest) GetGitRef() string {
 
 // GetGitRefOk returns a tuple with the GitRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetGitRefOk() (*string, bool) {
+func (o *CreateOperationRequest) GetGitRefOk() (*string, bool) {
 	if o == nil || IsNil(o.GitRef) {
 		return nil, false
 	}
@@ -104,7 +105,7 @@ func (o *CreateOperationForAppRequest) GetGitRefOk() (*string, bool) {
 }
 
 // HasGitRef returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasGitRef() bool {
+func (o *CreateOperationRequest) HasGitRef() bool {
 	if o != nil && !IsNil(o.GitRef) {
 		return true
 	}
@@ -113,12 +114,12 @@ func (o *CreateOperationForAppRequest) HasGitRef() bool {
 }
 
 // SetGitRef gets a reference to the given string and assigns it to the GitRef field.
-func (o *CreateOperationForAppRequest) SetGitRef(v string) {
+func (o *CreateOperationRequest) SetGitRef(v string) {
 	o.GitRef = &v
 }
 
 // GetDiskSize returns the DiskSize field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetDiskSize() int32 {
+func (o *CreateOperationRequest) GetDiskSize() int32 {
 	if o == nil || IsNil(o.DiskSize) {
 		var ret int32
 		return ret
@@ -128,7 +129,7 @@ func (o *CreateOperationForAppRequest) GetDiskSize() int32 {
 
 // GetDiskSizeOk returns a tuple with the DiskSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetDiskSizeOk() (*int32, bool) {
+func (o *CreateOperationRequest) GetDiskSizeOk() (*int32, bool) {
 	if o == nil || IsNil(o.DiskSize) {
 		return nil, false
 	}
@@ -136,7 +137,7 @@ func (o *CreateOperationForAppRequest) GetDiskSizeOk() (*int32, bool) {
 }
 
 // HasDiskSize returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasDiskSize() bool {
+func (o *CreateOperationRequest) HasDiskSize() bool {
 	if o != nil && !IsNil(o.DiskSize) {
 		return true
 	}
@@ -145,12 +146,12 @@ func (o *CreateOperationForAppRequest) HasDiskSize() bool {
 }
 
 // SetDiskSize gets a reference to the given int32 and assigns it to the DiskSize field.
-func (o *CreateOperationForAppRequest) SetDiskSize(v int32) {
+func (o *CreateOperationRequest) SetDiskSize(v int32) {
 	o.DiskSize = &v
 }
 
 // GetContainerCount returns the ContainerCount field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetContainerCount() int32 {
+func (o *CreateOperationRequest) GetContainerCount() int32 {
 	if o == nil || IsNil(o.ContainerCount) {
 		var ret int32
 		return ret
@@ -160,7 +161,7 @@ func (o *CreateOperationForAppRequest) GetContainerCount() int32 {
 
 // GetContainerCountOk returns a tuple with the ContainerCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetContainerCountOk() (*int32, bool) {
+func (o *CreateOperationRequest) GetContainerCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.ContainerCount) {
 		return nil, false
 	}
@@ -168,7 +169,7 @@ func (o *CreateOperationForAppRequest) GetContainerCountOk() (*int32, bool) {
 }
 
 // HasContainerCount returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasContainerCount() bool {
+func (o *CreateOperationRequest) HasContainerCount() bool {
 	if o != nil && !IsNil(o.ContainerCount) {
 		return true
 	}
@@ -177,12 +178,12 @@ func (o *CreateOperationForAppRequest) HasContainerCount() bool {
 }
 
 // SetContainerCount gets a reference to the given int32 and assigns it to the ContainerCount field.
-func (o *CreateOperationForAppRequest) SetContainerCount(v int32) {
+func (o *CreateOperationRequest) SetContainerCount(v int32) {
 	o.ContainerCount = &v
 }
 
 // GetContainerSize returns the ContainerSize field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetContainerSize() int32 {
+func (o *CreateOperationRequest) GetContainerSize() int32 {
 	if o == nil || IsNil(o.ContainerSize) {
 		var ret int32
 		return ret
@@ -192,7 +193,7 @@ func (o *CreateOperationForAppRequest) GetContainerSize() int32 {
 
 // GetContainerSizeOk returns a tuple with the ContainerSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetContainerSizeOk() (*int32, bool) {
+func (o *CreateOperationRequest) GetContainerSizeOk() (*int32, bool) {
 	if o == nil || IsNil(o.ContainerSize) {
 		return nil, false
 	}
@@ -200,7 +201,7 @@ func (o *CreateOperationForAppRequest) GetContainerSizeOk() (*int32, bool) {
 }
 
 // HasContainerSize returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasContainerSize() bool {
+func (o *CreateOperationRequest) HasContainerSize() bool {
 	if o != nil && !IsNil(o.ContainerSize) {
 		return true
 	}
@@ -209,12 +210,12 @@ func (o *CreateOperationForAppRequest) HasContainerSize() bool {
 }
 
 // SetContainerSize gets a reference to the given int32 and assigns it to the ContainerSize field.
-func (o *CreateOperationForAppRequest) SetContainerSize(v int32) {
+func (o *CreateOperationRequest) SetContainerSize(v int32) {
 	o.ContainerSize = &v
 }
 
 // GetCommand returns the Command field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetCommand() string {
+func (o *CreateOperationRequest) GetCommand() string {
 	if o == nil || IsNil(o.Command) {
 		var ret string
 		return ret
@@ -224,7 +225,7 @@ func (o *CreateOperationForAppRequest) GetCommand() string {
 
 // GetCommandOk returns a tuple with the Command field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetCommandOk() (*string, bool) {
+func (o *CreateOperationRequest) GetCommandOk() (*string, bool) {
 	if o == nil || IsNil(o.Command) {
 		return nil, false
 	}
@@ -232,7 +233,7 @@ func (o *CreateOperationForAppRequest) GetCommandOk() (*string, bool) {
 }
 
 // HasCommand returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasCommand() bool {
+func (o *CreateOperationRequest) HasCommand() bool {
 	if o != nil && !IsNil(o.Command) {
 		return true
 	}
@@ -241,12 +242,12 @@ func (o *CreateOperationForAppRequest) HasCommand() bool {
 }
 
 // SetCommand gets a reference to the given string and assigns it to the Command field.
-func (o *CreateOperationForAppRequest) SetCommand(v string) {
+func (o *CreateOperationRequest) SetCommand(v string) {
 	o.Command = &v
 }
 
 // GetEnv returns the Env field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetEnv() map[string]interface{} {
+func (o *CreateOperationRequest) GetEnv() map[string]interface{} {
 	if o == nil || IsNil(o.Env) {
 		var ret map[string]interface{}
 		return ret
@@ -256,7 +257,7 @@ func (o *CreateOperationForAppRequest) GetEnv() map[string]interface{} {
 
 // GetEnvOk returns a tuple with the Env field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetEnvOk() (map[string]interface{}, bool) {
+func (o *CreateOperationRequest) GetEnvOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Env) {
 		return map[string]interface{}{}, false
 	}
@@ -264,7 +265,7 @@ func (o *CreateOperationForAppRequest) GetEnvOk() (map[string]interface{}, bool)
 }
 
 // HasEnv returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasEnv() bool {
+func (o *CreateOperationRequest) HasEnv() bool {
 	if o != nil && !IsNil(o.Env) {
 		return true
 	}
@@ -273,12 +274,12 @@ func (o *CreateOperationForAppRequest) HasEnv() bool {
 }
 
 // SetEnv gets a reference to the given map[string]interface{} and assigns it to the Env field.
-func (o *CreateOperationForAppRequest) SetEnv(v map[string]interface{}) {
+func (o *CreateOperationRequest) SetEnv(v map[string]interface{}) {
 	o.Env = v
 }
 
 // GetHandle returns the Handle field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetHandle() string {
+func (o *CreateOperationRequest) GetHandle() string {
 	if o == nil || IsNil(o.Handle) {
 		var ret string
 		return ret
@@ -288,7 +289,7 @@ func (o *CreateOperationForAppRequest) GetHandle() string {
 
 // GetHandleOk returns a tuple with the Handle field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetHandleOk() (*string, bool) {
+func (o *CreateOperationRequest) GetHandleOk() (*string, bool) {
 	if o == nil || IsNil(o.Handle) {
 		return nil, false
 	}
@@ -296,7 +297,7 @@ func (o *CreateOperationForAppRequest) GetHandleOk() (*string, bool) {
 }
 
 // HasHandle returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasHandle() bool {
+func (o *CreateOperationRequest) HasHandle() bool {
 	if o != nil && !IsNil(o.Handle) {
 		return true
 	}
@@ -305,12 +306,12 @@ func (o *CreateOperationForAppRequest) HasHandle() bool {
 }
 
 // SetHandle gets a reference to the given string and assigns it to the Handle field.
-func (o *CreateOperationForAppRequest) SetHandle(v string) {
+func (o *CreateOperationRequest) SetHandle(v string) {
 	o.Handle = &v
 }
 
 // GetCertificate returns the Certificate field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetCertificate() string {
+func (o *CreateOperationRequest) GetCertificate() string {
 	if o == nil || IsNil(o.Certificate) {
 		var ret string
 		return ret
@@ -320,7 +321,7 @@ func (o *CreateOperationForAppRequest) GetCertificate() string {
 
 // GetCertificateOk returns a tuple with the Certificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetCertificateOk() (*string, bool) {
+func (o *CreateOperationRequest) GetCertificateOk() (*string, bool) {
 	if o == nil || IsNil(o.Certificate) {
 		return nil, false
 	}
@@ -328,7 +329,7 @@ func (o *CreateOperationForAppRequest) GetCertificateOk() (*string, bool) {
 }
 
 // HasCertificate returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasCertificate() bool {
+func (o *CreateOperationRequest) HasCertificate() bool {
 	if o != nil && !IsNil(o.Certificate) {
 		return true
 	}
@@ -337,12 +338,12 @@ func (o *CreateOperationForAppRequest) HasCertificate() bool {
 }
 
 // SetCertificate gets a reference to the given string and assigns it to the Certificate field.
-func (o *CreateOperationForAppRequest) SetCertificate(v string) {
+func (o *CreateOperationRequest) SetCertificate(v string) {
 	o.Certificate = &v
 }
 
 // GetPrivateKey returns the PrivateKey field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetPrivateKey() string {
+func (o *CreateOperationRequest) GetPrivateKey() string {
 	if o == nil || IsNil(o.PrivateKey) {
 		var ret string
 		return ret
@@ -352,7 +353,7 @@ func (o *CreateOperationForAppRequest) GetPrivateKey() string {
 
 // GetPrivateKeyOk returns a tuple with the PrivateKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetPrivateKeyOk() (*string, bool) {
+func (o *CreateOperationRequest) GetPrivateKeyOk() (*string, bool) {
 	if o == nil || IsNil(o.PrivateKey) {
 		return nil, false
 	}
@@ -360,7 +361,7 @@ func (o *CreateOperationForAppRequest) GetPrivateKeyOk() (*string, bool) {
 }
 
 // HasPrivateKey returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasPrivateKey() bool {
+func (o *CreateOperationRequest) HasPrivateKey() bool {
 	if o != nil && !IsNil(o.PrivateKey) {
 		return true
 	}
@@ -369,12 +370,12 @@ func (o *CreateOperationForAppRequest) HasPrivateKey() bool {
 }
 
 // SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
-func (o *CreateOperationForAppRequest) SetPrivateKey(v string) {
+func (o *CreateOperationRequest) SetPrivateKey(v string) {
 	o.PrivateKey = &v
 }
 
 // GetDestinationRegion returns the DestinationRegion field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetDestinationRegion() string {
+func (o *CreateOperationRequest) GetDestinationRegion() string {
 	if o == nil || IsNil(o.DestinationRegion) {
 		var ret string
 		return ret
@@ -384,7 +385,7 @@ func (o *CreateOperationForAppRequest) GetDestinationRegion() string {
 
 // GetDestinationRegionOk returns a tuple with the DestinationRegion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetDestinationRegionOk() (*string, bool) {
+func (o *CreateOperationRequest) GetDestinationRegionOk() (*string, bool) {
 	if o == nil || IsNil(o.DestinationRegion) {
 		return nil, false
 	}
@@ -392,7 +393,7 @@ func (o *CreateOperationForAppRequest) GetDestinationRegionOk() (*string, bool) 
 }
 
 // HasDestinationRegion returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasDestinationRegion() bool {
+func (o *CreateOperationRequest) HasDestinationRegion() bool {
 	if o != nil && !IsNil(o.DestinationRegion) {
 		return true
 	}
@@ -401,12 +402,12 @@ func (o *CreateOperationForAppRequest) HasDestinationRegion() bool {
 }
 
 // SetDestinationRegion gets a reference to the given string and assigns it to the DestinationRegion field.
-func (o *CreateOperationForAppRequest) SetDestinationRegion(v string) {
+func (o *CreateOperationRequest) SetDestinationRegion(v string) {
 	o.DestinationRegion = &v
 }
 
 // GetInteractive returns the Interactive field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetInteractive() bool {
+func (o *CreateOperationRequest) GetInteractive() bool {
 	if o == nil || IsNil(o.Interactive) {
 		var ret bool
 		return ret
@@ -416,7 +417,7 @@ func (o *CreateOperationForAppRequest) GetInteractive() bool {
 
 // GetInteractiveOk returns a tuple with the Interactive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetInteractiveOk() (*bool, bool) {
+func (o *CreateOperationRequest) GetInteractiveOk() (*bool, bool) {
 	if o == nil || IsNil(o.Interactive) {
 		return nil, false
 	}
@@ -424,7 +425,7 @@ func (o *CreateOperationForAppRequest) GetInteractiveOk() (*bool, bool) {
 }
 
 // HasInteractive returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasInteractive() bool {
+func (o *CreateOperationRequest) HasInteractive() bool {
 	if o != nil && !IsNil(o.Interactive) {
 		return true
 	}
@@ -433,12 +434,12 @@ func (o *CreateOperationForAppRequest) HasInteractive() bool {
 }
 
 // SetInteractive gets a reference to the given bool and assigns it to the Interactive field.
-func (o *CreateOperationForAppRequest) SetInteractive(v bool) {
+func (o *CreateOperationRequest) SetInteractive(v bool) {
 	o.Interactive = &v
 }
 
 // GetDestinationAccount returns the DestinationAccount field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetDestinationAccount() string {
+func (o *CreateOperationRequest) GetDestinationAccount() string {
 	if o == nil || IsNil(o.DestinationAccount) {
 		var ret string
 		return ret
@@ -448,7 +449,7 @@ func (o *CreateOperationForAppRequest) GetDestinationAccount() string {
 
 // GetDestinationAccountOk returns a tuple with the DestinationAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetDestinationAccountOk() (*string, bool) {
+func (o *CreateOperationRequest) GetDestinationAccountOk() (*string, bool) {
 	if o == nil || IsNil(o.DestinationAccount) {
 		return nil, false
 	}
@@ -456,7 +457,7 @@ func (o *CreateOperationForAppRequest) GetDestinationAccountOk() (*string, bool)
 }
 
 // HasDestinationAccount returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasDestinationAccount() bool {
+func (o *CreateOperationRequest) HasDestinationAccount() bool {
 	if o != nil && !IsNil(o.DestinationAccount) {
 		return true
 	}
@@ -465,12 +466,12 @@ func (o *CreateOperationForAppRequest) HasDestinationAccount() bool {
 }
 
 // SetDestinationAccount gets a reference to the given string and assigns it to the DestinationAccount field.
-func (o *CreateOperationForAppRequest) SetDestinationAccount(v string) {
+func (o *CreateOperationRequest) SetDestinationAccount(v string) {
 	o.DestinationAccount = &v
 }
 
 // GetDestinationAccountId returns the DestinationAccountId field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetDestinationAccountId() int32 {
+func (o *CreateOperationRequest) GetDestinationAccountId() int32 {
 	if o == nil || IsNil(o.DestinationAccountId) {
 		var ret int32
 		return ret
@@ -480,7 +481,7 @@ func (o *CreateOperationForAppRequest) GetDestinationAccountId() int32 {
 
 // GetDestinationAccountIdOk returns a tuple with the DestinationAccountId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetDestinationAccountIdOk() (*int32, bool) {
+func (o *CreateOperationRequest) GetDestinationAccountIdOk() (*int32, bool) {
 	if o == nil || IsNil(o.DestinationAccountId) {
 		return nil, false
 	}
@@ -488,7 +489,7 @@ func (o *CreateOperationForAppRequest) GetDestinationAccountIdOk() (*int32, bool
 }
 
 // HasDestinationAccountId returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasDestinationAccountId() bool {
+func (o *CreateOperationRequest) HasDestinationAccountId() bool {
 	if o != nil && !IsNil(o.DestinationAccountId) {
 		return true
 	}
@@ -497,12 +498,12 @@ func (o *CreateOperationForAppRequest) HasDestinationAccountId() bool {
 }
 
 // SetDestinationAccountId gets a reference to the given int32 and assigns it to the DestinationAccountId field.
-func (o *CreateOperationForAppRequest) SetDestinationAccountId(v int32) {
+func (o *CreateOperationRequest) SetDestinationAccountId(v int32) {
 	o.DestinationAccountId = &v
 }
 
 // GetDockerRef returns the DockerRef field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetDockerRef() string {
+func (o *CreateOperationRequest) GetDockerRef() string {
 	if o == nil || IsNil(o.DockerRef) {
 		var ret string
 		return ret
@@ -512,7 +513,7 @@ func (o *CreateOperationForAppRequest) GetDockerRef() string {
 
 // GetDockerRefOk returns a tuple with the DockerRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetDockerRefOk() (*string, bool) {
+func (o *CreateOperationRequest) GetDockerRefOk() (*string, bool) {
 	if o == nil || IsNil(o.DockerRef) {
 		return nil, false
 	}
@@ -520,7 +521,7 @@ func (o *CreateOperationForAppRequest) GetDockerRefOk() (*string, bool) {
 }
 
 // HasDockerRef returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasDockerRef() bool {
+func (o *CreateOperationRequest) HasDockerRef() bool {
 	if o != nil && !IsNil(o.DockerRef) {
 		return true
 	}
@@ -529,12 +530,12 @@ func (o *CreateOperationForAppRequest) HasDockerRef() bool {
 }
 
 // SetDockerRef gets a reference to the given string and assigns it to the DockerRef field.
-func (o *CreateOperationForAppRequest) SetDockerRef(v string) {
+func (o *CreateOperationRequest) SetDockerRef(v string) {
 	o.DockerRef = &v
 }
 
 // GetAutomated returns the Automated field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetAutomated() bool {
+func (o *CreateOperationRequest) GetAutomated() bool {
 	if o == nil || IsNil(o.Automated) {
 		var ret bool
 		return ret
@@ -544,7 +545,7 @@ func (o *CreateOperationForAppRequest) GetAutomated() bool {
 
 // GetAutomatedOk returns a tuple with the Automated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetAutomatedOk() (*bool, bool) {
+func (o *CreateOperationRequest) GetAutomatedOk() (*bool, bool) {
 	if o == nil || IsNil(o.Automated) {
 		return nil, false
 	}
@@ -552,7 +553,7 @@ func (o *CreateOperationForAppRequest) GetAutomatedOk() (*bool, bool) {
 }
 
 // HasAutomated returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasAutomated() bool {
+func (o *CreateOperationRequest) HasAutomated() bool {
 	if o != nil && !IsNil(o.Automated) {
 		return true
 	}
@@ -561,12 +562,12 @@ func (o *CreateOperationForAppRequest) HasAutomated() bool {
 }
 
 // SetAutomated gets a reference to the given bool and assigns it to the Automated field.
-func (o *CreateOperationForAppRequest) SetAutomated(v bool) {
+func (o *CreateOperationRequest) SetAutomated(v bool) {
 	o.Automated = &v
 }
 
 // GetKeyArn returns the KeyArn field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetKeyArn() string {
+func (o *CreateOperationRequest) GetKeyArn() string {
 	if o == nil || IsNil(o.KeyArn) {
 		var ret string
 		return ret
@@ -576,7 +577,7 @@ func (o *CreateOperationForAppRequest) GetKeyArn() string {
 
 // GetKeyArnOk returns a tuple with the KeyArn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetKeyArnOk() (*string, bool) {
+func (o *CreateOperationRequest) GetKeyArnOk() (*string, bool) {
 	if o == nil || IsNil(o.KeyArn) {
 		return nil, false
 	}
@@ -584,7 +585,7 @@ func (o *CreateOperationForAppRequest) GetKeyArnOk() (*string, bool) {
 }
 
 // HasKeyArn returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasKeyArn() bool {
+func (o *CreateOperationRequest) HasKeyArn() bool {
 	if o != nil && !IsNil(o.KeyArn) {
 		return true
 	}
@@ -593,12 +594,12 @@ func (o *CreateOperationForAppRequest) HasKeyArn() bool {
 }
 
 // SetKeyArn gets a reference to the given string and assigns it to the KeyArn field.
-func (o *CreateOperationForAppRequest) SetKeyArn(v string) {
+func (o *CreateOperationRequest) SetKeyArn(v string) {
 	o.KeyArn = &v
 }
 
 // GetInstanceProfile returns the InstanceProfile field value if set, zero value otherwise.
-func (o *CreateOperationForAppRequest) GetInstanceProfile() string {
+func (o *CreateOperationRequest) GetInstanceProfile() string {
 	if o == nil || IsNil(o.InstanceProfile) {
 		var ret string
 		return ret
@@ -608,7 +609,7 @@ func (o *CreateOperationForAppRequest) GetInstanceProfile() string {
 
 // GetInstanceProfileOk returns a tuple with the InstanceProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationForAppRequest) GetInstanceProfileOk() (*string, bool) {
+func (o *CreateOperationRequest) GetInstanceProfileOk() (*string, bool) {
 	if o == nil || IsNil(o.InstanceProfile) {
 		return nil, false
 	}
@@ -616,7 +617,7 @@ func (o *CreateOperationForAppRequest) GetInstanceProfileOk() (*string, bool) {
 }
 
 // HasInstanceProfile returns a boolean if a field has been set.
-func (o *CreateOperationForAppRequest) HasInstanceProfile() bool {
+func (o *CreateOperationRequest) HasInstanceProfile() bool {
 	if o != nil && !IsNil(o.InstanceProfile) {
 		return true
 	}
@@ -625,11 +626,43 @@ func (o *CreateOperationForAppRequest) HasInstanceProfile() bool {
 }
 
 // SetInstanceProfile gets a reference to the given string and assigns it to the InstanceProfile field.
-func (o *CreateOperationForAppRequest) SetInstanceProfile(v string) {
+func (o *CreateOperationRequest) SetInstanceProfile(v string) {
 	o.InstanceProfile = &v
 }
 
-func (o CreateOperationForAppRequest) MarshalJSON() ([]byte, error) {
+// GetProvisionedIops returns the ProvisionedIops field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetProvisionedIops() int32 {
+	if o == nil || IsNil(o.ProvisionedIops) {
+		var ret int32
+		return ret
+	}
+	return *o.ProvisionedIops
+}
+
+// GetProvisionedIopsOk returns a tuple with the ProvisionedIops field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetProvisionedIopsOk() (*int32, bool) {
+	if o == nil || IsNil(o.ProvisionedIops) {
+		return nil, false
+	}
+	return o.ProvisionedIops, true
+}
+
+// HasProvisionedIops returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasProvisionedIops() bool {
+	if o != nil && !IsNil(o.ProvisionedIops) {
+		return true
+	}
+
+	return false
+}
+
+// SetProvisionedIops gets a reference to the given int32 and assigns it to the ProvisionedIops field.
+func (o *CreateOperationRequest) SetProvisionedIops(v int32) {
+	o.ProvisionedIops = &v
+}
+
+func (o CreateOperationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -637,7 +670,7 @@ func (o CreateOperationForAppRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o CreateOperationForAppRequest) ToMap() (map[string]interface{}, error) {
+func (o CreateOperationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["type"] = o.Type
 	if !IsNil(o.GitRef) {
@@ -691,6 +724,9 @@ func (o CreateOperationForAppRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.InstanceProfile) {
 		toSerialize["instance_profile"] = o.InstanceProfile
 	}
+	if !IsNil(o.ProvisionedIops) {
+		toSerialize["provisioned_iops"] = o.ProvisionedIops
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -699,7 +735,7 @@ func (o CreateOperationForAppRequest) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *CreateOperationForAppRequest) UnmarshalJSON(data []byte) (err error) {
+func (o *CreateOperationRequest) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -721,15 +757,15 @@ func (o *CreateOperationForAppRequest) UnmarshalJSON(data []byte) (err error) {
 		}
 	}
 
-	varCreateOperationForAppRequest := _CreateOperationForAppRequest{}
+	varCreateOperationRequest := _CreateOperationRequest{}
 
-	err = json.Unmarshal(data, &varCreateOperationForAppRequest)
+	err = json.Unmarshal(data, &varCreateOperationRequest)
 
 	if err != nil {
 		return err
 	}
 
-	*o = CreateOperationForAppRequest(varCreateOperationForAppRequest)
+	*o = CreateOperationRequest(varCreateOperationRequest)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -752,44 +788,45 @@ func (o *CreateOperationForAppRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "automated")
 		delete(additionalProperties, "key_arn")
 		delete(additionalProperties, "instance_profile")
+		delete(additionalProperties, "provisioned_iops")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-type NullableCreateOperationForAppRequest struct {
-	value *CreateOperationForAppRequest
+type NullableCreateOperationRequest struct {
+	value *CreateOperationRequest
 	isSet bool
 }
 
-func (v NullableCreateOperationForAppRequest) Get() *CreateOperationForAppRequest {
+func (v NullableCreateOperationRequest) Get() *CreateOperationRequest {
 	return v.value
 }
 
-func (v *NullableCreateOperationForAppRequest) Set(val *CreateOperationForAppRequest) {
+func (v *NullableCreateOperationRequest) Set(val *CreateOperationRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCreateOperationForAppRequest) IsSet() bool {
+func (v NullableCreateOperationRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCreateOperationForAppRequest) Unset() {
+func (v *NullableCreateOperationRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCreateOperationForAppRequest(val *CreateOperationForAppRequest) *NullableCreateOperationForAppRequest {
-	return &NullableCreateOperationForAppRequest{value: val, isSet: true}
+func NewNullableCreateOperationRequest(val *CreateOperationRequest) *NullableCreateOperationRequest {
+	return &NullableCreateOperationRequest{value: val, isSet: true}
 }
 
-func (v NullableCreateOperationForAppRequest) MarshalJSON() ([]byte, error) {
+func (v NullableCreateOperationRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCreateOperationForAppRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableCreateOperationRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

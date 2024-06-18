@@ -37,7 +37,7 @@ Method | HTTP request | Description
 
 ## CreateOperationForApp
 
-> Operation CreateOperationForApp(ctx, appId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForApp(ctx, appId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -55,11 +55,11 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForApp(context.Background(), appId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForApp(context.Background(), appId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -85,7 +85,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForAppReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForBackup
 
-> Operation CreateOperationForBackup(ctx, backupId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForBackup(ctx, backupId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -125,11 +125,11 @@ import (
 
 func main() {
 	backupId := int32(56) // int32 | backup_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForBackup(context.Background(), backupId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForBackup(context.Background(), backupId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -155,7 +155,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForBackupRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDatabase
 
-> Operation CreateOperationForDatabase(ctx, databaseId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForDatabase(ctx, databaseId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -195,11 +195,11 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabase(context.Background(), databaseId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabase(context.Background(), databaseId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -225,7 +225,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForDatabase
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDatabaseCredential
 
-> Operation CreateOperationForDatabaseCredential(ctx, databaseCredentialId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForDatabaseCredential(ctx, databaseCredentialId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -265,11 +265,11 @@ import (
 
 func main() {
 	databaseCredentialId := int32(56) // int32 | database_credential_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabaseCredential(context.Background(), databaseCredentialId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabaseCredential(context.Background(), databaseCredentialId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDatabaseCredential``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -295,7 +295,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForDatabase
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDiskAttachment
 
-> Operation CreateOperationForDiskAttachment(ctx, diskAttachmentId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForDiskAttachment(ctx, diskAttachmentId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -335,11 +335,11 @@ import (
 
 func main() {
 	diskAttachmentId := int32(56) // int32 | disk_attachment_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDiskAttachment(context.Background(), diskAttachmentId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDiskAttachment(context.Background(), diskAttachmentId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDiskAttachment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -365,7 +365,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForDiskAtta
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForEphemeralSession
 
-> Operation CreateOperationForEphemeralSession(ctx, ephemeralSessionId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForEphemeralSession(ctx, ephemeralSessionId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -405,11 +405,11 @@ import (
 
 func main() {
 	ephemeralSessionId := int32(56) // int32 | ephemeral_session_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForEphemeralSession(context.Background(), ephemeralSessionId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForEphemeralSession(context.Background(), ephemeralSessionId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForEphemeralSession``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -435,7 +435,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForEphemera
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForImage
 
-> Operation CreateOperationForImage(ctx, imageId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForImage(ctx, imageId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -475,11 +475,11 @@ import (
 
 func main() {
 	imageId := int32(56) // int32 | image_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForImage(context.Background(), imageId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForImage(context.Background(), imageId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -505,7 +505,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForImageReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForLogDrain
 
-> Operation CreateOperationForLogDrain(ctx, logDrainId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForLogDrain(ctx, logDrainId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -545,11 +545,11 @@ import (
 
 func main() {
 	logDrainId := int32(56) // int32 | log_drain_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForLogDrain(context.Background(), logDrainId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForLogDrain(context.Background(), logDrainId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -575,7 +575,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForLogDrain
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForMetricDrain
 
-> Operation CreateOperationForMetricDrain(ctx, metricDrainId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForMetricDrain(ctx, metricDrainId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -615,11 +615,11 @@ import (
 
 func main() {
 	metricDrainId := int32(56) // int32 | metric_drain_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForMetricDrain(context.Background(), metricDrainId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForMetricDrain(context.Background(), metricDrainId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -645,7 +645,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForMetricDr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForPersistentDisk
 
-> Operation CreateOperationForPersistentDisk(ctx, persistentDiskId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForPersistentDisk(ctx, persistentDiskId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -685,11 +685,11 @@ import (
 
 func main() {
 	persistentDiskId := int32(56) // int32 | persistent_disk_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForPersistentDisk(context.Background(), persistentDiskId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForPersistentDisk(context.Background(), persistentDiskId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForPersistentDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -715,7 +715,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForPersiste
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -737,7 +737,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForService
 
-> Operation CreateOperationForService(ctx, serviceId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForService(ctx, serviceId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -755,11 +755,11 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForService(context.Background(), serviceId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForService(context.Background(), serviceId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -785,7 +785,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForServiceR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForVhost
 
-> Operation CreateOperationForVhost(ctx, vhostId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+> Operation CreateOperationForVhost(ctx, vhostId).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
 
@@ -825,11 +825,11 @@ import (
 
 func main() {
 	vhostId := int32(56) // int32 | vhost_id
-	createOperationForAppRequest := *openapiclient.NewCreateOperationForAppRequest("Type_example") // CreateOperationForAppRequest |  (optional)
+	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForVhost(context.Background(), vhostId).CreateOperationForAppRequest(createOperationForAppRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForVhost(context.Background(), vhostId).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -855,7 +855,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForVhostReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationForAppRequest** | [**CreateOperationForAppRequest**](CreateOperationForAppRequest.md) |  | 
+ **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
 

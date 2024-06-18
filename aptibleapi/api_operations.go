@@ -27,11 +27,11 @@ type ApiCreateOperationForAppRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	appId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForAppRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForAppRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForAppRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForAppRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -94,7 +94,7 @@ func (a *OperationsAPIService) CreateOperationForAppExecute(r ApiCreateOperation
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -158,11 +158,11 @@ type ApiCreateOperationForBackupRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	backupId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForBackupRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForBackupRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForBackupRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForBackupRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -225,7 +225,7 @@ func (a *OperationsAPIService) CreateOperationForBackupExecute(r ApiCreateOperat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -289,11 +289,11 @@ type ApiCreateOperationForDatabaseRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	databaseId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForDatabaseRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForDatabaseRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForDatabaseRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForDatabaseRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -356,7 +356,7 @@ func (a *OperationsAPIService) CreateOperationForDatabaseExecute(r ApiCreateOper
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -420,11 +420,11 @@ type ApiCreateOperationForDatabaseCredentialRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	databaseCredentialId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForDatabaseCredentialRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForDatabaseCredentialRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForDatabaseCredentialRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForDatabaseCredentialRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -487,7 +487,7 @@ func (a *OperationsAPIService) CreateOperationForDatabaseCredentialExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -551,11 +551,11 @@ type ApiCreateOperationForDiskAttachmentRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	diskAttachmentId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForDiskAttachmentRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForDiskAttachmentRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForDiskAttachmentRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForDiskAttachmentRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -618,7 +618,7 @@ func (a *OperationsAPIService) CreateOperationForDiskAttachmentExecute(r ApiCrea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -682,11 +682,11 @@ type ApiCreateOperationForEphemeralSessionRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	ephemeralSessionId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForEphemeralSessionRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForEphemeralSessionRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForEphemeralSessionRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForEphemeralSessionRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -749,7 +749,7 @@ func (a *OperationsAPIService) CreateOperationForEphemeralSessionExecute(r ApiCr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -813,11 +813,11 @@ type ApiCreateOperationForImageRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	imageId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForImageRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForImageRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForImageRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForImageRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -880,7 +880,7 @@ func (a *OperationsAPIService) CreateOperationForImageExecute(r ApiCreateOperati
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -944,11 +944,11 @@ type ApiCreateOperationForLogDrainRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	logDrainId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForLogDrainRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForLogDrainRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForLogDrainRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForLogDrainRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -1011,7 +1011,7 @@ func (a *OperationsAPIService) CreateOperationForLogDrainExecute(r ApiCreateOper
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1075,11 +1075,11 @@ type ApiCreateOperationForMetricDrainRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	metricDrainId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForMetricDrainRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForMetricDrainRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForMetricDrainRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForMetricDrainRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -1142,7 +1142,7 @@ func (a *OperationsAPIService) CreateOperationForMetricDrainExecute(r ApiCreateO
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1206,11 +1206,11 @@ type ApiCreateOperationForPersistentDiskRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	persistentDiskId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForPersistentDiskRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForPersistentDiskRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForPersistentDiskRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForPersistentDiskRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -1273,7 +1273,7 @@ func (a *OperationsAPIService) CreateOperationForPersistentDiskExecute(r ApiCrea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1337,11 +1337,11 @@ type ApiCreateOperationForServiceRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	serviceId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForServiceRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForServiceRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForServiceRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForServiceRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -1404,7 +1404,7 @@ func (a *OperationsAPIService) CreateOperationForServiceExecute(r ApiCreateOpera
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1468,11 +1468,11 @@ type ApiCreateOperationForVhostRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	vhostId int32
-	createOperationForAppRequest *CreateOperationForAppRequest
+	createOperationRequest *CreateOperationRequest
 }
 
-func (r ApiCreateOperationForVhostRequest) CreateOperationForAppRequest(createOperationForAppRequest CreateOperationForAppRequest) ApiCreateOperationForVhostRequest {
-	r.createOperationForAppRequest = &createOperationForAppRequest
+func (r ApiCreateOperationForVhostRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForVhostRequest {
+	r.createOperationRequest = &createOperationRequest
 	return r
 }
 
@@ -1535,7 +1535,7 @@ func (a *OperationsAPIService) CreateOperationForVhostExecute(r ApiCreateOperati
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationForAppRequest
+	localVarPostBody = r.createOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

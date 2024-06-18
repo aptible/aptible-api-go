@@ -270,7 +270,7 @@ Class | Method | HTTP request | Description
  - [CreateLogDrainRequest](docs/CreateLogDrainRequest.md)
  - [CreateMetricDrainRequest](docs/CreateMetricDrainRequest.md)
  - [CreateMetricDrainRequestDrainConfiguration](docs/CreateMetricDrainRequestDrainConfiguration.md)
- - [CreateOperationForAppRequest](docs/CreateOperationForAppRequest.md)
+ - [CreateOperationRequest](docs/CreateOperationRequest.md)
  - [CreatePermissionRequest](docs/CreatePermissionRequest.md)
  - [CreateSshPortalConnectionRequest](docs/CreateSshPortalConnectionRequest.md)
  - [CreateVhostRequest](docs/CreateVhostRequest.md)
