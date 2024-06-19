@@ -265,8 +265,6 @@ docs/VpcPeersAPI.md
 docs/VpnTunnel.md
 docs/VpnTunnelsAPI.md
 git_push.sh
-go.mod
-go.sum
 model__claims__type__post_request.go
 model_account.go
 model_account__embedded.go

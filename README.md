@@ -1,23 +1,27 @@
-# Aptible API Go Clients
+# Aptible API Go Client
 
-Clients are generated from Aptible's [OpenAPI specs](https://www.openapis.org/) using the [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator). See the `examples/` directory in each client directory for examples on how to get started using the client and the generated `README.md`.
+Go API client generated from Aptible's [OpenAPI specs](https://www.openapis.org/) using the [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator). See the [`examples/`](./examples) directory for examples on how to get started using the client and the generated [`aptibleapi/README.md`](./aptibleapi/README.md) for details on the available endpoints.
 
-## aptibleapi
+# Using the Client
 
-Client for managing Aptible resources such as Apps, Databases, and Environments.
+Import the module:
+
+```shell
+go get github.com/aptible/aptible-api-go
+```
+
+Import the `aptibleapi` package in `.go` files:
+
+```go
+import "github.com/aptible/aptible-api-go/aptibleapi"
+```
 
 # Contributing
 
-## Updating Clients
+Use the various `make` targets to re-generate the client from the latest OpenAPI specs. See the `Makefile` for options.
 
-Use the `%-client` `make` target to re-generate clients from the latest OpenAPI spec. For example, to update the `aptibleapi` client use `make aptibleapi-client`.
-
-## Adding Clients
-
-To add a new OpenAPI-generated client, create a new directory with a `Makefile` containing a `client` target.
-
-Be sure to include at least one example in the client's `examples/` showing how to authenticate and configure the client.
+Most of the client's contents are generated. If a generated file needs modified (see [`aptibleapi/.openapi-generator/FILES`](./aptibleapi/.openapi-generator/FILES) for a list of generated files) it should be done by modifying the generator's templates. See [`aptibleapi/templates`](./aptibleapi/templates) for details and examples.
 
 # Release
 
-To release the clients, create a tagged release in GitHub following semantic versioning convention.
+To release the client, create a tagged release in GitHub following semantic versioning convention.

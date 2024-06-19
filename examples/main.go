@@ -13,7 +13,7 @@ func main() {
 	ctx := context.WithValue(context.Background(), aptibleapi.ContextAPIKeys, map[string]aptibleapi.APIKey{
 		"token": {
 			Prefix: "Bearer",
-			Key:    os.Getenv("APTIBLE_TOKEN"),
+			Key:    os.Getenv("APTIBLE_ACCESS_TOKEN"),
 		},
 	})
 
