@@ -742,11 +742,11 @@ func formatErrorMessage(status string, v interface{}) string {
 			str = fmt.Sprintf("%v", field.Interface())
 		}
 
-		// field = metaValue.FieldByName("Code")
+		// field = metaValue.FieldByName("Error")
 		// if field != (reflect.Value{}) {
-		// 	str = fmt.Sprintf("%s (%v)", str, field.Interface())
+		// 	str = fmt.Sprintf("%v - %s", field.Interface(), str)
 		// }
 	}
 
-	return strings.TrimSpace(fmt.Sprintf("%s (%s)", str, status))
+	return strings.TrimSpace(fmt.Sprintf("%s - %s", status, str))
 }
