@@ -5,19 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Handle** | **string** |  | 
-**Type** | Pointer to **string** |  | [optional] 
+**Type** | **string** |  | 
 **InitialDiskSize** | Pointer to **int32** |  | [optional] 
 **InitialContainerSize** | Pointer to **int32** |  | [optional] 
 **InitializeFrom** | Pointer to **string** |  | [optional] 
 **DatabaseImage** | Pointer to **int32** | Alternate name for &#x60;database_image_id&#x60; | [optional] 
-**DatabaseImageId** | **int32** |  | 
+**DatabaseImageId** | Pointer to **int32** |  | [optional] 
 **CurrentKmsArn** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
 ### NewCreateDatabaseRequest
 
-`func NewCreateDatabaseRequest(handle string, databaseImageId int32, ) *CreateDatabaseRequest`
+`func NewCreateDatabaseRequest(handle string, type_ string, ) *CreateDatabaseRequest`
 
 NewCreateDatabaseRequest instantiates a new CreateDatabaseRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *CreateDatabaseRequest) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetInitialDiskSize
 
@@ -196,6 +191,11 @@ and a boolean to check if the value has been set.
 
 SetDatabaseImageId sets DatabaseImageId field to given value.
 
+### HasDatabaseImageId
+
+`func (o *CreateDatabaseRequest) HasDatabaseImageId() bool`
+
+HasDatabaseImageId returns a boolean if a field has been set.
 
 ### GetCurrentKmsArn
 

@@ -35,7 +35,7 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	createDatabaseRequest := *openapiclient.NewCreateDatabaseRequest("Handle_example", int32(123)) // CreateDatabaseRequest |  (optional)
+	createDatabaseRequest := *openapiclient.NewCreateDatabaseRequest("Handle_example", "Type_example") // CreateDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

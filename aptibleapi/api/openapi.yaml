@@ -5579,6 +5579,8 @@ components:
           type: integer
         size:
           type: integer
+        provisioned_iops:
+          type: integer
         host:
           type: string
           x-nullable: true
@@ -5625,6 +5627,7 @@ components:
       - host
       - id
       - key_bytes
+      - provisioned_iops
       - size
       - updated_at
     ephemeral_container:
@@ -7219,8 +7222,8 @@ components:
         current_kms_arn:
           type: integer
       required:
-      - database_image_id
       - handle
+      - type
       type: object
     UpdateDatabase_request:
       properties:

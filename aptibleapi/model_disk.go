@@ -28,6 +28,7 @@ type Disk struct {
 	Passphrase *string `json:"passphrase,omitempty"`
 	KeyBytes int32 `json:"key_bytes"`
 	Size int32 `json:"size"`
+	ProvisionedIops int32 `json:"provisioned_iops"`
 	Host NullableString `json:"host"`
 	Device NullableString `json:"device"`
 	Attached bool `json:"attached"`
@@ -48,7 +49,7 @@ type _Disk Disk
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDisk(id int32, handle string, ebsVolumeId NullableString, ebsVolumeType NullableString, filesystem string, keyBytes int32, size int32, host NullableString, device NullableString, attached bool, metaType string, createdAt string, updatedAt string, ec2InstanceId NullableString, baselineIops NullableInt32, availabilityZone NullableString, currentKmsArn NullableString) *Disk {
+func NewDisk(id int32, handle string, ebsVolumeId NullableString, ebsVolumeType NullableString, filesystem string, keyBytes int32, size int32, provisionedIops int32, host NullableString, device NullableString, attached bool, metaType string, createdAt string, updatedAt string, ec2InstanceId NullableString, baselineIops NullableInt32, availabilityZone NullableString, currentKmsArn NullableString) *Disk {
 	this := Disk{}
 	this.Id = id
 	this.Handle = handle
@@ -57,6 +58,7 @@ func NewDisk(id int32, handle string, ebsVolumeId NullableString, ebsVolumeType 
 	this.Filesystem = filesystem
 	this.KeyBytes = keyBytes
 	this.Size = size
+	this.ProvisionedIops = provisionedIops
 	this.Host = host
 	this.Device = device
 	this.Attached = attached
@@ -280,6 +282,30 @@ func (o *Disk) GetSizeOk() (*int32, bool) {
 // SetSize sets field value
 func (o *Disk) SetSize(v int32) {
 	o.Size = v
+}
+
+// GetProvisionedIops returns the ProvisionedIops field value
+func (o *Disk) GetProvisionedIops() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.ProvisionedIops
+}
+
+// GetProvisionedIopsOk returns a tuple with the ProvisionedIops field value
+// and a boolean to check if the value has been set.
+func (o *Disk) GetProvisionedIopsOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ProvisionedIops, true
+}
+
+// SetProvisionedIops sets field value
+func (o *Disk) SetProvisionedIops(v int32) {
+	o.ProvisionedIops = v
 }
 
 // GetHost returns the Host field value
@@ -586,6 +612,7 @@ func (o Disk) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["key_bytes"] = o.KeyBytes
 	toSerialize["size"] = o.Size
+	toSerialize["provisioned_iops"] = o.ProvisionedIops
 	toSerialize["host"] = o.Host.Get()
 	toSerialize["device"] = o.Device.Get()
 	toSerialize["attached"] = o.Attached
@@ -619,6 +646,7 @@ func (o *Disk) UnmarshalJSON(data []byte) (err error) {
 		"filesystem",
 		"key_bytes",
 		"size",
+		"provisioned_iops",
 		"host",
 		"device",
 		"attached",
@@ -666,6 +694,7 @@ func (o *Disk) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "passphrase")
 		delete(additionalProperties, "key_bytes")
 		delete(additionalProperties, "size")
+		delete(additionalProperties, "provisioned_iops")
 		delete(additionalProperties, "host")
 		delete(additionalProperties, "device")
 		delete(additionalProperties, "attached")

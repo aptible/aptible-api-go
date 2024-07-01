@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Passphrase** | Pointer to **string** |  | [optional] 
 **KeyBytes** | **int32** |  | 
 **Size** | **int32** |  | 
+**ProvisionedIops** | **int32** |  | 
 **Host** | **NullableString** |  | 
 **Device** | **NullableString** |  | 
 **Attached** | **bool** |  | 
@@ -28,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewDisk
 
-`func NewDisk(id int32, handle string, ebsVolumeId NullableString, ebsVolumeType NullableString, filesystem string, keyBytes int32, size int32, host NullableString, device NullableString, attached bool, metaType string, createdAt string, updatedAt string, ec2InstanceId NullableString, baselineIops NullableInt32, availabilityZone NullableString, currentKmsArn NullableString, ) *Disk`
+`func NewDisk(id int32, handle string, ebsVolumeId NullableString, ebsVolumeType NullableString, filesystem string, keyBytes int32, size int32, provisionedIops int32, host NullableString, device NullableString, attached bool, metaType string, createdAt string, updatedAt string, ec2InstanceId NullableString, baselineIops NullableInt32, availabilityZone NullableString, currentKmsArn NullableString, ) *Disk`
 
 NewDisk instantiates a new Disk object
 This constructor will assign default values to properties that have it defined,
@@ -226,6 +227,26 @@ and a boolean to check if the value has been set.
 `func (o *Disk) SetSize(v int32)`
 
 SetSize sets Size field to given value.
+
+
+### GetProvisionedIops
+
+`func (o *Disk) GetProvisionedIops() int32`
+
+GetProvisionedIops returns the ProvisionedIops field if non-nil, zero value otherwise.
+
+### GetProvisionedIopsOk
+
+`func (o *Disk) GetProvisionedIopsOk() (*int32, bool)`
+
+GetProvisionedIopsOk returns a tuple with the ProvisionedIops field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvisionedIops
+
+`func (o *Disk) SetProvisionedIops(v int32)`
+
+SetProvisionedIops sets ProvisionedIops field to given value.
 
 
 ### GetHost

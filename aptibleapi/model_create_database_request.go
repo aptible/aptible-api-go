@@ -21,13 +21,13 @@ var _ MappedNullable = &CreateDatabaseRequest{}
 // CreateDatabaseRequest struct for CreateDatabaseRequest
 type CreateDatabaseRequest struct {
 	Handle string `json:"handle"`
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 	InitialDiskSize *int32 `json:"initial_disk_size,omitempty"`
 	InitialContainerSize *int32 `json:"initial_container_size,omitempty"`
 	InitializeFrom *string `json:"initialize_from,omitempty"`
 	// Alternate name for `database_image_id`
 	DatabaseImage *int32 `json:"database_image,omitempty"`
-	DatabaseImageId int32 `json:"database_image_id"`
+	DatabaseImageId *int32 `json:"database_image_id,omitempty"`
 	CurrentKmsArn *int32 `json:"current_kms_arn,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -38,10 +38,10 @@ type _CreateDatabaseRequest CreateDatabaseRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateDatabaseRequest(handle string, databaseImageId int32) *CreateDatabaseRequest {
+func NewCreateDatabaseRequest(handle string, type_ string) *CreateDatabaseRequest {
 	this := CreateDatabaseRequest{}
 	this.Handle = handle
-	this.DatabaseImageId = databaseImageId
+	this.Type = type_
 	return &this
 }
 
@@ -77,36 +77,28 @@ func (o *CreateDatabaseRequest) SetHandle(v string) {
 	o.Handle = v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
+// GetType returns the Type field value
 func (o *CreateDatabaseRequest) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Type
+
+	return o.Type
 }
 
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *CreateDatabaseRequest) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
-// HasType returns a boolean if a field has been set.
-func (o *CreateDatabaseRequest) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given string and assigns it to the Type field.
+// SetType sets field value
 func (o *CreateDatabaseRequest) SetType(v string) {
-	o.Type = &v
+	o.Type = v
 }
 
 // GetInitialDiskSize returns the InitialDiskSize field value if set, zero value otherwise.
@@ -237,28 +229,36 @@ func (o *CreateDatabaseRequest) SetDatabaseImage(v int32) {
 	o.DatabaseImage = &v
 }
 
-// GetDatabaseImageId returns the DatabaseImageId field value
+// GetDatabaseImageId returns the DatabaseImageId field value if set, zero value otherwise.
 func (o *CreateDatabaseRequest) GetDatabaseImageId() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.DatabaseImageId) {
 		var ret int32
 		return ret
 	}
-
-	return o.DatabaseImageId
+	return *o.DatabaseImageId
 }
 
-// GetDatabaseImageIdOk returns a tuple with the DatabaseImageId field value
+// GetDatabaseImageIdOk returns a tuple with the DatabaseImageId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateDatabaseRequest) GetDatabaseImageIdOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DatabaseImageId) {
 		return nil, false
 	}
-	return &o.DatabaseImageId, true
+	return o.DatabaseImageId, true
 }
 
-// SetDatabaseImageId sets field value
+// HasDatabaseImageId returns a boolean if a field has been set.
+func (o *CreateDatabaseRequest) HasDatabaseImageId() bool {
+	if o != nil && !IsNil(o.DatabaseImageId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDatabaseImageId gets a reference to the given int32 and assigns it to the DatabaseImageId field.
 func (o *CreateDatabaseRequest) SetDatabaseImageId(v int32) {
-	o.DatabaseImageId = v
+	o.DatabaseImageId = &v
 }
 
 // GetCurrentKmsArn returns the CurrentKmsArn field value if set, zero value otherwise.
@@ -304,9 +304,7 @@ func (o CreateDatabaseRequest) MarshalJSON() ([]byte, error) {
 func (o CreateDatabaseRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["handle"] = o.Handle
-	if !IsNil(o.Type) {
-		toSerialize["type"] = o.Type
-	}
+	toSerialize["type"] = o.Type
 	if !IsNil(o.InitialDiskSize) {
 		toSerialize["initial_disk_size"] = o.InitialDiskSize
 	}
@@ -319,7 +317,9 @@ func (o CreateDatabaseRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DatabaseImage) {
 		toSerialize["database_image"] = o.DatabaseImage
 	}
-	toSerialize["database_image_id"] = o.DatabaseImageId
+	if !IsNil(o.DatabaseImageId) {
+		toSerialize["database_image_id"] = o.DatabaseImageId
+	}
 	if !IsNil(o.CurrentKmsArn) {
 		toSerialize["current_kms_arn"] = o.CurrentKmsArn
 	}
@@ -337,7 +337,7 @@ func (o *CreateDatabaseRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"handle",
-		"database_image_id",
+		"type",
 	}
 
 	allProperties := make(map[string]interface{})
