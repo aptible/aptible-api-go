@@ -26,3 +26,4 @@ test/
 
 /go.mod
 /go.sum
+/.travis.yml
