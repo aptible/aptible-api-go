@@ -15,27 +15,27 @@ import (
 	"fmt"
 )
 
-// checks if the ListBackupsForAccount200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListBackupsForAccount200Response{}
+// checks if the ListBackups200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListBackups200Response{}
 
-// ListBackupsForAccount200Response struct for ListBackupsForAccount200Response
-type ListBackupsForAccount200Response struct {
-	Embedded ListBackupsForAccount200ResponseEmbedded `json:"_embedded"`
+// ListBackups200Response struct for ListBackups200Response
+type ListBackups200Response struct {
+	Embedded ListBackups200ResponseEmbedded `json:"_embedded"`
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListBackupsForAccount200ResponseLinks `json:"_links"`
+	Links ListBackups200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _ListBackupsForAccount200Response ListBackupsForAccount200Response
+type _ListBackups200Response ListBackups200Response
 
-// NewListBackupsForAccount200Response instantiates a new ListBackupsForAccount200Response object
+// NewListBackups200Response instantiates a new ListBackups200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListBackupsForAccount200Response(embedded ListBackupsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListBackupsForAccount200ResponseLinks) *ListBackupsForAccount200Response {
-	this := ListBackupsForAccount200Response{}
+func NewListBackups200Response(embedded ListBackups200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListBackups200ResponseLinks) *ListBackups200Response {
+	this := ListBackups200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
 	this.PerPage = perPage
@@ -44,18 +44,18 @@ func NewListBackupsForAccount200Response(embedded ListBackupsForAccount200Respon
 	return &this
 }
 
-// NewListBackupsForAccount200ResponseWithDefaults instantiates a new ListBackupsForAccount200Response object
+// NewListBackups200ResponseWithDefaults instantiates a new ListBackups200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListBackupsForAccount200ResponseWithDefaults() *ListBackupsForAccount200Response {
-	this := ListBackupsForAccount200Response{}
+func NewListBackups200ResponseWithDefaults() *ListBackups200Response {
+	this := ListBackups200Response{}
 	return &this
 }
 
 // GetEmbedded returns the Embedded field value
-func (o *ListBackupsForAccount200Response) GetEmbedded() ListBackupsForAccount200ResponseEmbedded {
+func (o *ListBackups200Response) GetEmbedded() ListBackups200ResponseEmbedded {
 	if o == nil {
-		var ret ListBackupsForAccount200ResponseEmbedded
+		var ret ListBackups200ResponseEmbedded
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *ListBackupsForAccount200Response) GetEmbedded() ListBackupsForAccount20
 
 // GetEmbeddedOk returns a tuple with the Embedded field value
 // and a boolean to check if the value has been set.
-func (o *ListBackupsForAccount200Response) GetEmbeddedOk() (*ListBackupsForAccount200ResponseEmbedded, bool) {
+func (o *ListBackups200Response) GetEmbeddedOk() (*ListBackups200ResponseEmbedded, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,12 +72,12 @@ func (o *ListBackupsForAccount200Response) GetEmbeddedOk() (*ListBackupsForAccou
 }
 
 // SetEmbedded sets field value
-func (o *ListBackupsForAccount200Response) SetEmbedded(v ListBackupsForAccount200ResponseEmbedded) {
+func (o *ListBackups200Response) SetEmbedded(v ListBackups200ResponseEmbedded) {
 	o.Embedded = v
 }
 
 // GetTotalCount returns the TotalCount field value
-func (o *ListBackupsForAccount200Response) GetTotalCount() int32 {
+func (o *ListBackups200Response) GetTotalCount() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -88,7 +88,7 @@ func (o *ListBackupsForAccount200Response) GetTotalCount() int32 {
 
 // GetTotalCountOk returns a tuple with the TotalCount field value
 // and a boolean to check if the value has been set.
-func (o *ListBackupsForAccount200Response) GetTotalCountOk() (*int32, bool) {
+func (o *ListBackups200Response) GetTotalCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -96,12 +96,12 @@ func (o *ListBackupsForAccount200Response) GetTotalCountOk() (*int32, bool) {
 }
 
 // SetTotalCount sets field value
-func (o *ListBackupsForAccount200Response) SetTotalCount(v int32) {
+func (o *ListBackups200Response) SetTotalCount(v int32) {
 	o.TotalCount = v
 }
 
 // GetPerPage returns the PerPage field value
-func (o *ListBackupsForAccount200Response) GetPerPage() int32 {
+func (o *ListBackups200Response) GetPerPage() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -112,7 +112,7 @@ func (o *ListBackupsForAccount200Response) GetPerPage() int32 {
 
 // GetPerPageOk returns a tuple with the PerPage field value
 // and a boolean to check if the value has been set.
-func (o *ListBackupsForAccount200Response) GetPerPageOk() (*int32, bool) {
+func (o *ListBackups200Response) GetPerPageOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,12 +120,12 @@ func (o *ListBackupsForAccount200Response) GetPerPageOk() (*int32, bool) {
 }
 
 // SetPerPage sets field value
-func (o *ListBackupsForAccount200Response) SetPerPage(v int32) {
+func (o *ListBackups200Response) SetPerPage(v int32) {
 	o.PerPage = v
 }
 
 // GetCurrentPage returns the CurrentPage field value
-func (o *ListBackupsForAccount200Response) GetCurrentPage() int32 {
+func (o *ListBackups200Response) GetCurrentPage() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -136,7 +136,7 @@ func (o *ListBackupsForAccount200Response) GetCurrentPage() int32 {
 
 // GetCurrentPageOk returns a tuple with the CurrentPage field value
 // and a boolean to check if the value has been set.
-func (o *ListBackupsForAccount200Response) GetCurrentPageOk() (*int32, bool) {
+func (o *ListBackups200Response) GetCurrentPageOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -144,14 +144,14 @@ func (o *ListBackupsForAccount200Response) GetCurrentPageOk() (*int32, bool) {
 }
 
 // SetCurrentPage sets field value
-func (o *ListBackupsForAccount200Response) SetCurrentPage(v int32) {
+func (o *ListBackups200Response) SetCurrentPage(v int32) {
 	o.CurrentPage = v
 }
 
 // GetLinks returns the Links field value
-func (o *ListBackupsForAccount200Response) GetLinks() ListBackupsForAccount200ResponseLinks {
+func (o *ListBackups200Response) GetLinks() ListBackups200ResponseLinks {
 	if o == nil {
-		var ret ListBackupsForAccount200ResponseLinks
+		var ret ListBackups200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListBackupsForAccount200Response) GetLinks() ListBackupsForAccount200Re
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListBackupsForAccount200Response) GetLinksOk() (*ListBackupsForAccount200ResponseLinks, bool) {
+func (o *ListBackups200Response) GetLinksOk() (*ListBackups200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,11 +168,11 @@ func (o *ListBackupsForAccount200Response) GetLinksOk() (*ListBackupsForAccount2
 }
 
 // SetLinks sets field value
-func (o *ListBackupsForAccount200Response) SetLinks(v ListBackupsForAccount200ResponseLinks) {
+func (o *ListBackups200Response) SetLinks(v ListBackups200ResponseLinks) {
 	o.Links = v
 }
 
-func (o ListBackupsForAccount200Response) MarshalJSON() ([]byte, error) {
+func (o ListBackups200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -180,7 +180,7 @@ func (o ListBackupsForAccount200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ListBackupsForAccount200Response) ToMap() (map[string]interface{}, error) {
+func (o ListBackups200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["_embedded"] = o.Embedded
 	toSerialize["total_count"] = o.TotalCount
@@ -195,7 +195,7 @@ func (o ListBackupsForAccount200Response) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 
-func (o *ListBackupsForAccount200Response) UnmarshalJSON(data []byte) (err error) {
+func (o *ListBackups200Response) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -221,15 +221,15 @@ func (o *ListBackupsForAccount200Response) UnmarshalJSON(data []byte) (err error
 		}
 	}
 
-	varListBackupsForAccount200Response := _ListBackupsForAccount200Response{}
+	varListBackups200Response := _ListBackups200Response{}
 
-	err = json.Unmarshal(data, &varListBackupsForAccount200Response)
+	err = json.Unmarshal(data, &varListBackups200Response)
 
 	if err != nil {
 		return err
 	}
 
-	*o = ListBackupsForAccount200Response(varListBackupsForAccount200Response)
+	*o = ListBackups200Response(varListBackups200Response)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -245,38 +245,38 @@ func (o *ListBackupsForAccount200Response) UnmarshalJSON(data []byte) (err error
 	return err
 }
 
-type NullableListBackupsForAccount200Response struct {
-	value *ListBackupsForAccount200Response
+type NullableListBackups200Response struct {
+	value *ListBackups200Response
 	isSet bool
 }
 
-func (v NullableListBackupsForAccount200Response) Get() *ListBackupsForAccount200Response {
+func (v NullableListBackups200Response) Get() *ListBackups200Response {
 	return v.value
 }
 
-func (v *NullableListBackupsForAccount200Response) Set(val *ListBackupsForAccount200Response) {
+func (v *NullableListBackups200Response) Set(val *ListBackups200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListBackupsForAccount200Response) IsSet() bool {
+func (v NullableListBackups200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListBackupsForAccount200Response) Unset() {
+func (v *NullableListBackups200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListBackupsForAccount200Response(val *ListBackupsForAccount200Response) *NullableListBackupsForAccount200Response {
-	return &NullableListBackupsForAccount200Response{value: val, isSet: true}
+func NewNullableListBackups200Response(val *ListBackups200Response) *NullableListBackups200Response {
+	return &NullableListBackups200Response{value: val, isSet: true}
 }
 
-func (v NullableListBackupsForAccount200Response) MarshalJSON() ([]byte, error) {
+func (v NullableListBackups200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListBackupsForAccount200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableListBackups200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

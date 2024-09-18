@@ -131,9 +131,9 @@ docs/ListAppsForSource200Response.md
 docs/ListAppsForSource200ResponseLinks.md
 docs/ListBackupRetentionPoliciesForAccount200Response.md
 docs/ListBackupRetentionPoliciesForAccount200ResponseEmbedded.md
-docs/ListBackupsForAccount200Response.md
-docs/ListBackupsForAccount200ResponseEmbedded.md
-docs/ListBackupsForAccount200ResponseLinks.md
+docs/ListBackups200Response.md
+docs/ListBackups200ResponseEmbedded.md
+docs/ListBackups200ResponseLinks.md
 docs/ListCertificatesForAccount200Response.md
 docs/ListCertificatesForAccount200ResponseEmbedded.md
 docs/ListCodeScanResultsForApp200Response.md
@@ -250,6 +250,7 @@ docs/UpdateCertificateRequest.md
 docs/UpdateDatabaseRequest.md
 docs/UpdateLogDrainRequest.md
 docs/UpdateOperationRequest.md
+docs/UpdateServiceRequest.md
 docs/UpdateVhostRequest.md
 docs/Vhost.md
 docs/VhostAcmeConfiguration.md
@@ -339,9 +340,9 @@ model_list_apps_for_source_200_response.go
 model_list_apps_for_source_200_response__links.go
 model_list_backup_retention_policies_for_account_200_response.go
 model_list_backup_retention_policies_for_account_200_response__embedded.go
-model_list_backups_for_account_200_response.go
-model_list_backups_for_account_200_response__embedded.go
-model_list_backups_for_account_200_response__links.go
+model_list_backups_200_response.go
+model_list_backups_200_response__embedded.go
+model_list_backups_200_response__links.go
 model_list_certificates_for_account_200_response.go
 model_list_certificates_for_account_200_response__embedded.go
 model_list_code_scan_results_for_app_200_response.go
@@ -446,6 +447,7 @@ model_update_certificate_request.go
 model_update_database_request.go
 model_update_log_drain_request.go
 model_update_operation_request.go
+model_update_service_request.go
 model_update_vhost_request.go
 model_vhost.go
 model_vhost__links.go

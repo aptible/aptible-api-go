@@ -146,11 +146,162 @@ func (a *BackupsAPIService) GetBackupExecute(r ApiGetBackupRequest) (*Backup, *h
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListBackupsRequest struct {
+	ctx context.Context
+	ApiService *BackupsAPIService
+	page *int32
+	perPage *int32
+	withDeleted *bool
+}
+
+// current page of results for pagination
+func (r ApiListBackupsRequest) Page(page int32) ApiListBackupsRequest {
+	r.page = &page
+	return r
+}
+
+// number of results to return per page
+func (r ApiListBackupsRequest) PerPage(perPage int32) ApiListBackupsRequest {
+	r.perPage = &perPage
+	return r
+}
+
+// wether deleted records should be returned or not
+func (r ApiListBackupsRequest) WithDeleted(withDeleted bool) ApiListBackupsRequest {
+	r.withDeleted = &withDeleted
+	return r
+}
+
+func (r ApiListBackupsRequest) Execute() (*ListBackups200Response, *http.Response, error) {
+	return r.ApiService.ListBackupsExecute(r)
+}
+
+/*
+ListBackups list backups
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiListBackupsRequest
+*/
+func (a *BackupsAPIService) ListBackups(ctx context.Context) ApiListBackupsRequest {
+	return ApiListBackupsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ListBackups200Response
+func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBackups200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ListBackups200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackups")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/backups"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.page != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	}
+	if r.perPage != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+	}
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/hal+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiListBackupsForAccountRequest struct {
 	ctx context.Context
 	ApiService *BackupsAPIService
 	accountId int32
 	page *int32
+	perPage *int32
+	withDeleted *bool
 }
 
 // current page of results for pagination
@@ -159,7 +310,19 @@ func (r ApiListBackupsForAccountRequest) Page(page int32) ApiListBackupsForAccou
 	return r
 }
 
-func (r ApiListBackupsForAccountRequest) Execute() (*ListBackupsForAccount200Response, *http.Response, error) {
+// number of results to return per page
+func (r ApiListBackupsForAccountRequest) PerPage(perPage int32) ApiListBackupsForAccountRequest {
+	r.perPage = &perPage
+	return r
+}
+
+// wether deleted records should be returned or not
+func (r ApiListBackupsForAccountRequest) WithDeleted(withDeleted bool) ApiListBackupsForAccountRequest {
+	r.withDeleted = &withDeleted
+	return r
+}
+
+func (r ApiListBackupsForAccountRequest) Execute() (*ListBackups200Response, *http.Response, error) {
 	return r.ApiService.ListBackupsForAccountExecute(r)
 }
 
@@ -179,13 +342,13 @@ func (a *BackupsAPIService) ListBackupsForAccount(ctx context.Context, accountId
 }
 
 // Execute executes the request
-//  @return ListBackupsForAccount200Response
-func (a *BackupsAPIService) ListBackupsForAccountExecute(r ApiListBackupsForAccountRequest) (*ListBackupsForAccount200Response, *http.Response, error) {
+//  @return ListBackups200Response
+func (a *BackupsAPIService) ListBackupsForAccountExecute(r ApiListBackupsForAccountRequest) (*ListBackups200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListBackupsForAccount200Response
+		localVarReturnValue  *ListBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackupsForAccount")
@@ -202,6 +365,12 @@ func (a *BackupsAPIService) ListBackupsForAccountExecute(r ApiListBackupsForAcco
 
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	}
+	if r.perPage != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+	}
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -284,6 +453,8 @@ type ApiListBackupsForDatabaseRequest struct {
 	ApiService *BackupsAPIService
 	databaseId int32
 	page *int32
+	perPage *int32
+	withDeleted *bool
 }
 
 // current page of results for pagination
@@ -292,7 +463,19 @@ func (r ApiListBackupsForDatabaseRequest) Page(page int32) ApiListBackupsForData
 	return r
 }
 
-func (r ApiListBackupsForDatabaseRequest) Execute() (*ListBackupsForAccount200Response, *http.Response, error) {
+// number of results to return per page
+func (r ApiListBackupsForDatabaseRequest) PerPage(perPage int32) ApiListBackupsForDatabaseRequest {
+	r.perPage = &perPage
+	return r
+}
+
+// wether deleted records should be returned or not
+func (r ApiListBackupsForDatabaseRequest) WithDeleted(withDeleted bool) ApiListBackupsForDatabaseRequest {
+	r.withDeleted = &withDeleted
+	return r
+}
+
+func (r ApiListBackupsForDatabaseRequest) Execute() (*ListBackups200Response, *http.Response, error) {
 	return r.ApiService.ListBackupsForDatabaseExecute(r)
 }
 
@@ -312,13 +495,13 @@ func (a *BackupsAPIService) ListBackupsForDatabase(ctx context.Context, database
 }
 
 // Execute executes the request
-//  @return ListBackupsForAccount200Response
-func (a *BackupsAPIService) ListBackupsForDatabaseExecute(r ApiListBackupsForDatabaseRequest) (*ListBackupsForAccount200Response, *http.Response, error) {
+//  @return ListBackups200Response
+func (a *BackupsAPIService) ListBackupsForDatabaseExecute(r ApiListBackupsForDatabaseRequest) (*ListBackups200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListBackupsForAccount200Response
+		localVarReturnValue  *ListBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackupsForDatabase")
@@ -335,6 +518,12 @@ func (a *BackupsAPIService) ListBackupsForDatabaseExecute(r ApiListBackupsForDat
 
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	}
+	if r.perPage != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+	}
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -417,6 +606,8 @@ type ApiListCopiesForBackupRequest struct {
 	ApiService *BackupsAPIService
 	backupId int32
 	page *int32
+	perPage *int32
+	withDeleted *bool
 }
 
 // current page of results for pagination
@@ -425,7 +616,19 @@ func (r ApiListCopiesForBackupRequest) Page(page int32) ApiListCopiesForBackupRe
 	return r
 }
 
-func (r ApiListCopiesForBackupRequest) Execute() (*ListBackupsForAccount200Response, *http.Response, error) {
+// number of results to return per page
+func (r ApiListCopiesForBackupRequest) PerPage(perPage int32) ApiListCopiesForBackupRequest {
+	r.perPage = &perPage
+	return r
+}
+
+// wether deleted records should be returned or not
+func (r ApiListCopiesForBackupRequest) WithDeleted(withDeleted bool) ApiListCopiesForBackupRequest {
+	r.withDeleted = &withDeleted
+	return r
+}
+
+func (r ApiListCopiesForBackupRequest) Execute() (*ListBackups200Response, *http.Response, error) {
 	return r.ApiService.ListCopiesForBackupExecute(r)
 }
 
@@ -445,13 +648,13 @@ func (a *BackupsAPIService) ListCopiesForBackup(ctx context.Context, backupId in
 }
 
 // Execute executes the request
-//  @return ListBackupsForAccount200Response
-func (a *BackupsAPIService) ListCopiesForBackupExecute(r ApiListCopiesForBackupRequest) (*ListBackupsForAccount200Response, *http.Response, error) {
+//  @return ListBackups200Response
+func (a *BackupsAPIService) ListCopiesForBackupExecute(r ApiListCopiesForBackupRequest) (*ListBackups200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListBackupsForAccount200Response
+		localVarReturnValue  *ListBackups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListCopiesForBackup")
@@ -468,6 +671,12 @@ func (a *BackupsAPIService) ListCopiesForBackupExecute(r ApiListCopiesForBackupR
 
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+	}
+	if r.perPage != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+	}
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

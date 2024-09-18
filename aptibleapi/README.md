@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 *BackupRetentionPoliciesAPI* | [**GetBackupRetentionPolicy**](docs/BackupRetentionPoliciesAPI.md#getbackupretentionpolicy) | **Get** /backup_retention_policies/{id} | show backup_retention_policy
 *BackupRetentionPoliciesAPI* | [**ListBackupRetentionPoliciesForAccount**](docs/BackupRetentionPoliciesAPI.md#listbackupretentionpoliciesforaccount) | **Get** /accounts/{account_id}/backup_retention_policies | list backup retention policies
 *BackupsAPI* | [**GetBackup**](docs/BackupsAPI.md#getbackup) | **Get** /backups/{id} | show backup
+*BackupsAPI* | [**ListBackups**](docs/BackupsAPI.md#listbackups) | **Get** /backups | list backups
 *BackupsAPI* | [**ListBackupsForAccount**](docs/BackupsAPI.md#listbackupsforaccount) | **Get** /accounts/{account_id}/backups | list backups
 *BackupsAPI* | [**ListBackupsForDatabase**](docs/BackupsAPI.md#listbackupsfordatabase) | **Get** /databases/{database_id}/backups | list backups
 *BackupsAPI* | [**ListCopiesForBackup**](docs/BackupsAPI.md#listcopiesforbackup) | **Get** /backups/{backup_id}/copies | list backups
@@ -211,6 +212,8 @@ Class | Method | HTTP request | Description
 *ServicesAPI* | [**GetService**](docs/ServicesAPI.md#getservice) | **Get** /services/{id} | show service
 *ServicesAPI* | [**ListServicesForAccount**](docs/ServicesAPI.md#listservicesforaccount) | **Get** /accounts/{account_id}/services | list services
 *ServicesAPI* | [**ListServicesForApp**](docs/ServicesAPI.md#listservicesforapp) | **Get** /apps/{app_id}/services | list services
+*ServicesAPI* | [**PatchService**](docs/ServicesAPI.md#patchservice) | **Patch** /services/{id} | update service
+*ServicesAPI* | [**UpdateService**](docs/ServicesAPI.md#updateservice) | **Put** /services/{id} | update service
 *SourcesAPI* | [**GetSource**](docs/SourcesAPI.md#getsource) | **Get** /sources/{id} | show source
 *SourcesAPI* | [**ListAppsForSource**](docs/SourcesAPI.md#listappsforsource) | **Get** /sources/{source_id}/apps | list apps
 *SourcesAPI* | [**ListDeploymentsForSource**](docs/SourcesAPI.md#listdeploymentsforsource) | **Get** /sources/{source_id}/deployments | list deployments
@@ -311,9 +314,9 @@ Class | Method | HTTP request | Description
  - [ListAppsForSource200ResponseLinks](docs/ListAppsForSource200ResponseLinks.md)
  - [ListBackupRetentionPoliciesForAccount200Response](docs/ListBackupRetentionPoliciesForAccount200Response.md)
  - [ListBackupRetentionPoliciesForAccount200ResponseEmbedded](docs/ListBackupRetentionPoliciesForAccount200ResponseEmbedded.md)
- - [ListBackupsForAccount200Response](docs/ListBackupsForAccount200Response.md)
- - [ListBackupsForAccount200ResponseEmbedded](docs/ListBackupsForAccount200ResponseEmbedded.md)
- - [ListBackupsForAccount200ResponseLinks](docs/ListBackupsForAccount200ResponseLinks.md)
+ - [ListBackups200Response](docs/ListBackups200Response.md)
+ - [ListBackups200ResponseEmbedded](docs/ListBackups200ResponseEmbedded.md)
+ - [ListBackups200ResponseLinks](docs/ListBackups200ResponseLinks.md)
  - [ListCertificatesForAccount200Response](docs/ListCertificatesForAccount200Response.md)
  - [ListCertificatesForAccount200ResponseEmbedded](docs/ListCertificatesForAccount200ResponseEmbedded.md)
  - [ListCodeScanResultsForApp200Response](docs/ListCodeScanResultsForApp200Response.md)
@@ -419,6 +422,7 @@ Class | Method | HTTP request | Description
  - [UpdateDatabaseRequest](docs/UpdateDatabaseRequest.md)
  - [UpdateLogDrainRequest](docs/UpdateLogDrainRequest.md)
  - [UpdateOperationRequest](docs/UpdateOperationRequest.md)
+ - [UpdateServiceRequest](docs/UpdateServiceRequest.md)
  - [UpdateVhostRequest](docs/UpdateVhostRequest.md)
  - [Vhost](docs/Vhost.md)
  - [VhostAcmeConfiguration](docs/VhostAcmeConfiguration.md)

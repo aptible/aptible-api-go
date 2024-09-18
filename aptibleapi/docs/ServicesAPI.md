@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**GetService**](ServicesAPI.md#GetService) | **Get** /services/{id} | show service
 [**ListServicesForAccount**](ServicesAPI.md#ListServicesForAccount) | **Get** /accounts/{account_id}/services | list services
 [**ListServicesForApp**](ServicesAPI.md#ListServicesForApp) | **Get** /apps/{app_id}/services | list services
+[**PatchService**](ServicesAPI.md#PatchService) | **Patch** /services/{id} | update service
+[**UpdateService**](ServicesAPI.md#UpdateService) | **Put** /services/{id} | update service
 
 
 
@@ -211,6 +213,142 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PatchService
+
+> PatchService(ctx, id).UpdateServiceRequest(updateServiceRequest).Execute()
+
+update service
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	id := int32(56) // int32 | id
+	updateServiceRequest := *openapiclient.NewUpdateServiceRequest() // UpdateServiceRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ServicesAPI.PatchService(context.Background(), id).UpdateServiceRequest(updateServiceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.PatchService``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPatchServiceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateServiceRequest** | [**UpdateServiceRequest**](UpdateServiceRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateService
+
+> UpdateService(ctx, id).UpdateServiceRequest(updateServiceRequest).Execute()
+
+update service
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	id := int32(56) // int32 | id
+	updateServiceRequest := *openapiclient.NewUpdateServiceRequest() // UpdateServiceRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.ServicesAPI.UpdateService(context.Background(), id).UpdateServiceRequest(updateServiceRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.UpdateService``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateServiceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **updateServiceRequest** | [**UpdateServiceRequest**](UpdateServiceRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/hal+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

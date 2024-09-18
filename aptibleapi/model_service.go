@@ -32,6 +32,8 @@ type Service struct {
 	UpdatedAt string `json:"updated_at"`
 	ContainerMemoryLimitMb NullableInt32 `json:"container_memory_limit_mb"`
 	InstanceClass string `json:"instance_class"`
+	ForceZeroDowntime bool `json:"force_zero_downtime"`
+	NaiveHealthCheck bool `json:"naive_health_check"`
 	Links *ServiceLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -42,7 +44,7 @@ type _Service Service
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string) *Service {
+func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool) *Service {
 	this := Service{}
 	this.Id = id
 	this.MetaType = metaType
@@ -56,6 +58,8 @@ func NewService(id int32, metaType string, handle string, dockerRepo NullableStr
 	this.UpdatedAt = updatedAt
 	this.ContainerMemoryLimitMb = containerMemoryLimitMb
 	this.InstanceClass = instanceClass
+	this.ForceZeroDowntime = forceZeroDowntime
+	this.NaiveHealthCheck = naiveHealthCheck
 	return &this
 }
 
@@ -361,6 +365,54 @@ func (o *Service) SetInstanceClass(v string) {
 	o.InstanceClass = v
 }
 
+// GetForceZeroDowntime returns the ForceZeroDowntime field value
+func (o *Service) GetForceZeroDowntime() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.ForceZeroDowntime
+}
+
+// GetForceZeroDowntimeOk returns a tuple with the ForceZeroDowntime field value
+// and a boolean to check if the value has been set.
+func (o *Service) GetForceZeroDowntimeOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ForceZeroDowntime, true
+}
+
+// SetForceZeroDowntime sets field value
+func (o *Service) SetForceZeroDowntime(v bool) {
+	o.ForceZeroDowntime = v
+}
+
+// GetNaiveHealthCheck returns the NaiveHealthCheck field value
+func (o *Service) GetNaiveHealthCheck() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.NaiveHealthCheck
+}
+
+// GetNaiveHealthCheckOk returns a tuple with the NaiveHealthCheck field value
+// and a boolean to check if the value has been set.
+func (o *Service) GetNaiveHealthCheckOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.NaiveHealthCheck, true
+}
+
+// SetNaiveHealthCheck sets field value
+func (o *Service) SetNaiveHealthCheck(v bool) {
+	o.NaiveHealthCheck = v
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Service) GetLinks() ServiceLinks {
 	if o == nil || IsNil(o.Links) {
@@ -415,6 +467,8 @@ func (o Service) ToMap() (map[string]interface{}, error) {
 	toSerialize["updated_at"] = o.UpdatedAt
 	toSerialize["container_memory_limit_mb"] = o.ContainerMemoryLimitMb.Get()
 	toSerialize["instance_class"] = o.InstanceClass
+	toSerialize["force_zero_downtime"] = o.ForceZeroDowntime
+	toSerialize["naive_health_check"] = o.NaiveHealthCheck
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -443,6 +497,8 @@ func (o *Service) UnmarshalJSON(data []byte) (err error) {
 		"updated_at",
 		"container_memory_limit_mb",
 		"instance_class",
+		"force_zero_downtime",
+		"naive_health_check",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -484,6 +540,8 @@ func (o *Service) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "container_memory_limit_mb")
 		delete(additionalProperties, "instance_class")
+		delete(additionalProperties, "force_zero_downtime")
+		delete(additionalProperties, "naive_health_check")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

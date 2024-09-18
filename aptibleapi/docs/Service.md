@@ -16,13 +16,15 @@ Name | Type | Description | Notes
 **UpdatedAt** | **string** |  | 
 **ContainerMemoryLimitMb** | **NullableInt32** |  | 
 **InstanceClass** | **string** |  | 
+**ForceZeroDowntime** | **bool** |  | 
+**NaiveHealthCheck** | **bool** |  | 
 **Links** | Pointer to [**ServiceLinks**](ServiceLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewService
 
-`func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, ) *Service`
+`func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, ) *Service`
 
 NewService instantiates a new Service object
 This constructor will assign default values to properties that have it defined,
@@ -305,6 +307,46 @@ and a boolean to check if the value has been set.
 `func (o *Service) SetInstanceClass(v string)`
 
 SetInstanceClass sets InstanceClass field to given value.
+
+
+### GetForceZeroDowntime
+
+`func (o *Service) GetForceZeroDowntime() bool`
+
+GetForceZeroDowntime returns the ForceZeroDowntime field if non-nil, zero value otherwise.
+
+### GetForceZeroDowntimeOk
+
+`func (o *Service) GetForceZeroDowntimeOk() (*bool, bool)`
+
+GetForceZeroDowntimeOk returns a tuple with the ForceZeroDowntime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetForceZeroDowntime
+
+`func (o *Service) SetForceZeroDowntime(v bool)`
+
+SetForceZeroDowntime sets ForceZeroDowntime field to given value.
+
+
+### GetNaiveHealthCheck
+
+`func (o *Service) GetNaiveHealthCheck() bool`
+
+GetNaiveHealthCheck returns the NaiveHealthCheck field if non-nil, zero value otherwise.
+
+### GetNaiveHealthCheckOk
+
+`func (o *Service) GetNaiveHealthCheckOk() (*bool, bool)`
+
+GetNaiveHealthCheckOk returns a tuple with the NaiveHealthCheck field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNaiveHealthCheck
+
+`func (o *Service) SetNaiveHealthCheck(v bool)`
+
+SetNaiveHealthCheck sets NaiveHealthCheck field to given value.
 
 
 ### GetLinks

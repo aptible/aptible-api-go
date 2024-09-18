@@ -660,6 +660,50 @@ paths:
       summary: show backup_retention_policy
       tags:
       - BackupRetentionPolicies
+  /backups:
+    get:
+      operationId: ListBackups
+      parameters:
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: number of results to return per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: wether deleted records should be returned or not
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListBackups_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list backups
+      tags:
+      - Backups
   /accounts/{account_id}/backups:
     get:
       operationId: ListBackupsForAccount
@@ -680,12 +724,28 @@ paths:
         schema:
           type: integer
         style: form
+      - description: number of results to return per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: wether deleted records should be returned or not
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ListBackupsForAccount_200_response'
+                $ref: '#/components/schemas/ListBackups_200_response'
           description: successful
         default:
           content:
@@ -716,12 +776,28 @@ paths:
         schema:
           type: integer
         style: form
+      - description: number of results to return per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: wether deleted records should be returned or not
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ListBackupsForAccount_200_response'
+                $ref: '#/components/schemas/ListBackups_200_response'
           description: successful
         default:
           content:
@@ -752,12 +828,28 @@ paths:
         schema:
           type: integer
         style: form
+      - description: number of results to return per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: wether deleted records should be returned or not
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ListBackupsForAccount_200_response'
+                $ref: '#/components/schemas/ListBackups_200_response'
           description: successful
         default:
           content:
@@ -4166,6 +4258,62 @@ paths:
       summary: show service
       tags:
       - Services
+    patch:
+      operationId: PatchService
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateService_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update service
+      tags:
+      - Services
+    put:
+      operationId: UpdateService
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateService_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update service
+      tags:
+      - Services
   /sources:
     get:
       operationId: ListSources
@@ -6265,6 +6413,10 @@ components:
           x-nullable: true
         instance_class:
           type: string
+        force_zero_downtime:
+          type: boolean
+        naive_health_check:
+          type: boolean
         _links:
           $ref: '#/components/schemas/service__links'
       required:
@@ -6275,9 +6427,11 @@ components:
       - created_at
       - docker_ref
       - docker_repo
+      - force_zero_downtime
       - handle
       - id
       - instance_class
+      - naive_health_check
       - process_type
       - updated_at
     source:
@@ -6871,14 +7025,14 @@ components:
           type: boolean
           x-omitempty: false
       type: object
-    ListBackupsForAccount_200_response__embedded:
+    ListBackups_200_response__embedded:
       properties:
         backups:
           items:
             $ref: '#/components/schemas/backup'
           type: array
       type: object
-    ListBackupsForAccount_200_response__links:
+    ListBackups_200_response__links:
       properties:
         account:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
@@ -6891,10 +7045,10 @@ components:
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
-    ListBackupsForAccount_200_response:
+    ListBackups_200_response:
       properties:
         _embedded:
-          $ref: '#/components/schemas/ListBackupsForAccount_200_response__embedded'
+          $ref: '#/components/schemas/ListBackups_200_response__embedded'
         total_count:
           type: integer
         per_page:
@@ -6902,7 +7056,7 @@ components:
         current_page:
           type: integer
         _links:
-          $ref: '#/components/schemas/ListBackupsForAccount_200_response__links'
+          $ref: '#/components/schemas/ListBackups_200_response__links'
       required:
       - _embedded
       - _links
@@ -7963,6 +8117,13 @@ components:
       - current_page
       - per_page
       - total_count
+      type: object
+    UpdateService_request:
+      properties:
+        naive_health_check:
+          type: boolean
+        force_zero_downtime:
+          type: boolean
       type: object
     ListSources_200_response__embedded:
       properties:
