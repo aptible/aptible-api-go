@@ -28,6 +28,7 @@ api_permissions.go
 api_persistent_disks.go
 api_plans.go
 api_releases.go
+api_service_sizing_policies.go
 api_services.go
 api_sources.go
 api_ssh_portal_connections.go
@@ -82,6 +83,7 @@ docs/CreateMetricDrainRequest.md
 docs/CreateMetricDrainRequestDrainConfiguration.md
 docs/CreateOperationRequest.md
 docs/CreatePermissionRequest.md
+docs/CreateServiceSizingPolicyRequest.md
 docs/CreateSshPortalConnectionRequest.md
 docs/CreateVhostRequest.md
 docs/Database.md
@@ -189,6 +191,8 @@ docs/ListPlans200Response.md
 docs/ListPlans200ResponseEmbedded.md
 docs/ListReleasesForService200Response.md
 docs/ListReleasesForService200ResponseEmbedded.md
+docs/ListServiceSizingPoliciesForAccount200Response.md
+docs/ListServiceSizingPoliciesForAccount200ResponseEmbedded.md
 docs/ListServicesForAccount200Response.md
 docs/ListServicesForAccount200ResponseEmbedded.md
 docs/ListServicesForAccount200ResponseLinks.md
@@ -234,6 +238,8 @@ docs/ReleasesAPI.md
 docs/Service.md
 docs/ServiceDefinition.md
 docs/ServiceLinks.md
+docs/ServiceSizingPoliciesAPI.md
+docs/ServiceSizingPolicy.md
 docs/ServicesAPI.md
 docs/Source.md
 docs/SourceLinks.md
@@ -251,6 +257,7 @@ docs/UpdateDatabaseRequest.md
 docs/UpdateLogDrainRequest.md
 docs/UpdateOperationRequest.md
 docs/UpdateServiceRequest.md
+docs/UpdateServiceSizingPolicyRequest.md
 docs/UpdateVhostRequest.md
 docs/Vhost.md
 docs/VhostAcmeConfiguration.md
@@ -300,6 +307,7 @@ model_create_metric_drain_request.go
 model_create_metric_drain_request_drain_configuration.go
 model_create_operation_request.go
 model_create_permission_request.go
+model_create_service_sizing_policy_request.go
 model_create_ssh_portal_connection_request.go
 model_create_vhost_request.go
 model_database.go
@@ -398,6 +406,8 @@ model_list_plans_200_response.go
 model_list_plans_200_response__embedded.go
 model_list_releases_for_service_200_response.go
 model_list_releases_for_service_200_response__embedded.go
+model_list_service_sizing_policies_for_account_200_response.go
+model_list_service_sizing_policies_for_account_200_response__embedded.go
 model_list_services_for_account_200_response.go
 model_list_services_for_account_200_response__embedded.go
 model_list_services_for_account_200_response__links.go
@@ -435,6 +445,7 @@ model_release__links.go
 model_service.go
 model_service__links.go
 model_service_definition.go
+model_service_sizing_policy.go
 model_source.go
 model_source__links.go
 model_ssh_portal_connection.go
@@ -448,6 +459,7 @@ model_update_database_request.go
 model_update_log_drain_request.go
 model_update_operation_request.go
 model_update_service_request.go
+model_update_service_sizing_policy_request.go
 model_update_vhost_request.go
 model_vhost.go
 model_vhost__links.go

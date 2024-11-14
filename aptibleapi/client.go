@@ -103,6 +103,8 @@ type APIClient struct {
 
 	ReleasesAPI *ReleasesAPIService
 
+	ServiceSizingPoliciesAPI *ServiceSizingPoliciesAPIService
+
 	ServicesAPI *ServicesAPIService
 
 	SourcesAPI *SourcesAPIService
@@ -161,6 +163,7 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.PersistentDisksAPI = (*PersistentDisksAPIService)(&c.common)
 	c.PlansAPI = (*PlansAPIService)(&c.common)
 	c.ReleasesAPI = (*ReleasesAPIService)(&c.common)
+	c.ServiceSizingPoliciesAPI = (*ServiceSizingPoliciesAPIService)(&c.common)
 	c.ServicesAPI = (*ServicesAPIService)(&c.common)
 	c.SourcesAPI = (*SourcesAPIService)(&c.common)
 	c.SshPortalConnectionsAPI = (*SshPortalConnectionsAPIService)(&c.common)

@@ -209,6 +209,12 @@ Class | Method | HTTP request | Description
 *PlansAPI* | [**ListPlans**](docs/PlansAPI.md#listplans) | **Get** /plans | list plans
 *ReleasesAPI* | [**GetRelease**](docs/ReleasesAPI.md#getrelease) | **Get** /releases/{id} | show release
 *ReleasesAPI* | [**ListReleasesForService**](docs/ReleasesAPI.md#listreleasesforservice) | **Get** /services/{service_id}/releases | list releases
+*ServiceSizingPoliciesAPI* | [**CreateServiceSizingPolicy**](docs/ServiceSizingPoliciesAPI.md#createservicesizingpolicy) | **Post** /services/{service_id}/service_sizing_policies | create service_sizing_policy
+*ServiceSizingPoliciesAPI* | [**DeleteServiceSizingPolicy**](docs/ServiceSizingPoliciesAPI.md#deleteservicesizingpolicy) | **Delete** /services/{service_id}/service_sizing_policy | delete service_sizing_policy
+*ServiceSizingPoliciesAPI* | [**GetServiceSizingPolicy**](docs/ServiceSizingPoliciesAPI.md#getservicesizingpolicy) | **Get** /service_sizing_policies/{id} | show service_sizing_policy
+*ServiceSizingPoliciesAPI* | [**ListServiceSizingPoliciesForAccount**](docs/ServiceSizingPoliciesAPI.md#listservicesizingpoliciesforaccount) | **Get** /accounts/{account_id}/service_sizing_policies | list service_sizing_policies
+*ServiceSizingPoliciesAPI* | [**ListServiceSizingPoliciesForService**](docs/ServiceSizingPoliciesAPI.md#listservicesizingpoliciesforservice) | **Get** /services/{service_id}/service_sizing_policies | list service_sizing_policies
+*ServiceSizingPoliciesAPI* | [**UpdateServiceSizingPolicy**](docs/ServiceSizingPoliciesAPI.md#updateservicesizingpolicy) | **Put** /services/{service_id}/service_sizing_policies | update service_sizing_policy
 *ServicesAPI* | [**GetService**](docs/ServicesAPI.md#getservice) | **Get** /services/{id} | show service
 *ServicesAPI* | [**ListServicesForAccount**](docs/ServicesAPI.md#listservicesforaccount) | **Get** /accounts/{account_id}/services | list services
 *ServicesAPI* | [**ListServicesForApp**](docs/ServicesAPI.md#listservicesforapp) | **Get** /apps/{app_id}/services | list services
@@ -275,6 +281,7 @@ Class | Method | HTTP request | Description
  - [CreateMetricDrainRequestDrainConfiguration](docs/CreateMetricDrainRequestDrainConfiguration.md)
  - [CreateOperationRequest](docs/CreateOperationRequest.md)
  - [CreatePermissionRequest](docs/CreatePermissionRequest.md)
+ - [CreateServiceSizingPolicyRequest](docs/CreateServiceSizingPolicyRequest.md)
  - [CreateSshPortalConnectionRequest](docs/CreateSshPortalConnectionRequest.md)
  - [CreateVhostRequest](docs/CreateVhostRequest.md)
  - [Database](docs/Database.md)
@@ -372,6 +379,8 @@ Class | Method | HTTP request | Description
  - [ListPlans200ResponseEmbedded](docs/ListPlans200ResponseEmbedded.md)
  - [ListReleasesForService200Response](docs/ListReleasesForService200Response.md)
  - [ListReleasesForService200ResponseEmbedded](docs/ListReleasesForService200ResponseEmbedded.md)
+ - [ListServiceSizingPoliciesForAccount200Response](docs/ListServiceSizingPoliciesForAccount200Response.md)
+ - [ListServiceSizingPoliciesForAccount200ResponseEmbedded](docs/ListServiceSizingPoliciesForAccount200ResponseEmbedded.md)
  - [ListServicesForAccount200Response](docs/ListServicesForAccount200Response.md)
  - [ListServicesForAccount200ResponseEmbedded](docs/ListServicesForAccount200ResponseEmbedded.md)
  - [ListServicesForAccount200ResponseLinks](docs/ListServicesForAccount200ResponseLinks.md)
@@ -410,6 +419,7 @@ Class | Method | HTTP request | Description
  - [Service](docs/Service.md)
  - [ServiceDefinition](docs/ServiceDefinition.md)
  - [ServiceLinks](docs/ServiceLinks.md)
+ - [ServiceSizingPolicy](docs/ServiceSizingPolicy.md)
  - [Source](docs/Source.md)
  - [SourceLinks](docs/SourceLinks.md)
  - [SshPortalConnection](docs/SshPortalConnection.md)
@@ -423,6 +433,7 @@ Class | Method | HTTP request | Description
  - [UpdateLogDrainRequest](docs/UpdateLogDrainRequest.md)
  - [UpdateOperationRequest](docs/UpdateOperationRequest.md)
  - [UpdateServiceRequest](docs/UpdateServiceRequest.md)
+ - [UpdateServiceSizingPolicyRequest](docs/UpdateServiceSizingPolicyRequest.md)
  - [UpdateVhostRequest](docs/UpdateVhostRequest.md)
  - [Vhost](docs/Vhost.md)
  - [VhostAcmeConfiguration](docs/VhostAcmeConfiguration.md)

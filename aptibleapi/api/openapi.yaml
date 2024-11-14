@@ -38,6 +38,7 @@ tags:
 - name: PrereleaseCommands
 - name: Releases
 - name: ServiceDefinitions
+- name: ServiceSizingPolicies
 - name: Services
 - name: Sources
 - name: SshPortalConnections
@@ -4158,6 +4159,186 @@ paths:
       summary: show release
       tags:
       - Releases
+  /accounts/{account_id}/service_sizing_policies:
+    get:
+      operationId: ListServiceSizingPoliciesForAccount
+      parameters:
+      - description: account_id
+        explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListServiceSizingPoliciesForAccount_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list service_sizing_policies
+      tags:
+      - ServiceSizingPolicies
+  /services/{service_id}/service_sizing_policies:
+    get:
+      operationId: ListServiceSizingPoliciesForService
+      parameters:
+      - description: service_id
+        explode: false
+        in: path
+        name: service_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListServiceSizingPoliciesForAccount_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list service_sizing_policies
+      tags:
+      - ServiceSizingPolicies
+    post:
+      operationId: CreateServiceSizingPolicy
+      parameters:
+      - description: service_id
+        explode: false
+        in: path
+        name: service_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateServiceSizingPolicy_request'
+      responses:
+        "201":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create service_sizing_policy
+      tags:
+      - ServiceSizingPolicies
+    put:
+      operationId: UpdateServiceSizingPolicy
+      parameters:
+      - description: service_id
+        explode: false
+        in: path
+        name: service_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceSizingPolicy_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update service_sizing_policy
+      tags:
+      - ServiceSizingPolicies
+  /services/{service_id}/service_sizing_policy:
+    delete:
+      operationId: DeleteServiceSizingPolicy
+      parameters:
+      - description: service_id
+        explode: false
+        in: path
+        name: service_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete service_sizing_policy
+      tags:
+      - ServiceSizingPolicies
+  /service_sizing_policies/{id}:
+    get:
+      operationId: GetServiceSizingPolicy
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/service_sizing_policy'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show service_sizing_policy
+      tags:
+      - ServiceSizingPolicies
   /accounts/{account_id}/services:
     get:
       operationId: ListServicesForAccount
@@ -6382,6 +6563,94 @@ components:
       - id
       - process_type
       - updated_at
+    service_sizing_policy:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        scaling_enabled:
+          type: boolean
+        default_policy:
+          type: boolean
+        metric_lookback_seconds:
+          type: integer
+        percentile:
+          type: float
+        post_scale_up_cooldown_seconds:
+          type: integer
+        post_scale_down_cooldown_seconds:
+          type: integer
+        post_release_cooldown_seconds:
+          type: integer
+        mem_cpu_ratio_r_threshold:
+          type: float
+        mem_cpu_ratio_c_threshold:
+          type: float
+        mem_scale_up_threshold:
+          type: float
+        mem_scale_down_threshold:
+          type: float
+        minimum_memory:
+          type: integer
+        account_id:
+          type: integer
+          x-nullable: true
+        maximum_memory:
+          type: integer
+          x-nullable: true
+        autoscaling:
+          type: string
+        min_cpu_threshold:
+          type: float
+          x-nullable: true
+        max_cpu_threshold:
+          type: float
+          x-nullable: true
+        min_containers:
+          type: integer
+          x-nullable: true
+        max_containers:
+          type: integer
+          x-nullable: true
+        scale_up_step:
+          type: integer
+          x-nullable: true
+        scale_down_step:
+          type: integer
+          x-nullable: true
+        _links:
+          $ref: '#/components/schemas/backup_retention_policy__links'
+      required:
+      - _type
+      - account_id
+      - autoscaling
+      - created_at
+      - default_policy
+      - id
+      - max_containers
+      - max_cpu_threshold
+      - maximum_memory
+      - mem_cpu_ratio_c_threshold
+      - mem_cpu_ratio_r_threshold
+      - mem_scale_down_threshold
+      - mem_scale_up_threshold
+      - metric_lookback_seconds
+      - min_containers
+      - min_cpu_threshold
+      - minimum_memory
+      - percentile
+      - post_release_cooldown_seconds
+      - post_scale_down_cooldown_seconds
+      - post_scale_up_cooldown_seconds
+      - scale_down_step
+      - scale_up_step
+      - scaling_enabled
+      - updated_at
     service:
       properties:
         id:
@@ -8078,6 +8347,112 @@ components:
       - current_page
       - per_page
       - total_count
+      type: object
+    ListServiceSizingPoliciesForAccount_200_response__embedded:
+      properties:
+        service_sizing_policies:
+          items:
+            $ref: '#/components/schemas/service_sizing_policy'
+          type: array
+      type: object
+    ListServiceSizingPoliciesForAccount_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListServiceSizingPoliciesForAccount_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListActivityReportsForAccount_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    UpdateServiceSizingPolicy_request:
+      properties:
+        scaling_enabled:
+          type: boolean
+        metric_lookback_seconds:
+          type: integer
+        percentile:
+          type: float
+        post_scale_up_cooldown_seconds:
+          type: integer
+        post_scale_down_cooldown_seconds:
+          type: integer
+        post_release_cooldown_seconds:
+          type: integer
+        mem_cpu_ratio_r_threshold:
+          type: float
+        mem_cpu_ratio_c_threshold:
+          type: float
+        mem_scale_up_threshold:
+          type: float
+        mem_scale_down_threshold:
+          type: float
+        minimum_memory:
+          type: integer
+        maximum_memory:
+          type: integer
+        autoscaling:
+          type: string
+        min_cpu_threshold:
+          type: float
+        max_cpu_threshold:
+          type: float
+        min_containers:
+          type: integer
+        max_containers:
+          type: integer
+        scale_up_step:
+          type: integer
+        scale_down_step:
+          type: integer
+      type: object
+    CreateServiceSizingPolicy_request:
+      properties:
+        metric_lookback_seconds:
+          type: integer
+        percentile:
+          type: float
+        post_scale_up_cooldown_seconds:
+          type: integer
+        post_scale_down_cooldown_seconds:
+          type: integer
+        post_release_cooldown_seconds:
+          type: integer
+        mem_cpu_ratio_r_threshold:
+          type: float
+        mem_cpu_ratio_c_threshold:
+          type: float
+        mem_scale_up_threshold:
+          type: float
+        mem_scale_down_threshold:
+          type: float
+        minimum_memory:
+          type: integer
+        maximum_memory:
+          type: integer
+        autoscaling:
+          type: string
+        min_cpu_threshold:
+          type: float
+        max_cpu_threshold:
+          type: float
+        min_containers:
+          type: integer
+        max_containers:
+          type: integer
+        scale_up_step:
+          type: integer
+        scale_down_step:
+          type: integer
       type: object
     ListServicesForAccount_200_response__embedded:
       properties:
