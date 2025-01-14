@@ -29,6 +29,7 @@ type CreateDatabaseRequest struct {
 	DatabaseImage *int32 `json:"database_image,omitempty"`
 	DatabaseImageId *int32 `json:"database_image_id,omitempty"`
 	CurrentKmsArn *int32 `json:"current_kms_arn,omitempty"`
+	EnableBackups *bool `json:"enable_backups,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -293,6 +294,38 @@ func (o *CreateDatabaseRequest) SetCurrentKmsArn(v int32) {
 	o.CurrentKmsArn = &v
 }
 
+// GetEnableBackups returns the EnableBackups field value if set, zero value otherwise.
+func (o *CreateDatabaseRequest) GetEnableBackups() bool {
+	if o == nil || IsNil(o.EnableBackups) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableBackups
+}
+
+// GetEnableBackupsOk returns a tuple with the EnableBackups field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateDatabaseRequest) GetEnableBackupsOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableBackups) {
+		return nil, false
+	}
+	return o.EnableBackups, true
+}
+
+// HasEnableBackups returns a boolean if a field has been set.
+func (o *CreateDatabaseRequest) HasEnableBackups() bool {
+	if o != nil && !IsNil(o.EnableBackups) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableBackups gets a reference to the given bool and assigns it to the EnableBackups field.
+func (o *CreateDatabaseRequest) SetEnableBackups(v bool) {
+	o.EnableBackups = &v
+}
+
 func (o CreateDatabaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -322,6 +355,9 @@ func (o CreateDatabaseRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CurrentKmsArn) {
 		toSerialize["current_kms_arn"] = o.CurrentKmsArn
+	}
+	if !IsNil(o.EnableBackups) {
+		toSerialize["enable_backups"] = o.EnableBackups
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -375,6 +411,7 @@ func (o *CreateDatabaseRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "database_image")
 		delete(additionalProperties, "database_image_id")
 		delete(additionalProperties, "current_kms_arn")
+		delete(additionalProperties, "enable_backups")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -25,6 +25,9 @@ type CreateMetricDrainRequestDrainConfiguration struct {
 	Database *string `json:"database,omitempty"`
 	ApiKey *string `json:"api_key,omitempty"`
 	SeriesUrl *string `json:"series_url,omitempty"`
+	AuthToken *string `json:"authToken,omitempty"`
+	Bucket *string `json:"bucket,omitempty"`
+	Org *string `json:"org,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -239,6 +242,102 @@ func (o *CreateMetricDrainRequestDrainConfiguration) SetSeriesUrl(v string) {
 	o.SeriesUrl = &v
 }
 
+// GetAuthToken returns the AuthToken field value if set, zero value otherwise.
+func (o *CreateMetricDrainRequestDrainConfiguration) GetAuthToken() string {
+	if o == nil || IsNil(o.AuthToken) {
+		var ret string
+		return ret
+	}
+	return *o.AuthToken
+}
+
+// GetAuthTokenOk returns a tuple with the AuthToken field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateMetricDrainRequestDrainConfiguration) GetAuthTokenOk() (*string, bool) {
+	if o == nil || IsNil(o.AuthToken) {
+		return nil, false
+	}
+	return o.AuthToken, true
+}
+
+// HasAuthToken returns a boolean if a field has been set.
+func (o *CreateMetricDrainRequestDrainConfiguration) HasAuthToken() bool {
+	if o != nil && !IsNil(o.AuthToken) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthToken gets a reference to the given string and assigns it to the AuthToken field.
+func (o *CreateMetricDrainRequestDrainConfiguration) SetAuthToken(v string) {
+	o.AuthToken = &v
+}
+
+// GetBucket returns the Bucket field value if set, zero value otherwise.
+func (o *CreateMetricDrainRequestDrainConfiguration) GetBucket() string {
+	if o == nil || IsNil(o.Bucket) {
+		var ret string
+		return ret
+	}
+	return *o.Bucket
+}
+
+// GetBucketOk returns a tuple with the Bucket field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateMetricDrainRequestDrainConfiguration) GetBucketOk() (*string, bool) {
+	if o == nil || IsNil(o.Bucket) {
+		return nil, false
+	}
+	return o.Bucket, true
+}
+
+// HasBucket returns a boolean if a field has been set.
+func (o *CreateMetricDrainRequestDrainConfiguration) HasBucket() bool {
+	if o != nil && !IsNil(o.Bucket) {
+		return true
+	}
+
+	return false
+}
+
+// SetBucket gets a reference to the given string and assigns it to the Bucket field.
+func (o *CreateMetricDrainRequestDrainConfiguration) SetBucket(v string) {
+	o.Bucket = &v
+}
+
+// GetOrg returns the Org field value if set, zero value otherwise.
+func (o *CreateMetricDrainRequestDrainConfiguration) GetOrg() string {
+	if o == nil || IsNil(o.Org) {
+		var ret string
+		return ret
+	}
+	return *o.Org
+}
+
+// GetOrgOk returns a tuple with the Org field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateMetricDrainRequestDrainConfiguration) GetOrgOk() (*string, bool) {
+	if o == nil || IsNil(o.Org) {
+		return nil, false
+	}
+	return o.Org, true
+}
+
+// HasOrg returns a boolean if a field has been set.
+func (o *CreateMetricDrainRequestDrainConfiguration) HasOrg() bool {
+	if o != nil && !IsNil(o.Org) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrg gets a reference to the given string and assigns it to the Org field.
+func (o *CreateMetricDrainRequestDrainConfiguration) SetOrg(v string) {
+	o.Org = &v
+}
+
 func (o CreateMetricDrainRequestDrainConfiguration) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -266,6 +365,15 @@ func (o CreateMetricDrainRequestDrainConfiguration) ToMap() (map[string]interfac
 	}
 	if !IsNil(o.SeriesUrl) {
 		toSerialize["series_url"] = o.SeriesUrl
+	}
+	if !IsNil(o.AuthToken) {
+		toSerialize["authToken"] = o.AuthToken
+	}
+	if !IsNil(o.Bucket) {
+		toSerialize["bucket"] = o.Bucket
+	}
+	if !IsNil(o.Org) {
+		toSerialize["org"] = o.Org
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -295,6 +403,9 @@ func (o *CreateMetricDrainRequestDrainConfiguration) UnmarshalJSON(data []byte) 
 		delete(additionalProperties, "database")
 		delete(additionalProperties, "api_key")
 		delete(additionalProperties, "series_url")
+		delete(additionalProperties, "authToken")
+		delete(additionalProperties, "bucket")
+		delete(additionalProperties, "org")
 		o.AdditionalProperties = additionalProperties
 	}
 

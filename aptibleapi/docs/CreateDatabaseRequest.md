@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **DatabaseImage** | Pointer to **int32** | Alternate name for &#x60;database_image_id&#x60; | [optional] 
 **DatabaseImageId** | Pointer to **int32** |  | [optional] 
 **CurrentKmsArn** | Pointer to **int32** |  | [optional] 
+**EnableBackups** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -221,6 +222,31 @@ SetCurrentKmsArn sets CurrentKmsArn field to given value.
 `func (o *CreateDatabaseRequest) HasCurrentKmsArn() bool`
 
 HasCurrentKmsArn returns a boolean if a field has been set.
+
+### GetEnableBackups
+
+`func (o *CreateDatabaseRequest) GetEnableBackups() bool`
+
+GetEnableBackups returns the EnableBackups field if non-nil, zero value otherwise.
+
+### GetEnableBackupsOk
+
+`func (o *CreateDatabaseRequest) GetEnableBackupsOk() (*bool, bool)`
+
+GetEnableBackupsOk returns a tuple with the EnableBackups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableBackups
+
+`func (o *CreateDatabaseRequest) SetEnableBackups(v bool)`
+
+SetEnableBackups sets EnableBackups field to given value.
+
+### HasEnableBackups
+
+`func (o *CreateDatabaseRequest) HasEnableBackups() bool`
+
+HasEnableBackups returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

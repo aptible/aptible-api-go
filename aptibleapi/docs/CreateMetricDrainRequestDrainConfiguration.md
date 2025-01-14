@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **Database** | Pointer to **string** |  | [optional] 
 **ApiKey** | Pointer to **string** |  | [optional] 
 **SeriesUrl** | Pointer to **string** |  | [optional] 
+**AuthToken** | Pointer to **string** |  | [optional] 
+**Bucket** | Pointer to **string** |  | [optional] 
+**Org** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -179,6 +182,81 @@ SetSeriesUrl sets SeriesUrl field to given value.
 `func (o *CreateMetricDrainRequestDrainConfiguration) HasSeriesUrl() bool`
 
 HasSeriesUrl returns a boolean if a field has been set.
+
+### GetAuthToken
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) GetAuthToken() string`
+
+GetAuthToken returns the AuthToken field if non-nil, zero value otherwise.
+
+### GetAuthTokenOk
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) GetAuthTokenOk() (*string, bool)`
+
+GetAuthTokenOk returns a tuple with the AuthToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthToken
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) SetAuthToken(v string)`
+
+SetAuthToken sets AuthToken field to given value.
+
+### HasAuthToken
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) HasAuthToken() bool`
+
+HasAuthToken returns a boolean if a field has been set.
+
+### GetBucket
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) GetBucket() string`
+
+GetBucket returns the Bucket field if non-nil, zero value otherwise.
+
+### GetBucketOk
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) GetBucketOk() (*string, bool)`
+
+GetBucketOk returns a tuple with the Bucket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBucket
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) SetBucket(v string)`
+
+SetBucket sets Bucket field to given value.
+
+### HasBucket
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) HasBucket() bool`
+
+HasBucket returns a boolean if a field has been set.
+
+### GetOrg
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) GetOrg() string`
+
+GetOrg returns the Org field if non-nil, zero value otherwise.
+
+### GetOrgOk
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) GetOrgOk() (*string, bool)`
+
+GetOrgOk returns a tuple with the Org field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrg
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) SetOrg(v string)`
+
+SetOrg sets Org field to given value.
+
+### HasOrg
+
+`func (o *CreateMetricDrainRequestDrainConfiguration) HasOrg() bool`
+
+HasOrg returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

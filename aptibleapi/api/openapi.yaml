@@ -7644,6 +7644,8 @@ components:
           type: integer
         current_kms_arn:
           type: integer
+        enable_backups:
+          type: boolean
       required:
       - handle
       - type
@@ -7662,6 +7664,8 @@ components:
           type: integer
         current_kms_arn:
           type: integer
+        enable_backups:
+          type: boolean
       type: object
     ListDeployments_200_response__embedded:
       properties:
@@ -8104,6 +8108,12 @@ components:
           type: string
         series_url:
           format: uri
+          type: string
+        authToken:
+          type: string
+        bucket:
+          type: string
+        org:
           type: string
       type: object
     CreateMetricDrain_request:
