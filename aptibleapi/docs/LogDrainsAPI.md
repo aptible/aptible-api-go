@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ## PatchLogDrain
 
-> PatchLogDrain(ctx, id).PatchLogDrainRequest(patchLogDrainRequest).Execute()
+> PatchLogDrain(ctx, id).UpdateLogDrainRequest(updateLogDrainRequest).Execute()
 
 update log_drain
 
@@ -307,11 +307,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	patchLogDrainRequest := *openapiclient.NewPatchLogDrainRequest() // PatchLogDrainRequest |  (optional)
+	updateLogDrainRequest := *openapiclient.NewUpdateLogDrainRequest() // UpdateLogDrainRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LogDrainsAPI.PatchLogDrain(context.Background(), id).PatchLogDrainRequest(patchLogDrainRequest).Execute()
+	r, err := apiClient.LogDrainsAPI.PatchLogDrain(context.Background(), id).UpdateLogDrainRequest(updateLogDrainRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LogDrainsAPI.PatchLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -335,7 +335,7 @@ Other parameters are passed through a pointer to a apiPatchLogDrainRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchLogDrainRequest** | [**PatchLogDrainRequest**](PatchLogDrainRequest.md) |  | 
+ **updateLogDrainRequest** | [**UpdateLogDrainRequest**](UpdateLogDrainRequest.md) |  | 
 
 ### Return type
 

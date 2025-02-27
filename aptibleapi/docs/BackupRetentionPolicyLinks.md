@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Account** | Pointer to [**BackupRetentionPolicyLinksAccount**](BackupRetentionPolicyLinksAccount.md) |  | [optional] 
-**Self** | Pointer to [**BackupRetentionPolicyLinksSelf**](BackupRetentionPolicyLinksSelf.md) |  | [optional] 
+**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccount
 
-`func (o *BackupRetentionPolicyLinks) GetAccount() BackupRetentionPolicyLinksAccount`
+`func (o *BackupRetentionPolicyLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *BackupRetentionPolicyLinks) GetAccountOk() (*BackupRetentionPolicyLinksAccount, bool)`
+`func (o *BackupRetentionPolicyLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *BackupRetentionPolicyLinks) SetAccount(v BackupRetentionPolicyLinksAccount)`
+`func (o *BackupRetentionPolicyLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
 
 SetAccount sets Account field to given value.
 
@@ -53,20 +53,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *BackupRetentionPolicyLinks) GetSelf() BackupRetentionPolicyLinksSelf`
+`func (o *BackupRetentionPolicyLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *BackupRetentionPolicyLinks) GetSelfOk() (*BackupRetentionPolicyLinksSelf, bool)`
+`func (o *BackupRetentionPolicyLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *BackupRetentionPolicyLinks) SetSelf(v BackupRetentionPolicyLinksSelf)`
+`func (o *BackupRetentionPolicyLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

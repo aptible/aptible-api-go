@@ -19,9 +19,9 @@ var _ MappedNullable = &WidgetLinks{}
 
 // WidgetLinks struct for WidgetLinks
 type WidgetLinks struct {
-	Dashboard *WidgetLinksDashboard `json:"dashboard,omitempty"`
-	Resource *WidgetLinksResource `json:"resource,omitempty"`
-	Self *WidgetLinksSelf `json:"self,omitempty"`
+	Dashboard *ListAccountsForStack200ResponseLinksStack `json:"dashboard,omitempty"`
+	Resource *ListAccountsForStack200ResponseLinksStack `json:"resource,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewWidgetLinksWithDefaults() *WidgetLinks {
 }
 
 // GetDashboard returns the Dashboard field value if set, zero value otherwise.
-func (o *WidgetLinks) GetDashboard() WidgetLinksDashboard {
+func (o *WidgetLinks) GetDashboard() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Dashboard) {
-		var ret WidgetLinksDashboard
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Dashboard
@@ -55,7 +55,7 @@ func (o *WidgetLinks) GetDashboard() WidgetLinksDashboard {
 
 // GetDashboardOk returns a tuple with the Dashboard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WidgetLinks) GetDashboardOk() (*WidgetLinksDashboard, bool) {
+func (o *WidgetLinks) GetDashboardOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Dashboard) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *WidgetLinks) HasDashboard() bool {
 	return false
 }
 
-// SetDashboard gets a reference to the given WidgetLinksDashboard and assigns it to the Dashboard field.
-func (o *WidgetLinks) SetDashboard(v WidgetLinksDashboard) {
+// SetDashboard gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Dashboard field.
+func (o *WidgetLinks) SetDashboard(v ListAccountsForStack200ResponseLinksStack) {
 	o.Dashboard = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
-func (o *WidgetLinks) GetResource() WidgetLinksResource {
+func (o *WidgetLinks) GetResource() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Resource) {
-		var ret WidgetLinksResource
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Resource
@@ -87,7 +87,7 @@ func (o *WidgetLinks) GetResource() WidgetLinksResource {
 
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WidgetLinks) GetResourceOk() (*WidgetLinksResource, bool) {
+func (o *WidgetLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *WidgetLinks) HasResource() bool {
 	return false
 }
 
-// SetResource gets a reference to the given WidgetLinksResource and assigns it to the Resource field.
-func (o *WidgetLinks) SetResource(v WidgetLinksResource) {
+// SetResource gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Resource field.
+func (o *WidgetLinks) SetResource(v ListAccountsForStack200ResponseLinksStack) {
 	o.Resource = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *WidgetLinks) GetSelf() WidgetLinksSelf {
+func (o *WidgetLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret WidgetLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *WidgetLinks) GetSelf() WidgetLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WidgetLinks) GetSelfOk() (*WidgetLinksSelf, bool) {
+func (o *WidgetLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *WidgetLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given WidgetLinksSelf and assigns it to the Self field.
-func (o *WidgetLinks) SetSelf(v WidgetLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *WidgetLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

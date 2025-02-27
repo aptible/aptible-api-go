@@ -24,7 +24,7 @@ type ListBackupRetentionPoliciesForAccount200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListBackupRetentionPoliciesForAccount200ResponseLinks `json:"_links"`
+	Links ListActivityReportsForAccount200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListBackupRetentionPoliciesForAccount200Response ListBackupRetentionPolici
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListBackupRetentionPoliciesForAccount200Response(embedded ListBackupRetentionPoliciesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListBackupRetentionPoliciesForAccount200ResponseLinks) *ListBackupRetentionPoliciesForAccount200Response {
+func NewListBackupRetentionPoliciesForAccount200Response(embedded ListBackupRetentionPoliciesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks) *ListBackupRetentionPoliciesForAccount200Response {
 	this := ListBackupRetentionPoliciesForAccount200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListBackupRetentionPoliciesForAccount200Response) SetCurrentPage(v int3
 }
 
 // GetLinks returns the Links field value
-func (o *ListBackupRetentionPoliciesForAccount200Response) GetLinks() ListBackupRetentionPoliciesForAccount200ResponseLinks {
+func (o *ListBackupRetentionPoliciesForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks {
 	if o == nil {
-		var ret ListBackupRetentionPoliciesForAccount200ResponseLinks
+		var ret ListActivityReportsForAccount200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListBackupRetentionPoliciesForAccount200Response) GetLinks() ListBackup
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListBackupRetentionPoliciesForAccount200Response) GetLinksOk() (*ListBackupRetentionPoliciesForAccount200ResponseLinks, bool) {
+func (o *ListBackupRetentionPoliciesForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListBackupRetentionPoliciesForAccount200Response) GetLinksOk() (*ListBa
 }
 
 // SetLinks sets field value
-func (o *ListBackupRetentionPoliciesForAccount200Response) SetLinks(v ListBackupRetentionPoliciesForAccount200ResponseLinks) {
+func (o *ListBackupRetentionPoliciesForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks) {
 	o.Links = v
 }
 

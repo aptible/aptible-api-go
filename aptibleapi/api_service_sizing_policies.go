@@ -524,7 +524,7 @@ func (r ApiListServiceSizingPoliciesForServiceRequest) Page(page int32) ApiListS
 	return r
 }
 
-func (r ApiListServiceSizingPoliciesForServiceRequest) Execute() (*ListServiceSizingPoliciesForService200Response, *http.Response, error) {
+func (r ApiListServiceSizingPoliciesForServiceRequest) Execute() (*ListServiceSizingPoliciesForAccount200Response, *http.Response, error) {
 	return r.ApiService.ListServiceSizingPoliciesForServiceExecute(r)
 }
 
@@ -544,13 +544,13 @@ func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForService(ct
 }
 
 // Execute executes the request
-//  @return ListServiceSizingPoliciesForService200Response
-func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForServiceExecute(r ApiListServiceSizingPoliciesForServiceRequest) (*ListServiceSizingPoliciesForService200Response, *http.Response, error) {
+//  @return ListServiceSizingPoliciesForAccount200Response
+func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForServiceExecute(r ApiListServiceSizingPoliciesForServiceRequest) (*ListServiceSizingPoliciesForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListServiceSizingPoliciesForService200Response
+		localVarReturnValue  *ListServiceSizingPoliciesForAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSizingPoliciesAPIService.ListServiceSizingPoliciesForService")

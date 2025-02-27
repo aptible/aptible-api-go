@@ -19,7 +19,7 @@ var _ MappedNullable = &IntegrationLinks{}
 
 // IntegrationLinks struct for IntegrationLinks
 type IntegrationLinks struct {
-	Self *IntegrationLinksSelf `json:"self,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,9 +43,9 @@ func NewIntegrationLinksWithDefaults() *IntegrationLinks {
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *IntegrationLinks) GetSelf() IntegrationLinksSelf {
+func (o *IntegrationLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret IntegrationLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -53,7 +53,7 @@ func (o *IntegrationLinks) GetSelf() IntegrationLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntegrationLinks) GetSelfOk() (*IntegrationLinksSelf, bool) {
+func (o *IntegrationLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *IntegrationLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given IntegrationLinksSelf and assigns it to the Self field.
-func (o *IntegrationLinks) SetSelf(v IntegrationLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *IntegrationLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

@@ -535,7 +535,7 @@ func (r ApiListVhostsForAppRequest) Page(page int32) ApiListVhostsForAppRequest 
 	return r
 }
 
-func (r ApiListVhostsForAppRequest) Execute() (*ListVhostsForApp200Response, *http.Response, error) {
+func (r ApiListVhostsForAppRequest) Execute() (*ListVhostsForAccount200Response, *http.Response, error) {
 	return r.ApiService.ListVhostsForAppExecute(r)
 }
 
@@ -555,13 +555,13 @@ func (a *VhostsAPIService) ListVhostsForApp(ctx context.Context, appId int32) Ap
 }
 
 // Execute executes the request
-//  @return ListVhostsForApp200Response
-func (a *VhostsAPIService) ListVhostsForAppExecute(r ApiListVhostsForAppRequest) (*ListVhostsForApp200Response, *http.Response, error) {
+//  @return ListVhostsForAccount200Response
+func (a *VhostsAPIService) ListVhostsForAppExecute(r ApiListVhostsForAppRequest) (*ListVhostsForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListVhostsForApp200Response
+		localVarReturnValue  *ListVhostsForAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VhostsAPIService.ListVhostsForApp")
@@ -668,7 +668,7 @@ func (r ApiListVhostsForCertificateRequest) Page(page int32) ApiListVhostsForCer
 	return r
 }
 
-func (r ApiListVhostsForCertificateRequest) Execute() (*ListVhostsForCertificate200Response, *http.Response, error) {
+func (r ApiListVhostsForCertificateRequest) Execute() (*ListVhostsForAccount200Response, *http.Response, error) {
 	return r.ApiService.ListVhostsForCertificateExecute(r)
 }
 
@@ -688,13 +688,13 @@ func (a *VhostsAPIService) ListVhostsForCertificate(ctx context.Context, certifi
 }
 
 // Execute executes the request
-//  @return ListVhostsForCertificate200Response
-func (a *VhostsAPIService) ListVhostsForCertificateExecute(r ApiListVhostsForCertificateRequest) (*ListVhostsForCertificate200Response, *http.Response, error) {
+//  @return ListVhostsForAccount200Response
+func (a *VhostsAPIService) ListVhostsForCertificateExecute(r ApiListVhostsForCertificateRequest) (*ListVhostsForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListVhostsForCertificate200Response
+		localVarReturnValue  *ListVhostsForAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VhostsAPIService.ListVhostsForCertificate")
@@ -801,7 +801,7 @@ func (r ApiListVhostsForServiceRequest) Page(page int32) ApiListVhostsForService
 	return r
 }
 
-func (r ApiListVhostsForServiceRequest) Execute() (*ListVhostsForService200Response, *http.Response, error) {
+func (r ApiListVhostsForServiceRequest) Execute() (*ListVhostsForAccount200Response, *http.Response, error) {
 	return r.ApiService.ListVhostsForServiceExecute(r)
 }
 
@@ -821,13 +821,13 @@ func (a *VhostsAPIService) ListVhostsForService(ctx context.Context, serviceId i
 }
 
 // Execute executes the request
-//  @return ListVhostsForService200Response
-func (a *VhostsAPIService) ListVhostsForServiceExecute(r ApiListVhostsForServiceRequest) (*ListVhostsForService200Response, *http.Response, error) {
+//  @return ListVhostsForAccount200Response
+func (a *VhostsAPIService) ListVhostsForServiceExecute(r ApiListVhostsForServiceRequest) (*ListVhostsForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListVhostsForService200Response
+		localVarReturnValue  *ListVhostsForAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VhostsAPIService.ListVhostsForService")
@@ -925,11 +925,11 @@ type ApiPatchVhostRequest struct {
 	ctx context.Context
 	ApiService *VhostsAPIService
 	id int32
-	patchVhostRequest *PatchVhostRequest
+	updateVhostRequest *UpdateVhostRequest
 }
 
-func (r ApiPatchVhostRequest) PatchVhostRequest(patchVhostRequest PatchVhostRequest) ApiPatchVhostRequest {
-	r.patchVhostRequest = &patchVhostRequest
+func (r ApiPatchVhostRequest) UpdateVhostRequest(updateVhostRequest UpdateVhostRequest) ApiPatchVhostRequest {
+	r.updateVhostRequest = &updateVhostRequest
 	return r
 }
 
@@ -990,7 +990,7 @@ func (a *VhostsAPIService) PatchVhostExecute(r ApiPatchVhostRequest) (*http.Resp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.patchVhostRequest
+	localVarPostBody = r.updateVhostRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

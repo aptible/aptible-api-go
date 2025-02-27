@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Service** | Pointer to [**ReleaseLinksService**](ReleaseLinksService.md) |  | [optional] 
-**Containers** | Pointer to [**ReleaseLinksContainers**](ReleaseLinksContainers.md) |  | [optional] 
-**Self** | Pointer to [**ReleaseLinksSelf**](ReleaseLinksSelf.md) |  | [optional] 
+**Service** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Containers** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetService
 
-`func (o *ReleaseLinks) GetService() ReleaseLinksService`
+`func (o *ReleaseLinks) GetService() ListAccountsForStack200ResponseLinksStack`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *ReleaseLinks) GetServiceOk() (*ReleaseLinksService, bool)`
+`func (o *ReleaseLinks) GetServiceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *ReleaseLinks) SetService(v ReleaseLinksService)`
+`func (o *ReleaseLinks) SetService(v ListAccountsForStack200ResponseLinksStack)`
 
 SetService sets Service field to given value.
 
@@ -54,20 +54,20 @@ HasService returns a boolean if a field has been set.
 
 ### GetContainers
 
-`func (o *ReleaseLinks) GetContainers() ReleaseLinksContainers`
+`func (o *ReleaseLinks) GetContainers() ListAccountsForStack200ResponseLinksStack`
 
 GetContainers returns the Containers field if non-nil, zero value otherwise.
 
 ### GetContainersOk
 
-`func (o *ReleaseLinks) GetContainersOk() (*ReleaseLinksContainers, bool)`
+`func (o *ReleaseLinks) GetContainersOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetContainersOk returns a tuple with the Containers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainers
 
-`func (o *ReleaseLinks) SetContainers(v ReleaseLinksContainers)`
+`func (o *ReleaseLinks) SetContainers(v ListAccountsForStack200ResponseLinksStack)`
 
 SetContainers sets Containers field to given value.
 
@@ -79,20 +79,20 @@ HasContainers returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ReleaseLinks) GetSelf() ReleaseLinksSelf`
+`func (o *ReleaseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ReleaseLinks) GetSelfOk() (*ReleaseLinksSelf, bool)`
+`func (o *ReleaseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ReleaseLinks) SetSelf(v ReleaseLinksSelf)`
+`func (o *ReleaseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

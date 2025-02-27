@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListMetricDrainsForAccount200ResponseLinks**](ListMetricDrainsForAccount200ResponseLinks.md) |  | 
+**Links** | [**ListActivityReportsForAccount200ResponseLinks**](ListActivityReportsForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListMetricDrainsForAccount200Response
 
-`func NewListMetricDrainsForAccount200Response(embedded ListMetricDrainsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListMetricDrainsForAccount200ResponseLinks, ) *ListMetricDrainsForAccount200Response`
+`func NewListMetricDrainsForAccount200Response(embedded ListMetricDrainsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks, ) *ListMetricDrainsForAccount200Response`
 
 NewListMetricDrainsForAccount200Response instantiates a new ListMetricDrainsForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListMetricDrainsForAccount200Response) GetLinks() ListMetricDrainsForAccount200ResponseLinks`
+`func (o *ListMetricDrainsForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListMetricDrainsForAccount200Response) GetLinksOk() (*ListMetricDrainsForAccount200ResponseLinks, bool)`
+`func (o *ListMetricDrainsForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListMetricDrainsForAccount200Response) SetLinks(v ListMetricDrainsForAccount200ResponseLinks)`
+`func (o *ListMetricDrainsForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

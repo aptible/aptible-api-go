@@ -26,7 +26,7 @@ type ServiceDefinition struct {
 	ProcessType string `json:"process_type"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
-	Links *ServiceDefinitionLinks `json:"_links,omitempty"`
+	Links *PrereleaseCommandLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -200,9 +200,9 @@ func (o *ServiceDefinition) SetUpdatedAt(v string) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *ServiceDefinition) GetLinks() ServiceDefinitionLinks {
+func (o *ServiceDefinition) GetLinks() PrereleaseCommandLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret ServiceDefinitionLinks
+		var ret PrereleaseCommandLinks
 		return ret
 	}
 	return *o.Links
@@ -210,7 +210,7 @@ func (o *ServiceDefinition) GetLinks() ServiceDefinitionLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceDefinition) GetLinksOk() (*ServiceDefinitionLinks, bool) {
+func (o *ServiceDefinition) GetLinksOk() (*PrereleaseCommandLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -226,8 +226,8 @@ func (o *ServiceDefinition) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given ServiceDefinitionLinks and assigns it to the Links field.
-func (o *ServiceDefinition) SetLinks(v ServiceDefinitionLinks) {
+// SetLinks gets a reference to the given PrereleaseCommandLinks and assigns it to the Links field.
+func (o *ServiceDefinition) SetLinks(v PrereleaseCommandLinks) {
 	o.Links = &v
 }
 

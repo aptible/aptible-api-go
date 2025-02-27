@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ProcessType** | **string** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
-**Links** | Pointer to [**ServiceDefinitionLinks**](ServiceDefinitionLinks.md) |  | [optional] 
+**Links** | Pointer to [**PrereleaseCommandLinks**](PrereleaseCommandLinks.md) |  | [optional] 
 
 ## Methods
 
@@ -153,20 +153,20 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 ### GetLinks
 
-`func (o *ServiceDefinition) GetLinks() ServiceDefinitionLinks`
+`func (o *ServiceDefinition) GetLinks() PrereleaseCommandLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ServiceDefinition) GetLinksOk() (*ServiceDefinitionLinks, bool)`
+`func (o *ServiceDefinition) GetLinksOk() (*PrereleaseCommandLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ServiceDefinition) SetLinks(v ServiceDefinitionLinks)`
+`func (o *ServiceDefinition) SetLinks(v PrereleaseCommandLinks)`
 
 SetLinks sets Links field to given value.
 

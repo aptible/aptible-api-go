@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ResourceId** | **int32** |  | 
 **ResourceType** | **string** |  | 
 **Data** | **map[string]interface{}** |  | 
-**Links** | Pointer to [**DashboardLinks**](DashboardLinks.md) |  | [optional] 
+**Links** | Pointer to [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] 
 
 ## Methods
 
@@ -279,20 +279,20 @@ SetData sets Data field to given value.
 
 ### GetLinks
 
-`func (o *Dashboard) GetLinks() DashboardLinks`
+`func (o *Dashboard) GetLinks() ConfigurationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *Dashboard) GetLinksOk() (*DashboardLinks, bool)`
+`func (o *Dashboard) GetLinksOk() (*ConfigurationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *Dashboard) SetLinks(v DashboardLinks)`
+`func (o *Dashboard) SetLinks(v ConfigurationLinks)`
 
 SetLinks sets Links field to given value.
 

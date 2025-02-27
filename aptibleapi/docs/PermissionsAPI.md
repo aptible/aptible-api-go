@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## ListPermissions
 
-> ListPermissions200Response ListPermissions(ctx).Page(page).Execute()
+> ListPermissionsForAccount200Response ListPermissions(ctx).Page(page).Execute()
 
 list permissions
 
@@ -244,7 +244,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PermissionsAPI.ListPermissions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListPermissions`: ListPermissions200Response
+	// response from `ListPermissions`: ListPermissionsForAccount200Response
 	fmt.Fprintf(os.Stdout, "Response from `PermissionsAPI.ListPermissions`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListPermissions200Response**](ListPermissions200Response.md)
+[**ListPermissionsForAccount200Response**](ListPermissionsForAccount200Response.md)
 
 ### Authorization
 

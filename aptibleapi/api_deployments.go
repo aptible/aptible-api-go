@@ -288,7 +288,7 @@ func (r ApiListDeploymentsForAppRequest) Page(page int32) ApiListDeploymentsForA
 	return r
 }
 
-func (r ApiListDeploymentsForAppRequest) Execute() (*ListDeploymentsForApp200Response, *http.Response, error) {
+func (r ApiListDeploymentsForAppRequest) Execute() (*ListDeployments200Response, *http.Response, error) {
 	return r.ApiService.ListDeploymentsForAppExecute(r)
 }
 
@@ -308,13 +308,13 @@ func (a *DeploymentsAPIService) ListDeploymentsForApp(ctx context.Context, appId
 }
 
 // Execute executes the request
-//  @return ListDeploymentsForApp200Response
-func (a *DeploymentsAPIService) ListDeploymentsForAppExecute(r ApiListDeploymentsForAppRequest) (*ListDeploymentsForApp200Response, *http.Response, error) {
+//  @return ListDeployments200Response
+func (a *DeploymentsAPIService) ListDeploymentsForAppExecute(r ApiListDeploymentsForAppRequest) (*ListDeployments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListDeploymentsForApp200Response
+		localVarReturnValue  *ListDeployments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.ListDeploymentsForApp")

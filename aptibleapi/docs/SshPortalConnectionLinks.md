@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Operation** | Pointer to [**SshPortalConnectionLinksOperation**](SshPortalConnectionLinksOperation.md) |  | [optional] 
-**Self** | Pointer to [**SshPortalConnectionLinksSelf**](SshPortalConnectionLinksSelf.md) |  | [optional] 
+**Operation** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOperation
 
-`func (o *SshPortalConnectionLinks) GetOperation() SshPortalConnectionLinksOperation`
+`func (o *SshPortalConnectionLinks) GetOperation() ListAccountsForStack200ResponseLinksStack`
 
 GetOperation returns the Operation field if non-nil, zero value otherwise.
 
 ### GetOperationOk
 
-`func (o *SshPortalConnectionLinks) GetOperationOk() (*SshPortalConnectionLinksOperation, bool)`
+`func (o *SshPortalConnectionLinks) GetOperationOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperation
 
-`func (o *SshPortalConnectionLinks) SetOperation(v SshPortalConnectionLinksOperation)`
+`func (o *SshPortalConnectionLinks) SetOperation(v ListAccountsForStack200ResponseLinksStack)`
 
 SetOperation sets Operation field to given value.
 
@@ -53,20 +53,20 @@ HasOperation returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *SshPortalConnectionLinks) GetSelf() SshPortalConnectionLinksSelf`
+`func (o *SshPortalConnectionLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *SshPortalConnectionLinks) GetSelfOk() (*SshPortalConnectionLinksSelf, bool)`
+`func (o *SshPortalConnectionLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *SshPortalConnectionLinks) SetSelf(v SshPortalConnectionLinksSelf)`
+`func (o *SshPortalConnectionLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

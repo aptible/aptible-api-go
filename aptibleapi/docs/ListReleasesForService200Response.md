@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListReleasesForService200ResponseLinks**](ListReleasesForService200ResponseLinks.md) |  | 
+**Links** | [**ListDiskAttachmentsForService200ResponseLinks**](ListDiskAttachmentsForService200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListReleasesForService200Response
 
-`func NewListReleasesForService200Response(embedded ListReleasesForService200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListReleasesForService200ResponseLinks, ) *ListReleasesForService200Response`
+`func NewListReleasesForService200Response(embedded ListReleasesForService200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForService200ResponseLinks, ) *ListReleasesForService200Response`
 
 NewListReleasesForService200Response instantiates a new ListReleasesForService200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListReleasesForService200Response) GetLinks() ListReleasesForService200ResponseLinks`
+`func (o *ListReleasesForService200Response) GetLinks() ListDiskAttachmentsForService200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListReleasesForService200Response) GetLinksOk() (*ListReleasesForService200ResponseLinks, bool)`
+`func (o *ListReleasesForService200Response) GetLinksOk() (*ListDiskAttachmentsForService200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListReleasesForService200Response) SetLinks(v ListReleasesForService200ResponseLinks)`
+`func (o *ListReleasesForService200Response) SetLinks(v ListDiskAttachmentsForService200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

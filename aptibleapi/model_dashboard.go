@@ -32,7 +32,7 @@ type Dashboard struct {
 	ResourceId int32 `json:"resource_id"`
 	ResourceType string `json:"resource_type"`
 	Data map[string]interface{} `json:"data"`
-	Links *DashboardLinks `json:"_links,omitempty"`
+	Links *ConfigurationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -356,9 +356,9 @@ func (o *Dashboard) SetData(v map[string]interface{}) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *Dashboard) GetLinks() DashboardLinks {
+func (o *Dashboard) GetLinks() ConfigurationLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret DashboardLinks
+		var ret ConfigurationLinks
 		return ret
 	}
 	return *o.Links
@@ -366,7 +366,7 @@ func (o *Dashboard) GetLinks() DashboardLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Dashboard) GetLinksOk() (*DashboardLinks, bool) {
+func (o *Dashboard) GetLinksOk() (*ConfigurationLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -382,8 +382,8 @@ func (o *Dashboard) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given DashboardLinks and assigns it to the Links field.
-func (o *Dashboard) SetLinks(v DashboardLinks) {
+// SetLinks gets a reference to the given ConfigurationLinks and assigns it to the Links field.
+func (o *Dashboard) SetLinks(v ConfigurationLinks) {
 	o.Links = &v
 }
 

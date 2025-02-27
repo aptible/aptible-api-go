@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ComplianceDashboardAccess** | **bool** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
-**Links** | Pointer to [**PlanLinks**](PlanLinks.md) |  | [optional] 
+**Links** | Pointer to [**IntegrationLinks**](IntegrationLinks.md) |  | [optional] 
 
 ## Methods
 
@@ -342,20 +342,20 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 ### GetLinks
 
-`func (o *Plan) GetLinks() PlanLinks`
+`func (o *Plan) GetLinks() IntegrationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *Plan) GetLinksOk() (*PlanLinks, bool)`
+`func (o *Plan) GetLinksOk() (*IntegrationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *Plan) SetLinks(v PlanLinks)`
+`func (o *Plan) SetLinks(v IntegrationLinks)`
 
 SetLinks sets Links field to given value.
 

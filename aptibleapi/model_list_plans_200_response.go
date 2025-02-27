@@ -24,7 +24,7 @@ type ListPlans200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListPlans200ResponseLinks `json:"_links"`
+	Links ListDashboards200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListPlans200Response ListPlans200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListPlans200Response(embedded ListPlans200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListPlans200ResponseLinks) *ListPlans200Response {
+func NewListPlans200Response(embedded ListPlans200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDashboards200ResponseLinks) *ListPlans200Response {
 	this := ListPlans200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListPlans200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListPlans200Response) GetLinks() ListPlans200ResponseLinks {
+func (o *ListPlans200Response) GetLinks() ListDashboards200ResponseLinks {
 	if o == nil {
-		var ret ListPlans200ResponseLinks
+		var ret ListDashboards200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListPlans200Response) GetLinks() ListPlans200ResponseLinks {
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListPlans200Response) GetLinksOk() (*ListPlans200ResponseLinks, bool) {
+func (o *ListPlans200Response) GetLinksOk() (*ListDashboards200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListPlans200Response) GetLinksOk() (*ListPlans200ResponseLinks, bool) {
 }
 
 // SetLinks sets field value
-func (o *ListPlans200Response) SetLinks(v ListPlans200ResponseLinks) {
+func (o *ListPlans200Response) SetLinks(v ListDashboards200ResponseLinks) {
 	o.Links = v
 }
 

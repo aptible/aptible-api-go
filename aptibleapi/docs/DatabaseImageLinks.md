@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Database** | Pointer to [**DatabaseImageLinksDatabase**](DatabaseImageLinksDatabase.md) |  | [optional] 
-**Self** | Pointer to [**DatabaseImageLinksSelf**](DatabaseImageLinksSelf.md) |  | [optional] 
+**Database** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDatabase
 
-`func (o *DatabaseImageLinks) GetDatabase() DatabaseImageLinksDatabase`
+`func (o *DatabaseImageLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack`
 
 GetDatabase returns the Database field if non-nil, zero value otherwise.
 
 ### GetDatabaseOk
 
-`func (o *DatabaseImageLinks) GetDatabaseOk() (*DatabaseImageLinksDatabase, bool)`
+`func (o *DatabaseImageLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabase
 
-`func (o *DatabaseImageLinks) SetDatabase(v DatabaseImageLinksDatabase)`
+`func (o *DatabaseImageLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack)`
 
 SetDatabase sets Database field to given value.
 
@@ -53,20 +53,20 @@ HasDatabase returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *DatabaseImageLinks) GetSelf() DatabaseImageLinksSelf`
+`func (o *DatabaseImageLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *DatabaseImageLinks) GetSelfOk() (*DatabaseImageLinksSelf, bool)`
+`func (o *DatabaseImageLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *DatabaseImageLinks) SetSelf(v DatabaseImageLinksSelf)`
+`func (o *DatabaseImageLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

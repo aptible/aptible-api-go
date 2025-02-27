@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ## ListServiceSizingPoliciesForService
 
-> ListServiceSizingPoliciesForService200Response ListServiceSizingPoliciesForService(ctx, serviceId).Page(page).Execute()
+> ListServiceSizingPoliciesForAccount200Response ListServiceSizingPoliciesForService(ctx, serviceId).Page(page).Execute()
 
 list service_sizing_policies
 
@@ -314,7 +314,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListServiceSizingPoliciesForService`: ListServiceSizingPoliciesForService200Response
+	// response from `ListServiceSizingPoliciesForService`: ListServiceSizingPoliciesForAccount200Response
 	fmt.Fprintf(os.Stdout, "Response from `ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForService`: %v\n", resp)
 }
 ```
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListServiceSizingPoliciesForService200Response**](ListServiceSizingPoliciesForService200Response.md)
+[**ListServiceSizingPoliciesForAccount200Response**](ListServiceSizingPoliciesForAccount200Response.md)
 
 ### Authorization
 

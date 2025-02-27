@@ -19,11 +19,11 @@ var _ MappedNullable = &ListEphemeralSessionsForApp200ResponseLinks{}
 
 // ListEphemeralSessionsForApp200ResponseLinks struct for ListEphemeralSessionsForApp200ResponseLinks
 type ListEphemeralSessionsForApp200ResponseLinks struct {
-	App *ListEphemeralSessionsForApp200ResponseLinksApp `json:"app,omitempty"`
-	Operation *ListEphemeralSessionsForApp200ResponseLinksOperation `json:"operation,omitempty"`
-	Next *ListEphemeralSessionsForApp200ResponseLinksNext `json:"next,omitempty"`
-	Prev *ListEphemeralSessionsForApp200ResponseLinksPrev `json:"prev,omitempty"`
-	Self *ListEphemeralSessionsForApp200ResponseLinksSelf `json:"self,omitempty"`
+	App *ListAccountsForStack200ResponseLinksStack `json:"app,omitempty"`
+	Operation *ListAccountsForStack200ResponseLinksStack `json:"operation,omitempty"`
+	Next *ListAccountsForStack200ResponseLinksStack `json:"next,omitempty"`
+	Prev *ListAccountsForStack200ResponseLinksStack `json:"prev,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,9 +47,9 @@ func NewListEphemeralSessionsForApp200ResponseLinksWithDefaults() *ListEphemeral
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetApp() ListEphemeralSessionsForApp200ResponseLinksApp {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.App) {
-		var ret ListEphemeralSessionsForApp200ResponseLinksApp
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.App
@@ -57,7 +57,7 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) GetApp() ListEphemeralSess
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetAppOk() (*ListEphemeralSessionsForApp200ResponseLinksApp, bool) {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -73,15 +73,15 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) HasApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given ListEphemeralSessionsForApp200ResponseLinksApp and assigns it to the App field.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) SetApp(v ListEphemeralSessionsForApp200ResponseLinksApp) {
+// SetApp gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the App field.
+func (o *ListEphemeralSessionsForApp200ResponseLinks) SetApp(v ListAccountsForStack200ResponseLinksStack) {
 	o.App = &v
 }
 
 // GetOperation returns the Operation field value if set, zero value otherwise.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetOperation() ListEphemeralSessionsForApp200ResponseLinksOperation {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetOperation() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Operation) {
-		var ret ListEphemeralSessionsForApp200ResponseLinksOperation
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Operation
@@ -89,7 +89,7 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) GetOperation() ListEphemer
 
 // GetOperationOk returns a tuple with the Operation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetOperationOk() (*ListEphemeralSessionsForApp200ResponseLinksOperation, bool) {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetOperationOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Operation) {
 		return nil, false
 	}
@@ -105,15 +105,15 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) HasOperation() bool {
 	return false
 }
 
-// SetOperation gets a reference to the given ListEphemeralSessionsForApp200ResponseLinksOperation and assigns it to the Operation field.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) SetOperation(v ListEphemeralSessionsForApp200ResponseLinksOperation) {
+// SetOperation gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operation field.
+func (o *ListEphemeralSessionsForApp200ResponseLinks) SetOperation(v ListAccountsForStack200ResponseLinksStack) {
 	o.Operation = &v
 }
 
 // GetNext returns the Next field value if set, zero value otherwise.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetNext() ListEphemeralSessionsForApp200ResponseLinksNext {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Next) {
-		var ret ListEphemeralSessionsForApp200ResponseLinksNext
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Next
@@ -121,7 +121,7 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) GetNext() ListEphemeralSes
 
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetNextOk() (*ListEphemeralSessionsForApp200ResponseLinksNext, bool) {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -137,15 +137,15 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) HasNext() bool {
 	return false
 }
 
-// SetNext gets a reference to the given ListEphemeralSessionsForApp200ResponseLinksNext and assigns it to the Next field.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) SetNext(v ListEphemeralSessionsForApp200ResponseLinksNext) {
+// SetNext gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Next field.
+func (o *ListEphemeralSessionsForApp200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
 	o.Next = &v
 }
 
 // GetPrev returns the Prev field value if set, zero value otherwise.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetPrev() ListEphemeralSessionsForApp200ResponseLinksPrev {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Prev) {
-		var ret ListEphemeralSessionsForApp200ResponseLinksPrev
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Prev
@@ -153,7 +153,7 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) GetPrev() ListEphemeralSes
 
 // GetPrevOk returns a tuple with the Prev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetPrevOk() (*ListEphemeralSessionsForApp200ResponseLinksPrev, bool) {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Prev) {
 		return nil, false
 	}
@@ -169,15 +169,15 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) HasPrev() bool {
 	return false
 }
 
-// SetPrev gets a reference to the given ListEphemeralSessionsForApp200ResponseLinksPrev and assigns it to the Prev field.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) SetPrev(v ListEphemeralSessionsForApp200ResponseLinksPrev) {
+// SetPrev gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Prev field.
+func (o *ListEphemeralSessionsForApp200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
 	o.Prev = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetSelf() ListEphemeralSessionsForApp200ResponseLinksSelf {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ListEphemeralSessionsForApp200ResponseLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -185,7 +185,7 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) GetSelf() ListEphemeralSes
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) GetSelfOk() (*ListEphemeralSessionsForApp200ResponseLinksSelf, bool) {
+func (o *ListEphemeralSessionsForApp200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *ListEphemeralSessionsForApp200ResponseLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListEphemeralSessionsForApp200ResponseLinksSelf and assigns it to the Self field.
-func (o *ListEphemeralSessionsForApp200ResponseLinks) SetSelf(v ListEphemeralSessionsForApp200ResponseLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ListEphemeralSessionsForApp200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

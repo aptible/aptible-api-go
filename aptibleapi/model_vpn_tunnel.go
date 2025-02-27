@@ -36,7 +36,7 @@ type VpnTunnel struct {
 	OurNetworks [][]string `json:"our_networks"`
 	PeerGateway NullableString `json:"peer_gateway"`
 	PeerNetworks [][]string `json:"peer_networks"`
-	Links *VpnTunnelLinks `json:"_links,omitempty"`
+	Links *VpcPeerLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -482,9 +482,9 @@ func (o *VpnTunnel) SetPeerNetworks(v [][]string) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *VpnTunnel) GetLinks() VpnTunnelLinks {
+func (o *VpnTunnel) GetLinks() VpcPeerLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret VpnTunnelLinks
+		var ret VpcPeerLinks
 		return ret
 	}
 	return *o.Links
@@ -492,7 +492,7 @@ func (o *VpnTunnel) GetLinks() VpnTunnelLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VpnTunnel) GetLinksOk() (*VpnTunnelLinks, bool) {
+func (o *VpnTunnel) GetLinksOk() (*VpcPeerLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -508,8 +508,8 @@ func (o *VpnTunnel) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given VpnTunnelLinks and assigns it to the Links field.
-func (o *VpnTunnel) SetLinks(v VpnTunnelLinks) {
+// SetLinks gets a reference to the given VpcPeerLinks and assigns it to the Links field.
+func (o *VpnTunnel) SetLinks(v VpcPeerLinks) {
 	o.Links = &v
 }
 

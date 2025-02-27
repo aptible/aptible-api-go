@@ -20,7 +20,7 @@ var _ MappedNullable = &VhostAcmeConfigurationChallengesInner{}
 // VhostAcmeConfigurationChallengesInner struct for VhostAcmeConfigurationChallengesInner
 type VhostAcmeConfigurationChallengesInner struct {
 	Method *string `json:"method,omitempty"`
-	From *VhostAcmeConfigurationChallengesInnerFrom `json:"from,omitempty"`
+	From *UpdateDashboardRequest `json:"from,omitempty"`
 	To []VhostAcmeConfigurationChallengesInnerToInner `json:"to,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -77,9 +77,9 @@ func (o *VhostAcmeConfigurationChallengesInner) SetMethod(v string) {
 }
 
 // GetFrom returns the From field value if set, zero value otherwise.
-func (o *VhostAcmeConfigurationChallengesInner) GetFrom() VhostAcmeConfigurationChallengesInnerFrom {
+func (o *VhostAcmeConfigurationChallengesInner) GetFrom() UpdateDashboardRequest {
 	if o == nil || IsNil(o.From) {
-		var ret VhostAcmeConfigurationChallengesInnerFrom
+		var ret UpdateDashboardRequest
 		return ret
 	}
 	return *o.From
@@ -87,7 +87,7 @@ func (o *VhostAcmeConfigurationChallengesInner) GetFrom() VhostAcmeConfiguration
 
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VhostAcmeConfigurationChallengesInner) GetFromOk() (*VhostAcmeConfigurationChallengesInnerFrom, bool) {
+func (o *VhostAcmeConfigurationChallengesInner) GetFromOk() (*UpdateDashboardRequest, bool) {
 	if o == nil || IsNil(o.From) {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *VhostAcmeConfigurationChallengesInner) HasFrom() bool {
 	return false
 }
 
-// SetFrom gets a reference to the given VhostAcmeConfigurationChallengesInnerFrom and assigns it to the From field.
-func (o *VhostAcmeConfigurationChallengesInner) SetFrom(v VhostAcmeConfigurationChallengesInnerFrom) {
+// SetFrom gets a reference to the given UpdateDashboardRequest and assigns it to the From field.
+func (o *VhostAcmeConfigurationChallengesInner) SetFrom(v UpdateDashboardRequest) {
 	o.From = &v
 }
 

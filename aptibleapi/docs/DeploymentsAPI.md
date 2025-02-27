@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ## ListDeploymentsForApp
 
-> ListDeploymentsForApp200Response ListDeploymentsForApp(ctx, appId).Page(page).Execute()
+> ListDeployments200Response ListDeploymentsForApp(ctx, appId).Page(page).Execute()
 
 list deployments
 
@@ -171,7 +171,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeploymentsAPI.ListDeploymentsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDeploymentsForApp`: ListDeploymentsForApp200Response
+	// response from `ListDeploymentsForApp`: ListDeployments200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeploymentsAPI.ListDeploymentsForApp`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListDeploymentsForApp200Response**](ListDeploymentsForApp200Response.md)
+[**ListDeployments200Response**](ListDeployments200Response.md)
 
 ### Authorization
 

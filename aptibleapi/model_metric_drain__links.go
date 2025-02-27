@@ -19,11 +19,11 @@ var _ MappedNullable = &MetricDrainLinks{}
 
 // MetricDrainLinks struct for MetricDrainLinks
 type MetricDrainLinks struct {
-	Account *MetricDrainLinksAccount `json:"account,omitempty"`
-	Database *MetricDrainLinksDatabase `json:"database,omitempty"`
-	Operations *MetricDrainLinksOperations `json:"operations,omitempty"`
-	Containers *MetricDrainLinksContainers `json:"containers,omitempty"`
-	Self *MetricDrainLinksSelf `json:"self,omitempty"`
+	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
+	Database *ListAccountsForStack200ResponseLinksStack `json:"database,omitempty"`
+	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
+	Containers *ListAccountsForStack200ResponseLinksStack `json:"containers,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,9 +47,9 @@ func NewMetricDrainLinksWithDefaults() *MetricDrainLinks {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *MetricDrainLinks) GetAccount() MetricDrainLinksAccount {
+func (o *MetricDrainLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Account) {
-		var ret MetricDrainLinksAccount
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Account
@@ -57,7 +57,7 @@ func (o *MetricDrainLinks) GetAccount() MetricDrainLinksAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetricDrainLinks) GetAccountOk() (*MetricDrainLinksAccount, bool) {
+func (o *MetricDrainLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -73,15 +73,15 @@ func (o *MetricDrainLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given MetricDrainLinksAccount and assigns it to the Account field.
-func (o *MetricDrainLinks) SetAccount(v MetricDrainLinksAccount) {
+// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
+func (o *MetricDrainLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
 	o.Account = &v
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *MetricDrainLinks) GetDatabase() MetricDrainLinksDatabase {
+func (o *MetricDrainLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Database) {
-		var ret MetricDrainLinksDatabase
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Database
@@ -89,7 +89,7 @@ func (o *MetricDrainLinks) GetDatabase() MetricDrainLinksDatabase {
 
 // GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetricDrainLinks) GetDatabaseOk() (*MetricDrainLinksDatabase, bool) {
+func (o *MetricDrainLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Database) {
 		return nil, false
 	}
@@ -105,15 +105,15 @@ func (o *MetricDrainLinks) HasDatabase() bool {
 	return false
 }
 
-// SetDatabase gets a reference to the given MetricDrainLinksDatabase and assigns it to the Database field.
-func (o *MetricDrainLinks) SetDatabase(v MetricDrainLinksDatabase) {
+// SetDatabase gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Database field.
+func (o *MetricDrainLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack) {
 	o.Database = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *MetricDrainLinks) GetOperations() MetricDrainLinksOperations {
+func (o *MetricDrainLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Operations) {
-		var ret MetricDrainLinksOperations
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Operations
@@ -121,7 +121,7 @@ func (o *MetricDrainLinks) GetOperations() MetricDrainLinksOperations {
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetricDrainLinks) GetOperationsOk() (*MetricDrainLinksOperations, bool) {
+func (o *MetricDrainLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -137,15 +137,15 @@ func (o *MetricDrainLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given MetricDrainLinksOperations and assigns it to the Operations field.
-func (o *MetricDrainLinks) SetOperations(v MetricDrainLinksOperations) {
+// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
+func (o *MetricDrainLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
 	o.Operations = &v
 }
 
 // GetContainers returns the Containers field value if set, zero value otherwise.
-func (o *MetricDrainLinks) GetContainers() MetricDrainLinksContainers {
+func (o *MetricDrainLinks) GetContainers() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Containers) {
-		var ret MetricDrainLinksContainers
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Containers
@@ -153,7 +153,7 @@ func (o *MetricDrainLinks) GetContainers() MetricDrainLinksContainers {
 
 // GetContainersOk returns a tuple with the Containers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetricDrainLinks) GetContainersOk() (*MetricDrainLinksContainers, bool) {
+func (o *MetricDrainLinks) GetContainersOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Containers) {
 		return nil, false
 	}
@@ -169,15 +169,15 @@ func (o *MetricDrainLinks) HasContainers() bool {
 	return false
 }
 
-// SetContainers gets a reference to the given MetricDrainLinksContainers and assigns it to the Containers field.
-func (o *MetricDrainLinks) SetContainers(v MetricDrainLinksContainers) {
+// SetContainers gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Containers field.
+func (o *MetricDrainLinks) SetContainers(v ListAccountsForStack200ResponseLinksStack) {
 	o.Containers = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *MetricDrainLinks) GetSelf() MetricDrainLinksSelf {
+func (o *MetricDrainLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret MetricDrainLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -185,7 +185,7 @@ func (o *MetricDrainLinks) GetSelf() MetricDrainLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MetricDrainLinks) GetSelfOk() (*MetricDrainLinksSelf, bool) {
+func (o *MetricDrainLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *MetricDrainLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given MetricDrainLinksSelf and assigns it to the Self field.
-func (o *MetricDrainLinks) SetSelf(v MetricDrainLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *MetricDrainLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

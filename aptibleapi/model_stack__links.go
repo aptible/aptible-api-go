@@ -19,12 +19,12 @@ var _ MappedNullable = &StackLinks{}
 
 // StackLinks struct for StackLinks
 type StackLinks struct {
-	Organization *StackLinksOrganization `json:"organization,omitempty"`
-	Accounts *StackLinksAccounts `json:"accounts,omitempty"`
-	IntrusionDetectionReports *StackLinksIntrusionDetectionReports `json:"intrusion_detection_reports,omitempty"`
-	VpnTunnels *StackLinksVpnTunnels `json:"vpn_tunnels,omitempty"`
-	VpcPeers *StackLinksVpcPeers `json:"vpc_peers,omitempty"`
-	Self *StackLinksSelf `json:"self,omitempty"`
+	Organization *ListAccountsForStack200ResponseLinksStack `json:"organization,omitempty"`
+	Accounts *ListAccountsForStack200ResponseLinksStack `json:"accounts,omitempty"`
+	IntrusionDetectionReports *ListAccountsForStack200ResponseLinksStack `json:"intrusion_detection_reports,omitempty"`
+	VpnTunnels *ListAccountsForStack200ResponseLinksStack `json:"vpn_tunnels,omitempty"`
+	VpcPeers *ListAccountsForStack200ResponseLinksStack `json:"vpc_peers,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -48,9 +48,9 @@ func NewStackLinksWithDefaults() *StackLinks {
 }
 
 // GetOrganization returns the Organization field value if set, zero value otherwise.
-func (o *StackLinks) GetOrganization() StackLinksOrganization {
+func (o *StackLinks) GetOrganization() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Organization) {
-		var ret StackLinksOrganization
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Organization
@@ -58,7 +58,7 @@ func (o *StackLinks) GetOrganization() StackLinksOrganization {
 
 // GetOrganizationOk returns a tuple with the Organization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StackLinks) GetOrganizationOk() (*StackLinksOrganization, bool) {
+func (o *StackLinks) GetOrganizationOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Organization) {
 		return nil, false
 	}
@@ -74,15 +74,15 @@ func (o *StackLinks) HasOrganization() bool {
 	return false
 }
 
-// SetOrganization gets a reference to the given StackLinksOrganization and assigns it to the Organization field.
-func (o *StackLinks) SetOrganization(v StackLinksOrganization) {
+// SetOrganization gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Organization field.
+func (o *StackLinks) SetOrganization(v ListAccountsForStack200ResponseLinksStack) {
 	o.Organization = &v
 }
 
 // GetAccounts returns the Accounts field value if set, zero value otherwise.
-func (o *StackLinks) GetAccounts() StackLinksAccounts {
+func (o *StackLinks) GetAccounts() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Accounts) {
-		var ret StackLinksAccounts
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Accounts
@@ -90,7 +90,7 @@ func (o *StackLinks) GetAccounts() StackLinksAccounts {
 
 // GetAccountsOk returns a tuple with the Accounts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StackLinks) GetAccountsOk() (*StackLinksAccounts, bool) {
+func (o *StackLinks) GetAccountsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Accounts) {
 		return nil, false
 	}
@@ -106,15 +106,15 @@ func (o *StackLinks) HasAccounts() bool {
 	return false
 }
 
-// SetAccounts gets a reference to the given StackLinksAccounts and assigns it to the Accounts field.
-func (o *StackLinks) SetAccounts(v StackLinksAccounts) {
+// SetAccounts gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Accounts field.
+func (o *StackLinks) SetAccounts(v ListAccountsForStack200ResponseLinksStack) {
 	o.Accounts = &v
 }
 
 // GetIntrusionDetectionReports returns the IntrusionDetectionReports field value if set, zero value otherwise.
-func (o *StackLinks) GetIntrusionDetectionReports() StackLinksIntrusionDetectionReports {
+func (o *StackLinks) GetIntrusionDetectionReports() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.IntrusionDetectionReports) {
-		var ret StackLinksIntrusionDetectionReports
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.IntrusionDetectionReports
@@ -122,7 +122,7 @@ func (o *StackLinks) GetIntrusionDetectionReports() StackLinksIntrusionDetection
 
 // GetIntrusionDetectionReportsOk returns a tuple with the IntrusionDetectionReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StackLinks) GetIntrusionDetectionReportsOk() (*StackLinksIntrusionDetectionReports, bool) {
+func (o *StackLinks) GetIntrusionDetectionReportsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.IntrusionDetectionReports) {
 		return nil, false
 	}
@@ -138,15 +138,15 @@ func (o *StackLinks) HasIntrusionDetectionReports() bool {
 	return false
 }
 
-// SetIntrusionDetectionReports gets a reference to the given StackLinksIntrusionDetectionReports and assigns it to the IntrusionDetectionReports field.
-func (o *StackLinks) SetIntrusionDetectionReports(v StackLinksIntrusionDetectionReports) {
+// SetIntrusionDetectionReports gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the IntrusionDetectionReports field.
+func (o *StackLinks) SetIntrusionDetectionReports(v ListAccountsForStack200ResponseLinksStack) {
 	o.IntrusionDetectionReports = &v
 }
 
 // GetVpnTunnels returns the VpnTunnels field value if set, zero value otherwise.
-func (o *StackLinks) GetVpnTunnels() StackLinksVpnTunnels {
+func (o *StackLinks) GetVpnTunnels() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.VpnTunnels) {
-		var ret StackLinksVpnTunnels
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.VpnTunnels
@@ -154,7 +154,7 @@ func (o *StackLinks) GetVpnTunnels() StackLinksVpnTunnels {
 
 // GetVpnTunnelsOk returns a tuple with the VpnTunnels field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StackLinks) GetVpnTunnelsOk() (*StackLinksVpnTunnels, bool) {
+func (o *StackLinks) GetVpnTunnelsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.VpnTunnels) {
 		return nil, false
 	}
@@ -170,15 +170,15 @@ func (o *StackLinks) HasVpnTunnels() bool {
 	return false
 }
 
-// SetVpnTunnels gets a reference to the given StackLinksVpnTunnels and assigns it to the VpnTunnels field.
-func (o *StackLinks) SetVpnTunnels(v StackLinksVpnTunnels) {
+// SetVpnTunnels gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the VpnTunnels field.
+func (o *StackLinks) SetVpnTunnels(v ListAccountsForStack200ResponseLinksStack) {
 	o.VpnTunnels = &v
 }
 
 // GetVpcPeers returns the VpcPeers field value if set, zero value otherwise.
-func (o *StackLinks) GetVpcPeers() StackLinksVpcPeers {
+func (o *StackLinks) GetVpcPeers() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.VpcPeers) {
-		var ret StackLinksVpcPeers
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.VpcPeers
@@ -186,7 +186,7 @@ func (o *StackLinks) GetVpcPeers() StackLinksVpcPeers {
 
 // GetVpcPeersOk returns a tuple with the VpcPeers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StackLinks) GetVpcPeersOk() (*StackLinksVpcPeers, bool) {
+func (o *StackLinks) GetVpcPeersOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.VpcPeers) {
 		return nil, false
 	}
@@ -202,15 +202,15 @@ func (o *StackLinks) HasVpcPeers() bool {
 	return false
 }
 
-// SetVpcPeers gets a reference to the given StackLinksVpcPeers and assigns it to the VpcPeers field.
-func (o *StackLinks) SetVpcPeers(v StackLinksVpcPeers) {
+// SetVpcPeers gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the VpcPeers field.
+func (o *StackLinks) SetVpcPeers(v ListAccountsForStack200ResponseLinksStack) {
 	o.VpcPeers = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *StackLinks) GetSelf() StackLinksSelf {
+func (o *StackLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret StackLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -218,7 +218,7 @@ func (o *StackLinks) GetSelf() StackLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StackLinks) GetSelfOk() (*StackLinksSelf, bool) {
+func (o *StackLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *StackLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given StackLinksSelf and assigns it to the Self field.
-func (o *StackLinks) SetSelf(v StackLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *StackLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Account** | Pointer to [**ServiceLinksAccount**](ServiceLinksAccount.md) |  | [optional] 
-**CurrentRelease** | Pointer to [**ServiceLinksCurrentRelease**](ServiceLinksCurrentRelease.md) |  | [optional] 
-**App** | Pointer to [**ServiceLinksApp**](ServiceLinksApp.md) |  | [optional] 
-**Database** | Pointer to [**ServiceLinksDatabase**](ServiceLinksDatabase.md) |  | [optional] 
-**Operations** | Pointer to [**ServiceLinksOperations**](ServiceLinksOperations.md) |  | [optional] 
-**Releases** | Pointer to [**ServiceLinksReleases**](ServiceLinksReleases.md) |  | [optional] 
-**Vhosts** | Pointer to [**ServiceLinksVhosts**](ServiceLinksVhosts.md) |  | [optional] 
-**Self** | Pointer to [**ServiceLinksSelf**](ServiceLinksSelf.md) |  | [optional] 
+**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**CurrentRelease** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**App** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Database** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Operations** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Releases** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Vhosts** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccount
 
-`func (o *ServiceLinks) GetAccount() ServiceLinksAccount`
+`func (o *ServiceLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ServiceLinks) GetAccountOk() (*ServiceLinksAccount, bool)`
+`func (o *ServiceLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ServiceLinks) SetAccount(v ServiceLinksAccount)`
+`func (o *ServiceLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
 
 SetAccount sets Account field to given value.
 
@@ -59,20 +59,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetCurrentRelease
 
-`func (o *ServiceLinks) GetCurrentRelease() ServiceLinksCurrentRelease`
+`func (o *ServiceLinks) GetCurrentRelease() ListAccountsForStack200ResponseLinksStack`
 
 GetCurrentRelease returns the CurrentRelease field if non-nil, zero value otherwise.
 
 ### GetCurrentReleaseOk
 
-`func (o *ServiceLinks) GetCurrentReleaseOk() (*ServiceLinksCurrentRelease, bool)`
+`func (o *ServiceLinks) GetCurrentReleaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetCurrentReleaseOk returns a tuple with the CurrentRelease field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentRelease
 
-`func (o *ServiceLinks) SetCurrentRelease(v ServiceLinksCurrentRelease)`
+`func (o *ServiceLinks) SetCurrentRelease(v ListAccountsForStack200ResponseLinksStack)`
 
 SetCurrentRelease sets CurrentRelease field to given value.
 
@@ -84,20 +84,20 @@ HasCurrentRelease returns a boolean if a field has been set.
 
 ### GetApp
 
-`func (o *ServiceLinks) GetApp() ServiceLinksApp`
+`func (o *ServiceLinks) GetApp() ListAccountsForStack200ResponseLinksStack`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *ServiceLinks) GetAppOk() (*ServiceLinksApp, bool)`
+`func (o *ServiceLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *ServiceLinks) SetApp(v ServiceLinksApp)`
+`func (o *ServiceLinks) SetApp(v ListAccountsForStack200ResponseLinksStack)`
 
 SetApp sets App field to given value.
 
@@ -109,20 +109,20 @@ HasApp returns a boolean if a field has been set.
 
 ### GetDatabase
 
-`func (o *ServiceLinks) GetDatabase() ServiceLinksDatabase`
+`func (o *ServiceLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack`
 
 GetDatabase returns the Database field if non-nil, zero value otherwise.
 
 ### GetDatabaseOk
 
-`func (o *ServiceLinks) GetDatabaseOk() (*ServiceLinksDatabase, bool)`
+`func (o *ServiceLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabase
 
-`func (o *ServiceLinks) SetDatabase(v ServiceLinksDatabase)`
+`func (o *ServiceLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack)`
 
 SetDatabase sets Database field to given value.
 
@@ -134,20 +134,20 @@ HasDatabase returns a boolean if a field has been set.
 
 ### GetOperations
 
-`func (o *ServiceLinks) GetOperations() ServiceLinksOperations`
+`func (o *ServiceLinks) GetOperations() ListAccountsForStack200ResponseLinksStack`
 
 GetOperations returns the Operations field if non-nil, zero value otherwise.
 
 ### GetOperationsOk
 
-`func (o *ServiceLinks) GetOperationsOk() (*ServiceLinksOperations, bool)`
+`func (o *ServiceLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetOperationsOk returns a tuple with the Operations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperations
 
-`func (o *ServiceLinks) SetOperations(v ServiceLinksOperations)`
+`func (o *ServiceLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack)`
 
 SetOperations sets Operations field to given value.
 
@@ -159,20 +159,20 @@ HasOperations returns a boolean if a field has been set.
 
 ### GetReleases
 
-`func (o *ServiceLinks) GetReleases() ServiceLinksReleases`
+`func (o *ServiceLinks) GetReleases() ListAccountsForStack200ResponseLinksStack`
 
 GetReleases returns the Releases field if non-nil, zero value otherwise.
 
 ### GetReleasesOk
 
-`func (o *ServiceLinks) GetReleasesOk() (*ServiceLinksReleases, bool)`
+`func (o *ServiceLinks) GetReleasesOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetReleasesOk returns a tuple with the Releases field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReleases
 
-`func (o *ServiceLinks) SetReleases(v ServiceLinksReleases)`
+`func (o *ServiceLinks) SetReleases(v ListAccountsForStack200ResponseLinksStack)`
 
 SetReleases sets Releases field to given value.
 
@@ -184,20 +184,20 @@ HasReleases returns a boolean if a field has been set.
 
 ### GetVhosts
 
-`func (o *ServiceLinks) GetVhosts() ServiceLinksVhosts`
+`func (o *ServiceLinks) GetVhosts() ListAccountsForStack200ResponseLinksStack`
 
 GetVhosts returns the Vhosts field if non-nil, zero value otherwise.
 
 ### GetVhostsOk
 
-`func (o *ServiceLinks) GetVhostsOk() (*ServiceLinksVhosts, bool)`
+`func (o *ServiceLinks) GetVhostsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetVhostsOk returns a tuple with the Vhosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVhosts
 
-`func (o *ServiceLinks) SetVhosts(v ServiceLinksVhosts)`
+`func (o *ServiceLinks) SetVhosts(v ListAccountsForStack200ResponseLinksStack)`
 
 SetVhosts sets Vhosts field to given value.
 
@@ -209,20 +209,20 @@ HasVhosts returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ServiceLinks) GetSelf() ServiceLinksSelf`
+`func (o *ServiceLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ServiceLinks) GetSelfOk() (*ServiceLinksSelf, bool)`
+`func (o *ServiceLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ServiceLinks) SetSelf(v ServiceLinksSelf)`
+`func (o *ServiceLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

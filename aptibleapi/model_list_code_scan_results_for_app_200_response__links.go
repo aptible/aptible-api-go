@@ -19,10 +19,10 @@ var _ MappedNullable = &ListCodeScanResultsForApp200ResponseLinks{}
 
 // ListCodeScanResultsForApp200ResponseLinks struct for ListCodeScanResultsForApp200ResponseLinks
 type ListCodeScanResultsForApp200ResponseLinks struct {
-	Resource *ListCodeScanResultsForApp200ResponseLinksResource `json:"resource,omitempty"`
-	Next *ListCodeScanResultsForApp200ResponseLinksNext `json:"next,omitempty"`
-	Prev *ListCodeScanResultsForApp200ResponseLinksPrev `json:"prev,omitempty"`
-	Self *ListCodeScanResultsForApp200ResponseLinksSelf `json:"self,omitempty"`
+	Resource *ListAccountsForStack200ResponseLinksStack `json:"resource,omitempty"`
+	Next *ListAccountsForStack200ResponseLinksStack `json:"next,omitempty"`
+	Prev *ListAccountsForStack200ResponseLinksStack `json:"prev,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,9 +46,9 @@ func NewListCodeScanResultsForApp200ResponseLinksWithDefaults() *ListCodeScanRes
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetResource() ListCodeScanResultsForApp200ResponseLinksResource {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetResource() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Resource) {
-		var ret ListCodeScanResultsForApp200ResponseLinksResource
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Resource
@@ -56,7 +56,7 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) GetResource() ListCodeScanRe
 
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetResourceOk() (*ListCodeScanResultsForApp200ResponseLinksResource, bool) {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
@@ -72,15 +72,15 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) HasResource() bool {
 	return false
 }
 
-// SetResource gets a reference to the given ListCodeScanResultsForApp200ResponseLinksResource and assigns it to the Resource field.
-func (o *ListCodeScanResultsForApp200ResponseLinks) SetResource(v ListCodeScanResultsForApp200ResponseLinksResource) {
+// SetResource gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Resource field.
+func (o *ListCodeScanResultsForApp200ResponseLinks) SetResource(v ListAccountsForStack200ResponseLinksStack) {
 	o.Resource = &v
 }
 
 // GetNext returns the Next field value if set, zero value otherwise.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetNext() ListCodeScanResultsForApp200ResponseLinksNext {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Next) {
-		var ret ListCodeScanResultsForApp200ResponseLinksNext
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Next
@@ -88,7 +88,7 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) GetNext() ListCodeScanResult
 
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetNextOk() (*ListCodeScanResultsForApp200ResponseLinksNext, bool) {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) HasNext() bool {
 	return false
 }
 
-// SetNext gets a reference to the given ListCodeScanResultsForApp200ResponseLinksNext and assigns it to the Next field.
-func (o *ListCodeScanResultsForApp200ResponseLinks) SetNext(v ListCodeScanResultsForApp200ResponseLinksNext) {
+// SetNext gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Next field.
+func (o *ListCodeScanResultsForApp200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
 	o.Next = &v
 }
 
 // GetPrev returns the Prev field value if set, zero value otherwise.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrev() ListCodeScanResultsForApp200ResponseLinksPrev {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Prev) {
-		var ret ListCodeScanResultsForApp200ResponseLinksPrev
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Prev
@@ -120,7 +120,7 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrev() ListCodeScanResult
 
 // GetPrevOk returns a tuple with the Prev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrevOk() (*ListCodeScanResultsForApp200ResponseLinksPrev, bool) {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Prev) {
 		return nil, false
 	}
@@ -136,15 +136,15 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) HasPrev() bool {
 	return false
 }
 
-// SetPrev gets a reference to the given ListCodeScanResultsForApp200ResponseLinksPrev and assigns it to the Prev field.
-func (o *ListCodeScanResultsForApp200ResponseLinks) SetPrev(v ListCodeScanResultsForApp200ResponseLinksPrev) {
+// SetPrev gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Prev field.
+func (o *ListCodeScanResultsForApp200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
 	o.Prev = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelf() ListCodeScanResultsForApp200ResponseLinksSelf {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ListCodeScanResultsForApp200ResponseLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -152,7 +152,7 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelf() ListCodeScanResult
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelfOk() (*ListCodeScanResultsForApp200ResponseLinksSelf, bool) {
+func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *ListCodeScanResultsForApp200ResponseLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListCodeScanResultsForApp200ResponseLinksSelf and assigns it to the Self field.
-func (o *ListCodeScanResultsForApp200ResponseLinks) SetSelf(v ListCodeScanResultsForApp200ResponseLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ListCodeScanResultsForApp200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

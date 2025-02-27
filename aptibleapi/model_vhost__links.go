@@ -19,10 +19,10 @@ var _ MappedNullable = &VhostLinks{}
 
 // VhostLinks struct for VhostLinks
 type VhostLinks struct {
-	Service *VhostLinksService `json:"service,omitempty"`
-	Certificate *VhostLinksCertificate `json:"certificate,omitempty"`
-	Operations *VhostLinksOperations `json:"operations,omitempty"`
-	Self *VhostLinksSelf `json:"self,omitempty"`
+	Service *ListAccountsForStack200ResponseLinksStack `json:"service,omitempty"`
+	Certificate *ListAccountsForStack200ResponseLinksStack `json:"certificate,omitempty"`
+	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,9 +46,9 @@ func NewVhostLinksWithDefaults() *VhostLinks {
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *VhostLinks) GetService() VhostLinksService {
+func (o *VhostLinks) GetService() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Service) {
-		var ret VhostLinksService
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Service
@@ -56,7 +56,7 @@ func (o *VhostLinks) GetService() VhostLinksService {
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VhostLinks) GetServiceOk() (*VhostLinksService, bool) {
+func (o *VhostLinks) GetServiceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Service) {
 		return nil, false
 	}
@@ -72,15 +72,15 @@ func (o *VhostLinks) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given VhostLinksService and assigns it to the Service field.
-func (o *VhostLinks) SetService(v VhostLinksService) {
+// SetService gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Service field.
+func (o *VhostLinks) SetService(v ListAccountsForStack200ResponseLinksStack) {
 	o.Service = &v
 }
 
 // GetCertificate returns the Certificate field value if set, zero value otherwise.
-func (o *VhostLinks) GetCertificate() VhostLinksCertificate {
+func (o *VhostLinks) GetCertificate() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Certificate) {
-		var ret VhostLinksCertificate
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Certificate
@@ -88,7 +88,7 @@ func (o *VhostLinks) GetCertificate() VhostLinksCertificate {
 
 // GetCertificateOk returns a tuple with the Certificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VhostLinks) GetCertificateOk() (*VhostLinksCertificate, bool) {
+func (o *VhostLinks) GetCertificateOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Certificate) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *VhostLinks) HasCertificate() bool {
 	return false
 }
 
-// SetCertificate gets a reference to the given VhostLinksCertificate and assigns it to the Certificate field.
-func (o *VhostLinks) SetCertificate(v VhostLinksCertificate) {
+// SetCertificate gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Certificate field.
+func (o *VhostLinks) SetCertificate(v ListAccountsForStack200ResponseLinksStack) {
 	o.Certificate = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *VhostLinks) GetOperations() VhostLinksOperations {
+func (o *VhostLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Operations) {
-		var ret VhostLinksOperations
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Operations
@@ -120,7 +120,7 @@ func (o *VhostLinks) GetOperations() VhostLinksOperations {
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VhostLinks) GetOperationsOk() (*VhostLinksOperations, bool) {
+func (o *VhostLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -136,15 +136,15 @@ func (o *VhostLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given VhostLinksOperations and assigns it to the Operations field.
-func (o *VhostLinks) SetOperations(v VhostLinksOperations) {
+// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
+func (o *VhostLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
 	o.Operations = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *VhostLinks) GetSelf() VhostLinksSelf {
+func (o *VhostLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret VhostLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -152,7 +152,7 @@ func (o *VhostLinks) GetSelf() VhostLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VhostLinks) GetSelfOk() (*VhostLinksSelf, bool) {
+func (o *VhostLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *VhostLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given VhostLinksSelf and assigns it to the Self field.
-func (o *VhostLinks) SetSelf(v VhostLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *VhostLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

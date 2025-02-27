@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Role** | Pointer to [**PermissionLinksRole**](PermissionLinksRole.md) |  | [optional] 
-**Account** | Pointer to [**PermissionLinksAccount**](PermissionLinksAccount.md) |  | [optional] 
-**Self** | Pointer to [**PermissionLinksSelf**](PermissionLinksSelf.md) |  | [optional] 
+**Role** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRole
 
-`func (o *PermissionLinks) GetRole() PermissionLinksRole`
+`func (o *PermissionLinks) GetRole() ListAccountsForStack200ResponseLinksStack`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PermissionLinks) GetRoleOk() (*PermissionLinksRole, bool)`
+`func (o *PermissionLinks) GetRoleOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PermissionLinks) SetRole(v PermissionLinksRole)`
+`func (o *PermissionLinks) SetRole(v ListAccountsForStack200ResponseLinksStack)`
 
 SetRole sets Role field to given value.
 
@@ -54,20 +54,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *PermissionLinks) GetAccount() PermissionLinksAccount`
+`func (o *PermissionLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *PermissionLinks) GetAccountOk() (*PermissionLinksAccount, bool)`
+`func (o *PermissionLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *PermissionLinks) SetAccount(v PermissionLinksAccount)`
+`func (o *PermissionLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
 
 SetAccount sets Account field to given value.
 
@@ -79,20 +79,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *PermissionLinks) GetSelf() PermissionLinksSelf`
+`func (o *PermissionLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *PermissionLinks) GetSelfOk() (*PermissionLinksSelf, bool)`
+`func (o *PermissionLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *PermissionLinks) SetSelf(v PermissionLinksSelf)`
+`func (o *PermissionLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

@@ -19,9 +19,9 @@ var _ MappedNullable = &ListDashboards200ResponseLinks{}
 
 // ListDashboards200ResponseLinks struct for ListDashboards200ResponseLinks
 type ListDashboards200ResponseLinks struct {
-	Next *ListDashboards200ResponseLinksNext `json:"next,omitempty"`
-	Prev *ListDashboards200ResponseLinksPrev `json:"prev,omitempty"`
-	Self *ListDashboards200ResponseLinksSelf `json:"self,omitempty"`
+	Next *ListAccountsForStack200ResponseLinksStack `json:"next,omitempty"`
+	Prev *ListAccountsForStack200ResponseLinksStack `json:"prev,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewListDashboards200ResponseLinksWithDefaults() *ListDashboards200ResponseL
 }
 
 // GetNext returns the Next field value if set, zero value otherwise.
-func (o *ListDashboards200ResponseLinks) GetNext() ListDashboards200ResponseLinksNext {
+func (o *ListDashboards200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Next) {
-		var ret ListDashboards200ResponseLinksNext
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Next
@@ -55,7 +55,7 @@ func (o *ListDashboards200ResponseLinks) GetNext() ListDashboards200ResponseLink
 
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDashboards200ResponseLinks) GetNextOk() (*ListDashboards200ResponseLinksNext, bool) {
+func (o *ListDashboards200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *ListDashboards200ResponseLinks) HasNext() bool {
 	return false
 }
 
-// SetNext gets a reference to the given ListDashboards200ResponseLinksNext and assigns it to the Next field.
-func (o *ListDashboards200ResponseLinks) SetNext(v ListDashboards200ResponseLinksNext) {
+// SetNext gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Next field.
+func (o *ListDashboards200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
 	o.Next = &v
 }
 
 // GetPrev returns the Prev field value if set, zero value otherwise.
-func (o *ListDashboards200ResponseLinks) GetPrev() ListDashboards200ResponseLinksPrev {
+func (o *ListDashboards200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Prev) {
-		var ret ListDashboards200ResponseLinksPrev
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Prev
@@ -87,7 +87,7 @@ func (o *ListDashboards200ResponseLinks) GetPrev() ListDashboards200ResponseLink
 
 // GetPrevOk returns a tuple with the Prev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDashboards200ResponseLinks) GetPrevOk() (*ListDashboards200ResponseLinksPrev, bool) {
+func (o *ListDashboards200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Prev) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *ListDashboards200ResponseLinks) HasPrev() bool {
 	return false
 }
 
-// SetPrev gets a reference to the given ListDashboards200ResponseLinksPrev and assigns it to the Prev field.
-func (o *ListDashboards200ResponseLinks) SetPrev(v ListDashboards200ResponseLinksPrev) {
+// SetPrev gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Prev field.
+func (o *ListDashboards200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
 	o.Prev = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ListDashboards200ResponseLinks) GetSelf() ListDashboards200ResponseLinksSelf {
+func (o *ListDashboards200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ListDashboards200ResponseLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *ListDashboards200ResponseLinks) GetSelf() ListDashboards200ResponseLink
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDashboards200ResponseLinks) GetSelfOk() (*ListDashboards200ResponseLinksSelf, bool) {
+func (o *ListDashboards200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *ListDashboards200ResponseLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListDashboards200ResponseLinksSelf and assigns it to the Self field.
-func (o *ListDashboards200ResponseLinks) SetSelf(v ListDashboards200ResponseLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ListDashboards200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

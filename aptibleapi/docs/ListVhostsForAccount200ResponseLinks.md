@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**App** | Pointer to [**ListVhostsForAccount200ResponseLinksApp**](ListVhostsForAccount200ResponseLinksApp.md) |  | [optional] 
-**Service** | Pointer to [**ListVhostsForAccount200ResponseLinksService**](ListVhostsForAccount200ResponseLinksService.md) |  | [optional] 
-**Next** | Pointer to [**ListVhostsForAccount200ResponseLinksNext**](ListVhostsForAccount200ResponseLinksNext.md) |  | [optional] 
-**Prev** | Pointer to [**ListVhostsForAccount200ResponseLinksPrev**](ListVhostsForAccount200ResponseLinksPrev.md) |  | [optional] 
-**Self** | Pointer to [**ListVhostsForAccount200ResponseLinksSelf**](ListVhostsForAccount200ResponseLinksSelf.md) |  | [optional] 
+**App** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Service** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApp
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetApp() ListVhostsForAccount200ResponseLinksApp`
+`func (o *ListVhostsForAccount200ResponseLinks) GetApp() ListAccountsForStack200ResponseLinksStack`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetAppOk() (*ListVhostsForAccount200ResponseLinksApp, bool)`
+`func (o *ListVhostsForAccount200ResponseLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *ListVhostsForAccount200ResponseLinks) SetApp(v ListVhostsForAccount200ResponseLinksApp)`
+`func (o *ListVhostsForAccount200ResponseLinks) SetApp(v ListAccountsForStack200ResponseLinksStack)`
 
 SetApp sets App field to given value.
 
@@ -56,20 +56,20 @@ HasApp returns a boolean if a field has been set.
 
 ### GetService
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetService() ListVhostsForAccount200ResponseLinksService`
+`func (o *ListVhostsForAccount200ResponseLinks) GetService() ListAccountsForStack200ResponseLinksStack`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetServiceOk() (*ListVhostsForAccount200ResponseLinksService, bool)`
+`func (o *ListVhostsForAccount200ResponseLinks) GetServiceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *ListVhostsForAccount200ResponseLinks) SetService(v ListVhostsForAccount200ResponseLinksService)`
+`func (o *ListVhostsForAccount200ResponseLinks) SetService(v ListAccountsForStack200ResponseLinksStack)`
 
 SetService sets Service field to given value.
 
@@ -81,20 +81,20 @@ HasService returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetNext() ListVhostsForAccount200ResponseLinksNext`
+`func (o *ListVhostsForAccount200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetNextOk() (*ListVhostsForAccount200ResponseLinksNext, bool)`
+`func (o *ListVhostsForAccount200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListVhostsForAccount200ResponseLinks) SetNext(v ListVhostsForAccount200ResponseLinksNext)`
+`func (o *ListVhostsForAccount200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
 
 SetNext sets Next field to given value.
 
@@ -106,20 +106,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetPrev() ListVhostsForAccount200ResponseLinksPrev`
+`func (o *ListVhostsForAccount200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetPrevOk() (*ListVhostsForAccount200ResponseLinksPrev, bool)`
+`func (o *ListVhostsForAccount200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListVhostsForAccount200ResponseLinks) SetPrev(v ListVhostsForAccount200ResponseLinksPrev)`
+`func (o *ListVhostsForAccount200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
 
 SetPrev sets Prev field to given value.
 
@@ -131,20 +131,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetSelf() ListVhostsForAccount200ResponseLinksSelf`
+`func (o *ListVhostsForAccount200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListVhostsForAccount200ResponseLinks) GetSelfOk() (*ListVhostsForAccount200ResponseLinksSelf, bool)`
+`func (o *ListVhostsForAccount200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListVhostsForAccount200ResponseLinks) SetSelf(v ListVhostsForAccount200ResponseLinksSelf)`
+`func (o *ListVhostsForAccount200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

@@ -24,7 +24,7 @@ type ListDatabasesForAccount200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListDatabasesForAccount200ResponseLinks `json:"_links"`
+	Links ListActivityReportsForAccount200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListDatabasesForAccount200Response ListDatabasesForAccount200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListDatabasesForAccount200Response(embedded ListDatabasesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDatabasesForAccount200ResponseLinks) *ListDatabasesForAccount200Response {
+func NewListDatabasesForAccount200Response(embedded ListDatabasesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks) *ListDatabasesForAccount200Response {
 	this := ListDatabasesForAccount200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListDatabasesForAccount200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListDatabasesForAccount200Response) GetLinks() ListDatabasesForAccount200ResponseLinks {
+func (o *ListDatabasesForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks {
 	if o == nil {
-		var ret ListDatabasesForAccount200ResponseLinks
+		var ret ListActivityReportsForAccount200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListDatabasesForAccount200Response) GetLinks() ListDatabasesForAccount2
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListDatabasesForAccount200Response) GetLinksOk() (*ListDatabasesForAccount200ResponseLinks, bool) {
+func (o *ListDatabasesForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListDatabasesForAccount200Response) GetLinksOk() (*ListDatabasesForAcco
 }
 
 // SetLinks sets field value
-func (o *ListDatabasesForAccount200Response) SetLinks(v ListDatabasesForAccount200ResponseLinks) {
+func (o *ListDatabasesForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks) {
 	o.Links = v
 }
 

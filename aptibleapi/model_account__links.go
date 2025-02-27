@@ -19,22 +19,22 @@ var _ MappedNullable = &AccountLinks{}
 
 // AccountLinks struct for AccountLinks
 type AccountLinks struct {
-	Organization *AccountLinksOrganization `json:"organization,omitempty"`
-	Stack *AccountLinksStack `json:"stack,omitempty"`
-	Apps *AccountLinksApps `json:"apps,omitempty"`
-	Backups *AccountLinksBackups `json:"backups,omitempty"`
-	Databases *AccountLinksDatabases `json:"databases,omitempty"`
-	Disks *AccountLinksDisks `json:"disks,omitempty"`
-	Services *AccountLinksServices `json:"services,omitempty"`
-	Operations *AccountLinksOperations `json:"operations,omitempty"`
-	Permissions *AccountLinksPermissions `json:"permissions,omitempty"`
-	LogDrains *AccountLinksLogDrains `json:"log_drains,omitempty"`
-	MetricDrains *AccountLinksMetricDrains `json:"metric_drains,omitempty"`
-	Certificates *AccountLinksCertificates `json:"certificates,omitempty"`
-	Vhosts *AccountLinksVhosts `json:"vhosts,omitempty"`
-	ActivityReports *AccountLinksActivityReports `json:"activity_reports,omitempty"`
-	DiskAttachments *AccountLinksDiskAttachments `json:"disk_attachments,omitempty"`
-	Self *AccountLinksSelf `json:"self,omitempty"`
+	Organization *ListAccountsForStack200ResponseLinksStack `json:"organization,omitempty"`
+	Stack *ListAccountsForStack200ResponseLinksStack `json:"stack,omitempty"`
+	Apps *ListAccountsForStack200ResponseLinksStack `json:"apps,omitempty"`
+	Backups *ListAccountsForStack200ResponseLinksStack `json:"backups,omitempty"`
+	Databases *ListAccountsForStack200ResponseLinksStack `json:"databases,omitempty"`
+	Disks *ListAccountsForStack200ResponseLinksStack `json:"disks,omitempty"`
+	Services *ListAccountsForStack200ResponseLinksStack `json:"services,omitempty"`
+	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
+	Permissions *ListAccountsForStack200ResponseLinksStack `json:"permissions,omitempty"`
+	LogDrains *ListAccountsForStack200ResponseLinksStack `json:"log_drains,omitempty"`
+	MetricDrains *ListAccountsForStack200ResponseLinksStack `json:"metric_drains,omitempty"`
+	Certificates *ListAccountsForStack200ResponseLinksStack `json:"certificates,omitempty"`
+	Vhosts *ListAccountsForStack200ResponseLinksStack `json:"vhosts,omitempty"`
+	ActivityReports *ListAccountsForStack200ResponseLinksStack `json:"activity_reports,omitempty"`
+	DiskAttachments *ListAccountsForStack200ResponseLinksStack `json:"disk_attachments,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,9 +58,9 @@ func NewAccountLinksWithDefaults() *AccountLinks {
 }
 
 // GetOrganization returns the Organization field value if set, zero value otherwise.
-func (o *AccountLinks) GetOrganization() AccountLinksOrganization {
+func (o *AccountLinks) GetOrganization() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Organization) {
-		var ret AccountLinksOrganization
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Organization
@@ -68,7 +68,7 @@ func (o *AccountLinks) GetOrganization() AccountLinksOrganization {
 
 // GetOrganizationOk returns a tuple with the Organization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetOrganizationOk() (*AccountLinksOrganization, bool) {
+func (o *AccountLinks) GetOrganizationOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Organization) {
 		return nil, false
 	}
@@ -84,15 +84,15 @@ func (o *AccountLinks) HasOrganization() bool {
 	return false
 }
 
-// SetOrganization gets a reference to the given AccountLinksOrganization and assigns it to the Organization field.
-func (o *AccountLinks) SetOrganization(v AccountLinksOrganization) {
+// SetOrganization gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Organization field.
+func (o *AccountLinks) SetOrganization(v ListAccountsForStack200ResponseLinksStack) {
 	o.Organization = &v
 }
 
 // GetStack returns the Stack field value if set, zero value otherwise.
-func (o *AccountLinks) GetStack() AccountLinksStack {
+func (o *AccountLinks) GetStack() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Stack) {
-		var ret AccountLinksStack
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Stack
@@ -100,7 +100,7 @@ func (o *AccountLinks) GetStack() AccountLinksStack {
 
 // GetStackOk returns a tuple with the Stack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetStackOk() (*AccountLinksStack, bool) {
+func (o *AccountLinks) GetStackOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Stack) {
 		return nil, false
 	}
@@ -116,15 +116,15 @@ func (o *AccountLinks) HasStack() bool {
 	return false
 }
 
-// SetStack gets a reference to the given AccountLinksStack and assigns it to the Stack field.
-func (o *AccountLinks) SetStack(v AccountLinksStack) {
+// SetStack gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Stack field.
+func (o *AccountLinks) SetStack(v ListAccountsForStack200ResponseLinksStack) {
 	o.Stack = &v
 }
 
 // GetApps returns the Apps field value if set, zero value otherwise.
-func (o *AccountLinks) GetApps() AccountLinksApps {
+func (o *AccountLinks) GetApps() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Apps) {
-		var ret AccountLinksApps
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Apps
@@ -132,7 +132,7 @@ func (o *AccountLinks) GetApps() AccountLinksApps {
 
 // GetAppsOk returns a tuple with the Apps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetAppsOk() (*AccountLinksApps, bool) {
+func (o *AccountLinks) GetAppsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Apps) {
 		return nil, false
 	}
@@ -148,15 +148,15 @@ func (o *AccountLinks) HasApps() bool {
 	return false
 }
 
-// SetApps gets a reference to the given AccountLinksApps and assigns it to the Apps field.
-func (o *AccountLinks) SetApps(v AccountLinksApps) {
+// SetApps gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Apps field.
+func (o *AccountLinks) SetApps(v ListAccountsForStack200ResponseLinksStack) {
 	o.Apps = &v
 }
 
 // GetBackups returns the Backups field value if set, zero value otherwise.
-func (o *AccountLinks) GetBackups() AccountLinksBackups {
+func (o *AccountLinks) GetBackups() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Backups) {
-		var ret AccountLinksBackups
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Backups
@@ -164,7 +164,7 @@ func (o *AccountLinks) GetBackups() AccountLinksBackups {
 
 // GetBackupsOk returns a tuple with the Backups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetBackupsOk() (*AccountLinksBackups, bool) {
+func (o *AccountLinks) GetBackupsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Backups) {
 		return nil, false
 	}
@@ -180,15 +180,15 @@ func (o *AccountLinks) HasBackups() bool {
 	return false
 }
 
-// SetBackups gets a reference to the given AccountLinksBackups and assigns it to the Backups field.
-func (o *AccountLinks) SetBackups(v AccountLinksBackups) {
+// SetBackups gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Backups field.
+func (o *AccountLinks) SetBackups(v ListAccountsForStack200ResponseLinksStack) {
 	o.Backups = &v
 }
 
 // GetDatabases returns the Databases field value if set, zero value otherwise.
-func (o *AccountLinks) GetDatabases() AccountLinksDatabases {
+func (o *AccountLinks) GetDatabases() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Databases) {
-		var ret AccountLinksDatabases
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Databases
@@ -196,7 +196,7 @@ func (o *AccountLinks) GetDatabases() AccountLinksDatabases {
 
 // GetDatabasesOk returns a tuple with the Databases field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetDatabasesOk() (*AccountLinksDatabases, bool) {
+func (o *AccountLinks) GetDatabasesOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Databases) {
 		return nil, false
 	}
@@ -212,15 +212,15 @@ func (o *AccountLinks) HasDatabases() bool {
 	return false
 }
 
-// SetDatabases gets a reference to the given AccountLinksDatabases and assigns it to the Databases field.
-func (o *AccountLinks) SetDatabases(v AccountLinksDatabases) {
+// SetDatabases gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Databases field.
+func (o *AccountLinks) SetDatabases(v ListAccountsForStack200ResponseLinksStack) {
 	o.Databases = &v
 }
 
 // GetDisks returns the Disks field value if set, zero value otherwise.
-func (o *AccountLinks) GetDisks() AccountLinksDisks {
+func (o *AccountLinks) GetDisks() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Disks) {
-		var ret AccountLinksDisks
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Disks
@@ -228,7 +228,7 @@ func (o *AccountLinks) GetDisks() AccountLinksDisks {
 
 // GetDisksOk returns a tuple with the Disks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetDisksOk() (*AccountLinksDisks, bool) {
+func (o *AccountLinks) GetDisksOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Disks) {
 		return nil, false
 	}
@@ -244,15 +244,15 @@ func (o *AccountLinks) HasDisks() bool {
 	return false
 }
 
-// SetDisks gets a reference to the given AccountLinksDisks and assigns it to the Disks field.
-func (o *AccountLinks) SetDisks(v AccountLinksDisks) {
+// SetDisks gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Disks field.
+func (o *AccountLinks) SetDisks(v ListAccountsForStack200ResponseLinksStack) {
 	o.Disks = &v
 }
 
 // GetServices returns the Services field value if set, zero value otherwise.
-func (o *AccountLinks) GetServices() AccountLinksServices {
+func (o *AccountLinks) GetServices() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Services) {
-		var ret AccountLinksServices
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Services
@@ -260,7 +260,7 @@ func (o *AccountLinks) GetServices() AccountLinksServices {
 
 // GetServicesOk returns a tuple with the Services field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetServicesOk() (*AccountLinksServices, bool) {
+func (o *AccountLinks) GetServicesOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Services) {
 		return nil, false
 	}
@@ -276,15 +276,15 @@ func (o *AccountLinks) HasServices() bool {
 	return false
 }
 
-// SetServices gets a reference to the given AccountLinksServices and assigns it to the Services field.
-func (o *AccountLinks) SetServices(v AccountLinksServices) {
+// SetServices gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Services field.
+func (o *AccountLinks) SetServices(v ListAccountsForStack200ResponseLinksStack) {
 	o.Services = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *AccountLinks) GetOperations() AccountLinksOperations {
+func (o *AccountLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Operations) {
-		var ret AccountLinksOperations
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Operations
@@ -292,7 +292,7 @@ func (o *AccountLinks) GetOperations() AccountLinksOperations {
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetOperationsOk() (*AccountLinksOperations, bool) {
+func (o *AccountLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -308,15 +308,15 @@ func (o *AccountLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given AccountLinksOperations and assigns it to the Operations field.
-func (o *AccountLinks) SetOperations(v AccountLinksOperations) {
+// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
+func (o *AccountLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
 	o.Operations = &v
 }
 
 // GetPermissions returns the Permissions field value if set, zero value otherwise.
-func (o *AccountLinks) GetPermissions() AccountLinksPermissions {
+func (o *AccountLinks) GetPermissions() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Permissions) {
-		var ret AccountLinksPermissions
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Permissions
@@ -324,7 +324,7 @@ func (o *AccountLinks) GetPermissions() AccountLinksPermissions {
 
 // GetPermissionsOk returns a tuple with the Permissions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetPermissionsOk() (*AccountLinksPermissions, bool) {
+func (o *AccountLinks) GetPermissionsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Permissions) {
 		return nil, false
 	}
@@ -340,15 +340,15 @@ func (o *AccountLinks) HasPermissions() bool {
 	return false
 }
 
-// SetPermissions gets a reference to the given AccountLinksPermissions and assigns it to the Permissions field.
-func (o *AccountLinks) SetPermissions(v AccountLinksPermissions) {
+// SetPermissions gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Permissions field.
+func (o *AccountLinks) SetPermissions(v ListAccountsForStack200ResponseLinksStack) {
 	o.Permissions = &v
 }
 
 // GetLogDrains returns the LogDrains field value if set, zero value otherwise.
-func (o *AccountLinks) GetLogDrains() AccountLinksLogDrains {
+func (o *AccountLinks) GetLogDrains() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.LogDrains) {
-		var ret AccountLinksLogDrains
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.LogDrains
@@ -356,7 +356,7 @@ func (o *AccountLinks) GetLogDrains() AccountLinksLogDrains {
 
 // GetLogDrainsOk returns a tuple with the LogDrains field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetLogDrainsOk() (*AccountLinksLogDrains, bool) {
+func (o *AccountLinks) GetLogDrainsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.LogDrains) {
 		return nil, false
 	}
@@ -372,15 +372,15 @@ func (o *AccountLinks) HasLogDrains() bool {
 	return false
 }
 
-// SetLogDrains gets a reference to the given AccountLinksLogDrains and assigns it to the LogDrains field.
-func (o *AccountLinks) SetLogDrains(v AccountLinksLogDrains) {
+// SetLogDrains gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the LogDrains field.
+func (o *AccountLinks) SetLogDrains(v ListAccountsForStack200ResponseLinksStack) {
 	o.LogDrains = &v
 }
 
 // GetMetricDrains returns the MetricDrains field value if set, zero value otherwise.
-func (o *AccountLinks) GetMetricDrains() AccountLinksMetricDrains {
+func (o *AccountLinks) GetMetricDrains() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.MetricDrains) {
-		var ret AccountLinksMetricDrains
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.MetricDrains
@@ -388,7 +388,7 @@ func (o *AccountLinks) GetMetricDrains() AccountLinksMetricDrains {
 
 // GetMetricDrainsOk returns a tuple with the MetricDrains field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetMetricDrainsOk() (*AccountLinksMetricDrains, bool) {
+func (o *AccountLinks) GetMetricDrainsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.MetricDrains) {
 		return nil, false
 	}
@@ -404,15 +404,15 @@ func (o *AccountLinks) HasMetricDrains() bool {
 	return false
 }
 
-// SetMetricDrains gets a reference to the given AccountLinksMetricDrains and assigns it to the MetricDrains field.
-func (o *AccountLinks) SetMetricDrains(v AccountLinksMetricDrains) {
+// SetMetricDrains gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the MetricDrains field.
+func (o *AccountLinks) SetMetricDrains(v ListAccountsForStack200ResponseLinksStack) {
 	o.MetricDrains = &v
 }
 
 // GetCertificates returns the Certificates field value if set, zero value otherwise.
-func (o *AccountLinks) GetCertificates() AccountLinksCertificates {
+func (o *AccountLinks) GetCertificates() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Certificates) {
-		var ret AccountLinksCertificates
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Certificates
@@ -420,7 +420,7 @@ func (o *AccountLinks) GetCertificates() AccountLinksCertificates {
 
 // GetCertificatesOk returns a tuple with the Certificates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetCertificatesOk() (*AccountLinksCertificates, bool) {
+func (o *AccountLinks) GetCertificatesOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Certificates) {
 		return nil, false
 	}
@@ -436,15 +436,15 @@ func (o *AccountLinks) HasCertificates() bool {
 	return false
 }
 
-// SetCertificates gets a reference to the given AccountLinksCertificates and assigns it to the Certificates field.
-func (o *AccountLinks) SetCertificates(v AccountLinksCertificates) {
+// SetCertificates gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Certificates field.
+func (o *AccountLinks) SetCertificates(v ListAccountsForStack200ResponseLinksStack) {
 	o.Certificates = &v
 }
 
 // GetVhosts returns the Vhosts field value if set, zero value otherwise.
-func (o *AccountLinks) GetVhosts() AccountLinksVhosts {
+func (o *AccountLinks) GetVhosts() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Vhosts) {
-		var ret AccountLinksVhosts
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Vhosts
@@ -452,7 +452,7 @@ func (o *AccountLinks) GetVhosts() AccountLinksVhosts {
 
 // GetVhostsOk returns a tuple with the Vhosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetVhostsOk() (*AccountLinksVhosts, bool) {
+func (o *AccountLinks) GetVhostsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Vhosts) {
 		return nil, false
 	}
@@ -468,15 +468,15 @@ func (o *AccountLinks) HasVhosts() bool {
 	return false
 }
 
-// SetVhosts gets a reference to the given AccountLinksVhosts and assigns it to the Vhosts field.
-func (o *AccountLinks) SetVhosts(v AccountLinksVhosts) {
+// SetVhosts gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Vhosts field.
+func (o *AccountLinks) SetVhosts(v ListAccountsForStack200ResponseLinksStack) {
 	o.Vhosts = &v
 }
 
 // GetActivityReports returns the ActivityReports field value if set, zero value otherwise.
-func (o *AccountLinks) GetActivityReports() AccountLinksActivityReports {
+func (o *AccountLinks) GetActivityReports() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.ActivityReports) {
-		var ret AccountLinksActivityReports
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.ActivityReports
@@ -484,7 +484,7 @@ func (o *AccountLinks) GetActivityReports() AccountLinksActivityReports {
 
 // GetActivityReportsOk returns a tuple with the ActivityReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetActivityReportsOk() (*AccountLinksActivityReports, bool) {
+func (o *AccountLinks) GetActivityReportsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.ActivityReports) {
 		return nil, false
 	}
@@ -500,15 +500,15 @@ func (o *AccountLinks) HasActivityReports() bool {
 	return false
 }
 
-// SetActivityReports gets a reference to the given AccountLinksActivityReports and assigns it to the ActivityReports field.
-func (o *AccountLinks) SetActivityReports(v AccountLinksActivityReports) {
+// SetActivityReports gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the ActivityReports field.
+func (o *AccountLinks) SetActivityReports(v ListAccountsForStack200ResponseLinksStack) {
 	o.ActivityReports = &v
 }
 
 // GetDiskAttachments returns the DiskAttachments field value if set, zero value otherwise.
-func (o *AccountLinks) GetDiskAttachments() AccountLinksDiskAttachments {
+func (o *AccountLinks) GetDiskAttachments() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.DiskAttachments) {
-		var ret AccountLinksDiskAttachments
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.DiskAttachments
@@ -516,7 +516,7 @@ func (o *AccountLinks) GetDiskAttachments() AccountLinksDiskAttachments {
 
 // GetDiskAttachmentsOk returns a tuple with the DiskAttachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetDiskAttachmentsOk() (*AccountLinksDiskAttachments, bool) {
+func (o *AccountLinks) GetDiskAttachmentsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.DiskAttachments) {
 		return nil, false
 	}
@@ -532,15 +532,15 @@ func (o *AccountLinks) HasDiskAttachments() bool {
 	return false
 }
 
-// SetDiskAttachments gets a reference to the given AccountLinksDiskAttachments and assigns it to the DiskAttachments field.
-func (o *AccountLinks) SetDiskAttachments(v AccountLinksDiskAttachments) {
+// SetDiskAttachments gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the DiskAttachments field.
+func (o *AccountLinks) SetDiskAttachments(v ListAccountsForStack200ResponseLinksStack) {
 	o.DiskAttachments = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *AccountLinks) GetSelf() AccountLinksSelf {
+func (o *AccountLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret AccountLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -548,7 +548,7 @@ func (o *AccountLinks) GetSelf() AccountLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccountLinks) GetSelfOk() (*AccountLinksSelf, bool) {
+func (o *AccountLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -564,8 +564,8 @@ func (o *AccountLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given AccountLinksSelf and assigns it to the Self field.
-func (o *AccountLinks) SetSelf(v AccountLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *AccountLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

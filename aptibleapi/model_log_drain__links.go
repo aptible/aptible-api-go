@@ -19,12 +19,12 @@ var _ MappedNullable = &LogDrainLinks{}
 
 // LogDrainLinks struct for LogDrainLinks
 type LogDrainLinks struct {
-	Account *LogDrainLinksAccount `json:"account,omitempty"`
-	Database *LogDrainLinksDatabase `json:"database,omitempty"`
-	Operations *LogDrainLinksOperations `json:"operations,omitempty"`
-	Containers *LogDrainLinksContainers `json:"containers,omitempty"`
-	EphemeralContainers *LogDrainLinksEphemeralContainers `json:"ephemeral_containers,omitempty"`
-	Self *LogDrainLinksSelf `json:"self,omitempty"`
+	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
+	Database *ListAccountsForStack200ResponseLinksStack `json:"database,omitempty"`
+	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
+	Containers *ListAccountsForStack200ResponseLinksStack `json:"containers,omitempty"`
+	EphemeralContainers *ListAccountsForStack200ResponseLinksStack `json:"ephemeral_containers,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -48,9 +48,9 @@ func NewLogDrainLinksWithDefaults() *LogDrainLinks {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *LogDrainLinks) GetAccount() LogDrainLinksAccount {
+func (o *LogDrainLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Account) {
-		var ret LogDrainLinksAccount
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Account
@@ -58,7 +58,7 @@ func (o *LogDrainLinks) GetAccount() LogDrainLinksAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogDrainLinks) GetAccountOk() (*LogDrainLinksAccount, bool) {
+func (o *LogDrainLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -74,15 +74,15 @@ func (o *LogDrainLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given LogDrainLinksAccount and assigns it to the Account field.
-func (o *LogDrainLinks) SetAccount(v LogDrainLinksAccount) {
+// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
+func (o *LogDrainLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
 	o.Account = &v
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *LogDrainLinks) GetDatabase() LogDrainLinksDatabase {
+func (o *LogDrainLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Database) {
-		var ret LogDrainLinksDatabase
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Database
@@ -90,7 +90,7 @@ func (o *LogDrainLinks) GetDatabase() LogDrainLinksDatabase {
 
 // GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogDrainLinks) GetDatabaseOk() (*LogDrainLinksDatabase, bool) {
+func (o *LogDrainLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Database) {
 		return nil, false
 	}
@@ -106,15 +106,15 @@ func (o *LogDrainLinks) HasDatabase() bool {
 	return false
 }
 
-// SetDatabase gets a reference to the given LogDrainLinksDatabase and assigns it to the Database field.
-func (o *LogDrainLinks) SetDatabase(v LogDrainLinksDatabase) {
+// SetDatabase gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Database field.
+func (o *LogDrainLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack) {
 	o.Database = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *LogDrainLinks) GetOperations() LogDrainLinksOperations {
+func (o *LogDrainLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Operations) {
-		var ret LogDrainLinksOperations
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Operations
@@ -122,7 +122,7 @@ func (o *LogDrainLinks) GetOperations() LogDrainLinksOperations {
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogDrainLinks) GetOperationsOk() (*LogDrainLinksOperations, bool) {
+func (o *LogDrainLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -138,15 +138,15 @@ func (o *LogDrainLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given LogDrainLinksOperations and assigns it to the Operations field.
-func (o *LogDrainLinks) SetOperations(v LogDrainLinksOperations) {
+// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
+func (o *LogDrainLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
 	o.Operations = &v
 }
 
 // GetContainers returns the Containers field value if set, zero value otherwise.
-func (o *LogDrainLinks) GetContainers() LogDrainLinksContainers {
+func (o *LogDrainLinks) GetContainers() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Containers) {
-		var ret LogDrainLinksContainers
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Containers
@@ -154,7 +154,7 @@ func (o *LogDrainLinks) GetContainers() LogDrainLinksContainers {
 
 // GetContainersOk returns a tuple with the Containers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogDrainLinks) GetContainersOk() (*LogDrainLinksContainers, bool) {
+func (o *LogDrainLinks) GetContainersOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Containers) {
 		return nil, false
 	}
@@ -170,15 +170,15 @@ func (o *LogDrainLinks) HasContainers() bool {
 	return false
 }
 
-// SetContainers gets a reference to the given LogDrainLinksContainers and assigns it to the Containers field.
-func (o *LogDrainLinks) SetContainers(v LogDrainLinksContainers) {
+// SetContainers gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Containers field.
+func (o *LogDrainLinks) SetContainers(v ListAccountsForStack200ResponseLinksStack) {
 	o.Containers = &v
 }
 
 // GetEphemeralContainers returns the EphemeralContainers field value if set, zero value otherwise.
-func (o *LogDrainLinks) GetEphemeralContainers() LogDrainLinksEphemeralContainers {
+func (o *LogDrainLinks) GetEphemeralContainers() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.EphemeralContainers) {
-		var ret LogDrainLinksEphemeralContainers
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.EphemeralContainers
@@ -186,7 +186,7 @@ func (o *LogDrainLinks) GetEphemeralContainers() LogDrainLinksEphemeralContainer
 
 // GetEphemeralContainersOk returns a tuple with the EphemeralContainers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogDrainLinks) GetEphemeralContainersOk() (*LogDrainLinksEphemeralContainers, bool) {
+func (o *LogDrainLinks) GetEphemeralContainersOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.EphemeralContainers) {
 		return nil, false
 	}
@@ -202,15 +202,15 @@ func (o *LogDrainLinks) HasEphemeralContainers() bool {
 	return false
 }
 
-// SetEphemeralContainers gets a reference to the given LogDrainLinksEphemeralContainers and assigns it to the EphemeralContainers field.
-func (o *LogDrainLinks) SetEphemeralContainers(v LogDrainLinksEphemeralContainers) {
+// SetEphemeralContainers gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the EphemeralContainers field.
+func (o *LogDrainLinks) SetEphemeralContainers(v ListAccountsForStack200ResponseLinksStack) {
 	o.EphemeralContainers = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *LogDrainLinks) GetSelf() LogDrainLinksSelf {
+func (o *LogDrainLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret LogDrainLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -218,7 +218,7 @@ func (o *LogDrainLinks) GetSelf() LogDrainLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogDrainLinks) GetSelfOk() (*LogDrainLinksSelf, bool) {
+func (o *LogDrainLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -234,8 +234,8 @@ func (o *LogDrainLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given LogDrainLinksSelf and assigns it to the Self field.
-func (o *LogDrainLinks) SetSelf(v LogDrainLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *LogDrainLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

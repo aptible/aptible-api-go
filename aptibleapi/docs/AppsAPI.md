@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## ListApps
 
-> ListApps200Response ListApps(ctx).Page(page).Execute()
+> ListAppsForAccount200Response ListApps(ctx).Page(page).Execute()
 
 list apps
 
@@ -247,7 +247,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ListApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListApps`: ListApps200Response
+	// response from `ListApps`: ListAppsForAccount200Response
 	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.ListApps`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListApps200Response**](ListApps200Response.md)
+[**ListAppsForAccount200Response**](ListAppsForAccount200Response.md)
 
 ### Authorization
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ## ListAppsForCertificate
 
-> ListAppsForCertificate200Response ListAppsForCertificate(ctx, certificateId).Page(page).Execute()
+> ListAppsForAccount200Response ListAppsForCertificate(ctx, certificateId).Page(page).Execute()
 
 list apps
 
@@ -382,7 +382,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ListAppsForCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAppsForCertificate`: ListAppsForCertificate200Response
+	// response from `ListAppsForCertificate`: ListAppsForAccount200Response
 	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.ListAppsForCertificate`: %v\n", resp)
 }
 ```
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListAppsForCertificate200Response**](ListAppsForCertificate200Response.md)
+[**ListAppsForAccount200Response**](ListAppsForAccount200Response.md)
 
 ### Authorization
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ## PatchApp
 
-> PatchApp(ctx, id).PatchAppRequest(patchAppRequest).Execute()
+> PatchApp(ctx, id).UpdateAppRequest(updateAppRequest).Execute()
 
 update app
 
@@ -443,11 +443,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	patchAppRequest := *openapiclient.NewPatchAppRequest() // PatchAppRequest |  (optional)
+	updateAppRequest := *openapiclient.NewUpdateAppRequest() // UpdateAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AppsAPI.PatchApp(context.Background(), id).PatchAppRequest(patchAppRequest).Execute()
+	r, err := apiClient.AppsAPI.PatchApp(context.Background(), id).UpdateAppRequest(updateAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.PatchApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -471,7 +471,7 @@ Other parameters are passed through a pointer to a apiPatchAppRequest struct via
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **patchAppRequest** | [**PatchAppRequest**](PatchAppRequest.md) |  | 
+ **updateAppRequest** | [**UpdateAppRequest**](UpdateAppRequest.md) |  | 
 
 ### Return type
 

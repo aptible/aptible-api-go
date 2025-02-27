@@ -27,7 +27,7 @@ type Observation struct {
 	RangeBegin string `json:"range_begin"`
 	RangeEnd string `json:"range_end"`
 	Data map[string]interface{} `json:"data"`
-	Links *ObservationLinks `json:"_links,omitempty"`
+	Links *ConfigurationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -226,9 +226,9 @@ func (o *Observation) SetData(v map[string]interface{}) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *Observation) GetLinks() ObservationLinks {
+func (o *Observation) GetLinks() ConfigurationLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret ObservationLinks
+		var ret ConfigurationLinks
 		return ret
 	}
 	return *o.Links
@@ -236,7 +236,7 @@ func (o *Observation) GetLinks() ObservationLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Observation) GetLinksOk() (*ObservationLinks, bool) {
+func (o *Observation) GetLinksOk() (*ConfigurationLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -252,8 +252,8 @@ func (o *Observation) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given ObservationLinks and assigns it to the Links field.
-func (o *Observation) SetLinks(v ObservationLinks) {
+// SetLinks gets a reference to the given ConfigurationLinks and assigns it to the Links field.
+func (o *Observation) SetLinks(v ConfigurationLinks) {
 	o.Links = &v
 }
 

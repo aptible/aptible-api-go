@@ -292,7 +292,7 @@ func (r ApiLogDrainsLogDrainIdContainersGetRequest) Page(page int32) ApiLogDrain
 	return r
 }
 
-func (r ApiLogDrainsLogDrainIdContainersGetRequest) Execute() (*LogDrainsLogDrainIdContainersGet200Response, *http.Response, error) {
+func (r ApiLogDrainsLogDrainIdContainersGetRequest) Execute() (*ListContainersForRelease200Response, *http.Response, error) {
 	return r.ApiService.LogDrainsLogDrainIdContainersGetExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *ContainersAPIService) LogDrainsLogDrainIdContainersGet(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return LogDrainsLogDrainIdContainersGet200Response
-func (a *ContainersAPIService) LogDrainsLogDrainIdContainersGetExecute(r ApiLogDrainsLogDrainIdContainersGetRequest) (*LogDrainsLogDrainIdContainersGet200Response, *http.Response, error) {
+//  @return ListContainersForRelease200Response
+func (a *ContainersAPIService) LogDrainsLogDrainIdContainersGetExecute(r ApiLogDrainsLogDrainIdContainersGetRequest) (*ListContainersForRelease200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LogDrainsLogDrainIdContainersGet200Response
+		localVarReturnValue  *ListContainersForRelease200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.LogDrainsLogDrainIdContainersGet")
@@ -425,7 +425,7 @@ func (r ApiMetricDrainsMetricDrainIdContainersGetRequest) Page(page int32) ApiMe
 	return r
 }
 
-func (r ApiMetricDrainsMetricDrainIdContainersGetRequest) Execute() (*MetricDrainsMetricDrainIdContainersGet200Response, *http.Response, error) {
+func (r ApiMetricDrainsMetricDrainIdContainersGetRequest) Execute() (*ListContainersForRelease200Response, *http.Response, error) {
 	return r.ApiService.MetricDrainsMetricDrainIdContainersGetExecute(r)
 }
 
@@ -445,13 +445,13 @@ func (a *ContainersAPIService) MetricDrainsMetricDrainIdContainersGet(ctx contex
 }
 
 // Execute executes the request
-//  @return MetricDrainsMetricDrainIdContainersGet200Response
-func (a *ContainersAPIService) MetricDrainsMetricDrainIdContainersGetExecute(r ApiMetricDrainsMetricDrainIdContainersGetRequest) (*MetricDrainsMetricDrainIdContainersGet200Response, *http.Response, error) {
+//  @return ListContainersForRelease200Response
+func (a *ContainersAPIService) MetricDrainsMetricDrainIdContainersGetExecute(r ApiMetricDrainsMetricDrainIdContainersGetRequest) (*ListContainersForRelease200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MetricDrainsMetricDrainIdContainersGet200Response
+		localVarReturnValue  *ListContainersForRelease200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContainersAPIService.MetricDrainsMetricDrainIdContainersGet")

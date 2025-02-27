@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **MaxContainers** | **NullableInt32** |  | 
 **ScaleUpStep** | **NullableInt32** |  | 
 **ScaleDownStep** | **NullableInt32** |  | 
-**Links** | Pointer to [**ServiceSizingPolicyLinks**](ServiceSizingPolicyLinks.md) |  | [optional] 
+**Links** | Pointer to [**BackupRetentionPolicyLinks**](BackupRetentionPolicyLinks.md) |  | [optional] 
 
 ## Methods
 
@@ -632,20 +632,20 @@ SetScaleDownStep sets ScaleDownStep field to given value.
 UnsetScaleDownStep ensures that no value is present for ScaleDownStep, not even an explicit nil
 ### GetLinks
 
-`func (o *ServiceSizingPolicy) GetLinks() ServiceSizingPolicyLinks`
+`func (o *ServiceSizingPolicy) GetLinks() BackupRetentionPolicyLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ServiceSizingPolicy) GetLinksOk() (*ServiceSizingPolicyLinks, bool)`
+`func (o *ServiceSizingPolicy) GetLinksOk() (*BackupRetentionPolicyLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ServiceSizingPolicy) SetLinks(v ServiceSizingPolicyLinks)`
+`func (o *ServiceSizingPolicy) SetLinks(v BackupRetentionPolicyLinks)`
 
 SetLinks sets Links field to given value.
 

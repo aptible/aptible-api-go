@@ -629,11 +629,11 @@ type ApiUpdateDatadogIntegrationRequest struct {
 	ctx context.Context
 	ApiService *DefaultAPIService
 	id int32
-	updateDatadogIntegrationRequest *UpdateDatadogIntegrationRequest
+	updateDashboardRequest *UpdateDashboardRequest
 }
 
-func (r ApiUpdateDatadogIntegrationRequest) UpdateDatadogIntegrationRequest(updateDatadogIntegrationRequest UpdateDatadogIntegrationRequest) ApiUpdateDatadogIntegrationRequest {
-	r.updateDatadogIntegrationRequest = &updateDatadogIntegrationRequest
+func (r ApiUpdateDatadogIntegrationRequest) UpdateDashboardRequest(updateDashboardRequest UpdateDashboardRequest) ApiUpdateDatadogIntegrationRequest {
+	r.updateDashboardRequest = &updateDashboardRequest
 	return r
 }
 
@@ -694,7 +694,7 @@ func (a *DefaultAPIService) UpdateDatadogIntegrationExecute(r ApiUpdateDatadogIn
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateDatadogIntegrationRequest
+	localVarPostBody = r.updateDashboardRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

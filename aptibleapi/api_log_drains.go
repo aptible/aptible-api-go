@@ -526,11 +526,11 @@ type ApiPatchLogDrainRequest struct {
 	ctx context.Context
 	ApiService *LogDrainsAPIService
 	id int32
-	patchLogDrainRequest *PatchLogDrainRequest
+	updateLogDrainRequest *UpdateLogDrainRequest
 }
 
-func (r ApiPatchLogDrainRequest) PatchLogDrainRequest(patchLogDrainRequest PatchLogDrainRequest) ApiPatchLogDrainRequest {
-	r.patchLogDrainRequest = &patchLogDrainRequest
+func (r ApiPatchLogDrainRequest) UpdateLogDrainRequest(updateLogDrainRequest UpdateLogDrainRequest) ApiPatchLogDrainRequest {
+	r.updateLogDrainRequest = &updateLogDrainRequest
 	return r
 }
 
@@ -591,7 +591,7 @@ func (a *LogDrainsAPIService) PatchLogDrainExecute(r ApiPatchLogDrainRequest) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.patchLogDrainRequest
+	localVarPostBody = r.updateLogDrainRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

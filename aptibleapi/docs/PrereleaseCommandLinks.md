@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**App** | Pointer to [**PrereleaseCommandLinksApp**](PrereleaseCommandLinksApp.md) |  | [optional] 
-**Self** | Pointer to [**PrereleaseCommandLinksSelf**](PrereleaseCommandLinksSelf.md) |  | [optional] 
+**App** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApp
 
-`func (o *PrereleaseCommandLinks) GetApp() PrereleaseCommandLinksApp`
+`func (o *PrereleaseCommandLinks) GetApp() ListAccountsForStack200ResponseLinksStack`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *PrereleaseCommandLinks) GetAppOk() (*PrereleaseCommandLinksApp, bool)`
+`func (o *PrereleaseCommandLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *PrereleaseCommandLinks) SetApp(v PrereleaseCommandLinksApp)`
+`func (o *PrereleaseCommandLinks) SetApp(v ListAccountsForStack200ResponseLinksStack)`
 
 SetApp sets App field to given value.
 
@@ -53,20 +53,20 @@ HasApp returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *PrereleaseCommandLinks) GetSelf() PrereleaseCommandLinksSelf`
+`func (o *PrereleaseCommandLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *PrereleaseCommandLinks) GetSelfOk() (*PrereleaseCommandLinksSelf, bool)`
+`func (o *PrereleaseCommandLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *PrereleaseCommandLinks) SetSelf(v PrereleaseCommandLinksSelf)`
+`func (o *PrereleaseCommandLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

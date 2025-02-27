@@ -19,11 +19,11 @@ var _ MappedNullable = &ListContainersForRelease200ResponseLinks{}
 
 // ListContainersForRelease200ResponseLinks struct for ListContainersForRelease200ResponseLinks
 type ListContainersForRelease200ResponseLinks struct {
-	Release *ListContainersForRelease200ResponseLinksRelease `json:"release,omitempty"`
-	LogDrain *ListContainersForRelease200ResponseLinksLogDrain `json:"log_drain,omitempty"`
-	Next *ListContainersForRelease200ResponseLinksNext `json:"next,omitempty"`
-	Prev *ListContainersForRelease200ResponseLinksPrev `json:"prev,omitempty"`
-	Self *ListContainersForRelease200ResponseLinksSelf `json:"self,omitempty"`
+	Release *ListAccountsForStack200ResponseLinksStack `json:"release,omitempty"`
+	LogDrain *ListAccountsForStack200ResponseLinksStack `json:"log_drain,omitempty"`
+	Next *ListAccountsForStack200ResponseLinksStack `json:"next,omitempty"`
+	Prev *ListAccountsForStack200ResponseLinksStack `json:"prev,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,9 +47,9 @@ func NewListContainersForRelease200ResponseLinksWithDefaults() *ListContainersFo
 }
 
 // GetRelease returns the Release field value if set, zero value otherwise.
-func (o *ListContainersForRelease200ResponseLinks) GetRelease() ListContainersForRelease200ResponseLinksRelease {
+func (o *ListContainersForRelease200ResponseLinks) GetRelease() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Release) {
-		var ret ListContainersForRelease200ResponseLinksRelease
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Release
@@ -57,7 +57,7 @@ func (o *ListContainersForRelease200ResponseLinks) GetRelease() ListContainersFo
 
 // GetReleaseOk returns a tuple with the Release field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListContainersForRelease200ResponseLinks) GetReleaseOk() (*ListContainersForRelease200ResponseLinksRelease, bool) {
+func (o *ListContainersForRelease200ResponseLinks) GetReleaseOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Release) {
 		return nil, false
 	}
@@ -73,15 +73,15 @@ func (o *ListContainersForRelease200ResponseLinks) HasRelease() bool {
 	return false
 }
 
-// SetRelease gets a reference to the given ListContainersForRelease200ResponseLinksRelease and assigns it to the Release field.
-func (o *ListContainersForRelease200ResponseLinks) SetRelease(v ListContainersForRelease200ResponseLinksRelease) {
+// SetRelease gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Release field.
+func (o *ListContainersForRelease200ResponseLinks) SetRelease(v ListAccountsForStack200ResponseLinksStack) {
 	o.Release = &v
 }
 
 // GetLogDrain returns the LogDrain field value if set, zero value otherwise.
-func (o *ListContainersForRelease200ResponseLinks) GetLogDrain() ListContainersForRelease200ResponseLinksLogDrain {
+func (o *ListContainersForRelease200ResponseLinks) GetLogDrain() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.LogDrain) {
-		var ret ListContainersForRelease200ResponseLinksLogDrain
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.LogDrain
@@ -89,7 +89,7 @@ func (o *ListContainersForRelease200ResponseLinks) GetLogDrain() ListContainersF
 
 // GetLogDrainOk returns a tuple with the LogDrain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListContainersForRelease200ResponseLinks) GetLogDrainOk() (*ListContainersForRelease200ResponseLinksLogDrain, bool) {
+func (o *ListContainersForRelease200ResponseLinks) GetLogDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.LogDrain) {
 		return nil, false
 	}
@@ -105,15 +105,15 @@ func (o *ListContainersForRelease200ResponseLinks) HasLogDrain() bool {
 	return false
 }
 
-// SetLogDrain gets a reference to the given ListContainersForRelease200ResponseLinksLogDrain and assigns it to the LogDrain field.
-func (o *ListContainersForRelease200ResponseLinks) SetLogDrain(v ListContainersForRelease200ResponseLinksLogDrain) {
+// SetLogDrain gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the LogDrain field.
+func (o *ListContainersForRelease200ResponseLinks) SetLogDrain(v ListAccountsForStack200ResponseLinksStack) {
 	o.LogDrain = &v
 }
 
 // GetNext returns the Next field value if set, zero value otherwise.
-func (o *ListContainersForRelease200ResponseLinks) GetNext() ListContainersForRelease200ResponseLinksNext {
+func (o *ListContainersForRelease200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Next) {
-		var ret ListContainersForRelease200ResponseLinksNext
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Next
@@ -121,7 +121,7 @@ func (o *ListContainersForRelease200ResponseLinks) GetNext() ListContainersForRe
 
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListContainersForRelease200ResponseLinks) GetNextOk() (*ListContainersForRelease200ResponseLinksNext, bool) {
+func (o *ListContainersForRelease200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -137,15 +137,15 @@ func (o *ListContainersForRelease200ResponseLinks) HasNext() bool {
 	return false
 }
 
-// SetNext gets a reference to the given ListContainersForRelease200ResponseLinksNext and assigns it to the Next field.
-func (o *ListContainersForRelease200ResponseLinks) SetNext(v ListContainersForRelease200ResponseLinksNext) {
+// SetNext gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Next field.
+func (o *ListContainersForRelease200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
 	o.Next = &v
 }
 
 // GetPrev returns the Prev field value if set, zero value otherwise.
-func (o *ListContainersForRelease200ResponseLinks) GetPrev() ListContainersForRelease200ResponseLinksPrev {
+func (o *ListContainersForRelease200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Prev) {
-		var ret ListContainersForRelease200ResponseLinksPrev
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Prev
@@ -153,7 +153,7 @@ func (o *ListContainersForRelease200ResponseLinks) GetPrev() ListContainersForRe
 
 // GetPrevOk returns a tuple with the Prev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListContainersForRelease200ResponseLinks) GetPrevOk() (*ListContainersForRelease200ResponseLinksPrev, bool) {
+func (o *ListContainersForRelease200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Prev) {
 		return nil, false
 	}
@@ -169,15 +169,15 @@ func (o *ListContainersForRelease200ResponseLinks) HasPrev() bool {
 	return false
 }
 
-// SetPrev gets a reference to the given ListContainersForRelease200ResponseLinksPrev and assigns it to the Prev field.
-func (o *ListContainersForRelease200ResponseLinks) SetPrev(v ListContainersForRelease200ResponseLinksPrev) {
+// SetPrev gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Prev field.
+func (o *ListContainersForRelease200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
 	o.Prev = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ListContainersForRelease200ResponseLinks) GetSelf() ListContainersForRelease200ResponseLinksSelf {
+func (o *ListContainersForRelease200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ListContainersForRelease200ResponseLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -185,7 +185,7 @@ func (o *ListContainersForRelease200ResponseLinks) GetSelf() ListContainersForRe
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListContainersForRelease200ResponseLinks) GetSelfOk() (*ListContainersForRelease200ResponseLinksSelf, bool) {
+func (o *ListContainersForRelease200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *ListContainersForRelease200ResponseLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListContainersForRelease200ResponseLinksSelf and assigns it to the Self field.
-func (o *ListContainersForRelease200ResponseLinks) SetSelf(v ListContainersForRelease200ResponseLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ListContainersForRelease200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

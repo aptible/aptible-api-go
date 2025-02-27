@@ -401,7 +401,7 @@ func (r ApiListPermissionsRequest) Page(page int32) ApiListPermissionsRequest {
 	return r
 }
 
-func (r ApiListPermissionsRequest) Execute() (*ListPermissions200Response, *http.Response, error) {
+func (r ApiListPermissionsRequest) Execute() (*ListPermissionsForAccount200Response, *http.Response, error) {
 	return r.ApiService.ListPermissionsExecute(r)
 }
 
@@ -419,13 +419,13 @@ func (a *PermissionsAPIService) ListPermissions(ctx context.Context) ApiListPerm
 }
 
 // Execute executes the request
-//  @return ListPermissions200Response
-func (a *PermissionsAPIService) ListPermissionsExecute(r ApiListPermissionsRequest) (*ListPermissions200Response, *http.Response, error) {
+//  @return ListPermissionsForAccount200Response
+func (a *PermissionsAPIService) ListPermissionsExecute(r ApiListPermissionsRequest) (*ListPermissionsForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListPermissions200Response
+		localVarReturnValue  *ListPermissionsForAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PermissionsAPIService.ListPermissions")

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Release** | Pointer to [**ListContainersForRelease200ResponseLinksRelease**](ListContainersForRelease200ResponseLinksRelease.md) |  | [optional] 
-**LogDrain** | Pointer to [**ListContainersForRelease200ResponseLinksLogDrain**](ListContainersForRelease200ResponseLinksLogDrain.md) |  | [optional] 
-**Next** | Pointer to [**ListContainersForRelease200ResponseLinksNext**](ListContainersForRelease200ResponseLinksNext.md) |  | [optional] 
-**Prev** | Pointer to [**ListContainersForRelease200ResponseLinksPrev**](ListContainersForRelease200ResponseLinksPrev.md) |  | [optional] 
-**Self** | Pointer to [**ListContainersForRelease200ResponseLinksSelf**](ListContainersForRelease200ResponseLinksSelf.md) |  | [optional] 
+**Release** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**LogDrain** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRelease
 
-`func (o *ListContainersForRelease200ResponseLinks) GetRelease() ListContainersForRelease200ResponseLinksRelease`
+`func (o *ListContainersForRelease200ResponseLinks) GetRelease() ListAccountsForStack200ResponseLinksStack`
 
 GetRelease returns the Release field if non-nil, zero value otherwise.
 
 ### GetReleaseOk
 
-`func (o *ListContainersForRelease200ResponseLinks) GetReleaseOk() (*ListContainersForRelease200ResponseLinksRelease, bool)`
+`func (o *ListContainersForRelease200ResponseLinks) GetReleaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetReleaseOk returns a tuple with the Release field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelease
 
-`func (o *ListContainersForRelease200ResponseLinks) SetRelease(v ListContainersForRelease200ResponseLinksRelease)`
+`func (o *ListContainersForRelease200ResponseLinks) SetRelease(v ListAccountsForStack200ResponseLinksStack)`
 
 SetRelease sets Release field to given value.
 
@@ -56,20 +56,20 @@ HasRelease returns a boolean if a field has been set.
 
 ### GetLogDrain
 
-`func (o *ListContainersForRelease200ResponseLinks) GetLogDrain() ListContainersForRelease200ResponseLinksLogDrain`
+`func (o *ListContainersForRelease200ResponseLinks) GetLogDrain() ListAccountsForStack200ResponseLinksStack`
 
 GetLogDrain returns the LogDrain field if non-nil, zero value otherwise.
 
 ### GetLogDrainOk
 
-`func (o *ListContainersForRelease200ResponseLinks) GetLogDrainOk() (*ListContainersForRelease200ResponseLinksLogDrain, bool)`
+`func (o *ListContainersForRelease200ResponseLinks) GetLogDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetLogDrainOk returns a tuple with the LogDrain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogDrain
 
-`func (o *ListContainersForRelease200ResponseLinks) SetLogDrain(v ListContainersForRelease200ResponseLinksLogDrain)`
+`func (o *ListContainersForRelease200ResponseLinks) SetLogDrain(v ListAccountsForStack200ResponseLinksStack)`
 
 SetLogDrain sets LogDrain field to given value.
 
@@ -81,20 +81,20 @@ HasLogDrain returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListContainersForRelease200ResponseLinks) GetNext() ListContainersForRelease200ResponseLinksNext`
+`func (o *ListContainersForRelease200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListContainersForRelease200ResponseLinks) GetNextOk() (*ListContainersForRelease200ResponseLinksNext, bool)`
+`func (o *ListContainersForRelease200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListContainersForRelease200ResponseLinks) SetNext(v ListContainersForRelease200ResponseLinksNext)`
+`func (o *ListContainersForRelease200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
 
 SetNext sets Next field to given value.
 
@@ -106,20 +106,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListContainersForRelease200ResponseLinks) GetPrev() ListContainersForRelease200ResponseLinksPrev`
+`func (o *ListContainersForRelease200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListContainersForRelease200ResponseLinks) GetPrevOk() (*ListContainersForRelease200ResponseLinksPrev, bool)`
+`func (o *ListContainersForRelease200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListContainersForRelease200ResponseLinks) SetPrev(v ListContainersForRelease200ResponseLinksPrev)`
+`func (o *ListContainersForRelease200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
 
 SetPrev sets Prev field to given value.
 
@@ -131,20 +131,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListContainersForRelease200ResponseLinks) GetSelf() ListContainersForRelease200ResponseLinksSelf`
+`func (o *ListContainersForRelease200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListContainersForRelease200ResponseLinks) GetSelfOk() (*ListContainersForRelease200ResponseLinksSelf, bool)`
+`func (o *ListContainersForRelease200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListContainersForRelease200ResponseLinks) SetSelf(v ListContainersForRelease200ResponseLinksSelf)`
+`func (o *ListContainersForRelease200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

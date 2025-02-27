@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **OurNetworks** | **[][]string** |  | 
 **PeerGateway** | **NullableString** |  | 
 **PeerNetworks** | **[][]string** |  | 
-**Links** | Pointer to [**VpnTunnelLinks**](VpnTunnelLinks.md) |  | [optional] 
+**Links** | Pointer to [**VpcPeerLinks**](VpcPeerLinks.md) |  | [optional] 
 
 ## Methods
 
@@ -473,20 +473,20 @@ SetPeerNetworks sets PeerNetworks field to given value.
 UnsetPeerNetworks ensures that no value is present for PeerNetworks, not even an explicit nil
 ### GetLinks
 
-`func (o *VpnTunnel) GetLinks() VpnTunnelLinks`
+`func (o *VpnTunnel) GetLinks() VpcPeerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *VpnTunnel) GetLinksOk() (*VpnTunnelLinks, bool)`
+`func (o *VpnTunnel) GetLinksOk() (*VpcPeerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *VpnTunnel) SetLinks(v VpnTunnelLinks)`
+`func (o *VpnTunnel) SetLinks(v VpcPeerLinks)`
 
 SetLinks sets Links field to given value.
 

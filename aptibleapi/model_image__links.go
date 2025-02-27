@@ -19,9 +19,9 @@ var _ MappedNullable = &ImageLinks{}
 
 // ImageLinks struct for ImageLinks
 type ImageLinks struct {
-	App *ImageLinksApp `json:"app,omitempty"`
-	Operations *ImageLinksOperations `json:"operations,omitempty"`
-	Self *ImageLinksSelf `json:"self,omitempty"`
+	App *ListAccountsForStack200ResponseLinksStack `json:"app,omitempty"`
+	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewImageLinksWithDefaults() *ImageLinks {
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *ImageLinks) GetApp() ImageLinksApp {
+func (o *ImageLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.App) {
-		var ret ImageLinksApp
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.App
@@ -55,7 +55,7 @@ func (o *ImageLinks) GetApp() ImageLinksApp {
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageLinks) GetAppOk() (*ImageLinksApp, bool) {
+func (o *ImageLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *ImageLinks) HasApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given ImageLinksApp and assigns it to the App field.
-func (o *ImageLinks) SetApp(v ImageLinksApp) {
+// SetApp gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the App field.
+func (o *ImageLinks) SetApp(v ListAccountsForStack200ResponseLinksStack) {
 	o.App = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *ImageLinks) GetOperations() ImageLinksOperations {
+func (o *ImageLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Operations) {
-		var ret ImageLinksOperations
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Operations
@@ -87,7 +87,7 @@ func (o *ImageLinks) GetOperations() ImageLinksOperations {
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageLinks) GetOperationsOk() (*ImageLinksOperations, bool) {
+func (o *ImageLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *ImageLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given ImageLinksOperations and assigns it to the Operations field.
-func (o *ImageLinks) SetOperations(v ImageLinksOperations) {
+// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
+func (o *ImageLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
 	o.Operations = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ImageLinks) GetSelf() ImageLinksSelf {
+func (o *ImageLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ImageLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *ImageLinks) GetSelf() ImageLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageLinks) GetSelfOk() (*ImageLinksSelf, bool) {
+func (o *ImageLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *ImageLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ImageLinksSelf and assigns it to the Self field.
-func (o *ImageLinks) SetSelf(v ImageLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ImageLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListDatabasesForAccount200ResponseLinks**](ListDatabasesForAccount200ResponseLinks.md) |  | 
+**Links** | [**ListActivityReportsForAccount200ResponseLinks**](ListActivityReportsForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListDatabasesForAccount200Response
 
-`func NewListDatabasesForAccount200Response(embedded ListDatabasesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDatabasesForAccount200ResponseLinks, ) *ListDatabasesForAccount200Response`
+`func NewListDatabasesForAccount200Response(embedded ListDatabasesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks, ) *ListDatabasesForAccount200Response`
 
 NewListDatabasesForAccount200Response instantiates a new ListDatabasesForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListDatabasesForAccount200Response) GetLinks() ListDatabasesForAccount200ResponseLinks`
+`func (o *ListDatabasesForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListDatabasesForAccount200Response) GetLinksOk() (*ListDatabasesForAccount200ResponseLinks, bool)`
+`func (o *ListDatabasesForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListDatabasesForAccount200Response) SetLinks(v ListDatabasesForAccount200ResponseLinks)`
+`func (o *ListDatabasesForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

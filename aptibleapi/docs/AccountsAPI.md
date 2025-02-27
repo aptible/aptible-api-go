@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ## ListAccounts
 
-> ListAccounts200Response ListAccounts(ctx).Page(page).Execute()
+> ListAccountsForStack200Response ListAccounts(ctx).Page(page).Execute()
 
 list accounts
 
@@ -240,7 +240,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.ListAccounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAccounts`: ListAccounts200Response
+	// response from `ListAccounts`: ListAccountsForStack200Response
 	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.ListAccounts`: %v\n", resp)
 }
 ```
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListAccounts200Response**](ListAccounts200Response.md)
+[**ListAccountsForStack200Response**](ListAccountsForStack200Response.md)
 
 ### Authorization
 

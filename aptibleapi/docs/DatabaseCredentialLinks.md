@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Database** | Pointer to [**DatabaseCredentialLinksDatabase**](DatabaseCredentialLinksDatabase.md) |  | [optional] 
-**Operations** | Pointer to [**DatabaseCredentialLinksOperations**](DatabaseCredentialLinksOperations.md) |  | [optional] 
-**Self** | Pointer to [**DatabaseCredentialLinksSelf**](DatabaseCredentialLinksSelf.md) |  | [optional] 
+**Database** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Operations** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDatabase
 
-`func (o *DatabaseCredentialLinks) GetDatabase() DatabaseCredentialLinksDatabase`
+`func (o *DatabaseCredentialLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack`
 
 GetDatabase returns the Database field if non-nil, zero value otherwise.
 
 ### GetDatabaseOk
 
-`func (o *DatabaseCredentialLinks) GetDatabaseOk() (*DatabaseCredentialLinksDatabase, bool)`
+`func (o *DatabaseCredentialLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabase
 
-`func (o *DatabaseCredentialLinks) SetDatabase(v DatabaseCredentialLinksDatabase)`
+`func (o *DatabaseCredentialLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack)`
 
 SetDatabase sets Database field to given value.
 
@@ -54,20 +54,20 @@ HasDatabase returns a boolean if a field has been set.
 
 ### GetOperations
 
-`func (o *DatabaseCredentialLinks) GetOperations() DatabaseCredentialLinksOperations`
+`func (o *DatabaseCredentialLinks) GetOperations() ListAccountsForStack200ResponseLinksStack`
 
 GetOperations returns the Operations field if non-nil, zero value otherwise.
 
 ### GetOperationsOk
 
-`func (o *DatabaseCredentialLinks) GetOperationsOk() (*DatabaseCredentialLinksOperations, bool)`
+`func (o *DatabaseCredentialLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetOperationsOk returns a tuple with the Operations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperations
 
-`func (o *DatabaseCredentialLinks) SetOperations(v DatabaseCredentialLinksOperations)`
+`func (o *DatabaseCredentialLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack)`
 
 SetOperations sets Operations field to given value.
 
@@ -79,20 +79,20 @@ HasOperations returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *DatabaseCredentialLinks) GetSelf() DatabaseCredentialLinksSelf`
+`func (o *DatabaseCredentialLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *DatabaseCredentialLinks) GetSelfOk() (*DatabaseCredentialLinksSelf, bool)`
+`func (o *DatabaseCredentialLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *DatabaseCredentialLinks) SetSelf(v DatabaseCredentialLinksSelf)`
+`func (o *DatabaseCredentialLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

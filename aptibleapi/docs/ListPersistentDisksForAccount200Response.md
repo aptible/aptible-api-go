@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListPersistentDisksForAccount200ResponseLinks**](ListPersistentDisksForAccount200ResponseLinks.md) |  | 
+**Links** | [**ListActivityReportsForAccount200ResponseLinks**](ListActivityReportsForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListPersistentDisksForAccount200Response
 
-`func NewListPersistentDisksForAccount200Response(embedded ListPersistentDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListPersistentDisksForAccount200ResponseLinks, ) *ListPersistentDisksForAccount200Response`
+`func NewListPersistentDisksForAccount200Response(embedded ListPersistentDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks, ) *ListPersistentDisksForAccount200Response`
 
 NewListPersistentDisksForAccount200Response instantiates a new ListPersistentDisksForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListPersistentDisksForAccount200Response) GetLinks() ListPersistentDisksForAccount200ResponseLinks`
+`func (o *ListPersistentDisksForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListPersistentDisksForAccount200Response) GetLinksOk() (*ListPersistentDisksForAccount200ResponseLinks, bool)`
+`func (o *ListPersistentDisksForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListPersistentDisksForAccount200Response) SetLinks(v ListPersistentDisksForAccount200ResponseLinks)`
+`func (o *ListPersistentDisksForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

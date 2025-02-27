@@ -25,13 +25,13 @@ docker run --rm -it -v "$(pwd):/local" "openapitools/openapi-generator-cli:${OPE
   generate -g go -i "$doc_url" \
   -o "/local/${PACKAGE_NAME}" --template-dir /local/templates --name-mappings _type=MetaType \
   --git-user-id aptible --git-repo-id "aptible-api-go/${PACKAGE_NAME}" \
-  --inline-schema-options SKIP_SCHEMA_REUSE=true \
   --additional-properties "packageName=${PACKAGE_NAME},disallowAdditionalPropertiesIfNotPresent=false"
 
 # Remove files that are no longer being managed by the generator
 # -2 -3 removes the comm lines that are unique to the second file and shared by
 # both files, leaving only the lines unique to the first file
-outdated_files="$(comm -2 -3 "$TMP_FILE" "${PACKAGE_NAME}/.openapi-generator/FILES")"
+cd "$PACKAGE_NAME"
+outdated_files="$(comm -2 -3 "$TMP_FILE" .openapi-generator/FILES)"
 if [ -n "$outdated_files" ]; then
   echo "Removing outdated files:"
   echo "${outdated_files}"

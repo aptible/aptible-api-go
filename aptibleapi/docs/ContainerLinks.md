@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Release** | Pointer to [**ContainerLinksRelease**](ContainerLinksRelease.md) |  | [optional] 
-**Vhost** | Pointer to [**ContainerLinksVhost**](ContainerLinksVhost.md) |  | [optional] 
-**LogDrain** | Pointer to [**ContainerLinksLogDrain**](ContainerLinksLogDrain.md) |  | [optional] 
-**MetricDrain** | Pointer to [**ContainerLinksMetricDrain**](ContainerLinksMetricDrain.md) |  | [optional] 
-**Self** | Pointer to [**ContainerLinksSelf**](ContainerLinksSelf.md) |  | [optional] 
+**Release** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Vhost** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**LogDrain** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**MetricDrain** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRelease
 
-`func (o *ContainerLinks) GetRelease() ContainerLinksRelease`
+`func (o *ContainerLinks) GetRelease() ListAccountsForStack200ResponseLinksStack`
 
 GetRelease returns the Release field if non-nil, zero value otherwise.
 
 ### GetReleaseOk
 
-`func (o *ContainerLinks) GetReleaseOk() (*ContainerLinksRelease, bool)`
+`func (o *ContainerLinks) GetReleaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetReleaseOk returns a tuple with the Release field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelease
 
-`func (o *ContainerLinks) SetRelease(v ContainerLinksRelease)`
+`func (o *ContainerLinks) SetRelease(v ListAccountsForStack200ResponseLinksStack)`
 
 SetRelease sets Release field to given value.
 
@@ -56,20 +56,20 @@ HasRelease returns a boolean if a field has been set.
 
 ### GetVhost
 
-`func (o *ContainerLinks) GetVhost() ContainerLinksVhost`
+`func (o *ContainerLinks) GetVhost() ListAccountsForStack200ResponseLinksStack`
 
 GetVhost returns the Vhost field if non-nil, zero value otherwise.
 
 ### GetVhostOk
 
-`func (o *ContainerLinks) GetVhostOk() (*ContainerLinksVhost, bool)`
+`func (o *ContainerLinks) GetVhostOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetVhostOk returns a tuple with the Vhost field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVhost
 
-`func (o *ContainerLinks) SetVhost(v ContainerLinksVhost)`
+`func (o *ContainerLinks) SetVhost(v ListAccountsForStack200ResponseLinksStack)`
 
 SetVhost sets Vhost field to given value.
 
@@ -81,20 +81,20 @@ HasVhost returns a boolean if a field has been set.
 
 ### GetLogDrain
 
-`func (o *ContainerLinks) GetLogDrain() ContainerLinksLogDrain`
+`func (o *ContainerLinks) GetLogDrain() ListAccountsForStack200ResponseLinksStack`
 
 GetLogDrain returns the LogDrain field if non-nil, zero value otherwise.
 
 ### GetLogDrainOk
 
-`func (o *ContainerLinks) GetLogDrainOk() (*ContainerLinksLogDrain, bool)`
+`func (o *ContainerLinks) GetLogDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetLogDrainOk returns a tuple with the LogDrain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogDrain
 
-`func (o *ContainerLinks) SetLogDrain(v ContainerLinksLogDrain)`
+`func (o *ContainerLinks) SetLogDrain(v ListAccountsForStack200ResponseLinksStack)`
 
 SetLogDrain sets LogDrain field to given value.
 
@@ -106,20 +106,20 @@ HasLogDrain returns a boolean if a field has been set.
 
 ### GetMetricDrain
 
-`func (o *ContainerLinks) GetMetricDrain() ContainerLinksMetricDrain`
+`func (o *ContainerLinks) GetMetricDrain() ListAccountsForStack200ResponseLinksStack`
 
 GetMetricDrain returns the MetricDrain field if non-nil, zero value otherwise.
 
 ### GetMetricDrainOk
 
-`func (o *ContainerLinks) GetMetricDrainOk() (*ContainerLinksMetricDrain, bool)`
+`func (o *ContainerLinks) GetMetricDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetMetricDrainOk returns a tuple with the MetricDrain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricDrain
 
-`func (o *ContainerLinks) SetMetricDrain(v ContainerLinksMetricDrain)`
+`func (o *ContainerLinks) SetMetricDrain(v ListAccountsForStack200ResponseLinksStack)`
 
 SetMetricDrain sets MetricDrain field to given value.
 
@@ -131,20 +131,20 @@ HasMetricDrain returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ContainerLinks) GetSelf() ContainerLinksSelf`
+`func (o *ContainerLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ContainerLinks) GetSelfOk() (*ContainerLinksSelf, bool)`
+`func (o *ContainerLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ContainerLinks) SetSelf(v ContainerLinksSelf)`
+`func (o *ContainerLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

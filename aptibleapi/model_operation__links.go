@@ -19,15 +19,15 @@ var _ MappedNullable = &OperationLinks{}
 
 // OperationLinks struct for OperationLinks
 type OperationLinks struct {
-	User *OperationLinksUser `json:"user,omitempty"`
-	Resource *OperationLinksResource `json:"resource,omitempty"`
-	Account *OperationLinksAccount `json:"account,omitempty"`
-	DestinationAccount *OperationLinksDestinationAccount `json:"destination_account,omitempty"`
-	SshPortalConnections *OperationLinksSshPortalConnections `json:"ssh_portal_connections,omitempty"`
-	EphemeralSessions *OperationLinksEphemeralSessions `json:"ephemeral_sessions,omitempty"`
-	CodeScanResult *OperationLinksCodeScanResult `json:"code_scan_result,omitempty"`
-	Service *OperationLinksService `json:"service,omitempty"`
-	Self *OperationLinksSelf `json:"self,omitempty"`
+	User *ListAccountsForStack200ResponseLinksStack `json:"user,omitempty"`
+	Resource *ListAccountsForStack200ResponseLinksStack `json:"resource,omitempty"`
+	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
+	DestinationAccount *ListAccountsForStack200ResponseLinksStack `json:"destination_account,omitempty"`
+	SshPortalConnections *ListAccountsForStack200ResponseLinksStack `json:"ssh_portal_connections,omitempty"`
+	EphemeralSessions *ListAccountsForStack200ResponseLinksStack `json:"ephemeral_sessions,omitempty"`
+	CodeScanResult *ListAccountsForStack200ResponseLinksStack `json:"code_scan_result,omitempty"`
+	Service *ListAccountsForStack200ResponseLinksStack `json:"service,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -51,9 +51,9 @@ func NewOperationLinksWithDefaults() *OperationLinks {
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
-func (o *OperationLinks) GetUser() OperationLinksUser {
+func (o *OperationLinks) GetUser() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.User) {
-		var ret OperationLinksUser
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.User
@@ -61,7 +61,7 @@ func (o *OperationLinks) GetUser() OperationLinksUser {
 
 // GetUserOk returns a tuple with the User field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetUserOk() (*OperationLinksUser, bool) {
+func (o *OperationLinks) GetUserOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.User) {
 		return nil, false
 	}
@@ -77,15 +77,15 @@ func (o *OperationLinks) HasUser() bool {
 	return false
 }
 
-// SetUser gets a reference to the given OperationLinksUser and assigns it to the User field.
-func (o *OperationLinks) SetUser(v OperationLinksUser) {
+// SetUser gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the User field.
+func (o *OperationLinks) SetUser(v ListAccountsForStack200ResponseLinksStack) {
 	o.User = &v
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
-func (o *OperationLinks) GetResource() OperationLinksResource {
+func (o *OperationLinks) GetResource() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Resource) {
-		var ret OperationLinksResource
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Resource
@@ -93,7 +93,7 @@ func (o *OperationLinks) GetResource() OperationLinksResource {
 
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetResourceOk() (*OperationLinksResource, bool) {
+func (o *OperationLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
@@ -109,15 +109,15 @@ func (o *OperationLinks) HasResource() bool {
 	return false
 }
 
-// SetResource gets a reference to the given OperationLinksResource and assigns it to the Resource field.
-func (o *OperationLinks) SetResource(v OperationLinksResource) {
+// SetResource gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Resource field.
+func (o *OperationLinks) SetResource(v ListAccountsForStack200ResponseLinksStack) {
 	o.Resource = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *OperationLinks) GetAccount() OperationLinksAccount {
+func (o *OperationLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Account) {
-		var ret OperationLinksAccount
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Account
@@ -125,7 +125,7 @@ func (o *OperationLinks) GetAccount() OperationLinksAccount {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetAccountOk() (*OperationLinksAccount, bool) {
+func (o *OperationLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -141,15 +141,15 @@ func (o *OperationLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given OperationLinksAccount and assigns it to the Account field.
-func (o *OperationLinks) SetAccount(v OperationLinksAccount) {
+// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
+func (o *OperationLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
 	o.Account = &v
 }
 
 // GetDestinationAccount returns the DestinationAccount field value if set, zero value otherwise.
-func (o *OperationLinks) GetDestinationAccount() OperationLinksDestinationAccount {
+func (o *OperationLinks) GetDestinationAccount() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.DestinationAccount) {
-		var ret OperationLinksDestinationAccount
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.DestinationAccount
@@ -157,7 +157,7 @@ func (o *OperationLinks) GetDestinationAccount() OperationLinksDestinationAccoun
 
 // GetDestinationAccountOk returns a tuple with the DestinationAccount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetDestinationAccountOk() (*OperationLinksDestinationAccount, bool) {
+func (o *OperationLinks) GetDestinationAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.DestinationAccount) {
 		return nil, false
 	}
@@ -173,15 +173,15 @@ func (o *OperationLinks) HasDestinationAccount() bool {
 	return false
 }
 
-// SetDestinationAccount gets a reference to the given OperationLinksDestinationAccount and assigns it to the DestinationAccount field.
-func (o *OperationLinks) SetDestinationAccount(v OperationLinksDestinationAccount) {
+// SetDestinationAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the DestinationAccount field.
+func (o *OperationLinks) SetDestinationAccount(v ListAccountsForStack200ResponseLinksStack) {
 	o.DestinationAccount = &v
 }
 
 // GetSshPortalConnections returns the SshPortalConnections field value if set, zero value otherwise.
-func (o *OperationLinks) GetSshPortalConnections() OperationLinksSshPortalConnections {
+func (o *OperationLinks) GetSshPortalConnections() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.SshPortalConnections) {
-		var ret OperationLinksSshPortalConnections
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.SshPortalConnections
@@ -189,7 +189,7 @@ func (o *OperationLinks) GetSshPortalConnections() OperationLinksSshPortalConnec
 
 // GetSshPortalConnectionsOk returns a tuple with the SshPortalConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetSshPortalConnectionsOk() (*OperationLinksSshPortalConnections, bool) {
+func (o *OperationLinks) GetSshPortalConnectionsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.SshPortalConnections) {
 		return nil, false
 	}
@@ -205,15 +205,15 @@ func (o *OperationLinks) HasSshPortalConnections() bool {
 	return false
 }
 
-// SetSshPortalConnections gets a reference to the given OperationLinksSshPortalConnections and assigns it to the SshPortalConnections field.
-func (o *OperationLinks) SetSshPortalConnections(v OperationLinksSshPortalConnections) {
+// SetSshPortalConnections gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the SshPortalConnections field.
+func (o *OperationLinks) SetSshPortalConnections(v ListAccountsForStack200ResponseLinksStack) {
 	o.SshPortalConnections = &v
 }
 
 // GetEphemeralSessions returns the EphemeralSessions field value if set, zero value otherwise.
-func (o *OperationLinks) GetEphemeralSessions() OperationLinksEphemeralSessions {
+func (o *OperationLinks) GetEphemeralSessions() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.EphemeralSessions) {
-		var ret OperationLinksEphemeralSessions
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.EphemeralSessions
@@ -221,7 +221,7 @@ func (o *OperationLinks) GetEphemeralSessions() OperationLinksEphemeralSessions 
 
 // GetEphemeralSessionsOk returns a tuple with the EphemeralSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetEphemeralSessionsOk() (*OperationLinksEphemeralSessions, bool) {
+func (o *OperationLinks) GetEphemeralSessionsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.EphemeralSessions) {
 		return nil, false
 	}
@@ -237,15 +237,15 @@ func (o *OperationLinks) HasEphemeralSessions() bool {
 	return false
 }
 
-// SetEphemeralSessions gets a reference to the given OperationLinksEphemeralSessions and assigns it to the EphemeralSessions field.
-func (o *OperationLinks) SetEphemeralSessions(v OperationLinksEphemeralSessions) {
+// SetEphemeralSessions gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the EphemeralSessions field.
+func (o *OperationLinks) SetEphemeralSessions(v ListAccountsForStack200ResponseLinksStack) {
 	o.EphemeralSessions = &v
 }
 
 // GetCodeScanResult returns the CodeScanResult field value if set, zero value otherwise.
-func (o *OperationLinks) GetCodeScanResult() OperationLinksCodeScanResult {
+func (o *OperationLinks) GetCodeScanResult() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.CodeScanResult) {
-		var ret OperationLinksCodeScanResult
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.CodeScanResult
@@ -253,7 +253,7 @@ func (o *OperationLinks) GetCodeScanResult() OperationLinksCodeScanResult {
 
 // GetCodeScanResultOk returns a tuple with the CodeScanResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetCodeScanResultOk() (*OperationLinksCodeScanResult, bool) {
+func (o *OperationLinks) GetCodeScanResultOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.CodeScanResult) {
 		return nil, false
 	}
@@ -269,15 +269,15 @@ func (o *OperationLinks) HasCodeScanResult() bool {
 	return false
 }
 
-// SetCodeScanResult gets a reference to the given OperationLinksCodeScanResult and assigns it to the CodeScanResult field.
-func (o *OperationLinks) SetCodeScanResult(v OperationLinksCodeScanResult) {
+// SetCodeScanResult gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the CodeScanResult field.
+func (o *OperationLinks) SetCodeScanResult(v ListAccountsForStack200ResponseLinksStack) {
 	o.CodeScanResult = &v
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *OperationLinks) GetService() OperationLinksService {
+func (o *OperationLinks) GetService() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Service) {
-		var ret OperationLinksService
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Service
@@ -285,7 +285,7 @@ func (o *OperationLinks) GetService() OperationLinksService {
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetServiceOk() (*OperationLinksService, bool) {
+func (o *OperationLinks) GetServiceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Service) {
 		return nil, false
 	}
@@ -301,15 +301,15 @@ func (o *OperationLinks) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given OperationLinksService and assigns it to the Service field.
-func (o *OperationLinks) SetService(v OperationLinksService) {
+// SetService gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Service field.
+func (o *OperationLinks) SetService(v ListAccountsForStack200ResponseLinksStack) {
 	o.Service = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *OperationLinks) GetSelf() OperationLinksSelf {
+func (o *OperationLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret OperationLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -317,7 +317,7 @@ func (o *OperationLinks) GetSelf() OperationLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationLinks) GetSelfOk() (*OperationLinksSelf, bool) {
+func (o *OperationLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -333,8 +333,8 @@ func (o *OperationLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given OperationLinksSelf and assigns it to the Self field.
-func (o *OperationLinks) SetSelf(v OperationLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *OperationLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

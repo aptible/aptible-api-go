@@ -19,10 +19,10 @@ var _ MappedNullable = &ListDatabaseCredentialsForDatabase200ResponseLinks{}
 
 // ListDatabaseCredentialsForDatabase200ResponseLinks struct for ListDatabaseCredentialsForDatabase200ResponseLinks
 type ListDatabaseCredentialsForDatabase200ResponseLinks struct {
-	Database *ListDatabaseCredentialsForDatabase200ResponseLinksDatabase `json:"database,omitempty"`
-	Next *ListDatabaseCredentialsForDatabase200ResponseLinksNext `json:"next,omitempty"`
-	Prev *ListDatabaseCredentialsForDatabase200ResponseLinksPrev `json:"prev,omitempty"`
-	Self *ListDatabaseCredentialsForDatabase200ResponseLinksSelf `json:"self,omitempty"`
+	Database *ListAccountsForStack200ResponseLinksStack `json:"database,omitempty"`
+	Next *ListAccountsForStack200ResponseLinksStack `json:"next,omitempty"`
+	Prev *ListAccountsForStack200ResponseLinksStack `json:"prev,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,9 +46,9 @@ func NewListDatabaseCredentialsForDatabase200ResponseLinksWithDefaults() *ListDa
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabase() ListDatabaseCredentialsForDatabase200ResponseLinksDatabase {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Database) {
-		var ret ListDatabaseCredentialsForDatabase200ResponseLinksDatabase
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Database
@@ -56,7 +56,7 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabase() ListD
 
 // GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabaseOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksDatabase, bool) {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Database) {
 		return nil, false
 	}
@@ -72,15 +72,15 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) HasDatabase() bool 
 	return false
 }
 
-// SetDatabase gets a reference to the given ListDatabaseCredentialsForDatabase200ResponseLinksDatabase and assigns it to the Database field.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetDatabase(v ListDatabaseCredentialsForDatabase200ResponseLinksDatabase) {
+// SetDatabase gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Database field.
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack) {
 	o.Database = &v
 }
 
 // GetNext returns the Next field value if set, zero value otherwise.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNext() ListDatabaseCredentialsForDatabase200ResponseLinksNext {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Next) {
-		var ret ListDatabaseCredentialsForDatabase200ResponseLinksNext
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Next
@@ -88,7 +88,7 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNext() ListDatab
 
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNextOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksNext, bool) {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) HasNext() bool {
 	return false
 }
 
-// SetNext gets a reference to the given ListDatabaseCredentialsForDatabase200ResponseLinksNext and assigns it to the Next field.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetNext(v ListDatabaseCredentialsForDatabase200ResponseLinksNext) {
+// SetNext gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Next field.
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
 	o.Next = &v
 }
 
 // GetPrev returns the Prev field value if set, zero value otherwise.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrev() ListDatabaseCredentialsForDatabase200ResponseLinksPrev {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Prev) {
-		var ret ListDatabaseCredentialsForDatabase200ResponseLinksPrev
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Prev
@@ -120,7 +120,7 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrev() ListDatab
 
 // GetPrevOk returns a tuple with the Prev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrevOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksPrev, bool) {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Prev) {
 		return nil, false
 	}
@@ -136,15 +136,15 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) HasPrev() bool {
 	return false
 }
 
-// SetPrev gets a reference to the given ListDatabaseCredentialsForDatabase200ResponseLinksPrev and assigns it to the Prev field.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetPrev(v ListDatabaseCredentialsForDatabase200ResponseLinksPrev) {
+// SetPrev gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Prev field.
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
 	o.Prev = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelf() ListDatabaseCredentialsForDatabase200ResponseLinksSelf {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ListDatabaseCredentialsForDatabase200ResponseLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -152,7 +152,7 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelf() ListDatab
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelfOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksSelf, bool) {
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListDatabaseCredentialsForDatabase200ResponseLinksSelf and assigns it to the Self field.
-func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetSelf(v ListDatabaseCredentialsForDatabase200ResponseLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

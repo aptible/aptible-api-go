@@ -24,7 +24,7 @@ type ListPersistentDisksForAccount200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListPersistentDisksForAccount200ResponseLinks `json:"_links"`
+	Links ListActivityReportsForAccount200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListPersistentDisksForAccount200Response ListPersistentDisksForAccount200R
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListPersistentDisksForAccount200Response(embedded ListPersistentDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListPersistentDisksForAccount200ResponseLinks) *ListPersistentDisksForAccount200Response {
+func NewListPersistentDisksForAccount200Response(embedded ListPersistentDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks) *ListPersistentDisksForAccount200Response {
 	this := ListPersistentDisksForAccount200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListPersistentDisksForAccount200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListPersistentDisksForAccount200Response) GetLinks() ListPersistentDisksForAccount200ResponseLinks {
+func (o *ListPersistentDisksForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks {
 	if o == nil {
-		var ret ListPersistentDisksForAccount200ResponseLinks
+		var ret ListActivityReportsForAccount200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListPersistentDisksForAccount200Response) GetLinks() ListPersistentDisk
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListPersistentDisksForAccount200Response) GetLinksOk() (*ListPersistentDisksForAccount200ResponseLinks, bool) {
+func (o *ListPersistentDisksForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListPersistentDisksForAccount200Response) GetLinksOk() (*ListPersistent
 }
 
 // SetLinks sets field value
-func (o *ListPersistentDisksForAccount200Response) SetLinks(v ListPersistentDisksForAccount200ResponseLinks) {
+func (o *ListPersistentDisksForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks) {
 	o.Links = v
 }
 

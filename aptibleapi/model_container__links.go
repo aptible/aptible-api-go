@@ -19,11 +19,11 @@ var _ MappedNullable = &ContainerLinks{}
 
 // ContainerLinks struct for ContainerLinks
 type ContainerLinks struct {
-	Release *ContainerLinksRelease `json:"release,omitempty"`
-	Vhost *ContainerLinksVhost `json:"vhost,omitempty"`
-	LogDrain *ContainerLinksLogDrain `json:"log_drain,omitempty"`
-	MetricDrain *ContainerLinksMetricDrain `json:"metric_drain,omitempty"`
-	Self *ContainerLinksSelf `json:"self,omitempty"`
+	Release *ListAccountsForStack200ResponseLinksStack `json:"release,omitempty"`
+	Vhost *ListAccountsForStack200ResponseLinksStack `json:"vhost,omitempty"`
+	LogDrain *ListAccountsForStack200ResponseLinksStack `json:"log_drain,omitempty"`
+	MetricDrain *ListAccountsForStack200ResponseLinksStack `json:"metric_drain,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,9 +47,9 @@ func NewContainerLinksWithDefaults() *ContainerLinks {
 }
 
 // GetRelease returns the Release field value if set, zero value otherwise.
-func (o *ContainerLinks) GetRelease() ContainerLinksRelease {
+func (o *ContainerLinks) GetRelease() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Release) {
-		var ret ContainerLinksRelease
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Release
@@ -57,7 +57,7 @@ func (o *ContainerLinks) GetRelease() ContainerLinksRelease {
 
 // GetReleaseOk returns a tuple with the Release field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerLinks) GetReleaseOk() (*ContainerLinksRelease, bool) {
+func (o *ContainerLinks) GetReleaseOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Release) {
 		return nil, false
 	}
@@ -73,15 +73,15 @@ func (o *ContainerLinks) HasRelease() bool {
 	return false
 }
 
-// SetRelease gets a reference to the given ContainerLinksRelease and assigns it to the Release field.
-func (o *ContainerLinks) SetRelease(v ContainerLinksRelease) {
+// SetRelease gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Release field.
+func (o *ContainerLinks) SetRelease(v ListAccountsForStack200ResponseLinksStack) {
 	o.Release = &v
 }
 
 // GetVhost returns the Vhost field value if set, zero value otherwise.
-func (o *ContainerLinks) GetVhost() ContainerLinksVhost {
+func (o *ContainerLinks) GetVhost() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Vhost) {
-		var ret ContainerLinksVhost
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Vhost
@@ -89,7 +89,7 @@ func (o *ContainerLinks) GetVhost() ContainerLinksVhost {
 
 // GetVhostOk returns a tuple with the Vhost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerLinks) GetVhostOk() (*ContainerLinksVhost, bool) {
+func (o *ContainerLinks) GetVhostOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Vhost) {
 		return nil, false
 	}
@@ -105,15 +105,15 @@ func (o *ContainerLinks) HasVhost() bool {
 	return false
 }
 
-// SetVhost gets a reference to the given ContainerLinksVhost and assigns it to the Vhost field.
-func (o *ContainerLinks) SetVhost(v ContainerLinksVhost) {
+// SetVhost gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Vhost field.
+func (o *ContainerLinks) SetVhost(v ListAccountsForStack200ResponseLinksStack) {
 	o.Vhost = &v
 }
 
 // GetLogDrain returns the LogDrain field value if set, zero value otherwise.
-func (o *ContainerLinks) GetLogDrain() ContainerLinksLogDrain {
+func (o *ContainerLinks) GetLogDrain() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.LogDrain) {
-		var ret ContainerLinksLogDrain
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.LogDrain
@@ -121,7 +121,7 @@ func (o *ContainerLinks) GetLogDrain() ContainerLinksLogDrain {
 
 // GetLogDrainOk returns a tuple with the LogDrain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerLinks) GetLogDrainOk() (*ContainerLinksLogDrain, bool) {
+func (o *ContainerLinks) GetLogDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.LogDrain) {
 		return nil, false
 	}
@@ -137,15 +137,15 @@ func (o *ContainerLinks) HasLogDrain() bool {
 	return false
 }
 
-// SetLogDrain gets a reference to the given ContainerLinksLogDrain and assigns it to the LogDrain field.
-func (o *ContainerLinks) SetLogDrain(v ContainerLinksLogDrain) {
+// SetLogDrain gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the LogDrain field.
+func (o *ContainerLinks) SetLogDrain(v ListAccountsForStack200ResponseLinksStack) {
 	o.LogDrain = &v
 }
 
 // GetMetricDrain returns the MetricDrain field value if set, zero value otherwise.
-func (o *ContainerLinks) GetMetricDrain() ContainerLinksMetricDrain {
+func (o *ContainerLinks) GetMetricDrain() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.MetricDrain) {
-		var ret ContainerLinksMetricDrain
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.MetricDrain
@@ -153,7 +153,7 @@ func (o *ContainerLinks) GetMetricDrain() ContainerLinksMetricDrain {
 
 // GetMetricDrainOk returns a tuple with the MetricDrain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerLinks) GetMetricDrainOk() (*ContainerLinksMetricDrain, bool) {
+func (o *ContainerLinks) GetMetricDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.MetricDrain) {
 		return nil, false
 	}
@@ -169,15 +169,15 @@ func (o *ContainerLinks) HasMetricDrain() bool {
 	return false
 }
 
-// SetMetricDrain gets a reference to the given ContainerLinksMetricDrain and assigns it to the MetricDrain field.
-func (o *ContainerLinks) SetMetricDrain(v ContainerLinksMetricDrain) {
+// SetMetricDrain gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the MetricDrain field.
+func (o *ContainerLinks) SetMetricDrain(v ListAccountsForStack200ResponseLinksStack) {
 	o.MetricDrain = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ContainerLinks) GetSelf() ContainerLinksSelf {
+func (o *ContainerLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ContainerLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -185,7 +185,7 @@ func (o *ContainerLinks) GetSelf() ContainerLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContainerLinks) GetSelfOk() (*ContainerLinksSelf, bool) {
+func (o *ContainerLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *ContainerLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ContainerLinksSelf and assigns it to the Self field.
-func (o *ContainerLinks) SetSelf(v ContainerLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ContainerLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

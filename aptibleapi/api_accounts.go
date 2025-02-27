@@ -397,7 +397,7 @@ func (r ApiListAccountsRequest) Page(page int32) ApiListAccountsRequest {
 	return r
 }
 
-func (r ApiListAccountsRequest) Execute() (*ListAccounts200Response, *http.Response, error) {
+func (r ApiListAccountsRequest) Execute() (*ListAccountsForStack200Response, *http.Response, error) {
 	return r.ApiService.ListAccountsExecute(r)
 }
 
@@ -415,13 +415,13 @@ func (a *AccountsAPIService) ListAccounts(ctx context.Context) ApiListAccountsRe
 }
 
 // Execute executes the request
-//  @return ListAccounts200Response
-func (a *AccountsAPIService) ListAccountsExecute(r ApiListAccountsRequest) (*ListAccounts200Response, *http.Response, error) {
+//  @return ListAccountsForStack200Response
+func (a *AccountsAPIService) ListAccountsExecute(r ApiListAccountsRequest) (*ListAccountsForStack200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListAccounts200Response
+		localVarReturnValue  *ListAccountsForStack200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AccountsAPIService.ListAccounts")

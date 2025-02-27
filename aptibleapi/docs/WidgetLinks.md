@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Dashboard** | Pointer to [**WidgetLinksDashboard**](WidgetLinksDashboard.md) |  | [optional] 
-**Resource** | Pointer to [**WidgetLinksResource**](WidgetLinksResource.md) |  | [optional] 
-**Self** | Pointer to [**WidgetLinksSelf**](WidgetLinksSelf.md) |  | [optional] 
+**Dashboard** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Resource** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDashboard
 
-`func (o *WidgetLinks) GetDashboard() WidgetLinksDashboard`
+`func (o *WidgetLinks) GetDashboard() ListAccountsForStack200ResponseLinksStack`
 
 GetDashboard returns the Dashboard field if non-nil, zero value otherwise.
 
 ### GetDashboardOk
 
-`func (o *WidgetLinks) GetDashboardOk() (*WidgetLinksDashboard, bool)`
+`func (o *WidgetLinks) GetDashboardOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetDashboardOk returns a tuple with the Dashboard field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDashboard
 
-`func (o *WidgetLinks) SetDashboard(v WidgetLinksDashboard)`
+`func (o *WidgetLinks) SetDashboard(v ListAccountsForStack200ResponseLinksStack)`
 
 SetDashboard sets Dashboard field to given value.
 
@@ -54,20 +54,20 @@ HasDashboard returns a boolean if a field has been set.
 
 ### GetResource
 
-`func (o *WidgetLinks) GetResource() WidgetLinksResource`
+`func (o *WidgetLinks) GetResource() ListAccountsForStack200ResponseLinksStack`
 
 GetResource returns the Resource field if non-nil, zero value otherwise.
 
 ### GetResourceOk
 
-`func (o *WidgetLinks) GetResourceOk() (*WidgetLinksResource, bool)`
+`func (o *WidgetLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResource
 
-`func (o *WidgetLinks) SetResource(v WidgetLinksResource)`
+`func (o *WidgetLinks) SetResource(v ListAccountsForStack200ResponseLinksStack)`
 
 SetResource sets Resource field to given value.
 
@@ -79,20 +79,20 @@ HasResource returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *WidgetLinks) GetSelf() WidgetLinksSelf`
+`func (o *WidgetLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *WidgetLinks) GetSelfOk() (*WidgetLinksSelf, bool)`
+`func (o *WidgetLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *WidgetLinks) SetSelf(v WidgetLinksSelf)`
+`func (o *WidgetLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

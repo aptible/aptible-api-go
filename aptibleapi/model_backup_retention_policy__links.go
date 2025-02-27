@@ -19,8 +19,8 @@ var _ MappedNullable = &BackupRetentionPolicyLinks{}
 
 // BackupRetentionPolicyLinks struct for BackupRetentionPolicyLinks
 type BackupRetentionPolicyLinks struct {
-	Account *BackupRetentionPolicyLinksAccount `json:"account,omitempty"`
-	Self *BackupRetentionPolicyLinksSelf `json:"self,omitempty"`
+	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewBackupRetentionPolicyLinksWithDefaults() *BackupRetentionPolicyLinks {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *BackupRetentionPolicyLinks) GetAccount() BackupRetentionPolicyLinksAccount {
+func (o *BackupRetentionPolicyLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Account) {
-		var ret BackupRetentionPolicyLinksAccount
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Account
@@ -54,7 +54,7 @@ func (o *BackupRetentionPolicyLinks) GetAccount() BackupRetentionPolicyLinksAcco
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupRetentionPolicyLinks) GetAccountOk() (*BackupRetentionPolicyLinksAccount, bool) {
+func (o *BackupRetentionPolicyLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *BackupRetentionPolicyLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given BackupRetentionPolicyLinksAccount and assigns it to the Account field.
-func (o *BackupRetentionPolicyLinks) SetAccount(v BackupRetentionPolicyLinksAccount) {
+// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
+func (o *BackupRetentionPolicyLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
 	o.Account = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *BackupRetentionPolicyLinks) GetSelf() BackupRetentionPolicyLinksSelf {
+func (o *BackupRetentionPolicyLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret BackupRetentionPolicyLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -86,7 +86,7 @@ func (o *BackupRetentionPolicyLinks) GetSelf() BackupRetentionPolicyLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupRetentionPolicyLinks) GetSelfOk() (*BackupRetentionPolicyLinksSelf, bool) {
+func (o *BackupRetentionPolicyLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *BackupRetentionPolicyLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given BackupRetentionPolicyLinksSelf and assigns it to the Self field.
-func (o *BackupRetentionPolicyLinks) SetSelf(v BackupRetentionPolicyLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *BackupRetentionPolicyLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

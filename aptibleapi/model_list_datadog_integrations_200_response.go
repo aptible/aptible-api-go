@@ -24,7 +24,7 @@ type ListDatadogIntegrations200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListDatadogIntegrations200ResponseLinks `json:"_links"`
+	Links ListDashboards200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListDatadogIntegrations200Response ListDatadogIntegrations200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListDatadogIntegrations200Response(embedded ListDatadogIntegrations200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDatadogIntegrations200ResponseLinks) *ListDatadogIntegrations200Response {
+func NewListDatadogIntegrations200Response(embedded ListDatadogIntegrations200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDashboards200ResponseLinks) *ListDatadogIntegrations200Response {
 	this := ListDatadogIntegrations200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListDatadogIntegrations200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListDatadogIntegrations200Response) GetLinks() ListDatadogIntegrations200ResponseLinks {
+func (o *ListDatadogIntegrations200Response) GetLinks() ListDashboards200ResponseLinks {
 	if o == nil {
-		var ret ListDatadogIntegrations200ResponseLinks
+		var ret ListDashboards200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListDatadogIntegrations200Response) GetLinks() ListDatadogIntegrations2
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListDatadogIntegrations200Response) GetLinksOk() (*ListDatadogIntegrations200ResponseLinks, bool) {
+func (o *ListDatadogIntegrations200Response) GetLinksOk() (*ListDashboards200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListDatadogIntegrations200Response) GetLinksOk() (*ListDatadogIntegrati
 }
 
 // SetLinks sets field value
-func (o *ListDatadogIntegrations200Response) SetLinks(v ListDatadogIntegrations200ResponseLinks) {
+func (o *ListDatadogIntegrations200Response) SetLinks(v ListDashboards200ResponseLinks) {
 	o.Links = v
 }
 

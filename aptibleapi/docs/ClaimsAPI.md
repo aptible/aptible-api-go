@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ## CreateClaimForAccount
 
-> CreateClaimForAccount(ctx, accountId, type_).CreateClaimForAccountRequest(createClaimForAccountRequest).Execute()
+> CreateClaimForAccount(ctx, accountId, type_).CreateAppRequest(createAppRequest).Execute()
 
 create claim
 
@@ -167,11 +167,11 @@ import (
 func main() {
 	accountId := int32(56) // int32 | account_id
 	type_ := "type__example" // string | type
-	createClaimForAccountRequest := *openapiclient.NewCreateClaimForAccountRequest("Handle_example") // CreateClaimForAccountRequest |  (optional)
+	createAppRequest := *openapiclient.NewCreateAppRequest("Handle_example") // CreateAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ClaimsAPI.CreateClaimForAccount(context.Background(), accountId, type_).CreateClaimForAccountRequest(createClaimForAccountRequest).Execute()
+	r, err := apiClient.ClaimsAPI.CreateClaimForAccount(context.Background(), accountId, type_).CreateAppRequest(createAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClaimsAPI.CreateClaimForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **createClaimForAccountRequest** | [**CreateClaimForAccountRequest**](CreateClaimForAccountRequest.md) |  | 
+ **createAppRequest** | [**CreateAppRequest**](CreateAppRequest.md) |  | 
 
 ### Return type
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Database** | Pointer to [**ListDatabaseCredentialsForDatabase200ResponseLinksDatabase**](ListDatabaseCredentialsForDatabase200ResponseLinksDatabase.md) |  | [optional] 
-**Next** | Pointer to [**ListDatabaseCredentialsForDatabase200ResponseLinksNext**](ListDatabaseCredentialsForDatabase200ResponseLinksNext.md) |  | [optional] 
-**Prev** | Pointer to [**ListDatabaseCredentialsForDatabase200ResponseLinksPrev**](ListDatabaseCredentialsForDatabase200ResponseLinksPrev.md) |  | [optional] 
-**Self** | Pointer to [**ListDatabaseCredentialsForDatabase200ResponseLinksSelf**](ListDatabaseCredentialsForDatabase200ResponseLinksSelf.md) |  | [optional] 
+**Database** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDatabase
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabase() ListDatabaseCredentialsForDatabase200ResponseLinksDatabase`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack`
 
 GetDatabase returns the Database field if non-nil, zero value otherwise.
 
 ### GetDatabaseOk
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabaseOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksDatabase, bool)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabase
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetDatabase(v ListDatabaseCredentialsForDatabase200ResponseLinksDatabase)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack)`
 
 SetDatabase sets Database field to given value.
 
@@ -55,20 +55,20 @@ HasDatabase returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNext() ListDatabaseCredentialsForDatabase200ResponseLinksNext`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNextOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksNext, bool)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetNext(v ListDatabaseCredentialsForDatabase200ResponseLinksNext)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
 
 SetNext sets Next field to given value.
 
@@ -80,20 +80,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrev() ListDatabaseCredentialsForDatabase200ResponseLinksPrev`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrevOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksPrev, bool)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetPrev(v ListDatabaseCredentialsForDatabase200ResponseLinksPrev)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
 
 SetPrev sets Prev field to given value.
 
@@ -105,20 +105,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelf() ListDatabaseCredentialsForDatabase200ResponseLinksSelf`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelfOk() (*ListDatabaseCredentialsForDatabase200ResponseLinksSelf, bool)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetSelf(v ListDatabaseCredentialsForDatabase200ResponseLinksSelf)`
+`func (o *ListDatabaseCredentialsForDatabase200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

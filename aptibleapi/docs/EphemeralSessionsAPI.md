@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ListEphemeralSessionsForOperation
 
-> ListEphemeralSessionsForOperation200Response ListEphemeralSessionsForOperation(ctx, operationId).Page(page).Execute()
+> ListEphemeralSessionsForApp200Response ListEphemeralSessionsForOperation(ctx, operationId).Page(page).Execute()
 
 list ephemeral_sessions
 
@@ -177,7 +177,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EphemeralSessionsAPI.ListEphemeralSessionsForOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListEphemeralSessionsForOperation`: ListEphemeralSessionsForOperation200Response
+	// response from `ListEphemeralSessionsForOperation`: ListEphemeralSessionsForApp200Response
 	fmt.Fprintf(os.Stdout, "Response from `EphemeralSessionsAPI.ListEphemeralSessionsForOperation`: %v\n", resp)
 }
 ```
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListEphemeralSessionsForOperation200Response**](ListEphemeralSessionsForOperation200Response.md)
+[**ListEphemeralSessionsForApp200Response**](ListEphemeralSessionsForApp200Response.md)
 
 ### Authorization
 

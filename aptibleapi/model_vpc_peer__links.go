@@ -19,8 +19,8 @@ var _ MappedNullable = &VpcPeerLinks{}
 
 // VpcPeerLinks struct for VpcPeerLinks
 type VpcPeerLinks struct {
-	Stack *VpcPeerLinksStack `json:"stack,omitempty"`
-	Self *VpcPeerLinksSelf `json:"self,omitempty"`
+	Stack *ListAccountsForStack200ResponseLinksStack `json:"stack,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewVpcPeerLinksWithDefaults() *VpcPeerLinks {
 }
 
 // GetStack returns the Stack field value if set, zero value otherwise.
-func (o *VpcPeerLinks) GetStack() VpcPeerLinksStack {
+func (o *VpcPeerLinks) GetStack() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Stack) {
-		var ret VpcPeerLinksStack
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Stack
@@ -54,7 +54,7 @@ func (o *VpcPeerLinks) GetStack() VpcPeerLinksStack {
 
 // GetStackOk returns a tuple with the Stack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VpcPeerLinks) GetStackOk() (*VpcPeerLinksStack, bool) {
+func (o *VpcPeerLinks) GetStackOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Stack) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *VpcPeerLinks) HasStack() bool {
 	return false
 }
 
-// SetStack gets a reference to the given VpcPeerLinksStack and assigns it to the Stack field.
-func (o *VpcPeerLinks) SetStack(v VpcPeerLinksStack) {
+// SetStack gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Stack field.
+func (o *VpcPeerLinks) SetStack(v ListAccountsForStack200ResponseLinksStack) {
 	o.Stack = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *VpcPeerLinks) GetSelf() VpcPeerLinksSelf {
+func (o *VpcPeerLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret VpcPeerLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -86,7 +86,7 @@ func (o *VpcPeerLinks) GetSelf() VpcPeerLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VpcPeerLinks) GetSelfOk() (*VpcPeerLinksSelf, bool) {
+func (o *VpcPeerLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *VpcPeerLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given VpcPeerLinksSelf and assigns it to the Self field.
-func (o *VpcPeerLinks) SetSelf(v VpcPeerLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *VpcPeerLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

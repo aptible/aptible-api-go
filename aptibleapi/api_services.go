@@ -292,7 +292,7 @@ func (r ApiListServicesForAppRequest) Page(page int32) ApiListServicesForAppRequ
 	return r
 }
 
-func (r ApiListServicesForAppRequest) Execute() (*ListServicesForApp200Response, *http.Response, error) {
+func (r ApiListServicesForAppRequest) Execute() (*ListServicesForAccount200Response, *http.Response, error) {
 	return r.ApiService.ListServicesForAppExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *ServicesAPIService) ListServicesForApp(ctx context.Context, appId int32
 }
 
 // Execute executes the request
-//  @return ListServicesForApp200Response
-func (a *ServicesAPIService) ListServicesForAppExecute(r ApiListServicesForAppRequest) (*ListServicesForApp200Response, *http.Response, error) {
+//  @return ListServicesForAccount200Response
+func (a *ServicesAPIService) ListServicesForAppExecute(r ApiListServicesForAppRequest) (*ListServicesForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListServicesForApp200Response
+		localVarReturnValue  *ListServicesForAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicesAPIService.ListServicesForApp")
@@ -416,11 +416,11 @@ type ApiPatchServiceRequest struct {
 	ctx context.Context
 	ApiService *ServicesAPIService
 	id int32
-	patchServiceRequest *PatchServiceRequest
+	updateServiceRequest *UpdateServiceRequest
 }
 
-func (r ApiPatchServiceRequest) PatchServiceRequest(patchServiceRequest PatchServiceRequest) ApiPatchServiceRequest {
-	r.patchServiceRequest = &patchServiceRequest
+func (r ApiPatchServiceRequest) UpdateServiceRequest(updateServiceRequest UpdateServiceRequest) ApiPatchServiceRequest {
+	r.updateServiceRequest = &updateServiceRequest
 	return r
 }
 
@@ -481,7 +481,7 @@ func (a *ServicesAPIService) PatchServiceExecute(r ApiPatchServiceRequest) (*htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.patchServiceRequest
+	localVarPostBody = r.updateServiceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

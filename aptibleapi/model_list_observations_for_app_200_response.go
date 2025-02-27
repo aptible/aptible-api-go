@@ -24,7 +24,7 @@ type ListObservationsForApp200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListObservationsForApp200ResponseLinks `json:"_links"`
+	Links ListImagesForApp200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListObservationsForApp200Response ListObservationsForApp200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListObservationsForApp200Response(embedded ListObservationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListObservationsForApp200ResponseLinks) *ListObservationsForApp200Response {
+func NewListObservationsForApp200Response(embedded ListObservationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListImagesForApp200ResponseLinks) *ListObservationsForApp200Response {
 	this := ListObservationsForApp200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListObservationsForApp200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListObservationsForApp200Response) GetLinks() ListObservationsForApp200ResponseLinks {
+func (o *ListObservationsForApp200Response) GetLinks() ListImagesForApp200ResponseLinks {
 	if o == nil {
-		var ret ListObservationsForApp200ResponseLinks
+		var ret ListImagesForApp200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListObservationsForApp200Response) GetLinks() ListObservationsForApp200
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListObservationsForApp200Response) GetLinksOk() (*ListObservationsForApp200ResponseLinks, bool) {
+func (o *ListObservationsForApp200Response) GetLinksOk() (*ListImagesForApp200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListObservationsForApp200Response) GetLinksOk() (*ListObservationsForAp
 }
 
 // SetLinks sets field value
-func (o *ListObservationsForApp200Response) SetLinks(v ListObservationsForApp200ResponseLinks) {
+func (o *ListObservationsForApp200Response) SetLinks(v ListImagesForApp200ResponseLinks) {
 	o.Links = v
 }
 

@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListIntrustionDetectionReportsForStack200ResponseLinks**](ListIntrustionDetectionReportsForStack200ResponseLinks.md) |  | 
+**Links** | [**ListAccountsForStack200ResponseLinks**](ListAccountsForStack200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListIntrustionDetectionReportsForStack200Response
 
-`func NewListIntrustionDetectionReportsForStack200Response(embedded ListIntrustionDetectionReportsForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListIntrustionDetectionReportsForStack200ResponseLinks, ) *ListIntrustionDetectionReportsForStack200Response`
+`func NewListIntrustionDetectionReportsForStack200Response(embedded ListIntrustionDetectionReportsForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAccountsForStack200ResponseLinks, ) *ListIntrustionDetectionReportsForStack200Response`
 
 NewListIntrustionDetectionReportsForStack200Response instantiates a new ListIntrustionDetectionReportsForStack200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListIntrustionDetectionReportsForStack200Response) GetLinks() ListIntrustionDetectionReportsForStack200ResponseLinks`
+`func (o *ListIntrustionDetectionReportsForStack200Response) GetLinks() ListAccountsForStack200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListIntrustionDetectionReportsForStack200Response) GetLinksOk() (*ListIntrustionDetectionReportsForStack200ResponseLinks, bool)`
+`func (o *ListIntrustionDetectionReportsForStack200Response) GetLinksOk() (*ListAccountsForStack200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListIntrustionDetectionReportsForStack200Response) SetLinks(v ListIntrustionDetectionReportsForStack200ResponseLinks)`
+`func (o *ListIntrustionDetectionReportsForStack200Response) SetLinks(v ListAccountsForStack200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

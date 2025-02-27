@@ -24,7 +24,7 @@ type ListReleasesForService200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListReleasesForService200ResponseLinks `json:"_links"`
+	Links ListDiskAttachmentsForService200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListReleasesForService200Response ListReleasesForService200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListReleasesForService200Response(embedded ListReleasesForService200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListReleasesForService200ResponseLinks) *ListReleasesForService200Response {
+func NewListReleasesForService200Response(embedded ListReleasesForService200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForService200ResponseLinks) *ListReleasesForService200Response {
 	this := ListReleasesForService200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListReleasesForService200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListReleasesForService200Response) GetLinks() ListReleasesForService200ResponseLinks {
+func (o *ListReleasesForService200Response) GetLinks() ListDiskAttachmentsForService200ResponseLinks {
 	if o == nil {
-		var ret ListReleasesForService200ResponseLinks
+		var ret ListDiskAttachmentsForService200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListReleasesForService200Response) GetLinks() ListReleasesForService200
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListReleasesForService200Response) GetLinksOk() (*ListReleasesForService200ResponseLinks, bool) {
+func (o *ListReleasesForService200Response) GetLinksOk() (*ListDiskAttachmentsForService200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListReleasesForService200Response) GetLinksOk() (*ListReleasesForServic
 }
 
 // SetLinks sets field value
-func (o *ListReleasesForService200Response) SetLinks(v ListReleasesForService200ResponseLinks) {
+func (o *ListReleasesForService200Response) SetLinks(v ListDiskAttachmentsForService200ResponseLinks) {
 	o.Links = v
 }
 

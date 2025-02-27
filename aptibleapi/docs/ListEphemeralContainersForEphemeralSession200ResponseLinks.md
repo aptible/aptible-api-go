@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EphemeralSession** | Pointer to [**ListEphemeralContainersForEphemeralSession200ResponseLinksEphemeralSession**](ListEphemeralContainersForEphemeralSession200ResponseLinksEphemeralSession.md) |  | [optional] 
-**LogDrain** | Pointer to [**ListEphemeralContainersForEphemeralSession200ResponseLinksLogDrain**](ListEphemeralContainersForEphemeralSession200ResponseLinksLogDrain.md) |  | [optional] 
-**Next** | Pointer to [**ListEphemeralContainersForEphemeralSession200ResponseLinksNext**](ListEphemeralContainersForEphemeralSession200ResponseLinksNext.md) |  | [optional] 
-**Prev** | Pointer to [**ListEphemeralContainersForEphemeralSession200ResponseLinksPrev**](ListEphemeralContainersForEphemeralSession200ResponseLinksPrev.md) |  | [optional] 
-**Self** | Pointer to [**ListEphemeralContainersForEphemeralSession200ResponseLinksSelf**](ListEphemeralContainersForEphemeralSession200ResponseLinksSelf.md) |  | [optional] 
+**EphemeralSession** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**LogDrain** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEphemeralSession
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetEphemeralSession() ListEphemeralContainersForEphemeralSession200ResponseLinksEphemeralSession`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetEphemeralSession() ListAccountsForStack200ResponseLinksStack`
 
 GetEphemeralSession returns the EphemeralSession field if non-nil, zero value otherwise.
 
 ### GetEphemeralSessionOk
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetEphemeralSessionOk() (*ListEphemeralContainersForEphemeralSession200ResponseLinksEphemeralSession, bool)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetEphemeralSessionOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetEphemeralSessionOk returns a tuple with the EphemeralSession field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEphemeralSession
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetEphemeralSession(v ListEphemeralContainersForEphemeralSession200ResponseLinksEphemeralSession)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetEphemeralSession(v ListAccountsForStack200ResponseLinksStack)`
 
 SetEphemeralSession sets EphemeralSession field to given value.
 
@@ -56,20 +56,20 @@ HasEphemeralSession returns a boolean if a field has been set.
 
 ### GetLogDrain
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetLogDrain() ListEphemeralContainersForEphemeralSession200ResponseLinksLogDrain`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetLogDrain() ListAccountsForStack200ResponseLinksStack`
 
 GetLogDrain returns the LogDrain field if non-nil, zero value otherwise.
 
 ### GetLogDrainOk
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetLogDrainOk() (*ListEphemeralContainersForEphemeralSession200ResponseLinksLogDrain, bool)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetLogDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetLogDrainOk returns a tuple with the LogDrain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogDrain
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetLogDrain(v ListEphemeralContainersForEphemeralSession200ResponseLinksLogDrain)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetLogDrain(v ListAccountsForStack200ResponseLinksStack)`
 
 SetLogDrain sets LogDrain field to given value.
 
@@ -81,20 +81,20 @@ HasLogDrain returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetNext() ListEphemeralContainersForEphemeralSession200ResponseLinksNext`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetNextOk() (*ListEphemeralContainersForEphemeralSession200ResponseLinksNext, bool)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetNext(v ListEphemeralContainersForEphemeralSession200ResponseLinksNext)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
 
 SetNext sets Next field to given value.
 
@@ -106,20 +106,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetPrev() ListEphemeralContainersForEphemeralSession200ResponseLinksPrev`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetPrevOk() (*ListEphemeralContainersForEphemeralSession200ResponseLinksPrev, bool)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetPrev(v ListEphemeralContainersForEphemeralSession200ResponseLinksPrev)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
 
 SetPrev sets Prev field to given value.
 
@@ -131,20 +131,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetSelf() ListEphemeralContainersForEphemeralSession200ResponseLinksSelf`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetSelfOk() (*ListEphemeralContainersForEphemeralSession200ResponseLinksSelf, bool)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetSelf(v ListEphemeralContainersForEphemeralSession200ResponseLinksSelf)`
+`func (o *ListEphemeralContainersForEphemeralSession200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

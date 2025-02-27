@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Embedded** | [**ListDeploymentsForSource200ResponseEmbedded**](ListDeploymentsForSource200ResponseEmbedded.md) |  | 
+**Embedded** | [**ListDeployments200ResponseEmbedded**](ListDeployments200ResponseEmbedded.md) |  | 
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListDeploymentsForSource200ResponseLinks**](ListDeploymentsForSource200ResponseLinks.md) |  | 
+**Links** | [**ListAppsForSource200ResponseLinks**](ListAppsForSource200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListDeploymentsForSource200Response
 
-`func NewListDeploymentsForSource200Response(embedded ListDeploymentsForSource200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDeploymentsForSource200ResponseLinks, ) *ListDeploymentsForSource200Response`
+`func NewListDeploymentsForSource200Response(embedded ListDeployments200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppsForSource200ResponseLinks, ) *ListDeploymentsForSource200Response`
 
 NewListDeploymentsForSource200Response instantiates a new ListDeploymentsForSource200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEmbedded
 
-`func (o *ListDeploymentsForSource200Response) GetEmbedded() ListDeploymentsForSource200ResponseEmbedded`
+`func (o *ListDeploymentsForSource200Response) GetEmbedded() ListDeployments200ResponseEmbedded`
 
 GetEmbedded returns the Embedded field if non-nil, zero value otherwise.
 
 ### GetEmbeddedOk
 
-`func (o *ListDeploymentsForSource200Response) GetEmbeddedOk() (*ListDeploymentsForSource200ResponseEmbedded, bool)`
+`func (o *ListDeploymentsForSource200Response) GetEmbeddedOk() (*ListDeployments200ResponseEmbedded, bool)`
 
 GetEmbeddedOk returns a tuple with the Embedded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmbedded
 
-`func (o *ListDeploymentsForSource200Response) SetEmbedded(v ListDeploymentsForSource200ResponseEmbedded)`
+`func (o *ListDeploymentsForSource200Response) SetEmbedded(v ListDeployments200ResponseEmbedded)`
 
 SetEmbedded sets Embedded field to given value.
 
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListDeploymentsForSource200Response) GetLinks() ListDeploymentsForSource200ResponseLinks`
+`func (o *ListDeploymentsForSource200Response) GetLinks() ListAppsForSource200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListDeploymentsForSource200Response) GetLinksOk() (*ListDeploymentsForSource200ResponseLinks, bool)`
+`func (o *ListDeploymentsForSource200Response) GetLinksOk() (*ListAppsForSource200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListDeploymentsForSource200Response) SetLinks(v ListDeploymentsForSource200ResponseLinks)`
+`func (o *ListDeploymentsForSource200Response) SetLinks(v ListAppsForSource200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

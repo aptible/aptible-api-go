@@ -292,7 +292,7 @@ func (r ApiListEphemeralSessionsForOperationRequest) Page(page int32) ApiListEph
 	return r
 }
 
-func (r ApiListEphemeralSessionsForOperationRequest) Execute() (*ListEphemeralSessionsForOperation200Response, *http.Response, error) {
+func (r ApiListEphemeralSessionsForOperationRequest) Execute() (*ListEphemeralSessionsForApp200Response, *http.Response, error) {
 	return r.ApiService.ListEphemeralSessionsForOperationExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForOperation(ctx cont
 }
 
 // Execute executes the request
-//  @return ListEphemeralSessionsForOperation200Response
-func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForOperationExecute(r ApiListEphemeralSessionsForOperationRequest) (*ListEphemeralSessionsForOperation200Response, *http.Response, error) {
+//  @return ListEphemeralSessionsForApp200Response
+func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForOperationExecute(r ApiListEphemeralSessionsForOperationRequest) (*ListEphemeralSessionsForApp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListEphemeralSessionsForOperation200Response
+		localVarReturnValue  *ListEphemeralSessionsForApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EphemeralSessionsAPIService.ListEphemeralSessionsForOperation")

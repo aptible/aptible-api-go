@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Method** | Pointer to **string** |  | [optional] 
-**From** | Pointer to [**VhostAcmeConfigurationChallengesInnerFrom**](VhostAcmeConfigurationChallengesInnerFrom.md) |  | [optional] 
+**From** | Pointer to [**UpdateDashboardRequest**](UpdateDashboardRequest.md) |  | [optional] 
 **To** | Pointer to [**[]VhostAcmeConfigurationChallengesInnerToInner**](VhostAcmeConfigurationChallengesInnerToInner.md) |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasMethod returns a boolean if a field has been set.
 
 ### GetFrom
 
-`func (o *VhostAcmeConfigurationChallengesInner) GetFrom() VhostAcmeConfigurationChallengesInnerFrom`
+`func (o *VhostAcmeConfigurationChallengesInner) GetFrom() UpdateDashboardRequest`
 
 GetFrom returns the From field if non-nil, zero value otherwise.
 
 ### GetFromOk
 
-`func (o *VhostAcmeConfigurationChallengesInner) GetFromOk() (*VhostAcmeConfigurationChallengesInnerFrom, bool)`
+`func (o *VhostAcmeConfigurationChallengesInner) GetFromOk() (*UpdateDashboardRequest, bool)`
 
 GetFromOk returns a tuple with the From field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFrom
 
-`func (o *VhostAcmeConfigurationChallengesInner) SetFrom(v VhostAcmeConfigurationChallengesInnerFrom)`
+`func (o *VhostAcmeConfigurationChallengesInner) SetFrom(v UpdateDashboardRequest)`
 
 SetFrom sets From field to given value.
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Account** | Pointer to [**ListBackups200ResponseLinksAccount**](ListBackups200ResponseLinksAccount.md) |  | [optional] 
-**Database** | Pointer to [**ListBackups200ResponseLinksDatabase**](ListBackups200ResponseLinksDatabase.md) |  | [optional] 
-**Next** | Pointer to [**ListBackups200ResponseLinksNext**](ListBackups200ResponseLinksNext.md) |  | [optional] 
-**Prev** | Pointer to [**ListBackups200ResponseLinksPrev**](ListBackups200ResponseLinksPrev.md) |  | [optional] 
-**Self** | Pointer to [**ListBackups200ResponseLinksSelf**](ListBackups200ResponseLinksSelf.md) |  | [optional] 
+**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Database** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccount
 
-`func (o *ListBackups200ResponseLinks) GetAccount() ListBackups200ResponseLinksAccount`
+`func (o *ListBackups200ResponseLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListBackups200ResponseLinks) GetAccountOk() (*ListBackups200ResponseLinksAccount, bool)`
+`func (o *ListBackups200ResponseLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListBackups200ResponseLinks) SetAccount(v ListBackups200ResponseLinksAccount)`
+`func (o *ListBackups200ResponseLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
 
 SetAccount sets Account field to given value.
 
@@ -56,20 +56,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetDatabase
 
-`func (o *ListBackups200ResponseLinks) GetDatabase() ListBackups200ResponseLinksDatabase`
+`func (o *ListBackups200ResponseLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack`
 
 GetDatabase returns the Database field if non-nil, zero value otherwise.
 
 ### GetDatabaseOk
 
-`func (o *ListBackups200ResponseLinks) GetDatabaseOk() (*ListBackups200ResponseLinksDatabase, bool)`
+`func (o *ListBackups200ResponseLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabase
 
-`func (o *ListBackups200ResponseLinks) SetDatabase(v ListBackups200ResponseLinksDatabase)`
+`func (o *ListBackups200ResponseLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack)`
 
 SetDatabase sets Database field to given value.
 
@@ -81,20 +81,20 @@ HasDatabase returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListBackups200ResponseLinks) GetNext() ListBackups200ResponseLinksNext`
+`func (o *ListBackups200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListBackups200ResponseLinks) GetNextOk() (*ListBackups200ResponseLinksNext, bool)`
+`func (o *ListBackups200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListBackups200ResponseLinks) SetNext(v ListBackups200ResponseLinksNext)`
+`func (o *ListBackups200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
 
 SetNext sets Next field to given value.
 
@@ -106,20 +106,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListBackups200ResponseLinks) GetPrev() ListBackups200ResponseLinksPrev`
+`func (o *ListBackups200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListBackups200ResponseLinks) GetPrevOk() (*ListBackups200ResponseLinksPrev, bool)`
+`func (o *ListBackups200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListBackups200ResponseLinks) SetPrev(v ListBackups200ResponseLinksPrev)`
+`func (o *ListBackups200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
 
 SetPrev sets Prev field to given value.
 
@@ -131,20 +131,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListBackups200ResponseLinks) GetSelf() ListBackups200ResponseLinksSelf`
+`func (o *ListBackups200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListBackups200ResponseLinks) GetSelfOk() (*ListBackups200ResponseLinksSelf, bool)`
+`func (o *ListBackups200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListBackups200ResponseLinks) SetSelf(v ListBackups200ResponseLinksSelf)`
+`func (o *ListBackups200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

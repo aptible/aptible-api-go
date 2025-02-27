@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListServiceSizingPoliciesForAccount200ResponseLinks**](ListServiceSizingPoliciesForAccount200ResponseLinks.md) |  | 
+**Links** | [**ListActivityReportsForAccount200ResponseLinks**](ListActivityReportsForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListServiceSizingPoliciesForAccount200Response
 
-`func NewListServiceSizingPoliciesForAccount200Response(embedded ListServiceSizingPoliciesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListServiceSizingPoliciesForAccount200ResponseLinks, ) *ListServiceSizingPoliciesForAccount200Response`
+`func NewListServiceSizingPoliciesForAccount200Response(embedded ListServiceSizingPoliciesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks, ) *ListServiceSizingPoliciesForAccount200Response`
 
 NewListServiceSizingPoliciesForAccount200Response instantiates a new ListServiceSizingPoliciesForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListServiceSizingPoliciesForAccount200Response) GetLinks() ListServiceSizingPoliciesForAccount200ResponseLinks`
+`func (o *ListServiceSizingPoliciesForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListServiceSizingPoliciesForAccount200Response) GetLinksOk() (*ListServiceSizingPoliciesForAccount200ResponseLinks, bool)`
+`func (o *ListServiceSizingPoliciesForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListServiceSizingPoliciesForAccount200Response) SetLinks(v ListServiceSizingPoliciesForAccount200ResponseLinks)`
+`func (o *ListServiceSizingPoliciesForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

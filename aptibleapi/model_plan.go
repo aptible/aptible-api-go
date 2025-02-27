@@ -35,7 +35,7 @@ type Plan struct {
 	ComplianceDashboardAccess bool `json:"compliance_dashboard_access"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
-	Links *PlanLinks `json:"_links,omitempty"`
+	Links *IntegrationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -434,9 +434,9 @@ func (o *Plan) SetUpdatedAt(v string) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *Plan) GetLinks() PlanLinks {
+func (o *Plan) GetLinks() IntegrationLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret PlanLinks
+		var ret IntegrationLinks
 		return ret
 	}
 	return *o.Links
@@ -444,7 +444,7 @@ func (o *Plan) GetLinks() PlanLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Plan) GetLinksOk() (*PlanLinks, bool) {
+func (o *Plan) GetLinksOk() (*IntegrationLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -460,8 +460,8 @@ func (o *Plan) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given PlanLinks and assigns it to the Links field.
-func (o *Plan) SetLinks(v PlanLinks) {
+// SetLinks gets a reference to the given IntegrationLinks and assigns it to the Links field.
+func (o *Plan) SetLinks(v IntegrationLinks) {
 	o.Links = &v
 }
 

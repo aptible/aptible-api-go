@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **RangeBegin** | **string** |  | 
 **RangeEnd** | **string** |  | 
 **Data** | **map[string]interface{}** |  | 
-**Links** | Pointer to [**ObservationLinks**](ObservationLinks.md) |  | [optional] 
+**Links** | Pointer to [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] 
 
 ## Methods
 
@@ -174,20 +174,20 @@ SetData sets Data field to given value.
 
 ### GetLinks
 
-`func (o *Observation) GetLinks() ObservationLinks`
+`func (o *Observation) GetLinks() ConfigurationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *Observation) GetLinksOk() (*ObservationLinks, bool)`
+`func (o *Observation) GetLinksOk() (*ConfigurationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *Observation) SetLinks(v ObservationLinks)`
+`func (o *Observation) SetLinks(v ConfigurationLinks)`
 
 SetLinks sets Links field to given value.
 

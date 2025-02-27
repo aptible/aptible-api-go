@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDatadogIntegration
 
-> UpdateDatadogIntegration(ctx, id).UpdateDatadogIntegrationRequest(updateDatadogIntegrationRequest).Execute()
+> UpdateDatadogIntegration(ctx, id).UpdateDashboardRequest(updateDashboardRequest).Execute()
 
 update integration
 
@@ -354,11 +354,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateDatadogIntegrationRequest := *openapiclient.NewUpdateDatadogIntegrationRequest() // UpdateDatadogIntegrationRequest |  (optional)
+	updateDashboardRequest := *openapiclient.NewUpdateDashboardRequest() // UpdateDashboardRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DefaultAPI.UpdateDatadogIntegration(context.Background(), id).UpdateDatadogIntegrationRequest(updateDatadogIntegrationRequest).Execute()
+	r, err := apiClient.DefaultAPI.UpdateDatadogIntegration(context.Background(), id).UpdateDashboardRequest(updateDashboardRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DefaultAPI.UpdateDatadogIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -382,7 +382,7 @@ Other parameters are passed through a pointer to a apiUpdateDatadogIntegrationRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateDatadogIntegrationRequest** | [**UpdateDatadogIntegrationRequest**](UpdateDatadogIntegrationRequest.md) |  | 
+ **updateDashboardRequest** | [**UpdateDashboardRequest**](UpdateDashboardRequest.md) |  | 
 
 ### Return type
 

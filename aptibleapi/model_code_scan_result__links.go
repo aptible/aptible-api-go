@@ -19,9 +19,9 @@ var _ MappedNullable = &CodeScanResultLinks{}
 
 // CodeScanResultLinks struct for CodeScanResultLinks
 type CodeScanResultLinks struct {
-	App *CodeScanResultLinksApp `json:"app,omitempty"`
-	Operation *CodeScanResultLinksOperation `json:"operation,omitempty"`
-	Self *CodeScanResultLinksSelf `json:"self,omitempty"`
+	App *ListAccountsForStack200ResponseLinksStack `json:"app,omitempty"`
+	Operation *ListAccountsForStack200ResponseLinksStack `json:"operation,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewCodeScanResultLinksWithDefaults() *CodeScanResultLinks {
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *CodeScanResultLinks) GetApp() CodeScanResultLinksApp {
+func (o *CodeScanResultLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.App) {
-		var ret CodeScanResultLinksApp
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.App
@@ -55,7 +55,7 @@ func (o *CodeScanResultLinks) GetApp() CodeScanResultLinksApp {
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CodeScanResultLinks) GetAppOk() (*CodeScanResultLinksApp, bool) {
+func (o *CodeScanResultLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *CodeScanResultLinks) HasApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given CodeScanResultLinksApp and assigns it to the App field.
-func (o *CodeScanResultLinks) SetApp(v CodeScanResultLinksApp) {
+// SetApp gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the App field.
+func (o *CodeScanResultLinks) SetApp(v ListAccountsForStack200ResponseLinksStack) {
 	o.App = &v
 }
 
 // GetOperation returns the Operation field value if set, zero value otherwise.
-func (o *CodeScanResultLinks) GetOperation() CodeScanResultLinksOperation {
+func (o *CodeScanResultLinks) GetOperation() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Operation) {
-		var ret CodeScanResultLinksOperation
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Operation
@@ -87,7 +87,7 @@ func (o *CodeScanResultLinks) GetOperation() CodeScanResultLinksOperation {
 
 // GetOperationOk returns a tuple with the Operation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CodeScanResultLinks) GetOperationOk() (*CodeScanResultLinksOperation, bool) {
+func (o *CodeScanResultLinks) GetOperationOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Operation) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *CodeScanResultLinks) HasOperation() bool {
 	return false
 }
 
-// SetOperation gets a reference to the given CodeScanResultLinksOperation and assigns it to the Operation field.
-func (o *CodeScanResultLinks) SetOperation(v CodeScanResultLinksOperation) {
+// SetOperation gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operation field.
+func (o *CodeScanResultLinks) SetOperation(v ListAccountsForStack200ResponseLinksStack) {
 	o.Operation = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *CodeScanResultLinks) GetSelf() CodeScanResultLinksSelf {
+func (o *CodeScanResultLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret CodeScanResultLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *CodeScanResultLinks) GetSelf() CodeScanResultLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CodeScanResultLinks) GetSelfOk() (*CodeScanResultLinksSelf, bool) {
+func (o *CodeScanResultLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *CodeScanResultLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given CodeScanResultLinksSelf and assigns it to the Self field.
-func (o *CodeScanResultLinks) SetSelf(v CodeScanResultLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *CodeScanResultLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

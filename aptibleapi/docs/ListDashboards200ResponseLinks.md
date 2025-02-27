@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Next** | Pointer to [**ListDashboards200ResponseLinksNext**](ListDashboards200ResponseLinksNext.md) |  | [optional] 
-**Prev** | Pointer to [**ListDashboards200ResponseLinksPrev**](ListDashboards200ResponseLinksPrev.md) |  | [optional] 
-**Self** | Pointer to [**ListDashboards200ResponseLinksSelf**](ListDashboards200ResponseLinksSelf.md) |  | [optional] 
+**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetNext
 
-`func (o *ListDashboards200ResponseLinks) GetNext() ListDashboards200ResponseLinksNext`
+`func (o *ListDashboards200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListDashboards200ResponseLinks) GetNextOk() (*ListDashboards200ResponseLinksNext, bool)`
+`func (o *ListDashboards200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListDashboards200ResponseLinks) SetNext(v ListDashboards200ResponseLinksNext)`
+`func (o *ListDashboards200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
 
 SetNext sets Next field to given value.
 
@@ -54,20 +54,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListDashboards200ResponseLinks) GetPrev() ListDashboards200ResponseLinksPrev`
+`func (o *ListDashboards200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListDashboards200ResponseLinks) GetPrevOk() (*ListDashboards200ResponseLinksPrev, bool)`
+`func (o *ListDashboards200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListDashboards200ResponseLinks) SetPrev(v ListDashboards200ResponseLinksPrev)`
+`func (o *ListDashboards200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
 
 SetPrev sets Prev field to given value.
 
@@ -79,20 +79,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListDashboards200ResponseLinks) GetSelf() ListDashboards200ResponseLinksSelf`
+`func (o *ListDashboards200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListDashboards200ResponseLinks) GetSelfOk() (*ListDashboards200ResponseLinksSelf, bool)`
+`func (o *ListDashboards200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListDashboards200ResponseLinks) SetSelf(v ListDashboards200ResponseLinksSelf)`
+`func (o *ListDashboards200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

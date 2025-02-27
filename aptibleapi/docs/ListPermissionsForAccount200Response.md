@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListPermissionsForAccount200ResponseLinks**](ListPermissionsForAccount200ResponseLinks.md) |  | 
+**Links** | [**ListActivityReportsForAccount200ResponseLinks**](ListActivityReportsForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListPermissionsForAccount200Response
 
-`func NewListPermissionsForAccount200Response(embedded ListPermissionsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListPermissionsForAccount200ResponseLinks, ) *ListPermissionsForAccount200Response`
+`func NewListPermissionsForAccount200Response(embedded ListPermissionsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks, ) *ListPermissionsForAccount200Response`
 
 NewListPermissionsForAccount200Response instantiates a new ListPermissionsForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListPermissionsForAccount200Response) GetLinks() ListPermissionsForAccount200ResponseLinks`
+`func (o *ListPermissionsForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListPermissionsForAccount200Response) GetLinksOk() (*ListPermissionsForAccount200ResponseLinks, bool)`
+`func (o *ListPermissionsForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListPermissionsForAccount200Response) SetLinks(v ListPermissionsForAccount200ResponseLinks)`
+`func (o *ListPermissionsForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

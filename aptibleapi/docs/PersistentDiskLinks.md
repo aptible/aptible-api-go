@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Account** | Pointer to [**PersistentDiskLinksAccount**](PersistentDiskLinksAccount.md) |  | [optional] 
-**Operations** | Pointer to [**PersistentDiskLinksOperations**](PersistentDiskLinksOperations.md) |  | [optional] 
-**Self** | Pointer to [**PersistentDiskLinksSelf**](PersistentDiskLinksSelf.md) |  | [optional] 
+**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Operations** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccount
 
-`func (o *PersistentDiskLinks) GetAccount() PersistentDiskLinksAccount`
+`func (o *PersistentDiskLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *PersistentDiskLinks) GetAccountOk() (*PersistentDiskLinksAccount, bool)`
+`func (o *PersistentDiskLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *PersistentDiskLinks) SetAccount(v PersistentDiskLinksAccount)`
+`func (o *PersistentDiskLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
 
 SetAccount sets Account field to given value.
 
@@ -54,20 +54,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetOperations
 
-`func (o *PersistentDiskLinks) GetOperations() PersistentDiskLinksOperations`
+`func (o *PersistentDiskLinks) GetOperations() ListAccountsForStack200ResponseLinksStack`
 
 GetOperations returns the Operations field if non-nil, zero value otherwise.
 
 ### GetOperationsOk
 
-`func (o *PersistentDiskLinks) GetOperationsOk() (*PersistentDiskLinksOperations, bool)`
+`func (o *PersistentDiskLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetOperationsOk returns a tuple with the Operations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperations
 
-`func (o *PersistentDiskLinks) SetOperations(v PersistentDiskLinksOperations)`
+`func (o *PersistentDiskLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack)`
 
 SetOperations sets Operations field to given value.
 
@@ -79,20 +79,20 @@ HasOperations returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *PersistentDiskLinks) GetSelf() PersistentDiskLinksSelf`
+`func (o *PersistentDiskLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *PersistentDiskLinks) GetSelfOk() (*PersistentDiskLinksSelf, bool)`
+`func (o *PersistentDiskLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *PersistentDiskLinks) SetSelf(v PersistentDiskLinksSelf)`
+`func (o *PersistentDiskLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

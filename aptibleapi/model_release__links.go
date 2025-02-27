@@ -19,9 +19,9 @@ var _ MappedNullable = &ReleaseLinks{}
 
 // ReleaseLinks struct for ReleaseLinks
 type ReleaseLinks struct {
-	Service *ReleaseLinksService `json:"service,omitempty"`
-	Containers *ReleaseLinksContainers `json:"containers,omitempty"`
-	Self *ReleaseLinksSelf `json:"self,omitempty"`
+	Service *ListAccountsForStack200ResponseLinksStack `json:"service,omitempty"`
+	Containers *ListAccountsForStack200ResponseLinksStack `json:"containers,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewReleaseLinksWithDefaults() *ReleaseLinks {
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *ReleaseLinks) GetService() ReleaseLinksService {
+func (o *ReleaseLinks) GetService() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Service) {
-		var ret ReleaseLinksService
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Service
@@ -55,7 +55,7 @@ func (o *ReleaseLinks) GetService() ReleaseLinksService {
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReleaseLinks) GetServiceOk() (*ReleaseLinksService, bool) {
+func (o *ReleaseLinks) GetServiceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Service) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *ReleaseLinks) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given ReleaseLinksService and assigns it to the Service field.
-func (o *ReleaseLinks) SetService(v ReleaseLinksService) {
+// SetService gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Service field.
+func (o *ReleaseLinks) SetService(v ListAccountsForStack200ResponseLinksStack) {
 	o.Service = &v
 }
 
 // GetContainers returns the Containers field value if set, zero value otherwise.
-func (o *ReleaseLinks) GetContainers() ReleaseLinksContainers {
+func (o *ReleaseLinks) GetContainers() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Containers) {
-		var ret ReleaseLinksContainers
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Containers
@@ -87,7 +87,7 @@ func (o *ReleaseLinks) GetContainers() ReleaseLinksContainers {
 
 // GetContainersOk returns a tuple with the Containers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReleaseLinks) GetContainersOk() (*ReleaseLinksContainers, bool) {
+func (o *ReleaseLinks) GetContainersOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Containers) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *ReleaseLinks) HasContainers() bool {
 	return false
 }
 
-// SetContainers gets a reference to the given ReleaseLinksContainers and assigns it to the Containers field.
-func (o *ReleaseLinks) SetContainers(v ReleaseLinksContainers) {
+// SetContainers gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Containers field.
+func (o *ReleaseLinks) SetContainers(v ListAccountsForStack200ResponseLinksStack) {
 	o.Containers = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ReleaseLinks) GetSelf() ReleaseLinksSelf {
+func (o *ReleaseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret ReleaseLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *ReleaseLinks) GetSelf() ReleaseLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReleaseLinks) GetSelfOk() (*ReleaseLinksSelf, bool) {
+func (o *ReleaseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *ReleaseLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ReleaseLinksSelf and assigns it to the Self field.
-func (o *ReleaseLinks) SetSelf(v ReleaseLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *ReleaseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 

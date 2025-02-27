@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Account** | Pointer to [**ListActivityReportsForAccount200ResponseLinksAccount**](ListActivityReportsForAccount200ResponseLinksAccount.md) |  | [optional] 
-**Next** | Pointer to [**ListActivityReportsForAccount200ResponseLinksNext**](ListActivityReportsForAccount200ResponseLinksNext.md) |  | [optional] 
-**Prev** | Pointer to [**ListActivityReportsForAccount200ResponseLinksPrev**](ListActivityReportsForAccount200ResponseLinksPrev.md) |  | [optional] 
-**Self** | Pointer to [**ListActivityReportsForAccount200ResponseLinksSelf**](ListActivityReportsForAccount200ResponseLinksSelf.md) |  | [optional] 
+**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccount
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetAccount() ListActivityReportsForAccount200ResponseLinksAccount`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetAccountOk() (*ListActivityReportsForAccount200ResponseLinksAccount, bool)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) SetAccount(v ListActivityReportsForAccount200ResponseLinksAccount)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
 
 SetAccount sets Account field to given value.
 
@@ -55,20 +55,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetNext() ListActivityReportsForAccount200ResponseLinksNext`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetNextOk() (*ListActivityReportsForAccount200ResponseLinksNext, bool)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) SetNext(v ListActivityReportsForAccount200ResponseLinksNext)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
 
 SetNext sets Next field to given value.
 
@@ -80,20 +80,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetPrev() ListActivityReportsForAccount200ResponseLinksPrev`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetPrevOk() (*ListActivityReportsForAccount200ResponseLinksPrev, bool)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) SetPrev(v ListActivityReportsForAccount200ResponseLinksPrev)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
 
 SetPrev sets Prev field to given value.
 
@@ -105,20 +105,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetSelf() ListActivityReportsForAccount200ResponseLinksSelf`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) GetSelfOk() (*ListActivityReportsForAccount200ResponseLinksSelf, bool)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListActivityReportsForAccount200ResponseLinks) SetSelf(v ListActivityReportsForAccount200ResponseLinksSelf)`
+`func (o *ListActivityReportsForAccount200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
 
 SetSelf sets Self field to given value.
 

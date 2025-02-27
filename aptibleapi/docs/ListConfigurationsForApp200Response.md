@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListConfigurationsForApp200ResponseLinks**](ListConfigurationsForApp200ResponseLinks.md) |  | 
+**Links** | [**ListCodeScanResultsForApp200ResponseLinks**](ListCodeScanResultsForApp200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListConfigurationsForApp200Response
 
-`func NewListConfigurationsForApp200Response(embedded ListConfigurationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListConfigurationsForApp200ResponseLinks, ) *ListConfigurationsForApp200Response`
+`func NewListConfigurationsForApp200Response(embedded ListConfigurationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListCodeScanResultsForApp200ResponseLinks, ) *ListConfigurationsForApp200Response`
 
 NewListConfigurationsForApp200Response instantiates a new ListConfigurationsForApp200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListConfigurationsForApp200Response) GetLinks() ListConfigurationsForApp200ResponseLinks`
+`func (o *ListConfigurationsForApp200Response) GetLinks() ListCodeScanResultsForApp200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListConfigurationsForApp200Response) GetLinksOk() (*ListConfigurationsForApp200ResponseLinks, bool)`
+`func (o *ListConfigurationsForApp200Response) GetLinksOk() (*ListCodeScanResultsForApp200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListConfigurationsForApp200Response) SetLinks(v ListConfigurationsForApp200ResponseLinks)`
+`func (o *ListConfigurationsForApp200Response) SetLinks(v ListCodeScanResultsForApp200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

@@ -526,11 +526,11 @@ type ApiPatchCertificateRequest struct {
 	ctx context.Context
 	ApiService *CertificatesAPIService
 	id int32
-	patchCertificateRequest *PatchCertificateRequest
+	updateCertificateRequest *UpdateCertificateRequest
 }
 
-func (r ApiPatchCertificateRequest) PatchCertificateRequest(patchCertificateRequest PatchCertificateRequest) ApiPatchCertificateRequest {
-	r.patchCertificateRequest = &patchCertificateRequest
+func (r ApiPatchCertificateRequest) UpdateCertificateRequest(updateCertificateRequest UpdateCertificateRequest) ApiPatchCertificateRequest {
+	r.updateCertificateRequest = &updateCertificateRequest
 	return r
 }
 
@@ -591,7 +591,7 @@ func (a *CertificatesAPIService) PatchCertificateExecute(r ApiPatchCertificateRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.patchCertificateRequest
+	localVarPostBody = r.updateCertificateRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

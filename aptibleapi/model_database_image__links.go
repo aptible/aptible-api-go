@@ -19,8 +19,8 @@ var _ MappedNullable = &DatabaseImageLinks{}
 
 // DatabaseImageLinks struct for DatabaseImageLinks
 type DatabaseImageLinks struct {
-	Database *DatabaseImageLinksDatabase `json:"database,omitempty"`
-	Self *DatabaseImageLinksSelf `json:"self,omitempty"`
+	Database *ListAccountsForStack200ResponseLinksStack `json:"database,omitempty"`
+	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewDatabaseImageLinksWithDefaults() *DatabaseImageLinks {
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *DatabaseImageLinks) GetDatabase() DatabaseImageLinksDatabase {
+func (o *DatabaseImageLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Database) {
-		var ret DatabaseImageLinksDatabase
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Database
@@ -54,7 +54,7 @@ func (o *DatabaseImageLinks) GetDatabase() DatabaseImageLinksDatabase {
 
 // GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DatabaseImageLinks) GetDatabaseOk() (*DatabaseImageLinksDatabase, bool) {
+func (o *DatabaseImageLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Database) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *DatabaseImageLinks) HasDatabase() bool {
 	return false
 }
 
-// SetDatabase gets a reference to the given DatabaseImageLinksDatabase and assigns it to the Database field.
-func (o *DatabaseImageLinks) SetDatabase(v DatabaseImageLinksDatabase) {
+// SetDatabase gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Database field.
+func (o *DatabaseImageLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack) {
 	o.Database = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *DatabaseImageLinks) GetSelf() DatabaseImageLinksSelf {
+func (o *DatabaseImageLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
-		var ret DatabaseImageLinksSelf
+		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
 	}
 	return *o.Self
@@ -86,7 +86,7 @@ func (o *DatabaseImageLinks) GetSelf() DatabaseImageLinksSelf {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DatabaseImageLinks) GetSelfOk() (*DatabaseImageLinksSelf, bool) {
+func (o *DatabaseImageLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *DatabaseImageLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given DatabaseImageLinksSelf and assigns it to the Self field.
-func (o *DatabaseImageLinks) SetSelf(v DatabaseImageLinksSelf) {
+// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
+func (o *DatabaseImageLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 
