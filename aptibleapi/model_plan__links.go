@@ -19,7 +19,7 @@ var _ MappedNullable = &PlanLinks{}
 
 // PlanLinks struct for PlanLinks
 type PlanLinks struct {
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Self *PlanLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,9 +43,9 @@ func NewPlanLinksWithDefaults() *PlanLinks {
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *PlanLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *PlanLinks) GetSelf() PlanLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PlanLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -53,7 +53,7 @@ func (o *PlanLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlanLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PlanLinks) GetSelfOk() (*PlanLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *PlanLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *PlanLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given PlanLinksSelf and assigns it to the Self field.
+func (o *PlanLinks) SetSelf(v PlanLinksSelf) {
 	o.Self = &v
 }
 

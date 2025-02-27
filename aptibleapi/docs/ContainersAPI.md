@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## LogDrainsLogDrainIdContainersGet
 
-> ListContainersForRelease200Response LogDrainsLogDrainIdContainersGet(ctx, logDrainId).Page(page).Execute()
+> LogDrainsLogDrainIdContainersGet200Response LogDrainsLogDrainIdContainersGet(ctx, logDrainId).Page(page).Execute()
 
 list containers
 
@@ -178,7 +178,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.LogDrainsLogDrainIdContainersGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LogDrainsLogDrainIdContainersGet`: ListContainersForRelease200Response
+	// response from `LogDrainsLogDrainIdContainersGet`: LogDrainsLogDrainIdContainersGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `ContainersAPI.LogDrainsLogDrainIdContainersGet`: %v\n", resp)
 }
 ```
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListContainersForRelease200Response**](ListContainersForRelease200Response.md)
+[**LogDrainsLogDrainIdContainersGet200Response**](LogDrainsLogDrainIdContainersGet200Response.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## MetricDrainsMetricDrainIdContainersGet
 
-> ListContainersForRelease200Response MetricDrainsMetricDrainIdContainersGet(ctx, metricDrainId).Page(page).Execute()
+> MetricDrainsMetricDrainIdContainersGet200Response MetricDrainsMetricDrainIdContainersGet(ctx, metricDrainId).Page(page).Execute()
 
 list containers
 
@@ -248,7 +248,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.MetricDrainsMetricDrainIdContainersGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MetricDrainsMetricDrainIdContainersGet`: ListContainersForRelease200Response
+	// response from `MetricDrainsMetricDrainIdContainersGet`: MetricDrainsMetricDrainIdContainersGet200Response
 	fmt.Fprintf(os.Stdout, "Response from `ContainersAPI.MetricDrainsMetricDrainIdContainersGet`: %v\n", resp)
 }
 ```
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListContainersForRelease200Response**](ListContainersForRelease200Response.md)
+[**MetricDrainsMetricDrainIdContainersGet200Response**](MetricDrainsMetricDrainIdContainersGet200Response.md)
 
 ### Authorization
 

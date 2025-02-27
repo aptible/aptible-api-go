@@ -201,7 +201,7 @@ func (a *EphemeralContainersAPIService) ListEphemeralContainersForEphemeralSessi
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -292,7 +292,7 @@ func (r ApiListEphemeralContainersForLogDrainRequest) Page(page int32) ApiListEp
 	return r
 }
 
-func (r ApiListEphemeralContainersForLogDrainRequest) Execute() (*ListEphemeralContainersForEphemeralSession200Response, *http.Response, error) {
+func (r ApiListEphemeralContainersForLogDrainRequest) Execute() (*ListEphemeralContainersForLogDrain200Response, *http.Response, error) {
 	return r.ApiService.ListEphemeralContainersForLogDrainExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *EphemeralContainersAPIService) ListEphemeralContainersForLogDrain(ctx c
 }
 
 // Execute executes the request
-//  @return ListEphemeralContainersForEphemeralSession200Response
-func (a *EphemeralContainersAPIService) ListEphemeralContainersForLogDrainExecute(r ApiListEphemeralContainersForLogDrainRequest) (*ListEphemeralContainersForEphemeralSession200Response, *http.Response, error) {
+//  @return ListEphemeralContainersForLogDrain200Response
+func (a *EphemeralContainersAPIService) ListEphemeralContainersForLogDrainExecute(r ApiListEphemeralContainersForLogDrainRequest) (*ListEphemeralContainersForLogDrain200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListEphemeralContainersForEphemeralSession200Response
+		localVarReturnValue  *ListEphemeralContainersForLogDrain200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EphemeralContainersAPIService.ListEphemeralContainersForLogDrain")
@@ -334,7 +334,7 @@ func (a *EphemeralContainersAPIService) ListEphemeralContainersForLogDrainExecut
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

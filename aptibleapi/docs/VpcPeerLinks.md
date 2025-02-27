@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Stack** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Stack** | Pointer to [**VpcPeerLinksStack**](VpcPeerLinksStack.md) |  | [optional] 
+**Self** | Pointer to [**VpcPeerLinksSelf**](VpcPeerLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStack
 
-`func (o *VpcPeerLinks) GetStack() ListAccountsForStack200ResponseLinksStack`
+`func (o *VpcPeerLinks) GetStack() VpcPeerLinksStack`
 
 GetStack returns the Stack field if non-nil, zero value otherwise.
 
 ### GetStackOk
 
-`func (o *VpcPeerLinks) GetStackOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *VpcPeerLinks) GetStackOk() (*VpcPeerLinksStack, bool)`
 
 GetStackOk returns a tuple with the Stack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStack
 
-`func (o *VpcPeerLinks) SetStack(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *VpcPeerLinks) SetStack(v VpcPeerLinksStack)`
 
 SetStack sets Stack field to given value.
 
@@ -53,20 +53,20 @@ HasStack returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *VpcPeerLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *VpcPeerLinks) GetSelf() VpcPeerLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *VpcPeerLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *VpcPeerLinks) GetSelfOk() (*VpcPeerLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *VpcPeerLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *VpcPeerLinks) SetSelf(v VpcPeerLinksSelf)`
 
 SetSelf sets Self field to given value.
 

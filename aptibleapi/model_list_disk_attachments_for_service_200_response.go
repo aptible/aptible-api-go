@@ -20,7 +20,7 @@ var _ MappedNullable = &ListDiskAttachmentsForService200Response{}
 
 // ListDiskAttachmentsForService200Response struct for ListDiskAttachmentsForService200Response
 type ListDiskAttachmentsForService200Response struct {
-	Embedded ListDiskAttachmentsForAccount200ResponseEmbedded `json:"_embedded"`
+	Embedded ListDiskAttachmentsForService200ResponseEmbedded `json:"_embedded"`
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
@@ -34,7 +34,7 @@ type _ListDiskAttachmentsForService200Response ListDiskAttachmentsForService200R
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListDiskAttachmentsForService200Response(embedded ListDiskAttachmentsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForService200ResponseLinks) *ListDiskAttachmentsForService200Response {
+func NewListDiskAttachmentsForService200Response(embedded ListDiskAttachmentsForService200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForService200ResponseLinks) *ListDiskAttachmentsForService200Response {
 	this := ListDiskAttachmentsForService200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -53,9 +53,9 @@ func NewListDiskAttachmentsForService200ResponseWithDefaults() *ListDiskAttachme
 }
 
 // GetEmbedded returns the Embedded field value
-func (o *ListDiskAttachmentsForService200Response) GetEmbedded() ListDiskAttachmentsForAccount200ResponseEmbedded {
+func (o *ListDiskAttachmentsForService200Response) GetEmbedded() ListDiskAttachmentsForService200ResponseEmbedded {
 	if o == nil {
-		var ret ListDiskAttachmentsForAccount200ResponseEmbedded
+		var ret ListDiskAttachmentsForService200ResponseEmbedded
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *ListDiskAttachmentsForService200Response) GetEmbedded() ListDiskAttachm
 
 // GetEmbeddedOk returns a tuple with the Embedded field value
 // and a boolean to check if the value has been set.
-func (o *ListDiskAttachmentsForService200Response) GetEmbeddedOk() (*ListDiskAttachmentsForAccount200ResponseEmbedded, bool) {
+func (o *ListDiskAttachmentsForService200Response) GetEmbeddedOk() (*ListDiskAttachmentsForService200ResponseEmbedded, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *ListDiskAttachmentsForService200Response) GetEmbeddedOk() (*ListDiskAtt
 }
 
 // SetEmbedded sets field value
-func (o *ListDiskAttachmentsForService200Response) SetEmbedded(v ListDiskAttachmentsForAccount200ResponseEmbedded) {
+func (o *ListDiskAttachmentsForService200Response) SetEmbedded(v ListDiskAttachmentsForService200ResponseEmbedded) {
 	o.Embedded = v
 }
 

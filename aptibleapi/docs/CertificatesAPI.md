@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ## PatchCertificate
 
-> PatchCertificate(ctx, id).UpdateCertificateRequest(updateCertificateRequest).Execute()
+> PatchCertificate(ctx, id).PatchCertificateRequest(patchCertificateRequest).Execute()
 
 update certificate
 
@@ -307,11 +307,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateCertificateRequest := *openapiclient.NewUpdateCertificateRequest() // UpdateCertificateRequest |  (optional)
+	patchCertificateRequest := *openapiclient.NewPatchCertificateRequest() // PatchCertificateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CertificatesAPI.PatchCertificate(context.Background(), id).UpdateCertificateRequest(updateCertificateRequest).Execute()
+	r, err := apiClient.CertificatesAPI.PatchCertificate(context.Background(), id).PatchCertificateRequest(patchCertificateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesAPI.PatchCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -335,7 +335,7 @@ Other parameters are passed through a pointer to a apiPatchCertificateRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateCertificateRequest** | [**UpdateCertificateRequest**](UpdateCertificateRequest.md) |  | 
+ **patchCertificateRequest** | [**PatchCertificateRequest**](PatchCertificateRequest.md) |  | 
 
 ### Return type
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**User** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Resource** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**DestinationAccount** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**SshPortalConnections** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**EphemeralSessions** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**CodeScanResult** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Service** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**User** | Pointer to [**OperationLinksUser**](OperationLinksUser.md) |  | [optional] 
+**Resource** | Pointer to [**OperationLinksResource**](OperationLinksResource.md) |  | [optional] 
+**Account** | Pointer to [**OperationLinksAccount**](OperationLinksAccount.md) |  | [optional] 
+**DestinationAccount** | Pointer to [**OperationLinksDestinationAccount**](OperationLinksDestinationAccount.md) |  | [optional] 
+**SshPortalConnections** | Pointer to [**OperationLinksSshPortalConnections**](OperationLinksSshPortalConnections.md) |  | [optional] 
+**EphemeralSessions** | Pointer to [**OperationLinksEphemeralSessions**](OperationLinksEphemeralSessions.md) |  | [optional] 
+**CodeScanResult** | Pointer to [**OperationLinksCodeScanResult**](OperationLinksCodeScanResult.md) |  | [optional] 
+**Service** | Pointer to [**OperationLinksService**](OperationLinksService.md) |  | [optional] 
+**Self** | Pointer to [**OperationLinksSelf**](OperationLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetUser
 
-`func (o *OperationLinks) GetUser() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetUser() OperationLinksUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *OperationLinks) GetUserOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetUserOk() (*OperationLinksUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *OperationLinks) SetUser(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetUser(v OperationLinksUser)`
 
 SetUser sets User field to given value.
 
@@ -60,20 +60,20 @@ HasUser returns a boolean if a field has been set.
 
 ### GetResource
 
-`func (o *OperationLinks) GetResource() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetResource() OperationLinksResource`
 
 GetResource returns the Resource field if non-nil, zero value otherwise.
 
 ### GetResourceOk
 
-`func (o *OperationLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetResourceOk() (*OperationLinksResource, bool)`
 
 GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResource
 
-`func (o *OperationLinks) SetResource(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetResource(v OperationLinksResource)`
 
 SetResource sets Resource field to given value.
 
@@ -85,20 +85,20 @@ HasResource returns a boolean if a field has been set.
 
 ### GetAccount
 
-`func (o *OperationLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetAccount() OperationLinksAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *OperationLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetAccountOk() (*OperationLinksAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *OperationLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetAccount(v OperationLinksAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -110,20 +110,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetDestinationAccount
 
-`func (o *OperationLinks) GetDestinationAccount() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetDestinationAccount() OperationLinksDestinationAccount`
 
 GetDestinationAccount returns the DestinationAccount field if non-nil, zero value otherwise.
 
 ### GetDestinationAccountOk
 
-`func (o *OperationLinks) GetDestinationAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetDestinationAccountOk() (*OperationLinksDestinationAccount, bool)`
 
 GetDestinationAccountOk returns a tuple with the DestinationAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDestinationAccount
 
-`func (o *OperationLinks) SetDestinationAccount(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetDestinationAccount(v OperationLinksDestinationAccount)`
 
 SetDestinationAccount sets DestinationAccount field to given value.
 
@@ -135,20 +135,20 @@ HasDestinationAccount returns a boolean if a field has been set.
 
 ### GetSshPortalConnections
 
-`func (o *OperationLinks) GetSshPortalConnections() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetSshPortalConnections() OperationLinksSshPortalConnections`
 
 GetSshPortalConnections returns the SshPortalConnections field if non-nil, zero value otherwise.
 
 ### GetSshPortalConnectionsOk
 
-`func (o *OperationLinks) GetSshPortalConnectionsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetSshPortalConnectionsOk() (*OperationLinksSshPortalConnections, bool)`
 
 GetSshPortalConnectionsOk returns a tuple with the SshPortalConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSshPortalConnections
 
-`func (o *OperationLinks) SetSshPortalConnections(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetSshPortalConnections(v OperationLinksSshPortalConnections)`
 
 SetSshPortalConnections sets SshPortalConnections field to given value.
 
@@ -160,20 +160,20 @@ HasSshPortalConnections returns a boolean if a field has been set.
 
 ### GetEphemeralSessions
 
-`func (o *OperationLinks) GetEphemeralSessions() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetEphemeralSessions() OperationLinksEphemeralSessions`
 
 GetEphemeralSessions returns the EphemeralSessions field if non-nil, zero value otherwise.
 
 ### GetEphemeralSessionsOk
 
-`func (o *OperationLinks) GetEphemeralSessionsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetEphemeralSessionsOk() (*OperationLinksEphemeralSessions, bool)`
 
 GetEphemeralSessionsOk returns a tuple with the EphemeralSessions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEphemeralSessions
 
-`func (o *OperationLinks) SetEphemeralSessions(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetEphemeralSessions(v OperationLinksEphemeralSessions)`
 
 SetEphemeralSessions sets EphemeralSessions field to given value.
 
@@ -185,20 +185,20 @@ HasEphemeralSessions returns a boolean if a field has been set.
 
 ### GetCodeScanResult
 
-`func (o *OperationLinks) GetCodeScanResult() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetCodeScanResult() OperationLinksCodeScanResult`
 
 GetCodeScanResult returns the CodeScanResult field if non-nil, zero value otherwise.
 
 ### GetCodeScanResultOk
 
-`func (o *OperationLinks) GetCodeScanResultOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetCodeScanResultOk() (*OperationLinksCodeScanResult, bool)`
 
 GetCodeScanResultOk returns a tuple with the CodeScanResult field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCodeScanResult
 
-`func (o *OperationLinks) SetCodeScanResult(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetCodeScanResult(v OperationLinksCodeScanResult)`
 
 SetCodeScanResult sets CodeScanResult field to given value.
 
@@ -210,20 +210,20 @@ HasCodeScanResult returns a boolean if a field has been set.
 
 ### GetService
 
-`func (o *OperationLinks) GetService() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetService() OperationLinksService`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *OperationLinks) GetServiceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetServiceOk() (*OperationLinksService, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *OperationLinks) SetService(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetService(v OperationLinksService)`
 
 SetService sets Service field to given value.
 
@@ -235,20 +235,20 @@ HasService returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *OperationLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *OperationLinks) GetSelf() OperationLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *OperationLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *OperationLinks) GetSelfOk() (*OperationLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *OperationLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *OperationLinks) SetSelf(v OperationLinksSelf)`
 
 SetSelf sets Self field to given value.
 

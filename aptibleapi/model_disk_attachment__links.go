@@ -19,11 +19,11 @@ var _ MappedNullable = &DiskAttachmentLinks{}
 
 // DiskAttachmentLinks struct for DiskAttachmentLinks
 type DiskAttachmentLinks struct {
-	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
-	Service *ListAccountsForStack200ResponseLinksStack `json:"service,omitempty"`
-	PersistentDisk *ListAccountsForStack200ResponseLinksStack `json:"persistent_disk,omitempty"`
-	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Account *DiskAttachmentLinksAccount `json:"account,omitempty"`
+	Service *DiskAttachmentLinksService `json:"service,omitempty"`
+	PersistentDisk *DiskAttachmentLinksPersistentDisk `json:"persistent_disk,omitempty"`
+	Operations *DiskAttachmentLinksOperations `json:"operations,omitempty"`
+	Self *DiskAttachmentLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,9 +47,9 @@ func NewDiskAttachmentLinksWithDefaults() *DiskAttachmentLinks {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *DiskAttachmentLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
+func (o *DiskAttachmentLinks) GetAccount() DiskAttachmentLinksAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DiskAttachmentLinksAccount
 		return ret
 	}
 	return *o.Account
@@ -57,7 +57,7 @@ func (o *DiskAttachmentLinks) GetAccount() ListAccountsForStack200ResponseLinksS
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskAttachmentLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DiskAttachmentLinks) GetAccountOk() (*DiskAttachmentLinksAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -73,15 +73,15 @@ func (o *DiskAttachmentLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
-func (o *DiskAttachmentLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
+// SetAccount gets a reference to the given DiskAttachmentLinksAccount and assigns it to the Account field.
+func (o *DiskAttachmentLinks) SetAccount(v DiskAttachmentLinksAccount) {
 	o.Account = &v
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *DiskAttachmentLinks) GetService() ListAccountsForStack200ResponseLinksStack {
+func (o *DiskAttachmentLinks) GetService() DiskAttachmentLinksService {
 	if o == nil || IsNil(o.Service) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DiskAttachmentLinksService
 		return ret
 	}
 	return *o.Service
@@ -89,7 +89,7 @@ func (o *DiskAttachmentLinks) GetService() ListAccountsForStack200ResponseLinksS
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskAttachmentLinks) GetServiceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DiskAttachmentLinks) GetServiceOk() (*DiskAttachmentLinksService, bool) {
 	if o == nil || IsNil(o.Service) {
 		return nil, false
 	}
@@ -105,15 +105,15 @@ func (o *DiskAttachmentLinks) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Service field.
-func (o *DiskAttachmentLinks) SetService(v ListAccountsForStack200ResponseLinksStack) {
+// SetService gets a reference to the given DiskAttachmentLinksService and assigns it to the Service field.
+func (o *DiskAttachmentLinks) SetService(v DiskAttachmentLinksService) {
 	o.Service = &v
 }
 
 // GetPersistentDisk returns the PersistentDisk field value if set, zero value otherwise.
-func (o *DiskAttachmentLinks) GetPersistentDisk() ListAccountsForStack200ResponseLinksStack {
+func (o *DiskAttachmentLinks) GetPersistentDisk() DiskAttachmentLinksPersistentDisk {
 	if o == nil || IsNil(o.PersistentDisk) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DiskAttachmentLinksPersistentDisk
 		return ret
 	}
 	return *o.PersistentDisk
@@ -121,7 +121,7 @@ func (o *DiskAttachmentLinks) GetPersistentDisk() ListAccountsForStack200Respons
 
 // GetPersistentDiskOk returns a tuple with the PersistentDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskAttachmentLinks) GetPersistentDiskOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DiskAttachmentLinks) GetPersistentDiskOk() (*DiskAttachmentLinksPersistentDisk, bool) {
 	if o == nil || IsNil(o.PersistentDisk) {
 		return nil, false
 	}
@@ -137,15 +137,15 @@ func (o *DiskAttachmentLinks) HasPersistentDisk() bool {
 	return false
 }
 
-// SetPersistentDisk gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the PersistentDisk field.
-func (o *DiskAttachmentLinks) SetPersistentDisk(v ListAccountsForStack200ResponseLinksStack) {
+// SetPersistentDisk gets a reference to the given DiskAttachmentLinksPersistentDisk and assigns it to the PersistentDisk field.
+func (o *DiskAttachmentLinks) SetPersistentDisk(v DiskAttachmentLinksPersistentDisk) {
 	o.PersistentDisk = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *DiskAttachmentLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
+func (o *DiskAttachmentLinks) GetOperations() DiskAttachmentLinksOperations {
 	if o == nil || IsNil(o.Operations) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DiskAttachmentLinksOperations
 		return ret
 	}
 	return *o.Operations
@@ -153,7 +153,7 @@ func (o *DiskAttachmentLinks) GetOperations() ListAccountsForStack200ResponseLin
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskAttachmentLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DiskAttachmentLinks) GetOperationsOk() (*DiskAttachmentLinksOperations, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -169,15 +169,15 @@ func (o *DiskAttachmentLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
-func (o *DiskAttachmentLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
+// SetOperations gets a reference to the given DiskAttachmentLinksOperations and assigns it to the Operations field.
+func (o *DiskAttachmentLinks) SetOperations(v DiskAttachmentLinksOperations) {
 	o.Operations = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *DiskAttachmentLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *DiskAttachmentLinks) GetSelf() DiskAttachmentLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DiskAttachmentLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -185,7 +185,7 @@ func (o *DiskAttachmentLinks) GetSelf() ListAccountsForStack200ResponseLinksStac
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DiskAttachmentLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DiskAttachmentLinks) GetSelfOk() (*DiskAttachmentLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *DiskAttachmentLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *DiskAttachmentLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given DiskAttachmentLinksSelf and assigns it to the Self field.
+func (o *DiskAttachmentLinks) SetSelf(v DiskAttachmentLinksSelf) {
 	o.Self = &v
 }
 

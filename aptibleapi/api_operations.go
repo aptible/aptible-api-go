@@ -158,11 +158,11 @@ type ApiCreateOperationForBackupRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	backupId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest9 *CreateOperationRequest9
 }
 
-func (r ApiCreateOperationForBackupRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForBackupRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForBackupRequest) CreateOperationRequest9(createOperationRequest9 CreateOperationRequest9) ApiCreateOperationForBackupRequest {
+	r.createOperationRequest9 = &createOperationRequest9
 	return r
 }
 
@@ -225,7 +225,7 @@ func (a *OperationsAPIService) CreateOperationForBackupExecute(r ApiCreateOperat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest9
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -289,11 +289,11 @@ type ApiCreateOperationForDatabaseRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	databaseId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest2 *CreateOperationRequest2
 }
 
-func (r ApiCreateOperationForDatabaseRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForDatabaseRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForDatabaseRequest) CreateOperationRequest2(createOperationRequest2 CreateOperationRequest2) ApiCreateOperationForDatabaseRequest {
+	r.createOperationRequest2 = &createOperationRequest2
 	return r
 }
 
@@ -356,7 +356,7 @@ func (a *OperationsAPIService) CreateOperationForDatabaseExecute(r ApiCreateOper
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest2
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -420,11 +420,11 @@ type ApiCreateOperationForDatabaseCredentialRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	databaseCredentialId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest3 *CreateOperationRequest3
 }
 
-func (r ApiCreateOperationForDatabaseCredentialRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForDatabaseCredentialRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForDatabaseCredentialRequest) CreateOperationRequest3(createOperationRequest3 CreateOperationRequest3) ApiCreateOperationForDatabaseCredentialRequest {
+	r.createOperationRequest3 = &createOperationRequest3
 	return r
 }
 
@@ -487,7 +487,7 @@ func (a *OperationsAPIService) CreateOperationForDatabaseCredentialExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest3
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -551,11 +551,11 @@ type ApiCreateOperationForDiskAttachmentRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	diskAttachmentId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest11 *CreateOperationRequest11
 }
 
-func (r ApiCreateOperationForDiskAttachmentRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForDiskAttachmentRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForDiskAttachmentRequest) CreateOperationRequest11(createOperationRequest11 CreateOperationRequest11) ApiCreateOperationForDiskAttachmentRequest {
+	r.createOperationRequest11 = &createOperationRequest11
 	return r
 }
 
@@ -618,7 +618,7 @@ func (a *OperationsAPIService) CreateOperationForDiskAttachmentExecute(r ApiCrea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest11
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -682,11 +682,11 @@ type ApiCreateOperationForEphemeralSessionRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	ephemeralSessionId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest1 *CreateOperationRequest1
 }
 
-func (r ApiCreateOperationForEphemeralSessionRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForEphemeralSessionRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForEphemeralSessionRequest) CreateOperationRequest1(createOperationRequest1 CreateOperationRequest1) ApiCreateOperationForEphemeralSessionRequest {
+	r.createOperationRequest1 = &createOperationRequest1
 	return r
 }
 
@@ -749,7 +749,7 @@ func (a *OperationsAPIService) CreateOperationForEphemeralSessionExecute(r ApiCr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest1
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -813,11 +813,11 @@ type ApiCreateOperationForImageRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	imageId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest6 *CreateOperationRequest6
 }
 
-func (r ApiCreateOperationForImageRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForImageRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForImageRequest) CreateOperationRequest6(createOperationRequest6 CreateOperationRequest6) ApiCreateOperationForImageRequest {
+	r.createOperationRequest6 = &createOperationRequest6
 	return r
 }
 
@@ -880,7 +880,7 @@ func (a *OperationsAPIService) CreateOperationForImageExecute(r ApiCreateOperati
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest6
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -944,11 +944,11 @@ type ApiCreateOperationForLogDrainRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	logDrainId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest7 *CreateOperationRequest7
 }
 
-func (r ApiCreateOperationForLogDrainRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForLogDrainRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForLogDrainRequest) CreateOperationRequest7(createOperationRequest7 CreateOperationRequest7) ApiCreateOperationForLogDrainRequest {
+	r.createOperationRequest7 = &createOperationRequest7
 	return r
 }
 
@@ -1011,7 +1011,7 @@ func (a *OperationsAPIService) CreateOperationForLogDrainExecute(r ApiCreateOper
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest7
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1075,11 +1075,11 @@ type ApiCreateOperationForMetricDrainRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	metricDrainId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest8 *CreateOperationRequest8
 }
 
-func (r ApiCreateOperationForMetricDrainRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForMetricDrainRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForMetricDrainRequest) CreateOperationRequest8(createOperationRequest8 CreateOperationRequest8) ApiCreateOperationForMetricDrainRequest {
+	r.createOperationRequest8 = &createOperationRequest8
 	return r
 }
 
@@ -1142,7 +1142,7 @@ func (a *OperationsAPIService) CreateOperationForMetricDrainExecute(r ApiCreateO
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest8
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1206,11 +1206,11 @@ type ApiCreateOperationForPersistentDiskRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	persistentDiskId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest10 *CreateOperationRequest10
 }
 
-func (r ApiCreateOperationForPersistentDiskRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForPersistentDiskRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForPersistentDiskRequest) CreateOperationRequest10(createOperationRequest10 CreateOperationRequest10) ApiCreateOperationForPersistentDiskRequest {
+	r.createOperationRequest10 = &createOperationRequest10
 	return r
 }
 
@@ -1273,7 +1273,7 @@ func (a *OperationsAPIService) CreateOperationForPersistentDiskExecute(r ApiCrea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest10
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1337,11 +1337,11 @@ type ApiCreateOperationForServiceRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	serviceId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest4 *CreateOperationRequest4
 }
 
-func (r ApiCreateOperationForServiceRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForServiceRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForServiceRequest) CreateOperationRequest4(createOperationRequest4 CreateOperationRequest4) ApiCreateOperationForServiceRequest {
+	r.createOperationRequest4 = &createOperationRequest4
 	return r
 }
 
@@ -1404,7 +1404,7 @@ func (a *OperationsAPIService) CreateOperationForServiceExecute(r ApiCreateOpera
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest4
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1468,11 +1468,11 @@ type ApiCreateOperationForVhostRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	vhostId int32
-	createOperationRequest *CreateOperationRequest
+	createOperationRequest5 *CreateOperationRequest5
 }
 
-func (r ApiCreateOperationForVhostRequest) CreateOperationRequest(createOperationRequest CreateOperationRequest) ApiCreateOperationForVhostRequest {
-	r.createOperationRequest = &createOperationRequest
+func (r ApiCreateOperationForVhostRequest) CreateOperationRequest5(createOperationRequest5 CreateOperationRequest5) ApiCreateOperationForVhostRequest {
+	r.createOperationRequest5 = &createOperationRequest5
 	return r
 }
 
@@ -1535,7 +1535,7 @@ func (a *OperationsAPIService) CreateOperationForVhostExecute(r ApiCreateOperati
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createOperationRequest
+	localVarPostBody = r.createOperationRequest5
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1773,7 +1773,7 @@ func (a *OperationsAPIService) ListOperationsForAccountExecute(r ApiListOperatio
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1864,7 +1864,7 @@ func (r ApiListOperationsForAppRequest) Page(page int32) ApiListOperationsForApp
 	return r
 }
 
-func (r ApiListOperationsForAppRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForAppRequest) Execute() (*ListOperationsForApp200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForAppExecute(r)
 }
 
@@ -1884,13 +1884,13 @@ func (a *OperationsAPIService) ListOperationsForApp(ctx context.Context, appId i
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForAppExecute(r ApiListOperationsForAppRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForApp200Response
+func (a *OperationsAPIService) ListOperationsForAppExecute(r ApiListOperationsForAppRequest) (*ListOperationsForApp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForApp")
@@ -1906,7 +1906,7 @@ func (a *OperationsAPIService) ListOperationsForAppExecute(r ApiListOperationsFo
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1997,7 +1997,7 @@ func (r ApiListOperationsForBackupRequest) Page(page int32) ApiListOperationsFor
 	return r
 }
 
-func (r ApiListOperationsForBackupRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForBackupRequest) Execute() (*ListOperationsForBackup200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForBackupExecute(r)
 }
 
@@ -2017,13 +2017,13 @@ func (a *OperationsAPIService) ListOperationsForBackup(ctx context.Context, back
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForBackupExecute(r ApiListOperationsForBackupRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForBackup200Response
+func (a *OperationsAPIService) ListOperationsForBackupExecute(r ApiListOperationsForBackupRequest) (*ListOperationsForBackup200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForBackup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForBackup")
@@ -2039,7 +2039,7 @@ func (a *OperationsAPIService) ListOperationsForBackupExecute(r ApiListOperation
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2130,7 +2130,7 @@ func (r ApiListOperationsForDatabaseRequest) Page(page int32) ApiListOperationsF
 	return r
 }
 
-func (r ApiListOperationsForDatabaseRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForDatabaseRequest) Execute() (*ListOperationsForDatabase200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForDatabaseExecute(r)
 }
 
@@ -2150,13 +2150,13 @@ func (a *OperationsAPIService) ListOperationsForDatabase(ctx context.Context, da
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForDatabaseExecute(r ApiListOperationsForDatabaseRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForDatabase200Response
+func (a *OperationsAPIService) ListOperationsForDatabaseExecute(r ApiListOperationsForDatabaseRequest) (*ListOperationsForDatabase200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForDatabase200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForDatabase")
@@ -2172,7 +2172,7 @@ func (a *OperationsAPIService) ListOperationsForDatabaseExecute(r ApiListOperati
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2263,7 +2263,7 @@ func (r ApiListOperationsForDatabaseCredentialRequest) Page(page int32) ApiListO
 	return r
 }
 
-func (r ApiListOperationsForDatabaseCredentialRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForDatabaseCredentialRequest) Execute() (*ListOperationsForDatabaseCredential200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForDatabaseCredentialExecute(r)
 }
 
@@ -2283,13 +2283,13 @@ func (a *OperationsAPIService) ListOperationsForDatabaseCredential(ctx context.C
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForDatabaseCredentialExecute(r ApiListOperationsForDatabaseCredentialRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForDatabaseCredential200Response
+func (a *OperationsAPIService) ListOperationsForDatabaseCredentialExecute(r ApiListOperationsForDatabaseCredentialRequest) (*ListOperationsForDatabaseCredential200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForDatabaseCredential200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForDatabaseCredential")
@@ -2305,7 +2305,7 @@ func (a *OperationsAPIService) ListOperationsForDatabaseCredentialExecute(r ApiL
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2396,7 +2396,7 @@ func (r ApiListOperationsForDiskAttachmentRequest) Page(page int32) ApiListOpera
 	return r
 }
 
-func (r ApiListOperationsForDiskAttachmentRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForDiskAttachmentRequest) Execute() (*ListOperationsForDiskAttachment200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForDiskAttachmentExecute(r)
 }
 
@@ -2416,13 +2416,13 @@ func (a *OperationsAPIService) ListOperationsForDiskAttachment(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForDiskAttachmentExecute(r ApiListOperationsForDiskAttachmentRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForDiskAttachment200Response
+func (a *OperationsAPIService) ListOperationsForDiskAttachmentExecute(r ApiListOperationsForDiskAttachmentRequest) (*ListOperationsForDiskAttachment200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForDiskAttachment200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForDiskAttachment")
@@ -2438,7 +2438,7 @@ func (a *OperationsAPIService) ListOperationsForDiskAttachmentExecute(r ApiListO
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2529,7 +2529,7 @@ func (r ApiListOperationsForEphemeralSessionRequest) Page(page int32) ApiListOpe
 	return r
 }
 
-func (r ApiListOperationsForEphemeralSessionRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForEphemeralSessionRequest) Execute() (*ListOperationsForEphemeralSession200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForEphemeralSessionExecute(r)
 }
 
@@ -2549,13 +2549,13 @@ func (a *OperationsAPIService) ListOperationsForEphemeralSession(ctx context.Con
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForEphemeralSessionExecute(r ApiListOperationsForEphemeralSessionRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForEphemeralSession200Response
+func (a *OperationsAPIService) ListOperationsForEphemeralSessionExecute(r ApiListOperationsForEphemeralSessionRequest) (*ListOperationsForEphemeralSession200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForEphemeralSession200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForEphemeralSession")
@@ -2571,7 +2571,7 @@ func (a *OperationsAPIService) ListOperationsForEphemeralSessionExecute(r ApiLis
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2662,7 +2662,7 @@ func (r ApiListOperationsForImageRequest) Page(page int32) ApiListOperationsForI
 	return r
 }
 
-func (r ApiListOperationsForImageRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForImageRequest) Execute() (*ListOperationsForImage200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForImageExecute(r)
 }
 
@@ -2682,13 +2682,13 @@ func (a *OperationsAPIService) ListOperationsForImage(ctx context.Context, image
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForImageExecute(r ApiListOperationsForImageRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForImage200Response
+func (a *OperationsAPIService) ListOperationsForImageExecute(r ApiListOperationsForImageRequest) (*ListOperationsForImage200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForImage200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForImage")
@@ -2704,7 +2704,7 @@ func (a *OperationsAPIService) ListOperationsForImageExecute(r ApiListOperations
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2795,7 +2795,7 @@ func (r ApiListOperationsForLogDrainRequest) Page(page int32) ApiListOperationsF
 	return r
 }
 
-func (r ApiListOperationsForLogDrainRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForLogDrainRequest) Execute() (*ListOperationsForLogDrain200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForLogDrainExecute(r)
 }
 
@@ -2815,13 +2815,13 @@ func (a *OperationsAPIService) ListOperationsForLogDrain(ctx context.Context, lo
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForLogDrainExecute(r ApiListOperationsForLogDrainRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForLogDrain200Response
+func (a *OperationsAPIService) ListOperationsForLogDrainExecute(r ApiListOperationsForLogDrainRequest) (*ListOperationsForLogDrain200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForLogDrain200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForLogDrain")
@@ -2837,7 +2837,7 @@ func (a *OperationsAPIService) ListOperationsForLogDrainExecute(r ApiListOperati
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -2928,7 +2928,7 @@ func (r ApiListOperationsForMetricDrainRequest) Page(page int32) ApiListOperatio
 	return r
 }
 
-func (r ApiListOperationsForMetricDrainRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForMetricDrainRequest) Execute() (*ListOperationsForMetricDrain200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForMetricDrainExecute(r)
 }
 
@@ -2948,13 +2948,13 @@ func (a *OperationsAPIService) ListOperationsForMetricDrain(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForMetricDrainExecute(r ApiListOperationsForMetricDrainRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForMetricDrain200Response
+func (a *OperationsAPIService) ListOperationsForMetricDrainExecute(r ApiListOperationsForMetricDrainRequest) (*ListOperationsForMetricDrain200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForMetricDrain200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForMetricDrain")
@@ -2970,7 +2970,7 @@ func (a *OperationsAPIService) ListOperationsForMetricDrainExecute(r ApiListOper
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3061,7 +3061,7 @@ func (r ApiListOperationsForPersistentDiskRequest) Page(page int32) ApiListOpera
 	return r
 }
 
-func (r ApiListOperationsForPersistentDiskRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForPersistentDiskRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForPersistentDiskExecute(r)
 }
 
@@ -3081,13 +3081,13 @@ func (a *OperationsAPIService) ListOperationsForPersistentDisk(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForPersistentDiskExecute(r ApiListOperationsForPersistentDiskRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForPersistentDiskExecute(r ApiListOperationsForPersistentDiskRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForPersistentDisk")
@@ -3103,7 +3103,7 @@ func (a *OperationsAPIService) ListOperationsForPersistentDiskExecute(r ApiListO
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3194,7 +3194,7 @@ func (r ApiListOperationsForServiceRequest) Page(page int32) ApiListOperationsFo
 	return r
 }
 
-func (r ApiListOperationsForServiceRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForServiceRequest) Execute() (*ListOperationsForService200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForServiceExecute(r)
 }
 
@@ -3214,13 +3214,13 @@ func (a *OperationsAPIService) ListOperationsForService(ctx context.Context, ser
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForServiceExecute(r ApiListOperationsForServiceRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForService200Response
+func (a *OperationsAPIService) ListOperationsForServiceExecute(r ApiListOperationsForServiceRequest) (*ListOperationsForService200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForService200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForService")
@@ -3236,7 +3236,7 @@ func (a *OperationsAPIService) ListOperationsForServiceExecute(r ApiListOperatio
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3327,7 +3327,7 @@ func (r ApiListOperationsForVhostRequest) Page(page int32) ApiListOperationsForV
 	return r
 }
 
-func (r ApiListOperationsForVhostRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForVhostRequest) Execute() (*ListOperationsForVhost200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForVhostExecute(r)
 }
 
@@ -3347,13 +3347,13 @@ func (a *OperationsAPIService) ListOperationsForVhost(ctx context.Context, vhost
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForVhostExecute(r ApiListOperationsForVhostRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForVhost200Response
+func (a *OperationsAPIService) ListOperationsForVhostExecute(r ApiListOperationsForVhostRequest) (*ListOperationsForVhost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForVhost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForVhost")
@@ -3369,7 +3369,7 @@ func (a *OperationsAPIService) ListOperationsForVhostExecute(r ApiListOperations
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3451,11 +3451,11 @@ type ApiPatchOperationRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
 	id int32
-	updateOperationRequest *UpdateOperationRequest
+	patchOperationRequest *PatchOperationRequest
 }
 
-func (r ApiPatchOperationRequest) UpdateOperationRequest(updateOperationRequest UpdateOperationRequest) ApiPatchOperationRequest {
-	r.updateOperationRequest = &updateOperationRequest
+func (r ApiPatchOperationRequest) PatchOperationRequest(patchOperationRequest PatchOperationRequest) ApiPatchOperationRequest {
+	r.patchOperationRequest = &patchOperationRequest
 	return r
 }
 
@@ -3516,7 +3516,7 @@ func (a *OperationsAPIService) PatchOperationExecute(r ApiPatchOperationRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateOperationRequest
+	localVarPostBody = r.patchOperationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

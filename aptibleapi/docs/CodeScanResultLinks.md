@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**App** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Operation** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**App** | Pointer to [**CodeScanResultLinksApp**](CodeScanResultLinksApp.md) |  | [optional] 
+**Operation** | Pointer to [**CodeScanResultLinksOperation**](CodeScanResultLinksOperation.md) |  | [optional] 
+**Self** | Pointer to [**CodeScanResultLinksSelf**](CodeScanResultLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApp
 
-`func (o *CodeScanResultLinks) GetApp() ListAccountsForStack200ResponseLinksStack`
+`func (o *CodeScanResultLinks) GetApp() CodeScanResultLinksApp`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *CodeScanResultLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *CodeScanResultLinks) GetAppOk() (*CodeScanResultLinksApp, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *CodeScanResultLinks) SetApp(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *CodeScanResultLinks) SetApp(v CodeScanResultLinksApp)`
 
 SetApp sets App field to given value.
 
@@ -54,20 +54,20 @@ HasApp returns a boolean if a field has been set.
 
 ### GetOperation
 
-`func (o *CodeScanResultLinks) GetOperation() ListAccountsForStack200ResponseLinksStack`
+`func (o *CodeScanResultLinks) GetOperation() CodeScanResultLinksOperation`
 
 GetOperation returns the Operation field if non-nil, zero value otherwise.
 
 ### GetOperationOk
 
-`func (o *CodeScanResultLinks) GetOperationOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *CodeScanResultLinks) GetOperationOk() (*CodeScanResultLinksOperation, bool)`
 
 GetOperationOk returns a tuple with the Operation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperation
 
-`func (o *CodeScanResultLinks) SetOperation(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *CodeScanResultLinks) SetOperation(v CodeScanResultLinksOperation)`
 
 SetOperation sets Operation field to given value.
 
@@ -79,20 +79,20 @@ HasOperation returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *CodeScanResultLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *CodeScanResultLinks) GetSelf() CodeScanResultLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *CodeScanResultLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *CodeScanResultLinks) GetSelfOk() (*CodeScanResultLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *CodeScanResultLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *CodeScanResultLinks) SetSelf(v CodeScanResultLinksSelf)`
 
 SetSelf sets Self field to given value.
 

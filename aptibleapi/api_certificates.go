@@ -444,7 +444,7 @@ func (a *CertificatesAPIService) ListCertificatesForAccountExecute(r ApiListCert
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -526,11 +526,11 @@ type ApiPatchCertificateRequest struct {
 	ctx context.Context
 	ApiService *CertificatesAPIService
 	id int32
-	updateCertificateRequest *UpdateCertificateRequest
+	patchCertificateRequest *PatchCertificateRequest
 }
 
-func (r ApiPatchCertificateRequest) UpdateCertificateRequest(updateCertificateRequest UpdateCertificateRequest) ApiPatchCertificateRequest {
-	r.updateCertificateRequest = &updateCertificateRequest
+func (r ApiPatchCertificateRequest) PatchCertificateRequest(patchCertificateRequest PatchCertificateRequest) ApiPatchCertificateRequest {
+	r.patchCertificateRequest = &patchCertificateRequest
 	return r
 }
 
@@ -591,7 +591,7 @@ func (a *CertificatesAPIService) PatchCertificateExecute(r ApiPatchCertificateRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateCertificateRequest
+	localVarPostBody = r.patchCertificateRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

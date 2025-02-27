@@ -19,10 +19,10 @@ var _ MappedNullable = &IntrusionDetectionReportLinks{}
 
 // IntrusionDetectionReportLinks struct for IntrusionDetectionReportLinks
 type IntrusionDetectionReportLinks struct {
-	Stack *ListAccountsForStack200ResponseLinksStack `json:"stack,omitempty"`
-	DownloadCsv *ListAccountsForStack200ResponseLinksStack `json:"download_csv,omitempty"`
-	DownloadPdf *ListAccountsForStack200ResponseLinksStack `json:"download_pdf,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Stack *IntrusionDetectionReportLinksStack `json:"stack,omitempty"`
+	DownloadCsv *IntrusionDetectionReportLinksDownloadCsv `json:"download_csv,omitempty"`
+	DownloadPdf *IntrusionDetectionReportLinksDownloadPdf `json:"download_pdf,omitempty"`
+	Self *IntrusionDetectionReportLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,9 +46,9 @@ func NewIntrusionDetectionReportLinksWithDefaults() *IntrusionDetectionReportLin
 }
 
 // GetStack returns the Stack field value if set, zero value otherwise.
-func (o *IntrusionDetectionReportLinks) GetStack() ListAccountsForStack200ResponseLinksStack {
+func (o *IntrusionDetectionReportLinks) GetStack() IntrusionDetectionReportLinksStack {
 	if o == nil || IsNil(o.Stack) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret IntrusionDetectionReportLinksStack
 		return ret
 	}
 	return *o.Stack
@@ -56,7 +56,7 @@ func (o *IntrusionDetectionReportLinks) GetStack() ListAccountsForStack200Respon
 
 // GetStackOk returns a tuple with the Stack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntrusionDetectionReportLinks) GetStackOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *IntrusionDetectionReportLinks) GetStackOk() (*IntrusionDetectionReportLinksStack, bool) {
 	if o == nil || IsNil(o.Stack) {
 		return nil, false
 	}
@@ -72,15 +72,15 @@ func (o *IntrusionDetectionReportLinks) HasStack() bool {
 	return false
 }
 
-// SetStack gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Stack field.
-func (o *IntrusionDetectionReportLinks) SetStack(v ListAccountsForStack200ResponseLinksStack) {
+// SetStack gets a reference to the given IntrusionDetectionReportLinksStack and assigns it to the Stack field.
+func (o *IntrusionDetectionReportLinks) SetStack(v IntrusionDetectionReportLinksStack) {
 	o.Stack = &v
 }
 
 // GetDownloadCsv returns the DownloadCsv field value if set, zero value otherwise.
-func (o *IntrusionDetectionReportLinks) GetDownloadCsv() ListAccountsForStack200ResponseLinksStack {
+func (o *IntrusionDetectionReportLinks) GetDownloadCsv() IntrusionDetectionReportLinksDownloadCsv {
 	if o == nil || IsNil(o.DownloadCsv) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret IntrusionDetectionReportLinksDownloadCsv
 		return ret
 	}
 	return *o.DownloadCsv
@@ -88,7 +88,7 @@ func (o *IntrusionDetectionReportLinks) GetDownloadCsv() ListAccountsForStack200
 
 // GetDownloadCsvOk returns a tuple with the DownloadCsv field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntrusionDetectionReportLinks) GetDownloadCsvOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *IntrusionDetectionReportLinks) GetDownloadCsvOk() (*IntrusionDetectionReportLinksDownloadCsv, bool) {
 	if o == nil || IsNil(o.DownloadCsv) {
 		return nil, false
 	}
@@ -104,15 +104,15 @@ func (o *IntrusionDetectionReportLinks) HasDownloadCsv() bool {
 	return false
 }
 
-// SetDownloadCsv gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the DownloadCsv field.
-func (o *IntrusionDetectionReportLinks) SetDownloadCsv(v ListAccountsForStack200ResponseLinksStack) {
+// SetDownloadCsv gets a reference to the given IntrusionDetectionReportLinksDownloadCsv and assigns it to the DownloadCsv field.
+func (o *IntrusionDetectionReportLinks) SetDownloadCsv(v IntrusionDetectionReportLinksDownloadCsv) {
 	o.DownloadCsv = &v
 }
 
 // GetDownloadPdf returns the DownloadPdf field value if set, zero value otherwise.
-func (o *IntrusionDetectionReportLinks) GetDownloadPdf() ListAccountsForStack200ResponseLinksStack {
+func (o *IntrusionDetectionReportLinks) GetDownloadPdf() IntrusionDetectionReportLinksDownloadPdf {
 	if o == nil || IsNil(o.DownloadPdf) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret IntrusionDetectionReportLinksDownloadPdf
 		return ret
 	}
 	return *o.DownloadPdf
@@ -120,7 +120,7 @@ func (o *IntrusionDetectionReportLinks) GetDownloadPdf() ListAccountsForStack200
 
 // GetDownloadPdfOk returns a tuple with the DownloadPdf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntrusionDetectionReportLinks) GetDownloadPdfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *IntrusionDetectionReportLinks) GetDownloadPdfOk() (*IntrusionDetectionReportLinksDownloadPdf, bool) {
 	if o == nil || IsNil(o.DownloadPdf) {
 		return nil, false
 	}
@@ -136,15 +136,15 @@ func (o *IntrusionDetectionReportLinks) HasDownloadPdf() bool {
 	return false
 }
 
-// SetDownloadPdf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the DownloadPdf field.
-func (o *IntrusionDetectionReportLinks) SetDownloadPdf(v ListAccountsForStack200ResponseLinksStack) {
+// SetDownloadPdf gets a reference to the given IntrusionDetectionReportLinksDownloadPdf and assigns it to the DownloadPdf field.
+func (o *IntrusionDetectionReportLinks) SetDownloadPdf(v IntrusionDetectionReportLinksDownloadPdf) {
 	o.DownloadPdf = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *IntrusionDetectionReportLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *IntrusionDetectionReportLinks) GetSelf() IntrusionDetectionReportLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret IntrusionDetectionReportLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -152,7 +152,7 @@ func (o *IntrusionDetectionReportLinks) GetSelf() ListAccountsForStack200Respons
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntrusionDetectionReportLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *IntrusionDetectionReportLinks) GetSelfOk() (*IntrusionDetectionReportLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *IntrusionDetectionReportLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *IntrusionDetectionReportLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given IntrusionDetectionReportLinksSelf and assigns it to the Self field.
+func (o *IntrusionDetectionReportLinks) SetSelf(v IntrusionDetectionReportLinksSelf) {
 	o.Self = &v
 }
 

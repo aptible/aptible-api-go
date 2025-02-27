@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Stack** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**DownloadCsv** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**DownloadPdf** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Stack** | Pointer to [**IntrusionDetectionReportLinksStack**](IntrusionDetectionReportLinksStack.md) |  | [optional] 
+**DownloadCsv** | Pointer to [**IntrusionDetectionReportLinksDownloadCsv**](IntrusionDetectionReportLinksDownloadCsv.md) |  | [optional] 
+**DownloadPdf** | Pointer to [**IntrusionDetectionReportLinksDownloadPdf**](IntrusionDetectionReportLinksDownloadPdf.md) |  | [optional] 
+**Self** | Pointer to [**IntrusionDetectionReportLinksSelf**](IntrusionDetectionReportLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStack
 
-`func (o *IntrusionDetectionReportLinks) GetStack() ListAccountsForStack200ResponseLinksStack`
+`func (o *IntrusionDetectionReportLinks) GetStack() IntrusionDetectionReportLinksStack`
 
 GetStack returns the Stack field if non-nil, zero value otherwise.
 
 ### GetStackOk
 
-`func (o *IntrusionDetectionReportLinks) GetStackOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *IntrusionDetectionReportLinks) GetStackOk() (*IntrusionDetectionReportLinksStack, bool)`
 
 GetStackOk returns a tuple with the Stack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStack
 
-`func (o *IntrusionDetectionReportLinks) SetStack(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *IntrusionDetectionReportLinks) SetStack(v IntrusionDetectionReportLinksStack)`
 
 SetStack sets Stack field to given value.
 
@@ -55,20 +55,20 @@ HasStack returns a boolean if a field has been set.
 
 ### GetDownloadCsv
 
-`func (o *IntrusionDetectionReportLinks) GetDownloadCsv() ListAccountsForStack200ResponseLinksStack`
+`func (o *IntrusionDetectionReportLinks) GetDownloadCsv() IntrusionDetectionReportLinksDownloadCsv`
 
 GetDownloadCsv returns the DownloadCsv field if non-nil, zero value otherwise.
 
 ### GetDownloadCsvOk
 
-`func (o *IntrusionDetectionReportLinks) GetDownloadCsvOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *IntrusionDetectionReportLinks) GetDownloadCsvOk() (*IntrusionDetectionReportLinksDownloadCsv, bool)`
 
 GetDownloadCsvOk returns a tuple with the DownloadCsv field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDownloadCsv
 
-`func (o *IntrusionDetectionReportLinks) SetDownloadCsv(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *IntrusionDetectionReportLinks) SetDownloadCsv(v IntrusionDetectionReportLinksDownloadCsv)`
 
 SetDownloadCsv sets DownloadCsv field to given value.
 
@@ -80,20 +80,20 @@ HasDownloadCsv returns a boolean if a field has been set.
 
 ### GetDownloadPdf
 
-`func (o *IntrusionDetectionReportLinks) GetDownloadPdf() ListAccountsForStack200ResponseLinksStack`
+`func (o *IntrusionDetectionReportLinks) GetDownloadPdf() IntrusionDetectionReportLinksDownloadPdf`
 
 GetDownloadPdf returns the DownloadPdf field if non-nil, zero value otherwise.
 
 ### GetDownloadPdfOk
 
-`func (o *IntrusionDetectionReportLinks) GetDownloadPdfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *IntrusionDetectionReportLinks) GetDownloadPdfOk() (*IntrusionDetectionReportLinksDownloadPdf, bool)`
 
 GetDownloadPdfOk returns a tuple with the DownloadPdf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDownloadPdf
 
-`func (o *IntrusionDetectionReportLinks) SetDownloadPdf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *IntrusionDetectionReportLinks) SetDownloadPdf(v IntrusionDetectionReportLinksDownloadPdf)`
 
 SetDownloadPdf sets DownloadPdf field to given value.
 
@@ -105,20 +105,20 @@ HasDownloadPdf returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *IntrusionDetectionReportLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *IntrusionDetectionReportLinks) GetSelf() IntrusionDetectionReportLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *IntrusionDetectionReportLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *IntrusionDetectionReportLinks) GetSelfOk() (*IntrusionDetectionReportLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *IntrusionDetectionReportLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *IntrusionDetectionReportLinks) SetSelf(v IntrusionDetectionReportLinksSelf)`
 
 SetSelf sets Self field to given value.
 

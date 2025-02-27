@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Account** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Database** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Operations** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Containers** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Account** | Pointer to [**MetricDrainLinksAccount**](MetricDrainLinksAccount.md) |  | [optional] 
+**Database** | Pointer to [**MetricDrainLinksDatabase**](MetricDrainLinksDatabase.md) |  | [optional] 
+**Operations** | Pointer to [**MetricDrainLinksOperations**](MetricDrainLinksOperations.md) |  | [optional] 
+**Containers** | Pointer to [**MetricDrainLinksContainers**](MetricDrainLinksContainers.md) |  | [optional] 
+**Self** | Pointer to [**MetricDrainLinksSelf**](MetricDrainLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAccount
 
-`func (o *MetricDrainLinks) GetAccount() ListAccountsForStack200ResponseLinksStack`
+`func (o *MetricDrainLinks) GetAccount() MetricDrainLinksAccount`
 
 GetAccount returns the Account field if non-nil, zero value otherwise.
 
 ### GetAccountOk
 
-`func (o *MetricDrainLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *MetricDrainLinks) GetAccountOk() (*MetricDrainLinksAccount, bool)`
 
 GetAccountOk returns a tuple with the Account field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccount
 
-`func (o *MetricDrainLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *MetricDrainLinks) SetAccount(v MetricDrainLinksAccount)`
 
 SetAccount sets Account field to given value.
 
@@ -56,20 +56,20 @@ HasAccount returns a boolean if a field has been set.
 
 ### GetDatabase
 
-`func (o *MetricDrainLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack`
+`func (o *MetricDrainLinks) GetDatabase() MetricDrainLinksDatabase`
 
 GetDatabase returns the Database field if non-nil, zero value otherwise.
 
 ### GetDatabaseOk
 
-`func (o *MetricDrainLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *MetricDrainLinks) GetDatabaseOk() (*MetricDrainLinksDatabase, bool)`
 
 GetDatabaseOk returns a tuple with the Database field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabase
 
-`func (o *MetricDrainLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *MetricDrainLinks) SetDatabase(v MetricDrainLinksDatabase)`
 
 SetDatabase sets Database field to given value.
 
@@ -81,20 +81,20 @@ HasDatabase returns a boolean if a field has been set.
 
 ### GetOperations
 
-`func (o *MetricDrainLinks) GetOperations() ListAccountsForStack200ResponseLinksStack`
+`func (o *MetricDrainLinks) GetOperations() MetricDrainLinksOperations`
 
 GetOperations returns the Operations field if non-nil, zero value otherwise.
 
 ### GetOperationsOk
 
-`func (o *MetricDrainLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *MetricDrainLinks) GetOperationsOk() (*MetricDrainLinksOperations, bool)`
 
 GetOperationsOk returns a tuple with the Operations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperations
 
-`func (o *MetricDrainLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *MetricDrainLinks) SetOperations(v MetricDrainLinksOperations)`
 
 SetOperations sets Operations field to given value.
 
@@ -106,20 +106,20 @@ HasOperations returns a boolean if a field has been set.
 
 ### GetContainers
 
-`func (o *MetricDrainLinks) GetContainers() ListAccountsForStack200ResponseLinksStack`
+`func (o *MetricDrainLinks) GetContainers() MetricDrainLinksContainers`
 
 GetContainers returns the Containers field if non-nil, zero value otherwise.
 
 ### GetContainersOk
 
-`func (o *MetricDrainLinks) GetContainersOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *MetricDrainLinks) GetContainersOk() (*MetricDrainLinksContainers, bool)`
 
 GetContainersOk returns a tuple with the Containers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContainers
 
-`func (o *MetricDrainLinks) SetContainers(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *MetricDrainLinks) SetContainers(v MetricDrainLinksContainers)`
 
 SetContainers sets Containers field to given value.
 
@@ -131,20 +131,20 @@ HasContainers returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *MetricDrainLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *MetricDrainLinks) GetSelf() MetricDrainLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *MetricDrainLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *MetricDrainLinks) GetSelfOk() (*MetricDrainLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *MetricDrainLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *MetricDrainLinks) SetSelf(v MetricDrainLinksSelf)`
 
 SetSelf sets Self field to given value.
 

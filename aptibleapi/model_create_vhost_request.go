@@ -23,7 +23,7 @@ type CreateVhostRequest struct {
 	Type string `json:"type"`
 	Default *bool `json:"default,omitempty"`
 	Internal *bool `json:"internal,omitempty"`
-	Certificate int32 `json:"certificate"`
+	Certificate *int32 `json:"certificate,omitempty"`
 	UserDomain *string `json:"user_domain,omitempty"`
 	Acme *bool `json:"acme,omitempty"`
 	Platform *string `json:"platform,omitempty"`
@@ -40,10 +40,9 @@ type _CreateVhostRequest CreateVhostRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateVhostRequest(type_ string, certificate int32) *CreateVhostRequest {
+func NewCreateVhostRequest(type_ string) *CreateVhostRequest {
 	this := CreateVhostRequest{}
 	this.Type = type_
-	this.Certificate = certificate
 	return &this
 }
 
@@ -143,28 +142,36 @@ func (o *CreateVhostRequest) SetInternal(v bool) {
 	o.Internal = &v
 }
 
-// GetCertificate returns the Certificate field value
+// GetCertificate returns the Certificate field value if set, zero value otherwise.
 func (o *CreateVhostRequest) GetCertificate() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Certificate) {
 		var ret int32
 		return ret
 	}
-
-	return o.Certificate
+	return *o.Certificate
 }
 
-// GetCertificateOk returns a tuple with the Certificate field value
+// GetCertificateOk returns a tuple with the Certificate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateVhostRequest) GetCertificateOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Certificate) {
 		return nil, false
 	}
-	return &o.Certificate, true
+	return o.Certificate, true
 }
 
-// SetCertificate sets field value
+// HasCertificate returns a boolean if a field has been set.
+func (o *CreateVhostRequest) HasCertificate() bool {
+	if o != nil && !IsNil(o.Certificate) {
+		return true
+	}
+
+	return false
+}
+
+// SetCertificate gets a reference to the given int32 and assigns it to the Certificate field.
 func (o *CreateVhostRequest) SetCertificate(v int32) {
-	o.Certificate = v
+	o.Certificate = &v
 }
 
 // GetUserDomain returns the UserDomain field value if set, zero value otherwise.
@@ -408,7 +415,9 @@ func (o CreateVhostRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Internal) {
 		toSerialize["internal"] = o.Internal
 	}
-	toSerialize["certificate"] = o.Certificate
+	if !IsNil(o.Certificate) {
+		toSerialize["certificate"] = o.Certificate
+	}
 	if !IsNil(o.UserDomain) {
 		toSerialize["user_domain"] = o.UserDomain
 	}
@@ -444,7 +453,6 @@ func (o *CreateVhostRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"type",
-		"certificate",
 	}
 
 	allProperties := make(map[string]interface{})

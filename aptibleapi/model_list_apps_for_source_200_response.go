@@ -20,7 +20,7 @@ var _ MappedNullable = &ListAppsForSource200Response{}
 
 // ListAppsForSource200Response struct for ListAppsForSource200Response
 type ListAppsForSource200Response struct {
-	Embedded ListAppsForAccount200ResponseEmbedded `json:"_embedded"`
+	Embedded ListAppsForSource200ResponseEmbedded `json:"_embedded"`
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
@@ -34,7 +34,7 @@ type _ListAppsForSource200Response ListAppsForSource200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListAppsForSource200Response(embedded ListAppsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppsForSource200ResponseLinks) *ListAppsForSource200Response {
+func NewListAppsForSource200Response(embedded ListAppsForSource200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppsForSource200ResponseLinks) *ListAppsForSource200Response {
 	this := ListAppsForSource200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -53,9 +53,9 @@ func NewListAppsForSource200ResponseWithDefaults() *ListAppsForSource200Response
 }
 
 // GetEmbedded returns the Embedded field value
-func (o *ListAppsForSource200Response) GetEmbedded() ListAppsForAccount200ResponseEmbedded {
+func (o *ListAppsForSource200Response) GetEmbedded() ListAppsForSource200ResponseEmbedded {
 	if o == nil {
-		var ret ListAppsForAccount200ResponseEmbedded
+		var ret ListAppsForSource200ResponseEmbedded
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *ListAppsForSource200Response) GetEmbedded() ListAppsForAccount200Respon
 
 // GetEmbeddedOk returns a tuple with the Embedded field value
 // and a boolean to check if the value has been set.
-func (o *ListAppsForSource200Response) GetEmbeddedOk() (*ListAppsForAccount200ResponseEmbedded, bool) {
+func (o *ListAppsForSource200Response) GetEmbeddedOk() (*ListAppsForSource200ResponseEmbedded, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *ListAppsForSource200Response) GetEmbeddedOk() (*ListAppsForAccount200Re
 }
 
 // SetEmbedded sets field value
-func (o *ListAppsForSource200Response) SetEmbedded(v ListAppsForAccount200ResponseEmbedded) {
+func (o *ListAppsForSource200Response) SetEmbedded(v ListAppsForSource200ResponseEmbedded) {
 	o.Embedded = v
 }
 

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Resource** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Resource** | Pointer to [**ListCodeScanResultsForApp200ResponseLinksResource**](ListCodeScanResultsForApp200ResponseLinksResource.md) |  | [optional] 
+**Next** | Pointer to [**ListCodeScanResultsForApp200ResponseLinksNext**](ListCodeScanResultsForApp200ResponseLinksNext.md) |  | [optional] 
+**Prev** | Pointer to [**ListCodeScanResultsForApp200ResponseLinksPrev**](ListCodeScanResultsForApp200ResponseLinksPrev.md) |  | [optional] 
+**Self** | Pointer to [**ListCodeScanResultsForApp200ResponseLinksSelf**](ListCodeScanResultsForApp200ResponseLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetResource
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetResource() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetResource() ListCodeScanResultsForApp200ResponseLinksResource`
 
 GetResource returns the Resource field if non-nil, zero value otherwise.
 
 ### GetResourceOk
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetResourceOk() (*ListCodeScanResultsForApp200ResponseLinksResource, bool)`
 
 GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResource
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) SetResource(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) SetResource(v ListCodeScanResultsForApp200ResponseLinksResource)`
 
 SetResource sets Resource field to given value.
 
@@ -55,20 +55,20 @@ HasResource returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetNext() ListCodeScanResultsForApp200ResponseLinksNext`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetNextOk() (*ListCodeScanResultsForApp200ResponseLinksNext, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) SetNext(v ListCodeScanResultsForApp200ResponseLinksNext)`
 
 SetNext sets Next field to given value.
 
@@ -80,20 +80,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrev() ListCodeScanResultsForApp200ResponseLinksPrev`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetPrevOk() (*ListCodeScanResultsForApp200ResponseLinksPrev, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) SetPrev(v ListCodeScanResultsForApp200ResponseLinksPrev)`
 
 SetPrev sets Prev field to given value.
 
@@ -105,20 +105,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelf() ListCodeScanResultsForApp200ResponseLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) GetSelfOk() (*ListCodeScanResultsForApp200ResponseLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListCodeScanResultsForApp200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListCodeScanResultsForApp200ResponseLinks) SetSelf(v ListCodeScanResultsForApp200ResponseLinksSelf)`
 
 SetSelf sets Self field to given value.
 

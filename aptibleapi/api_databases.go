@@ -401,7 +401,7 @@ func (r ApiListDatabasesRequest) Page(page int32) ApiListDatabasesRequest {
 	return r
 }
 
-func (r ApiListDatabasesRequest) Execute() (*ListDatabasesForAccount200Response, *http.Response, error) {
+func (r ApiListDatabasesRequest) Execute() (*ListDatabases200Response, *http.Response, error) {
 	return r.ApiService.ListDatabasesExecute(r)
 }
 
@@ -419,13 +419,13 @@ func (a *DatabasesAPIService) ListDatabases(ctx context.Context) ApiListDatabase
 }
 
 // Execute executes the request
-//  @return ListDatabasesForAccount200Response
-func (a *DatabasesAPIService) ListDatabasesExecute(r ApiListDatabasesRequest) (*ListDatabasesForAccount200Response, *http.Response, error) {
+//  @return ListDatabases200Response
+func (a *DatabasesAPIService) ListDatabasesExecute(r ApiListDatabasesRequest) (*ListDatabases200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListDatabasesForAccount200Response
+		localVarReturnValue  *ListDatabases200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatabasesAPIService.ListDatabases")
@@ -440,7 +440,7 @@ func (a *DatabasesAPIService) ListDatabasesExecute(r ApiListDatabasesRequest) (*
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -573,7 +573,7 @@ func (a *DatabasesAPIService) ListDatabasesForAccountExecute(r ApiListDatabasesF
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -664,7 +664,7 @@ func (r ApiListReplicasForDatabaseRequest) Page(page int32) ApiListReplicasForDa
 	return r
 }
 
-func (r ApiListReplicasForDatabaseRequest) Execute() (*ListDatabasesForAccount200Response, *http.Response, error) {
+func (r ApiListReplicasForDatabaseRequest) Execute() (*ListReplicasForDatabase200Response, *http.Response, error) {
 	return r.ApiService.ListReplicasForDatabaseExecute(r)
 }
 
@@ -684,13 +684,13 @@ func (a *DatabasesAPIService) ListReplicasForDatabase(ctx context.Context, datab
 }
 
 // Execute executes the request
-//  @return ListDatabasesForAccount200Response
-func (a *DatabasesAPIService) ListReplicasForDatabaseExecute(r ApiListReplicasForDatabaseRequest) (*ListDatabasesForAccount200Response, *http.Response, error) {
+//  @return ListReplicasForDatabase200Response
+func (a *DatabasesAPIService) ListReplicasForDatabaseExecute(r ApiListReplicasForDatabaseRequest) (*ListReplicasForDatabase200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListDatabasesForAccount200Response
+		localVarReturnValue  *ListReplicasForDatabase200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DatabasesAPIService.ListReplicasForDatabase")
@@ -706,7 +706,7 @@ func (a *DatabasesAPIService) ListReplicasForDatabaseExecute(r ApiListReplicasFo
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -788,11 +788,11 @@ type ApiPatchDatabaseRequest struct {
 	ctx context.Context
 	ApiService *DatabasesAPIService
 	id int32
-	updateDatabaseRequest *UpdateDatabaseRequest
+	patchDatabaseRequest *PatchDatabaseRequest
 }
 
-func (r ApiPatchDatabaseRequest) UpdateDatabaseRequest(updateDatabaseRequest UpdateDatabaseRequest) ApiPatchDatabaseRequest {
-	r.updateDatabaseRequest = &updateDatabaseRequest
+func (r ApiPatchDatabaseRequest) PatchDatabaseRequest(patchDatabaseRequest PatchDatabaseRequest) ApiPatchDatabaseRequest {
+	r.patchDatabaseRequest = &patchDatabaseRequest
 	return r
 }
 
@@ -853,7 +853,7 @@ func (a *DatabasesAPIService) PatchDatabaseExecute(r ApiPatchDatabaseRequest) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateDatabaseRequest
+	localVarPostBody = r.patchDatabaseRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -158,11 +158,11 @@ type ApiCreateConfigurationForDatabaseRequest struct {
 	ctx context.Context
 	ApiService *ConfigurationsAPIService
 	databaseId int32
-	createConfigurationForAppRequest *CreateConfigurationForAppRequest
+	createConfigurationForDatabaseRequest *CreateConfigurationForDatabaseRequest
 }
 
-func (r ApiCreateConfigurationForDatabaseRequest) CreateConfigurationForAppRequest(createConfigurationForAppRequest CreateConfigurationForAppRequest) ApiCreateConfigurationForDatabaseRequest {
-	r.createConfigurationForAppRequest = &createConfigurationForAppRequest
+func (r ApiCreateConfigurationForDatabaseRequest) CreateConfigurationForDatabaseRequest(createConfigurationForDatabaseRequest CreateConfigurationForDatabaseRequest) ApiCreateConfigurationForDatabaseRequest {
+	r.createConfigurationForDatabaseRequest = &createConfigurationForDatabaseRequest
 	return r
 }
 
@@ -225,7 +225,7 @@ func (a *ConfigurationsAPIService) CreateConfigurationForDatabaseExecute(r ApiCr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createConfigurationForAppRequest
+	localVarPostBody = r.createConfigurationForDatabaseRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -575,7 +575,7 @@ func (a *ConfigurationsAPIService) ListConfigurationsForAppExecute(r ApiListConf
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -666,7 +666,7 @@ func (r ApiListConfigurationsForDatabaseRequest) Page(page int32) ApiListConfigu
 	return r
 }
 
-func (r ApiListConfigurationsForDatabaseRequest) Execute() (*ListConfigurationsForApp200Response, *http.Response, error) {
+func (r ApiListConfigurationsForDatabaseRequest) Execute() (*ListConfigurationsForDatabase200Response, *http.Response, error) {
 	return r.ApiService.ListConfigurationsForDatabaseExecute(r)
 }
 
@@ -686,13 +686,13 @@ func (a *ConfigurationsAPIService) ListConfigurationsForDatabase(ctx context.Con
 }
 
 // Execute executes the request
-//  @return ListConfigurationsForApp200Response
-func (a *ConfigurationsAPIService) ListConfigurationsForDatabaseExecute(r ApiListConfigurationsForDatabaseRequest) (*ListConfigurationsForApp200Response, *http.Response, error) {
+//  @return ListConfigurationsForDatabase200Response
+func (a *ConfigurationsAPIService) ListConfigurationsForDatabaseExecute(r ApiListConfigurationsForDatabaseRequest) (*ListConfigurationsForDatabase200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListConfigurationsForApp200Response
+		localVarReturnValue  *ListConfigurationsForDatabase200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationsAPIService.ListConfigurationsForDatabase")
@@ -708,7 +708,7 @@ func (a *ConfigurationsAPIService) ListConfigurationsForDatabaseExecute(r ApiLis
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

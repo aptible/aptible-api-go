@@ -24,7 +24,7 @@ type ListCertificatesForAccount200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListActivityReportsForAccount200ResponseLinks `json:"_links"`
+	Links ListCertificatesForAccount200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListCertificatesForAccount200Response ListCertificatesForAccount200Respons
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListCertificatesForAccount200Response(embedded ListCertificatesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks) *ListCertificatesForAccount200Response {
+func NewListCertificatesForAccount200Response(embedded ListCertificatesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListCertificatesForAccount200ResponseLinks) *ListCertificatesForAccount200Response {
 	this := ListCertificatesForAccount200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListCertificatesForAccount200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListCertificatesForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks {
+func (o *ListCertificatesForAccount200Response) GetLinks() ListCertificatesForAccount200ResponseLinks {
 	if o == nil {
-		var ret ListActivityReportsForAccount200ResponseLinks
+		var ret ListCertificatesForAccount200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListCertificatesForAccount200Response) GetLinks() ListActivityReportsFo
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListCertificatesForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool) {
+func (o *ListCertificatesForAccount200Response) GetLinksOk() (*ListCertificatesForAccount200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListCertificatesForAccount200Response) GetLinksOk() (*ListActivityRepor
 }
 
 // SetLinks sets field value
-func (o *ListCertificatesForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks) {
+func (o *ListCertificatesForAccount200Response) SetLinks(v ListCertificatesForAccount200ResponseLinks) {
 	o.Links = v
 }
 

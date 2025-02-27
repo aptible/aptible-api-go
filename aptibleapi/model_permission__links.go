@@ -19,9 +19,9 @@ var _ MappedNullable = &PermissionLinks{}
 
 // PermissionLinks struct for PermissionLinks
 type PermissionLinks struct {
-	Role *ListAccountsForStack200ResponseLinksStack `json:"role,omitempty"`
-	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Role *PermissionLinksRole `json:"role,omitempty"`
+	Account *PermissionLinksAccount `json:"account,omitempty"`
+	Self *PermissionLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewPermissionLinksWithDefaults() *PermissionLinks {
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
-func (o *PermissionLinks) GetRole() ListAccountsForStack200ResponseLinksStack {
+func (o *PermissionLinks) GetRole() PermissionLinksRole {
 	if o == nil || IsNil(o.Role) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PermissionLinksRole
 		return ret
 	}
 	return *o.Role
@@ -55,7 +55,7 @@ func (o *PermissionLinks) GetRole() ListAccountsForStack200ResponseLinksStack {
 
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PermissionLinks) GetRoleOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PermissionLinks) GetRoleOk() (*PermissionLinksRole, bool) {
 	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *PermissionLinks) HasRole() bool {
 	return false
 }
 
-// SetRole gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Role field.
-func (o *PermissionLinks) SetRole(v ListAccountsForStack200ResponseLinksStack) {
+// SetRole gets a reference to the given PermissionLinksRole and assigns it to the Role field.
+func (o *PermissionLinks) SetRole(v PermissionLinksRole) {
 	o.Role = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *PermissionLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
+func (o *PermissionLinks) GetAccount() PermissionLinksAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PermissionLinksAccount
 		return ret
 	}
 	return *o.Account
@@ -87,7 +87,7 @@ func (o *PermissionLinks) GetAccount() ListAccountsForStack200ResponseLinksStack
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PermissionLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PermissionLinks) GetAccountOk() (*PermissionLinksAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *PermissionLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
-func (o *PermissionLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
+// SetAccount gets a reference to the given PermissionLinksAccount and assigns it to the Account field.
+func (o *PermissionLinks) SetAccount(v PermissionLinksAccount) {
 	o.Account = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *PermissionLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *PermissionLinks) GetSelf() PermissionLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PermissionLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *PermissionLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PermissionLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PermissionLinks) GetSelfOk() (*PermissionLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *PermissionLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *PermissionLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given PermissionLinksSelf and assigns it to the Self field.
+func (o *PermissionLinks) SetSelf(v PermissionLinksSelf) {
 	o.Self = &v
 }
 

@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListDatabaseImages200ResponseLinks**](ListDatabaseImages200ResponseLinks.md) |  | 
+**Links** | [**ListSshPortalConnectionsForOperation200ResponseLinks**](ListSshPortalConnectionsForOperation200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListSshPortalConnectionsForOperation200Response
 
-`func NewListSshPortalConnectionsForOperation200Response(embedded ListSshPortalConnectionsForOperation200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDatabaseImages200ResponseLinks, ) *ListSshPortalConnectionsForOperation200Response`
+`func NewListSshPortalConnectionsForOperation200Response(embedded ListSshPortalConnectionsForOperation200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListSshPortalConnectionsForOperation200ResponseLinks, ) *ListSshPortalConnectionsForOperation200Response`
 
 NewListSshPortalConnectionsForOperation200Response instantiates a new ListSshPortalConnectionsForOperation200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListSshPortalConnectionsForOperation200Response) GetLinks() ListDatabaseImages200ResponseLinks`
+`func (o *ListSshPortalConnectionsForOperation200Response) GetLinks() ListSshPortalConnectionsForOperation200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListSshPortalConnectionsForOperation200Response) GetLinksOk() (*ListDatabaseImages200ResponseLinks, bool)`
+`func (o *ListSshPortalConnectionsForOperation200Response) GetLinksOk() (*ListSshPortalConnectionsForOperation200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListSshPortalConnectionsForOperation200Response) SetLinks(v ListDatabaseImages200ResponseLinks)`
+`func (o *ListSshPortalConnectionsForOperation200Response) SetLinks(v ListSshPortalConnectionsForOperation200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

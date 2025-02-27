@@ -19,13 +19,13 @@ var _ MappedNullable = &BackupLinks{}
 
 // BackupLinks struct for BackupLinks
 type BackupLinks struct {
-	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
-	Database *ListAccountsForStack200ResponseLinksStack `json:"database,omitempty"`
-	CopiedFrom *ListAccountsForStack200ResponseLinksStack `json:"copied_from,omitempty"`
-	DatabaseImage *ListAccountsForStack200ResponseLinksStack `json:"database_image,omitempty"`
-	Copies *ListAccountsForStack200ResponseLinksStack `json:"copies,omitempty"`
-	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Account *BackupLinksAccount `json:"account,omitempty"`
+	Database *BackupLinksDatabase `json:"database,omitempty"`
+	CopiedFrom *BackupLinksCopiedFrom `json:"copied_from,omitempty"`
+	DatabaseImage *BackupLinksDatabaseImage `json:"database_image,omitempty"`
+	Copies *BackupLinksCopies `json:"copies,omitempty"`
+	Operations *BackupLinksOperations `json:"operations,omitempty"`
+	Self *BackupLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,9 +49,9 @@ func NewBackupLinksWithDefaults() *BackupLinks {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *BackupLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
+func (o *BackupLinks) GetAccount() BackupLinksAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret BackupLinksAccount
 		return ret
 	}
 	return *o.Account
@@ -59,7 +59,7 @@ func (o *BackupLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *BackupLinks) GetAccountOk() (*BackupLinksAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -75,15 +75,15 @@ func (o *BackupLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
-func (o *BackupLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
+// SetAccount gets a reference to the given BackupLinksAccount and assigns it to the Account field.
+func (o *BackupLinks) SetAccount(v BackupLinksAccount) {
 	o.Account = &v
 }
 
 // GetDatabase returns the Database field value if set, zero value otherwise.
-func (o *BackupLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack {
+func (o *BackupLinks) GetDatabase() BackupLinksDatabase {
 	if o == nil || IsNil(o.Database) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret BackupLinksDatabase
 		return ret
 	}
 	return *o.Database
@@ -91,7 +91,7 @@ func (o *BackupLinks) GetDatabase() ListAccountsForStack200ResponseLinksStack {
 
 // GetDatabaseOk returns a tuple with the Database field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupLinks) GetDatabaseOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *BackupLinks) GetDatabaseOk() (*BackupLinksDatabase, bool) {
 	if o == nil || IsNil(o.Database) {
 		return nil, false
 	}
@@ -107,15 +107,15 @@ func (o *BackupLinks) HasDatabase() bool {
 	return false
 }
 
-// SetDatabase gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Database field.
-func (o *BackupLinks) SetDatabase(v ListAccountsForStack200ResponseLinksStack) {
+// SetDatabase gets a reference to the given BackupLinksDatabase and assigns it to the Database field.
+func (o *BackupLinks) SetDatabase(v BackupLinksDatabase) {
 	o.Database = &v
 }
 
 // GetCopiedFrom returns the CopiedFrom field value if set, zero value otherwise.
-func (o *BackupLinks) GetCopiedFrom() ListAccountsForStack200ResponseLinksStack {
+func (o *BackupLinks) GetCopiedFrom() BackupLinksCopiedFrom {
 	if o == nil || IsNil(o.CopiedFrom) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret BackupLinksCopiedFrom
 		return ret
 	}
 	return *o.CopiedFrom
@@ -123,7 +123,7 @@ func (o *BackupLinks) GetCopiedFrom() ListAccountsForStack200ResponseLinksStack 
 
 // GetCopiedFromOk returns a tuple with the CopiedFrom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupLinks) GetCopiedFromOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *BackupLinks) GetCopiedFromOk() (*BackupLinksCopiedFrom, bool) {
 	if o == nil || IsNil(o.CopiedFrom) {
 		return nil, false
 	}
@@ -139,15 +139,15 @@ func (o *BackupLinks) HasCopiedFrom() bool {
 	return false
 }
 
-// SetCopiedFrom gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the CopiedFrom field.
-func (o *BackupLinks) SetCopiedFrom(v ListAccountsForStack200ResponseLinksStack) {
+// SetCopiedFrom gets a reference to the given BackupLinksCopiedFrom and assigns it to the CopiedFrom field.
+func (o *BackupLinks) SetCopiedFrom(v BackupLinksCopiedFrom) {
 	o.CopiedFrom = &v
 }
 
 // GetDatabaseImage returns the DatabaseImage field value if set, zero value otherwise.
-func (o *BackupLinks) GetDatabaseImage() ListAccountsForStack200ResponseLinksStack {
+func (o *BackupLinks) GetDatabaseImage() BackupLinksDatabaseImage {
 	if o == nil || IsNil(o.DatabaseImage) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret BackupLinksDatabaseImage
 		return ret
 	}
 	return *o.DatabaseImage
@@ -155,7 +155,7 @@ func (o *BackupLinks) GetDatabaseImage() ListAccountsForStack200ResponseLinksSta
 
 // GetDatabaseImageOk returns a tuple with the DatabaseImage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupLinks) GetDatabaseImageOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *BackupLinks) GetDatabaseImageOk() (*BackupLinksDatabaseImage, bool) {
 	if o == nil || IsNil(o.DatabaseImage) {
 		return nil, false
 	}
@@ -171,15 +171,15 @@ func (o *BackupLinks) HasDatabaseImage() bool {
 	return false
 }
 
-// SetDatabaseImage gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the DatabaseImage field.
-func (o *BackupLinks) SetDatabaseImage(v ListAccountsForStack200ResponseLinksStack) {
+// SetDatabaseImage gets a reference to the given BackupLinksDatabaseImage and assigns it to the DatabaseImage field.
+func (o *BackupLinks) SetDatabaseImage(v BackupLinksDatabaseImage) {
 	o.DatabaseImage = &v
 }
 
 // GetCopies returns the Copies field value if set, zero value otherwise.
-func (o *BackupLinks) GetCopies() ListAccountsForStack200ResponseLinksStack {
+func (o *BackupLinks) GetCopies() BackupLinksCopies {
 	if o == nil || IsNil(o.Copies) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret BackupLinksCopies
 		return ret
 	}
 	return *o.Copies
@@ -187,7 +187,7 @@ func (o *BackupLinks) GetCopies() ListAccountsForStack200ResponseLinksStack {
 
 // GetCopiesOk returns a tuple with the Copies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupLinks) GetCopiesOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *BackupLinks) GetCopiesOk() (*BackupLinksCopies, bool) {
 	if o == nil || IsNil(o.Copies) {
 		return nil, false
 	}
@@ -203,15 +203,15 @@ func (o *BackupLinks) HasCopies() bool {
 	return false
 }
 
-// SetCopies gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Copies field.
-func (o *BackupLinks) SetCopies(v ListAccountsForStack200ResponseLinksStack) {
+// SetCopies gets a reference to the given BackupLinksCopies and assigns it to the Copies field.
+func (o *BackupLinks) SetCopies(v BackupLinksCopies) {
 	o.Copies = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *BackupLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
+func (o *BackupLinks) GetOperations() BackupLinksOperations {
 	if o == nil || IsNil(o.Operations) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret BackupLinksOperations
 		return ret
 	}
 	return *o.Operations
@@ -219,7 +219,7 @@ func (o *BackupLinks) GetOperations() ListAccountsForStack200ResponseLinksStack 
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *BackupLinks) GetOperationsOk() (*BackupLinksOperations, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -235,15 +235,15 @@ func (o *BackupLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
-func (o *BackupLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
+// SetOperations gets a reference to the given BackupLinksOperations and assigns it to the Operations field.
+func (o *BackupLinks) SetOperations(v BackupLinksOperations) {
 	o.Operations = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *BackupLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *BackupLinks) GetSelf() BackupLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret BackupLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -251,7 +251,7 @@ func (o *BackupLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackupLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *BackupLinks) GetSelfOk() (*BackupLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -267,8 +267,8 @@ func (o *BackupLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *BackupLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given BackupLinksSelf and assigns it to the Self field.
+func (o *BackupLinks) SetSelf(v BackupLinksSelf) {
 	o.Self = &v
 }
 

@@ -24,7 +24,7 @@ type ListConfigurationsForApp200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListCodeScanResultsForApp200ResponseLinks `json:"_links"`
+	Links ListConfigurationsForApp200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListConfigurationsForApp200Response ListConfigurationsForApp200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListConfigurationsForApp200Response(embedded ListConfigurationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListCodeScanResultsForApp200ResponseLinks) *ListConfigurationsForApp200Response {
+func NewListConfigurationsForApp200Response(embedded ListConfigurationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListConfigurationsForApp200ResponseLinks) *ListConfigurationsForApp200Response {
 	this := ListConfigurationsForApp200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListConfigurationsForApp200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListConfigurationsForApp200Response) GetLinks() ListCodeScanResultsForApp200ResponseLinks {
+func (o *ListConfigurationsForApp200Response) GetLinks() ListConfigurationsForApp200ResponseLinks {
 	if o == nil {
-		var ret ListCodeScanResultsForApp200ResponseLinks
+		var ret ListConfigurationsForApp200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListConfigurationsForApp200Response) GetLinks() ListCodeScanResultsForA
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListConfigurationsForApp200Response) GetLinksOk() (*ListCodeScanResultsForApp200ResponseLinks, bool) {
+func (o *ListConfigurationsForApp200Response) GetLinksOk() (*ListConfigurationsForApp200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListConfigurationsForApp200Response) GetLinksOk() (*ListCodeScanResults
 }
 
 // SetLinks sets field value
-func (o *ListConfigurationsForApp200Response) SetLinks(v ListCodeScanResultsForApp200ResponseLinks) {
+func (o *ListConfigurationsForApp200Response) SetLinks(v ListConfigurationsForApp200ResponseLinks) {
 	o.Links = v
 }
 

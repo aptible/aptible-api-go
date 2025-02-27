@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## ListServicesForApp
 
-> ListServicesForAccount200Response ListServicesForApp(ctx, appId).Page(page).Execute()
+> ListServicesForApp200Response ListServicesForApp(ctx, appId).Page(page).Execute()
 
 list services
 
@@ -179,7 +179,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.ListServicesForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListServicesForApp`: ListServicesForAccount200Response
+	// response from `ListServicesForApp`: ListServicesForApp200Response
 	fmt.Fprintf(os.Stdout, "Response from `ServicesAPI.ListServicesForApp`: %v\n", resp)
 }
 ```
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListServicesForAccount200Response**](ListServicesForAccount200Response.md)
+[**ListServicesForApp200Response**](ListServicesForApp200Response.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## PatchService
 
-> PatchService(ctx, id).UpdateServiceRequest(updateServiceRequest).Execute()
+> PatchService(ctx, id).PatchServiceRequest(patchServiceRequest).Execute()
 
 update service
 
@@ -240,11 +240,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateServiceRequest := *openapiclient.NewUpdateServiceRequest() // UpdateServiceRequest |  (optional)
+	patchServiceRequest := *openapiclient.NewPatchServiceRequest() // PatchServiceRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ServicesAPI.PatchService(context.Background(), id).UpdateServiceRequest(updateServiceRequest).Execute()
+	r, err := apiClient.ServicesAPI.PatchService(context.Background(), id).PatchServiceRequest(patchServiceRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.PatchService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,7 +268,7 @@ Other parameters are passed through a pointer to a apiPatchServiceRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateServiceRequest** | [**UpdateServiceRequest**](UpdateServiceRequest.md) |  | 
+ **patchServiceRequest** | [**PatchServiceRequest**](PatchServiceRequest.md) |  | 
 
 ### Return type
 

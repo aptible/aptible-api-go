@@ -201,7 +201,7 @@ func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForAppExecute(r ApiLi
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -292,7 +292,7 @@ func (r ApiListEphemeralSessionsForOperationRequest) Page(page int32) ApiListEph
 	return r
 }
 
-func (r ApiListEphemeralSessionsForOperationRequest) Execute() (*ListEphemeralSessionsForApp200Response, *http.Response, error) {
+func (r ApiListEphemeralSessionsForOperationRequest) Execute() (*ListEphemeralSessionsForOperation200Response, *http.Response, error) {
 	return r.ApiService.ListEphemeralSessionsForOperationExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForOperation(ctx cont
 }
 
 // Execute executes the request
-//  @return ListEphemeralSessionsForApp200Response
-func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForOperationExecute(r ApiListEphemeralSessionsForOperationRequest) (*ListEphemeralSessionsForApp200Response, *http.Response, error) {
+//  @return ListEphemeralSessionsForOperation200Response
+func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForOperationExecute(r ApiListEphemeralSessionsForOperationRequest) (*ListEphemeralSessionsForOperation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListEphemeralSessionsForApp200Response
+		localVarReturnValue  *ListEphemeralSessionsForOperation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EphemeralSessionsAPIService.ListEphemeralSessionsForOperation")
@@ -334,7 +334,7 @@ func (a *EphemeralSessionsAPIService) ListEphemeralSessionsForOperationExecute(r
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

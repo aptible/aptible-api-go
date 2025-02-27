@@ -24,7 +24,7 @@ type ListVpnTunnelsForStack200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListAccountsForStack200ResponseLinks `json:"_links"`
+	Links ListVpnTunnelsForStack200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListVpnTunnelsForStack200Response ListVpnTunnelsForStack200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListVpnTunnelsForStack200Response(embedded ListVpnTunnelsForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAccountsForStack200ResponseLinks) *ListVpnTunnelsForStack200Response {
+func NewListVpnTunnelsForStack200Response(embedded ListVpnTunnelsForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListVpnTunnelsForStack200ResponseLinks) *ListVpnTunnelsForStack200Response {
 	this := ListVpnTunnelsForStack200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListVpnTunnelsForStack200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListVpnTunnelsForStack200Response) GetLinks() ListAccountsForStack200ResponseLinks {
+func (o *ListVpnTunnelsForStack200Response) GetLinks() ListVpnTunnelsForStack200ResponseLinks {
 	if o == nil {
-		var ret ListAccountsForStack200ResponseLinks
+		var ret ListVpnTunnelsForStack200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListVpnTunnelsForStack200Response) GetLinks() ListAccountsForStack200Re
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListVpnTunnelsForStack200Response) GetLinksOk() (*ListAccountsForStack200ResponseLinks, bool) {
+func (o *ListVpnTunnelsForStack200Response) GetLinksOk() (*ListVpnTunnelsForStack200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListVpnTunnelsForStack200Response) GetLinksOk() (*ListAccountsForStack2
 }
 
 // SetLinks sets field value
-func (o *ListVpnTunnelsForStack200Response) SetLinks(v ListAccountsForStack200ResponseLinks) {
+func (o *ListVpnTunnelsForStack200Response) SetLinks(v ListVpnTunnelsForStack200ResponseLinks) {
 	o.Links = v
 }
 

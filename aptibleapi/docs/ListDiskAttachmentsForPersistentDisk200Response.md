@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Embedded** | [**ListDiskAttachmentsForAccount200ResponseEmbedded**](ListDiskAttachmentsForAccount200ResponseEmbedded.md) |  | 
+**Embedded** | [**ListDiskAttachmentsForPersistentDisk200ResponseEmbedded**](ListDiskAttachmentsForPersistentDisk200ResponseEmbedded.md) |  | 
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewListDiskAttachmentsForPersistentDisk200Response
 
-`func NewListDiskAttachmentsForPersistentDisk200Response(embedded ListDiskAttachmentsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForPersistentDisk200ResponseLinks, ) *ListDiskAttachmentsForPersistentDisk200Response`
+`func NewListDiskAttachmentsForPersistentDisk200Response(embedded ListDiskAttachmentsForPersistentDisk200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForPersistentDisk200ResponseLinks, ) *ListDiskAttachmentsForPersistentDisk200Response`
 
 NewListDiskAttachmentsForPersistentDisk200Response instantiates a new ListDiskAttachmentsForPersistentDisk200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEmbedded
 
-`func (o *ListDiskAttachmentsForPersistentDisk200Response) GetEmbedded() ListDiskAttachmentsForAccount200ResponseEmbedded`
+`func (o *ListDiskAttachmentsForPersistentDisk200Response) GetEmbedded() ListDiskAttachmentsForPersistentDisk200ResponseEmbedded`
 
 GetEmbedded returns the Embedded field if non-nil, zero value otherwise.
 
 ### GetEmbeddedOk
 
-`func (o *ListDiskAttachmentsForPersistentDisk200Response) GetEmbeddedOk() (*ListDiskAttachmentsForAccount200ResponseEmbedded, bool)`
+`func (o *ListDiskAttachmentsForPersistentDisk200Response) GetEmbeddedOk() (*ListDiskAttachmentsForPersistentDisk200ResponseEmbedded, bool)`
 
 GetEmbeddedOk returns a tuple with the Embedded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmbedded
 
-`func (o *ListDiskAttachmentsForPersistentDisk200Response) SetEmbedded(v ListDiskAttachmentsForAccount200ResponseEmbedded)`
+`func (o *ListDiskAttachmentsForPersistentDisk200Response) SetEmbedded(v ListDiskAttachmentsForPersistentDisk200ResponseEmbedded)`
 
 SetEmbedded sets Embedded field to given value.
 

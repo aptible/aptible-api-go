@@ -201,7 +201,7 @@ func (a *VpnTunnelsAPIService) ListVpnTunnelsForStackExecute(r ApiListVpnTunnels
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

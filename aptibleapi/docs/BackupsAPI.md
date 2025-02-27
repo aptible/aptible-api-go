@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ListBackupsForAccount
 
-> ListBackups200Response ListBackupsForAccount(ctx, accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+> ListBackupsForAccount200Response ListBackupsForAccount(ctx, accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
 
 list backups
 
@@ -179,7 +179,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackupsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListBackupsForAccount`: ListBackups200Response
+	// response from `ListBackupsForAccount`: ListBackupsForAccount200Response
 	fmt.Fprintf(os.Stdout, "Response from `BackupsAPI.ListBackupsForAccount`: %v\n", resp)
 }
 ```
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListBackups200Response**](ListBackups200Response.md)
+[**ListBackupsForAccount200Response**](ListBackupsForAccount200Response.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ## ListBackupsForDatabase
 
-> ListBackups200Response ListBackupsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+> ListBackupsForDatabase200Response ListBackupsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
 
 list backups
 
@@ -253,7 +253,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackupsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListBackupsForDatabase`: ListBackups200Response
+	// response from `ListBackupsForDatabase`: ListBackupsForDatabase200Response
 	fmt.Fprintf(os.Stdout, "Response from `BackupsAPI.ListBackupsForDatabase`: %v\n", resp)
 }
 ```
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListBackups200Response**](ListBackups200Response.md)
+[**ListBackupsForDatabase200Response**](ListBackupsForDatabase200Response.md)
 
 ### Authorization
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ## ListCopiesForBackup
 
-> ListBackups200Response ListCopiesForBackup(ctx, backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+> ListCopiesForBackup200Response ListCopiesForBackup(ctx, backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
 
 list backups
 
@@ -327,7 +327,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListCopiesForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListCopiesForBackup`: ListBackups200Response
+	// response from `ListCopiesForBackup`: ListCopiesForBackup200Response
 	fmt.Fprintf(os.Stdout, "Response from `BackupsAPI.ListCopiesForBackup`: %v\n", resp)
 }
 ```
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListBackups200Response**](ListBackups200Response.md)
+[**ListCopiesForBackup200Response**](ListCopiesForBackup200Response.md)
 
 ### Authorization
 

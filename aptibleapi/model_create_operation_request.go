@@ -26,7 +26,7 @@ type CreateOperationRequest struct {
 	ContainerCount *int32 `json:"container_count,omitempty"`
 	ContainerSize *int32 `json:"container_size,omitempty"`
 	Command *string `json:"command,omitempty"`
-	Env map[string]interface{} `json:"env,omitempty"`
+	Env *map[string]string `json:"env,omitempty"`
 	Handle *string `json:"handle,omitempty"`
 	Certificate *string `json:"certificate,omitempty"`
 	PrivateKey *string `json:"private_key,omitempty"`
@@ -247,19 +247,19 @@ func (o *CreateOperationRequest) SetCommand(v string) {
 }
 
 // GetEnv returns the Env field value if set, zero value otherwise.
-func (o *CreateOperationRequest) GetEnv() map[string]interface{} {
+func (o *CreateOperationRequest) GetEnv() map[string]string {
 	if o == nil || IsNil(o.Env) {
-		var ret map[string]interface{}
+		var ret map[string]string
 		return ret
 	}
-	return o.Env
+	return *o.Env
 }
 
 // GetEnvOk returns a tuple with the Env field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateOperationRequest) GetEnvOk() (map[string]interface{}, bool) {
+func (o *CreateOperationRequest) GetEnvOk() (*map[string]string, bool) {
 	if o == nil || IsNil(o.Env) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Env, true
 }
@@ -273,9 +273,9 @@ func (o *CreateOperationRequest) HasEnv() bool {
 	return false
 }
 
-// SetEnv gets a reference to the given map[string]interface{} and assigns it to the Env field.
-func (o *CreateOperationRequest) SetEnv(v map[string]interface{}) {
-	o.Env = v
+// SetEnv gets a reference to the given map[string]string and assigns it to the Env field.
+func (o *CreateOperationRequest) SetEnv(v map[string]string) {
+	o.Env = &v
 }
 
 // GetHandle returns the Handle field value if set, zero value otherwise.

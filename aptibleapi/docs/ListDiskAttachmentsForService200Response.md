@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Embedded** | [**ListDiskAttachmentsForAccount200ResponseEmbedded**](ListDiskAttachmentsForAccount200ResponseEmbedded.md) |  | 
+**Embedded** | [**ListDiskAttachmentsForService200ResponseEmbedded**](ListDiskAttachmentsForService200ResponseEmbedded.md) |  | 
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewListDiskAttachmentsForService200Response
 
-`func NewListDiskAttachmentsForService200Response(embedded ListDiskAttachmentsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForService200ResponseLinks, ) *ListDiskAttachmentsForService200Response`
+`func NewListDiskAttachmentsForService200Response(embedded ListDiskAttachmentsForService200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForService200ResponseLinks, ) *ListDiskAttachmentsForService200Response`
 
 NewListDiskAttachmentsForService200Response instantiates a new ListDiskAttachmentsForService200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEmbedded
 
-`func (o *ListDiskAttachmentsForService200Response) GetEmbedded() ListDiskAttachmentsForAccount200ResponseEmbedded`
+`func (o *ListDiskAttachmentsForService200Response) GetEmbedded() ListDiskAttachmentsForService200ResponseEmbedded`
 
 GetEmbedded returns the Embedded field if non-nil, zero value otherwise.
 
 ### GetEmbeddedOk
 
-`func (o *ListDiskAttachmentsForService200Response) GetEmbeddedOk() (*ListDiskAttachmentsForAccount200ResponseEmbedded, bool)`
+`func (o *ListDiskAttachmentsForService200Response) GetEmbeddedOk() (*ListDiskAttachmentsForService200ResponseEmbedded, bool)`
 
 GetEmbeddedOk returns a tuple with the Embedded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmbedded
 
-`func (o *ListDiskAttachmentsForService200Response) SetEmbedded(v ListDiskAttachmentsForAccount200ResponseEmbedded)`
+`func (o *ListDiskAttachmentsForService200Response) SetEmbedded(v ListDiskAttachmentsForService200ResponseEmbedded)`
 
 SetEmbedded sets Embedded field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Embedded** | [**ListAppsForAccount200ResponseEmbedded**](ListAppsForAccount200ResponseEmbedded.md) |  | 
+**Embedded** | [**ListAppsForSource200ResponseEmbedded**](ListAppsForSource200ResponseEmbedded.md) |  | 
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewListAppsForSource200Response
 
-`func NewListAppsForSource200Response(embedded ListAppsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppsForSource200ResponseLinks, ) *ListAppsForSource200Response`
+`func NewListAppsForSource200Response(embedded ListAppsForSource200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppsForSource200ResponseLinks, ) *ListAppsForSource200Response`
 
 NewListAppsForSource200Response instantiates a new ListAppsForSource200Response object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEmbedded
 
-`func (o *ListAppsForSource200Response) GetEmbedded() ListAppsForAccount200ResponseEmbedded`
+`func (o *ListAppsForSource200Response) GetEmbedded() ListAppsForSource200ResponseEmbedded`
 
 GetEmbedded returns the Embedded field if non-nil, zero value otherwise.
 
 ### GetEmbeddedOk
 
-`func (o *ListAppsForSource200Response) GetEmbeddedOk() (*ListAppsForAccount200ResponseEmbedded, bool)`
+`func (o *ListAppsForSource200Response) GetEmbeddedOk() (*ListAppsForSource200ResponseEmbedded, bool)`
 
 GetEmbeddedOk returns a tuple with the Embedded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmbedded
 
-`func (o *ListAppsForSource200Response) SetEmbedded(v ListAppsForAccount200ResponseEmbedded)`
+`func (o *ListAppsForSource200Response) SetEmbedded(v ListAppsForSource200ResponseEmbedded)`
 
 SetEmbedded sets Embedded field to given value.
 

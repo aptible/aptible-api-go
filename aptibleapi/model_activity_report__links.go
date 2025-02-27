@@ -19,9 +19,9 @@ var _ MappedNullable = &ActivityReportLinks{}
 
 // ActivityReportLinks struct for ActivityReportLinks
 type ActivityReportLinks struct {
-	Download *ListAccountsForStack200ResponseLinksStack `json:"download,omitempty"`
-	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Download *ActivityReportLinksDownload `json:"download,omitempty"`
+	Account *ActivityReportLinksAccount `json:"account,omitempty"`
+	Self *ActivityReportLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewActivityReportLinksWithDefaults() *ActivityReportLinks {
 }
 
 // GetDownload returns the Download field value if set, zero value otherwise.
-func (o *ActivityReportLinks) GetDownload() ListAccountsForStack200ResponseLinksStack {
+func (o *ActivityReportLinks) GetDownload() ActivityReportLinksDownload {
 	if o == nil || IsNil(o.Download) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret ActivityReportLinksDownload
 		return ret
 	}
 	return *o.Download
@@ -55,7 +55,7 @@ func (o *ActivityReportLinks) GetDownload() ListAccountsForStack200ResponseLinks
 
 // GetDownloadOk returns a tuple with the Download field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ActivityReportLinks) GetDownloadOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ActivityReportLinks) GetDownloadOk() (*ActivityReportLinksDownload, bool) {
 	if o == nil || IsNil(o.Download) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *ActivityReportLinks) HasDownload() bool {
 	return false
 }
 
-// SetDownload gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Download field.
-func (o *ActivityReportLinks) SetDownload(v ListAccountsForStack200ResponseLinksStack) {
+// SetDownload gets a reference to the given ActivityReportLinksDownload and assigns it to the Download field.
+func (o *ActivityReportLinks) SetDownload(v ActivityReportLinksDownload) {
 	o.Download = &v
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *ActivityReportLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
+func (o *ActivityReportLinks) GetAccount() ActivityReportLinksAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret ActivityReportLinksAccount
 		return ret
 	}
 	return *o.Account
@@ -87,7 +87,7 @@ func (o *ActivityReportLinks) GetAccount() ListAccountsForStack200ResponseLinksS
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ActivityReportLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ActivityReportLinks) GetAccountOk() (*ActivityReportLinksAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *ActivityReportLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
-func (o *ActivityReportLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
+// SetAccount gets a reference to the given ActivityReportLinksAccount and assigns it to the Account field.
+func (o *ActivityReportLinks) SetAccount(v ActivityReportLinksAccount) {
 	o.Account = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ActivityReportLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *ActivityReportLinks) GetSelf() ActivityReportLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret ActivityReportLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *ActivityReportLinks) GetSelf() ListAccountsForStack200ResponseLinksStac
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ActivityReportLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ActivityReportLinks) GetSelfOk() (*ActivityReportLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *ActivityReportLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *ActivityReportLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given ActivityReportLinksSelf and assigns it to the Self field.
+func (o *ActivityReportLinks) SetSelf(v ActivityReportLinksSelf) {
 	o.Self = &v
 }
 

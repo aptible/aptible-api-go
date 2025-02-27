@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**App** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Operations** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**App** | Pointer to [**ImageLinksApp**](ImageLinksApp.md) |  | [optional] 
+**Operations** | Pointer to [**ImageLinksOperations**](ImageLinksOperations.md) |  | [optional] 
+**Self** | Pointer to [**ImageLinksSelf**](ImageLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApp
 
-`func (o *ImageLinks) GetApp() ListAccountsForStack200ResponseLinksStack`
+`func (o *ImageLinks) GetApp() ImageLinksApp`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *ImageLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ImageLinks) GetAppOk() (*ImageLinksApp, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *ImageLinks) SetApp(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ImageLinks) SetApp(v ImageLinksApp)`
 
 SetApp sets App field to given value.
 
@@ -54,20 +54,20 @@ HasApp returns a boolean if a field has been set.
 
 ### GetOperations
 
-`func (o *ImageLinks) GetOperations() ListAccountsForStack200ResponseLinksStack`
+`func (o *ImageLinks) GetOperations() ImageLinksOperations`
 
 GetOperations returns the Operations field if non-nil, zero value otherwise.
 
 ### GetOperationsOk
 
-`func (o *ImageLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ImageLinks) GetOperationsOk() (*ImageLinksOperations, bool)`
 
 GetOperationsOk returns a tuple with the Operations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperations
 
-`func (o *ImageLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ImageLinks) SetOperations(v ImageLinksOperations)`
 
 SetOperations sets Operations field to given value.
 
@@ -79,20 +79,20 @@ HasOperations returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ImageLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *ImageLinks) GetSelf() ImageLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ImageLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ImageLinks) GetSelfOk() (*ImageLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ImageLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ImageLinks) SetSelf(v ImageLinksSelf)`
 
 SetSelf sets Self field to given value.
 

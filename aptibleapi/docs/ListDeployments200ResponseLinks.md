@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Parent** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Parent** | Pointer to [**ListDeployments200ResponseLinksParent**](ListDeployments200ResponseLinksParent.md) |  | [optional] 
+**Next** | Pointer to [**ListDeployments200ResponseLinksNext**](ListDeployments200ResponseLinksNext.md) |  | [optional] 
+**Prev** | Pointer to [**ListDeployments200ResponseLinksPrev**](ListDeployments200ResponseLinksPrev.md) |  | [optional] 
+**Self** | Pointer to [**ListDeployments200ResponseLinksSelf**](ListDeployments200ResponseLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetParent
 
-`func (o *ListDeployments200ResponseLinks) GetParent() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDeployments200ResponseLinks) GetParent() ListDeployments200ResponseLinksParent`
 
 GetParent returns the Parent field if non-nil, zero value otherwise.
 
 ### GetParentOk
 
-`func (o *ListDeployments200ResponseLinks) GetParentOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDeployments200ResponseLinks) GetParentOk() (*ListDeployments200ResponseLinksParent, bool)`
 
 GetParentOk returns a tuple with the Parent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetParent
 
-`func (o *ListDeployments200ResponseLinks) SetParent(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDeployments200ResponseLinks) SetParent(v ListDeployments200ResponseLinksParent)`
 
 SetParent sets Parent field to given value.
 
@@ -55,20 +55,20 @@ HasParent returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListDeployments200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDeployments200ResponseLinks) GetNext() ListDeployments200ResponseLinksNext`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListDeployments200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDeployments200ResponseLinks) GetNextOk() (*ListDeployments200ResponseLinksNext, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListDeployments200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDeployments200ResponseLinks) SetNext(v ListDeployments200ResponseLinksNext)`
 
 SetNext sets Next field to given value.
 
@@ -80,20 +80,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListDeployments200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDeployments200ResponseLinks) GetPrev() ListDeployments200ResponseLinksPrev`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListDeployments200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDeployments200ResponseLinks) GetPrevOk() (*ListDeployments200ResponseLinksPrev, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListDeployments200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDeployments200ResponseLinks) SetPrev(v ListDeployments200ResponseLinksPrev)`
 
 SetPrev sets Prev field to given value.
 
@@ -105,20 +105,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListDeployments200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDeployments200ResponseLinks) GetSelf() ListDeployments200ResponseLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListDeployments200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDeployments200ResponseLinks) GetSelfOk() (*ListDeployments200ResponseLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListDeployments200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDeployments200ResponseLinks) SetSelf(v ListDeployments200ResponseLinksSelf)`
 
 SetSelf sets Self field to given value.
 

@@ -45,7 +45,7 @@ type ServiceSizingPolicy struct {
 	MaxContainers NullableInt32 `json:"max_containers"`
 	ScaleUpStep NullableInt32 `json:"scale_up_step"`
 	ScaleDownStep NullableInt32 `json:"scale_down_step"`
-	Links *BackupRetentionPolicyLinks `json:"_links,omitempty"`
+	Links *ServiceSizingPolicyLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -710,9 +710,9 @@ func (o *ServiceSizingPolicy) SetScaleDownStep(v int32) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *ServiceSizingPolicy) GetLinks() BackupRetentionPolicyLinks {
+func (o *ServiceSizingPolicy) GetLinks() ServiceSizingPolicyLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret BackupRetentionPolicyLinks
+		var ret ServiceSizingPolicyLinks
 		return ret
 	}
 	return *o.Links
@@ -720,7 +720,7 @@ func (o *ServiceSizingPolicy) GetLinks() BackupRetentionPolicyLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceSizingPolicy) GetLinksOk() (*BackupRetentionPolicyLinks, bool) {
+func (o *ServiceSizingPolicy) GetLinksOk() (*ServiceSizingPolicyLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -736,8 +736,8 @@ func (o *ServiceSizingPolicy) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given BackupRetentionPolicyLinks and assigns it to the Links field.
-func (o *ServiceSizingPolicy) SetLinks(v BackupRetentionPolicyLinks) {
+// SetLinks gets a reference to the given ServiceSizingPolicyLinks and assigns it to the Links field.
+func (o *ServiceSizingPolicy) SetLinks(v ServiceSizingPolicyLinks) {
 	o.Links = &v
 }
 

@@ -433,7 +433,7 @@ func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForAccountExe
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -524,7 +524,7 @@ func (r ApiListServiceSizingPoliciesForServiceRequest) Page(page int32) ApiListS
 	return r
 }
 
-func (r ApiListServiceSizingPoliciesForServiceRequest) Execute() (*ListServiceSizingPoliciesForAccount200Response, *http.Response, error) {
+func (r ApiListServiceSizingPoliciesForServiceRequest) Execute() (*ListServiceSizingPoliciesForService200Response, *http.Response, error) {
 	return r.ApiService.ListServiceSizingPoliciesForServiceExecute(r)
 }
 
@@ -544,13 +544,13 @@ func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForService(ct
 }
 
 // Execute executes the request
-//  @return ListServiceSizingPoliciesForAccount200Response
-func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForServiceExecute(r ApiListServiceSizingPoliciesForServiceRequest) (*ListServiceSizingPoliciesForAccount200Response, *http.Response, error) {
+//  @return ListServiceSizingPoliciesForService200Response
+func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForServiceExecute(r ApiListServiceSizingPoliciesForServiceRequest) (*ListServiceSizingPoliciesForService200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListServiceSizingPoliciesForAccount200Response
+		localVarReturnValue  *ListServiceSizingPoliciesForService200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceSizingPoliciesAPIService.ListServiceSizingPoliciesForService")
@@ -566,7 +566,7 @@ func (a *ServiceSizingPoliciesAPIService) ListServiceSizingPoliciesForServiceExe
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

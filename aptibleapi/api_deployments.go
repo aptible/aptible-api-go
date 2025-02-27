@@ -197,7 +197,7 @@ func (a *DeploymentsAPIService) ListDeploymentsExecute(r ApiListDeploymentsReque
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -288,7 +288,7 @@ func (r ApiListDeploymentsForAppRequest) Page(page int32) ApiListDeploymentsForA
 	return r
 }
 
-func (r ApiListDeploymentsForAppRequest) Execute() (*ListDeployments200Response, *http.Response, error) {
+func (r ApiListDeploymentsForAppRequest) Execute() (*ListDeploymentsForApp200Response, *http.Response, error) {
 	return r.ApiService.ListDeploymentsForAppExecute(r)
 }
 
@@ -308,13 +308,13 @@ func (a *DeploymentsAPIService) ListDeploymentsForApp(ctx context.Context, appId
 }
 
 // Execute executes the request
-//  @return ListDeployments200Response
-func (a *DeploymentsAPIService) ListDeploymentsForAppExecute(r ApiListDeploymentsForAppRequest) (*ListDeployments200Response, *http.Response, error) {
+//  @return ListDeploymentsForApp200Response
+func (a *DeploymentsAPIService) ListDeploymentsForAppExecute(r ApiListDeploymentsForAppRequest) (*ListDeploymentsForApp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListDeployments200Response
+		localVarReturnValue  *ListDeploymentsForApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeploymentsAPIService.ListDeploymentsForApp")
@@ -330,7 +330,7 @@ func (a *DeploymentsAPIService) ListDeploymentsForAppExecute(r ApiListDeployment
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

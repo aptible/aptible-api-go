@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## CreateConfigurationForDatabase
 
-> Configuration CreateConfigurationForDatabase(ctx, databaseId).CreateConfigurationForAppRequest(createConfigurationForAppRequest).Execute()
+> Configuration CreateConfigurationForDatabase(ctx, databaseId).CreateConfigurationForDatabaseRequest(createConfigurationForDatabaseRequest).Execute()
 
 create configuration
 
@@ -103,11 +103,11 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
-	createConfigurationForAppRequest := *openapiclient.NewCreateConfigurationForAppRequest(map[string]interface{}(123)) // CreateConfigurationForAppRequest |  (optional)
+	createConfigurationForDatabaseRequest := *openapiclient.NewCreateConfigurationForDatabaseRequest(map[string]interface{}(123)) // CreateConfigurationForDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ConfigurationsAPI.CreateConfigurationForDatabase(context.Background(), databaseId).CreateConfigurationForAppRequest(createConfigurationForAppRequest).Execute()
+	resp, r, err := apiClient.ConfigurationsAPI.CreateConfigurationForDatabase(context.Background(), databaseId).CreateConfigurationForDatabaseRequest(createConfigurationForDatabaseRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationsAPI.CreateConfigurationForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,7 +133,7 @@ Other parameters are passed through a pointer to a apiCreateConfigurationForData
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createConfigurationForAppRequest** | [**CreateConfigurationForAppRequest**](CreateConfigurationForAppRequest.md) |  | 
+ **createConfigurationForDatabaseRequest** | [**CreateConfigurationForDatabaseRequest**](CreateConfigurationForDatabaseRequest.md) |  | 
 
 ### Return type
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ## ListConfigurationsForDatabase
 
-> ListConfigurationsForApp200Response ListConfigurationsForDatabase(ctx, databaseId).Page(page).Execute()
+> ListConfigurationsForDatabase200Response ListConfigurationsForDatabase(ctx, databaseId).Page(page).Execute()
 
 list configurations
 
@@ -386,7 +386,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationsAPI.ListConfigurationsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListConfigurationsForDatabase`: ListConfigurationsForApp200Response
+	// response from `ListConfigurationsForDatabase`: ListConfigurationsForDatabase200Response
 	fmt.Fprintf(os.Stdout, "Response from `ConfigurationsAPI.ListConfigurationsForDatabase`: %v\n", resp)
 }
 ```
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListConfigurationsForApp200Response**](ListConfigurationsForApp200Response.md)
+[**ListConfigurationsForDatabase200Response**](ListConfigurationsForDatabase200Response.md)
 
 ### Authorization
 

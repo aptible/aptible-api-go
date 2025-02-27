@@ -24,7 +24,7 @@ type ListDisksForAccount200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListActivityReportsForAccount200ResponseLinks `json:"_links"`
+	Links ListDisksForAccount200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListDisksForAccount200Response ListDisksForAccount200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListDisksForAccount200Response(embedded ListDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks) *ListDisksForAccount200Response {
+func NewListDisksForAccount200Response(embedded ListDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDisksForAccount200ResponseLinks) *ListDisksForAccount200Response {
 	this := ListDisksForAccount200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListDisksForAccount200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListDisksForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks {
+func (o *ListDisksForAccount200Response) GetLinks() ListDisksForAccount200ResponseLinks {
 	if o == nil {
-		var ret ListActivityReportsForAccount200ResponseLinks
+		var ret ListDisksForAccount200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListDisksForAccount200Response) GetLinks() ListActivityReportsForAccoun
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListDisksForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool) {
+func (o *ListDisksForAccount200Response) GetLinksOk() (*ListDisksForAccount200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListDisksForAccount200Response) GetLinksOk() (*ListActivityReportsForAc
 }
 
 // SetLinks sets field value
-func (o *ListDisksForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks) {
+func (o *ListDisksForAccount200Response) SetLinks(v ListDisksForAccount200ResponseLinks) {
 	o.Links = v
 }
 

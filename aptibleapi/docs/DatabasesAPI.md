@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## ListDatabases
 
-> ListDatabasesForAccount200Response ListDatabases(ctx).Page(page).Execute()
+> ListDatabases200Response ListDatabases(ctx).Page(page).Execute()
 
 list databases
 
@@ -247,7 +247,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.ListDatabases``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDatabases`: ListDatabasesForAccount200Response
+	// response from `ListDatabases`: ListDatabases200Response
 	fmt.Fprintf(os.Stdout, "Response from `DatabasesAPI.ListDatabases`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListDatabasesForAccount200Response**](ListDatabasesForAccount200Response.md)
+[**ListDatabases200Response**](ListDatabases200Response.md)
 
 ### Authorization
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ## ListReplicasForDatabase
 
-> ListDatabasesForAccount200Response ListReplicasForDatabase(ctx, databaseId).Page(page).Execute()
+> ListReplicasForDatabase200Response ListReplicasForDatabase(ctx, databaseId).Page(page).Execute()
 
 list databases
 
@@ -382,7 +382,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.ListReplicasForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListReplicasForDatabase`: ListDatabasesForAccount200Response
+	// response from `ListReplicasForDatabase`: ListReplicasForDatabase200Response
 	fmt.Fprintf(os.Stdout, "Response from `DatabasesAPI.ListReplicasForDatabase`: %v\n", resp)
 }
 ```
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListDatabasesForAccount200Response**](ListDatabasesForAccount200Response.md)
+[**ListReplicasForDatabase200Response**](ListReplicasForDatabase200Response.md)
 
 ### Authorization
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ## PatchDatabase
 
-> PatchDatabase(ctx, id).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+> PatchDatabase(ctx, id).PatchDatabaseRequest(patchDatabaseRequest).Execute()
 
 update database
 
@@ -443,11 +443,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateDatabaseRequest := *openapiclient.NewUpdateDatabaseRequest() // UpdateDatabaseRequest |  (optional)
+	patchDatabaseRequest := *openapiclient.NewPatchDatabaseRequest() // PatchDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DatabasesAPI.PatchDatabase(context.Background(), id).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+	r, err := apiClient.DatabasesAPI.PatchDatabase(context.Background(), id).PatchDatabaseRequest(patchDatabaseRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.PatchDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -471,7 +471,7 @@ Other parameters are passed through a pointer to a apiPatchDatabaseRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateDatabaseRequest** | [**UpdateDatabaseRequest**](UpdateDatabaseRequest.md) |  | 
+ **patchDatabaseRequest** | [**PatchDatabaseRequest**](PatchDatabaseRequest.md) |  | 
 
 ### Return type
 

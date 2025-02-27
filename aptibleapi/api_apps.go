@@ -401,7 +401,7 @@ func (r ApiListAppsRequest) Page(page int32) ApiListAppsRequest {
 	return r
 }
 
-func (r ApiListAppsRequest) Execute() (*ListAppsForAccount200Response, *http.Response, error) {
+func (r ApiListAppsRequest) Execute() (*ListApps200Response, *http.Response, error) {
 	return r.ApiService.ListAppsExecute(r)
 }
 
@@ -419,13 +419,13 @@ func (a *AppsAPIService) ListApps(ctx context.Context) ApiListAppsRequest {
 }
 
 // Execute executes the request
-//  @return ListAppsForAccount200Response
-func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListAppsForAccount200Response, *http.Response, error) {
+//  @return ListApps200Response
+func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListApps200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListAppsForAccount200Response
+		localVarReturnValue  *ListApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.ListApps")
@@ -440,7 +440,7 @@ func (a *AppsAPIService) ListAppsExecute(r ApiListAppsRequest) (*ListAppsForAcco
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -573,7 +573,7 @@ func (a *AppsAPIService) ListAppsForAccountExecute(r ApiListAppsForAccountReques
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -664,7 +664,7 @@ func (r ApiListAppsForCertificateRequest) Page(page int32) ApiListAppsForCertifi
 	return r
 }
 
-func (r ApiListAppsForCertificateRequest) Execute() (*ListAppsForAccount200Response, *http.Response, error) {
+func (r ApiListAppsForCertificateRequest) Execute() (*ListAppsForCertificate200Response, *http.Response, error) {
 	return r.ApiService.ListAppsForCertificateExecute(r)
 }
 
@@ -684,13 +684,13 @@ func (a *AppsAPIService) ListAppsForCertificate(ctx context.Context, certificate
 }
 
 // Execute executes the request
-//  @return ListAppsForAccount200Response
-func (a *AppsAPIService) ListAppsForCertificateExecute(r ApiListAppsForCertificateRequest) (*ListAppsForAccount200Response, *http.Response, error) {
+//  @return ListAppsForCertificate200Response
+func (a *AppsAPIService) ListAppsForCertificateExecute(r ApiListAppsForCertificateRequest) (*ListAppsForCertificate200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListAppsForAccount200Response
+		localVarReturnValue  *ListAppsForCertificate200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppsAPIService.ListAppsForCertificate")
@@ -706,7 +706,7 @@ func (a *AppsAPIService) ListAppsForCertificateExecute(r ApiListAppsForCertifica
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -788,11 +788,11 @@ type ApiPatchAppRequest struct {
 	ctx context.Context
 	ApiService *AppsAPIService
 	id int32
-	updateAppRequest *UpdateAppRequest
+	patchAppRequest *PatchAppRequest
 }
 
-func (r ApiPatchAppRequest) UpdateAppRequest(updateAppRequest UpdateAppRequest) ApiPatchAppRequest {
-	r.updateAppRequest = &updateAppRequest
+func (r ApiPatchAppRequest) PatchAppRequest(patchAppRequest PatchAppRequest) ApiPatchAppRequest {
+	r.patchAppRequest = &patchAppRequest
 	return r
 }
 
@@ -853,7 +853,7 @@ func (a *AppsAPIService) PatchAppExecute(r ApiPatchAppRequest) (*http.Response, 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateAppRequest
+	localVarPostBody = r.patchAppRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

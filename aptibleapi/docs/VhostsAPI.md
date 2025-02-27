@@ -36,7 +36,7 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	createVhostRequest := *openapiclient.NewCreateVhostRequest("Type_example", int32(123)) // CreateVhostRequest |  (optional)
+	createVhostRequest := *openapiclient.NewCreateVhostRequest("Type_example") // CreateVhostRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ## ListVhostsForApp
 
-> ListVhostsForAccount200Response ListVhostsForApp(ctx, appId).Page(page).Execute()
+> ListVhostsForApp200Response ListVhostsForApp(ctx, appId).Page(page).Execute()
 
 list vhosts
 
@@ -319,7 +319,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.ListVhostsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListVhostsForApp`: ListVhostsForAccount200Response
+	// response from `ListVhostsForApp`: ListVhostsForApp200Response
 	fmt.Fprintf(os.Stdout, "Response from `VhostsAPI.ListVhostsForApp`: %v\n", resp)
 }
 ```
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListVhostsForAccount200Response**](ListVhostsForAccount200Response.md)
+[**ListVhostsForApp200Response**](ListVhostsForApp200Response.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ## ListVhostsForCertificate
 
-> ListVhostsForAccount200Response ListVhostsForCertificate(ctx, certificateId).Page(page).Execute()
+> ListVhostsForCertificate200Response ListVhostsForCertificate(ctx, certificateId).Page(page).Execute()
 
 list vhosts
 
@@ -389,7 +389,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.ListVhostsForCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListVhostsForCertificate`: ListVhostsForAccount200Response
+	// response from `ListVhostsForCertificate`: ListVhostsForCertificate200Response
 	fmt.Fprintf(os.Stdout, "Response from `VhostsAPI.ListVhostsForCertificate`: %v\n", resp)
 }
 ```
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListVhostsForAccount200Response**](ListVhostsForAccount200Response.md)
+[**ListVhostsForCertificate200Response**](ListVhostsForCertificate200Response.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 ## ListVhostsForService
 
-> ListVhostsForAccount200Response ListVhostsForService(ctx, serviceId).Page(page).Execute()
+> ListVhostsForService200Response ListVhostsForService(ctx, serviceId).Page(page).Execute()
 
 list vhosts
 
@@ -459,7 +459,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.ListVhostsForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListVhostsForService`: ListVhostsForAccount200Response
+	// response from `ListVhostsForService`: ListVhostsForService200Response
 	fmt.Fprintf(os.Stdout, "Response from `VhostsAPI.ListVhostsForService`: %v\n", resp)
 }
 ```
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListVhostsForAccount200Response**](ListVhostsForAccount200Response.md)
+[**ListVhostsForService200Response**](ListVhostsForService200Response.md)
 
 ### Authorization
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ## PatchVhost
 
-> PatchVhost(ctx, id).UpdateVhostRequest(updateVhostRequest).Execute()
+> PatchVhost(ctx, id).PatchVhostRequest(patchVhostRequest).Execute()
 
 update vhost
 
@@ -520,11 +520,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateVhostRequest := *openapiclient.NewUpdateVhostRequest() // UpdateVhostRequest |  (optional)
+	patchVhostRequest := *openapiclient.NewPatchVhostRequest() // PatchVhostRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.VhostsAPI.PatchVhost(context.Background(), id).UpdateVhostRequest(updateVhostRequest).Execute()
+	r, err := apiClient.VhostsAPI.PatchVhost(context.Background(), id).PatchVhostRequest(patchVhostRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.PatchVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -548,7 +548,7 @@ Other parameters are passed through a pointer to a apiPatchVhostRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateVhostRequest** | [**UpdateVhostRequest**](UpdateVhostRequest.md) |  | 
+ **patchVhostRequest** | [**PatchVhostRequest**](PatchVhostRequest.md) |  | 
 
 ### Return type
 

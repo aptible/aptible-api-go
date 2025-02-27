@@ -20,11 +20,11 @@ var _ MappedNullable = &ListDeploymentsForSource200Response{}
 
 // ListDeploymentsForSource200Response struct for ListDeploymentsForSource200Response
 type ListDeploymentsForSource200Response struct {
-	Embedded ListDeployments200ResponseEmbedded `json:"_embedded"`
+	Embedded ListDeploymentsForSource200ResponseEmbedded `json:"_embedded"`
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListAppsForSource200ResponseLinks `json:"_links"`
+	Links ListDeploymentsForSource200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListDeploymentsForSource200Response ListDeploymentsForSource200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListDeploymentsForSource200Response(embedded ListDeployments200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppsForSource200ResponseLinks) *ListDeploymentsForSource200Response {
+func NewListDeploymentsForSource200Response(embedded ListDeploymentsForSource200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDeploymentsForSource200ResponseLinks) *ListDeploymentsForSource200Response {
 	this := ListDeploymentsForSource200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -53,9 +53,9 @@ func NewListDeploymentsForSource200ResponseWithDefaults() *ListDeploymentsForSou
 }
 
 // GetEmbedded returns the Embedded field value
-func (o *ListDeploymentsForSource200Response) GetEmbedded() ListDeployments200ResponseEmbedded {
+func (o *ListDeploymentsForSource200Response) GetEmbedded() ListDeploymentsForSource200ResponseEmbedded {
 	if o == nil {
-		var ret ListDeployments200ResponseEmbedded
+		var ret ListDeploymentsForSource200ResponseEmbedded
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *ListDeploymentsForSource200Response) GetEmbedded() ListDeployments200Re
 
 // GetEmbeddedOk returns a tuple with the Embedded field value
 // and a boolean to check if the value has been set.
-func (o *ListDeploymentsForSource200Response) GetEmbeddedOk() (*ListDeployments200ResponseEmbedded, bool) {
+func (o *ListDeploymentsForSource200Response) GetEmbeddedOk() (*ListDeploymentsForSource200ResponseEmbedded, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *ListDeploymentsForSource200Response) GetEmbeddedOk() (*ListDeployments2
 }
 
 // SetEmbedded sets field value
-func (o *ListDeploymentsForSource200Response) SetEmbedded(v ListDeployments200ResponseEmbedded) {
+func (o *ListDeploymentsForSource200Response) SetEmbedded(v ListDeploymentsForSource200ResponseEmbedded) {
 	o.Embedded = v
 }
 
@@ -149,9 +149,9 @@ func (o *ListDeploymentsForSource200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListDeploymentsForSource200Response) GetLinks() ListAppsForSource200ResponseLinks {
+func (o *ListDeploymentsForSource200Response) GetLinks() ListDeploymentsForSource200ResponseLinks {
 	if o == nil {
-		var ret ListAppsForSource200ResponseLinks
+		var ret ListDeploymentsForSource200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListDeploymentsForSource200Response) GetLinks() ListAppsForSource200Res
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListDeploymentsForSource200Response) GetLinksOk() (*ListAppsForSource200ResponseLinks, bool) {
+func (o *ListDeploymentsForSource200Response) GetLinksOk() (*ListDeploymentsForSource200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListDeploymentsForSource200Response) GetLinksOk() (*ListAppsForSource20
 }
 
 // SetLinks sets field value
-func (o *ListDeploymentsForSource200Response) SetLinks(v ListAppsForSource200ResponseLinks) {
+func (o *ListDeploymentsForSource200Response) SetLinks(v ListDeploymentsForSource200ResponseLinks) {
 	o.Links = v
 }
 

@@ -19,9 +19,9 @@ var _ MappedNullable = &PersistentDiskLinks{}
 
 // PersistentDiskLinks struct for PersistentDiskLinks
 type PersistentDiskLinks struct {
-	Account *ListAccountsForStack200ResponseLinksStack `json:"account,omitempty"`
-	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Account *PersistentDiskLinksAccount `json:"account,omitempty"`
+	Operations *PersistentDiskLinksOperations `json:"operations,omitempty"`
+	Self *PersistentDiskLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewPersistentDiskLinksWithDefaults() *PersistentDiskLinks {
 }
 
 // GetAccount returns the Account field value if set, zero value otherwise.
-func (o *PersistentDiskLinks) GetAccount() ListAccountsForStack200ResponseLinksStack {
+func (o *PersistentDiskLinks) GetAccount() PersistentDiskLinksAccount {
 	if o == nil || IsNil(o.Account) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PersistentDiskLinksAccount
 		return ret
 	}
 	return *o.Account
@@ -55,7 +55,7 @@ func (o *PersistentDiskLinks) GetAccount() ListAccountsForStack200ResponseLinksS
 
 // GetAccountOk returns a tuple with the Account field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PersistentDiskLinks) GetAccountOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PersistentDiskLinks) GetAccountOk() (*PersistentDiskLinksAccount, bool) {
 	if o == nil || IsNil(o.Account) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *PersistentDiskLinks) HasAccount() bool {
 	return false
 }
 
-// SetAccount gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Account field.
-func (o *PersistentDiskLinks) SetAccount(v ListAccountsForStack200ResponseLinksStack) {
+// SetAccount gets a reference to the given PersistentDiskLinksAccount and assigns it to the Account field.
+func (o *PersistentDiskLinks) SetAccount(v PersistentDiskLinksAccount) {
 	o.Account = &v
 }
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
-func (o *PersistentDiskLinks) GetOperations() ListAccountsForStack200ResponseLinksStack {
+func (o *PersistentDiskLinks) GetOperations() PersistentDiskLinksOperations {
 	if o == nil || IsNil(o.Operations) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PersistentDiskLinksOperations
 		return ret
 	}
 	return *o.Operations
@@ -87,7 +87,7 @@ func (o *PersistentDiskLinks) GetOperations() ListAccountsForStack200ResponseLin
 
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PersistentDiskLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PersistentDiskLinks) GetOperationsOk() (*PersistentDiskLinksOperations, bool) {
 	if o == nil || IsNil(o.Operations) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *PersistentDiskLinks) HasOperations() bool {
 	return false
 }
 
-// SetOperations gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operations field.
-func (o *PersistentDiskLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) {
+// SetOperations gets a reference to the given PersistentDiskLinksOperations and assigns it to the Operations field.
+func (o *PersistentDiskLinks) SetOperations(v PersistentDiskLinksOperations) {
 	o.Operations = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *PersistentDiskLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *PersistentDiskLinks) GetSelf() PersistentDiskLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PersistentDiskLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *PersistentDiskLinks) GetSelf() ListAccountsForStack200ResponseLinksStac
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PersistentDiskLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PersistentDiskLinks) GetSelfOk() (*PersistentDiskLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *PersistentDiskLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *PersistentDiskLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given PersistentDiskLinksSelf and assigns it to the Self field.
+func (o *PersistentDiskLinks) SetSelf(v PersistentDiskLinksSelf) {
 	o.Self = &v
 }
 

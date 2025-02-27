@@ -24,7 +24,7 @@ type ListServiceSizingPoliciesForAccount200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListActivityReportsForAccount200ResponseLinks `json:"_links"`
+	Links ListServiceSizingPoliciesForAccount200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListServiceSizingPoliciesForAccount200Response ListServiceSizingPoliciesFo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListServiceSizingPoliciesForAccount200Response(embedded ListServiceSizingPoliciesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks) *ListServiceSizingPoliciesForAccount200Response {
+func NewListServiceSizingPoliciesForAccount200Response(embedded ListServiceSizingPoliciesForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListServiceSizingPoliciesForAccount200ResponseLinks) *ListServiceSizingPoliciesForAccount200Response {
 	this := ListServiceSizingPoliciesForAccount200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListServiceSizingPoliciesForAccount200Response) SetCurrentPage(v int32)
 }
 
 // GetLinks returns the Links field value
-func (o *ListServiceSizingPoliciesForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks {
+func (o *ListServiceSizingPoliciesForAccount200Response) GetLinks() ListServiceSizingPoliciesForAccount200ResponseLinks {
 	if o == nil {
-		var ret ListActivityReportsForAccount200ResponseLinks
+		var ret ListServiceSizingPoliciesForAccount200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListServiceSizingPoliciesForAccount200Response) GetLinks() ListActivity
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListServiceSizingPoliciesForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool) {
+func (o *ListServiceSizingPoliciesForAccount200Response) GetLinksOk() (*ListServiceSizingPoliciesForAccount200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListServiceSizingPoliciesForAccount200Response) GetLinksOk() (*ListActi
 }
 
 // SetLinks sets field value
-func (o *ListServiceSizingPoliciesForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks) {
+func (o *ListServiceSizingPoliciesForAccount200Response) SetLinks(v ListServiceSizingPoliciesForAccount200ResponseLinks) {
 	o.Links = v
 }
 

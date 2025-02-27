@@ -4,22 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Organization** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Stack** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Apps** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Backups** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Databases** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Disks** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Services** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Operations** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Permissions** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**LogDrains** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**MetricDrains** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Certificates** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Vhosts** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**ActivityReports** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**DiskAttachments** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Organization** | Pointer to [**AccountLinksOrganization**](AccountLinksOrganization.md) |  | [optional] 
+**Stack** | Pointer to [**AccountLinksStack**](AccountLinksStack.md) |  | [optional] 
+**Apps** | Pointer to [**AccountLinksApps**](AccountLinksApps.md) |  | [optional] 
+**Backups** | Pointer to [**AccountLinksBackups**](AccountLinksBackups.md) |  | [optional] 
+**Databases** | Pointer to [**AccountLinksDatabases**](AccountLinksDatabases.md) |  | [optional] 
+**Disks** | Pointer to [**AccountLinksDisks**](AccountLinksDisks.md) |  | [optional] 
+**Services** | Pointer to [**AccountLinksServices**](AccountLinksServices.md) |  | [optional] 
+**Operations** | Pointer to [**AccountLinksOperations**](AccountLinksOperations.md) |  | [optional] 
+**Permissions** | Pointer to [**AccountLinksPermissions**](AccountLinksPermissions.md) |  | [optional] 
+**LogDrains** | Pointer to [**AccountLinksLogDrains**](AccountLinksLogDrains.md) |  | [optional] 
+**MetricDrains** | Pointer to [**AccountLinksMetricDrains**](AccountLinksMetricDrains.md) |  | [optional] 
+**Certificates** | Pointer to [**AccountLinksCertificates**](AccountLinksCertificates.md) |  | [optional] 
+**Vhosts** | Pointer to [**AccountLinksVhosts**](AccountLinksVhosts.md) |  | [optional] 
+**ActivityReports** | Pointer to [**AccountLinksActivityReports**](AccountLinksActivityReports.md) |  | [optional] 
+**DiskAttachments** | Pointer to [**AccountLinksDiskAttachments**](AccountLinksDiskAttachments.md) |  | [optional] 
+**Self** | Pointer to [**AccountLinksSelf**](AccountLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -42,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrganization
 
-`func (o *AccountLinks) GetOrganization() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetOrganization() AccountLinksOrganization`
 
 GetOrganization returns the Organization field if non-nil, zero value otherwise.
 
 ### GetOrganizationOk
 
-`func (o *AccountLinks) GetOrganizationOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetOrganizationOk() (*AccountLinksOrganization, bool)`
 
 GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganization
 
-`func (o *AccountLinks) SetOrganization(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetOrganization(v AccountLinksOrganization)`
 
 SetOrganization sets Organization field to given value.
 
@@ -67,20 +67,20 @@ HasOrganization returns a boolean if a field has been set.
 
 ### GetStack
 
-`func (o *AccountLinks) GetStack() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetStack() AccountLinksStack`
 
 GetStack returns the Stack field if non-nil, zero value otherwise.
 
 ### GetStackOk
 
-`func (o *AccountLinks) GetStackOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetStackOk() (*AccountLinksStack, bool)`
 
 GetStackOk returns a tuple with the Stack field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStack
 
-`func (o *AccountLinks) SetStack(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetStack(v AccountLinksStack)`
 
 SetStack sets Stack field to given value.
 
@@ -92,20 +92,20 @@ HasStack returns a boolean if a field has been set.
 
 ### GetApps
 
-`func (o *AccountLinks) GetApps() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetApps() AccountLinksApps`
 
 GetApps returns the Apps field if non-nil, zero value otherwise.
 
 ### GetAppsOk
 
-`func (o *AccountLinks) GetAppsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetAppsOk() (*AccountLinksApps, bool)`
 
 GetAppsOk returns a tuple with the Apps field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApps
 
-`func (o *AccountLinks) SetApps(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetApps(v AccountLinksApps)`
 
 SetApps sets Apps field to given value.
 
@@ -117,20 +117,20 @@ HasApps returns a boolean if a field has been set.
 
 ### GetBackups
 
-`func (o *AccountLinks) GetBackups() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetBackups() AccountLinksBackups`
 
 GetBackups returns the Backups field if non-nil, zero value otherwise.
 
 ### GetBackupsOk
 
-`func (o *AccountLinks) GetBackupsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetBackupsOk() (*AccountLinksBackups, bool)`
 
 GetBackupsOk returns a tuple with the Backups field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBackups
 
-`func (o *AccountLinks) SetBackups(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetBackups(v AccountLinksBackups)`
 
 SetBackups sets Backups field to given value.
 
@@ -142,20 +142,20 @@ HasBackups returns a boolean if a field has been set.
 
 ### GetDatabases
 
-`func (o *AccountLinks) GetDatabases() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetDatabases() AccountLinksDatabases`
 
 GetDatabases returns the Databases field if non-nil, zero value otherwise.
 
 ### GetDatabasesOk
 
-`func (o *AccountLinks) GetDatabasesOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetDatabasesOk() (*AccountLinksDatabases, bool)`
 
 GetDatabasesOk returns a tuple with the Databases field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatabases
 
-`func (o *AccountLinks) SetDatabases(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetDatabases(v AccountLinksDatabases)`
 
 SetDatabases sets Databases field to given value.
 
@@ -167,20 +167,20 @@ HasDatabases returns a boolean if a field has been set.
 
 ### GetDisks
 
-`func (o *AccountLinks) GetDisks() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetDisks() AccountLinksDisks`
 
 GetDisks returns the Disks field if non-nil, zero value otherwise.
 
 ### GetDisksOk
 
-`func (o *AccountLinks) GetDisksOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetDisksOk() (*AccountLinksDisks, bool)`
 
 GetDisksOk returns a tuple with the Disks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDisks
 
-`func (o *AccountLinks) SetDisks(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetDisks(v AccountLinksDisks)`
 
 SetDisks sets Disks field to given value.
 
@@ -192,20 +192,20 @@ HasDisks returns a boolean if a field has been set.
 
 ### GetServices
 
-`func (o *AccountLinks) GetServices() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetServices() AccountLinksServices`
 
 GetServices returns the Services field if non-nil, zero value otherwise.
 
 ### GetServicesOk
 
-`func (o *AccountLinks) GetServicesOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetServicesOk() (*AccountLinksServices, bool)`
 
 GetServicesOk returns a tuple with the Services field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServices
 
-`func (o *AccountLinks) SetServices(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetServices(v AccountLinksServices)`
 
 SetServices sets Services field to given value.
 
@@ -217,20 +217,20 @@ HasServices returns a boolean if a field has been set.
 
 ### GetOperations
 
-`func (o *AccountLinks) GetOperations() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetOperations() AccountLinksOperations`
 
 GetOperations returns the Operations field if non-nil, zero value otherwise.
 
 ### GetOperationsOk
 
-`func (o *AccountLinks) GetOperationsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetOperationsOk() (*AccountLinksOperations, bool)`
 
 GetOperationsOk returns a tuple with the Operations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOperations
 
-`func (o *AccountLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetOperations(v AccountLinksOperations)`
 
 SetOperations sets Operations field to given value.
 
@@ -242,20 +242,20 @@ HasOperations returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *AccountLinks) GetPermissions() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetPermissions() AccountLinksPermissions`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *AccountLinks) GetPermissionsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetPermissionsOk() (*AccountLinksPermissions, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *AccountLinks) SetPermissions(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetPermissions(v AccountLinksPermissions)`
 
 SetPermissions sets Permissions field to given value.
 
@@ -267,20 +267,20 @@ HasPermissions returns a boolean if a field has been set.
 
 ### GetLogDrains
 
-`func (o *AccountLinks) GetLogDrains() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetLogDrains() AccountLinksLogDrains`
 
 GetLogDrains returns the LogDrains field if non-nil, zero value otherwise.
 
 ### GetLogDrainsOk
 
-`func (o *AccountLinks) GetLogDrainsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetLogDrainsOk() (*AccountLinksLogDrains, bool)`
 
 GetLogDrainsOk returns a tuple with the LogDrains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLogDrains
 
-`func (o *AccountLinks) SetLogDrains(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetLogDrains(v AccountLinksLogDrains)`
 
 SetLogDrains sets LogDrains field to given value.
 
@@ -292,20 +292,20 @@ HasLogDrains returns a boolean if a field has been set.
 
 ### GetMetricDrains
 
-`func (o *AccountLinks) GetMetricDrains() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetMetricDrains() AccountLinksMetricDrains`
 
 GetMetricDrains returns the MetricDrains field if non-nil, zero value otherwise.
 
 ### GetMetricDrainsOk
 
-`func (o *AccountLinks) GetMetricDrainsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetMetricDrainsOk() (*AccountLinksMetricDrains, bool)`
 
 GetMetricDrainsOk returns a tuple with the MetricDrains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetricDrains
 
-`func (o *AccountLinks) SetMetricDrains(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetMetricDrains(v AccountLinksMetricDrains)`
 
 SetMetricDrains sets MetricDrains field to given value.
 
@@ -317,20 +317,20 @@ HasMetricDrains returns a boolean if a field has been set.
 
 ### GetCertificates
 
-`func (o *AccountLinks) GetCertificates() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetCertificates() AccountLinksCertificates`
 
 GetCertificates returns the Certificates field if non-nil, zero value otherwise.
 
 ### GetCertificatesOk
 
-`func (o *AccountLinks) GetCertificatesOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetCertificatesOk() (*AccountLinksCertificates, bool)`
 
 GetCertificatesOk returns a tuple with the Certificates field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertificates
 
-`func (o *AccountLinks) SetCertificates(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetCertificates(v AccountLinksCertificates)`
 
 SetCertificates sets Certificates field to given value.
 
@@ -342,20 +342,20 @@ HasCertificates returns a boolean if a field has been set.
 
 ### GetVhosts
 
-`func (o *AccountLinks) GetVhosts() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetVhosts() AccountLinksVhosts`
 
 GetVhosts returns the Vhosts field if non-nil, zero value otherwise.
 
 ### GetVhostsOk
 
-`func (o *AccountLinks) GetVhostsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetVhostsOk() (*AccountLinksVhosts, bool)`
 
 GetVhostsOk returns a tuple with the Vhosts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVhosts
 
-`func (o *AccountLinks) SetVhosts(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetVhosts(v AccountLinksVhosts)`
 
 SetVhosts sets Vhosts field to given value.
 
@@ -367,20 +367,20 @@ HasVhosts returns a boolean if a field has been set.
 
 ### GetActivityReports
 
-`func (o *AccountLinks) GetActivityReports() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetActivityReports() AccountLinksActivityReports`
 
 GetActivityReports returns the ActivityReports field if non-nil, zero value otherwise.
 
 ### GetActivityReportsOk
 
-`func (o *AccountLinks) GetActivityReportsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetActivityReportsOk() (*AccountLinksActivityReports, bool)`
 
 GetActivityReportsOk returns a tuple with the ActivityReports field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActivityReports
 
-`func (o *AccountLinks) SetActivityReports(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetActivityReports(v AccountLinksActivityReports)`
 
 SetActivityReports sets ActivityReports field to given value.
 
@@ -392,20 +392,20 @@ HasActivityReports returns a boolean if a field has been set.
 
 ### GetDiskAttachments
 
-`func (o *AccountLinks) GetDiskAttachments() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetDiskAttachments() AccountLinksDiskAttachments`
 
 GetDiskAttachments returns the DiskAttachments field if non-nil, zero value otherwise.
 
 ### GetDiskAttachmentsOk
 
-`func (o *AccountLinks) GetDiskAttachmentsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetDiskAttachmentsOk() (*AccountLinksDiskAttachments, bool)`
 
 GetDiskAttachmentsOk returns a tuple with the DiskAttachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDiskAttachments
 
-`func (o *AccountLinks) SetDiskAttachments(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetDiskAttachments(v AccountLinksDiskAttachments)`
 
 SetDiskAttachments sets DiskAttachments field to given value.
 
@@ -417,20 +417,20 @@ HasDiskAttachments returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *AccountLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *AccountLinks) GetSelf() AccountLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *AccountLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *AccountLinks) GetSelfOk() (*AccountLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *AccountLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *AccountLinks) SetSelf(v AccountLinksSelf)`
 
 SetSelf sets Self field to given value.
 

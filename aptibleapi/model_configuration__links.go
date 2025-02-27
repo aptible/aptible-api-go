@@ -19,8 +19,8 @@ var _ MappedNullable = &ConfigurationLinks{}
 
 // ConfigurationLinks struct for ConfigurationLinks
 type ConfigurationLinks struct {
-	Resource *ListAccountsForStack200ResponseLinksStack `json:"resource,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Resource *ConfigurationLinksResource `json:"resource,omitempty"`
+	Self *ConfigurationLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewConfigurationLinksWithDefaults() *ConfigurationLinks {
 }
 
 // GetResource returns the Resource field value if set, zero value otherwise.
-func (o *ConfigurationLinks) GetResource() ListAccountsForStack200ResponseLinksStack {
+func (o *ConfigurationLinks) GetResource() ConfigurationLinksResource {
 	if o == nil || IsNil(o.Resource) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret ConfigurationLinksResource
 		return ret
 	}
 	return *o.Resource
@@ -54,7 +54,7 @@ func (o *ConfigurationLinks) GetResource() ListAccountsForStack200ResponseLinksS
 
 // GetResourceOk returns a tuple with the Resource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConfigurationLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ConfigurationLinks) GetResourceOk() (*ConfigurationLinksResource, bool) {
 	if o == nil || IsNil(o.Resource) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *ConfigurationLinks) HasResource() bool {
 	return false
 }
 
-// SetResource gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Resource field.
-func (o *ConfigurationLinks) SetResource(v ListAccountsForStack200ResponseLinksStack) {
+// SetResource gets a reference to the given ConfigurationLinksResource and assigns it to the Resource field.
+func (o *ConfigurationLinks) SetResource(v ConfigurationLinksResource) {
 	o.Resource = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ConfigurationLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *ConfigurationLinks) GetSelf() ConfigurationLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret ConfigurationLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -86,7 +86,7 @@ func (o *ConfigurationLinks) GetSelf() ListAccountsForStack200ResponseLinksStack
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConfigurationLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ConfigurationLinks) GetSelfOk() (*ConfigurationLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *ConfigurationLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *ConfigurationLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given ConfigurationLinksSelf and assigns it to the Self field.
+func (o *ConfigurationLinks) SetSelf(v ConfigurationLinksSelf) {
 	o.Self = &v
 }
 

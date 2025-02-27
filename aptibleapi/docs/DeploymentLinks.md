@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**App** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Configuration** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Image** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Source** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**App** | Pointer to [**DeploymentLinksApp**](DeploymentLinksApp.md) |  | [optional] 
+**Configuration** | Pointer to [**DeploymentLinksConfiguration**](DeploymentLinksConfiguration.md) |  | [optional] 
+**Image** | Pointer to [**DeploymentLinksImage**](DeploymentLinksImage.md) |  | [optional] 
+**Source** | Pointer to [**DeploymentLinksSource**](DeploymentLinksSource.md) |  | [optional] 
+**Self** | Pointer to [**DeploymentLinksSelf**](DeploymentLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetApp
 
-`func (o *DeploymentLinks) GetApp() ListAccountsForStack200ResponseLinksStack`
+`func (o *DeploymentLinks) GetApp() DeploymentLinksApp`
 
 GetApp returns the App field if non-nil, zero value otherwise.
 
 ### GetAppOk
 
-`func (o *DeploymentLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *DeploymentLinks) GetAppOk() (*DeploymentLinksApp, bool)`
 
 GetAppOk returns a tuple with the App field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApp
 
-`func (o *DeploymentLinks) SetApp(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *DeploymentLinks) SetApp(v DeploymentLinksApp)`
 
 SetApp sets App field to given value.
 
@@ -56,20 +56,20 @@ HasApp returns a boolean if a field has been set.
 
 ### GetConfiguration
 
-`func (o *DeploymentLinks) GetConfiguration() ListAccountsForStack200ResponseLinksStack`
+`func (o *DeploymentLinks) GetConfiguration() DeploymentLinksConfiguration`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *DeploymentLinks) GetConfigurationOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *DeploymentLinks) GetConfigurationOk() (*DeploymentLinksConfiguration, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *DeploymentLinks) SetConfiguration(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *DeploymentLinks) SetConfiguration(v DeploymentLinksConfiguration)`
 
 SetConfiguration sets Configuration field to given value.
 
@@ -81,20 +81,20 @@ HasConfiguration returns a boolean if a field has been set.
 
 ### GetImage
 
-`func (o *DeploymentLinks) GetImage() ListAccountsForStack200ResponseLinksStack`
+`func (o *DeploymentLinks) GetImage() DeploymentLinksImage`
 
 GetImage returns the Image field if non-nil, zero value otherwise.
 
 ### GetImageOk
 
-`func (o *DeploymentLinks) GetImageOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *DeploymentLinks) GetImageOk() (*DeploymentLinksImage, bool)`
 
 GetImageOk returns a tuple with the Image field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetImage
 
-`func (o *DeploymentLinks) SetImage(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *DeploymentLinks) SetImage(v DeploymentLinksImage)`
 
 SetImage sets Image field to given value.
 
@@ -106,20 +106,20 @@ HasImage returns a boolean if a field has been set.
 
 ### GetSource
 
-`func (o *DeploymentLinks) GetSource() ListAccountsForStack200ResponseLinksStack`
+`func (o *DeploymentLinks) GetSource() DeploymentLinksSource`
 
 GetSource returns the Source field if non-nil, zero value otherwise.
 
 ### GetSourceOk
 
-`func (o *DeploymentLinks) GetSourceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *DeploymentLinks) GetSourceOk() (*DeploymentLinksSource, bool)`
 
 GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSource
 
-`func (o *DeploymentLinks) SetSource(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *DeploymentLinks) SetSource(v DeploymentLinksSource)`
 
 SetSource sets Source field to given value.
 
@@ -131,20 +131,20 @@ HasSource returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *DeploymentLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *DeploymentLinks) GetSelf() DeploymentLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *DeploymentLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *DeploymentLinks) GetSelfOk() (*DeploymentLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *DeploymentLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *DeploymentLinks) SetSelf(v DeploymentLinksSelf)`
 
 SetSelf sets Self field to given value.
 

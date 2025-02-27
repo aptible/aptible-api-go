@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListAccountsForStack200ResponseLinks**](ListAccountsForStack200ResponseLinks.md) |  | 
+**Links** | [**ListVpcPeersForStack200ResponseLinks**](ListVpcPeersForStack200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListVpcPeersForStack200Response
 
-`func NewListVpcPeersForStack200Response(embedded ListVpcPeersForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAccountsForStack200ResponseLinks, ) *ListVpcPeersForStack200Response`
+`func NewListVpcPeersForStack200Response(embedded ListVpcPeersForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListVpcPeersForStack200ResponseLinks, ) *ListVpcPeersForStack200Response`
 
 NewListVpcPeersForStack200Response instantiates a new ListVpcPeersForStack200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListVpcPeersForStack200Response) GetLinks() ListAccountsForStack200ResponseLinks`
+`func (o *ListVpcPeersForStack200Response) GetLinks() ListVpcPeersForStack200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListVpcPeersForStack200Response) GetLinksOk() (*ListAccountsForStack200ResponseLinks, bool)`
+`func (o *ListVpcPeersForStack200Response) GetLinksOk() (*ListVpcPeersForStack200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListVpcPeersForStack200Response) SetLinks(v ListAccountsForStack200ResponseLinks)`
+`func (o *ListVpcPeersForStack200Response) SetLinks(v ListVpcPeersForStack200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

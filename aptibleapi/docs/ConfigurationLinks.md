@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Resource** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Resource** | Pointer to [**ConfigurationLinksResource**](ConfigurationLinksResource.md) |  | [optional] 
+**Self** | Pointer to [**ConfigurationLinksSelf**](ConfigurationLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetResource
 
-`func (o *ConfigurationLinks) GetResource() ListAccountsForStack200ResponseLinksStack`
+`func (o *ConfigurationLinks) GetResource() ConfigurationLinksResource`
 
 GetResource returns the Resource field if non-nil, zero value otherwise.
 
 ### GetResourceOk
 
-`func (o *ConfigurationLinks) GetResourceOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ConfigurationLinks) GetResourceOk() (*ConfigurationLinksResource, bool)`
 
 GetResourceOk returns a tuple with the Resource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResource
 
-`func (o *ConfigurationLinks) SetResource(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ConfigurationLinks) SetResource(v ConfigurationLinksResource)`
 
 SetResource sets Resource field to given value.
 
@@ -53,20 +53,20 @@ HasResource returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ConfigurationLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *ConfigurationLinks) GetSelf() ConfigurationLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ConfigurationLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ConfigurationLinks) GetSelfOk() (*ConfigurationLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ConfigurationLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ConfigurationLinks) SetSelf(v ConfigurationLinksSelf)`
 
 SetSelf sets Self field to given value.
 

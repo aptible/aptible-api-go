@@ -268,11 +268,11 @@ type ApiCreateClaimForAccountRequest struct {
 	ApiService *ClaimsAPIService
 	accountId int32
 	type_ string
-	createAppRequest *CreateAppRequest
+	createClaimForAccountRequest *CreateClaimForAccountRequest
 }
 
-func (r ApiCreateClaimForAccountRequest) CreateAppRequest(createAppRequest CreateAppRequest) ApiCreateClaimForAccountRequest {
-	r.createAppRequest = &createAppRequest
+func (r ApiCreateClaimForAccountRequest) CreateClaimForAccountRequest(createClaimForAccountRequest CreateClaimForAccountRequest) ApiCreateClaimForAccountRequest {
+	r.createClaimForAccountRequest = &createClaimForAccountRequest
 	return r
 }
 
@@ -338,7 +338,7 @@ func (a *ClaimsAPIService) CreateClaimForAccountExecute(r ApiCreateClaimForAccou
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createAppRequest
+	localVarPostBody = r.createClaimForAccountRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

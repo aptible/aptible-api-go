@@ -24,7 +24,7 @@ type ListIntrustionDetectionReportsForStack200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListAccountsForStack200ResponseLinks `json:"_links"`
+	Links ListIntrustionDetectionReportsForStack200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListIntrustionDetectionReportsForStack200Response ListIntrustionDetectionR
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListIntrustionDetectionReportsForStack200Response(embedded ListIntrustionDetectionReportsForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAccountsForStack200ResponseLinks) *ListIntrustionDetectionReportsForStack200Response {
+func NewListIntrustionDetectionReportsForStack200Response(embedded ListIntrustionDetectionReportsForStack200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListIntrustionDetectionReportsForStack200ResponseLinks) *ListIntrustionDetectionReportsForStack200Response {
 	this := ListIntrustionDetectionReportsForStack200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListIntrustionDetectionReportsForStack200Response) SetCurrentPage(v int
 }
 
 // GetLinks returns the Links field value
-func (o *ListIntrustionDetectionReportsForStack200Response) GetLinks() ListAccountsForStack200ResponseLinks {
+func (o *ListIntrustionDetectionReportsForStack200Response) GetLinks() ListIntrustionDetectionReportsForStack200ResponseLinks {
 	if o == nil {
-		var ret ListAccountsForStack200ResponseLinks
+		var ret ListIntrustionDetectionReportsForStack200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListIntrustionDetectionReportsForStack200Response) GetLinks() ListAccou
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListIntrustionDetectionReportsForStack200Response) GetLinksOk() (*ListAccountsForStack200ResponseLinks, bool) {
+func (o *ListIntrustionDetectionReportsForStack200Response) GetLinksOk() (*ListIntrustionDetectionReportsForStack200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListIntrustionDetectionReportsForStack200Response) GetLinksOk() (*ListA
 }
 
 // SetLinks sets field value
-func (o *ListIntrustionDetectionReportsForStack200Response) SetLinks(v ListAccountsForStack200ResponseLinks) {
+func (o *ListIntrustionDetectionReportsForStack200Response) SetLinks(v ListIntrustionDetectionReportsForStack200ResponseLinks) {
 	o.Links = v
 }
 

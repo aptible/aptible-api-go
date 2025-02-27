@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PersistentDisk** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Next** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Prev** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
-**Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**PersistentDisk** | Pointer to [**ListDiskAttachmentsForPersistentDisk200ResponseLinksPersistentDisk**](ListDiskAttachmentsForPersistentDisk200ResponseLinksPersistentDisk.md) |  | [optional] 
+**Next** | Pointer to [**ListDiskAttachmentsForPersistentDisk200ResponseLinksNext**](ListDiskAttachmentsForPersistentDisk200ResponseLinksNext.md) |  | [optional] 
+**Prev** | Pointer to [**ListDiskAttachmentsForPersistentDisk200ResponseLinksPrev**](ListDiskAttachmentsForPersistentDisk200ResponseLinksPrev.md) |  | [optional] 
+**Self** | Pointer to [**ListDiskAttachmentsForPersistentDisk200ResponseLinksSelf**](ListDiskAttachmentsForPersistentDisk200ResponseLinksSelf.md) |  | [optional] 
 
 ## Methods
 
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPersistentDisk
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPersistentDisk() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPersistentDisk() ListDiskAttachmentsForPersistentDisk200ResponseLinksPersistentDisk`
 
 GetPersistentDisk returns the PersistentDisk field if non-nil, zero value otherwise.
 
 ### GetPersistentDiskOk
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPersistentDiskOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPersistentDiskOk() (*ListDiskAttachmentsForPersistentDisk200ResponseLinksPersistentDisk, bool)`
 
 GetPersistentDiskOk returns a tuple with the PersistentDisk field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPersistentDisk
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetPersistentDisk(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetPersistentDisk(v ListDiskAttachmentsForPersistentDisk200ResponseLinksPersistentDisk)`
 
 SetPersistentDisk sets PersistentDisk field to given value.
 
@@ -55,20 +55,20 @@ HasPersistentDisk returns a boolean if a field has been set.
 
 ### GetNext
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetNext() ListDiskAttachmentsForPersistentDisk200ResponseLinksNext`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetNextOk() (*ListDiskAttachmentsForPersistentDisk200ResponseLinksNext, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetNext(v ListDiskAttachmentsForPersistentDisk200ResponseLinksNext)`
 
 SetNext sets Next field to given value.
 
@@ -80,20 +80,20 @@ HasNext returns a boolean if a field has been set.
 
 ### GetPrev
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPrev() ListDiskAttachmentsForPersistentDisk200ResponseLinksPrev`
 
 GetPrev returns the Prev field if non-nil, zero value otherwise.
 
 ### GetPrevOk
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetPrevOk() (*ListDiskAttachmentsForPersistentDisk200ResponseLinksPrev, bool)`
 
 GetPrevOk returns a tuple with the Prev field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrev
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetPrev(v ListDiskAttachmentsForPersistentDisk200ResponseLinksPrev)`
 
 SetPrev sets Prev field to given value.
 
@@ -105,20 +105,20 @@ HasPrev returns a boolean if a field has been set.
 
 ### GetSelf
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetSelf() ListDiskAttachmentsForPersistentDisk200ResponseLinksSelf`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) GetSelfOk() (*ListDiskAttachmentsForPersistentDisk200ResponseLinksSelf, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack)`
+`func (o *ListDiskAttachmentsForPersistentDisk200ResponseLinks) SetSelf(v ListDiskAttachmentsForPersistentDisk200ResponseLinksSelf)`
 
 SetSelf sets Self field to given value.
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ContainerCount** | Pointer to **int32** |  | [optional] 
 **ContainerSize** | Pointer to **int32** |  | [optional] 
 **Command** | Pointer to **string** |  | [optional] 
-**Env** | Pointer to **map[string]interface{}** |  | [optional] 
+**Env** | Pointer to **map[string]string** |  | [optional] 
 **Handle** | Pointer to **string** |  | [optional] 
 **Certificate** | Pointer to **string** |  | [optional] 
 **PrivateKey** | Pointer to **string** |  | [optional] 
@@ -190,20 +190,20 @@ HasCommand returns a boolean if a field has been set.
 
 ### GetEnv
 
-`func (o *CreateOperationRequest) GetEnv() map[string]interface{}`
+`func (o *CreateOperationRequest) GetEnv() map[string]string`
 
 GetEnv returns the Env field if non-nil, zero value otherwise.
 
 ### GetEnvOk
 
-`func (o *CreateOperationRequest) GetEnvOk() (*map[string]interface{}, bool)`
+`func (o *CreateOperationRequest) GetEnvOk() (*map[string]string, bool)`
 
 GetEnvOk returns a tuple with the Env field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnv
 
-`func (o *CreateOperationRequest) SetEnv(v map[string]interface{})`
+`func (o *CreateOperationRequest) SetEnv(v map[string]string)`
 
 SetEnv sets Env field to given value.
 

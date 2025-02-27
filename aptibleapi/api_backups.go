@@ -211,13 +211,13 @@ func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBa
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	if r.perPage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
 	}
 	if r.withDeleted != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -322,7 +322,7 @@ func (r ApiListBackupsForAccountRequest) WithDeleted(withDeleted bool) ApiListBa
 	return r
 }
 
-func (r ApiListBackupsForAccountRequest) Execute() (*ListBackups200Response, *http.Response, error) {
+func (r ApiListBackupsForAccountRequest) Execute() (*ListBackupsForAccount200Response, *http.Response, error) {
 	return r.ApiService.ListBackupsForAccountExecute(r)
 }
 
@@ -342,13 +342,13 @@ func (a *BackupsAPIService) ListBackupsForAccount(ctx context.Context, accountId
 }
 
 // Execute executes the request
-//  @return ListBackups200Response
-func (a *BackupsAPIService) ListBackupsForAccountExecute(r ApiListBackupsForAccountRequest) (*ListBackups200Response, *http.Response, error) {
+//  @return ListBackupsForAccount200Response
+func (a *BackupsAPIService) ListBackupsForAccountExecute(r ApiListBackupsForAccountRequest) (*ListBackupsForAccount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListBackups200Response
+		localVarReturnValue  *ListBackupsForAccount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackupsForAccount")
@@ -364,13 +364,13 @@ func (a *BackupsAPIService) ListBackupsForAccountExecute(r ApiListBackupsForAcco
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	if r.perPage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
 	}
 	if r.withDeleted != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -475,7 +475,7 @@ func (r ApiListBackupsForDatabaseRequest) WithDeleted(withDeleted bool) ApiListB
 	return r
 }
 
-func (r ApiListBackupsForDatabaseRequest) Execute() (*ListBackups200Response, *http.Response, error) {
+func (r ApiListBackupsForDatabaseRequest) Execute() (*ListBackupsForDatabase200Response, *http.Response, error) {
 	return r.ApiService.ListBackupsForDatabaseExecute(r)
 }
 
@@ -495,13 +495,13 @@ func (a *BackupsAPIService) ListBackupsForDatabase(ctx context.Context, database
 }
 
 // Execute executes the request
-//  @return ListBackups200Response
-func (a *BackupsAPIService) ListBackupsForDatabaseExecute(r ApiListBackupsForDatabaseRequest) (*ListBackups200Response, *http.Response, error) {
+//  @return ListBackupsForDatabase200Response
+func (a *BackupsAPIService) ListBackupsForDatabaseExecute(r ApiListBackupsForDatabaseRequest) (*ListBackupsForDatabase200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListBackups200Response
+		localVarReturnValue  *ListBackupsForDatabase200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListBackupsForDatabase")
@@ -517,13 +517,13 @@ func (a *BackupsAPIService) ListBackupsForDatabaseExecute(r ApiListBackupsForDat
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	if r.perPage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
 	}
 	if r.withDeleted != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -628,7 +628,7 @@ func (r ApiListCopiesForBackupRequest) WithDeleted(withDeleted bool) ApiListCopi
 	return r
 }
 
-func (r ApiListCopiesForBackupRequest) Execute() (*ListBackups200Response, *http.Response, error) {
+func (r ApiListCopiesForBackupRequest) Execute() (*ListCopiesForBackup200Response, *http.Response, error) {
 	return r.ApiService.ListCopiesForBackupExecute(r)
 }
 
@@ -648,13 +648,13 @@ func (a *BackupsAPIService) ListCopiesForBackup(ctx context.Context, backupId in
 }
 
 // Execute executes the request
-//  @return ListBackups200Response
-func (a *BackupsAPIService) ListCopiesForBackupExecute(r ApiListCopiesForBackupRequest) (*ListBackups200Response, *http.Response, error) {
+//  @return ListCopiesForBackup200Response
+func (a *BackupsAPIService) ListCopiesForBackupExecute(r ApiListCopiesForBackupRequest) (*ListCopiesForBackup200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListBackups200Response
+		localVarReturnValue  *ListCopiesForBackup200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BackupsAPIService.ListCopiesForBackup")
@@ -670,13 +670,13 @@ func (a *BackupsAPIService) ListCopiesForBackupExecute(r ApiListCopiesForBackupR
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	if r.perPage != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
 	}
 	if r.withDeleted != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

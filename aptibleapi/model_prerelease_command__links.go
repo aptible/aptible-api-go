@@ -19,8 +19,8 @@ var _ MappedNullable = &PrereleaseCommandLinks{}
 
 // PrereleaseCommandLinks struct for PrereleaseCommandLinks
 type PrereleaseCommandLinks struct {
-	App *ListAccountsForStack200ResponseLinksStack `json:"app,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	App *PrereleaseCommandLinksApp `json:"app,omitempty"`
+	Self *PrereleaseCommandLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewPrereleaseCommandLinksWithDefaults() *PrereleaseCommandLinks {
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *PrereleaseCommandLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
+func (o *PrereleaseCommandLinks) GetApp() PrereleaseCommandLinksApp {
 	if o == nil || IsNil(o.App) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PrereleaseCommandLinksApp
 		return ret
 	}
 	return *o.App
@@ -54,7 +54,7 @@ func (o *PrereleaseCommandLinks) GetApp() ListAccountsForStack200ResponseLinksSt
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrereleaseCommandLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PrereleaseCommandLinks) GetAppOk() (*PrereleaseCommandLinksApp, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *PrereleaseCommandLinks) HasApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the App field.
-func (o *PrereleaseCommandLinks) SetApp(v ListAccountsForStack200ResponseLinksStack) {
+// SetApp gets a reference to the given PrereleaseCommandLinksApp and assigns it to the App field.
+func (o *PrereleaseCommandLinks) SetApp(v PrereleaseCommandLinksApp) {
 	o.App = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *PrereleaseCommandLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *PrereleaseCommandLinks) GetSelf() PrereleaseCommandLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret PrereleaseCommandLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -86,7 +86,7 @@ func (o *PrereleaseCommandLinks) GetSelf() ListAccountsForStack200ResponseLinksS
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrereleaseCommandLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *PrereleaseCommandLinks) GetSelfOk() (*PrereleaseCommandLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *PrereleaseCommandLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *PrereleaseCommandLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given PrereleaseCommandLinksSelf and assigns it to the Self field.
+func (o *PrereleaseCommandLinks) SetSelf(v PrereleaseCommandLinksSelf) {
 	o.Self = &v
 }
 

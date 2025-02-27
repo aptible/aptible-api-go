@@ -201,7 +201,7 @@ func (a *ServicesAPIService) ListServicesForAccountExecute(r ApiListServicesForA
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -292,7 +292,7 @@ func (r ApiListServicesForAppRequest) Page(page int32) ApiListServicesForAppRequ
 	return r
 }
 
-func (r ApiListServicesForAppRequest) Execute() (*ListServicesForAccount200Response, *http.Response, error) {
+func (r ApiListServicesForAppRequest) Execute() (*ListServicesForApp200Response, *http.Response, error) {
 	return r.ApiService.ListServicesForAppExecute(r)
 }
 
@@ -312,13 +312,13 @@ func (a *ServicesAPIService) ListServicesForApp(ctx context.Context, appId int32
 }
 
 // Execute executes the request
-//  @return ListServicesForAccount200Response
-func (a *ServicesAPIService) ListServicesForAppExecute(r ApiListServicesForAppRequest) (*ListServicesForAccount200Response, *http.Response, error) {
+//  @return ListServicesForApp200Response
+func (a *ServicesAPIService) ListServicesForAppExecute(r ApiListServicesForAppRequest) (*ListServicesForApp200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListServicesForAccount200Response
+		localVarReturnValue  *ListServicesForApp200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicesAPIService.ListServicesForApp")
@@ -334,7 +334,7 @@ func (a *ServicesAPIService) ListServicesForAppExecute(r ApiListServicesForAppRe
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -416,11 +416,11 @@ type ApiPatchServiceRequest struct {
 	ctx context.Context
 	ApiService *ServicesAPIService
 	id int32
-	updateServiceRequest *UpdateServiceRequest
+	patchServiceRequest *PatchServiceRequest
 }
 
-func (r ApiPatchServiceRequest) UpdateServiceRequest(updateServiceRequest UpdateServiceRequest) ApiPatchServiceRequest {
-	r.updateServiceRequest = &updateServiceRequest
+func (r ApiPatchServiceRequest) PatchServiceRequest(patchServiceRequest PatchServiceRequest) ApiPatchServiceRequest {
+	r.patchServiceRequest = &patchServiceRequest
 	return r
 }
 
@@ -481,7 +481,7 @@ func (a *ServicesAPIService) PatchServiceExecute(r ApiPatchServiceRequest) (*htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateServiceRequest
+	localVarPostBody = r.patchServiceRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

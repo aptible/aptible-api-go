@@ -24,7 +24,7 @@ type ListSshPortalConnectionsForOperation200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListDatabaseImages200ResponseLinks `json:"_links"`
+	Links ListSshPortalConnectionsForOperation200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListSshPortalConnectionsForOperation200Response ListSshPortalConnectionsFo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListSshPortalConnectionsForOperation200Response(embedded ListSshPortalConnectionsForOperation200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDatabaseImages200ResponseLinks) *ListSshPortalConnectionsForOperation200Response {
+func NewListSshPortalConnectionsForOperation200Response(embedded ListSshPortalConnectionsForOperation200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListSshPortalConnectionsForOperation200ResponseLinks) *ListSshPortalConnectionsForOperation200Response {
 	this := ListSshPortalConnectionsForOperation200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListSshPortalConnectionsForOperation200Response) SetCurrentPage(v int32
 }
 
 // GetLinks returns the Links field value
-func (o *ListSshPortalConnectionsForOperation200Response) GetLinks() ListDatabaseImages200ResponseLinks {
+func (o *ListSshPortalConnectionsForOperation200Response) GetLinks() ListSshPortalConnectionsForOperation200ResponseLinks {
 	if o == nil {
-		var ret ListDatabaseImages200ResponseLinks
+		var ret ListSshPortalConnectionsForOperation200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListSshPortalConnectionsForOperation200Response) GetLinks() ListDatabas
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListSshPortalConnectionsForOperation200Response) GetLinksOk() (*ListDatabaseImages200ResponseLinks, bool) {
+func (o *ListSshPortalConnectionsForOperation200Response) GetLinksOk() (*ListSshPortalConnectionsForOperation200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListSshPortalConnectionsForOperation200Response) GetLinksOk() (*ListDat
 }
 
 // SetLinks sets field value
-func (o *ListSshPortalConnectionsForOperation200Response) SetLinks(v ListDatabaseImages200ResponseLinks) {
+func (o *ListSshPortalConnectionsForOperation200Response) SetLinks(v ListSshPortalConnectionsForOperation200ResponseLinks) {
 	o.Links = v
 }
 

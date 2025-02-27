@@ -444,7 +444,7 @@ func (a *LogDrainsAPIService) ListLogDrainsForAccountExecute(r ApiListLogDrainsF
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -526,11 +526,11 @@ type ApiPatchLogDrainRequest struct {
 	ctx context.Context
 	ApiService *LogDrainsAPIService
 	id int32
-	updateLogDrainRequest *UpdateLogDrainRequest
+	patchLogDrainRequest *PatchLogDrainRequest
 }
 
-func (r ApiPatchLogDrainRequest) UpdateLogDrainRequest(updateLogDrainRequest UpdateLogDrainRequest) ApiPatchLogDrainRequest {
-	r.updateLogDrainRequest = &updateLogDrainRequest
+func (r ApiPatchLogDrainRequest) PatchLogDrainRequest(patchLogDrainRequest PatchLogDrainRequest) ApiPatchLogDrainRequest {
+	r.patchLogDrainRequest = &patchLogDrainRequest
 	return r
 }
 
@@ -591,7 +591,7 @@ func (a *LogDrainsAPIService) PatchLogDrainExecute(r ApiPatchLogDrainRequest) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateLogDrainRequest
+	localVarPostBody = r.patchLogDrainRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

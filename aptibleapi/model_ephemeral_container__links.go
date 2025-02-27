@@ -19,9 +19,9 @@ var _ MappedNullable = &EphemeralContainerLinks{}
 
 // EphemeralContainerLinks struct for EphemeralContainerLinks
 type EphemeralContainerLinks struct {
-	EphemeralSession *ListAccountsForStack200ResponseLinksStack `json:"ephemeral_session,omitempty"`
-	LogDrain *ListAccountsForStack200ResponseLinksStack `json:"log_drain,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	EphemeralSession *EphemeralContainerLinksEphemeralSession `json:"ephemeral_session,omitempty"`
+	LogDrain *EphemeralContainerLinksLogDrain `json:"log_drain,omitempty"`
+	Self *EphemeralContainerLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +45,9 @@ func NewEphemeralContainerLinksWithDefaults() *EphemeralContainerLinks {
 }
 
 // GetEphemeralSession returns the EphemeralSession field value if set, zero value otherwise.
-func (o *EphemeralContainerLinks) GetEphemeralSession() ListAccountsForStack200ResponseLinksStack {
+func (o *EphemeralContainerLinks) GetEphemeralSession() EphemeralContainerLinksEphemeralSession {
 	if o == nil || IsNil(o.EphemeralSession) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret EphemeralContainerLinksEphemeralSession
 		return ret
 	}
 	return *o.EphemeralSession
@@ -55,7 +55,7 @@ func (o *EphemeralContainerLinks) GetEphemeralSession() ListAccountsForStack200R
 
 // GetEphemeralSessionOk returns a tuple with the EphemeralSession field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EphemeralContainerLinks) GetEphemeralSessionOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *EphemeralContainerLinks) GetEphemeralSessionOk() (*EphemeralContainerLinksEphemeralSession, bool) {
 	if o == nil || IsNil(o.EphemeralSession) {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *EphemeralContainerLinks) HasEphemeralSession() bool {
 	return false
 }
 
-// SetEphemeralSession gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the EphemeralSession field.
-func (o *EphemeralContainerLinks) SetEphemeralSession(v ListAccountsForStack200ResponseLinksStack) {
+// SetEphemeralSession gets a reference to the given EphemeralContainerLinksEphemeralSession and assigns it to the EphemeralSession field.
+func (o *EphemeralContainerLinks) SetEphemeralSession(v EphemeralContainerLinksEphemeralSession) {
 	o.EphemeralSession = &v
 }
 
 // GetLogDrain returns the LogDrain field value if set, zero value otherwise.
-func (o *EphemeralContainerLinks) GetLogDrain() ListAccountsForStack200ResponseLinksStack {
+func (o *EphemeralContainerLinks) GetLogDrain() EphemeralContainerLinksLogDrain {
 	if o == nil || IsNil(o.LogDrain) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret EphemeralContainerLinksLogDrain
 		return ret
 	}
 	return *o.LogDrain
@@ -87,7 +87,7 @@ func (o *EphemeralContainerLinks) GetLogDrain() ListAccountsForStack200ResponseL
 
 // GetLogDrainOk returns a tuple with the LogDrain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EphemeralContainerLinks) GetLogDrainOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *EphemeralContainerLinks) GetLogDrainOk() (*EphemeralContainerLinksLogDrain, bool) {
 	if o == nil || IsNil(o.LogDrain) {
 		return nil, false
 	}
@@ -103,15 +103,15 @@ func (o *EphemeralContainerLinks) HasLogDrain() bool {
 	return false
 }
 
-// SetLogDrain gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the LogDrain field.
-func (o *EphemeralContainerLinks) SetLogDrain(v ListAccountsForStack200ResponseLinksStack) {
+// SetLogDrain gets a reference to the given EphemeralContainerLinksLogDrain and assigns it to the LogDrain field.
+func (o *EphemeralContainerLinks) SetLogDrain(v EphemeralContainerLinksLogDrain) {
 	o.LogDrain = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *EphemeralContainerLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *EphemeralContainerLinks) GetSelf() EphemeralContainerLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret EphemeralContainerLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -119,7 +119,7 @@ func (o *EphemeralContainerLinks) GetSelf() ListAccountsForStack200ResponseLinks
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EphemeralContainerLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *EphemeralContainerLinks) GetSelfOk() (*EphemeralContainerLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -135,8 +135,8 @@ func (o *EphemeralContainerLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *EphemeralContainerLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given EphemeralContainerLinksSelf and assigns it to the Self field.
+func (o *EphemeralContainerLinks) SetSelf(v EphemeralContainerLinksSelf) {
 	o.Self = &v
 }
 

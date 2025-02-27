@@ -19,8 +19,8 @@ var _ MappedNullable = &SshPortalConnectionLinks{}
 
 // SshPortalConnectionLinks struct for SshPortalConnectionLinks
 type SshPortalConnectionLinks struct {
-	Operation *ListAccountsForStack200ResponseLinksStack `json:"operation,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	Operation *SshPortalConnectionLinksOperation `json:"operation,omitempty"`
+	Self *SshPortalConnectionLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,9 +44,9 @@ func NewSshPortalConnectionLinksWithDefaults() *SshPortalConnectionLinks {
 }
 
 // GetOperation returns the Operation field value if set, zero value otherwise.
-func (o *SshPortalConnectionLinks) GetOperation() ListAccountsForStack200ResponseLinksStack {
+func (o *SshPortalConnectionLinks) GetOperation() SshPortalConnectionLinksOperation {
 	if o == nil || IsNil(o.Operation) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret SshPortalConnectionLinksOperation
 		return ret
 	}
 	return *o.Operation
@@ -54,7 +54,7 @@ func (o *SshPortalConnectionLinks) GetOperation() ListAccountsForStack200Respons
 
 // GetOperationOk returns a tuple with the Operation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SshPortalConnectionLinks) GetOperationOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *SshPortalConnectionLinks) GetOperationOk() (*SshPortalConnectionLinksOperation, bool) {
 	if o == nil || IsNil(o.Operation) {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *SshPortalConnectionLinks) HasOperation() bool {
 	return false
 }
 
-// SetOperation gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Operation field.
-func (o *SshPortalConnectionLinks) SetOperation(v ListAccountsForStack200ResponseLinksStack) {
+// SetOperation gets a reference to the given SshPortalConnectionLinksOperation and assigns it to the Operation field.
+func (o *SshPortalConnectionLinks) SetOperation(v SshPortalConnectionLinksOperation) {
 	o.Operation = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *SshPortalConnectionLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *SshPortalConnectionLinks) GetSelf() SshPortalConnectionLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret SshPortalConnectionLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -86,7 +86,7 @@ func (o *SshPortalConnectionLinks) GetSelf() ListAccountsForStack200ResponseLink
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SshPortalConnectionLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *SshPortalConnectionLinks) GetSelfOk() (*SshPortalConnectionLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *SshPortalConnectionLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *SshPortalConnectionLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given SshPortalConnectionLinksSelf and assigns it to the Self field.
+func (o *SshPortalConnectionLinks) SetSelf(v SshPortalConnectionLinksSelf) {
 	o.Self = &v
 }
 

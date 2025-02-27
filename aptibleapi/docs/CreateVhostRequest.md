@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** |  | 
 **Default** | Pointer to **bool** |  | [optional] 
 **Internal** | Pointer to **bool** |  | [optional] 
-**Certificate** | **int32** |  | 
+**Certificate** | Pointer to **int32** |  | [optional] 
 **UserDomain** | Pointer to **string** |  | [optional] 
 **Acme** | Pointer to **bool** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewCreateVhostRequest
 
-`func NewCreateVhostRequest(type_ string, certificate int32, ) *CreateVhostRequest`
+`func NewCreateVhostRequest(type_ string, ) *CreateVhostRequest`
 
 NewCreateVhostRequest instantiates a new CreateVhostRequest object
 This constructor will assign default values to properties that have it defined,
@@ -124,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetCertificate sets Certificate field to given value.
 
+### HasCertificate
+
+`func (o *CreateVhostRequest) HasCertificate() bool`
+
+HasCertificate returns a boolean if a field has been set.
 
 ### GetUserDomain
 

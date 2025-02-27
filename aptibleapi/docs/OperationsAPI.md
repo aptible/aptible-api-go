@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForBackup
 
-> Operation CreateOperationForBackup(ctx, backupId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForBackup(ctx, backupId).CreateOperationRequest9(createOperationRequest9).Execute()
 
 create operation
 
@@ -125,11 +125,11 @@ import (
 
 func main() {
 	backupId := int32(56) // int32 | backup_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest9 := *openapiclient.NewCreateOperationRequest9("Type_example") // CreateOperationRequest9 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForBackup(context.Background(), backupId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForBackup(context.Background(), backupId).CreateOperationRequest9(createOperationRequest9).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -155,7 +155,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForBackupRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest9** | [**CreateOperationRequest9**](CreateOperationRequest9.md) |  | 
 
 ### Return type
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDatabase
 
-> Operation CreateOperationForDatabase(ctx, databaseId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForDatabase(ctx, databaseId).CreateOperationRequest2(createOperationRequest2).Execute()
 
 create operation
 
@@ -195,11 +195,11 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest2 := *openapiclient.NewCreateOperationRequest2("Type_example") // CreateOperationRequest2 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabase(context.Background(), databaseId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabase(context.Background(), databaseId).CreateOperationRequest2(createOperationRequest2).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -225,7 +225,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForDatabase
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest2** | [**CreateOperationRequest2**](CreateOperationRequest2.md) |  | 
 
 ### Return type
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDatabaseCredential
 
-> Operation CreateOperationForDatabaseCredential(ctx, databaseCredentialId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForDatabaseCredential(ctx, databaseCredentialId).CreateOperationRequest3(createOperationRequest3).Execute()
 
 create operation
 
@@ -265,11 +265,11 @@ import (
 
 func main() {
 	databaseCredentialId := int32(56) // int32 | database_credential_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest3 := *openapiclient.NewCreateOperationRequest3("Type_example") // CreateOperationRequest3 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabaseCredential(context.Background(), databaseCredentialId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabaseCredential(context.Background(), databaseCredentialId).CreateOperationRequest3(createOperationRequest3).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDatabaseCredential``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -295,7 +295,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForDatabase
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest3** | [**CreateOperationRequest3**](CreateOperationRequest3.md) |  | 
 
 ### Return type
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDiskAttachment
 
-> Operation CreateOperationForDiskAttachment(ctx, diskAttachmentId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForDiskAttachment(ctx, diskAttachmentId).CreateOperationRequest11(createOperationRequest11).Execute()
 
 create operation
 
@@ -335,11 +335,11 @@ import (
 
 func main() {
 	diskAttachmentId := int32(56) // int32 | disk_attachment_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest11 := *openapiclient.NewCreateOperationRequest11("Type_example") // CreateOperationRequest11 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDiskAttachment(context.Background(), diskAttachmentId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDiskAttachment(context.Background(), diskAttachmentId).CreateOperationRequest11(createOperationRequest11).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDiskAttachment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -365,7 +365,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForDiskAtta
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest11** | [**CreateOperationRequest11**](CreateOperationRequest11.md) |  | 
 
 ### Return type
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForEphemeralSession
 
-> Operation CreateOperationForEphemeralSession(ctx, ephemeralSessionId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForEphemeralSession(ctx, ephemeralSessionId).CreateOperationRequest1(createOperationRequest1).Execute()
 
 create operation
 
@@ -405,11 +405,11 @@ import (
 
 func main() {
 	ephemeralSessionId := int32(56) // int32 | ephemeral_session_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest1 := *openapiclient.NewCreateOperationRequest1("Type_example") // CreateOperationRequest1 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForEphemeralSession(context.Background(), ephemeralSessionId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForEphemeralSession(context.Background(), ephemeralSessionId).CreateOperationRequest1(createOperationRequest1).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForEphemeralSession``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -435,7 +435,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForEphemera
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest1** | [**CreateOperationRequest1**](CreateOperationRequest1.md) |  | 
 
 ### Return type
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForImage
 
-> Operation CreateOperationForImage(ctx, imageId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForImage(ctx, imageId).CreateOperationRequest6(createOperationRequest6).Execute()
 
 create operation
 
@@ -475,11 +475,11 @@ import (
 
 func main() {
 	imageId := int32(56) // int32 | image_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest6 := *openapiclient.NewCreateOperationRequest6("Type_example") // CreateOperationRequest6 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForImage(context.Background(), imageId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForImage(context.Background(), imageId).CreateOperationRequest6(createOperationRequest6).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -505,7 +505,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForImageReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest6** | [**CreateOperationRequest6**](CreateOperationRequest6.md) |  | 
 
 ### Return type
 
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForLogDrain
 
-> Operation CreateOperationForLogDrain(ctx, logDrainId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForLogDrain(ctx, logDrainId).CreateOperationRequest7(createOperationRequest7).Execute()
 
 create operation
 
@@ -545,11 +545,11 @@ import (
 
 func main() {
 	logDrainId := int32(56) // int32 | log_drain_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest7 := *openapiclient.NewCreateOperationRequest7("Type_example") // CreateOperationRequest7 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForLogDrain(context.Background(), logDrainId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForLogDrain(context.Background(), logDrainId).CreateOperationRequest7(createOperationRequest7).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -575,7 +575,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForLogDrain
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest7** | [**CreateOperationRequest7**](CreateOperationRequest7.md) |  | 
 
 ### Return type
 
@@ -597,7 +597,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForMetricDrain
 
-> Operation CreateOperationForMetricDrain(ctx, metricDrainId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForMetricDrain(ctx, metricDrainId).CreateOperationRequest8(createOperationRequest8).Execute()
 
 create operation
 
@@ -615,11 +615,11 @@ import (
 
 func main() {
 	metricDrainId := int32(56) // int32 | metric_drain_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest8 := *openapiclient.NewCreateOperationRequest8("Type_example") // CreateOperationRequest8 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForMetricDrain(context.Background(), metricDrainId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForMetricDrain(context.Background(), metricDrainId).CreateOperationRequest8(createOperationRequest8).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -645,7 +645,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForMetricDr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest8** | [**CreateOperationRequest8**](CreateOperationRequest8.md) |  | 
 
 ### Return type
 
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForPersistentDisk
 
-> Operation CreateOperationForPersistentDisk(ctx, persistentDiskId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForPersistentDisk(ctx, persistentDiskId).CreateOperationRequest10(createOperationRequest10).Execute()
 
 create operation
 
@@ -685,11 +685,11 @@ import (
 
 func main() {
 	persistentDiskId := int32(56) // int32 | persistent_disk_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest10 := *openapiclient.NewCreateOperationRequest10("Type_example") // CreateOperationRequest10 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForPersistentDisk(context.Background(), persistentDiskId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForPersistentDisk(context.Background(), persistentDiskId).CreateOperationRequest10(createOperationRequest10).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForPersistentDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -715,7 +715,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForPersiste
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest10** | [**CreateOperationRequest10**](CreateOperationRequest10.md) |  | 
 
 ### Return type
 
@@ -737,7 +737,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForService
 
-> Operation CreateOperationForService(ctx, serviceId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForService(ctx, serviceId).CreateOperationRequest4(createOperationRequest4).Execute()
 
 create operation
 
@@ -755,11 +755,11 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest4 := *openapiclient.NewCreateOperationRequest4("Type_example") // CreateOperationRequest4 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForService(context.Background(), serviceId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForService(context.Background(), serviceId).CreateOperationRequest4(createOperationRequest4).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -785,7 +785,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForServiceR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest4** | [**CreateOperationRequest4**](CreateOperationRequest4.md) |  | 
 
 ### Return type
 
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForVhost
 
-> Operation CreateOperationForVhost(ctx, vhostId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForVhost(ctx, vhostId).CreateOperationRequest5(createOperationRequest5).Execute()
 
 create operation
 
@@ -825,11 +825,11 @@ import (
 
 func main() {
 	vhostId := int32(56) // int32 | vhost_id
-	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
+	createOperationRequest5 := *openapiclient.NewCreateOperationRequest5("Type_example") // CreateOperationRequest5 |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForVhost(context.Background(), vhostId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForVhost(context.Background(), vhostId).CreateOperationRequest5(createOperationRequest5).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -855,7 +855,7 @@ Other parameters are passed through a pointer to a apiCreateOperationForVhostReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
+ **createOperationRequest5** | [**CreateOperationRequest5**](CreateOperationRequest5.md) |  | 
 
 ### Return type
 
@@ -1015,7 +1015,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForApp
 
-> ListOperationsForAccount200Response ListOperationsForApp(ctx, appId).Page(page).Execute()
+> ListOperationsForApp200Response ListOperationsForApp(ctx, appId).Page(page).Execute()
 
 list operations
 
@@ -1042,7 +1042,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForApp`: ListOperationsForAccount200Response
+	// response from `ListOperationsForApp`: ListOperationsForApp200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForApp`: %v\n", resp)
 }
 ```
@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForApp200Response**](ListOperationsForApp200Response.md)
 
 ### Authorization
 
@@ -1085,7 +1085,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForBackup
 
-> ListOperationsForAccount200Response ListOperationsForBackup(ctx, backupId).Page(page).Execute()
+> ListOperationsForBackup200Response ListOperationsForBackup(ctx, backupId).Page(page).Execute()
 
 list operations
 
@@ -1112,7 +1112,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForBackup`: ListOperationsForAccount200Response
+	// response from `ListOperationsForBackup`: ListOperationsForBackup200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForBackup`: %v\n", resp)
 }
 ```
@@ -1137,7 +1137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForBackup200Response**](ListOperationsForBackup200Response.md)
 
 ### Authorization
 
@@ -1155,7 +1155,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDatabase
 
-> ListOperationsForAccount200Response ListOperationsForDatabase(ctx, databaseId).Page(page).Execute()
+> ListOperationsForDatabase200Response ListOperationsForDatabase(ctx, databaseId).Page(page).Execute()
 
 list operations
 
@@ -1182,7 +1182,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForDatabase`: ListOperationsForAccount200Response
+	// response from `ListOperationsForDatabase`: ListOperationsForDatabase200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForDatabase`: %v\n", resp)
 }
 ```
@@ -1207,7 +1207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForDatabase200Response**](ListOperationsForDatabase200Response.md)
 
 ### Authorization
 
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDatabaseCredential
 
-> ListOperationsForAccount200Response ListOperationsForDatabaseCredential(ctx, databaseCredentialId).Page(page).Execute()
+> ListOperationsForDatabaseCredential200Response ListOperationsForDatabaseCredential(ctx, databaseCredentialId).Page(page).Execute()
 
 list operations
 
@@ -1252,7 +1252,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDatabaseCredential``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForDatabaseCredential`: ListOperationsForAccount200Response
+	// response from `ListOperationsForDatabaseCredential`: ListOperationsForDatabaseCredential200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForDatabaseCredential`: %v\n", resp)
 }
 ```
@@ -1277,7 +1277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForDatabaseCredential200Response**](ListOperationsForDatabaseCredential200Response.md)
 
 ### Authorization
 
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDiskAttachment
 
-> ListOperationsForAccount200Response ListOperationsForDiskAttachment(ctx, diskAttachmentId).Page(page).Execute()
+> ListOperationsForDiskAttachment200Response ListOperationsForDiskAttachment(ctx, diskAttachmentId).Page(page).Execute()
 
 list operations
 
@@ -1322,7 +1322,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDiskAttachment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForDiskAttachment`: ListOperationsForAccount200Response
+	// response from `ListOperationsForDiskAttachment`: ListOperationsForDiskAttachment200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForDiskAttachment`: %v\n", resp)
 }
 ```
@@ -1347,7 +1347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForDiskAttachment200Response**](ListOperationsForDiskAttachment200Response.md)
 
 ### Authorization
 
@@ -1365,7 +1365,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForEphemeralSession
 
-> ListOperationsForAccount200Response ListOperationsForEphemeralSession(ctx, ephemeralSessionId).Page(page).Execute()
+> ListOperationsForEphemeralSession200Response ListOperationsForEphemeralSession(ctx, ephemeralSessionId).Page(page).Execute()
 
 list operations
 
@@ -1392,7 +1392,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForEphemeralSession``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForEphemeralSession`: ListOperationsForAccount200Response
+	// response from `ListOperationsForEphemeralSession`: ListOperationsForEphemeralSession200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForEphemeralSession`: %v\n", resp)
 }
 ```
@@ -1417,7 +1417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForEphemeralSession200Response**](ListOperationsForEphemeralSession200Response.md)
 
 ### Authorization
 
@@ -1435,7 +1435,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForImage
 
-> ListOperationsForAccount200Response ListOperationsForImage(ctx, imageId).Page(page).Execute()
+> ListOperationsForImage200Response ListOperationsForImage(ctx, imageId).Page(page).Execute()
 
 list operations
 
@@ -1462,7 +1462,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForImage`: ListOperationsForAccount200Response
+	// response from `ListOperationsForImage`: ListOperationsForImage200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForImage`: %v\n", resp)
 }
 ```
@@ -1487,7 +1487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForImage200Response**](ListOperationsForImage200Response.md)
 
 ### Authorization
 
@@ -1505,7 +1505,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForLogDrain
 
-> ListOperationsForAccount200Response ListOperationsForLogDrain(ctx, logDrainId).Page(page).Execute()
+> ListOperationsForLogDrain200Response ListOperationsForLogDrain(ctx, logDrainId).Page(page).Execute()
 
 list operations
 
@@ -1532,7 +1532,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForLogDrain`: ListOperationsForAccount200Response
+	// response from `ListOperationsForLogDrain`: ListOperationsForLogDrain200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForLogDrain`: %v\n", resp)
 }
 ```
@@ -1557,7 +1557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForLogDrain200Response**](ListOperationsForLogDrain200Response.md)
 
 ### Authorization
 
@@ -1575,7 +1575,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForMetricDrain
 
-> ListOperationsForAccount200Response ListOperationsForMetricDrain(ctx, metricDrainId).Page(page).Execute()
+> ListOperationsForMetricDrain200Response ListOperationsForMetricDrain(ctx, metricDrainId).Page(page).Execute()
 
 list operations
 
@@ -1602,7 +1602,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForMetricDrain`: ListOperationsForAccount200Response
+	// response from `ListOperationsForMetricDrain`: ListOperationsForMetricDrain200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForMetricDrain`: %v\n", resp)
 }
 ```
@@ -1627,7 +1627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForMetricDrain200Response**](ListOperationsForMetricDrain200Response.md)
 
 ### Authorization
 
@@ -1645,7 +1645,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForPersistentDisk
 
-> ListOperationsForAccount200Response ListOperationsForPersistentDisk(ctx, persistentDiskId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForPersistentDisk(ctx, persistentDiskId).Page(page).Execute()
 
 list operations
 
@@ -1672,7 +1672,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForPersistentDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForPersistentDisk`: ListOperationsForAccount200Response
+	// response from `ListOperationsForPersistentDisk`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForPersistentDisk`: %v\n", resp)
 }
 ```
@@ -1697,7 +1697,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1715,7 +1715,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForService
 
-> ListOperationsForAccount200Response ListOperationsForService(ctx, serviceId).Page(page).Execute()
+> ListOperationsForService200Response ListOperationsForService(ctx, serviceId).Page(page).Execute()
 
 list operations
 
@@ -1742,7 +1742,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForService`: ListOperationsForAccount200Response
+	// response from `ListOperationsForService`: ListOperationsForService200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForService`: %v\n", resp)
 }
 ```
@@ -1767,7 +1767,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForService200Response**](ListOperationsForService200Response.md)
 
 ### Authorization
 
@@ -1785,7 +1785,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForVhost
 
-> ListOperationsForAccount200Response ListOperationsForVhost(ctx, vhostId).Page(page).Execute()
+> ListOperationsForVhost200Response ListOperationsForVhost(ctx, vhostId).Page(page).Execute()
 
 list operations
 
@@ -1812,7 +1812,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForVhost`: ListOperationsForAccount200Response
+	// response from `ListOperationsForVhost`: ListOperationsForVhost200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForVhost`: %v\n", resp)
 }
 ```
@@ -1837,7 +1837,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForVhost200Response**](ListOperationsForVhost200Response.md)
 
 ### Authorization
 
@@ -1855,7 +1855,7 @@ Name | Type | Description  | Notes
 
 ## PatchOperation
 
-> PatchOperation(ctx, id).UpdateOperationRequest(updateOperationRequest).Execute()
+> PatchOperation(ctx, id).PatchOperationRequest(patchOperationRequest).Execute()
 
 update operation
 
@@ -1873,11 +1873,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateOperationRequest := *openapiclient.NewUpdateOperationRequest() // UpdateOperationRequest |  (optional)
+	patchOperationRequest := *openapiclient.NewPatchOperationRequest() // PatchOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.OperationsAPI.PatchOperation(context.Background(), id).UpdateOperationRequest(updateOperationRequest).Execute()
+	r, err := apiClient.OperationsAPI.PatchOperation(context.Background(), id).PatchOperationRequest(patchOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.PatchOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1901,7 +1901,7 @@ Other parameters are passed through a pointer to a apiPatchOperationRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateOperationRequest** | [**UpdateOperationRequest**](UpdateOperationRequest.md) |  | 
+ **patchOperationRequest** | [**PatchOperationRequest**](PatchOperationRequest.md) |  | 
 
 ### Return type
 

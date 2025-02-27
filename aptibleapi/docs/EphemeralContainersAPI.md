@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ListEphemeralContainersForLogDrain
 
-> ListEphemeralContainersForEphemeralSession200Response ListEphemeralContainersForLogDrain(ctx, logDrainId).Page(page).Execute()
+> ListEphemeralContainersForLogDrain200Response ListEphemeralContainersForLogDrain(ctx, logDrainId).Page(page).Execute()
 
 list ephemeral_containers
 
@@ -177,7 +177,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EphemeralContainersAPI.ListEphemeralContainersForLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListEphemeralContainersForLogDrain`: ListEphemeralContainersForEphemeralSession200Response
+	// response from `ListEphemeralContainersForLogDrain`: ListEphemeralContainersForLogDrain200Response
 	fmt.Fprintf(os.Stdout, "Response from `EphemeralContainersAPI.ListEphemeralContainersForLogDrain`: %v\n", resp)
 }
 ```
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListEphemeralContainersForEphemeralSession200Response**](ListEphemeralContainersForEphemeralSession200Response.md)
+[**ListEphemeralContainersForLogDrain200Response**](ListEphemeralContainersForLogDrain200Response.md)
 
 ### Authorization
 

@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListDatabaseImages200ResponseLinks**](ListDatabaseImages200ResponseLinks.md) |  | 
+**Links** | [**ListOperationsForAccount200ResponseLinks**](ListOperationsForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListOperationsForAccount200Response
 
-`func NewListOperationsForAccount200Response(embedded ListOperationsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDatabaseImages200ResponseLinks, ) *ListOperationsForAccount200Response`
+`func NewListOperationsForAccount200Response(embedded ListOperationsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListOperationsForAccount200ResponseLinks, ) *ListOperationsForAccount200Response`
 
 NewListOperationsForAccount200Response instantiates a new ListOperationsForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListOperationsForAccount200Response) GetLinks() ListDatabaseImages200ResponseLinks`
+`func (o *ListOperationsForAccount200Response) GetLinks() ListOperationsForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListOperationsForAccount200Response) GetLinksOk() (*ListDatabaseImages200ResponseLinks, bool)`
+`func (o *ListOperationsForAccount200Response) GetLinksOk() (*ListOperationsForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListOperationsForAccount200Response) SetLinks(v ListDatabaseImages200ResponseLinks)`
+`func (o *ListOperationsForAccount200Response) SetLinks(v ListOperationsForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

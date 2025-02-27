@@ -19,11 +19,11 @@ var _ MappedNullable = &DeploymentLinks{}
 
 // DeploymentLinks struct for DeploymentLinks
 type DeploymentLinks struct {
-	App *ListAccountsForStack200ResponseLinksStack `json:"app,omitempty"`
-	Configuration *ListAccountsForStack200ResponseLinksStack `json:"configuration,omitempty"`
-	Image *ListAccountsForStack200ResponseLinksStack `json:"image,omitempty"`
-	Source *ListAccountsForStack200ResponseLinksStack `json:"source,omitempty"`
-	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
+	App *DeploymentLinksApp `json:"app,omitempty"`
+	Configuration *DeploymentLinksConfiguration `json:"configuration,omitempty"`
+	Image *DeploymentLinksImage `json:"image,omitempty"`
+	Source *DeploymentLinksSource `json:"source,omitempty"`
+	Self *DeploymentLinksSelf `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,9 +47,9 @@ func NewDeploymentLinksWithDefaults() *DeploymentLinks {
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *DeploymentLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
+func (o *DeploymentLinks) GetApp() DeploymentLinksApp {
 	if o == nil || IsNil(o.App) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DeploymentLinksApp
 		return ret
 	}
 	return *o.App
@@ -57,7 +57,7 @@ func (o *DeploymentLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeploymentLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DeploymentLinks) GetAppOk() (*DeploymentLinksApp, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -73,15 +73,15 @@ func (o *DeploymentLinks) HasApp() bool {
 	return false
 }
 
-// SetApp gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the App field.
-func (o *DeploymentLinks) SetApp(v ListAccountsForStack200ResponseLinksStack) {
+// SetApp gets a reference to the given DeploymentLinksApp and assigns it to the App field.
+func (o *DeploymentLinks) SetApp(v DeploymentLinksApp) {
 	o.App = &v
 }
 
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
-func (o *DeploymentLinks) GetConfiguration() ListAccountsForStack200ResponseLinksStack {
+func (o *DeploymentLinks) GetConfiguration() DeploymentLinksConfiguration {
 	if o == nil || IsNil(o.Configuration) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DeploymentLinksConfiguration
 		return ret
 	}
 	return *o.Configuration
@@ -89,7 +89,7 @@ func (o *DeploymentLinks) GetConfiguration() ListAccountsForStack200ResponseLink
 
 // GetConfigurationOk returns a tuple with the Configuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeploymentLinks) GetConfigurationOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DeploymentLinks) GetConfigurationOk() (*DeploymentLinksConfiguration, bool) {
 	if o == nil || IsNil(o.Configuration) {
 		return nil, false
 	}
@@ -105,15 +105,15 @@ func (o *DeploymentLinks) HasConfiguration() bool {
 	return false
 }
 
-// SetConfiguration gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Configuration field.
-func (o *DeploymentLinks) SetConfiguration(v ListAccountsForStack200ResponseLinksStack) {
+// SetConfiguration gets a reference to the given DeploymentLinksConfiguration and assigns it to the Configuration field.
+func (o *DeploymentLinks) SetConfiguration(v DeploymentLinksConfiguration) {
 	o.Configuration = &v
 }
 
 // GetImage returns the Image field value if set, zero value otherwise.
-func (o *DeploymentLinks) GetImage() ListAccountsForStack200ResponseLinksStack {
+func (o *DeploymentLinks) GetImage() DeploymentLinksImage {
 	if o == nil || IsNil(o.Image) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DeploymentLinksImage
 		return ret
 	}
 	return *o.Image
@@ -121,7 +121,7 @@ func (o *DeploymentLinks) GetImage() ListAccountsForStack200ResponseLinksStack {
 
 // GetImageOk returns a tuple with the Image field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeploymentLinks) GetImageOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DeploymentLinks) GetImageOk() (*DeploymentLinksImage, bool) {
 	if o == nil || IsNil(o.Image) {
 		return nil, false
 	}
@@ -137,15 +137,15 @@ func (o *DeploymentLinks) HasImage() bool {
 	return false
 }
 
-// SetImage gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Image field.
-func (o *DeploymentLinks) SetImage(v ListAccountsForStack200ResponseLinksStack) {
+// SetImage gets a reference to the given DeploymentLinksImage and assigns it to the Image field.
+func (o *DeploymentLinks) SetImage(v DeploymentLinksImage) {
 	o.Image = &v
 }
 
 // GetSource returns the Source field value if set, zero value otherwise.
-func (o *DeploymentLinks) GetSource() ListAccountsForStack200ResponseLinksStack {
+func (o *DeploymentLinks) GetSource() DeploymentLinksSource {
 	if o == nil || IsNil(o.Source) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DeploymentLinksSource
 		return ret
 	}
 	return *o.Source
@@ -153,7 +153,7 @@ func (o *DeploymentLinks) GetSource() ListAccountsForStack200ResponseLinksStack 
 
 // GetSourceOk returns a tuple with the Source field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeploymentLinks) GetSourceOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DeploymentLinks) GetSourceOk() (*DeploymentLinksSource, bool) {
 	if o == nil || IsNil(o.Source) {
 		return nil, false
 	}
@@ -169,15 +169,15 @@ func (o *DeploymentLinks) HasSource() bool {
 	return false
 }
 
-// SetSource gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Source field.
-func (o *DeploymentLinks) SetSource(v ListAccountsForStack200ResponseLinksStack) {
+// SetSource gets a reference to the given DeploymentLinksSource and assigns it to the Source field.
+func (o *DeploymentLinks) SetSource(v DeploymentLinksSource) {
 	o.Source = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *DeploymentLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *DeploymentLinks) GetSelf() DeploymentLinksSelf {
 	if o == nil || IsNil(o.Self) {
-		var ret ListAccountsForStack200ResponseLinksStack
+		var ret DeploymentLinksSelf
 		return ret
 	}
 	return *o.Self
@@ -185,7 +185,7 @@ func (o *DeploymentLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeploymentLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *DeploymentLinks) GetSelfOk() (*DeploymentLinksSelf, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -201,8 +201,8 @@ func (o *DeploymentLinks) HasSelf() bool {
 	return false
 }
 
-// SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *DeploymentLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+// SetSelf gets a reference to the given DeploymentLinksSelf and assigns it to the Self field.
+func (o *DeploymentLinks) SetSelf(v DeploymentLinksSelf) {
 	o.Self = &v
 }
 

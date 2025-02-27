@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListActivityReportsForAccount200ResponseLinks**](ListActivityReportsForAccount200ResponseLinks.md) |  | 
+**Links** | [**ListLogDrainsForAccount200ResponseLinks**](ListLogDrainsForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListLogDrainsForAccount200Response
 
-`func NewListLogDrainsForAccount200Response(embedded ListLogDrainsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks, ) *ListLogDrainsForAccount200Response`
+`func NewListLogDrainsForAccount200Response(embedded ListLogDrainsForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListLogDrainsForAccount200ResponseLinks, ) *ListLogDrainsForAccount200Response`
 
 NewListLogDrainsForAccount200Response instantiates a new ListLogDrainsForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListLogDrainsForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks`
+`func (o *ListLogDrainsForAccount200Response) GetLinks() ListLogDrainsForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListLogDrainsForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool)`
+`func (o *ListLogDrainsForAccount200Response) GetLinksOk() (*ListLogDrainsForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListLogDrainsForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks)`
+`func (o *ListLogDrainsForAccount200Response) SetLinks(v ListLogDrainsForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

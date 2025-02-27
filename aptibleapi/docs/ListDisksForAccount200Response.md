@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListActivityReportsForAccount200ResponseLinks**](ListActivityReportsForAccount200ResponseLinks.md) |  | 
+**Links** | [**ListDisksForAccount200ResponseLinks**](ListDisksForAccount200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListDisksForAccount200Response
 
-`func NewListDisksForAccount200Response(embedded ListDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListActivityReportsForAccount200ResponseLinks, ) *ListDisksForAccount200Response`
+`func NewListDisksForAccount200Response(embedded ListDisksForAccount200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDisksForAccount200ResponseLinks, ) *ListDisksForAccount200Response`
 
 NewListDisksForAccount200Response instantiates a new ListDisksForAccount200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListDisksForAccount200Response) GetLinks() ListActivityReportsForAccount200ResponseLinks`
+`func (o *ListDisksForAccount200Response) GetLinks() ListDisksForAccount200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListDisksForAccount200Response) GetLinksOk() (*ListActivityReportsForAccount200ResponseLinks, bool)`
+`func (o *ListDisksForAccount200Response) GetLinksOk() (*ListDisksForAccount200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListDisksForAccount200Response) SetLinks(v ListActivityReportsForAccount200ResponseLinks)`
+`func (o *ListDisksForAccount200Response) SetLinks(v ListDisksForAccount200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 
