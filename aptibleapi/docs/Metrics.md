@@ -1,262 +1,220 @@
-# Observation
+# Metrics
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **int32** |  | 
+**Id** | [**Uuid**](uuid.md) |  | 
 **MetaType** | **string** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
-**RangeBegin** | **string** |  | 
-**RangeEnd** | **string** |  | 
-**Data** | **map[string]interface{}** |  | 
 **Name** | **string** |  | 
 **Description** | **string** |  | 
 **Unit** | **string** |  | 
-**Links** | Pointer to [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] 
+**Query** | **map[string]interface{}** |  | 
+**Links** | Pointer to [**IntegrationLinks**](IntegrationLinks.md) |  | [optional] 
 
 ## Methods
 
-### NewObservation
+### NewMetrics
 
-`func NewObservation(id int32, metaType string, createdAt string, updatedAt string, rangeBegin string, rangeEnd string, data map[string]interface{}, name string, description string, unit string, ) *Observation`
+`func NewMetrics(id Uuid, metaType string, createdAt string, updatedAt string, name string, description string, unit string, query map[string]interface{}, ) *Metrics`
 
-NewObservation instantiates a new Observation object
+NewMetrics instantiates a new Metrics object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewObservationWithDefaults
+### NewMetricsWithDefaults
 
-`func NewObservationWithDefaults() *Observation`
+`func NewMetricsWithDefaults() *Metrics`
 
-NewObservationWithDefaults instantiates a new Observation object
+NewMetricsWithDefaults instantiates a new Metrics object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *Observation) GetId() int32`
+`func (o *Metrics) GetId() Uuid`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Observation) GetIdOk() (*int32, bool)`
+`func (o *Metrics) GetIdOk() (*Uuid, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Observation) SetId(v int32)`
+`func (o *Metrics) SetId(v Uuid)`
 
 SetId sets Id field to given value.
 
 
 ### GetMetaType
 
-`func (o *Observation) GetMetaType() string`
+`func (o *Metrics) GetMetaType() string`
 
 GetMetaType returns the MetaType field if non-nil, zero value otherwise.
 
 ### GetMetaTypeOk
 
-`func (o *Observation) GetMetaTypeOk() (*string, bool)`
+`func (o *Metrics) GetMetaTypeOk() (*string, bool)`
 
 GetMetaTypeOk returns a tuple with the MetaType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetaType
 
-`func (o *Observation) SetMetaType(v string)`
+`func (o *Metrics) SetMetaType(v string)`
 
 SetMetaType sets MetaType field to given value.
 
 
 ### GetCreatedAt
 
-`func (o *Observation) GetCreatedAt() string`
+`func (o *Metrics) GetCreatedAt() string`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *Observation) GetCreatedAtOk() (*string, bool)`
+`func (o *Metrics) GetCreatedAtOk() (*string, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *Observation) SetCreatedAt(v string)`
+`func (o *Metrics) SetCreatedAt(v string)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 
 ### GetUpdatedAt
 
-`func (o *Observation) GetUpdatedAt() string`
+`func (o *Metrics) GetUpdatedAt() string`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *Observation) GetUpdatedAtOk() (*string, bool)`
+`func (o *Metrics) GetUpdatedAtOk() (*string, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *Observation) SetUpdatedAt(v string)`
+`func (o *Metrics) SetUpdatedAt(v string)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 
-### GetRangeBegin
-
-`func (o *Observation) GetRangeBegin() string`
-
-GetRangeBegin returns the RangeBegin field if non-nil, zero value otherwise.
-
-### GetRangeBeginOk
-
-`func (o *Observation) GetRangeBeginOk() (*string, bool)`
-
-GetRangeBeginOk returns a tuple with the RangeBegin field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRangeBegin
-
-`func (o *Observation) SetRangeBegin(v string)`
-
-SetRangeBegin sets RangeBegin field to given value.
-
-
-### GetRangeEnd
-
-`func (o *Observation) GetRangeEnd() string`
-
-GetRangeEnd returns the RangeEnd field if non-nil, zero value otherwise.
-
-### GetRangeEndOk
-
-`func (o *Observation) GetRangeEndOk() (*string, bool)`
-
-GetRangeEndOk returns a tuple with the RangeEnd field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRangeEnd
-
-`func (o *Observation) SetRangeEnd(v string)`
-
-SetRangeEnd sets RangeEnd field to given value.
-
-
-### GetData
-
-`func (o *Observation) GetData() map[string]interface{}`
-
-GetData returns the Data field if non-nil, zero value otherwise.
-
-### GetDataOk
-
-`func (o *Observation) GetDataOk() (*map[string]interface{}, bool)`
-
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetData
-
-`func (o *Observation) SetData(v map[string]interface{})`
-
-SetData sets Data field to given value.
-
-
 ### GetName
 
-`func (o *Observation) GetName() string`
+`func (o *Metrics) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *Observation) GetNameOk() (*string, bool)`
+`func (o *Metrics) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *Observation) SetName(v string)`
+`func (o *Metrics) SetName(v string)`
 
 SetName sets Name field to given value.
 
 
 ### GetDescription
 
-`func (o *Observation) GetDescription() string`
+`func (o *Metrics) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *Observation) GetDescriptionOk() (*string, bool)`
+`func (o *Metrics) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *Observation) SetDescription(v string)`
+`func (o *Metrics) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 
 ### GetUnit
 
-`func (o *Observation) GetUnit() string`
+`func (o *Metrics) GetUnit() string`
 
 GetUnit returns the Unit field if non-nil, zero value otherwise.
 
 ### GetUnitOk
 
-`func (o *Observation) GetUnitOk() (*string, bool)`
+`func (o *Metrics) GetUnitOk() (*string, bool)`
 
 GetUnitOk returns a tuple with the Unit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUnit
 
-`func (o *Observation) SetUnit(v string)`
+`func (o *Metrics) SetUnit(v string)`
 
 SetUnit sets Unit field to given value.
 
 
+### GetQuery
+
+`func (o *Metrics) GetQuery() map[string]interface{}`
+
+GetQuery returns the Query field if non-nil, zero value otherwise.
+
+### GetQueryOk
+
+`func (o *Metrics) GetQueryOk() (*map[string]interface{}, bool)`
+
+GetQueryOk returns a tuple with the Query field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuery
+
+`func (o *Metrics) SetQuery(v map[string]interface{})`
+
+SetQuery sets Query field to given value.
+
+
 ### GetLinks
 
-`func (o *Observation) GetLinks() ConfigurationLinks`
+`func (o *Metrics) GetLinks() IntegrationLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *Observation) GetLinksOk() (*ConfigurationLinks, bool)`
+`func (o *Metrics) GetLinksOk() (*IntegrationLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *Observation) SetLinks(v ConfigurationLinks)`
+`func (o *Metrics) SetLinks(v IntegrationLinks)`
 
 SetLinks sets Links field to given value.
 
 ### HasLinks
 
-`func (o *Observation) HasLinks() bool`
+`func (o *Metrics) HasLinks() bool`
 
 HasLinks returns a boolean if a field has been set.
 

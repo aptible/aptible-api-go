@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NaiveHealthCheck** | Pointer to **bool** |  | [optional] 
 **ForceZeroDowntime** | Pointer to **bool** |  | [optional] 
+**StopTimeout** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetForceZeroDowntime sets ForceZeroDowntime field to given value.
 `func (o *UpdateServiceRequest) HasForceZeroDowntime() bool`
 
 HasForceZeroDowntime returns a boolean if a field has been set.
+
+### GetStopTimeout
+
+`func (o *UpdateServiceRequest) GetStopTimeout() int32`
+
+GetStopTimeout returns the StopTimeout field if non-nil, zero value otherwise.
+
+### GetStopTimeoutOk
+
+`func (o *UpdateServiceRequest) GetStopTimeoutOk() (*int32, bool)`
+
+GetStopTimeoutOk returns a tuple with the StopTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStopTimeout
+
+`func (o *UpdateServiceRequest) SetStopTimeout(v int32)`
+
+SetStopTimeout sets StopTimeout field to given value.
+
+### HasStopTimeout
+
+`func (o *UpdateServiceRequest) HasStopTimeout() bool`
+
+HasStopTimeout returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -21,6 +21,7 @@ var _ MappedNullable = &UpdateServiceRequest{}
 type UpdateServiceRequest struct {
 	NaiveHealthCheck *bool `json:"naive_health_check,omitempty"`
 	ForceZeroDowntime *bool `json:"force_zero_downtime,omitempty"`
+	StopTimeout *int32 `json:"stop_timeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -107,6 +108,38 @@ func (o *UpdateServiceRequest) SetForceZeroDowntime(v bool) {
 	o.ForceZeroDowntime = &v
 }
 
+// GetStopTimeout returns the StopTimeout field value if set, zero value otherwise.
+func (o *UpdateServiceRequest) GetStopTimeout() int32 {
+	if o == nil || IsNil(o.StopTimeout) {
+		var ret int32
+		return ret
+	}
+	return *o.StopTimeout
+}
+
+// GetStopTimeoutOk returns a tuple with the StopTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateServiceRequest) GetStopTimeoutOk() (*int32, bool) {
+	if o == nil || IsNil(o.StopTimeout) {
+		return nil, false
+	}
+	return o.StopTimeout, true
+}
+
+// HasStopTimeout returns a boolean if a field has been set.
+func (o *UpdateServiceRequest) HasStopTimeout() bool {
+	if o != nil && !IsNil(o.StopTimeout) {
+		return true
+	}
+
+	return false
+}
+
+// SetStopTimeout gets a reference to the given int32 and assigns it to the StopTimeout field.
+func (o *UpdateServiceRequest) SetStopTimeout(v int32) {
+	o.StopTimeout = &v
+}
+
 func (o UpdateServiceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -122,6 +155,9 @@ func (o UpdateServiceRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ForceZeroDowntime) {
 		toSerialize["force_zero_downtime"] = o.ForceZeroDowntime
+	}
+	if !IsNil(o.StopTimeout) {
+		toSerialize["stop_timeout"] = o.StopTimeout
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -147,6 +183,7 @@ func (o *UpdateServiceRequest) UnmarshalJSON(data []byte) (err error) {
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "naive_health_check")
 		delete(additionalProperties, "force_zero_downtime")
+		delete(additionalProperties, "stop_timeout")
 		o.AdditionalProperties = additionalProperties
 	}
 

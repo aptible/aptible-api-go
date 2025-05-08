@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ListWidgetsForDashboard200ResponseLinks type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListWidgetsForDashboard200ResponseLinks{}
+// checks if the ListMetricsForIntegration200ResponseLinks type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListMetricsForIntegration200ResponseLinks{}
 
-// ListWidgetsForDashboard200ResponseLinks struct for ListWidgetsForDashboard200ResponseLinks
-type ListWidgetsForDashboard200ResponseLinks struct {
+// ListMetricsForIntegration200ResponseLinks struct for ListMetricsForIntegration200ResponseLinks
+type ListMetricsForIntegration200ResponseLinks struct {
 	Dashboard *ListAccountsForStack200ResponseLinksStack `json:"dashboard,omitempty"`
 	Next *ListAccountsForStack200ResponseLinksStack `json:"next,omitempty"`
 	Prev *ListAccountsForStack200ResponseLinksStack `json:"prev,omitempty"`
@@ -26,27 +26,27 @@ type ListWidgetsForDashboard200ResponseLinks struct {
 	AdditionalProperties map[string]interface{}
 }
 
-type _ListWidgetsForDashboard200ResponseLinks ListWidgetsForDashboard200ResponseLinks
+type _ListMetricsForIntegration200ResponseLinks ListMetricsForIntegration200ResponseLinks
 
-// NewListWidgetsForDashboard200ResponseLinks instantiates a new ListWidgetsForDashboard200ResponseLinks object
+// NewListMetricsForIntegration200ResponseLinks instantiates a new ListMetricsForIntegration200ResponseLinks object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListWidgetsForDashboard200ResponseLinks() *ListWidgetsForDashboard200ResponseLinks {
-	this := ListWidgetsForDashboard200ResponseLinks{}
+func NewListMetricsForIntegration200ResponseLinks() *ListMetricsForIntegration200ResponseLinks {
+	this := ListMetricsForIntegration200ResponseLinks{}
 	return &this
 }
 
-// NewListWidgetsForDashboard200ResponseLinksWithDefaults instantiates a new ListWidgetsForDashboard200ResponseLinks object
+// NewListMetricsForIntegration200ResponseLinksWithDefaults instantiates a new ListMetricsForIntegration200ResponseLinks object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListWidgetsForDashboard200ResponseLinksWithDefaults() *ListWidgetsForDashboard200ResponseLinks {
-	this := ListWidgetsForDashboard200ResponseLinks{}
+func NewListMetricsForIntegration200ResponseLinksWithDefaults() *ListMetricsForIntegration200ResponseLinks {
+	this := ListMetricsForIntegration200ResponseLinks{}
 	return &this
 }
 
 // GetDashboard returns the Dashboard field value if set, zero value otherwise.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetDashboard() ListAccountsForStack200ResponseLinksStack {
+func (o *ListMetricsForIntegration200ResponseLinks) GetDashboard() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Dashboard) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -56,7 +56,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetDashboard() ListAccountsFor
 
 // GetDashboardOk returns a tuple with the Dashboard field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetDashboardOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListMetricsForIntegration200ResponseLinks) GetDashboardOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Dashboard) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetDashboardOk() (*ListAccount
 }
 
 // HasDashboard returns a boolean if a field has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) HasDashboard() bool {
+func (o *ListMetricsForIntegration200ResponseLinks) HasDashboard() bool {
 	if o != nil && !IsNil(o.Dashboard) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *ListWidgetsForDashboard200ResponseLinks) HasDashboard() bool {
 }
 
 // SetDashboard gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Dashboard field.
-func (o *ListWidgetsForDashboard200ResponseLinks) SetDashboard(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListMetricsForIntegration200ResponseLinks) SetDashboard(v ListAccountsForStack200ResponseLinksStack) {
 	o.Dashboard = &v
 }
 
 // GetNext returns the Next field value if set, zero value otherwise.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
+func (o *ListMetricsForIntegration200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Next) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -88,7 +88,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetNext() ListAccountsForStack
 
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListMetricsForIntegration200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetNextOk() (*ListAccountsForS
 }
 
 // HasNext returns a boolean if a field has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) HasNext() bool {
+func (o *ListMetricsForIntegration200ResponseLinks) HasNext() bool {
 	if o != nil && !IsNil(o.Next) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *ListWidgetsForDashboard200ResponseLinks) HasNext() bool {
 }
 
 // SetNext gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Next field.
-func (o *ListWidgetsForDashboard200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListMetricsForIntegration200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
 	o.Next = &v
 }
 
 // GetPrev returns the Prev field value if set, zero value otherwise.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
+func (o *ListMetricsForIntegration200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Prev) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -120,7 +120,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetPrev() ListAccountsForStack
 
 // GetPrevOk returns a tuple with the Prev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListMetricsForIntegration200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Prev) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetPrevOk() (*ListAccountsForS
 }
 
 // HasPrev returns a boolean if a field has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) HasPrev() bool {
+func (o *ListMetricsForIntegration200ResponseLinks) HasPrev() bool {
 	if o != nil && !IsNil(o.Prev) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *ListWidgetsForDashboard200ResponseLinks) HasPrev() bool {
 }
 
 // SetPrev gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Prev field.
-func (o *ListWidgetsForDashboard200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListMetricsForIntegration200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
 	o.Prev = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *ListMetricsForIntegration200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -152,7 +152,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetSelf() ListAccountsForStack
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListMetricsForIntegration200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *ListWidgetsForDashboard200ResponseLinks) GetSelfOk() (*ListAccountsForS
 }
 
 // HasSelf returns a boolean if a field has been set.
-func (o *ListWidgetsForDashboard200ResponseLinks) HasSelf() bool {
+func (o *ListMetricsForIntegration200ResponseLinks) HasSelf() bool {
 	if o != nil && !IsNil(o.Self) {
 		return true
 	}
@@ -169,11 +169,11 @@ func (o *ListWidgetsForDashboard200ResponseLinks) HasSelf() bool {
 }
 
 // SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *ListWidgetsForDashboard200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListMetricsForIntegration200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 
-func (o ListWidgetsForDashboard200ResponseLinks) MarshalJSON() ([]byte, error) {
+func (o ListMetricsForIntegration200ResponseLinks) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -181,7 +181,7 @@ func (o ListWidgetsForDashboard200ResponseLinks) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ListWidgetsForDashboard200ResponseLinks) ToMap() (map[string]interface{}, error) {
+func (o ListMetricsForIntegration200ResponseLinks) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Dashboard) {
 		toSerialize["dashboard"] = o.Dashboard
@@ -203,16 +203,16 @@ func (o ListWidgetsForDashboard200ResponseLinks) ToMap() (map[string]interface{}
 	return toSerialize, nil
 }
 
-func (o *ListWidgetsForDashboard200ResponseLinks) UnmarshalJSON(data []byte) (err error) {
-	varListWidgetsForDashboard200ResponseLinks := _ListWidgetsForDashboard200ResponseLinks{}
+func (o *ListMetricsForIntegration200ResponseLinks) UnmarshalJSON(data []byte) (err error) {
+	varListMetricsForIntegration200ResponseLinks := _ListMetricsForIntegration200ResponseLinks{}
 
-	err = json.Unmarshal(data, &varListWidgetsForDashboard200ResponseLinks)
+	err = json.Unmarshal(data, &varListMetricsForIntegration200ResponseLinks)
 
 	if err != nil {
 		return err
 	}
 
-	*o = ListWidgetsForDashboard200ResponseLinks(varListWidgetsForDashboard200ResponseLinks)
+	*o = ListMetricsForIntegration200ResponseLinks(varListMetricsForIntegration200ResponseLinks)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -227,38 +227,38 @@ func (o *ListWidgetsForDashboard200ResponseLinks) UnmarshalJSON(data []byte) (er
 	return err
 }
 
-type NullableListWidgetsForDashboard200ResponseLinks struct {
-	value *ListWidgetsForDashboard200ResponseLinks
+type NullableListMetricsForIntegration200ResponseLinks struct {
+	value *ListMetricsForIntegration200ResponseLinks
 	isSet bool
 }
 
-func (v NullableListWidgetsForDashboard200ResponseLinks) Get() *ListWidgetsForDashboard200ResponseLinks {
+func (v NullableListMetricsForIntegration200ResponseLinks) Get() *ListMetricsForIntegration200ResponseLinks {
 	return v.value
 }
 
-func (v *NullableListWidgetsForDashboard200ResponseLinks) Set(val *ListWidgetsForDashboard200ResponseLinks) {
+func (v *NullableListMetricsForIntegration200ResponseLinks) Set(val *ListMetricsForIntegration200ResponseLinks) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListWidgetsForDashboard200ResponseLinks) IsSet() bool {
+func (v NullableListMetricsForIntegration200ResponseLinks) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListWidgetsForDashboard200ResponseLinks) Unset() {
+func (v *NullableListMetricsForIntegration200ResponseLinks) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListWidgetsForDashboard200ResponseLinks(val *ListWidgetsForDashboard200ResponseLinks) *NullableListWidgetsForDashboard200ResponseLinks {
-	return &NullableListWidgetsForDashboard200ResponseLinks{value: val, isSet: true}
+func NewNullableListMetricsForIntegration200ResponseLinks(val *ListMetricsForIntegration200ResponseLinks) *NullableListMetricsForIntegration200ResponseLinks {
+	return &NullableListMetricsForIntegration200ResponseLinks{value: val, isSet: true}
 }
 
-func (v NullableListWidgetsForDashboard200ResponseLinks) MarshalJSON() ([]byte, error) {
+func (v NullableListMetricsForIntegration200ResponseLinks) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListWidgetsForDashboard200ResponseLinks) UnmarshalJSON(src []byte) error {
+func (v *NullableListMetricsForIntegration200ResponseLinks) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

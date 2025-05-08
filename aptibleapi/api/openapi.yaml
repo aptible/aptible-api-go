@@ -31,8 +31,10 @@ tags:
 - name: Images
 - name: Integrations
 - name: IntrusionDetectionReports
+- name: LlmIntegrations
 - name: LogDrains
 - name: MetricDrains
+- name: Metrics
 - name: Observations
 - name: Operations
 - name: Permissions
@@ -2644,7 +2646,7 @@ paths:
       summary: show image
       tags:
       - Images
-  /datadog_integrations:
+  /integrations:
     get:
       operationId: ListDatadogIntegrations
       parameters:
@@ -2692,7 +2694,7 @@ paths:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
       summary: create integration
-  /datadog_integrations/{id}:
+  /integrations/{id}:
     delete:
       operationId: DeleteDatadogIntegration
       parameters:
@@ -2877,6 +2879,137 @@ paths:
       summary: show intrusion_detection_report
       tags:
       - IntrusionDetectionReports
+  /llm_integrations:
+    get:
+      operationId: ListLlmIntegrations
+      parameters:
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListLlmIntegrations_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list llm integrations
+      tags:
+      - LLM Integrations
+    post:
+      operationId: CreateLlmIntegration
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLlmIntegration_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_integration'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create llm integration
+      tags:
+      - LLM Integrations
+  /llm_integrations/{id}:
+    delete:
+      operationId: DeleteLlmIntegration
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete llm integration
+      tags:
+      - LLM Integrations
+    get:
+      operationId: GetLlmIntegration
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_integration'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show llm integration
+      tags:
+      - LLM Integrations
+    put:
+      operationId: UpdateLlmIntegration
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLlmIntegration_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update llm integration
+      tags:
+      - LLM Integrations
   /accounts/{account_id}/log_drains:
     get:
       operationId: ListLogDrainsForAccount
@@ -3148,6 +3281,153 @@ paths:
       summary: show metric_drain
       tags:
       - MetricDrains
+  /integrations/{id}/metrics:
+    get:
+      operationId: ListMetricsForIntegration
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListMetricsForIntegration_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list metrics
+      tags:
+      - Dashboards
+    post:
+      operationId: CreateMetricForIntegration
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMetricForIntegration_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/metrics'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create metric
+      tags:
+      - Dashboards
+  /metrics/{id}:
+    delete:
+      operationId: DeleteMetric
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete metric
+      tags:
+      - Dashboards
+    get:
+      operationId: GetMetric
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/metrics'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show metric
+      tags:
+      - Dashboards
+    put:
+      operationId: UpdateMetric
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMetric_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update metric
+      tags:
+      - Dashboards
   /apps/{id}/observations:
     get:
       operationId: ListObservationsForApp
@@ -3185,7 +3465,7 @@ paths:
       tags:
       - Dashboards
     post:
-      operationId: CreateObservationForDashboard
+      operationId: CreateObservationForDashboardForApp
       parameters:
       - description: id
         explode: false
@@ -3199,7 +3479,347 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateObservationForDashboard_request'
+              $ref: '#/components/schemas/CreateObservationForDashboardForApp_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/observation'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create observation
+      tags:
+      - Dashboards
+  /containers/{id}/observations:
+    get:
+      operationId: ListObservationsForContainer
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListObservationsForContainer_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list observations
+      tags:
+      - Dashboards
+    post:
+      operationId: CreateObservationForDashboardForContainer
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateObservationForDashboardForContainer_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/observation'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create observation
+      tags:
+      - Dashboards
+  /databases/{id}/observations:
+    get:
+      operationId: ListObservationsForDatabase
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListObservationsForDatabase_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list observations
+      tags:
+      - Dashboards
+    post:
+      operationId: CreateObservationForDashboardForDatabase
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateObservationForDashboardForContainer_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/observation'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create observation
+      tags:
+      - Dashboards
+  /disks/{id}/observations:
+    get:
+      operationId: ListObservationsForDisk
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListObservationsForDisk_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list observations
+      tags:
+      - Dashboards
+    post:
+      operationId: CreateObservationForDashboardForDisk
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateObservationForDashboardForContainer_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/observation'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create observation
+      tags:
+      - Dashboards
+  /services/{id}/observations:
+    get:
+      operationId: ListObservationsForService
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListObservationsForService_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list observations
+      tags:
+      - Dashboards
+    post:
+      operationId: CreateObservationForDashboardForService
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateObservationForDashboardForContainer_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/observation'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create observation
+      tags:
+      - Dashboards
+  /vhosts/{id}/observations:
+    get:
+      operationId: ListObservationsForVhost
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListObservationsForVhost_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list observations
+      tags:
+      - Dashboards
+    post:
+      operationId: CreateObservationForDashboardForVhost
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateObservationForDashboardForContainer_request'
       responses:
         "201":
           content:
@@ -5563,7 +6183,7 @@ paths:
           content:
             application/hal+json:
               schema:
-                $ref: '#/components/schemas/ListWidgetsForDashboard_200_response'
+                $ref: '#/components/schemas/ListMetricsForIntegration_200_response'
           description: successful
         default:
           content:
@@ -6711,6 +7331,60 @@ components:
       - id
       - starts_at
       - updated_at
+    llm_integration:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        provider_type:
+          type: string
+        organization_id:
+          format: uuid
+          type: string
+        api_key:
+          type: string
+          x-nullable: true
+        base_url:
+          type: string
+          x-nullable: true
+        openai_organization:
+          type: string
+          x-nullable: true
+        api_version:
+          type: string
+          x-nullable: true
+        aws_access_key_id:
+          type: string
+          x-nullable: true
+        aws_secret_access_key:
+          type: string
+          x-nullable: true
+        aws_region:
+          type: string
+          x-nullable: true
+        _links:
+          $ref: '#/components/schemas/integration__links'
+      required:
+      - _type
+      - api_key
+      - api_version
+      - aws_access_key_id
+      - aws_region
+      - aws_secret_access_key
+      - base_url
+      - created_at
+      - id
+      - openai_organization
+      - organization_id
+      - provider_type
+      - updated_at
     log_drain:
       properties:
         id:
@@ -6864,6 +7538,37 @@ components:
       - id
       - status
       - updated_at
+    metrics:
+      properties:
+        id:
+          type: uuid
+        _type:
+          type: string
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        unit:
+          type: string
+        query:
+          type: object
+        _links:
+          $ref: '#/components/schemas/integration__links'
+      required:
+      - _type
+      - created_at
+      - description
+      - id
+      - name
+      - query
+      - unit
+      - updated_at
     observation:
       properties:
         id:
@@ -6884,15 +7589,24 @@ components:
           type: string
         data:
           type: object
+        name:
+          type: string
+        description:
+          type: string
+        unit:
+          type: string
         _links:
           $ref: '#/components/schemas/configuration__links'
       required:
       - _type
       - created_at
       - data
+      - description
       - id
+      - name
       - range_begin
       - range_end
+      - unit
       - updated_at
     operation:
       properties:
@@ -7321,6 +8035,9 @@ components:
           type: boolean
         naive_health_check:
           type: boolean
+        stop_timeout:
+          type: integer
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/service__links'
       required:
@@ -7337,6 +8054,7 @@ components:
       - instance_class
       - naive_health_check
       - process_type
+      - stop_timeout
       - updated_at
     source:
       properties:
@@ -8761,6 +9479,64 @@ components:
       - per_page
       - total_count
       type: object
+    ListLlmIntegrations_200_response__embedded:
+      properties:
+        llm_integrations:
+          items:
+            $ref: '#/components/schemas/llm_integration'
+          type: array
+      type: object
+    ListLlmIntegrations_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListLlmIntegrations_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListDashboards_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateLlmIntegration_request:
+      properties:
+        provider_type:
+          type: string
+        organization_id:
+          format: uuid
+          type: string
+        api_key:
+          type: string
+        base_url:
+          type: string
+        openai_organization:
+          type: string
+        api_version:
+          type: string
+        aws_access_key_id:
+          type: string
+        aws_secret_access_key:
+          type: string
+        aws_region:
+          type: string
+      required:
+      - organization_id
+      - provider_type
+      type: object
+    UpdateLlmIntegration_request:
+      properties:
+        api_key:
+          type: string
+        base_url:
+          type: string
+      type: object
     ListLogDrainsForAccount_200_response__embedded:
       properties:
         log_drains:
@@ -8919,6 +9695,70 @@ components:
       - drain_type
       - handle
       type: object
+    ListMetricsForIntegration_200_response__embedded:
+      properties:
+        widgets:
+          items:
+            $ref: '#/components/schemas/widget'
+          type: array
+      type: object
+    ListMetricsForIntegration_200_response__links:
+      properties:
+        dashboard:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        next:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        prev:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    ListMetricsForIntegration_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListMetricsForIntegration_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListMetricsForIntegration_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateMetricForIntegration_request:
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        unit:
+          type: string
+        query:
+          type: object
+      required:
+      - description
+      - name
+      - query
+      - unit
+      type: object
+    UpdateMetric_request:
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        unit:
+          type: string
+        query:
+          type: object
+      type: object
     ListObservationsForApp_200_response__embedded:
       properties:
         observations:
@@ -8945,7 +9785,55 @@ components:
       - per_page
       - total_count
       type: object
-    CreateObservationForDashboard_request:
+    CreateObservationForDashboardForApp_request:
+      properties:
+        range_begin:
+          format: dateTime
+          type: string
+        range_end:
+          format: dateTime
+          type: string
+        data:
+          type: object
+      required:
+      - data
+      - description
+      - name
+      - range_begin
+      - range_end
+      - unit
+      type: object
+    ListObservationsForContainer_200_response__links:
+      properties:
+        container:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        next:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        prev:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    ListObservationsForContainer_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListObservationsForApp_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListObservationsForContainer_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateObservationForDashboardForContainer_request:
       properties:
         range_begin:
           format: dateTime
@@ -8959,6 +9847,104 @@ components:
       - data
       - range_begin
       - range_end
+      type: object
+    ListObservationsForDatabase_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListObservationsForApp_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListDatabaseCredentialsForDatabase_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    ListObservationsForDisk_200_response__links:
+      properties:
+        disk:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        next:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        prev:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    ListObservationsForDisk_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListObservationsForApp_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListObservationsForDisk_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    ListObservationsForService_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListObservationsForApp_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListDiskAttachmentsForService_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    ListObservationsForVhost_200_response__links:
+      properties:
+        vhost:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        next:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        prev:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    ListObservationsForVhost_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListObservationsForApp_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListObservationsForVhost_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
       type: object
     UpdateOperation_request:
       properties:
@@ -9337,6 +10323,8 @@ components:
           type: boolean
         force_zero_downtime:
           type: boolean
+        stop_timeout:
+          type: integer
       type: object
     ListSources_200_response__embedded:
       properties:
@@ -9613,43 +10601,6 @@ components:
           type: integer
         _links:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links'
-      required:
-      - _embedded
-      - _links
-      - current_page
-      - per_page
-      - total_count
-      type: object
-    ListWidgetsForDashboard_200_response__embedded:
-      properties:
-        widgets:
-          items:
-            $ref: '#/components/schemas/widget'
-          type: array
-      type: object
-    ListWidgetsForDashboard_200_response__links:
-      properties:
-        dashboard:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-        next:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-        prev:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-        self:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-      type: object
-    ListWidgetsForDashboard_200_response:
-      properties:
-        _embedded:
-          $ref: '#/components/schemas/ListWidgetsForDashboard_200_response__embedded'
-        total_count:
-          type: integer
-        per_page:
-          type: integer
-        current_page:
-          type: integer
-        _links:
-          $ref: '#/components/schemas/ListWidgetsForDashboard_200_response__links'
       required:
       - _embedded
       - _links

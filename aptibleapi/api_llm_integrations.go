@@ -20,53 +20,53 @@ import (
 )
 
 
-// DefaultAPIService DefaultAPI service
-type DefaultAPIService service
+// LLMIntegrationsAPIService LLMIntegrationsAPI service
+type LLMIntegrationsAPIService service
 
-type ApiCreateDatadogIntegrationRequest struct {
+type ApiCreateLlmIntegrationRequest struct {
 	ctx context.Context
-	ApiService *DefaultAPIService
-	createDatadogIntegrationRequest *CreateDatadogIntegrationRequest
+	ApiService *LLMIntegrationsAPIService
+	createLlmIntegrationRequest *CreateLlmIntegrationRequest
 }
 
-func (r ApiCreateDatadogIntegrationRequest) CreateDatadogIntegrationRequest(createDatadogIntegrationRequest CreateDatadogIntegrationRequest) ApiCreateDatadogIntegrationRequest {
-	r.createDatadogIntegrationRequest = &createDatadogIntegrationRequest
+func (r ApiCreateLlmIntegrationRequest) CreateLlmIntegrationRequest(createLlmIntegrationRequest CreateLlmIntegrationRequest) ApiCreateLlmIntegrationRequest {
+	r.createLlmIntegrationRequest = &createLlmIntegrationRequest
 	return r
 }
 
-func (r ApiCreateDatadogIntegrationRequest) Execute() (*Integration, *http.Response, error) {
-	return r.ApiService.CreateDatadogIntegrationExecute(r)
+func (r ApiCreateLlmIntegrationRequest) Execute() (*LlmIntegration, *http.Response, error) {
+	return r.ApiService.CreateLlmIntegrationExecute(r)
 }
 
 /*
-CreateDatadogIntegration create integration
+CreateLlmIntegration create llm integration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateDatadogIntegrationRequest
+ @return ApiCreateLlmIntegrationRequest
 */
-func (a *DefaultAPIService) CreateDatadogIntegration(ctx context.Context) ApiCreateDatadogIntegrationRequest {
-	return ApiCreateDatadogIntegrationRequest{
+func (a *LLMIntegrationsAPIService) CreateLlmIntegration(ctx context.Context) ApiCreateLlmIntegrationRequest {
+	return ApiCreateLlmIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Integration
-func (a *DefaultAPIService) CreateDatadogIntegrationExecute(r ApiCreateDatadogIntegrationRequest) (*Integration, *http.Response, error) {
+//  @return LlmIntegration
+func (a *LLMIntegrationsAPIService) CreateLlmIntegrationExecute(r ApiCreateLlmIntegrationRequest) (*LlmIntegration, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Integration
+		localVarReturnValue  *LlmIntegration
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.CreateDatadogIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LLMIntegrationsAPIService.CreateLlmIntegration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/integrations"
+	localVarPath := localBasePath + "/llm_integrations"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -90,7 +90,7 @@ func (a *DefaultAPIService) CreateDatadogIntegrationExecute(r ApiCreateDatadogIn
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createDatadogIntegrationRequest
+	localVarPostBody = r.createLlmIntegrationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -150,25 +150,25 @@ func (a *DefaultAPIService) CreateDatadogIntegrationExecute(r ApiCreateDatadogIn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteDatadogIntegrationRequest struct {
+type ApiDeleteLlmIntegrationRequest struct {
 	ctx context.Context
-	ApiService *DefaultAPIService
+	ApiService *LLMIntegrationsAPIService
 	id int32
 }
 
-func (r ApiDeleteDatadogIntegrationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteDatadogIntegrationExecute(r)
+func (r ApiDeleteLlmIntegrationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteLlmIntegrationExecute(r)
 }
 
 /*
-DeleteDatadogIntegration delete integration
+DeleteLlmIntegration delete llm integration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id id
- @return ApiDeleteDatadogIntegrationRequest
+ @return ApiDeleteLlmIntegrationRequest
 */
-func (a *DefaultAPIService) DeleteDatadogIntegration(ctx context.Context, id int32) ApiDeleteDatadogIntegrationRequest {
-	return ApiDeleteDatadogIntegrationRequest{
+func (a *LLMIntegrationsAPIService) DeleteLlmIntegration(ctx context.Context, id int32) ApiDeleteLlmIntegrationRequest {
+	return ApiDeleteLlmIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -176,19 +176,19 @@ func (a *DefaultAPIService) DeleteDatadogIntegration(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) DeleteDatadogIntegrationExecute(r ApiDeleteDatadogIntegrationRequest) (*http.Response, error) {
+func (a *LLMIntegrationsAPIService) DeleteLlmIntegrationExecute(r ApiDeleteLlmIntegrationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.DeleteDatadogIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LLMIntegrationsAPIService.DeleteLlmIntegration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/integrations/{id}"
+	localVarPath := localBasePath + "/llm_integrations/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -262,25 +262,25 @@ func (a *DefaultAPIService) DeleteDatadogIntegrationExecute(r ApiDeleteDatadogIn
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetDatadogIntegrationRequest struct {
+type ApiGetLlmIntegrationRequest struct {
 	ctx context.Context
-	ApiService *DefaultAPIService
+	ApiService *LLMIntegrationsAPIService
 	id int32
 }
 
-func (r ApiGetDatadogIntegrationRequest) Execute() (*Integration, *http.Response, error) {
-	return r.ApiService.GetDatadogIntegrationExecute(r)
+func (r ApiGetLlmIntegrationRequest) Execute() (*LlmIntegration, *http.Response, error) {
+	return r.ApiService.GetLlmIntegrationExecute(r)
 }
 
 /*
-GetDatadogIntegration show integration
+GetLlmIntegration show llm integration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id id
- @return ApiGetDatadogIntegrationRequest
+ @return ApiGetLlmIntegrationRequest
 */
-func (a *DefaultAPIService) GetDatadogIntegration(ctx context.Context, id int32) ApiGetDatadogIntegrationRequest {
-	return ApiGetDatadogIntegrationRequest{
+func (a *LLMIntegrationsAPIService) GetLlmIntegration(ctx context.Context, id int32) ApiGetLlmIntegrationRequest {
+	return ApiGetLlmIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -288,21 +288,21 @@ func (a *DefaultAPIService) GetDatadogIntegration(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-//  @return Integration
-func (a *DefaultAPIService) GetDatadogIntegrationExecute(r ApiGetDatadogIntegrationRequest) (*Integration, *http.Response, error) {
+//  @return LlmIntegration
+func (a *LLMIntegrationsAPIService) GetLlmIntegrationExecute(r ApiGetLlmIntegrationRequest) (*LlmIntegration, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Integration
+		localVarReturnValue  *LlmIntegration
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetDatadogIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LLMIntegrationsAPIService.GetLlmIntegration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/integrations/{id}"
+	localVarPath := localBasePath + "/llm_integrations/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -385,162 +385,51 @@ func (a *DefaultAPIService) GetDatadogIntegrationExecute(r ApiGetDatadogIntegrat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRootRequest struct {
+type ApiListLlmIntegrationsRequest struct {
 	ctx context.Context
-	ApiService *DefaultAPIService
-}
-
-func (r ApiGetRootRequest) Execute() (*GetRoot200Response, *http.Response, error) {
-	return r.ApiService.GetRootExecute(r)
-}
-
-/*
-GetRoot show home
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRootRequest
-*/
-func (a *DefaultAPIService) GetRoot(ctx context.Context) ApiGetRootRequest {
-	return ApiGetRootRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return GetRoot200Response
-func (a *DefaultAPIService) GetRootExecute(r ApiGetRootRequest) (*GetRoot200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRoot200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetRoot")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/hal+json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["token"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiListDatadogIntegrationsRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
+	ApiService *LLMIntegrationsAPIService
 	page *int32
 }
 
 // current page of results for pagination
-func (r ApiListDatadogIntegrationsRequest) Page(page int32) ApiListDatadogIntegrationsRequest {
+func (r ApiListLlmIntegrationsRequest) Page(page int32) ApiListLlmIntegrationsRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiListDatadogIntegrationsRequest) Execute() (*ListDatadogIntegrations200Response, *http.Response, error) {
-	return r.ApiService.ListDatadogIntegrationsExecute(r)
+func (r ApiListLlmIntegrationsRequest) Execute() (*ListLlmIntegrations200Response, *http.Response, error) {
+	return r.ApiService.ListLlmIntegrationsExecute(r)
 }
 
 /*
-ListDatadogIntegrations list integrations
+ListLlmIntegrations list llm integrations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListDatadogIntegrationsRequest
+ @return ApiListLlmIntegrationsRequest
 */
-func (a *DefaultAPIService) ListDatadogIntegrations(ctx context.Context) ApiListDatadogIntegrationsRequest {
-	return ApiListDatadogIntegrationsRequest{
+func (a *LLMIntegrationsAPIService) ListLlmIntegrations(ctx context.Context) ApiListLlmIntegrationsRequest {
+	return ApiListLlmIntegrationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ListDatadogIntegrations200Response
-func (a *DefaultAPIService) ListDatadogIntegrationsExecute(r ApiListDatadogIntegrationsRequest) (*ListDatadogIntegrations200Response, *http.Response, error) {
+//  @return ListLlmIntegrations200Response
+func (a *LLMIntegrationsAPIService) ListLlmIntegrationsExecute(r ApiListLlmIntegrationsRequest) (*ListLlmIntegrations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListDatadogIntegrations200Response
+		localVarReturnValue  *ListLlmIntegrations200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.ListDatadogIntegrations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LLMIntegrationsAPIService.ListLlmIntegrations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/integrations"
+	localVarPath := localBasePath + "/llm_integrations"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -625,31 +514,31 @@ func (a *DefaultAPIService) ListDatadogIntegrationsExecute(r ApiListDatadogInteg
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateDatadogIntegrationRequest struct {
+type ApiUpdateLlmIntegrationRequest struct {
 	ctx context.Context
-	ApiService *DefaultAPIService
+	ApiService *LLMIntegrationsAPIService
 	id int32
-	updateDashboardRequest *UpdateDashboardRequest
+	updateLlmIntegrationRequest *UpdateLlmIntegrationRequest
 }
 
-func (r ApiUpdateDatadogIntegrationRequest) UpdateDashboardRequest(updateDashboardRequest UpdateDashboardRequest) ApiUpdateDatadogIntegrationRequest {
-	r.updateDashboardRequest = &updateDashboardRequest
+func (r ApiUpdateLlmIntegrationRequest) UpdateLlmIntegrationRequest(updateLlmIntegrationRequest UpdateLlmIntegrationRequest) ApiUpdateLlmIntegrationRequest {
+	r.updateLlmIntegrationRequest = &updateLlmIntegrationRequest
 	return r
 }
 
-func (r ApiUpdateDatadogIntegrationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UpdateDatadogIntegrationExecute(r)
+func (r ApiUpdateLlmIntegrationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateLlmIntegrationExecute(r)
 }
 
 /*
-UpdateDatadogIntegration update integration
+UpdateLlmIntegration update llm integration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id id
- @return ApiUpdateDatadogIntegrationRequest
+ @return ApiUpdateLlmIntegrationRequest
 */
-func (a *DefaultAPIService) UpdateDatadogIntegration(ctx context.Context, id int32) ApiUpdateDatadogIntegrationRequest {
-	return ApiUpdateDatadogIntegrationRequest{
+func (a *LLMIntegrationsAPIService) UpdateLlmIntegration(ctx context.Context, id int32) ApiUpdateLlmIntegrationRequest {
+	return ApiUpdateLlmIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -657,19 +546,19 @@ func (a *DefaultAPIService) UpdateDatadogIntegration(ctx context.Context, id int
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) UpdateDatadogIntegrationExecute(r ApiUpdateDatadogIntegrationRequest) (*http.Response, error) {
+func (a *LLMIntegrationsAPIService) UpdateLlmIntegrationExecute(r ApiUpdateLlmIntegrationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.UpdateDatadogIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LLMIntegrationsAPIService.UpdateLlmIntegration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/integrations/{id}"
+	localVarPath := localBasePath + "/llm_integrations/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -694,7 +583,7 @@ func (a *DefaultAPIService) UpdateDatadogIntegrationExecute(r ApiUpdateDatadogIn
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateDashboardRequest
+	localVarPostBody = r.updateLlmIntegrationRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

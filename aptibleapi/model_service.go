@@ -34,6 +34,7 @@ type Service struct {
 	InstanceClass string `json:"instance_class"`
 	ForceZeroDowntime bool `json:"force_zero_downtime"`
 	NaiveHealthCheck bool `json:"naive_health_check"`
+	StopTimeout NullableInt32 `json:"stop_timeout"`
 	Links *ServiceLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -44,7 +45,7 @@ type _Service Service
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool) *Service {
+func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, stopTimeout NullableInt32) *Service {
 	this := Service{}
 	this.Id = id
 	this.MetaType = metaType
@@ -60,6 +61,7 @@ func NewService(id int32, metaType string, handle string, dockerRepo NullableStr
 	this.InstanceClass = instanceClass
 	this.ForceZeroDowntime = forceZeroDowntime
 	this.NaiveHealthCheck = naiveHealthCheck
+	this.StopTimeout = stopTimeout
 	return &this
 }
 
@@ -413,6 +415,32 @@ func (o *Service) SetNaiveHealthCheck(v bool) {
 	o.NaiveHealthCheck = v
 }
 
+// GetStopTimeout returns the StopTimeout field value
+// If the value is explicit nil, the zero value for int32 will be returned
+func (o *Service) GetStopTimeout() int32 {
+	if o == nil || o.StopTimeout.Get() == nil {
+		var ret int32
+		return ret
+	}
+
+	return *o.StopTimeout.Get()
+}
+
+// GetStopTimeoutOk returns a tuple with the StopTimeout field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Service) GetStopTimeoutOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.StopTimeout.Get(), o.StopTimeout.IsSet()
+}
+
+// SetStopTimeout sets field value
+func (o *Service) SetStopTimeout(v int32) {
+	o.StopTimeout.Set(&v)
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Service) GetLinks() ServiceLinks {
 	if o == nil || IsNil(o.Links) {
@@ -469,6 +497,7 @@ func (o Service) ToMap() (map[string]interface{}, error) {
 	toSerialize["instance_class"] = o.InstanceClass
 	toSerialize["force_zero_downtime"] = o.ForceZeroDowntime
 	toSerialize["naive_health_check"] = o.NaiveHealthCheck
+	toSerialize["stop_timeout"] = o.StopTimeout.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -499,6 +528,7 @@ func (o *Service) UnmarshalJSON(data []byte) (err error) {
 		"instance_class",
 		"force_zero_downtime",
 		"naive_health_check",
+		"stop_timeout",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -542,6 +572,7 @@ func (o *Service) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "instance_class")
 		delete(additionalProperties, "force_zero_downtime")
 		delete(additionalProperties, "naive_health_check")
+		delete(additionalProperties, "stop_timeout")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

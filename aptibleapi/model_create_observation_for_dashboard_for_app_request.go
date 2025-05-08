@@ -15,41 +15,41 @@ import (
 	"fmt"
 )
 
-// checks if the CreateObservationForDashboardRequest type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CreateObservationForDashboardRequest{}
+// checks if the CreateObservationForDashboardForAppRequest type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CreateObservationForDashboardForAppRequest{}
 
-// CreateObservationForDashboardRequest struct for CreateObservationForDashboardRequest
-type CreateObservationForDashboardRequest struct {
+// CreateObservationForDashboardForAppRequest struct for CreateObservationForDashboardForAppRequest
+type CreateObservationForDashboardForAppRequest struct {
 	RangeBegin string `json:"range_begin"`
 	RangeEnd string `json:"range_end"`
 	Data map[string]interface{} `json:"data"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _CreateObservationForDashboardRequest CreateObservationForDashboardRequest
+type _CreateObservationForDashboardForAppRequest CreateObservationForDashboardForAppRequest
 
-// NewCreateObservationForDashboardRequest instantiates a new CreateObservationForDashboardRequest object
+// NewCreateObservationForDashboardForAppRequest instantiates a new CreateObservationForDashboardForAppRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateObservationForDashboardRequest(rangeBegin string, rangeEnd string, data map[string]interface{}) *CreateObservationForDashboardRequest {
-	this := CreateObservationForDashboardRequest{}
+func NewCreateObservationForDashboardForAppRequest(rangeBegin string, rangeEnd string, data map[string]interface{}) *CreateObservationForDashboardForAppRequest {
+	this := CreateObservationForDashboardForAppRequest{}
 	this.RangeBegin = rangeBegin
 	this.RangeEnd = rangeEnd
 	this.Data = data
 	return &this
 }
 
-// NewCreateObservationForDashboardRequestWithDefaults instantiates a new CreateObservationForDashboardRequest object
+// NewCreateObservationForDashboardForAppRequestWithDefaults instantiates a new CreateObservationForDashboardForAppRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCreateObservationForDashboardRequestWithDefaults() *CreateObservationForDashboardRequest {
-	this := CreateObservationForDashboardRequest{}
+func NewCreateObservationForDashboardForAppRequestWithDefaults() *CreateObservationForDashboardForAppRequest {
+	this := CreateObservationForDashboardForAppRequest{}
 	return &this
 }
 
 // GetRangeBegin returns the RangeBegin field value
-func (o *CreateObservationForDashboardRequest) GetRangeBegin() string {
+func (o *CreateObservationForDashboardForAppRequest) GetRangeBegin() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -60,7 +60,7 @@ func (o *CreateObservationForDashboardRequest) GetRangeBegin() string {
 
 // GetRangeBeginOk returns a tuple with the RangeBegin field value
 // and a boolean to check if the value has been set.
-func (o *CreateObservationForDashboardRequest) GetRangeBeginOk() (*string, bool) {
+func (o *CreateObservationForDashboardForAppRequest) GetRangeBeginOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -68,12 +68,12 @@ func (o *CreateObservationForDashboardRequest) GetRangeBeginOk() (*string, bool)
 }
 
 // SetRangeBegin sets field value
-func (o *CreateObservationForDashboardRequest) SetRangeBegin(v string) {
+func (o *CreateObservationForDashboardForAppRequest) SetRangeBegin(v string) {
 	o.RangeBegin = v
 }
 
 // GetRangeEnd returns the RangeEnd field value
-func (o *CreateObservationForDashboardRequest) GetRangeEnd() string {
+func (o *CreateObservationForDashboardForAppRequest) GetRangeEnd() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -84,7 +84,7 @@ func (o *CreateObservationForDashboardRequest) GetRangeEnd() string {
 
 // GetRangeEndOk returns a tuple with the RangeEnd field value
 // and a boolean to check if the value has been set.
-func (o *CreateObservationForDashboardRequest) GetRangeEndOk() (*string, bool) {
+func (o *CreateObservationForDashboardForAppRequest) GetRangeEndOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -92,12 +92,12 @@ func (o *CreateObservationForDashboardRequest) GetRangeEndOk() (*string, bool) {
 }
 
 // SetRangeEnd sets field value
-func (o *CreateObservationForDashboardRequest) SetRangeEnd(v string) {
+func (o *CreateObservationForDashboardForAppRequest) SetRangeEnd(v string) {
 	o.RangeEnd = v
 }
 
 // GetData returns the Data field value
-func (o *CreateObservationForDashboardRequest) GetData() map[string]interface{} {
+func (o *CreateObservationForDashboardForAppRequest) GetData() map[string]interface{} {
 	if o == nil {
 		var ret map[string]interface{}
 		return ret
@@ -108,7 +108,7 @@ func (o *CreateObservationForDashboardRequest) GetData() map[string]interface{} 
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CreateObservationForDashboardRequest) GetDataOk() (map[string]interface{}, bool) {
+func (o *CreateObservationForDashboardForAppRequest) GetDataOk() (map[string]interface{}, bool) {
 	if o == nil {
 		return map[string]interface{}{}, false
 	}
@@ -116,11 +116,11 @@ func (o *CreateObservationForDashboardRequest) GetDataOk() (map[string]interface
 }
 
 // SetData sets field value
-func (o *CreateObservationForDashboardRequest) SetData(v map[string]interface{}) {
+func (o *CreateObservationForDashboardForAppRequest) SetData(v map[string]interface{}) {
 	o.Data = v
 }
 
-func (o CreateObservationForDashboardRequest) MarshalJSON() ([]byte, error) {
+func (o CreateObservationForDashboardForAppRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -128,7 +128,7 @@ func (o CreateObservationForDashboardRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o CreateObservationForDashboardRequest) ToMap() (map[string]interface{}, error) {
+func (o CreateObservationForDashboardForAppRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["range_begin"] = o.RangeBegin
 	toSerialize["range_end"] = o.RangeEnd
@@ -141,7 +141,7 @@ func (o CreateObservationForDashboardRequest) ToMap() (map[string]interface{}, e
 	return toSerialize, nil
 }
 
-func (o *CreateObservationForDashboardRequest) UnmarshalJSON(data []byte) (err error) {
+func (o *CreateObservationForDashboardForAppRequest) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -165,15 +165,15 @@ func (o *CreateObservationForDashboardRequest) UnmarshalJSON(data []byte) (err e
 		}
 	}
 
-	varCreateObservationForDashboardRequest := _CreateObservationForDashboardRequest{}
+	varCreateObservationForDashboardForAppRequest := _CreateObservationForDashboardForAppRequest{}
 
-	err = json.Unmarshal(data, &varCreateObservationForDashboardRequest)
+	err = json.Unmarshal(data, &varCreateObservationForDashboardForAppRequest)
 
 	if err != nil {
 		return err
 	}
 
-	*o = CreateObservationForDashboardRequest(varCreateObservationForDashboardRequest)
+	*o = CreateObservationForDashboardForAppRequest(varCreateObservationForDashboardForAppRequest)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -187,38 +187,38 @@ func (o *CreateObservationForDashboardRequest) UnmarshalJSON(data []byte) (err e
 	return err
 }
 
-type NullableCreateObservationForDashboardRequest struct {
-	value *CreateObservationForDashboardRequest
+type NullableCreateObservationForDashboardForAppRequest struct {
+	value *CreateObservationForDashboardForAppRequest
 	isSet bool
 }
 
-func (v NullableCreateObservationForDashboardRequest) Get() *CreateObservationForDashboardRequest {
+func (v NullableCreateObservationForDashboardForAppRequest) Get() *CreateObservationForDashboardForAppRequest {
 	return v.value
 }
 
-func (v *NullableCreateObservationForDashboardRequest) Set(val *CreateObservationForDashboardRequest) {
+func (v *NullableCreateObservationForDashboardForAppRequest) Set(val *CreateObservationForDashboardForAppRequest) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCreateObservationForDashboardRequest) IsSet() bool {
+func (v NullableCreateObservationForDashboardForAppRequest) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCreateObservationForDashboardRequest) Unset() {
+func (v *NullableCreateObservationForDashboardForAppRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCreateObservationForDashboardRequest(val *CreateObservationForDashboardRequest) *NullableCreateObservationForDashboardRequest {
-	return &NullableCreateObservationForDashboardRequest{value: val, isSet: true}
+func NewNullableCreateObservationForDashboardForAppRequest(val *CreateObservationForDashboardForAppRequest) *NullableCreateObservationForDashboardForAppRequest {
+	return &NullableCreateObservationForDashboardForAppRequest{value: val, isSet: true}
 }
 
-func (v NullableCreateObservationForDashboardRequest) MarshalJSON() ([]byte, error) {
+func (v NullableCreateObservationForDashboardForAppRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCreateObservationForDashboardRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableCreateObservationForDashboardForAppRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -15,27 +15,27 @@ import (
 	"fmt"
 )
 
-// checks if the ListWidgetsForDashboard200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListWidgetsForDashboard200Response{}
+// checks if the ListObservationsForService200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListObservationsForService200Response{}
 
-// ListWidgetsForDashboard200Response struct for ListWidgetsForDashboard200Response
-type ListWidgetsForDashboard200Response struct {
-	Embedded ListWidgetsForDashboard200ResponseEmbedded `json:"_embedded"`
+// ListObservationsForService200Response struct for ListObservationsForService200Response
+type ListObservationsForService200Response struct {
+	Embedded ListObservationsForApp200ResponseEmbedded `json:"_embedded"`
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListWidgetsForDashboard200ResponseLinks `json:"_links"`
+	Links ListDiskAttachmentsForService200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _ListWidgetsForDashboard200Response ListWidgetsForDashboard200Response
+type _ListObservationsForService200Response ListObservationsForService200Response
 
-// NewListWidgetsForDashboard200Response instantiates a new ListWidgetsForDashboard200Response object
+// NewListObservationsForService200Response instantiates a new ListObservationsForService200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListWidgetsForDashboard200Response(embedded ListWidgetsForDashboard200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListWidgetsForDashboard200ResponseLinks) *ListWidgetsForDashboard200Response {
-	this := ListWidgetsForDashboard200Response{}
+func NewListObservationsForService200Response(embedded ListObservationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDiskAttachmentsForService200ResponseLinks) *ListObservationsForService200Response {
+	this := ListObservationsForService200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
 	this.PerPage = perPage
@@ -44,18 +44,18 @@ func NewListWidgetsForDashboard200Response(embedded ListWidgetsForDashboard200Re
 	return &this
 }
 
-// NewListWidgetsForDashboard200ResponseWithDefaults instantiates a new ListWidgetsForDashboard200Response object
+// NewListObservationsForService200ResponseWithDefaults instantiates a new ListObservationsForService200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListWidgetsForDashboard200ResponseWithDefaults() *ListWidgetsForDashboard200Response {
-	this := ListWidgetsForDashboard200Response{}
+func NewListObservationsForService200ResponseWithDefaults() *ListObservationsForService200Response {
+	this := ListObservationsForService200Response{}
 	return &this
 }
 
 // GetEmbedded returns the Embedded field value
-func (o *ListWidgetsForDashboard200Response) GetEmbedded() ListWidgetsForDashboard200ResponseEmbedded {
+func (o *ListObservationsForService200Response) GetEmbedded() ListObservationsForApp200ResponseEmbedded {
 	if o == nil {
-		var ret ListWidgetsForDashboard200ResponseEmbedded
+		var ret ListObservationsForApp200ResponseEmbedded
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *ListWidgetsForDashboard200Response) GetEmbedded() ListWidgetsForDashboa
 
 // GetEmbeddedOk returns a tuple with the Embedded field value
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200Response) GetEmbeddedOk() (*ListWidgetsForDashboard200ResponseEmbedded, bool) {
+func (o *ListObservationsForService200Response) GetEmbeddedOk() (*ListObservationsForApp200ResponseEmbedded, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,12 +72,12 @@ func (o *ListWidgetsForDashboard200Response) GetEmbeddedOk() (*ListWidgetsForDas
 }
 
 // SetEmbedded sets field value
-func (o *ListWidgetsForDashboard200Response) SetEmbedded(v ListWidgetsForDashboard200ResponseEmbedded) {
+func (o *ListObservationsForService200Response) SetEmbedded(v ListObservationsForApp200ResponseEmbedded) {
 	o.Embedded = v
 }
 
 // GetTotalCount returns the TotalCount field value
-func (o *ListWidgetsForDashboard200Response) GetTotalCount() int32 {
+func (o *ListObservationsForService200Response) GetTotalCount() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -88,7 +88,7 @@ func (o *ListWidgetsForDashboard200Response) GetTotalCount() int32 {
 
 // GetTotalCountOk returns a tuple with the TotalCount field value
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200Response) GetTotalCountOk() (*int32, bool) {
+func (o *ListObservationsForService200Response) GetTotalCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -96,12 +96,12 @@ func (o *ListWidgetsForDashboard200Response) GetTotalCountOk() (*int32, bool) {
 }
 
 // SetTotalCount sets field value
-func (o *ListWidgetsForDashboard200Response) SetTotalCount(v int32) {
+func (o *ListObservationsForService200Response) SetTotalCount(v int32) {
 	o.TotalCount = v
 }
 
 // GetPerPage returns the PerPage field value
-func (o *ListWidgetsForDashboard200Response) GetPerPage() int32 {
+func (o *ListObservationsForService200Response) GetPerPage() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -112,7 +112,7 @@ func (o *ListWidgetsForDashboard200Response) GetPerPage() int32 {
 
 // GetPerPageOk returns a tuple with the PerPage field value
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200Response) GetPerPageOk() (*int32, bool) {
+func (o *ListObservationsForService200Response) GetPerPageOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,12 +120,12 @@ func (o *ListWidgetsForDashboard200Response) GetPerPageOk() (*int32, bool) {
 }
 
 // SetPerPage sets field value
-func (o *ListWidgetsForDashboard200Response) SetPerPage(v int32) {
+func (o *ListObservationsForService200Response) SetPerPage(v int32) {
 	o.PerPage = v
 }
 
 // GetCurrentPage returns the CurrentPage field value
-func (o *ListWidgetsForDashboard200Response) GetCurrentPage() int32 {
+func (o *ListObservationsForService200Response) GetCurrentPage() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -136,7 +136,7 @@ func (o *ListWidgetsForDashboard200Response) GetCurrentPage() int32 {
 
 // GetCurrentPageOk returns a tuple with the CurrentPage field value
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200Response) GetCurrentPageOk() (*int32, bool) {
+func (o *ListObservationsForService200Response) GetCurrentPageOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -144,14 +144,14 @@ func (o *ListWidgetsForDashboard200Response) GetCurrentPageOk() (*int32, bool) {
 }
 
 // SetCurrentPage sets field value
-func (o *ListWidgetsForDashboard200Response) SetCurrentPage(v int32) {
+func (o *ListObservationsForService200Response) SetCurrentPage(v int32) {
 	o.CurrentPage = v
 }
 
 // GetLinks returns the Links field value
-func (o *ListWidgetsForDashboard200Response) GetLinks() ListWidgetsForDashboard200ResponseLinks {
+func (o *ListObservationsForService200Response) GetLinks() ListDiskAttachmentsForService200ResponseLinks {
 	if o == nil {
-		var ret ListWidgetsForDashboard200ResponseLinks
+		var ret ListDiskAttachmentsForService200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListWidgetsForDashboard200Response) GetLinks() ListWidgetsForDashboard2
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListWidgetsForDashboard200Response) GetLinksOk() (*ListWidgetsForDashboard200ResponseLinks, bool) {
+func (o *ListObservationsForService200Response) GetLinksOk() (*ListDiskAttachmentsForService200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,11 +168,11 @@ func (o *ListWidgetsForDashboard200Response) GetLinksOk() (*ListWidgetsForDashbo
 }
 
 // SetLinks sets field value
-func (o *ListWidgetsForDashboard200Response) SetLinks(v ListWidgetsForDashboard200ResponseLinks) {
+func (o *ListObservationsForService200Response) SetLinks(v ListDiskAttachmentsForService200ResponseLinks) {
 	o.Links = v
 }
 
-func (o ListWidgetsForDashboard200Response) MarshalJSON() ([]byte, error) {
+func (o ListObservationsForService200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -180,7 +180,7 @@ func (o ListWidgetsForDashboard200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ListWidgetsForDashboard200Response) ToMap() (map[string]interface{}, error) {
+func (o ListObservationsForService200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["_embedded"] = o.Embedded
 	toSerialize["total_count"] = o.TotalCount
@@ -195,7 +195,7 @@ func (o ListWidgetsForDashboard200Response) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 
-func (o *ListWidgetsForDashboard200Response) UnmarshalJSON(data []byte) (err error) {
+func (o *ListObservationsForService200Response) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -221,15 +221,15 @@ func (o *ListWidgetsForDashboard200Response) UnmarshalJSON(data []byte) (err err
 		}
 	}
 
-	varListWidgetsForDashboard200Response := _ListWidgetsForDashboard200Response{}
+	varListObservationsForService200Response := _ListObservationsForService200Response{}
 
-	err = json.Unmarshal(data, &varListWidgetsForDashboard200Response)
+	err = json.Unmarshal(data, &varListObservationsForService200Response)
 
 	if err != nil {
 		return err
 	}
 
-	*o = ListWidgetsForDashboard200Response(varListWidgetsForDashboard200Response)
+	*o = ListObservationsForService200Response(varListObservationsForService200Response)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -245,38 +245,38 @@ func (o *ListWidgetsForDashboard200Response) UnmarshalJSON(data []byte) (err err
 	return err
 }
 
-type NullableListWidgetsForDashboard200Response struct {
-	value *ListWidgetsForDashboard200Response
+type NullableListObservationsForService200Response struct {
+	value *ListObservationsForService200Response
 	isSet bool
 }
 
-func (v NullableListWidgetsForDashboard200Response) Get() *ListWidgetsForDashboard200Response {
+func (v NullableListObservationsForService200Response) Get() *ListObservationsForService200Response {
 	return v.value
 }
 
-func (v *NullableListWidgetsForDashboard200Response) Set(val *ListWidgetsForDashboard200Response) {
+func (v *NullableListObservationsForService200Response) Set(val *ListObservationsForService200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListWidgetsForDashboard200Response) IsSet() bool {
+func (v NullableListObservationsForService200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListWidgetsForDashboard200Response) Unset() {
+func (v *NullableListObservationsForService200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListWidgetsForDashboard200Response(val *ListWidgetsForDashboard200Response) *NullableListWidgetsForDashboard200Response {
-	return &NullableListWidgetsForDashboard200Response{value: val, isSet: true}
+func NewNullableListObservationsForService200Response(val *ListObservationsForService200Response) *NullableListObservationsForService200Response {
+	return &NullableListObservationsForService200Response{value: val, isSet: true}
 }
 
-func (v NullableListWidgetsForDashboard200Response) MarshalJSON() ([]byte, error) {
+func (v NullableListObservationsForService200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListWidgetsForDashboard200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableListObservationsForService200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

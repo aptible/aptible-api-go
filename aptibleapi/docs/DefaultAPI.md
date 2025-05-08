@@ -4,12 +4,12 @@ All URIs are relative to *https://api.aptible.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDatadogIntegration**](DefaultAPI.md#CreateDatadogIntegration) | **Post** /datadog_integrations | create integration
-[**DeleteDatadogIntegration**](DefaultAPI.md#DeleteDatadogIntegration) | **Delete** /datadog_integrations/{id} | delete integration
-[**GetDatadogIntegration**](DefaultAPI.md#GetDatadogIntegration) | **Get** /datadog_integrations/{id} | show integration
+[**CreateDatadogIntegration**](DefaultAPI.md#CreateDatadogIntegration) | **Post** /integrations | create integration
+[**DeleteDatadogIntegration**](DefaultAPI.md#DeleteDatadogIntegration) | **Delete** /integrations/{id} | delete integration
+[**GetDatadogIntegration**](DefaultAPI.md#GetDatadogIntegration) | **Get** /integrations/{id} | show integration
 [**GetRoot**](DefaultAPI.md#GetRoot) | **Get** / | show home
-[**ListDatadogIntegrations**](DefaultAPI.md#ListDatadogIntegrations) | **Get** /datadog_integrations | list integrations
-[**UpdateDatadogIntegration**](DefaultAPI.md#UpdateDatadogIntegration) | **Put** /datadog_integrations/{id} | update integration
+[**ListDatadogIntegrations**](DefaultAPI.md#ListDatadogIntegrations) | **Get** /integrations | list integrations
+[**UpdateDatadogIntegration**](DefaultAPI.md#UpdateDatadogIntegration) | **Put** /integrations/{id} | update integration
 
 
 

@@ -15,58 +15,54 @@ import (
 	"fmt"
 )
 
-// checks if the Observation type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Observation{}
+// checks if the Metrics type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Metrics{}
 
-// Observation struct for Observation
-type Observation struct {
-	Id int32 `json:"id"`
+// Metrics struct for Metrics
+type Metrics struct {
+	Id Uuid `json:"id"`
 	MetaType string `json:"_type"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
-	RangeBegin string `json:"range_begin"`
-	RangeEnd string `json:"range_end"`
-	Data map[string]interface{} `json:"data"`
 	Name string `json:"name"`
 	Description string `json:"description"`
 	Unit string `json:"unit"`
-	Links *ConfigurationLinks `json:"_links,omitempty"`
+	Query map[string]interface{} `json:"query"`
+	Links *IntegrationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _Observation Observation
+type _Metrics Metrics
 
-// NewObservation instantiates a new Observation object
+// NewMetrics instantiates a new Metrics object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewObservation(id int32, metaType string, createdAt string, updatedAt string, rangeBegin string, rangeEnd string, data map[string]interface{}, name string, description string, unit string) *Observation {
-	this := Observation{}
+func NewMetrics(id Uuid, metaType string, createdAt string, updatedAt string, name string, description string, unit string, query map[string]interface{}) *Metrics {
+	this := Metrics{}
 	this.Id = id
 	this.MetaType = metaType
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
-	this.RangeBegin = rangeBegin
-	this.RangeEnd = rangeEnd
-	this.Data = data
 	this.Name = name
 	this.Description = description
 	this.Unit = unit
+	this.Query = query
 	return &this
 }
 
-// NewObservationWithDefaults instantiates a new Observation object
+// NewMetricsWithDefaults instantiates a new Metrics object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewObservationWithDefaults() *Observation {
-	this := Observation{}
+func NewMetricsWithDefaults() *Metrics {
+	this := Metrics{}
 	return &this
 }
 
 // GetId returns the Id field value
-func (o *Observation) GetId() int32 {
+func (o *Metrics) GetId() Uuid {
 	if o == nil {
-		var ret int32
+		var ret Uuid
 		return ret
 	}
 
@@ -75,7 +71,7 @@ func (o *Observation) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *Observation) GetIdOk() (*int32, bool) {
+func (o *Metrics) GetIdOk() (*Uuid, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -83,12 +79,12 @@ func (o *Observation) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *Observation) SetId(v int32) {
+func (o *Metrics) SetId(v Uuid) {
 	o.Id = v
 }
 
 // GetMetaType returns the MetaType field value
-func (o *Observation) GetMetaType() string {
+func (o *Metrics) GetMetaType() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -99,7 +95,7 @@ func (o *Observation) GetMetaType() string {
 
 // GetMetaTypeOk returns a tuple with the MetaType field value
 // and a boolean to check if the value has been set.
-func (o *Observation) GetMetaTypeOk() (*string, bool) {
+func (o *Metrics) GetMetaTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -107,12 +103,12 @@ func (o *Observation) GetMetaTypeOk() (*string, bool) {
 }
 
 // SetMetaType sets field value
-func (o *Observation) SetMetaType(v string) {
+func (o *Metrics) SetMetaType(v string) {
 	o.MetaType = v
 }
 
 // GetCreatedAt returns the CreatedAt field value
-func (o *Observation) GetCreatedAt() string {
+func (o *Metrics) GetCreatedAt() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -123,7 +119,7 @@ func (o *Observation) GetCreatedAt() string {
 
 // GetCreatedAtOk returns a tuple with the CreatedAt field value
 // and a boolean to check if the value has been set.
-func (o *Observation) GetCreatedAtOk() (*string, bool) {
+func (o *Metrics) GetCreatedAtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,12 +127,12 @@ func (o *Observation) GetCreatedAtOk() (*string, bool) {
 }
 
 // SetCreatedAt sets field value
-func (o *Observation) SetCreatedAt(v string) {
+func (o *Metrics) SetCreatedAt(v string) {
 	o.CreatedAt = v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value
-func (o *Observation) GetUpdatedAt() string {
+func (o *Metrics) GetUpdatedAt() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -147,7 +143,7 @@ func (o *Observation) GetUpdatedAt() string {
 
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value
 // and a boolean to check if the value has been set.
-func (o *Observation) GetUpdatedAtOk() (*string, bool) {
+func (o *Metrics) GetUpdatedAtOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -155,84 +151,12 @@ func (o *Observation) GetUpdatedAtOk() (*string, bool) {
 }
 
 // SetUpdatedAt sets field value
-func (o *Observation) SetUpdatedAt(v string) {
+func (o *Metrics) SetUpdatedAt(v string) {
 	o.UpdatedAt = v
 }
 
-// GetRangeBegin returns the RangeBegin field value
-func (o *Observation) GetRangeBegin() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.RangeBegin
-}
-
-// GetRangeBeginOk returns a tuple with the RangeBegin field value
-// and a boolean to check if the value has been set.
-func (o *Observation) GetRangeBeginOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RangeBegin, true
-}
-
-// SetRangeBegin sets field value
-func (o *Observation) SetRangeBegin(v string) {
-	o.RangeBegin = v
-}
-
-// GetRangeEnd returns the RangeEnd field value
-func (o *Observation) GetRangeEnd() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.RangeEnd
-}
-
-// GetRangeEndOk returns a tuple with the RangeEnd field value
-// and a boolean to check if the value has been set.
-func (o *Observation) GetRangeEndOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.RangeEnd, true
-}
-
-// SetRangeEnd sets field value
-func (o *Observation) SetRangeEnd(v string) {
-	o.RangeEnd = v
-}
-
-// GetData returns the Data field value
-func (o *Observation) GetData() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
-		return ret
-	}
-
-	return o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value
-// and a boolean to check if the value has been set.
-func (o *Observation) GetDataOk() (map[string]interface{}, bool) {
-	if o == nil {
-		return map[string]interface{}{}, false
-	}
-	return o.Data, true
-}
-
-// SetData sets field value
-func (o *Observation) SetData(v map[string]interface{}) {
-	o.Data = v
-}
-
 // GetName returns the Name field value
-func (o *Observation) GetName() string {
+func (o *Metrics) GetName() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -243,7 +167,7 @@ func (o *Observation) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *Observation) GetNameOk() (*string, bool) {
+func (o *Metrics) GetNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -251,12 +175,12 @@ func (o *Observation) GetNameOk() (*string, bool) {
 }
 
 // SetName sets field value
-func (o *Observation) SetName(v string) {
+func (o *Metrics) SetName(v string) {
 	o.Name = v
 }
 
 // GetDescription returns the Description field value
-func (o *Observation) GetDescription() string {
+func (o *Metrics) GetDescription() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -267,7 +191,7 @@ func (o *Observation) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value
 // and a boolean to check if the value has been set.
-func (o *Observation) GetDescriptionOk() (*string, bool) {
+func (o *Metrics) GetDescriptionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -275,12 +199,12 @@ func (o *Observation) GetDescriptionOk() (*string, bool) {
 }
 
 // SetDescription sets field value
-func (o *Observation) SetDescription(v string) {
+func (o *Metrics) SetDescription(v string) {
 	o.Description = v
 }
 
 // GetUnit returns the Unit field value
-func (o *Observation) GetUnit() string {
+func (o *Metrics) GetUnit() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -291,7 +215,7 @@ func (o *Observation) GetUnit() string {
 
 // GetUnitOk returns a tuple with the Unit field value
 // and a boolean to check if the value has been set.
-func (o *Observation) GetUnitOk() (*string, bool) {
+func (o *Metrics) GetUnitOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -299,14 +223,38 @@ func (o *Observation) GetUnitOk() (*string, bool) {
 }
 
 // SetUnit sets field value
-func (o *Observation) SetUnit(v string) {
+func (o *Metrics) SetUnit(v string) {
 	o.Unit = v
 }
 
+// GetQuery returns the Query field value
+func (o *Metrics) GetQuery() map[string]interface{} {
+	if o == nil {
+		var ret map[string]interface{}
+		return ret
+	}
+
+	return o.Query
+}
+
+// GetQueryOk returns a tuple with the Query field value
+// and a boolean to check if the value has been set.
+func (o *Metrics) GetQueryOk() (map[string]interface{}, bool) {
+	if o == nil {
+		return map[string]interface{}{}, false
+	}
+	return o.Query, true
+}
+
+// SetQuery sets field value
+func (o *Metrics) SetQuery(v map[string]interface{}) {
+	o.Query = v
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *Observation) GetLinks() ConfigurationLinks {
+func (o *Metrics) GetLinks() IntegrationLinks {
 	if o == nil || IsNil(o.Links) {
-		var ret ConfigurationLinks
+		var ret IntegrationLinks
 		return ret
 	}
 	return *o.Links
@@ -314,7 +262,7 @@ func (o *Observation) GetLinks() ConfigurationLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Observation) GetLinksOk() (*ConfigurationLinks, bool) {
+func (o *Metrics) GetLinksOk() (*IntegrationLinks, bool) {
 	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
@@ -322,7 +270,7 @@ func (o *Observation) GetLinksOk() (*ConfigurationLinks, bool) {
 }
 
 // HasLinks returns a boolean if a field has been set.
-func (o *Observation) HasLinks() bool {
+func (o *Metrics) HasLinks() bool {
 	if o != nil && !IsNil(o.Links) {
 		return true
 	}
@@ -330,12 +278,12 @@ func (o *Observation) HasLinks() bool {
 	return false
 }
 
-// SetLinks gets a reference to the given ConfigurationLinks and assigns it to the Links field.
-func (o *Observation) SetLinks(v ConfigurationLinks) {
+// SetLinks gets a reference to the given IntegrationLinks and assigns it to the Links field.
+func (o *Metrics) SetLinks(v IntegrationLinks) {
 	o.Links = &v
 }
 
-func (o Observation) MarshalJSON() ([]byte, error) {
+func (o Metrics) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -343,18 +291,16 @@ func (o Observation) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o Observation) ToMap() (map[string]interface{}, error) {
+func (o Metrics) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["_type"] = o.MetaType
 	toSerialize["created_at"] = o.CreatedAt
 	toSerialize["updated_at"] = o.UpdatedAt
-	toSerialize["range_begin"] = o.RangeBegin
-	toSerialize["range_end"] = o.RangeEnd
-	toSerialize["data"] = o.Data
 	toSerialize["name"] = o.Name
 	toSerialize["description"] = o.Description
 	toSerialize["unit"] = o.Unit
+	toSerialize["query"] = o.Query
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -366,7 +312,7 @@ func (o Observation) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *Observation) UnmarshalJSON(data []byte) (err error) {
+func (o *Metrics) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -375,12 +321,10 @@ func (o *Observation) UnmarshalJSON(data []byte) (err error) {
 		"_type",
 		"created_at",
 		"updated_at",
-		"range_begin",
-		"range_end",
-		"data",
 		"name",
 		"description",
 		"unit",
+		"query",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -397,15 +341,15 @@ func (o *Observation) UnmarshalJSON(data []byte) (err error) {
 		}
 	}
 
-	varObservation := _Observation{}
+	varMetrics := _Metrics{}
 
-	err = json.Unmarshal(data, &varObservation)
+	err = json.Unmarshal(data, &varMetrics)
 
 	if err != nil {
 		return err
 	}
 
-	*o = Observation(varObservation)
+	*o = Metrics(varMetrics)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -414,12 +358,10 @@ func (o *Observation) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "_type")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "updated_at")
-		delete(additionalProperties, "range_begin")
-		delete(additionalProperties, "range_end")
-		delete(additionalProperties, "data")
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "unit")
+		delete(additionalProperties, "query")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}
@@ -427,38 +369,38 @@ func (o *Observation) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
-type NullableObservation struct {
-	value *Observation
+type NullableMetrics struct {
+	value *Metrics
 	isSet bool
 }
 
-func (v NullableObservation) Get() *Observation {
+func (v NullableMetrics) Get() *Metrics {
 	return v.value
 }
 
-func (v *NullableObservation) Set(val *Observation) {
+func (v *NullableMetrics) Set(val *Metrics) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableObservation) IsSet() bool {
+func (v NullableMetrics) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableObservation) Unset() {
+func (v *NullableMetrics) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableObservation(val *Observation) *NullableObservation {
-	return &NullableObservation{value: val, isSet: true}
+func NewNullableMetrics(val *Metrics) *NullableMetrics {
+	return &NullableMetrics{value: val, isSet: true}
 }
 
-func (v NullableObservation) MarshalJSON() ([]byte, error) {
+func (v NullableMetrics) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableObservation) UnmarshalJSON(src []byte) error {
+func (v *NullableMetrics) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

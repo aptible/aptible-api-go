@@ -128,17 +128,32 @@ Class | Method | HTTP request | Description
 *ContainersAPI* | [**LogDrainsLogDrainIdContainersGet**](docs/ContainersAPI.md#logdrainslogdrainidcontainersget) | **Get** /log_drains/{log_drain_id}/containers | list containers
 *ContainersAPI* | [**MetricDrainsMetricDrainIdContainersGet**](docs/ContainersAPI.md#metricdrainsmetricdrainidcontainersget) | **Get** /metric_drains/{metric_drain_id}/containers | list containers
 *DashboardsAPI* | [**CreateDashboard**](docs/DashboardsAPI.md#createdashboard) | **Post** /dashboards | create dashboard
-*DashboardsAPI* | [**CreateObservationForDashboard**](docs/DashboardsAPI.md#createobservationfordashboard) | **Post** /apps/{id}/observations | create observation
+*DashboardsAPI* | [**CreateMetricForIntegration**](docs/DashboardsAPI.md#createmetricforintegration) | **Post** /integrations/{id}/metrics | create metric
+*DashboardsAPI* | [**CreateObservationForDashboardForApp**](docs/DashboardsAPI.md#createobservationfordashboardforapp) | **Post** /apps/{id}/observations | create observation
+*DashboardsAPI* | [**CreateObservationForDashboardForContainer**](docs/DashboardsAPI.md#createobservationfordashboardforcontainer) | **Post** /containers/{id}/observations | create observation
+*DashboardsAPI* | [**CreateObservationForDashboardForDatabase**](docs/DashboardsAPI.md#createobservationfordashboardfordatabase) | **Post** /databases/{id}/observations | create observation
+*DashboardsAPI* | [**CreateObservationForDashboardForDisk**](docs/DashboardsAPI.md#createobservationfordashboardfordisk) | **Post** /disks/{id}/observations | create observation
+*DashboardsAPI* | [**CreateObservationForDashboardForService**](docs/DashboardsAPI.md#createobservationfordashboardforservice) | **Post** /services/{id}/observations | create observation
+*DashboardsAPI* | [**CreateObservationForDashboardForVhost**](docs/DashboardsAPI.md#createobservationfordashboardforvhost) | **Post** /vhosts/{id}/observations | create observation
 *DashboardsAPI* | [**CreateWidgetForDashboard**](docs/DashboardsAPI.md#createwidgetfordashboard) | **Post** /dashboards/{id}/widgets | create widget
 *DashboardsAPI* | [**DeleteDashboard**](docs/DashboardsAPI.md#deletedashboard) | **Delete** /dashboards/{id} | delete dashboard
+*DashboardsAPI* | [**DeleteMetric**](docs/DashboardsAPI.md#deletemetric) | **Delete** /metrics/{id} | delete metric
 *DashboardsAPI* | [**DeleteWidget**](docs/DashboardsAPI.md#deletewidget) | **Delete** /widgets/{id} | delete widget
 *DashboardsAPI* | [**GetDashboard**](docs/DashboardsAPI.md#getdashboard) | **Get** /dashboards/{id} | show dashboard
+*DashboardsAPI* | [**GetMetric**](docs/DashboardsAPI.md#getmetric) | **Get** /metrics/{id} | show metric
 *DashboardsAPI* | [**GetWidget**](docs/DashboardsAPI.md#getwidget) | **Get** /widgets/{id} | show widget
 *DashboardsAPI* | [**ListDashboards**](docs/DashboardsAPI.md#listdashboards) | **Get** /dashboards | list dashboards
+*DashboardsAPI* | [**ListMetricsForIntegration**](docs/DashboardsAPI.md#listmetricsforintegration) | **Get** /integrations/{id}/metrics | list metrics
 *DashboardsAPI* | [**ListObservationsForApp**](docs/DashboardsAPI.md#listobservationsforapp) | **Get** /apps/{id}/observations | list observations
+*DashboardsAPI* | [**ListObservationsForContainer**](docs/DashboardsAPI.md#listobservationsforcontainer) | **Get** /containers/{id}/observations | list observations
+*DashboardsAPI* | [**ListObservationsForDatabase**](docs/DashboardsAPI.md#listobservationsfordatabase) | **Get** /databases/{id}/observations | list observations
+*DashboardsAPI* | [**ListObservationsForDisk**](docs/DashboardsAPI.md#listobservationsfordisk) | **Get** /disks/{id}/observations | list observations
+*DashboardsAPI* | [**ListObservationsForService**](docs/DashboardsAPI.md#listobservationsforservice) | **Get** /services/{id}/observations | list observations
+*DashboardsAPI* | [**ListObservationsForVhost**](docs/DashboardsAPI.md#listobservationsforvhost) | **Get** /vhosts/{id}/observations | list observations
 *DashboardsAPI* | [**ListWidgetsForDashboard**](docs/DashboardsAPI.md#listwidgetsfordashboard) | **Get** /dashboards/{id}/widgets | list widgets
 *DashboardsAPI* | [**ShowObservation**](docs/DashboardsAPI.md#showobservation) | **Get** /observations/{id} | show observation
 *DashboardsAPI* | [**UpdateDashboard**](docs/DashboardsAPI.md#updatedashboard) | **Put** /dashboards/{id} | update dashboard
+*DashboardsAPI* | [**UpdateMetric**](docs/DashboardsAPI.md#updatemetric) | **Put** /metrics/{id} | update metric
 *DashboardsAPI* | [**UpdateWidget**](docs/DashboardsAPI.md#updatewidget) | **Put** /widgets/{id} | update widget
 *DatabaseCredentialsAPI* | [**GetDatabaseCredential**](docs/DatabaseCredentialsAPI.md#getdatabasecredential) | **Get** /database_credentials/{id} | show database_credential
 *DatabaseCredentialsAPI* | [**ListDatabaseCredentialsForDatabase**](docs/DatabaseCredentialsAPI.md#listdatabasecredentialsfordatabase) | **Get** /databases/{database_id}/database_credentials | list database_credentials
@@ -150,12 +165,12 @@ Class | Method | HTTP request | Description
 *DatabasesAPI* | [**ListReplicasForDatabase**](docs/DatabasesAPI.md#listreplicasfordatabase) | **Get** /databases/{database_id}/dependents | list databases
 *DatabasesAPI* | [**PatchDatabase**](docs/DatabasesAPI.md#patchdatabase) | **Patch** /databases/{id} | update database
 *DatabasesAPI* | [**UpdateDatabase**](docs/DatabasesAPI.md#updatedatabase) | **Put** /databases/{id} | update database
-*DefaultAPI* | [**CreateDatadogIntegration**](docs/DefaultAPI.md#createdatadogintegration) | **Post** /datadog_integrations | create integration
-*DefaultAPI* | [**DeleteDatadogIntegration**](docs/DefaultAPI.md#deletedatadogintegration) | **Delete** /datadog_integrations/{id} | delete integration
-*DefaultAPI* | [**GetDatadogIntegration**](docs/DefaultAPI.md#getdatadogintegration) | **Get** /datadog_integrations/{id} | show integration
+*DefaultAPI* | [**CreateDatadogIntegration**](docs/DefaultAPI.md#createdatadogintegration) | **Post** /integrations | create integration
+*DefaultAPI* | [**DeleteDatadogIntegration**](docs/DefaultAPI.md#deletedatadogintegration) | **Delete** /integrations/{id} | delete integration
+*DefaultAPI* | [**GetDatadogIntegration**](docs/DefaultAPI.md#getdatadogintegration) | **Get** /integrations/{id} | show integration
 *DefaultAPI* | [**GetRoot**](docs/DefaultAPI.md#getroot) | **Get** / | show home
-*DefaultAPI* | [**ListDatadogIntegrations**](docs/DefaultAPI.md#listdatadogintegrations) | **Get** /datadog_integrations | list integrations
-*DefaultAPI* | [**UpdateDatadogIntegration**](docs/DefaultAPI.md#updatedatadogintegration) | **Put** /datadog_integrations/{id} | update integration
+*DefaultAPI* | [**ListDatadogIntegrations**](docs/DefaultAPI.md#listdatadogintegrations) | **Get** /integrations | list integrations
+*DefaultAPI* | [**UpdateDatadogIntegration**](docs/DefaultAPI.md#updatedatadogintegration) | **Put** /integrations/{id} | update integration
 *DeploymentsAPI* | [**GetDeployment**](docs/DeploymentsAPI.md#getdeployment) | **Get** /deployments/{id} | show deployment
 *DeploymentsAPI* | [**ListDeployments**](docs/DeploymentsAPI.md#listdeployments) | **Get** /deployments | list deployments
 *DeploymentsAPI* | [**ListDeploymentsForApp**](docs/DeploymentsAPI.md#listdeploymentsforapp) | **Get** /apps/{app_id}/deployments | list deployments
@@ -179,6 +194,11 @@ Class | Method | HTTP request | Description
 *IntrusionDetectionReportsAPI* | [**GetIntrustionDetectionReportCsvDownload**](docs/IntrusionDetectionReportsAPI.md#getintrustiondetectionreportcsvdownload) | **Get** /intrusion_detection_reports/{intrusion_report_id}/download_csv | download_csv intrusion_detection_report
 *IntrusionDetectionReportsAPI* | [**GetIntrustionDetectionReportPdfDownload**](docs/IntrusionDetectionReportsAPI.md#getintrustiondetectionreportpdfdownload) | **Get** /intrusion_detection_reports/{intrusion_report_id}/download_pdf | download_pdf intrusion_detection_report
 *IntrusionDetectionReportsAPI* | [**ListIntrustionDetectionReportsForStack**](docs/IntrusionDetectionReportsAPI.md#listintrustiondetectionreportsforstack) | **Get** /stacks/{stack_id}/intrusion_detection_reports | list intrusion_detection_reports
+*LLMIntegrationsAPI* | [**CreateLlmIntegration**](docs/LLMIntegrationsAPI.md#createllmintegration) | **Post** /llm_integrations | create llm integration
+*LLMIntegrationsAPI* | [**DeleteLlmIntegration**](docs/LLMIntegrationsAPI.md#deletellmintegration) | **Delete** /llm_integrations/{id} | delete llm integration
+*LLMIntegrationsAPI* | [**GetLlmIntegration**](docs/LLMIntegrationsAPI.md#getllmintegration) | **Get** /llm_integrations/{id} | show llm integration
+*LLMIntegrationsAPI* | [**ListLlmIntegrations**](docs/LLMIntegrationsAPI.md#listllmintegrations) | **Get** /llm_integrations | list llm integrations
+*LLMIntegrationsAPI* | [**UpdateLlmIntegration**](docs/LLMIntegrationsAPI.md#updatellmintegration) | **Put** /llm_integrations/{id} | update llm integration
 *LogDrainsAPI* | [**CreateLogDrain**](docs/LogDrainsAPI.md#createlogdrain) | **Post** /accounts/{account_id}/log_drains | create log_drain
 *LogDrainsAPI* | [**DeleteLogDrain**](docs/LogDrainsAPI.md#deletelogdrain) | **Delete** /log_drains/{id} | delete log_drain
 *LogDrainsAPI* | [**GetLogDrain**](docs/LogDrainsAPI.md#getlogdrain) | **Get** /log_drains/{id} | show log_drain
@@ -296,10 +316,13 @@ Class | Method | HTTP request | Description
  - [CreateDashboardRequest](docs/CreateDashboardRequest.md)
  - [CreateDatabaseRequest](docs/CreateDatabaseRequest.md)
  - [CreateDatadogIntegrationRequest](docs/CreateDatadogIntegrationRequest.md)
+ - [CreateLlmIntegrationRequest](docs/CreateLlmIntegrationRequest.md)
  - [CreateLogDrainRequest](docs/CreateLogDrainRequest.md)
  - [CreateMetricDrainRequest](docs/CreateMetricDrainRequest.md)
  - [CreateMetricDrainRequestDrainConfiguration](docs/CreateMetricDrainRequestDrainConfiguration.md)
- - [CreateObservationForDashboardRequest](docs/CreateObservationForDashboardRequest.md)
+ - [CreateMetricForIntegrationRequest](docs/CreateMetricForIntegrationRequest.md)
+ - [CreateObservationForDashboardForAppRequest](docs/CreateObservationForDashboardForAppRequest.md)
+ - [CreateObservationForDashboardForContainerRequest](docs/CreateObservationForDashboardForContainerRequest.md)
  - [CreateOperationRequest](docs/CreateOperationRequest.md)
  - [CreatePermissionRequest](docs/CreatePermissionRequest.md)
  - [CreateServiceSizingPolicyRequest](docs/CreateServiceSizingPolicyRequest.md)
@@ -394,12 +417,25 @@ Class | Method | HTTP request | Description
  - [ListImagesForApp200ResponseLinks](docs/ListImagesForApp200ResponseLinks.md)
  - [ListIntrustionDetectionReportsForStack200Response](docs/ListIntrustionDetectionReportsForStack200Response.md)
  - [ListIntrustionDetectionReportsForStack200ResponseEmbedded](docs/ListIntrustionDetectionReportsForStack200ResponseEmbedded.md)
+ - [ListLlmIntegrations200Response](docs/ListLlmIntegrations200Response.md)
+ - [ListLlmIntegrations200ResponseEmbedded](docs/ListLlmIntegrations200ResponseEmbedded.md)
  - [ListLogDrainsForAccount200Response](docs/ListLogDrainsForAccount200Response.md)
  - [ListLogDrainsForAccount200ResponseEmbedded](docs/ListLogDrainsForAccount200ResponseEmbedded.md)
  - [ListMetricDrainsForAccount200Response](docs/ListMetricDrainsForAccount200Response.md)
  - [ListMetricDrainsForAccount200ResponseEmbedded](docs/ListMetricDrainsForAccount200ResponseEmbedded.md)
+ - [ListMetricsForIntegration200Response](docs/ListMetricsForIntegration200Response.md)
+ - [ListMetricsForIntegration200ResponseEmbedded](docs/ListMetricsForIntegration200ResponseEmbedded.md)
+ - [ListMetricsForIntegration200ResponseLinks](docs/ListMetricsForIntegration200ResponseLinks.md)
  - [ListObservationsForApp200Response](docs/ListObservationsForApp200Response.md)
  - [ListObservationsForApp200ResponseEmbedded](docs/ListObservationsForApp200ResponseEmbedded.md)
+ - [ListObservationsForContainer200Response](docs/ListObservationsForContainer200Response.md)
+ - [ListObservationsForContainer200ResponseLinks](docs/ListObservationsForContainer200ResponseLinks.md)
+ - [ListObservationsForDatabase200Response](docs/ListObservationsForDatabase200Response.md)
+ - [ListObservationsForDisk200Response](docs/ListObservationsForDisk200Response.md)
+ - [ListObservationsForDisk200ResponseLinks](docs/ListObservationsForDisk200ResponseLinks.md)
+ - [ListObservationsForService200Response](docs/ListObservationsForService200Response.md)
+ - [ListObservationsForVhost200Response](docs/ListObservationsForVhost200Response.md)
+ - [ListObservationsForVhost200ResponseLinks](docs/ListObservationsForVhost200ResponseLinks.md)
  - [ListOperationsForAccount200Response](docs/ListOperationsForAccount200Response.md)
  - [ListOperationsForAccount200ResponseEmbedded](docs/ListOperationsForAccount200ResponseEmbedded.md)
  - [ListPermissionsForAccount200Response](docs/ListPermissionsForAccount200Response.md)
@@ -428,14 +464,13 @@ Class | Method | HTTP request | Description
  - [ListVpcPeersForStack200ResponseEmbedded](docs/ListVpcPeersForStack200ResponseEmbedded.md)
  - [ListVpnTunnelsForStack200Response](docs/ListVpnTunnelsForStack200Response.md)
  - [ListVpnTunnelsForStack200ResponseEmbedded](docs/ListVpnTunnelsForStack200ResponseEmbedded.md)
- - [ListWidgetsForDashboard200Response](docs/ListWidgetsForDashboard200Response.md)
- - [ListWidgetsForDashboard200ResponseEmbedded](docs/ListWidgetsForDashboard200ResponseEmbedded.md)
- - [ListWidgetsForDashboard200ResponseLinks](docs/ListWidgetsForDashboard200ResponseLinks.md)
+ - [LlmIntegration](docs/LlmIntegration.md)
  - [LogDrain](docs/LogDrain.md)
  - [LogDrainLinks](docs/LogDrainLinks.md)
  - [MetricDrain](docs/MetricDrain.md)
  - [MetricDrainDrainConfiguration](docs/MetricDrainDrainConfiguration.md)
  - [MetricDrainLinks](docs/MetricDrainLinks.md)
+ - [Metrics](docs/Metrics.md)
  - [ModelError](docs/ModelError.md)
  - [Observation](docs/Observation.md)
  - [Operation](docs/Operation.md)
@@ -465,7 +500,9 @@ Class | Method | HTTP request | Description
  - [UpdateCertificateRequest](docs/UpdateCertificateRequest.md)
  - [UpdateDashboardRequest](docs/UpdateDashboardRequest.md)
  - [UpdateDatabaseRequest](docs/UpdateDatabaseRequest.md)
+ - [UpdateLlmIntegrationRequest](docs/UpdateLlmIntegrationRequest.md)
  - [UpdateLogDrainRequest](docs/UpdateLogDrainRequest.md)
+ - [UpdateMetricRequest](docs/UpdateMetricRequest.md)
  - [UpdateOperationRequest](docs/UpdateOperationRequest.md)
  - [UpdateServiceRequest](docs/UpdateServiceRequest.md)
  - [UpdateServiceSizingPolicyRequest](docs/UpdateServiceSizingPolicyRequest.md)

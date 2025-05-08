@@ -18,13 +18,14 @@ Name | Type | Description | Notes
 **InstanceClass** | **string** |  | 
 **ForceZeroDowntime** | **bool** |  | 
 **NaiveHealthCheck** | **bool** |  | 
+**StopTimeout** | **NullableInt32** |  | 
 **Links** | Pointer to [**ServiceLinks**](ServiceLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewService
 
-`func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, ) *Service`
+`func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, stopTimeout NullableInt32, ) *Service`
 
 NewService instantiates a new Service object
 This constructor will assign default values to properties that have it defined,
@@ -349,6 +350,36 @@ and a boolean to check if the value has been set.
 SetNaiveHealthCheck sets NaiveHealthCheck field to given value.
 
 
+### GetStopTimeout
+
+`func (o *Service) GetStopTimeout() int32`
+
+GetStopTimeout returns the StopTimeout field if non-nil, zero value otherwise.
+
+### GetStopTimeoutOk
+
+`func (o *Service) GetStopTimeoutOk() (*int32, bool)`
+
+GetStopTimeoutOk returns a tuple with the StopTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStopTimeout
+
+`func (o *Service) SetStopTimeout(v int32)`
+
+SetStopTimeout sets StopTimeout field to given value.
+
+
+### SetStopTimeoutNil
+
+`func (o *Service) SetStopTimeoutNil(b bool)`
+
+ SetStopTimeoutNil sets the value for StopTimeout to be an explicit nil
+
+### UnsetStopTimeout
+`func (o *Service) UnsetStopTimeout()`
+
+UnsetStopTimeout ensures that no value is present for StopTimeout, not even an explicit nil
 ### GetLinks
 
 `func (o *Service) GetLinks() ServiceLinks`
