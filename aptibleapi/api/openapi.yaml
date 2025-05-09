@@ -7541,7 +7541,7 @@ components:
     metrics:
       properties:
         id:
-          type: uuid
+          type: integer
         _type:
           type: string
         created_at:

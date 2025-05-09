@@ -20,7 +20,7 @@ var _ MappedNullable = &Metrics{}
 
 // Metrics struct for Metrics
 type Metrics struct {
-	Id Uuid `json:"id"`
+	Id int32 `json:"id"`
 	MetaType string `json:"_type"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
@@ -38,7 +38,7 @@ type _Metrics Metrics
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMetrics(id Uuid, metaType string, createdAt string, updatedAt string, name string, description string, unit string, query map[string]interface{}) *Metrics {
+func NewMetrics(id int32, metaType string, createdAt string, updatedAt string, name string, description string, unit string, query map[string]interface{}) *Metrics {
 	this := Metrics{}
 	this.Id = id
 	this.MetaType = metaType
@@ -60,9 +60,9 @@ func NewMetricsWithDefaults() *Metrics {
 }
 
 // GetId returns the Id field value
-func (o *Metrics) GetId() Uuid {
+func (o *Metrics) GetId() int32 {
 	if o == nil {
-		var ret Uuid
+		var ret int32
 		return ret
 	}
 
@@ -71,7 +71,7 @@ func (o *Metrics) GetId() Uuid {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *Metrics) GetIdOk() (*Uuid, bool) {
+func (o *Metrics) GetIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -79,7 +79,7 @@ func (o *Metrics) GetIdOk() (*Uuid, bool) {
 }
 
 // SetId sets field value
-func (o *Metrics) SetId(v Uuid) {
+func (o *Metrics) SetId(v int32) {
 	o.Id = v
 }
 
