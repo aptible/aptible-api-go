@@ -51,6 +51,8 @@ type Vhost struct {
 	ContainerPort NullableInt32 `json:"container_port"`
 	ContainerPorts []int32 `json:"container_ports"`
 	AcmeConfiguration NullableVhostAcmeConfiguration `json:"acme_configuration"`
+	Shared NullableBool `json:"shared"`
+	SharedFingerprint NullableString `json:"shared_fingerprint"`
 	Links *VhostLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -61,7 +63,7 @@ type _Vhost Vhost
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration) *Vhost {
+func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString) *Vhost {
 	this := Vhost{}
 	this.Id = id
 	this.MetaType = metaType
@@ -94,6 +96,8 @@ func NewVhost(id int32, metaType string, virtualDomain string, type_ string, ela
 	this.ContainerPort = containerPort
 	this.ContainerPorts = containerPorts
 	this.AcmeConfiguration = acmeConfiguration
+	this.Shared = shared
+	this.SharedFingerprint = sharedFingerprint
 	return &this
 }
 
@@ -885,6 +889,58 @@ func (o *Vhost) SetAcmeConfiguration(v VhostAcmeConfiguration) {
 	o.AcmeConfiguration.Set(&v)
 }
 
+// GetShared returns the Shared field value
+// If the value is explicit nil, the zero value for bool will be returned
+func (o *Vhost) GetShared() bool {
+	if o == nil || o.Shared.Get() == nil {
+		var ret bool
+		return ret
+	}
+
+	return *o.Shared.Get()
+}
+
+// GetSharedOk returns a tuple with the Shared field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Vhost) GetSharedOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Shared.Get(), o.Shared.IsSet()
+}
+
+// SetShared sets field value
+func (o *Vhost) SetShared(v bool) {
+	o.Shared.Set(&v)
+}
+
+// GetSharedFingerprint returns the SharedFingerprint field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Vhost) GetSharedFingerprint() string {
+	if o == nil || o.SharedFingerprint.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.SharedFingerprint.Get()
+}
+
+// GetSharedFingerprintOk returns a tuple with the SharedFingerprint field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Vhost) GetSharedFingerprintOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SharedFingerprint.Get(), o.SharedFingerprint.IsSet()
+}
+
+// SetSharedFingerprint sets field value
+func (o *Vhost) SetSharedFingerprint(v string) {
+	o.SharedFingerprint.Set(&v)
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Vhost) GetLinks() VhostLinks {
 	if o == nil || IsNil(o.Links) {
@@ -962,6 +1018,8 @@ func (o Vhost) ToMap() (map[string]interface{}, error) {
 	toSerialize["container_port"] = o.ContainerPort.Get()
 	toSerialize["container_ports"] = o.ContainerPorts
 	toSerialize["acme_configuration"] = o.AcmeConfiguration.Get()
+	toSerialize["shared"] = o.Shared.Get()
+	toSerialize["shared_fingerprint"] = o.SharedFingerprint.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -1009,6 +1067,8 @@ func (o *Vhost) UnmarshalJSON(data []byte) (err error) {
 		"container_port",
 		"container_ports",
 		"acme_configuration",
+		"shared",
+		"shared_fingerprint",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -1069,6 +1129,8 @@ func (o *Vhost) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "container_port")
 		delete(additionalProperties, "container_ports")
 		delete(additionalProperties, "acme_configuration")
+		delete(additionalProperties, "shared")
+		delete(additionalProperties, "shared_fingerprint")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

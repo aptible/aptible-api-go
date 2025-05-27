@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **ContainerPorts** | Pointer to **[]int32** |  | [optional] 
 **IpWhitelist** | Pointer to **[]string** |  | [optional] 
 **ContainerExposedPorts** | Pointer to **[]int32** |  | [optional] 
+**Shared** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -304,6 +305,31 @@ SetContainerExposedPorts sets ContainerExposedPorts field to given value.
 `func (o *CreateVhostRequest) HasContainerExposedPorts() bool`
 
 HasContainerExposedPorts returns a boolean if a field has been set.
+
+### GetShared
+
+`func (o *CreateVhostRequest) GetShared() bool`
+
+GetShared returns the Shared field if non-nil, zero value otherwise.
+
+### GetSharedOk
+
+`func (o *CreateVhostRequest) GetSharedOk() (*bool, bool)`
+
+GetSharedOk returns a tuple with the Shared field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShared
+
+`func (o *CreateVhostRequest) SetShared(v bool)`
+
+SetShared sets Shared field to given value.
+
+### HasShared
+
+`func (o *CreateVhostRequest) HasShared() bool`
+
+HasShared returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

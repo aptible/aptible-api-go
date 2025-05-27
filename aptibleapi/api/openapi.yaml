@@ -8289,6 +8289,12 @@ components:
           type: array
         acme_configuration:
           $ref: '#/components/schemas/vhost_acme_configuration'
+        shared:
+          type: boolean
+          x-nullable: true
+        shared_fingerprint:
+          type: string
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/vhost__links'
       required:
@@ -8318,6 +8324,8 @@ components:
       - ip_whitelist
       - platform
       - security_group_id
+      - shared
+      - shared_fingerprint
       - status
       - type
       - updated_at
@@ -10534,6 +10542,8 @@ components:
           items:
             type: integer
           type: array
+        shared:
+          type: boolean
       required:
       - type
       type: object
@@ -10555,6 +10565,8 @@ components:
           items:
             type: string
           type: array
+        shared_fingerprint:
+          type: string
       type: object
     ListVpcPeersForStack_200_response__embedded:
       properties:

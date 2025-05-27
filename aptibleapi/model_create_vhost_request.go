@@ -31,6 +31,7 @@ type CreateVhostRequest struct {
 	ContainerPorts []int32 `json:"container_ports,omitempty"`
 	IpWhitelist []string `json:"ip_whitelist,omitempty"`
 	ContainerExposedPorts []int32 `json:"container_exposed_ports,omitempty"`
+	Shared *bool `json:"shared,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -398,6 +399,38 @@ func (o *CreateVhostRequest) SetContainerExposedPorts(v []int32) {
 	o.ContainerExposedPorts = v
 }
 
+// GetShared returns the Shared field value if set, zero value otherwise.
+func (o *CreateVhostRequest) GetShared() bool {
+	if o == nil || IsNil(o.Shared) {
+		var ret bool
+		return ret
+	}
+	return *o.Shared
+}
+
+// GetSharedOk returns a tuple with the Shared field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateVhostRequest) GetSharedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Shared) {
+		return nil, false
+	}
+	return o.Shared, true
+}
+
+// HasShared returns a boolean if a field has been set.
+func (o *CreateVhostRequest) HasShared() bool {
+	if o != nil && !IsNil(o.Shared) {
+		return true
+	}
+
+	return false
+}
+
+// SetShared gets a reference to the given bool and assigns it to the Shared field.
+func (o *CreateVhostRequest) SetShared(v bool) {
+	o.Shared = &v
+}
+
 func (o CreateVhostRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -438,6 +471,9 @@ func (o CreateVhostRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ContainerExposedPorts) {
 		toSerialize["container_exposed_ports"] = o.ContainerExposedPorts
+	}
+	if !IsNil(o.Shared) {
+		toSerialize["shared"] = o.Shared
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -493,6 +529,7 @@ func (o *CreateVhostRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "container_ports")
 		delete(additionalProperties, "ip_whitelist")
 		delete(additionalProperties, "container_exposed_ports")
+		delete(additionalProperties, "shared")
 		o.AdditionalProperties = additionalProperties
 	}
 
