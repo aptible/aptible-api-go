@@ -10567,6 +10567,8 @@ components:
           type: array
         shared_fingerprint:
           type: string
+        shared:
+          type: boolean
       type: object
     ListVpcPeersForStack_200_response__embedded:
       properties:

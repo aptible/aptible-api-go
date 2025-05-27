@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ContainerPorts** | Pointer to **[]int32** |  | [optional] 
 **IpWhitelist** | Pointer to **[]string** |  | [optional] 
 **SharedFingerprint** | Pointer to **string** |  | [optional] 
+**Shared** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -205,6 +206,31 @@ SetSharedFingerprint sets SharedFingerprint field to given value.
 `func (o *UpdateVhostRequest) HasSharedFingerprint() bool`
 
 HasSharedFingerprint returns a boolean if a field has been set.
+
+### GetShared
+
+`func (o *UpdateVhostRequest) GetShared() bool`
+
+GetShared returns the Shared field if non-nil, zero value otherwise.
+
+### GetSharedOk
+
+`func (o *UpdateVhostRequest) GetSharedOk() (*bool, bool)`
+
+GetSharedOk returns a tuple with the Shared field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShared
+
+`func (o *UpdateVhostRequest) SetShared(v bool)`
+
+SetShared sets Shared field to given value.
+
+### HasShared
+
+`func (o *UpdateVhostRequest) HasShared() bool`
+
+HasShared returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
