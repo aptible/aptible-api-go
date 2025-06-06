@@ -39,6 +39,12 @@ type CreateOperationRequest struct {
 	KeyArn *string `json:"key_arn,omitempty"`
 	InstanceProfile *string `json:"instance_profile,omitempty"`
 	ProvisionedIops *int32 `json:"provisioned_iops,omitempty"`
+	Daily *int32 `json:"daily,omitempty"`
+	Monthly *int32 `json:"monthly,omitempty"`
+	Yearly *int32 `json:"yearly,omitempty"`
+	PitrDays *int32 `json:"pitr_days,omitempty"`
+	MakeCopy *bool `json:"make_copy,omitempty"`
+	KeepFinal *bool `json:"keep_final,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -662,6 +668,198 @@ func (o *CreateOperationRequest) SetProvisionedIops(v int32) {
 	o.ProvisionedIops = &v
 }
 
+// GetDaily returns the Daily field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetDaily() int32 {
+	if o == nil || IsNil(o.Daily) {
+		var ret int32
+		return ret
+	}
+	return *o.Daily
+}
+
+// GetDailyOk returns a tuple with the Daily field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetDailyOk() (*int32, bool) {
+	if o == nil || IsNil(o.Daily) {
+		return nil, false
+	}
+	return o.Daily, true
+}
+
+// HasDaily returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasDaily() bool {
+	if o != nil && !IsNil(o.Daily) {
+		return true
+	}
+
+	return false
+}
+
+// SetDaily gets a reference to the given int32 and assigns it to the Daily field.
+func (o *CreateOperationRequest) SetDaily(v int32) {
+	o.Daily = &v
+}
+
+// GetMonthly returns the Monthly field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetMonthly() int32 {
+	if o == nil || IsNil(o.Monthly) {
+		var ret int32
+		return ret
+	}
+	return *o.Monthly
+}
+
+// GetMonthlyOk returns a tuple with the Monthly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetMonthlyOk() (*int32, bool) {
+	if o == nil || IsNil(o.Monthly) {
+		return nil, false
+	}
+	return o.Monthly, true
+}
+
+// HasMonthly returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasMonthly() bool {
+	if o != nil && !IsNil(o.Monthly) {
+		return true
+	}
+
+	return false
+}
+
+// SetMonthly gets a reference to the given int32 and assigns it to the Monthly field.
+func (o *CreateOperationRequest) SetMonthly(v int32) {
+	o.Monthly = &v
+}
+
+// GetYearly returns the Yearly field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetYearly() int32 {
+	if o == nil || IsNil(o.Yearly) {
+		var ret int32
+		return ret
+	}
+	return *o.Yearly
+}
+
+// GetYearlyOk returns a tuple with the Yearly field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetYearlyOk() (*int32, bool) {
+	if o == nil || IsNil(o.Yearly) {
+		return nil, false
+	}
+	return o.Yearly, true
+}
+
+// HasYearly returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasYearly() bool {
+	if o != nil && !IsNil(o.Yearly) {
+		return true
+	}
+
+	return false
+}
+
+// SetYearly gets a reference to the given int32 and assigns it to the Yearly field.
+func (o *CreateOperationRequest) SetYearly(v int32) {
+	o.Yearly = &v
+}
+
+// GetPitrDays returns the PitrDays field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetPitrDays() int32 {
+	if o == nil || IsNil(o.PitrDays) {
+		var ret int32
+		return ret
+	}
+	return *o.PitrDays
+}
+
+// GetPitrDaysOk returns a tuple with the PitrDays field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetPitrDaysOk() (*int32, bool) {
+	if o == nil || IsNil(o.PitrDays) {
+		return nil, false
+	}
+	return o.PitrDays, true
+}
+
+// HasPitrDays returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasPitrDays() bool {
+	if o != nil && !IsNil(o.PitrDays) {
+		return true
+	}
+
+	return false
+}
+
+// SetPitrDays gets a reference to the given int32 and assigns it to the PitrDays field.
+func (o *CreateOperationRequest) SetPitrDays(v int32) {
+	o.PitrDays = &v
+}
+
+// GetMakeCopy returns the MakeCopy field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetMakeCopy() bool {
+	if o == nil || IsNil(o.MakeCopy) {
+		var ret bool
+		return ret
+	}
+	return *o.MakeCopy
+}
+
+// GetMakeCopyOk returns a tuple with the MakeCopy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetMakeCopyOk() (*bool, bool) {
+	if o == nil || IsNil(o.MakeCopy) {
+		return nil, false
+	}
+	return o.MakeCopy, true
+}
+
+// HasMakeCopy returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasMakeCopy() bool {
+	if o != nil && !IsNil(o.MakeCopy) {
+		return true
+	}
+
+	return false
+}
+
+// SetMakeCopy gets a reference to the given bool and assigns it to the MakeCopy field.
+func (o *CreateOperationRequest) SetMakeCopy(v bool) {
+	o.MakeCopy = &v
+}
+
+// GetKeepFinal returns the KeepFinal field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetKeepFinal() bool {
+	if o == nil || IsNil(o.KeepFinal) {
+		var ret bool
+		return ret
+	}
+	return *o.KeepFinal
+}
+
+// GetKeepFinalOk returns a tuple with the KeepFinal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetKeepFinalOk() (*bool, bool) {
+	if o == nil || IsNil(o.KeepFinal) {
+		return nil, false
+	}
+	return o.KeepFinal, true
+}
+
+// HasKeepFinal returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasKeepFinal() bool {
+	if o != nil && !IsNil(o.KeepFinal) {
+		return true
+	}
+
+	return false
+}
+
+// SetKeepFinal gets a reference to the given bool and assigns it to the KeepFinal field.
+func (o *CreateOperationRequest) SetKeepFinal(v bool) {
+	o.KeepFinal = &v
+}
+
 func (o CreateOperationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -727,6 +925,24 @@ func (o CreateOperationRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ProvisionedIops) {
 		toSerialize["provisioned_iops"] = o.ProvisionedIops
 	}
+	if !IsNil(o.Daily) {
+		toSerialize["daily"] = o.Daily
+	}
+	if !IsNil(o.Monthly) {
+		toSerialize["monthly"] = o.Monthly
+	}
+	if !IsNil(o.Yearly) {
+		toSerialize["yearly"] = o.Yearly
+	}
+	if !IsNil(o.PitrDays) {
+		toSerialize["pitr_days"] = o.PitrDays
+	}
+	if !IsNil(o.MakeCopy) {
+		toSerialize["make_copy"] = o.MakeCopy
+	}
+	if !IsNil(o.KeepFinal) {
+		toSerialize["keep_final"] = o.KeepFinal
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -789,6 +1005,12 @@ func (o *CreateOperationRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "key_arn")
 		delete(additionalProperties, "instance_profile")
 		delete(additionalProperties, "provisioned_iops")
+		delete(additionalProperties, "daily")
+		delete(additionalProperties, "monthly")
+		delete(additionalProperties, "yearly")
+		delete(additionalProperties, "pitr_days")
+		delete(additionalProperties, "make_copy")
+		delete(additionalProperties, "keep_final")
 		o.AdditionalProperties = additionalProperties
 	}
 

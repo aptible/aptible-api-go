@@ -44,6 +44,12 @@ type Operation struct {
 	Interactive NullableBool `json:"interactive"`
 	InstanceProfile NullableString `json:"instance_profile"`
 	MountPoint NullableString `json:"mount_point"`
+	Daily NullableInt32 `json:"daily"`
+	Monthly NullableInt32 `json:"monthly"`
+	Yearly NullableInt32 `json:"yearly"`
+	PitrDays NullableInt32 `json:"pitr_days"`
+	MakeCopy NullableBool `json:"make_copy"`
+	KeepFinal NullableBool `json:"keep_final"`
 	Links *OperationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -54,7 +60,7 @@ type _Operation Operation
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString) *Operation {
+func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool) *Operation {
 	this := Operation{}
 	this.Id = id
 	this.MetaType = metaType
@@ -80,6 +86,12 @@ func NewOperation(id int32, metaType string, type_ string, status string, cancel
 	this.Interactive = interactive
 	this.InstanceProfile = instanceProfile
 	this.MountPoint = mountPoint
+	this.Daily = daily
+	this.Monthly = monthly
+	this.Yearly = yearly
+	this.PitrDays = pitrDays
+	this.MakeCopy = makeCopy
+	this.KeepFinal = keepFinal
 	return &this
 }
 
@@ -693,6 +705,162 @@ func (o *Operation) SetMountPoint(v string) {
 	o.MountPoint.Set(&v)
 }
 
+// GetDaily returns the Daily field value
+// If the value is explicit nil, the zero value for int32 will be returned
+func (o *Operation) GetDaily() int32 {
+	if o == nil || o.Daily.Get() == nil {
+		var ret int32
+		return ret
+	}
+
+	return *o.Daily.Get()
+}
+
+// GetDailyOk returns a tuple with the Daily field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetDailyOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Daily.Get(), o.Daily.IsSet()
+}
+
+// SetDaily sets field value
+func (o *Operation) SetDaily(v int32) {
+	o.Daily.Set(&v)
+}
+
+// GetMonthly returns the Monthly field value
+// If the value is explicit nil, the zero value for int32 will be returned
+func (o *Operation) GetMonthly() int32 {
+	if o == nil || o.Monthly.Get() == nil {
+		var ret int32
+		return ret
+	}
+
+	return *o.Monthly.Get()
+}
+
+// GetMonthlyOk returns a tuple with the Monthly field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetMonthlyOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Monthly.Get(), o.Monthly.IsSet()
+}
+
+// SetMonthly sets field value
+func (o *Operation) SetMonthly(v int32) {
+	o.Monthly.Set(&v)
+}
+
+// GetYearly returns the Yearly field value
+// If the value is explicit nil, the zero value for int32 will be returned
+func (o *Operation) GetYearly() int32 {
+	if o == nil || o.Yearly.Get() == nil {
+		var ret int32
+		return ret
+	}
+
+	return *o.Yearly.Get()
+}
+
+// GetYearlyOk returns a tuple with the Yearly field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetYearlyOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Yearly.Get(), o.Yearly.IsSet()
+}
+
+// SetYearly sets field value
+func (o *Operation) SetYearly(v int32) {
+	o.Yearly.Set(&v)
+}
+
+// GetPitrDays returns the PitrDays field value
+// If the value is explicit nil, the zero value for int32 will be returned
+func (o *Operation) GetPitrDays() int32 {
+	if o == nil || o.PitrDays.Get() == nil {
+		var ret int32
+		return ret
+	}
+
+	return *o.PitrDays.Get()
+}
+
+// GetPitrDaysOk returns a tuple with the PitrDays field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetPitrDaysOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PitrDays.Get(), o.PitrDays.IsSet()
+}
+
+// SetPitrDays sets field value
+func (o *Operation) SetPitrDays(v int32) {
+	o.PitrDays.Set(&v)
+}
+
+// GetMakeCopy returns the MakeCopy field value
+// If the value is explicit nil, the zero value for bool will be returned
+func (o *Operation) GetMakeCopy() bool {
+	if o == nil || o.MakeCopy.Get() == nil {
+		var ret bool
+		return ret
+	}
+
+	return *o.MakeCopy.Get()
+}
+
+// GetMakeCopyOk returns a tuple with the MakeCopy field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetMakeCopyOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MakeCopy.Get(), o.MakeCopy.IsSet()
+}
+
+// SetMakeCopy sets field value
+func (o *Operation) SetMakeCopy(v bool) {
+	o.MakeCopy.Set(&v)
+}
+
+// GetKeepFinal returns the KeepFinal field value
+// If the value is explicit nil, the zero value for bool will be returned
+func (o *Operation) GetKeepFinal() bool {
+	if o == nil || o.KeepFinal.Get() == nil {
+		var ret bool
+		return ret
+	}
+
+	return *o.KeepFinal.Get()
+}
+
+// GetKeepFinalOk returns a tuple with the KeepFinal field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetKeepFinalOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.KeepFinal.Get(), o.KeepFinal.IsSet()
+}
+
+// SetKeepFinal sets field value
+func (o *Operation) SetKeepFinal(v bool) {
+	o.KeepFinal.Set(&v)
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Operation) GetLinks() OperationLinks {
 	if o == nil || IsNil(o.Links) {
@@ -761,6 +929,12 @@ func (o Operation) ToMap() (map[string]interface{}, error) {
 	toSerialize["interactive"] = o.Interactive.Get()
 	toSerialize["instance_profile"] = o.InstanceProfile.Get()
 	toSerialize["mount_point"] = o.MountPoint.Get()
+	toSerialize["daily"] = o.Daily.Get()
+	toSerialize["monthly"] = o.Monthly.Get()
+	toSerialize["yearly"] = o.Yearly.Get()
+	toSerialize["pitr_days"] = o.PitrDays.Get()
+	toSerialize["make_copy"] = o.MakeCopy.Get()
+	toSerialize["keep_final"] = o.KeepFinal.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -801,6 +975,12 @@ func (o *Operation) UnmarshalJSON(data []byte) (err error) {
 		"interactive",
 		"instance_profile",
 		"mount_point",
+		"daily",
+		"monthly",
+		"yearly",
+		"pitr_days",
+		"make_copy",
+		"keep_final",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -854,6 +1034,12 @@ func (o *Operation) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "interactive")
 		delete(additionalProperties, "instance_profile")
 		delete(additionalProperties, "mount_point")
+		delete(additionalProperties, "daily")
+		delete(additionalProperties, "monthly")
+		delete(additionalProperties, "yearly")
+		delete(additionalProperties, "pitr_days")
+		delete(additionalProperties, "make_copy")
+		delete(additionalProperties, "keep_final")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

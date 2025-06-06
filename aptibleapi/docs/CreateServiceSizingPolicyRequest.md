@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **MaxContainers** | Pointer to **int32** |  | [optional] 
 **ScaleUpStep** | Pointer to **int32** |  | [optional] 
 **ScaleDownStep** | Pointer to **int32** |  | [optional] 
+**UseHorizontalScale** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -491,6 +492,31 @@ SetScaleDownStep sets ScaleDownStep field to given value.
 `func (o *CreateServiceSizingPolicyRequest) HasScaleDownStep() bool`
 
 HasScaleDownStep returns a boolean if a field has been set.
+
+### GetUseHorizontalScale
+
+`func (o *CreateServiceSizingPolicyRequest) GetUseHorizontalScale() bool`
+
+GetUseHorizontalScale returns the UseHorizontalScale field if non-nil, zero value otherwise.
+
+### GetUseHorizontalScaleOk
+
+`func (o *CreateServiceSizingPolicyRequest) GetUseHorizontalScaleOk() (*bool, bool)`
+
+GetUseHorizontalScaleOk returns a tuple with the UseHorizontalScale field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseHorizontalScale
+
+`func (o *CreateServiceSizingPolicyRequest) SetUseHorizontalScale(v bool)`
+
+SetUseHorizontalScale sets UseHorizontalScale field to given value.
+
+### HasUseHorizontalScale
+
+`func (o *CreateServiceSizingPolicyRequest) HasUseHorizontalScale() bool`
+
+HasUseHorizontalScale returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
