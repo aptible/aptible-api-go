@@ -37,6 +37,7 @@ type CreateServiceSizingPolicyRequest struct {
 	MaxContainers *int32 `json:"max_containers,omitempty"`
 	ScaleUpStep *int32 `json:"scale_up_step,omitempty"`
 	ScaleDownStep *int32 `json:"scale_down_step,omitempty"`
+	UseHorizontalScale *bool `json:"use_horizontal_scale,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -635,6 +636,38 @@ func (o *CreateServiceSizingPolicyRequest) SetScaleDownStep(v int32) {
 	o.ScaleDownStep = &v
 }
 
+// GetUseHorizontalScale returns the UseHorizontalScale field value if set, zero value otherwise.
+func (o *CreateServiceSizingPolicyRequest) GetUseHorizontalScale() bool {
+	if o == nil || IsNil(o.UseHorizontalScale) {
+		var ret bool
+		return ret
+	}
+	return *o.UseHorizontalScale
+}
+
+// GetUseHorizontalScaleOk returns a tuple with the UseHorizontalScale field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateServiceSizingPolicyRequest) GetUseHorizontalScaleOk() (*bool, bool) {
+	if o == nil || IsNil(o.UseHorizontalScale) {
+		return nil, false
+	}
+	return o.UseHorizontalScale, true
+}
+
+// HasUseHorizontalScale returns a boolean if a field has been set.
+func (o *CreateServiceSizingPolicyRequest) HasUseHorizontalScale() bool {
+	if o != nil && !IsNil(o.UseHorizontalScale) {
+		return true
+	}
+
+	return false
+}
+
+// SetUseHorizontalScale gets a reference to the given bool and assigns it to the UseHorizontalScale field.
+func (o *CreateServiceSizingPolicyRequest) SetUseHorizontalScale(v bool) {
+	o.UseHorizontalScale = &v
+}
+
 func (o CreateServiceSizingPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -699,6 +732,9 @@ func (o CreateServiceSizingPolicyRequest) ToMap() (map[string]interface{}, error
 	if !IsNil(o.ScaleDownStep) {
 		toSerialize["scale_down_step"] = o.ScaleDownStep
 	}
+	if !IsNil(o.UseHorizontalScale) {
+		toSerialize["use_horizontal_scale"] = o.UseHorizontalScale
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -739,6 +775,7 @@ func (o *CreateServiceSizingPolicyRequest) UnmarshalJSON(data []byte) (err error
 		delete(additionalProperties, "max_containers")
 		delete(additionalProperties, "scale_up_step")
 		delete(additionalProperties, "scale_down_step")
+		delete(additionalProperties, "use_horizontal_scale")
 		o.AdditionalProperties = additionalProperties
 	}
 

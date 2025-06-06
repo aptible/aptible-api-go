@@ -23,6 +23,12 @@ Name | Type | Description | Notes
 **KeyArn** | Pointer to **string** |  | [optional] 
 **InstanceProfile** | Pointer to **string** |  | [optional] 
 **ProvisionedIops** | Pointer to **int32** |  | [optional] 
+**Daily** | Pointer to **int32** |  | [optional] 
+**Monthly** | Pointer to **int32** |  | [optional] 
+**Yearly** | Pointer to **int32** |  | [optional] 
+**PitrDays** | Pointer to **int32** |  | [optional] 
+**MakeCopy** | Pointer to **bool** |  | [optional] 
+**KeepFinal** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -512,6 +518,156 @@ SetProvisionedIops sets ProvisionedIops field to given value.
 `func (o *CreateOperationRequest) HasProvisionedIops() bool`
 
 HasProvisionedIops returns a boolean if a field has been set.
+
+### GetDaily
+
+`func (o *CreateOperationRequest) GetDaily() int32`
+
+GetDaily returns the Daily field if non-nil, zero value otherwise.
+
+### GetDailyOk
+
+`func (o *CreateOperationRequest) GetDailyOk() (*int32, bool)`
+
+GetDailyOk returns a tuple with the Daily field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDaily
+
+`func (o *CreateOperationRequest) SetDaily(v int32)`
+
+SetDaily sets Daily field to given value.
+
+### HasDaily
+
+`func (o *CreateOperationRequest) HasDaily() bool`
+
+HasDaily returns a boolean if a field has been set.
+
+### GetMonthly
+
+`func (o *CreateOperationRequest) GetMonthly() int32`
+
+GetMonthly returns the Monthly field if non-nil, zero value otherwise.
+
+### GetMonthlyOk
+
+`func (o *CreateOperationRequest) GetMonthlyOk() (*int32, bool)`
+
+GetMonthlyOk returns a tuple with the Monthly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonthly
+
+`func (o *CreateOperationRequest) SetMonthly(v int32)`
+
+SetMonthly sets Monthly field to given value.
+
+### HasMonthly
+
+`func (o *CreateOperationRequest) HasMonthly() bool`
+
+HasMonthly returns a boolean if a field has been set.
+
+### GetYearly
+
+`func (o *CreateOperationRequest) GetYearly() int32`
+
+GetYearly returns the Yearly field if non-nil, zero value otherwise.
+
+### GetYearlyOk
+
+`func (o *CreateOperationRequest) GetYearlyOk() (*int32, bool)`
+
+GetYearlyOk returns a tuple with the Yearly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetYearly
+
+`func (o *CreateOperationRequest) SetYearly(v int32)`
+
+SetYearly sets Yearly field to given value.
+
+### HasYearly
+
+`func (o *CreateOperationRequest) HasYearly() bool`
+
+HasYearly returns a boolean if a field has been set.
+
+### GetPitrDays
+
+`func (o *CreateOperationRequest) GetPitrDays() int32`
+
+GetPitrDays returns the PitrDays field if non-nil, zero value otherwise.
+
+### GetPitrDaysOk
+
+`func (o *CreateOperationRequest) GetPitrDaysOk() (*int32, bool)`
+
+GetPitrDaysOk returns a tuple with the PitrDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPitrDays
+
+`func (o *CreateOperationRequest) SetPitrDays(v int32)`
+
+SetPitrDays sets PitrDays field to given value.
+
+### HasPitrDays
+
+`func (o *CreateOperationRequest) HasPitrDays() bool`
+
+HasPitrDays returns a boolean if a field has been set.
+
+### GetMakeCopy
+
+`func (o *CreateOperationRequest) GetMakeCopy() bool`
+
+GetMakeCopy returns the MakeCopy field if non-nil, zero value otherwise.
+
+### GetMakeCopyOk
+
+`func (o *CreateOperationRequest) GetMakeCopyOk() (*bool, bool)`
+
+GetMakeCopyOk returns a tuple with the MakeCopy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMakeCopy
+
+`func (o *CreateOperationRequest) SetMakeCopy(v bool)`
+
+SetMakeCopy sets MakeCopy field to given value.
+
+### HasMakeCopy
+
+`func (o *CreateOperationRequest) HasMakeCopy() bool`
+
+HasMakeCopy returns a boolean if a field has been set.
+
+### GetKeepFinal
+
+`func (o *CreateOperationRequest) GetKeepFinal() bool`
+
+GetKeepFinal returns the KeepFinal field if non-nil, zero value otherwise.
+
+### GetKeepFinalOk
+
+`func (o *CreateOperationRequest) GetKeepFinalOk() (*bool, bool)`
+
+GetKeepFinalOk returns a tuple with the KeepFinal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeepFinal
+
+`func (o *CreateOperationRequest) SetKeepFinal(v bool)`
+
+SetKeepFinal sets KeepFinal field to given value.
+
+### HasKeepFinal
+
+`func (o *CreateOperationRequest) HasKeepFinal() bool`
+
+HasKeepFinal returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -7673,6 +7673,24 @@ components:
         mount_point:
           type: string
           x-nullable: true
+        daily:
+          type: integer
+          x-nullable: true
+        monthly:
+          type: integer
+          x-nullable: true
+        yearly:
+          type: integer
+          x-nullable: true
+        pitr_days:
+          type: integer
+          x-nullable: true
+        make_copy:
+          type: boolean
+          x-nullable: true
+        keep_final:
+          type: boolean
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/operation__links'
       required:
@@ -7684,6 +7702,7 @@ components:
       - container_count
       - container_size
       - created_at
+      - daily
       - destination_region
       - disk_size
       - docker_ref
@@ -7693,13 +7712,18 @@ components:
       - id
       - instance_profile
       - interactive
+      - keep_final
+      - make_copy
+      - monthly
       - mount_point
+      - pitr_days
       - private_key
       - status
       - type
       - updated_at
       - user_email
       - user_name
+      - yearly
     permission:
       properties:
         id:
@@ -7972,6 +7996,8 @@ components:
         scale_down_step:
           type: integer
           x-nullable: true
+        use_horizontal_scale:
+          type: boolean
         _links:
           $ref: '#/components/schemas/backup_retention_policy__links'
       required:
@@ -8000,6 +8026,7 @@ components:
       - scale_up_step
       - scaling_enabled
       - updated_at
+      - use_horizontal_scale
     service:
       properties:
         id:
@@ -9989,25 +10016,31 @@ components:
     CreateOperationRequest:
       example:
         container_size: 1
-        destination_account_id: 5
         certificate: certificate
-        destination_region: destination_region
         interactive: true
+        instance_profile: instance_profile
+        type: type
+        docker_ref: docker_ref
+        container_count: 6
+        pitr_days: 3
+        keep_final: true
+        make_copy: true
+        key_arn: key_arn
+        destination_account: https://openapi-generator.tech
+        destination_account_id: 5
+        destination_region: destination_region
         disk_size: 0
         handle: handle
         private_key: private_key
-        instance_profile: instance_profile
-        type: type
         env:
           key: env
-        docker_ref: docker_ref
-        container_count: 6
         command: command
         automated: true
         provisioned_iops: 5
-        key_arn: key_arn
+        daily: 2
         git_ref: git_ref
-        destination_account: https://openapi-generator.tech
+        monthly: 7
+        yearly: 9
       properties:
         type:
           type: string
@@ -10053,6 +10086,20 @@ components:
           type: string
         provisioned_iops:
           type: integer
+        daily:
+          type: integer
+        monthly:
+          type: integer
+        yearly:
+          type: integer
+        pitr_days:
+          type: integer
+        make_copy:
+          type: boolean
+          x-omitempty: false
+        keep_final:
+          type: boolean
+          x-omitempty: false
       required:
       - type
       title: CreateOperationRequest
@@ -10246,6 +10293,8 @@ components:
           type: integer
         scale_down_step:
           type: integer
+        use_horizontal_scale:
+          type: boolean
       type: object
     CreateServiceSizingPolicy_request:
       properties:
@@ -10285,6 +10334,8 @@ components:
           type: integer
         scale_down_step:
           type: integer
+        use_horizontal_scale:
+          type: boolean
       type: object
     ListServicesForAccount_200_response__embedded:
       properties:

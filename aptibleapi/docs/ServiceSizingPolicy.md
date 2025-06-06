@@ -29,13 +29,14 @@ Name | Type | Description | Notes
 **MaxContainers** | **NullableInt32** |  | 
 **ScaleUpStep** | **NullableInt32** |  | 
 **ScaleDownStep** | **NullableInt32** |  | 
+**UseHorizontalScale** | **bool** |  | 
 **Links** | Pointer to [**BackupRetentionPolicyLinks**](BackupRetentionPolicyLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewServiceSizingPolicy
 
-`func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, ) *ServiceSizingPolicy`
+`func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool, ) *ServiceSizingPolicy`
 
 NewServiceSizingPolicy instantiates a new ServiceSizingPolicy object
 This constructor will assign default values to properties that have it defined,
@@ -630,6 +631,26 @@ SetScaleDownStep sets ScaleDownStep field to given value.
 `func (o *ServiceSizingPolicy) UnsetScaleDownStep()`
 
 UnsetScaleDownStep ensures that no value is present for ScaleDownStep, not even an explicit nil
+### GetUseHorizontalScale
+
+`func (o *ServiceSizingPolicy) GetUseHorizontalScale() bool`
+
+GetUseHorizontalScale returns the UseHorizontalScale field if non-nil, zero value otherwise.
+
+### GetUseHorizontalScaleOk
+
+`func (o *ServiceSizingPolicy) GetUseHorizontalScaleOk() (*bool, bool)`
+
+GetUseHorizontalScaleOk returns a tuple with the UseHorizontalScale field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseHorizontalScale
+
+`func (o *ServiceSizingPolicy) SetUseHorizontalScale(v bool)`
+
+SetUseHorizontalScale sets UseHorizontalScale field to given value.
+
+
 ### GetLinks
 
 `func (o *ServiceSizingPolicy) GetLinks() BackupRetentionPolicyLinks`

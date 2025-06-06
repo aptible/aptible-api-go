@@ -28,13 +28,19 @@ Name | Type | Description | Notes
 **Interactive** | **NullableBool** |  | 
 **InstanceProfile** | **NullableString** |  | 
 **MountPoint** | **NullableString** |  | 
+**Daily** | **NullableInt32** |  | 
+**Monthly** | **NullableInt32** |  | 
+**Yearly** | **NullableInt32** |  | 
+**PitrDays** | **NullableInt32** |  | 
+**MakeCopy** | **NullableBool** |  | 
+**KeepFinal** | **NullableBool** |  | 
 **Links** | Pointer to [**OperationLinks**](OperationLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewOperation
 
-`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, ) *Operation`
+`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, ) *Operation`
 
 NewOperation instantiates a new Operation object
 This constructor will assign default values to properties that have it defined,
@@ -659,6 +665,186 @@ SetMountPoint sets MountPoint field to given value.
 `func (o *Operation) UnsetMountPoint()`
 
 UnsetMountPoint ensures that no value is present for MountPoint, not even an explicit nil
+### GetDaily
+
+`func (o *Operation) GetDaily() int32`
+
+GetDaily returns the Daily field if non-nil, zero value otherwise.
+
+### GetDailyOk
+
+`func (o *Operation) GetDailyOk() (*int32, bool)`
+
+GetDailyOk returns a tuple with the Daily field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDaily
+
+`func (o *Operation) SetDaily(v int32)`
+
+SetDaily sets Daily field to given value.
+
+
+### SetDailyNil
+
+`func (o *Operation) SetDailyNil(b bool)`
+
+ SetDailyNil sets the value for Daily to be an explicit nil
+
+### UnsetDaily
+`func (o *Operation) UnsetDaily()`
+
+UnsetDaily ensures that no value is present for Daily, not even an explicit nil
+### GetMonthly
+
+`func (o *Operation) GetMonthly() int32`
+
+GetMonthly returns the Monthly field if non-nil, zero value otherwise.
+
+### GetMonthlyOk
+
+`func (o *Operation) GetMonthlyOk() (*int32, bool)`
+
+GetMonthlyOk returns a tuple with the Monthly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonthly
+
+`func (o *Operation) SetMonthly(v int32)`
+
+SetMonthly sets Monthly field to given value.
+
+
+### SetMonthlyNil
+
+`func (o *Operation) SetMonthlyNil(b bool)`
+
+ SetMonthlyNil sets the value for Monthly to be an explicit nil
+
+### UnsetMonthly
+`func (o *Operation) UnsetMonthly()`
+
+UnsetMonthly ensures that no value is present for Monthly, not even an explicit nil
+### GetYearly
+
+`func (o *Operation) GetYearly() int32`
+
+GetYearly returns the Yearly field if non-nil, zero value otherwise.
+
+### GetYearlyOk
+
+`func (o *Operation) GetYearlyOk() (*int32, bool)`
+
+GetYearlyOk returns a tuple with the Yearly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetYearly
+
+`func (o *Operation) SetYearly(v int32)`
+
+SetYearly sets Yearly field to given value.
+
+
+### SetYearlyNil
+
+`func (o *Operation) SetYearlyNil(b bool)`
+
+ SetYearlyNil sets the value for Yearly to be an explicit nil
+
+### UnsetYearly
+`func (o *Operation) UnsetYearly()`
+
+UnsetYearly ensures that no value is present for Yearly, not even an explicit nil
+### GetPitrDays
+
+`func (o *Operation) GetPitrDays() int32`
+
+GetPitrDays returns the PitrDays field if non-nil, zero value otherwise.
+
+### GetPitrDaysOk
+
+`func (o *Operation) GetPitrDaysOk() (*int32, bool)`
+
+GetPitrDaysOk returns a tuple with the PitrDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPitrDays
+
+`func (o *Operation) SetPitrDays(v int32)`
+
+SetPitrDays sets PitrDays field to given value.
+
+
+### SetPitrDaysNil
+
+`func (o *Operation) SetPitrDaysNil(b bool)`
+
+ SetPitrDaysNil sets the value for PitrDays to be an explicit nil
+
+### UnsetPitrDays
+`func (o *Operation) UnsetPitrDays()`
+
+UnsetPitrDays ensures that no value is present for PitrDays, not even an explicit nil
+### GetMakeCopy
+
+`func (o *Operation) GetMakeCopy() bool`
+
+GetMakeCopy returns the MakeCopy field if non-nil, zero value otherwise.
+
+### GetMakeCopyOk
+
+`func (o *Operation) GetMakeCopyOk() (*bool, bool)`
+
+GetMakeCopyOk returns a tuple with the MakeCopy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMakeCopy
+
+`func (o *Operation) SetMakeCopy(v bool)`
+
+SetMakeCopy sets MakeCopy field to given value.
+
+
+### SetMakeCopyNil
+
+`func (o *Operation) SetMakeCopyNil(b bool)`
+
+ SetMakeCopyNil sets the value for MakeCopy to be an explicit nil
+
+### UnsetMakeCopy
+`func (o *Operation) UnsetMakeCopy()`
+
+UnsetMakeCopy ensures that no value is present for MakeCopy, not even an explicit nil
+### GetKeepFinal
+
+`func (o *Operation) GetKeepFinal() bool`
+
+GetKeepFinal returns the KeepFinal field if non-nil, zero value otherwise.
+
+### GetKeepFinalOk
+
+`func (o *Operation) GetKeepFinalOk() (*bool, bool)`
+
+GetKeepFinalOk returns a tuple with the KeepFinal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeepFinal
+
+`func (o *Operation) SetKeepFinal(v bool)`
+
+SetKeepFinal sets KeepFinal field to given value.
+
+
+### SetKeepFinalNil
+
+`func (o *Operation) SetKeepFinalNil(b bool)`
+
+ SetKeepFinalNil sets the value for KeepFinal to be an explicit nil
+
+### UnsetKeepFinal
+`func (o *Operation) UnsetKeepFinal()`
+
+UnsetKeepFinal ensures that no value is present for KeepFinal, not even an explicit nil
 ### GetLinks
 
 `func (o *Operation) GetLinks() OperationLinks`

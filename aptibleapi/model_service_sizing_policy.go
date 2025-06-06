@@ -45,6 +45,7 @@ type ServiceSizingPolicy struct {
 	MaxContainers NullableInt32 `json:"max_containers"`
 	ScaleUpStep NullableInt32 `json:"scale_up_step"`
 	ScaleDownStep NullableInt32 `json:"scale_down_step"`
+	UseHorizontalScale bool `json:"use_horizontal_scale"`
 	Links *BackupRetentionPolicyLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -55,7 +56,7 @@ type _ServiceSizingPolicy ServiceSizingPolicy
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32) *ServiceSizingPolicy {
+func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool) *ServiceSizingPolicy {
 	this := ServiceSizingPolicy{}
 	this.Id = id
 	this.MetaType = metaType
@@ -82,6 +83,7 @@ func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updated
 	this.MaxContainers = maxContainers
 	this.ScaleUpStep = scaleUpStep
 	this.ScaleDownStep = scaleDownStep
+	this.UseHorizontalScale = useHorizontalScale
 	return &this
 }
 
@@ -709,6 +711,30 @@ func (o *ServiceSizingPolicy) SetScaleDownStep(v int32) {
 	o.ScaleDownStep.Set(&v)
 }
 
+// GetUseHorizontalScale returns the UseHorizontalScale field value
+func (o *ServiceSizingPolicy) GetUseHorizontalScale() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.UseHorizontalScale
+}
+
+// GetUseHorizontalScaleOk returns a tuple with the UseHorizontalScale field value
+// and a boolean to check if the value has been set.
+func (o *ServiceSizingPolicy) GetUseHorizontalScaleOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.UseHorizontalScale, true
+}
+
+// SetUseHorizontalScale sets field value
+func (o *ServiceSizingPolicy) SetUseHorizontalScale(v bool) {
+	o.UseHorizontalScale = v
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *ServiceSizingPolicy) GetLinks() BackupRetentionPolicyLinks {
 	if o == nil || IsNil(o.Links) {
@@ -776,6 +802,7 @@ func (o ServiceSizingPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize["max_containers"] = o.MaxContainers.Get()
 	toSerialize["scale_up_step"] = o.ScaleUpStep.Get()
 	toSerialize["scale_down_step"] = o.ScaleDownStep.Get()
+	toSerialize["use_horizontal_scale"] = o.UseHorizontalScale
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -817,6 +844,7 @@ func (o *ServiceSizingPolicy) UnmarshalJSON(data []byte) (err error) {
 		"max_containers",
 		"scale_up_step",
 		"scale_down_step",
+		"use_horizontal_scale",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -871,6 +899,7 @@ func (o *ServiceSizingPolicy) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "max_containers")
 		delete(additionalProperties, "scale_up_step")
 		delete(additionalProperties, "scale_down_step")
+		delete(additionalProperties, "use_horizontal_scale")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}
