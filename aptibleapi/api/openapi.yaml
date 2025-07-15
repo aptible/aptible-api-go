@@ -8322,6 +8322,9 @@ components:
         shared_fingerprint:
           type: string
           x-nullable: true
+        load_balancing_algorithm_type:
+          type: string
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/vhost__links'
       required:
@@ -8349,6 +8352,7 @@ components:
       - internal_http_port
       - internal_https_port
       - ip_whitelist
+      - load_balancing_algorithm_type
       - platform
       - security_group_id
       - shared
@@ -10595,6 +10599,8 @@ components:
           type: array
         shared:
           type: boolean
+        load_balancing_algorithm_type:
+          type: string
       required:
       - type
       type: object
@@ -10620,6 +10626,8 @@ components:
           type: string
         shared:
           type: boolean
+        load_balancing_algorithm_type:
+          type: string
       type: object
     ListVpcPeersForStack_200_response__embedded:
       properties:

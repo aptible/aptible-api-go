@@ -53,6 +53,7 @@ type Vhost struct {
 	AcmeConfiguration NullableVhostAcmeConfiguration `json:"acme_configuration"`
 	Shared NullableBool `json:"shared"`
 	SharedFingerprint NullableString `json:"shared_fingerprint"`
+	LoadBalancingAlgorithmType NullableString `json:"load_balancing_algorithm_type"`
 	Links *VhostLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -63,7 +64,7 @@ type _Vhost Vhost
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString) *Vhost {
+func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString, loadBalancingAlgorithmType NullableString) *Vhost {
 	this := Vhost{}
 	this.Id = id
 	this.MetaType = metaType
@@ -98,6 +99,7 @@ func NewVhost(id int32, metaType string, virtualDomain string, type_ string, ela
 	this.AcmeConfiguration = acmeConfiguration
 	this.Shared = shared
 	this.SharedFingerprint = sharedFingerprint
+	this.LoadBalancingAlgorithmType = loadBalancingAlgorithmType
 	return &this
 }
 
@@ -941,6 +943,32 @@ func (o *Vhost) SetSharedFingerprint(v string) {
 	o.SharedFingerprint.Set(&v)
 }
 
+// GetLoadBalancingAlgorithmType returns the LoadBalancingAlgorithmType field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Vhost) GetLoadBalancingAlgorithmType() string {
+	if o == nil || o.LoadBalancingAlgorithmType.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.LoadBalancingAlgorithmType.Get()
+}
+
+// GetLoadBalancingAlgorithmTypeOk returns a tuple with the LoadBalancingAlgorithmType field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Vhost) GetLoadBalancingAlgorithmTypeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LoadBalancingAlgorithmType.Get(), o.LoadBalancingAlgorithmType.IsSet()
+}
+
+// SetLoadBalancingAlgorithmType sets field value
+func (o *Vhost) SetLoadBalancingAlgorithmType(v string) {
+	o.LoadBalancingAlgorithmType.Set(&v)
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Vhost) GetLinks() VhostLinks {
 	if o == nil || IsNil(o.Links) {
@@ -1020,6 +1048,7 @@ func (o Vhost) ToMap() (map[string]interface{}, error) {
 	toSerialize["acme_configuration"] = o.AcmeConfiguration.Get()
 	toSerialize["shared"] = o.Shared.Get()
 	toSerialize["shared_fingerprint"] = o.SharedFingerprint.Get()
+	toSerialize["load_balancing_algorithm_type"] = o.LoadBalancingAlgorithmType.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -1069,6 +1098,7 @@ func (o *Vhost) UnmarshalJSON(data []byte) (err error) {
 		"acme_configuration",
 		"shared",
 		"shared_fingerprint",
+		"load_balancing_algorithm_type",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -1131,6 +1161,7 @@ func (o *Vhost) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "acme_configuration")
 		delete(additionalProperties, "shared")
 		delete(additionalProperties, "shared_fingerprint")
+		delete(additionalProperties, "load_balancing_algorithm_type")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

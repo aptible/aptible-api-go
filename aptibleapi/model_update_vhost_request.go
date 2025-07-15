@@ -27,6 +27,7 @@ type UpdateVhostRequest struct {
 	IpWhitelist []string `json:"ip_whitelist,omitempty"`
 	SharedFingerprint *string `json:"shared_fingerprint,omitempty"`
 	Shared *bool `json:"shared,omitempty"`
+	LoadBalancingAlgorithmType *string `json:"load_balancing_algorithm_type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -305,6 +306,38 @@ func (o *UpdateVhostRequest) SetShared(v bool) {
 	o.Shared = &v
 }
 
+// GetLoadBalancingAlgorithmType returns the LoadBalancingAlgorithmType field value if set, zero value otherwise.
+func (o *UpdateVhostRequest) GetLoadBalancingAlgorithmType() string {
+	if o == nil || IsNil(o.LoadBalancingAlgorithmType) {
+		var ret string
+		return ret
+	}
+	return *o.LoadBalancingAlgorithmType
+}
+
+// GetLoadBalancingAlgorithmTypeOk returns a tuple with the LoadBalancingAlgorithmType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateVhostRequest) GetLoadBalancingAlgorithmTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.LoadBalancingAlgorithmType) {
+		return nil, false
+	}
+	return o.LoadBalancingAlgorithmType, true
+}
+
+// HasLoadBalancingAlgorithmType returns a boolean if a field has been set.
+func (o *UpdateVhostRequest) HasLoadBalancingAlgorithmType() bool {
+	if o != nil && !IsNil(o.LoadBalancingAlgorithmType) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoadBalancingAlgorithmType gets a reference to the given string and assigns it to the LoadBalancingAlgorithmType field.
+func (o *UpdateVhostRequest) SetLoadBalancingAlgorithmType(v string) {
+	o.LoadBalancingAlgorithmType = &v
+}
+
 func (o UpdateVhostRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -339,6 +372,9 @@ func (o UpdateVhostRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Shared) {
 		toSerialize["shared"] = o.Shared
 	}
+	if !IsNil(o.LoadBalancingAlgorithmType) {
+		toSerialize["load_balancing_algorithm_type"] = o.LoadBalancingAlgorithmType
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -369,6 +405,7 @@ func (o *UpdateVhostRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "ip_whitelist")
 		delete(additionalProperties, "shared_fingerprint")
 		delete(additionalProperties, "shared")
+		delete(additionalProperties, "load_balancing_algorithm_type")
 		o.AdditionalProperties = additionalProperties
 	}
 

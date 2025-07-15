@@ -37,13 +37,14 @@ Name | Type | Description | Notes
 **AcmeConfiguration** | [**NullableVhostAcmeConfiguration**](VhostAcmeConfiguration.md) |  | 
 **Shared** | **NullableBool** |  | 
 **SharedFingerprint** | **NullableString** |  | 
+**LoadBalancingAlgorithmType** | **NullableString** |  | 
 **Links** | Pointer to [**VhostLinks**](VhostLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewVhost
 
-`func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString, ) *Vhost`
+`func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString, loadBalancingAlgorithmType NullableString, ) *Vhost`
 
 NewVhost instantiates a new Vhost object
 This constructor will assign default values to properties that have it defined,
@@ -918,6 +919,36 @@ SetSharedFingerprint sets SharedFingerprint field to given value.
 `func (o *Vhost) UnsetSharedFingerprint()`
 
 UnsetSharedFingerprint ensures that no value is present for SharedFingerprint, not even an explicit nil
+### GetLoadBalancingAlgorithmType
+
+`func (o *Vhost) GetLoadBalancingAlgorithmType() string`
+
+GetLoadBalancingAlgorithmType returns the LoadBalancingAlgorithmType field if non-nil, zero value otherwise.
+
+### GetLoadBalancingAlgorithmTypeOk
+
+`func (o *Vhost) GetLoadBalancingAlgorithmTypeOk() (*string, bool)`
+
+GetLoadBalancingAlgorithmTypeOk returns a tuple with the LoadBalancingAlgorithmType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLoadBalancingAlgorithmType
+
+`func (o *Vhost) SetLoadBalancingAlgorithmType(v string)`
+
+SetLoadBalancingAlgorithmType sets LoadBalancingAlgorithmType field to given value.
+
+
+### SetLoadBalancingAlgorithmTypeNil
+
+`func (o *Vhost) SetLoadBalancingAlgorithmTypeNil(b bool)`
+
+ SetLoadBalancingAlgorithmTypeNil sets the value for LoadBalancingAlgorithmType to be an explicit nil
+
+### UnsetLoadBalancingAlgorithmType
+`func (o *Vhost) UnsetLoadBalancingAlgorithmType()`
+
+UnsetLoadBalancingAlgorithmType ensures that no value is present for LoadBalancingAlgorithmType, not even an explicit nil
 ### GetLinks
 
 `func (o *Vhost) GetLinks() VhostLinks`
