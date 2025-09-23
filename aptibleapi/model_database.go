@@ -36,6 +36,9 @@ type Database struct {
 	InitialContainerSize NullableInt32 `json:"initial_container_size"`
 	CurrentKmsArn NullableString `json:"current_kms_arn"`
 	EnableBackups bool `json:"enable_backups"`
+	PitrBucket NullableString `json:"pitr_bucket"`
+	OldestPitrTime NullableString `json:"oldest_pitr_time"`
+	EnablePitr bool `json:"enable_pitr"`
 	Embedded DatabaseEmbedded `json:"_embedded"`
 	Links *DatabaseLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -47,7 +50,7 @@ type _Database Database
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, embedded DatabaseEmbedded) *Database {
+func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, embedded DatabaseEmbedded) *Database {
 	this := Database{}
 	this.Id = id
 	this.Handle = handle
@@ -65,6 +68,9 @@ func NewDatabase(id int32, handle string, type_ NullableString, passphrase Nulla
 	this.InitialContainerSize = initialContainerSize
 	this.CurrentKmsArn = currentKmsArn
 	this.EnableBackups = enableBackups
+	this.PitrBucket = pitrBucket
+	this.OldestPitrTime = oldestPitrTime
+	this.EnablePitr = enablePitr
 	this.Embedded = embedded
 	return &this
 }
@@ -475,6 +481,82 @@ func (o *Database) SetEnableBackups(v bool) {
 	o.EnableBackups = v
 }
 
+// GetPitrBucket returns the PitrBucket field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Database) GetPitrBucket() string {
+	if o == nil || o.PitrBucket.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.PitrBucket.Get()
+}
+
+// GetPitrBucketOk returns a tuple with the PitrBucket field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Database) GetPitrBucketOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.PitrBucket.Get(), o.PitrBucket.IsSet()
+}
+
+// SetPitrBucket sets field value
+func (o *Database) SetPitrBucket(v string) {
+	o.PitrBucket.Set(&v)
+}
+
+// GetOldestPitrTime returns the OldestPitrTime field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Database) GetOldestPitrTime() string {
+	if o == nil || o.OldestPitrTime.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.OldestPitrTime.Get()
+}
+
+// GetOldestPitrTimeOk returns a tuple with the OldestPitrTime field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Database) GetOldestPitrTimeOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.OldestPitrTime.Get(), o.OldestPitrTime.IsSet()
+}
+
+// SetOldestPitrTime sets field value
+func (o *Database) SetOldestPitrTime(v string) {
+	o.OldestPitrTime.Set(&v)
+}
+
+// GetEnablePitr returns the EnablePitr field value
+func (o *Database) GetEnablePitr() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.EnablePitr
+}
+
+// GetEnablePitrOk returns a tuple with the EnablePitr field value
+// and a boolean to check if the value has been set.
+func (o *Database) GetEnablePitrOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.EnablePitr, true
+}
+
+// SetEnablePitr sets field value
+func (o *Database) SetEnablePitr(v bool) {
+	o.EnablePitr = v
+}
+
 // GetEmbedded returns the Embedded field value
 func (o *Database) GetEmbedded() DatabaseEmbedded {
 	if o == nil {
@@ -557,6 +639,9 @@ func (o Database) ToMap() (map[string]interface{}, error) {
 	toSerialize["initial_container_size"] = o.InitialContainerSize.Get()
 	toSerialize["current_kms_arn"] = o.CurrentKmsArn.Get()
 	toSerialize["enable_backups"] = o.EnableBackups
+	toSerialize["pitr_bucket"] = o.PitrBucket.Get()
+	toSerialize["oldest_pitr_time"] = o.OldestPitrTime.Get()
+	toSerialize["enable_pitr"] = o.EnablePitr
 	toSerialize["_embedded"] = o.Embedded
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
@@ -590,6 +675,9 @@ func (o *Database) UnmarshalJSON(data []byte) (err error) {
 		"initial_container_size",
 		"current_kms_arn",
 		"enable_backups",
+		"pitr_bucket",
+		"oldest_pitr_time",
+		"enable_pitr",
 		"_embedded",
 	}
 
@@ -636,6 +724,9 @@ func (o *Database) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "initial_container_size")
 		delete(additionalProperties, "current_kms_arn")
 		delete(additionalProperties, "enable_backups")
+		delete(additionalProperties, "pitr_bucket")
+		delete(additionalProperties, "oldest_pitr_time")
+		delete(additionalProperties, "enable_pitr")
 		delete(additionalProperties, "_embedded")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties

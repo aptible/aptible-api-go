@@ -6925,6 +6925,14 @@ components:
           x-nullable: true
         enable_backups:
           type: boolean
+        pitr_bucket:
+          type: string
+          x-nullable: true
+        oldest_pitr_time:
+          type: string
+          x-nullable: true
+        enable_pitr:
+          type: boolean
         _embedded:
           $ref: '#/components/schemas/database__embedded'
         _links:
@@ -6937,11 +6945,14 @@ components:
       - current_kms_arn
       - docker_repo
       - enable_backups
+      - enable_pitr
       - handle
       - id
       - initial_container_size
       - initial_disk_size
+      - oldest_pitr_time
       - passphrase
+      - pitr_bucket
       - port_mapping
       - provisioned
       - status
@@ -7691,6 +7702,12 @@ components:
         keep_final:
           type: boolean
           x-nullable: true
+        enable_backups:
+          type: boolean
+          x-nullable: true
+        enable_pitr:
+          type: boolean
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/operation__links'
       required:
@@ -7706,6 +7723,8 @@ components:
       - destination_region
       - disk_size
       - docker_ref
+      - enable_backups
+      - enable_pitr
       - env
       - git_ref
       - handle
@@ -9134,6 +9153,8 @@ components:
           type: integer
         enable_backups:
           type: boolean
+        enable_pitr:
+          type: boolean
       required:
       - handle
       - type
@@ -10032,6 +10053,7 @@ components:
         key_arn: key_arn
         destination_account: https://openapi-generator.tech
         destination_account_id: 5
+        enable_pitr: true
         destination_region: destination_region
         disk_size: 0
         handle: handle
@@ -10042,6 +10064,7 @@ components:
         automated: true
         provisioned_iops: 5
         daily: 2
+        enable_backups: true
         git_ref: git_ref
         monthly: 7
         yearly: 9
@@ -10102,6 +10125,12 @@ components:
           type: boolean
           x-omitempty: false
         keep_final:
+          type: boolean
+          x-omitempty: false
+        enable_backups:
+          type: boolean
+          x-omitempty: false
+        enable_pitr:
           type: boolean
           x-omitempty: false
       required:

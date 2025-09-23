@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **PitrDays** | Pointer to **int32** |  | [optional] 
 **MakeCopy** | Pointer to **bool** |  | [optional] 
 **KeepFinal** | Pointer to **bool** |  | [optional] 
+**EnableBackups** | Pointer to **bool** |  | [optional] 
+**EnablePitr** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -668,6 +670,56 @@ SetKeepFinal sets KeepFinal field to given value.
 `func (o *CreateOperationRequest) HasKeepFinal() bool`
 
 HasKeepFinal returns a boolean if a field has been set.
+
+### GetEnableBackups
+
+`func (o *CreateOperationRequest) GetEnableBackups() bool`
+
+GetEnableBackups returns the EnableBackups field if non-nil, zero value otherwise.
+
+### GetEnableBackupsOk
+
+`func (o *CreateOperationRequest) GetEnableBackupsOk() (*bool, bool)`
+
+GetEnableBackupsOk returns a tuple with the EnableBackups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableBackups
+
+`func (o *CreateOperationRequest) SetEnableBackups(v bool)`
+
+SetEnableBackups sets EnableBackups field to given value.
+
+### HasEnableBackups
+
+`func (o *CreateOperationRequest) HasEnableBackups() bool`
+
+HasEnableBackups returns a boolean if a field has been set.
+
+### GetEnablePitr
+
+`func (o *CreateOperationRequest) GetEnablePitr() bool`
+
+GetEnablePitr returns the EnablePitr field if non-nil, zero value otherwise.
+
+### GetEnablePitrOk
+
+`func (o *CreateOperationRequest) GetEnablePitrOk() (*bool, bool)`
+
+GetEnablePitrOk returns a tuple with the EnablePitr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnablePitr
+
+`func (o *CreateOperationRequest) SetEnablePitr(v bool)`
+
+SetEnablePitr sets EnablePitr field to given value.
+
+### HasEnablePitr
+
+`func (o *CreateOperationRequest) HasEnablePitr() bool`
+
+HasEnablePitr returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

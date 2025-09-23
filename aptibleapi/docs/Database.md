@@ -20,6 +20,9 @@ Name | Type | Description | Notes
 **InitialContainerSize** | **NullableInt32** |  | 
 **CurrentKmsArn** | **NullableString** |  | 
 **EnableBackups** | **bool** |  | 
+**PitrBucket** | **NullableString** |  | 
+**OldestPitrTime** | **NullableString** |  | 
+**EnablePitr** | **bool** |  | 
 **Embedded** | [**DatabaseEmbedded**](DatabaseEmbedded.md) |  | 
 **Links** | Pointer to [**DatabaseLinks**](DatabaseLinks.md) |  | [optional] 
 
@@ -27,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewDatabase
 
-`func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, embedded DatabaseEmbedded, ) *Database`
+`func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, embedded DatabaseEmbedded, ) *Database`
 
 NewDatabase instantiates a new Database object
 This constructor will assign default values to properties that have it defined,
@@ -430,6 +433,86 @@ and a boolean to check if the value has been set.
 `func (o *Database) SetEnableBackups(v bool)`
 
 SetEnableBackups sets EnableBackups field to given value.
+
+
+### GetPitrBucket
+
+`func (o *Database) GetPitrBucket() string`
+
+GetPitrBucket returns the PitrBucket field if non-nil, zero value otherwise.
+
+### GetPitrBucketOk
+
+`func (o *Database) GetPitrBucketOk() (*string, bool)`
+
+GetPitrBucketOk returns a tuple with the PitrBucket field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPitrBucket
+
+`func (o *Database) SetPitrBucket(v string)`
+
+SetPitrBucket sets PitrBucket field to given value.
+
+
+### SetPitrBucketNil
+
+`func (o *Database) SetPitrBucketNil(b bool)`
+
+ SetPitrBucketNil sets the value for PitrBucket to be an explicit nil
+
+### UnsetPitrBucket
+`func (o *Database) UnsetPitrBucket()`
+
+UnsetPitrBucket ensures that no value is present for PitrBucket, not even an explicit nil
+### GetOldestPitrTime
+
+`func (o *Database) GetOldestPitrTime() string`
+
+GetOldestPitrTime returns the OldestPitrTime field if non-nil, zero value otherwise.
+
+### GetOldestPitrTimeOk
+
+`func (o *Database) GetOldestPitrTimeOk() (*string, bool)`
+
+GetOldestPitrTimeOk returns a tuple with the OldestPitrTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOldestPitrTime
+
+`func (o *Database) SetOldestPitrTime(v string)`
+
+SetOldestPitrTime sets OldestPitrTime field to given value.
+
+
+### SetOldestPitrTimeNil
+
+`func (o *Database) SetOldestPitrTimeNil(b bool)`
+
+ SetOldestPitrTimeNil sets the value for OldestPitrTime to be an explicit nil
+
+### UnsetOldestPitrTime
+`func (o *Database) UnsetOldestPitrTime()`
+
+UnsetOldestPitrTime ensures that no value is present for OldestPitrTime, not even an explicit nil
+### GetEnablePitr
+
+`func (o *Database) GetEnablePitr() bool`
+
+GetEnablePitr returns the EnablePitr field if non-nil, zero value otherwise.
+
+### GetEnablePitrOk
+
+`func (o *Database) GetEnablePitrOk() (*bool, bool)`
+
+GetEnablePitrOk returns a tuple with the EnablePitr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnablePitr
+
+`func (o *Database) SetEnablePitr(v bool)`
+
+SetEnablePitr sets EnablePitr field to given value.
 
 
 ### GetEmbedded

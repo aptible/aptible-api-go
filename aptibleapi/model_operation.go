@@ -50,6 +50,8 @@ type Operation struct {
 	PitrDays NullableInt32 `json:"pitr_days"`
 	MakeCopy NullableBool `json:"make_copy"`
 	KeepFinal NullableBool `json:"keep_final"`
+	EnableBackups NullableBool `json:"enable_backups"`
+	EnablePitr NullableBool `json:"enable_pitr"`
 	Links *OperationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -60,7 +62,7 @@ type _Operation Operation
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool) *Operation {
+func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool) *Operation {
 	this := Operation{}
 	this.Id = id
 	this.MetaType = metaType
@@ -92,6 +94,8 @@ func NewOperation(id int32, metaType string, type_ string, status string, cancel
 	this.PitrDays = pitrDays
 	this.MakeCopy = makeCopy
 	this.KeepFinal = keepFinal
+	this.EnableBackups = enableBackups
+	this.EnablePitr = enablePitr
 	return &this
 }
 
@@ -861,6 +865,58 @@ func (o *Operation) SetKeepFinal(v bool) {
 	o.KeepFinal.Set(&v)
 }
 
+// GetEnableBackups returns the EnableBackups field value
+// If the value is explicit nil, the zero value for bool will be returned
+func (o *Operation) GetEnableBackups() bool {
+	if o == nil || o.EnableBackups.Get() == nil {
+		var ret bool
+		return ret
+	}
+
+	return *o.EnableBackups.Get()
+}
+
+// GetEnableBackupsOk returns a tuple with the EnableBackups field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetEnableBackupsOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.EnableBackups.Get(), o.EnableBackups.IsSet()
+}
+
+// SetEnableBackups sets field value
+func (o *Operation) SetEnableBackups(v bool) {
+	o.EnableBackups.Set(&v)
+}
+
+// GetEnablePitr returns the EnablePitr field value
+// If the value is explicit nil, the zero value for bool will be returned
+func (o *Operation) GetEnablePitr() bool {
+	if o == nil || o.EnablePitr.Get() == nil {
+		var ret bool
+		return ret
+	}
+
+	return *o.EnablePitr.Get()
+}
+
+// GetEnablePitrOk returns a tuple with the EnablePitr field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetEnablePitrOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.EnablePitr.Get(), o.EnablePitr.IsSet()
+}
+
+// SetEnablePitr sets field value
+func (o *Operation) SetEnablePitr(v bool) {
+	o.EnablePitr.Set(&v)
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Operation) GetLinks() OperationLinks {
 	if o == nil || IsNil(o.Links) {
@@ -935,6 +991,8 @@ func (o Operation) ToMap() (map[string]interface{}, error) {
 	toSerialize["pitr_days"] = o.PitrDays.Get()
 	toSerialize["make_copy"] = o.MakeCopy.Get()
 	toSerialize["keep_final"] = o.KeepFinal.Get()
+	toSerialize["enable_backups"] = o.EnableBackups.Get()
+	toSerialize["enable_pitr"] = o.EnablePitr.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -981,6 +1039,8 @@ func (o *Operation) UnmarshalJSON(data []byte) (err error) {
 		"pitr_days",
 		"make_copy",
 		"keep_final",
+		"enable_backups",
+		"enable_pitr",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -1040,6 +1100,8 @@ func (o *Operation) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "pitr_days")
 		delete(additionalProperties, "make_copy")
 		delete(additionalProperties, "keep_final")
+		delete(additionalProperties, "enable_backups")
+		delete(additionalProperties, "enable_pitr")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

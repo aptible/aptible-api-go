@@ -34,13 +34,15 @@ Name | Type | Description | Notes
 **PitrDays** | **NullableInt32** |  | 
 **MakeCopy** | **NullableBool** |  | 
 **KeepFinal** | **NullableBool** |  | 
+**EnableBackups** | **NullableBool** |  | 
+**EnablePitr** | **NullableBool** |  | 
 **Links** | Pointer to [**OperationLinks**](OperationLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewOperation
 
-`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, ) *Operation`
+`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool, ) *Operation`
 
 NewOperation instantiates a new Operation object
 This constructor will assign default values to properties that have it defined,
@@ -845,6 +847,66 @@ SetKeepFinal sets KeepFinal field to given value.
 `func (o *Operation) UnsetKeepFinal()`
 
 UnsetKeepFinal ensures that no value is present for KeepFinal, not even an explicit nil
+### GetEnableBackups
+
+`func (o *Operation) GetEnableBackups() bool`
+
+GetEnableBackups returns the EnableBackups field if non-nil, zero value otherwise.
+
+### GetEnableBackupsOk
+
+`func (o *Operation) GetEnableBackupsOk() (*bool, bool)`
+
+GetEnableBackupsOk returns a tuple with the EnableBackups field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableBackups
+
+`func (o *Operation) SetEnableBackups(v bool)`
+
+SetEnableBackups sets EnableBackups field to given value.
+
+
+### SetEnableBackupsNil
+
+`func (o *Operation) SetEnableBackupsNil(b bool)`
+
+ SetEnableBackupsNil sets the value for EnableBackups to be an explicit nil
+
+### UnsetEnableBackups
+`func (o *Operation) UnsetEnableBackups()`
+
+UnsetEnableBackups ensures that no value is present for EnableBackups, not even an explicit nil
+### GetEnablePitr
+
+`func (o *Operation) GetEnablePitr() bool`
+
+GetEnablePitr returns the EnablePitr field if non-nil, zero value otherwise.
+
+### GetEnablePitrOk
+
+`func (o *Operation) GetEnablePitrOk() (*bool, bool)`
+
+GetEnablePitrOk returns a tuple with the EnablePitr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnablePitr
+
+`func (o *Operation) SetEnablePitr(v bool)`
+
+SetEnablePitr sets EnablePitr field to given value.
+
+
+### SetEnablePitrNil
+
+`func (o *Operation) SetEnablePitrNil(b bool)`
+
+ SetEnablePitrNil sets the value for EnablePitr to be an explicit nil
+
+### UnsetEnablePitr
+`func (o *Operation) UnsetEnablePitr()`
+
+UnsetEnablePitr ensures that no value is present for EnablePitr, not even an explicit nil
 ### GetLinks
 
 `func (o *Operation) GetLinks() OperationLinks`

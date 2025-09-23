@@ -45,6 +45,8 @@ type CreateOperationRequest struct {
 	PitrDays *int32 `json:"pitr_days,omitempty"`
 	MakeCopy *bool `json:"make_copy,omitempty"`
 	KeepFinal *bool `json:"keep_final,omitempty"`
+	EnableBackups *bool `json:"enable_backups,omitempty"`
+	EnablePitr *bool `json:"enable_pitr,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -860,6 +862,70 @@ func (o *CreateOperationRequest) SetKeepFinal(v bool) {
 	o.KeepFinal = &v
 }
 
+// GetEnableBackups returns the EnableBackups field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetEnableBackups() bool {
+	if o == nil || IsNil(o.EnableBackups) {
+		var ret bool
+		return ret
+	}
+	return *o.EnableBackups
+}
+
+// GetEnableBackupsOk returns a tuple with the EnableBackups field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetEnableBackupsOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnableBackups) {
+		return nil, false
+	}
+	return o.EnableBackups, true
+}
+
+// HasEnableBackups returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasEnableBackups() bool {
+	if o != nil && !IsNil(o.EnableBackups) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableBackups gets a reference to the given bool and assigns it to the EnableBackups field.
+func (o *CreateOperationRequest) SetEnableBackups(v bool) {
+	o.EnableBackups = &v
+}
+
+// GetEnablePitr returns the EnablePitr field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetEnablePitr() bool {
+	if o == nil || IsNil(o.EnablePitr) {
+		var ret bool
+		return ret
+	}
+	return *o.EnablePitr
+}
+
+// GetEnablePitrOk returns a tuple with the EnablePitr field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetEnablePitrOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnablePitr) {
+		return nil, false
+	}
+	return o.EnablePitr, true
+}
+
+// HasEnablePitr returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasEnablePitr() bool {
+	if o != nil && !IsNil(o.EnablePitr) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnablePitr gets a reference to the given bool and assigns it to the EnablePitr field.
+func (o *CreateOperationRequest) SetEnablePitr(v bool) {
+	o.EnablePitr = &v
+}
+
 func (o CreateOperationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -943,6 +1009,12 @@ func (o CreateOperationRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.KeepFinal) {
 		toSerialize["keep_final"] = o.KeepFinal
 	}
+	if !IsNil(o.EnableBackups) {
+		toSerialize["enable_backups"] = o.EnableBackups
+	}
+	if !IsNil(o.EnablePitr) {
+		toSerialize["enable_pitr"] = o.EnablePitr
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1011,6 +1083,8 @@ func (o *CreateOperationRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "pitr_days")
 		delete(additionalProperties, "make_copy")
 		delete(additionalProperties, "keep_final")
+		delete(additionalProperties, "enable_backups")
+		delete(additionalProperties, "enable_pitr")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -30,6 +30,7 @@ type CreateDatabaseRequest struct {
 	DatabaseImageId *int32 `json:"database_image_id,omitempty"`
 	CurrentKmsArn *int32 `json:"current_kms_arn,omitempty"`
 	EnableBackups *bool `json:"enable_backups,omitempty"`
+	EnablePitr *bool `json:"enable_pitr,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -326,6 +327,38 @@ func (o *CreateDatabaseRequest) SetEnableBackups(v bool) {
 	o.EnableBackups = &v
 }
 
+// GetEnablePitr returns the EnablePitr field value if set, zero value otherwise.
+func (o *CreateDatabaseRequest) GetEnablePitr() bool {
+	if o == nil || IsNil(o.EnablePitr) {
+		var ret bool
+		return ret
+	}
+	return *o.EnablePitr
+}
+
+// GetEnablePitrOk returns a tuple with the EnablePitr field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateDatabaseRequest) GetEnablePitrOk() (*bool, bool) {
+	if o == nil || IsNil(o.EnablePitr) {
+		return nil, false
+	}
+	return o.EnablePitr, true
+}
+
+// HasEnablePitr returns a boolean if a field has been set.
+func (o *CreateDatabaseRequest) HasEnablePitr() bool {
+	if o != nil && !IsNil(o.EnablePitr) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnablePitr gets a reference to the given bool and assigns it to the EnablePitr field.
+func (o *CreateDatabaseRequest) SetEnablePitr(v bool) {
+	o.EnablePitr = &v
+}
+
 func (o CreateDatabaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -358,6 +391,9 @@ func (o CreateDatabaseRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EnableBackups) {
 		toSerialize["enable_backups"] = o.EnableBackups
+	}
+	if !IsNil(o.EnablePitr) {
+		toSerialize["enable_pitr"] = o.EnablePitr
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -412,6 +448,7 @@ func (o *CreateDatabaseRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "database_image_id")
 		delete(additionalProperties, "current_kms_arn")
 		delete(additionalProperties, "enable_backups")
+		delete(additionalProperties, "enable_pitr")
 		o.AdditionalProperties = additionalProperties
 	}
 
