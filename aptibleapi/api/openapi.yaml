@@ -6502,6 +6502,8 @@ components:
           type: integer
         yearly:
           type: integer
+        pitr_days:
+          type: integer
         make_copy:
           type: boolean
         keep_final:
@@ -6516,6 +6518,7 @@ components:
       - keep_final
       - make_copy
       - monthly
+      - pitr_days
       - yearly
     backup:
       properties:

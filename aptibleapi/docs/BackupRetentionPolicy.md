@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Daily** | **int32** |  | 
 **Monthly** | **int32** |  | 
 **Yearly** | **int32** |  | 
+**PitrDays** | **int32** |  | 
 **MakeCopy** | **bool** |  | 
 **KeepFinal** | **bool** |  | 
 **Links** | Pointer to [**BackupRetentionPolicyLinks**](BackupRetentionPolicyLinks.md) |  | [optional] 
@@ -18,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewBackupRetentionPolicy
 
-`func NewBackupRetentionPolicy(id int32, metaType string, createdAt string, daily int32, monthly int32, yearly int32, makeCopy bool, keepFinal bool, ) *BackupRetentionPolicy`
+`func NewBackupRetentionPolicy(id int32, metaType string, createdAt string, daily int32, monthly int32, yearly int32, pitrDays int32, makeCopy bool, keepFinal bool, ) *BackupRetentionPolicy`
 
 NewBackupRetentionPolicy instantiates a new BackupRetentionPolicy object
 This constructor will assign default values to properties that have it defined,
@@ -151,6 +152,26 @@ and a boolean to check if the value has been set.
 `func (o *BackupRetentionPolicy) SetYearly(v int32)`
 
 SetYearly sets Yearly field to given value.
+
+
+### GetPitrDays
+
+`func (o *BackupRetentionPolicy) GetPitrDays() int32`
+
+GetPitrDays returns the PitrDays field if non-nil, zero value otherwise.
+
+### GetPitrDaysOk
+
+`func (o *BackupRetentionPolicy) GetPitrDaysOk() (*int32, bool)`
+
+GetPitrDaysOk returns a tuple with the PitrDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPitrDays
+
+`func (o *BackupRetentionPolicy) SetPitrDays(v int32)`
+
+SetPitrDays sets PitrDays field to given value.
 
 
 ### GetMakeCopy

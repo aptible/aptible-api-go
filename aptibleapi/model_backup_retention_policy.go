@@ -26,6 +26,7 @@ type BackupRetentionPolicy struct {
 	Daily int32 `json:"daily"`
 	Monthly int32 `json:"monthly"`
 	Yearly int32 `json:"yearly"`
+	PitrDays int32 `json:"pitr_days"`
 	MakeCopy bool `json:"make_copy"`
 	KeepFinal bool `json:"keep_final"`
 	Links *BackupRetentionPolicyLinks `json:"_links,omitempty"`
@@ -38,7 +39,7 @@ type _BackupRetentionPolicy BackupRetentionPolicy
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupRetentionPolicy(id int32, metaType string, createdAt string, daily int32, monthly int32, yearly int32, makeCopy bool, keepFinal bool) *BackupRetentionPolicy {
+func NewBackupRetentionPolicy(id int32, metaType string, createdAt string, daily int32, monthly int32, yearly int32, pitrDays int32, makeCopy bool, keepFinal bool) *BackupRetentionPolicy {
 	this := BackupRetentionPolicy{}
 	this.Id = id
 	this.MetaType = metaType
@@ -46,6 +47,7 @@ func NewBackupRetentionPolicy(id int32, metaType string, createdAt string, daily
 	this.Daily = daily
 	this.Monthly = monthly
 	this.Yearly = yearly
+	this.PitrDays = pitrDays
 	this.MakeCopy = makeCopy
 	this.KeepFinal = keepFinal
 	return &this
@@ -203,6 +205,30 @@ func (o *BackupRetentionPolicy) SetYearly(v int32) {
 	o.Yearly = v
 }
 
+// GetPitrDays returns the PitrDays field value
+func (o *BackupRetentionPolicy) GetPitrDays() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.PitrDays
+}
+
+// GetPitrDaysOk returns a tuple with the PitrDays field value
+// and a boolean to check if the value has been set.
+func (o *BackupRetentionPolicy) GetPitrDaysOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PitrDays, true
+}
+
+// SetPitrDays sets field value
+func (o *BackupRetentionPolicy) SetPitrDays(v int32) {
+	o.PitrDays = v
+}
+
 // GetMakeCopy returns the MakeCopy field value
 func (o *BackupRetentionPolicy) GetMakeCopy() bool {
 	if o == nil {
@@ -299,6 +325,7 @@ func (o BackupRetentionPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize["daily"] = o.Daily
 	toSerialize["monthly"] = o.Monthly
 	toSerialize["yearly"] = o.Yearly
+	toSerialize["pitr_days"] = o.PitrDays
 	toSerialize["make_copy"] = o.MakeCopy
 	toSerialize["keep_final"] = o.KeepFinal
 	if !IsNil(o.Links) {
@@ -323,6 +350,7 @@ func (o *BackupRetentionPolicy) UnmarshalJSON(data []byte) (err error) {
 		"daily",
 		"monthly",
 		"yearly",
+		"pitr_days",
 		"make_copy",
 		"keep_final",
 	}
@@ -360,6 +388,7 @@ func (o *BackupRetentionPolicy) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "daily")
 		delete(additionalProperties, "monthly")
 		delete(additionalProperties, "yearly")
+		delete(additionalProperties, "pitr_days")
 		delete(additionalProperties, "make_copy")
 		delete(additionalProperties, "keep_final")
 		delete(additionalProperties, "_links")
