@@ -28,13 +28,14 @@ Name | Type | Description | Notes
 **InternalDomain** | **NullableString** |  | 
 **DefaultDomain** | **NullableString** |  | 
 **BrickwallEnabled** | **bool** |  | 
+**VpcCidr** | **NullableString** |  | 
 **Links** | Pointer to [**StackLinks**](StackLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewStack
 
-`func NewStack(id int32, metaType string, name string, version string, region string, default_ NullableBool, public bool, createdAt string, updatedAt string, sshHostDsaPublicKey string, sshHostRsaPublicKey string, sshHostEcdsaPublicKey string, sshPortalHost string, sshPortalPort int32, outboundIpAddresses []string, memoryLimits bool, cpuLimits bool, intrusionDetection bool, exposeIntrusionDetectionReports bool, accountId NullableString, vpcId NullableString, internalDomain NullableString, defaultDomain NullableString, brickwallEnabled bool, ) *Stack`
+`func NewStack(id int32, metaType string, name string, version string, region string, default_ NullableBool, public bool, createdAt string, updatedAt string, sshHostDsaPublicKey string, sshHostRsaPublicKey string, sshHostEcdsaPublicKey string, sshPortalHost string, sshPortalPort int32, outboundIpAddresses []string, memoryLimits bool, cpuLimits bool, intrusionDetection bool, exposeIntrusionDetectionReports bool, accountId NullableString, vpcId NullableString, internalDomain NullableString, defaultDomain NullableString, brickwallEnabled bool, vpcCidr NullableString, ) *Stack`
 
 NewStack instantiates a new Stack object
 This constructor will assign default values to properties that have it defined,
@@ -579,6 +580,36 @@ and a boolean to check if the value has been set.
 SetBrickwallEnabled sets BrickwallEnabled field to given value.
 
 
+### GetVpcCidr
+
+`func (o *Stack) GetVpcCidr() string`
+
+GetVpcCidr returns the VpcCidr field if non-nil, zero value otherwise.
+
+### GetVpcCidrOk
+
+`func (o *Stack) GetVpcCidrOk() (*string, bool)`
+
+GetVpcCidrOk returns a tuple with the VpcCidr field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVpcCidr
+
+`func (o *Stack) SetVpcCidr(v string)`
+
+SetVpcCidr sets VpcCidr field to given value.
+
+
+### SetVpcCidrNil
+
+`func (o *Stack) SetVpcCidrNil(b bool)`
+
+ SetVpcCidrNil sets the value for VpcCidr to be an explicit nil
+
+### UnsetVpcCidr
+`func (o *Stack) UnsetVpcCidr()`
+
+UnsetVpcCidr ensures that no value is present for VpcCidr, not even an explicit nil
 ### GetLinks
 
 `func (o *Stack) GetLinks() StackLinks`

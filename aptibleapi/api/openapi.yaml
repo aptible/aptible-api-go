@@ -28,6 +28,7 @@ tags:
 - name: Disks
 - name: EphemeralContainers
 - name: EphemeralSessions
+- name: ExternalAwsAccounts
 - name: Images
 - name: Integrations
 - name: IntrusionDetectionReports
@@ -5385,7 +5386,7 @@ paths:
       - Services
   /services/{id}:
     get:
-      operationId: GetService
+      operationId: GetServiceWithOperationStatus
       parameters:
       - description: id
         explode: false
@@ -5395,20 +5396,28 @@ paths:
         schema:
           type: integer
         style: simple
+      - description: Include release_operation_in_progress status
+        explode: true
+        in: query
+        name: include_operation_status
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
             application/hal+json:
               schema:
                 $ref: '#/components/schemas/service'
-          description: successful
+          description: excludes operation status when param is not present
         default:
           content:
             application/hal+json:
               schema:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
-      summary: show service
+      summary: show service with operation status
       tags:
       - Services
     patch:
@@ -6502,6 +6511,8 @@ components:
           type: integer
         yearly:
           type: integer
+        pitr_days:
+          type: integer
         make_copy:
           type: boolean
         keep_final:
@@ -6516,6 +6527,7 @@ components:
       - keep_final
       - make_copy
       - monthly
+      - pitr_days
       - yearly
     backup:
       properties:
@@ -7200,6 +7212,61 @@ components:
       - host
       - id
       - name
+      - updated_at
+    external_aws_account:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        organization_id:
+          type: string
+        aws_account_id:
+          type: string
+        account_name:
+          type: string
+        aws_region_primary:
+          type: string
+        discovery_enabled:
+          type: boolean
+        discovery_frequency:
+          type: string
+          x-nullable: true
+        last_discovery_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        status:
+          type: string
+        created_by_user_email:
+          type: string
+        created_by_user_name:
+          type: string
+        created_by_user_id:
+          type: string
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        _links:
+          $ref: '#/components/schemas/external_aws_account__links'
+      required:
+      - _type
+      - account_name
+      - aws_account_id
+      - aws_region_primary
+      - created_at
+      - created_by_user_email
+      - created_by_user_id
+      - created_by_user_name
+      - discovery_enabled
+      - discovery_frequency
+      - id
+      - last_discovery_at
+      - organization_id
+      - status
       - updated_at
     image:
       properties:
@@ -8217,6 +8284,9 @@ components:
           x-nullable: true
         brickwall_enabled:
           type: boolean
+        vpc_cidr:
+          type: string
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/stack__links'
       required:
@@ -8243,6 +8313,7 @@ components:
       - ssh_portal_port
       - updated_at
       - version
+      - vpc_cidr
       - vpc_id
     vhost:
       properties:
@@ -11048,6 +11119,13 @@ components:
         ephemeral_containers:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         operations:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    external_aws_account__links:
+      properties:
+        organization:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'

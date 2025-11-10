@@ -123,6 +123,8 @@ docs/EphemeralContainersAPI.md
 docs/EphemeralSession.md
 docs/EphemeralSessionLinks.md
 docs/EphemeralSessionsAPI.md
+docs/ExternalAwsAccount.md
+docs/ExternalAwsAccountLinks.md
 docs/GetRoot200Response.md
 docs/GetRoot200ResponseLinks.md
 docs/Image.md
@@ -377,6 +379,8 @@ model_ephemeral_container__links.go
 model_ephemeral_session.go
 model_ephemeral_session__links.go
 model_error.go
+model_external_aws_account.go
+model_external_aws_account__links.go
 model_get_root_200_response.go
 model_get_root_200_response__links.go
 model_image.go

@@ -44,6 +44,7 @@ type Stack struct {
 	InternalDomain NullableString `json:"internal_domain"`
 	DefaultDomain NullableString `json:"default_domain"`
 	BrickwallEnabled bool `json:"brickwall_enabled"`
+	VpcCidr NullableString `json:"vpc_cidr"`
 	Links *StackLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -54,7 +55,7 @@ type _Stack Stack
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStack(id int32, metaType string, name string, version string, region string, default_ NullableBool, public bool, createdAt string, updatedAt string, sshHostDsaPublicKey string, sshHostRsaPublicKey string, sshHostEcdsaPublicKey string, sshPortalHost string, sshPortalPort int32, outboundIpAddresses []string, memoryLimits bool, cpuLimits bool, intrusionDetection bool, exposeIntrusionDetectionReports bool, accountId NullableString, vpcId NullableString, internalDomain NullableString, defaultDomain NullableString, brickwallEnabled bool) *Stack {
+func NewStack(id int32, metaType string, name string, version string, region string, default_ NullableBool, public bool, createdAt string, updatedAt string, sshHostDsaPublicKey string, sshHostRsaPublicKey string, sshHostEcdsaPublicKey string, sshPortalHost string, sshPortalPort int32, outboundIpAddresses []string, memoryLimits bool, cpuLimits bool, intrusionDetection bool, exposeIntrusionDetectionReports bool, accountId NullableString, vpcId NullableString, internalDomain NullableString, defaultDomain NullableString, brickwallEnabled bool, vpcCidr NullableString) *Stack {
 	this := Stack{}
 	this.Id = id
 	this.MetaType = metaType
@@ -80,6 +81,7 @@ func NewStack(id int32, metaType string, name string, version string, region str
 	this.InternalDomain = internalDomain
 	this.DefaultDomain = defaultDomain
 	this.BrickwallEnabled = brickwallEnabled
+	this.VpcCidr = vpcCidr
 	return &this
 }
 
@@ -677,6 +679,32 @@ func (o *Stack) SetBrickwallEnabled(v bool) {
 	o.BrickwallEnabled = v
 }
 
+// GetVpcCidr returns the VpcCidr field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Stack) GetVpcCidr() string {
+	if o == nil || o.VpcCidr.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.VpcCidr.Get()
+}
+
+// GetVpcCidrOk returns a tuple with the VpcCidr field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Stack) GetVpcCidrOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.VpcCidr.Get(), o.VpcCidr.IsSet()
+}
+
+// SetVpcCidr sets field value
+func (o *Stack) SetVpcCidr(v string) {
+	o.VpcCidr.Set(&v)
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Stack) GetLinks() StackLinks {
 	if o == nil || IsNil(o.Links) {
@@ -743,6 +771,7 @@ func (o Stack) ToMap() (map[string]interface{}, error) {
 	toSerialize["internal_domain"] = o.InternalDomain.Get()
 	toSerialize["default_domain"] = o.DefaultDomain.Get()
 	toSerialize["brickwall_enabled"] = o.BrickwallEnabled
+	toSerialize["vpc_cidr"] = o.VpcCidr.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -783,6 +812,7 @@ func (o *Stack) UnmarshalJSON(data []byte) (err error) {
 		"internal_domain",
 		"default_domain",
 		"brickwall_enabled",
+		"vpc_cidr",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -836,6 +866,7 @@ func (o *Stack) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "internal_domain")
 		delete(additionalProperties, "default_domain")
 		delete(additionalProperties, "brickwall_enabled")
+		delete(additionalProperties, "vpc_cidr")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

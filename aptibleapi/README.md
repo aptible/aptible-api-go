@@ -253,7 +253,7 @@ Class | Method | HTTP request | Description
 *ServiceSizingPoliciesAPI* | [**ListServiceSizingPoliciesForAccount**](docs/ServiceSizingPoliciesAPI.md#listservicesizingpoliciesforaccount) | **Get** /accounts/{account_id}/service_sizing_policies | list service_sizing_policies
 *ServiceSizingPoliciesAPI* | [**ListServiceSizingPoliciesForService**](docs/ServiceSizingPoliciesAPI.md#listservicesizingpoliciesforservice) | **Get** /services/{service_id}/service_sizing_policies | list service_sizing_policies
 *ServiceSizingPoliciesAPI* | [**UpdateServiceSizingPolicy**](docs/ServiceSizingPoliciesAPI.md#updateservicesizingpolicy) | **Put** /services/{service_id}/service_sizing_policies | update service_sizing_policy
-*ServicesAPI* | [**GetService**](docs/ServicesAPI.md#getservice) | **Get** /services/{id} | show service
+*ServicesAPI* | [**GetServiceWithOperationStatus**](docs/ServicesAPI.md#getservicewithoperationstatus) | **Get** /services/{id} | show service with operation status
 *ServicesAPI* | [**ListServicesForAccount**](docs/ServicesAPI.md#listservicesforaccount) | **Get** /accounts/{account_id}/services | list services
 *ServicesAPI* | [**ListServicesForApp**](docs/ServicesAPI.md#listservicesforapp) | **Get** /apps/{app_id}/services | list services
 *ServicesAPI* | [**PatchService**](docs/ServicesAPI.md#patchservice) | **Patch** /services/{id} | update service
@@ -348,6 +348,8 @@ Class | Method | HTTP request | Description
  - [EphemeralContainerLinks](docs/EphemeralContainerLinks.md)
  - [EphemeralSession](docs/EphemeralSession.md)
  - [EphemeralSessionLinks](docs/EphemeralSessionLinks.md)
+ - [ExternalAwsAccount](docs/ExternalAwsAccount.md)
+ - [ExternalAwsAccountLinks](docs/ExternalAwsAccountLinks.md)
  - [GetRoot200Response](docs/GetRoot200Response.md)
  - [GetRoot200ResponseLinks](docs/GetRoot200ResponseLinks.md)
  - [Image](docs/Image.md)

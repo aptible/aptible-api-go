@@ -4,7 +4,7 @@ All URIs are relative to *https://api.aptible.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetService**](ServicesAPI.md#GetService) | **Get** /services/{id} | show service
+[**GetServiceWithOperationStatus**](ServicesAPI.md#GetServiceWithOperationStatus) | **Get** /services/{id} | show service with operation status
 [**ListServicesForAccount**](ServicesAPI.md#ListServicesForAccount) | **Get** /accounts/{account_id}/services | list services
 [**ListServicesForApp**](ServicesAPI.md#ListServicesForApp) | **Get** /apps/{app_id}/services | list services
 [**PatchService**](ServicesAPI.md#PatchService) | **Patch** /services/{id} | update service
@@ -12,11 +12,11 @@ Method | HTTP request | Description
 
 
 
-## GetService
+## GetServiceWithOperationStatus
 
-> Service GetService(ctx, id).Execute()
+> Service GetServiceWithOperationStatus(ctx, id).IncludeOperationStatus(includeOperationStatus).Execute()
 
-show service
+show service with operation status
 
 ### Example
 
@@ -32,16 +32,17 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	includeOperationStatus := true // bool | Include release_operation_in_progress status (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServicesAPI.GetService(context.Background(), id).Execute()
+	resp, r, err := apiClient.ServicesAPI.GetServiceWithOperationStatus(context.Background(), id).IncludeOperationStatus(includeOperationStatus).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetService``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetServiceWithOperationStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetService`: Service
-	fmt.Fprintf(os.Stdout, "Response from `ServicesAPI.GetService`: %v\n", resp)
+	// response from `GetServiceWithOperationStatus`: Service
+	fmt.Fprintf(os.Stdout, "Response from `ServicesAPI.GetServiceWithOperationStatus`: %v\n", resp)
 }
 ```
 
@@ -55,12 +56,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetServiceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetServiceWithOperationStatusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **includeOperationStatus** | **bool** | Include release_operation_in_progress status | 
 
 ### Return type
 

@@ -23,25 +23,32 @@ import (
 // ServicesAPIService ServicesAPI service
 type ServicesAPIService service
 
-type ApiGetServiceRequest struct {
+type ApiGetServiceWithOperationStatusRequest struct {
 	ctx context.Context
 	ApiService *ServicesAPIService
 	id int32
+	includeOperationStatus *bool
 }
 
-func (r ApiGetServiceRequest) Execute() (*Service, *http.Response, error) {
-	return r.ApiService.GetServiceExecute(r)
+// Include release_operation_in_progress status
+func (r ApiGetServiceWithOperationStatusRequest) IncludeOperationStatus(includeOperationStatus bool) ApiGetServiceWithOperationStatusRequest {
+	r.includeOperationStatus = &includeOperationStatus
+	return r
+}
+
+func (r ApiGetServiceWithOperationStatusRequest) Execute() (*Service, *http.Response, error) {
+	return r.ApiService.GetServiceWithOperationStatusExecute(r)
 }
 
 /*
-GetService show service
+GetServiceWithOperationStatus show service with operation status
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id id
- @return ApiGetServiceRequest
+ @return ApiGetServiceWithOperationStatusRequest
 */
-func (a *ServicesAPIService) GetService(ctx context.Context, id int32) ApiGetServiceRequest {
-	return ApiGetServiceRequest{
+func (a *ServicesAPIService) GetServiceWithOperationStatus(ctx context.Context, id int32) ApiGetServiceWithOperationStatusRequest {
+	return ApiGetServiceWithOperationStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -50,7 +57,7 @@ func (a *ServicesAPIService) GetService(ctx context.Context, id int32) ApiGetSer
 
 // Execute executes the request
 //  @return Service
-func (a *ServicesAPIService) GetServiceExecute(r ApiGetServiceRequest) (*Service, *http.Response, error) {
+func (a *ServicesAPIService) GetServiceWithOperationStatusExecute(r ApiGetServiceWithOperationStatusRequest) (*Service, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +65,7 @@ func (a *ServicesAPIService) GetServiceExecute(r ApiGetServiceRequest) (*Service
 		localVarReturnValue  *Service
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicesAPIService.GetService")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServicesAPIService.GetServiceWithOperationStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -70,6 +77,9 @@ func (a *ServicesAPIService) GetServiceExecute(r ApiGetServiceRequest) (*Service
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.includeOperationStatus != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_operation_status", r.includeOperationStatus, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
