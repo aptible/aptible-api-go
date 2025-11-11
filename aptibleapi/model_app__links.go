@@ -34,6 +34,8 @@ type AppLinks struct {
 	LastCodeScanResult *ListAccountsForStack200ResponseLinksStack `json:"last_code_scan_result,omitempty"`
 	Deployments *ListAccountsForStack200ResponseLinksStack `json:"deployments,omitempty"`
 	CurrentDeployment *ListAccountsForStack200ResponseLinksStack `json:"current_deployment,omitempty"`
+	Settings *ListAccountsForStack200ResponseLinksStack `json:"settings,omitempty"`
+	CurrentSetting *ListAccountsForStack200ResponseLinksStack `json:"current_setting,omitempty"`
 	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -537,6 +539,70 @@ func (o *AppLinks) SetCurrentDeployment(v ListAccountsForStack200ResponseLinksSt
 	o.CurrentDeployment = &v
 }
 
+// GetSettings returns the Settings field value if set, zero value otherwise.
+func (o *AppLinks) GetSettings() ListAccountsForStack200ResponseLinksStack {
+	if o == nil || IsNil(o.Settings) {
+		var ret ListAccountsForStack200ResponseLinksStack
+		return ret
+	}
+	return *o.Settings
+}
+
+// GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AppLinks) GetSettingsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+	if o == nil || IsNil(o.Settings) {
+		return nil, false
+	}
+	return o.Settings, true
+}
+
+// HasSettings returns a boolean if a field has been set.
+func (o *AppLinks) HasSettings() bool {
+	if o != nil && !IsNil(o.Settings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSettings gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Settings field.
+func (o *AppLinks) SetSettings(v ListAccountsForStack200ResponseLinksStack) {
+	o.Settings = &v
+}
+
+// GetCurrentSetting returns the CurrentSetting field value if set, zero value otherwise.
+func (o *AppLinks) GetCurrentSetting() ListAccountsForStack200ResponseLinksStack {
+	if o == nil || IsNil(o.CurrentSetting) {
+		var ret ListAccountsForStack200ResponseLinksStack
+		return ret
+	}
+	return *o.CurrentSetting
+}
+
+// GetCurrentSettingOk returns a tuple with the CurrentSetting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AppLinks) GetCurrentSettingOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+	if o == nil || IsNil(o.CurrentSetting) {
+		return nil, false
+	}
+	return o.CurrentSetting, true
+}
+
+// HasCurrentSetting returns a boolean if a field has been set.
+func (o *AppLinks) HasCurrentSetting() bool {
+	if o != nil && !IsNil(o.CurrentSetting) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentSetting gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the CurrentSetting field.
+func (o *AppLinks) SetCurrentSetting(v ListAccountsForStack200ResponseLinksStack) {
+	o.CurrentSetting = &v
+}
+
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *AppLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
@@ -624,6 +690,12 @@ func (o AppLinks) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CurrentDeployment) {
 		toSerialize["current_deployment"] = o.CurrentDeployment
 	}
+	if !IsNil(o.Settings) {
+		toSerialize["settings"] = o.Settings
+	}
+	if !IsNil(o.CurrentSetting) {
+		toSerialize["current_setting"] = o.CurrentSetting
+	}
 	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
@@ -664,6 +736,8 @@ func (o *AppLinks) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "last_code_scan_result")
 		delete(additionalProperties, "deployments")
 		delete(additionalProperties, "current_deployment")
+		delete(additionalProperties, "settings")
+		delete(additionalProperties, "current_setting")
 		delete(additionalProperties, "self")
 		o.AdditionalProperties = additionalProperties
 	}

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **Operations** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Releases** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Vhosts** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Settings** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**CurrentSetting** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
@@ -206,6 +208,56 @@ SetVhosts sets Vhosts field to given value.
 `func (o *ServiceLinks) HasVhosts() bool`
 
 HasVhosts returns a boolean if a field has been set.
+
+### GetSettings
+
+`func (o *ServiceLinks) GetSettings() ListAccountsForStack200ResponseLinksStack`
+
+GetSettings returns the Settings field if non-nil, zero value otherwise.
+
+### GetSettingsOk
+
+`func (o *ServiceLinks) GetSettingsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSettings
+
+`func (o *ServiceLinks) SetSettings(v ListAccountsForStack200ResponseLinksStack)`
+
+SetSettings sets Settings field to given value.
+
+### HasSettings
+
+`func (o *ServiceLinks) HasSettings() bool`
+
+HasSettings returns a boolean if a field has been set.
+
+### GetCurrentSetting
+
+`func (o *ServiceLinks) GetCurrentSetting() ListAccountsForStack200ResponseLinksStack`
+
+GetCurrentSetting returns the CurrentSetting field if non-nil, zero value otherwise.
+
+### GetCurrentSettingOk
+
+`func (o *ServiceLinks) GetCurrentSettingOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetCurrentSettingOk returns a tuple with the CurrentSetting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentSetting
+
+`func (o *ServiceLinks) SetCurrentSetting(v ListAccountsForStack200ResponseLinksStack)`
+
+SetCurrentSetting sets CurrentSetting field to given value.
+
+### HasCurrentSetting
+
+`func (o *ServiceLinks) HasCurrentSetting() bool`
+
+HasCurrentSetting returns a boolean if a field has been set.
 
 ### GetSelf
 

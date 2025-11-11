@@ -111,6 +111,8 @@ type APIClient struct {
 
 	ServicesAPI *ServicesAPIService
 
+	SettingsAPI *SettingsAPIService
+
 	SourcesAPI *SourcesAPIService
 
 	SshPortalConnectionsAPI *SshPortalConnectionsAPIService
@@ -171,6 +173,7 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.ReleasesAPI = (*ReleasesAPIService)(&c.common)
 	c.ServiceSizingPoliciesAPI = (*ServiceSizingPoliciesAPIService)(&c.common)
 	c.ServicesAPI = (*ServicesAPIService)(&c.common)
+	c.SettingsAPI = (*SettingsAPIService)(&c.common)
 	c.SourcesAPI = (*SourcesAPIService)(&c.common)
 	c.SshPortalConnectionsAPI = (*SshPortalConnectionsAPIService)(&c.common)
 	c.StacksAPI = (*StacksAPIService)(&c.common)
