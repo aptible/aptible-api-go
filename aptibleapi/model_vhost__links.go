@@ -22,6 +22,8 @@ type VhostLinks struct {
 	Service *ListAccountsForStack200ResponseLinksStack `json:"service,omitempty"`
 	Certificate *ListAccountsForStack200ResponseLinksStack `json:"certificate,omitempty"`
 	Operations *ListAccountsForStack200ResponseLinksStack `json:"operations,omitempty"`
+	Settings *ListAccountsForStack200ResponseLinksStack `json:"settings,omitempty"`
+	CurrentSetting *ListAccountsForStack200ResponseLinksStack `json:"current_setting,omitempty"`
 	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -141,6 +143,70 @@ func (o *VhostLinks) SetOperations(v ListAccountsForStack200ResponseLinksStack) 
 	o.Operations = &v
 }
 
+// GetSettings returns the Settings field value if set, zero value otherwise.
+func (o *VhostLinks) GetSettings() ListAccountsForStack200ResponseLinksStack {
+	if o == nil || IsNil(o.Settings) {
+		var ret ListAccountsForStack200ResponseLinksStack
+		return ret
+	}
+	return *o.Settings
+}
+
+// GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VhostLinks) GetSettingsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+	if o == nil || IsNil(o.Settings) {
+		return nil, false
+	}
+	return o.Settings, true
+}
+
+// HasSettings returns a boolean if a field has been set.
+func (o *VhostLinks) HasSettings() bool {
+	if o != nil && !IsNil(o.Settings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSettings gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Settings field.
+func (o *VhostLinks) SetSettings(v ListAccountsForStack200ResponseLinksStack) {
+	o.Settings = &v
+}
+
+// GetCurrentSetting returns the CurrentSetting field value if set, zero value otherwise.
+func (o *VhostLinks) GetCurrentSetting() ListAccountsForStack200ResponseLinksStack {
+	if o == nil || IsNil(o.CurrentSetting) {
+		var ret ListAccountsForStack200ResponseLinksStack
+		return ret
+	}
+	return *o.CurrentSetting
+}
+
+// GetCurrentSettingOk returns a tuple with the CurrentSetting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VhostLinks) GetCurrentSettingOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+	if o == nil || IsNil(o.CurrentSetting) {
+		return nil, false
+	}
+	return o.CurrentSetting, true
+}
+
+// HasCurrentSetting returns a boolean if a field has been set.
+func (o *VhostLinks) HasCurrentSetting() bool {
+	if o != nil && !IsNil(o.CurrentSetting) {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentSetting gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the CurrentSetting field.
+func (o *VhostLinks) SetCurrentSetting(v ListAccountsForStack200ResponseLinksStack) {
+	o.CurrentSetting = &v
+}
+
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *VhostLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
@@ -192,6 +258,12 @@ func (o VhostLinks) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
+	if !IsNil(o.Settings) {
+		toSerialize["settings"] = o.Settings
+	}
+	if !IsNil(o.CurrentSetting) {
+		toSerialize["current_setting"] = o.CurrentSetting
+	}
 	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
@@ -220,6 +292,8 @@ func (o *VhostLinks) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "service")
 		delete(additionalProperties, "certificate")
 		delete(additionalProperties, "operations")
+		delete(additionalProperties, "settings")
+		delete(additionalProperties, "current_setting")
 		delete(additionalProperties, "self")
 		o.AdditionalProperties = additionalProperties
 	}

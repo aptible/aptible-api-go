@@ -52,6 +52,8 @@ type Operation struct {
 	KeepFinal NullableBool `json:"keep_final"`
 	EnableBackups NullableBool `json:"enable_backups"`
 	EnablePitr NullableBool `json:"enable_pitr"`
+	Settings map[string]interface{} `json:"settings"`
+	SensitiveSettings map[string]interface{} `json:"sensitive_settings"`
 	Links *OperationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -62,7 +64,7 @@ type _Operation Operation
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool) *Operation {
+func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool, settings map[string]interface{}, sensitiveSettings map[string]interface{}) *Operation {
 	this := Operation{}
 	this.Id = id
 	this.MetaType = metaType
@@ -96,6 +98,8 @@ func NewOperation(id int32, metaType string, type_ string, status string, cancel
 	this.KeepFinal = keepFinal
 	this.EnableBackups = enableBackups
 	this.EnablePitr = enablePitr
+	this.Settings = settings
+	this.SensitiveSettings = sensitiveSettings
 	return &this
 }
 
@@ -917,6 +921,54 @@ func (o *Operation) SetEnablePitr(v bool) {
 	o.EnablePitr.Set(&v)
 }
 
+// GetSettings returns the Settings field value
+func (o *Operation) GetSettings() map[string]interface{} {
+	if o == nil {
+		var ret map[string]interface{}
+		return ret
+	}
+
+	return o.Settings
+}
+
+// GetSettingsOk returns a tuple with the Settings field value
+// and a boolean to check if the value has been set.
+func (o *Operation) GetSettingsOk() (map[string]interface{}, bool) {
+	if o == nil {
+		return map[string]interface{}{}, false
+	}
+	return o.Settings, true
+}
+
+// SetSettings sets field value
+func (o *Operation) SetSettings(v map[string]interface{}) {
+	o.Settings = v
+}
+
+// GetSensitiveSettings returns the SensitiveSettings field value
+func (o *Operation) GetSensitiveSettings() map[string]interface{} {
+	if o == nil {
+		var ret map[string]interface{}
+		return ret
+	}
+
+	return o.SensitiveSettings
+}
+
+// GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field value
+// and a boolean to check if the value has been set.
+func (o *Operation) GetSensitiveSettingsOk() (map[string]interface{}, bool) {
+	if o == nil {
+		return map[string]interface{}{}, false
+	}
+	return o.SensitiveSettings, true
+}
+
+// SetSensitiveSettings sets field value
+func (o *Operation) SetSensitiveSettings(v map[string]interface{}) {
+	o.SensitiveSettings = v
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *Operation) GetLinks() OperationLinks {
 	if o == nil || IsNil(o.Links) {
@@ -993,6 +1045,8 @@ func (o Operation) ToMap() (map[string]interface{}, error) {
 	toSerialize["keep_final"] = o.KeepFinal.Get()
 	toSerialize["enable_backups"] = o.EnableBackups.Get()
 	toSerialize["enable_pitr"] = o.EnablePitr.Get()
+	toSerialize["settings"] = o.Settings
+	toSerialize["sensitive_settings"] = o.SensitiveSettings
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -1041,6 +1095,8 @@ func (o *Operation) UnmarshalJSON(data []byte) (err error) {
 		"keep_final",
 		"enable_backups",
 		"enable_pitr",
+		"settings",
+		"sensitive_settings",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -1102,6 +1158,8 @@ func (o *Operation) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "keep_final")
 		delete(additionalProperties, "enable_backups")
 		delete(additionalProperties, "enable_pitr")
+		delete(additionalProperties, "settings")
+		delete(additionalProperties, "sensitive_settings")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

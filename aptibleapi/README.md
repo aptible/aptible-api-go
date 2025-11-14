@@ -253,11 +253,20 @@ Class | Method | HTTP request | Description
 *ServiceSizingPoliciesAPI* | [**ListServiceSizingPoliciesForAccount**](docs/ServiceSizingPoliciesAPI.md#listservicesizingpoliciesforaccount) | **Get** /accounts/{account_id}/service_sizing_policies | list service_sizing_policies
 *ServiceSizingPoliciesAPI* | [**ListServiceSizingPoliciesForService**](docs/ServiceSizingPoliciesAPI.md#listservicesizingpoliciesforservice) | **Get** /services/{service_id}/service_sizing_policies | list service_sizing_policies
 *ServiceSizingPoliciesAPI* | [**UpdateServiceSizingPolicy**](docs/ServiceSizingPoliciesAPI.md#updateservicesizingpolicy) | **Put** /services/{service_id}/service_sizing_policies | update service_sizing_policy
-*ServicesAPI* | [**GetService**](docs/ServicesAPI.md#getservice) | **Get** /services/{id} | show service
+*ServicesAPI* | [**GetServiceWithOperationStatus**](docs/ServicesAPI.md#getservicewithoperationstatus) | **Get** /services/{id} | show service with operation status
 *ServicesAPI* | [**ListServicesForAccount**](docs/ServicesAPI.md#listservicesforaccount) | **Get** /accounts/{account_id}/services | list services
 *ServicesAPI* | [**ListServicesForApp**](docs/ServicesAPI.md#listservicesforapp) | **Get** /apps/{app_id}/services | list services
 *ServicesAPI* | [**PatchService**](docs/ServicesAPI.md#patchservice) | **Patch** /services/{id} | update service
 *ServicesAPI* | [**UpdateService**](docs/ServicesAPI.md#updateservice) | **Put** /services/{id} | update service
+*SettingsAPI* | [**CreateSettingForApp**](docs/SettingsAPI.md#createsettingforapp) | **Post** /apps/{app_id}/settings | create setting
+*SettingsAPI* | [**CreateSettingForDatabase**](docs/SettingsAPI.md#createsettingfordatabase) | **Post** /databases/{database_id}/settings | create setting
+*SettingsAPI* | [**CreateSettingForService**](docs/SettingsAPI.md#createsettingforservice) | **Post** /services/{service_id}/settings | create setting
+*SettingsAPI* | [**CreateSettingForVhost**](docs/SettingsAPI.md#createsettingforvhost) | **Post** /vhosts/{vhost_id}/settings | create setting
+*SettingsAPI* | [**GetSetting**](docs/SettingsAPI.md#getsetting) | **Get** /settings/{id} | show setting
+*SettingsAPI* | [**ListSettingsForApp**](docs/SettingsAPI.md#listsettingsforapp) | **Get** /apps/{app_id}/settings | list settings
+*SettingsAPI* | [**ListSettingsForDatabase**](docs/SettingsAPI.md#listsettingsfordatabase) | **Get** /databases/{database_id}/settings | list settings
+*SettingsAPI* | [**ListSettingsForService**](docs/SettingsAPI.md#listsettingsforservice) | **Get** /services/{service_id}/settings | list settings
+*SettingsAPI* | [**ListSettingsForVhost**](docs/SettingsAPI.md#listsettingsforvhost) | **Get** /vhosts/{vhost_id}/settings | list settings
 *SourcesAPI* | [**GetSource**](docs/SourcesAPI.md#getsource) | **Get** /sources/{id} | show source
 *SourcesAPI* | [**ListAppsForSource**](docs/SourcesAPI.md#listappsforsource) | **Get** /sources/{source_id}/apps | list apps
 *SourcesAPI* | [**ListDeploymentsForSource**](docs/SourcesAPI.md#listdeploymentsforsource) | **Get** /sources/{source_id}/deployments | list deployments
@@ -326,6 +335,7 @@ Class | Method | HTTP request | Description
  - [CreateOperationRequest](docs/CreateOperationRequest.md)
  - [CreatePermissionRequest](docs/CreatePermissionRequest.md)
  - [CreateServiceSizingPolicyRequest](docs/CreateServiceSizingPolicyRequest.md)
+ - [CreateSettingForAppRequest](docs/CreateSettingForAppRequest.md)
  - [CreateSshPortalConnectionRequest](docs/CreateSshPortalConnectionRequest.md)
  - [CreateVhostRequest](docs/CreateVhostRequest.md)
  - [CreateWidgetForDashboardRequest](docs/CreateWidgetForDashboardRequest.md)
@@ -348,6 +358,8 @@ Class | Method | HTTP request | Description
  - [EphemeralContainerLinks](docs/EphemeralContainerLinks.md)
  - [EphemeralSession](docs/EphemeralSession.md)
  - [EphemeralSessionLinks](docs/EphemeralSessionLinks.md)
+ - [ExternalAwsAccount](docs/ExternalAwsAccount.md)
+ - [ExternalAwsAccountLinks](docs/ExternalAwsAccountLinks.md)
  - [GetRoot200Response](docs/GetRoot200Response.md)
  - [GetRoot200ResponseLinks](docs/GetRoot200ResponseLinks.md)
  - [Image](docs/Image.md)
@@ -451,6 +463,8 @@ Class | Method | HTTP request | Description
  - [ListServicesForAccount200Response](docs/ListServicesForAccount200Response.md)
  - [ListServicesForAccount200ResponseEmbedded](docs/ListServicesForAccount200ResponseEmbedded.md)
  - [ListServicesForAccount200ResponseLinks](docs/ListServicesForAccount200ResponseLinks.md)
+ - [ListSettingsForApp200Response](docs/ListSettingsForApp200Response.md)
+ - [ListSettingsForApp200ResponseEmbedded](docs/ListSettingsForApp200ResponseEmbedded.md)
  - [ListSources200Response](docs/ListSources200Response.md)
  - [ListSources200ResponseEmbedded](docs/ListSources200ResponseEmbedded.md)
  - [ListSshPortalConnectionsForOperation200Response](docs/ListSshPortalConnectionsForOperation200Response.md)
@@ -489,6 +503,7 @@ Class | Method | HTTP request | Description
  - [ServiceDefinition](docs/ServiceDefinition.md)
  - [ServiceLinks](docs/ServiceLinks.md)
  - [ServiceSizingPolicy](docs/ServiceSizingPolicy.md)
+ - [Setting](docs/Setting.md)
  - [Source](docs/Source.md)
  - [SourceLinks](docs/SourceLinks.md)
  - [SshPortalConnection](docs/SshPortalConnection.md)

@@ -36,13 +36,15 @@ Name | Type | Description | Notes
 **KeepFinal** | **NullableBool** |  | 
 **EnableBackups** | **NullableBool** |  | 
 **EnablePitr** | **NullableBool** |  | 
+**Settings** | **map[string]interface{}** |  | 
+**SensitiveSettings** | **map[string]interface{}** |  | 
 **Links** | Pointer to [**OperationLinks**](OperationLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewOperation
 
-`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool, ) *Operation`
+`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool, settings map[string]interface{}, sensitiveSettings map[string]interface{}, ) *Operation`
 
 NewOperation instantiates a new Operation object
 This constructor will assign default values to properties that have it defined,
@@ -907,6 +909,46 @@ SetEnablePitr sets EnablePitr field to given value.
 `func (o *Operation) UnsetEnablePitr()`
 
 UnsetEnablePitr ensures that no value is present for EnablePitr, not even an explicit nil
+### GetSettings
+
+`func (o *Operation) GetSettings() map[string]interface{}`
+
+GetSettings returns the Settings field if non-nil, zero value otherwise.
+
+### GetSettingsOk
+
+`func (o *Operation) GetSettingsOk() (*map[string]interface{}, bool)`
+
+GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSettings
+
+`func (o *Operation) SetSettings(v map[string]interface{})`
+
+SetSettings sets Settings field to given value.
+
+
+### GetSensitiveSettings
+
+`func (o *Operation) GetSensitiveSettings() map[string]interface{}`
+
+GetSensitiveSettings returns the SensitiveSettings field if non-nil, zero value otherwise.
+
+### GetSensitiveSettingsOk
+
+`func (o *Operation) GetSensitiveSettingsOk() (*map[string]interface{}, bool)`
+
+GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSensitiveSettings
+
+`func (o *Operation) SetSensitiveSettings(v map[string]interface{})`
+
+SetSensitiveSettings sets SensitiveSettings field to given value.
+
+
 ### GetLinks
 
 `func (o *Operation) GetLinks() OperationLinks`

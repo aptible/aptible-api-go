@@ -32,6 +32,7 @@ api_plans.go
 api_releases.go
 api_service_sizing_policies.go
 api_services.go
+api_settings.go
 api_sources.go
 api_ssh_portal_connections.go
 api_stacks.go
@@ -92,6 +93,7 @@ docs/CreateObservationForDashboardForContainerRequest.md
 docs/CreateOperationRequest.md
 docs/CreatePermissionRequest.md
 docs/CreateServiceSizingPolicyRequest.md
+docs/CreateSettingForAppRequest.md
 docs/CreateSshPortalConnectionRequest.md
 docs/CreateVhostRequest.md
 docs/CreateWidgetForDashboardRequest.md
@@ -123,6 +125,8 @@ docs/EphemeralContainersAPI.md
 docs/EphemeralSession.md
 docs/EphemeralSessionLinks.md
 docs/EphemeralSessionsAPI.md
+docs/ExternalAwsAccount.md
+docs/ExternalAwsAccountLinks.md
 docs/GetRoot200Response.md
 docs/GetRoot200ResponseLinks.md
 docs/Image.md
@@ -229,6 +233,8 @@ docs/ListServiceSizingPoliciesForAccount200ResponseEmbedded.md
 docs/ListServicesForAccount200Response.md
 docs/ListServicesForAccount200ResponseEmbedded.md
 docs/ListServicesForAccount200ResponseLinks.md
+docs/ListSettingsForApp200Response.md
+docs/ListSettingsForApp200ResponseEmbedded.md
 docs/ListSources200Response.md
 docs/ListSources200ResponseEmbedded.md
 docs/ListSshPortalConnectionsForOperation200Response.md
@@ -276,6 +282,8 @@ docs/ServiceLinks.md
 docs/ServiceSizingPoliciesAPI.md
 docs/ServiceSizingPolicy.md
 docs/ServicesAPI.md
+docs/Setting.md
+docs/SettingsAPI.md
 docs/Source.md
 docs/SourceLinks.md
 docs/SourcesAPI.md
@@ -354,6 +362,7 @@ model_create_observation_for_dashboard_for_container_request.go
 model_create_operation_request.go
 model_create_permission_request.go
 model_create_service_sizing_policy_request.go
+model_create_setting_for_app_request.go
 model_create_ssh_portal_connection_request.go
 model_create_vhost_request.go
 model_create_widget_for_dashboard_request.go
@@ -377,6 +386,8 @@ model_ephemeral_container__links.go
 model_ephemeral_session.go
 model_ephemeral_session__links.go
 model_error.go
+model_external_aws_account.go
+model_external_aws_account__links.go
 model_get_root_200_response.go
 model_get_root_200_response__links.go
 model_image.go
@@ -480,6 +491,8 @@ model_list_service_sizing_policies_for_account_200_response__embedded.go
 model_list_services_for_account_200_response.go
 model_list_services_for_account_200_response__embedded.go
 model_list_services_for_account_200_response__links.go
+model_list_settings_for_app_200_response.go
+model_list_settings_for_app_200_response__embedded.go
 model_list_sources_200_response.go
 model_list_sources_200_response__embedded.go
 model_list_ssh_portal_connections_for_operation_200_response.go
@@ -517,6 +530,7 @@ model_service.go
 model_service__links.go
 model_service_definition.go
 model_service_sizing_policy.go
+model_setting.go
 model_source.go
 model_source__links.go
 model_ssh_portal_connection.go

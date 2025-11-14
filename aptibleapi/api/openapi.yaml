@@ -28,6 +28,7 @@ tags:
 - name: Disks
 - name: EphemeralContainers
 - name: EphemeralSessions
+- name: ExternalAwsAccounts
 - name: Images
 - name: Integrations
 - name: IntrusionDetectionReports
@@ -45,6 +46,7 @@ tags:
 - name: ServiceDefinitions
 - name: ServiceSizingPolicies
 - name: Services
+- name: Settings
 - name: Sources
 - name: SshPortalConnections
 - name: Stacks
@@ -5385,7 +5387,7 @@ paths:
       - Services
   /services/{id}:
     get:
-      operationId: GetService
+      operationId: GetServiceWithOperationStatus
       parameters:
       - description: id
         explode: false
@@ -5395,20 +5397,28 @@ paths:
         schema:
           type: integer
         style: simple
+      - description: Include release_operation_in_progress status
+        explode: true
+        in: query
+        name: include_operation_status
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "200":
           content:
             application/hal+json:
               schema:
                 $ref: '#/components/schemas/service'
-          description: successful
+          description: excludes operation status when param is not present
         default:
           content:
             application/hal+json:
               schema:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
-      summary: show service
+      summary: show service with operation status
       tags:
       - Services
     patch:
@@ -5467,6 +5477,306 @@ paths:
       summary: update service
       tags:
       - Services
+  /apps/{app_id}/settings:
+    get:
+      operationId: ListSettingsForApp
+      parameters:
+      - description: app_id
+        explode: false
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListSettingsForApp_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list settings
+      tags:
+      - Settings
+    post:
+      operationId: CreateSettingForApp
+      parameters:
+      - description: app_id
+        explode: false
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSettingForApp_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/setting'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create setting
+      tags:
+      - Settings
+  /databases/{database_id}/settings:
+    get:
+      operationId: ListSettingsForDatabase
+      parameters:
+      - description: database_id
+        explode: false
+        in: path
+        name: database_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListSettingsForApp_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list settings
+      tags:
+      - Settings
+    post:
+      operationId: CreateSettingForDatabase
+      parameters:
+      - description: database_id
+        explode: false
+        in: path
+        name: database_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSettingForApp_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/setting'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create setting
+      tags:
+      - Settings
+  /services/{service_id}/settings:
+    get:
+      operationId: ListSettingsForService
+      parameters:
+      - description: service_id
+        explode: false
+        in: path
+        name: service_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListSettingsForApp_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list settings
+      tags:
+      - Settings
+    post:
+      operationId: CreateSettingForService
+      parameters:
+      - description: service_id
+        explode: false
+        in: path
+        name: service_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSettingForApp_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/setting'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create setting
+      tags:
+      - Settings
+  /vhosts/{vhost_id}/settings:
+    get:
+      operationId: ListSettingsForVhost
+      parameters:
+      - description: vhost_id
+        explode: false
+        in: path
+        name: vhost_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListSettingsForApp_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list settings
+      tags:
+      - Settings
+    post:
+      operationId: CreateSettingForVhost
+      parameters:
+      - description: vhost_id
+        explode: false
+        in: path
+        name: vhost_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSettingForApp_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/setting'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create setting
+      tags:
+      - Settings
+  /settings/{id}:
+    get:
+      operationId: GetSetting
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/setting'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show setting
+      tags:
+      - Settings
   /sources:
     get:
       operationId: ListSources
@@ -6502,6 +6812,8 @@ components:
           type: integer
         yearly:
           type: integer
+        pitr_days:
+          type: integer
         make_copy:
           type: boolean
         keep_final:
@@ -6516,6 +6828,7 @@ components:
       - keep_final
       - make_copy
       - monthly
+      - pitr_days
       - yearly
     backup:
       properties:
@@ -7201,6 +7514,61 @@ components:
       - id
       - name
       - updated_at
+    external_aws_account:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        organization_id:
+          type: string
+        aws_account_id:
+          type: string
+        account_name:
+          type: string
+        aws_region_primary:
+          type: string
+        discovery_enabled:
+          type: boolean
+        discovery_frequency:
+          type: string
+          x-nullable: true
+        last_discovery_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        status:
+          type: string
+        created_by_user_email:
+          type: string
+        created_by_user_name:
+          type: string
+        created_by_user_id:
+          type: string
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        _links:
+          $ref: '#/components/schemas/external_aws_account__links'
+      required:
+      - _type
+      - account_name
+      - aws_account_id
+      - aws_region_primary
+      - created_at
+      - created_by_user_email
+      - created_by_user_id
+      - created_by_user_name
+      - discovery_enabled
+      - discovery_frequency
+      - id
+      - last_discovery_at
+      - organization_id
+      - status
+      - updated_at
     image:
       properties:
         id:
@@ -7708,6 +8076,10 @@ components:
         enable_pitr:
           type: boolean
           x-nullable: true
+        settings:
+          type: object
+        sensitive_settings:
+          type: object
         _links:
           $ref: '#/components/schemas/operation__links'
       required:
@@ -7737,6 +8109,8 @@ components:
       - mount_point
       - pitr_days
       - private_key
+      - sensitive_settings
+      - settings
       - status
       - type
       - updated_at
@@ -8102,6 +8476,23 @@ components:
       - process_type
       - stop_timeout
       - updated_at
+    setting:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        keys:
+          type: object
+        sensitive_keys:
+          type: object
+        _links:
+          $ref: '#/components/schemas/configuration__links'
+      required:
+      - _type
+      - id
+      - keys
+      - sensitive_keys
     source:
       properties:
         id:
@@ -8217,6 +8608,9 @@ components:
           x-nullable: true
         brickwall_enabled:
           type: boolean
+        vpc_cidr:
+          type: string
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/stack__links'
       required:
@@ -8243,6 +8637,7 @@ components:
       - ssh_portal_port
       - updated_at
       - version
+      - vpc_cidr
       - vpc_id
     vhost:
       properties:
@@ -10052,7 +10447,11 @@ components:
         make_copy: true
         key_arn: key_arn
         destination_account: https://openapi-generator.tech
+        settings:
+          key: settings
         destination_account_id: 5
+        sensitive_settings:
+          key: sensitive_settings
         enable_pitr: true
         destination_region: destination_region
         disk_size: 0
@@ -10133,6 +10532,16 @@ components:
         enable_pitr:
           type: boolean
           x-omitempty: false
+        settings:
+          additionalProperties:
+            type: string
+          description: Non-sensitive settings for the operation
+          type: object
+        sensitive_settings:
+          additionalProperties:
+            type: string
+          description: Sensitive settings for the operation (encrypted)
+          type: object
       required:
       - type
       title: CreateOperationRequest
@@ -10417,6 +10826,41 @@ components:
           type: boolean
         stop_timeout:
           type: integer
+      type: object
+    ListSettingsForApp_200_response__embedded:
+      properties:
+        settings:
+          items:
+            $ref: '#/components/schemas/setting'
+          type: array
+      type: object
+    ListSettingsForApp_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListSettingsForApp_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListCodeScanResultsForApp_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateSettingForApp_request:
+      properties:
+        keys:
+          description: Mapping of non-sensitive key-value pairs
+          type: object
+        sensitive_keys:
+          description: Mapping of sensitive key-value pairs
+          type: object
       type: object
     ListSources_200_response__embedded:
       properties:
@@ -10858,6 +11302,10 @@ components:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         current_deployment:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        settings:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        current_setting:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
@@ -10983,6 +11431,10 @@ components:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         database_credentials:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        settings:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        current_setting:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
@@ -11048,6 +11500,13 @@ components:
         ephemeral_containers:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         operations:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    external_aws_account__links:
+      properties:
+        organization:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
@@ -11193,6 +11652,10 @@ components:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         vhosts:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        settings:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        current_setting:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
@@ -11269,6 +11732,10 @@ components:
         certificate:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         operations:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        settings:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        current_setting:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'

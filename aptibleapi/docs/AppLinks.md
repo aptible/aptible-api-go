@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **LastCodeScanResult** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Deployments** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **CurrentDeployment** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Settings** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**CurrentSetting** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
@@ -414,6 +416,56 @@ SetCurrentDeployment sets CurrentDeployment field to given value.
 `func (o *AppLinks) HasCurrentDeployment() bool`
 
 HasCurrentDeployment returns a boolean if a field has been set.
+
+### GetSettings
+
+`func (o *AppLinks) GetSettings() ListAccountsForStack200ResponseLinksStack`
+
+GetSettings returns the Settings field if non-nil, zero value otherwise.
+
+### GetSettingsOk
+
+`func (o *AppLinks) GetSettingsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSettings
+
+`func (o *AppLinks) SetSettings(v ListAccountsForStack200ResponseLinksStack)`
+
+SetSettings sets Settings field to given value.
+
+### HasSettings
+
+`func (o *AppLinks) HasSettings() bool`
+
+HasSettings returns a boolean if a field has been set.
+
+### GetCurrentSetting
+
+`func (o *AppLinks) GetCurrentSetting() ListAccountsForStack200ResponseLinksStack`
+
+GetCurrentSetting returns the CurrentSetting field if non-nil, zero value otherwise.
+
+### GetCurrentSettingOk
+
+`func (o *AppLinks) GetCurrentSettingOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetCurrentSettingOk returns a tuple with the CurrentSetting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentSetting
+
+`func (o *AppLinks) SetCurrentSetting(v ListAccountsForStack200ResponseLinksStack)`
+
+SetCurrentSetting sets CurrentSetting field to given value.
+
+### HasCurrentSetting
+
+`func (o *AppLinks) HasCurrentSetting() bool`
+
+HasCurrentSetting returns a boolean if a field has been set.
 
 ### GetSelf
 

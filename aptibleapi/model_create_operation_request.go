@@ -47,6 +47,10 @@ type CreateOperationRequest struct {
 	KeepFinal *bool `json:"keep_final,omitempty"`
 	EnableBackups *bool `json:"enable_backups,omitempty"`
 	EnablePitr *bool `json:"enable_pitr,omitempty"`
+	// Non-sensitive settings for the operation
+	Settings *map[string]string `json:"settings,omitempty"`
+	// Sensitive settings for the operation (encrypted)
+	SensitiveSettings *map[string]string `json:"sensitive_settings,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -926,6 +930,70 @@ func (o *CreateOperationRequest) SetEnablePitr(v bool) {
 	o.EnablePitr = &v
 }
 
+// GetSettings returns the Settings field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetSettings() map[string]string {
+	if o == nil || IsNil(o.Settings) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.Settings
+}
+
+// GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetSettingsOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.Settings) {
+		return nil, false
+	}
+	return o.Settings, true
+}
+
+// HasSettings returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasSettings() bool {
+	if o != nil && !IsNil(o.Settings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSettings gets a reference to the given map[string]string and assigns it to the Settings field.
+func (o *CreateOperationRequest) SetSettings(v map[string]string) {
+	o.Settings = &v
+}
+
+// GetSensitiveSettings returns the SensitiveSettings field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetSensitiveSettings() map[string]string {
+	if o == nil || IsNil(o.SensitiveSettings) {
+		var ret map[string]string
+		return ret
+	}
+	return *o.SensitiveSettings
+}
+
+// GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetSensitiveSettingsOk() (*map[string]string, bool) {
+	if o == nil || IsNil(o.SensitiveSettings) {
+		return nil, false
+	}
+	return o.SensitiveSettings, true
+}
+
+// HasSensitiveSettings returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasSensitiveSettings() bool {
+	if o != nil && !IsNil(o.SensitiveSettings) {
+		return true
+	}
+
+	return false
+}
+
+// SetSensitiveSettings gets a reference to the given map[string]string and assigns it to the SensitiveSettings field.
+func (o *CreateOperationRequest) SetSensitiveSettings(v map[string]string) {
+	o.SensitiveSettings = &v
+}
+
 func (o CreateOperationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1015,6 +1083,12 @@ func (o CreateOperationRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.EnablePitr) {
 		toSerialize["enable_pitr"] = o.EnablePitr
 	}
+	if !IsNil(o.Settings) {
+		toSerialize["settings"] = o.Settings
+	}
+	if !IsNil(o.SensitiveSettings) {
+		toSerialize["sensitive_settings"] = o.SensitiveSettings
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1085,6 +1159,8 @@ func (o *CreateOperationRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "keep_final")
 		delete(additionalProperties, "enable_backups")
 		delete(additionalProperties, "enable_pitr")
+		delete(additionalProperties, "settings")
+		delete(additionalProperties, "sensitive_settings")
 		o.AdditionalProperties = additionalProperties
 	}
 

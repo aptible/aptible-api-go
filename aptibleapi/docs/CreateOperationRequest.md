@@ -31,6 +31,8 @@ Name | Type | Description | Notes
 **KeepFinal** | Pointer to **bool** |  | [optional] 
 **EnableBackups** | Pointer to **bool** |  | [optional] 
 **EnablePitr** | Pointer to **bool** |  | [optional] 
+**Settings** | Pointer to **map[string]string** | Non-sensitive settings for the operation | [optional] 
+**SensitiveSettings** | Pointer to **map[string]string** | Sensitive settings for the operation (encrypted) | [optional] 
 
 ## Methods
 
@@ -720,6 +722,56 @@ SetEnablePitr sets EnablePitr field to given value.
 `func (o *CreateOperationRequest) HasEnablePitr() bool`
 
 HasEnablePitr returns a boolean if a field has been set.
+
+### GetSettings
+
+`func (o *CreateOperationRequest) GetSettings() map[string]string`
+
+GetSettings returns the Settings field if non-nil, zero value otherwise.
+
+### GetSettingsOk
+
+`func (o *CreateOperationRequest) GetSettingsOk() (*map[string]string, bool)`
+
+GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSettings
+
+`func (o *CreateOperationRequest) SetSettings(v map[string]string)`
+
+SetSettings sets Settings field to given value.
+
+### HasSettings
+
+`func (o *CreateOperationRequest) HasSettings() bool`
+
+HasSettings returns a boolean if a field has been set.
+
+### GetSensitiveSettings
+
+`func (o *CreateOperationRequest) GetSensitiveSettings() map[string]string`
+
+GetSensitiveSettings returns the SensitiveSettings field if non-nil, zero value otherwise.
+
+### GetSensitiveSettingsOk
+
+`func (o *CreateOperationRequest) GetSensitiveSettingsOk() (*map[string]string, bool)`
+
+GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSensitiveSettings
+
+`func (o *CreateOperationRequest) SetSensitiveSettings(v map[string]string)`
+
+SetSensitiveSettings sets SensitiveSettings field to given value.
+
+### HasSensitiveSettings
+
+`func (o *CreateOperationRequest) HasSensitiveSettings() bool`
+
+HasSensitiveSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
