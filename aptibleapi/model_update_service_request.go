@@ -21,6 +21,7 @@ var _ MappedNullable = &UpdateServiceRequest{}
 type UpdateServiceRequest struct {
 	NaiveHealthCheck *bool `json:"naive_health_check,omitempty"`
 	ForceZeroDowntime *bool `json:"force_zero_downtime,omitempty"`
+	RestartFreeScaling *bool `json:"restart_free_scaling,omitempty"`
 	StopTimeout *int32 `json:"stop_timeout,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -108,6 +109,38 @@ func (o *UpdateServiceRequest) SetForceZeroDowntime(v bool) {
 	o.ForceZeroDowntime = &v
 }
 
+// GetRestartFreeScaling returns the RestartFreeScaling field value if set, zero value otherwise.
+func (o *UpdateServiceRequest) GetRestartFreeScaling() bool {
+	if o == nil || IsNil(o.RestartFreeScaling) {
+		var ret bool
+		return ret
+	}
+	return *o.RestartFreeScaling
+}
+
+// GetRestartFreeScalingOk returns a tuple with the RestartFreeScaling field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateServiceRequest) GetRestartFreeScalingOk() (*bool, bool) {
+	if o == nil || IsNil(o.RestartFreeScaling) {
+		return nil, false
+	}
+	return o.RestartFreeScaling, true
+}
+
+// HasRestartFreeScaling returns a boolean if a field has been set.
+func (o *UpdateServiceRequest) HasRestartFreeScaling() bool {
+	if o != nil && !IsNil(o.RestartFreeScaling) {
+		return true
+	}
+
+	return false
+}
+
+// SetRestartFreeScaling gets a reference to the given bool and assigns it to the RestartFreeScaling field.
+func (o *UpdateServiceRequest) SetRestartFreeScaling(v bool) {
+	o.RestartFreeScaling = &v
+}
+
 // GetStopTimeout returns the StopTimeout field value if set, zero value otherwise.
 func (o *UpdateServiceRequest) GetStopTimeout() int32 {
 	if o == nil || IsNil(o.StopTimeout) {
@@ -156,6 +189,9 @@ func (o UpdateServiceRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.ForceZeroDowntime) {
 		toSerialize["force_zero_downtime"] = o.ForceZeroDowntime
 	}
+	if !IsNil(o.RestartFreeScaling) {
+		toSerialize["restart_free_scaling"] = o.RestartFreeScaling
+	}
 	if !IsNil(o.StopTimeout) {
 		toSerialize["stop_timeout"] = o.StopTimeout
 	}
@@ -183,6 +219,7 @@ func (o *UpdateServiceRequest) UnmarshalJSON(data []byte) (err error) {
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "naive_health_check")
 		delete(additionalProperties, "force_zero_downtime")
+		delete(additionalProperties, "restart_free_scaling")
 		delete(additionalProperties, "stop_timeout")
 		o.AdditionalProperties = additionalProperties
 	}

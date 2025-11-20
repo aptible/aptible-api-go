@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **InstanceClass** | **string** |  | 
 **ForceZeroDowntime** | **bool** |  | 
 **NaiveHealthCheck** | **bool** |  | 
+**RestartFreeScaling** | **bool** |  | 
 **StopTimeout** | **NullableInt32** |  | 
 **Links** | Pointer to [**ServiceLinks**](ServiceLinks.md) |  | [optional] 
 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewService
 
-`func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, stopTimeout NullableInt32, ) *Service`
+`func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, restartFreeScaling bool, stopTimeout NullableInt32, ) *Service`
 
 NewService instantiates a new Service object
 This constructor will assign default values to properties that have it defined,
@@ -348,6 +349,26 @@ and a boolean to check if the value has been set.
 `func (o *Service) SetNaiveHealthCheck(v bool)`
 
 SetNaiveHealthCheck sets NaiveHealthCheck field to given value.
+
+
+### GetRestartFreeScaling
+
+`func (o *Service) GetRestartFreeScaling() bool`
+
+GetRestartFreeScaling returns the RestartFreeScaling field if non-nil, zero value otherwise.
+
+### GetRestartFreeScalingOk
+
+`func (o *Service) GetRestartFreeScalingOk() (*bool, bool)`
+
+GetRestartFreeScalingOk returns a tuple with the RestartFreeScaling field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestartFreeScaling
+
+`func (o *Service) SetRestartFreeScaling(v bool)`
+
+SetRestartFreeScaling sets RestartFreeScaling field to given value.
 
 
 ### GetStopTimeout
