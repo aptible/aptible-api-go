@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NaiveHealthCheck** | Pointer to **bool** |  | [optional] 
 **ForceZeroDowntime** | Pointer to **bool** |  | [optional] 
+**RestartFreeScaling** | Pointer to **bool** |  | [optional] 
 **StopTimeout** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetForceZeroDowntime sets ForceZeroDowntime field to given value.
 `func (o *UpdateServiceRequest) HasForceZeroDowntime() bool`
 
 HasForceZeroDowntime returns a boolean if a field has been set.
+
+### GetRestartFreeScaling
+
+`func (o *UpdateServiceRequest) GetRestartFreeScaling() bool`
+
+GetRestartFreeScaling returns the RestartFreeScaling field if non-nil, zero value otherwise.
+
+### GetRestartFreeScalingOk
+
+`func (o *UpdateServiceRequest) GetRestartFreeScalingOk() (*bool, bool)`
+
+GetRestartFreeScalingOk returns a tuple with the RestartFreeScaling field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRestartFreeScaling
+
+`func (o *UpdateServiceRequest) SetRestartFreeScaling(v bool)`
+
+SetRestartFreeScaling sets RestartFreeScaling field to given value.
+
+### HasRestartFreeScaling
+
+`func (o *UpdateServiceRequest) HasRestartFreeScaling() bool`
+
+HasRestartFreeScaling returns a boolean if a field has been set.
 
 ### GetStopTimeout
 

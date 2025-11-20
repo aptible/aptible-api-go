@@ -34,6 +34,7 @@ type Service struct {
 	InstanceClass string `json:"instance_class"`
 	ForceZeroDowntime bool `json:"force_zero_downtime"`
 	NaiveHealthCheck bool `json:"naive_health_check"`
+	RestartFreeScaling bool `json:"restart_free_scaling"`
 	StopTimeout NullableInt32 `json:"stop_timeout"`
 	Links *ServiceLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -45,7 +46,7 @@ type _Service Service
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, stopTimeout NullableInt32) *Service {
+func NewService(id int32, metaType string, handle string, dockerRepo NullableString, dockerRef NullableString, processType string, command string, containerCount int32, createdAt string, updatedAt string, containerMemoryLimitMb NullableInt32, instanceClass string, forceZeroDowntime bool, naiveHealthCheck bool, restartFreeScaling bool, stopTimeout NullableInt32) *Service {
 	this := Service{}
 	this.Id = id
 	this.MetaType = metaType
@@ -61,6 +62,7 @@ func NewService(id int32, metaType string, handle string, dockerRepo NullableStr
 	this.InstanceClass = instanceClass
 	this.ForceZeroDowntime = forceZeroDowntime
 	this.NaiveHealthCheck = naiveHealthCheck
+	this.RestartFreeScaling = restartFreeScaling
 	this.StopTimeout = stopTimeout
 	return &this
 }
@@ -415,6 +417,30 @@ func (o *Service) SetNaiveHealthCheck(v bool) {
 	o.NaiveHealthCheck = v
 }
 
+// GetRestartFreeScaling returns the RestartFreeScaling field value
+func (o *Service) GetRestartFreeScaling() bool {
+	if o == nil {
+		var ret bool
+		return ret
+	}
+
+	return o.RestartFreeScaling
+}
+
+// GetRestartFreeScalingOk returns a tuple with the RestartFreeScaling field value
+// and a boolean to check if the value has been set.
+func (o *Service) GetRestartFreeScalingOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.RestartFreeScaling, true
+}
+
+// SetRestartFreeScaling sets field value
+func (o *Service) SetRestartFreeScaling(v bool) {
+	o.RestartFreeScaling = v
+}
+
 // GetStopTimeout returns the StopTimeout field value
 // If the value is explicit nil, the zero value for int32 will be returned
 func (o *Service) GetStopTimeout() int32 {
@@ -497,6 +523,7 @@ func (o Service) ToMap() (map[string]interface{}, error) {
 	toSerialize["instance_class"] = o.InstanceClass
 	toSerialize["force_zero_downtime"] = o.ForceZeroDowntime
 	toSerialize["naive_health_check"] = o.NaiveHealthCheck
+	toSerialize["restart_free_scaling"] = o.RestartFreeScaling
 	toSerialize["stop_timeout"] = o.StopTimeout.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
@@ -528,6 +555,7 @@ func (o *Service) UnmarshalJSON(data []byte) (err error) {
 		"instance_class",
 		"force_zero_downtime",
 		"naive_health_check",
+		"restart_free_scaling",
 		"stop_timeout",
 	}
 
@@ -572,6 +600,7 @@ func (o *Service) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "instance_class")
 		delete(additionalProperties, "force_zero_downtime")
 		delete(additionalProperties, "naive_health_check")
+		delete(additionalProperties, "restart_free_scaling")
 		delete(additionalProperties, "stop_timeout")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties

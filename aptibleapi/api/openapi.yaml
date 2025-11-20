@@ -8455,6 +8455,8 @@ components:
           type: boolean
         naive_health_check:
           type: boolean
+        restart_free_scaling:
+          type: boolean
         stop_timeout:
           type: integer
           x-nullable: true
@@ -8474,6 +8476,7 @@ components:
       - instance_class
       - naive_health_check
       - process_type
+      - restart_free_scaling
       - stop_timeout
       - updated_at
     setting:
@@ -10823,6 +10826,8 @@ components:
         naive_health_check:
           type: boolean
         force_zero_downtime:
+          type: boolean
+        restart_free_scaling:
           type: boolean
         stop_timeout:
           type: integer
