@@ -28,6 +28,7 @@ type Deployment struct {
 	ConfigurationId NullableInt32 `json:"configuration_id"`
 	ImageId NullableInt32 `json:"image_id"`
 	SourceId NullableInt32 `json:"source_id"`
+	SettingId NullableInt32 `json:"setting_id"`
 	DockerImage NullableString `json:"docker_image"`
 	DockerRepositoryUrl NullableString `json:"docker_repository_url"`
 	GitRepositoryUrl NullableString `json:"git_repository_url"`
@@ -49,7 +50,7 @@ type _Deployment Deployment
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeployment(id int32, metaType string, status string, operationId int32, appId int32, configurationId NullableInt32, imageId NullableInt32, sourceId NullableInt32, dockerImage NullableString, dockerRepositoryUrl NullableString, gitRepositoryUrl NullableString, gitRef NullableString, gitCommitSha NullableString, gitCommitTimestamp NullableString, gitCommitUrl NullableString, gitCommitMessage NullableString, createdAt string, updatedAt string, deletedAt NullableString) *Deployment {
+func NewDeployment(id int32, metaType string, status string, operationId int32, appId int32, configurationId NullableInt32, imageId NullableInt32, sourceId NullableInt32, settingId NullableInt32, dockerImage NullableString, dockerRepositoryUrl NullableString, gitRepositoryUrl NullableString, gitRef NullableString, gitCommitSha NullableString, gitCommitTimestamp NullableString, gitCommitUrl NullableString, gitCommitMessage NullableString, createdAt string, updatedAt string, deletedAt NullableString) *Deployment {
 	this := Deployment{}
 	this.Id = id
 	this.MetaType = metaType
@@ -59,6 +60,7 @@ func NewDeployment(id int32, metaType string, status string, operationId int32, 
 	this.ConfigurationId = configurationId
 	this.ImageId = imageId
 	this.SourceId = sourceId
+	this.SettingId = settingId
 	this.DockerImage = dockerImage
 	this.DockerRepositoryUrl = dockerRepositoryUrl
 	this.GitRepositoryUrl = gitRepositoryUrl
@@ -277,6 +279,32 @@ func (o *Deployment) GetSourceIdOk() (*int32, bool) {
 // SetSourceId sets field value
 func (o *Deployment) SetSourceId(v int32) {
 	o.SourceId.Set(&v)
+}
+
+// GetSettingId returns the SettingId field value
+// If the value is explicit nil, the zero value for int32 will be returned
+func (o *Deployment) GetSettingId() int32 {
+	if o == nil || o.SettingId.Get() == nil {
+		var ret int32
+		return ret
+	}
+
+	return *o.SettingId.Get()
+}
+
+// GetSettingIdOk returns a tuple with the SettingId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Deployment) GetSettingIdOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SettingId.Get(), o.SettingId.IsSet()
+}
+
+// SetSettingId sets field value
+func (o *Deployment) SetSettingId(v int32) {
+	o.SettingId.Set(&v)
 }
 
 // GetDockerImage returns the DockerImage field value
@@ -611,6 +639,7 @@ func (o Deployment) ToMap() (map[string]interface{}, error) {
 	toSerialize["configuration_id"] = o.ConfigurationId.Get()
 	toSerialize["image_id"] = o.ImageId.Get()
 	toSerialize["source_id"] = o.SourceId.Get()
+	toSerialize["setting_id"] = o.SettingId.Get()
 	toSerialize["docker_image"] = o.DockerImage.Get()
 	toSerialize["docker_repository_url"] = o.DockerRepositoryUrl.Get()
 	toSerialize["git_repository_url"] = o.GitRepositoryUrl.Get()
@@ -646,6 +675,7 @@ func (o *Deployment) UnmarshalJSON(data []byte) (err error) {
 		"configuration_id",
 		"image_id",
 		"source_id",
+		"setting_id",
 		"docker_image",
 		"docker_repository_url",
 		"git_repository_url",
@@ -694,6 +724,7 @@ func (o *Deployment) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "configuration_id")
 		delete(additionalProperties, "image_id")
 		delete(additionalProperties, "source_id")
+		delete(additionalProperties, "setting_id")
 		delete(additionalProperties, "docker_image")
 		delete(additionalProperties, "docker_repository_url")
 		delete(additionalProperties, "git_repository_url")

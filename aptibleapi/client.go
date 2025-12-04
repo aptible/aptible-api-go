@@ -53,6 +53,8 @@ type APIClient struct {
 
 	ActivityReportsAPI *ActivityReportsAPIService
 
+	AppExternalAwsRdsConnectionsAPI *AppExternalAwsRdsConnectionsAPIService
+
 	AppsAPI *AppsAPIService
 
 	BackupRetentionPoliciesAPI *BackupRetentionPoliciesAPIService
@@ -144,6 +146,7 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	// API Services
 	c.AccountsAPI = (*AccountsAPIService)(&c.common)
 	c.ActivityReportsAPI = (*ActivityReportsAPIService)(&c.common)
+	c.AppExternalAwsRdsConnectionsAPI = (*AppExternalAwsRdsConnectionsAPIService)(&c.common)
 	c.AppsAPI = (*AppsAPIService)(&c.common)
 	c.BackupRetentionPoliciesAPI = (*BackupRetentionPoliciesAPIService)(&c.common)
 	c.BackupsAPI = (*BackupsAPIService)(&c.common)

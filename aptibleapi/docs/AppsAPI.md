@@ -5,8 +5,10 @@ All URIs are relative to *https://api.aptible.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateApp**](AppsAPI.md#CreateApp) | **Post** /accounts/{account_id}/apps | create app
+[**CreateAppExternalAwsRdsConnection**](AppsAPI.md#CreateAppExternalAwsRdsConnection) | **Post** /apps/{id}/app_external_aws_rds_connections | create external aws rds connection
 [**DeleteApp**](AppsAPI.md#DeleteApp) | **Delete** /apps/{id} | delete app
 [**GetApp**](AppsAPI.md#GetApp) | **Get** /apps/{id} | show app
+[**ListAppExternalAwsRdsConnections**](AppsAPI.md#ListAppExternalAwsRdsConnections) | **Get** /apps/{id}/app_external_aws_rds_connections | list external aws rds connections
 [**ListApps**](AppsAPI.md#ListApps) | **Get** /apps | list apps
 [**ListAppsForAccount**](AppsAPI.md#ListAppsForAccount) | **Get** /accounts/{account_id}/apps | list apps
 [**ListAppsForCertificate**](AppsAPI.md#ListAppsForCertificate) | **Get** /certificates/{certificate_id}/apps | list apps
@@ -70,6 +72,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**App**](App.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAppExternalAwsRdsConnection
+
+> AppExternalAwsRdsConnection CreateAppExternalAwsRdsConnection(ctx, id).CreateAppExternalAwsRdsConnectionRequest(createAppExternalAwsRdsConnectionRequest).Execute()
+
+create external aws rds connection
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	id := int32(56) // int32 | id
+	createAppExternalAwsRdsConnectionRequest := *openapiclient.NewCreateAppExternalAwsRdsConnectionRequest() // CreateAppExternalAwsRdsConnectionRequest |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppsAPI.CreateAppExternalAwsRdsConnection(context.Background(), id).CreateAppExternalAwsRdsConnectionRequest(createAppExternalAwsRdsConnectionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.CreateAppExternalAwsRdsConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateAppExternalAwsRdsConnection`: AppExternalAwsRdsConnection
+	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.CreateAppExternalAwsRdsConnection`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAppExternalAwsRdsConnectionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createAppExternalAwsRdsConnectionRequest** | [**CreateAppExternalAwsRdsConnectionRequest**](CreateAppExternalAwsRdsConnectionRequest.md) |  | 
+
+### Return type
+
+[**AppExternalAwsRdsConnection**](AppExternalAwsRdsConnection.md)
 
 ### Authorization
 
@@ -204,6 +276,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**App**](App.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAppExternalAwsRdsConnections
+
+> ListAppExternalAwsRdsConnections200Response ListAppExternalAwsRdsConnections(ctx, id).Page(page).Execute()
+
+list external aws rds connections
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	id := int32(56) // int32 | id
+	page := int32(56) // int32 | current page of results for pagination (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppsAPI.ListAppExternalAwsRdsConnections(context.Background(), id).Page(page).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ListAppExternalAwsRdsConnections``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListAppExternalAwsRdsConnections`: ListAppExternalAwsRdsConnections200Response
+	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.ListAppExternalAwsRdsConnections`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAppExternalAwsRdsConnectionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **page** | **int32** | current page of results for pagination | 
+
+### Return type
+
+[**ListAppExternalAwsRdsConnections200Response**](ListAppExternalAwsRdsConnections200Response.md)
 
 ### Authorization
 

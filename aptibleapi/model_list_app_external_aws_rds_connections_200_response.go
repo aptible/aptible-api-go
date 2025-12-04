@@ -15,12 +15,12 @@ import (
 	"fmt"
 )
 
-// checks if the ListObservationsForApp200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListObservationsForApp200Response{}
+// checks if the ListAppExternalAwsRdsConnections200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListAppExternalAwsRdsConnections200Response{}
 
-// ListObservationsForApp200Response struct for ListObservationsForApp200Response
-type ListObservationsForApp200Response struct {
-	Embedded ListObservationsForApp200ResponseEmbedded `json:"_embedded"`
+// ListAppExternalAwsRdsConnections200Response struct for ListAppExternalAwsRdsConnections200Response
+type ListAppExternalAwsRdsConnections200Response struct {
+	Embedded ListAppExternalAwsRdsConnections200ResponseEmbedded `json:"_embedded"`
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
@@ -28,14 +28,14 @@ type ListObservationsForApp200Response struct {
 	AdditionalProperties map[string]interface{}
 }
 
-type _ListObservationsForApp200Response ListObservationsForApp200Response
+type _ListAppExternalAwsRdsConnections200Response ListAppExternalAwsRdsConnections200Response
 
-// NewListObservationsForApp200Response instantiates a new ListObservationsForApp200Response object
+// NewListAppExternalAwsRdsConnections200Response instantiates a new ListAppExternalAwsRdsConnections200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListObservationsForApp200Response(embedded ListObservationsForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppExternalAwsRdsConnections200ResponseLinks) *ListObservationsForApp200Response {
-	this := ListObservationsForApp200Response{}
+func NewListAppExternalAwsRdsConnections200Response(embedded ListAppExternalAwsRdsConnections200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppExternalAwsRdsConnections200ResponseLinks) *ListAppExternalAwsRdsConnections200Response {
+	this := ListAppExternalAwsRdsConnections200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
 	this.PerPage = perPage
@@ -44,18 +44,18 @@ func NewListObservationsForApp200Response(embedded ListObservationsForApp200Resp
 	return &this
 }
 
-// NewListObservationsForApp200ResponseWithDefaults instantiates a new ListObservationsForApp200Response object
+// NewListAppExternalAwsRdsConnections200ResponseWithDefaults instantiates a new ListAppExternalAwsRdsConnections200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListObservationsForApp200ResponseWithDefaults() *ListObservationsForApp200Response {
-	this := ListObservationsForApp200Response{}
+func NewListAppExternalAwsRdsConnections200ResponseWithDefaults() *ListAppExternalAwsRdsConnections200Response {
+	this := ListAppExternalAwsRdsConnections200Response{}
 	return &this
 }
 
 // GetEmbedded returns the Embedded field value
-func (o *ListObservationsForApp200Response) GetEmbedded() ListObservationsForApp200ResponseEmbedded {
+func (o *ListAppExternalAwsRdsConnections200Response) GetEmbedded() ListAppExternalAwsRdsConnections200ResponseEmbedded {
 	if o == nil {
-		var ret ListObservationsForApp200ResponseEmbedded
+		var ret ListAppExternalAwsRdsConnections200ResponseEmbedded
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *ListObservationsForApp200Response) GetEmbedded() ListObservationsForApp
 
 // GetEmbeddedOk returns a tuple with the Embedded field value
 // and a boolean to check if the value has been set.
-func (o *ListObservationsForApp200Response) GetEmbeddedOk() (*ListObservationsForApp200ResponseEmbedded, bool) {
+func (o *ListAppExternalAwsRdsConnections200Response) GetEmbeddedOk() (*ListAppExternalAwsRdsConnections200ResponseEmbedded, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,12 +72,12 @@ func (o *ListObservationsForApp200Response) GetEmbeddedOk() (*ListObservationsFo
 }
 
 // SetEmbedded sets field value
-func (o *ListObservationsForApp200Response) SetEmbedded(v ListObservationsForApp200ResponseEmbedded) {
+func (o *ListAppExternalAwsRdsConnections200Response) SetEmbedded(v ListAppExternalAwsRdsConnections200ResponseEmbedded) {
 	o.Embedded = v
 }
 
 // GetTotalCount returns the TotalCount field value
-func (o *ListObservationsForApp200Response) GetTotalCount() int32 {
+func (o *ListAppExternalAwsRdsConnections200Response) GetTotalCount() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -88,7 +88,7 @@ func (o *ListObservationsForApp200Response) GetTotalCount() int32 {
 
 // GetTotalCountOk returns a tuple with the TotalCount field value
 // and a boolean to check if the value has been set.
-func (o *ListObservationsForApp200Response) GetTotalCountOk() (*int32, bool) {
+func (o *ListAppExternalAwsRdsConnections200Response) GetTotalCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -96,12 +96,12 @@ func (o *ListObservationsForApp200Response) GetTotalCountOk() (*int32, bool) {
 }
 
 // SetTotalCount sets field value
-func (o *ListObservationsForApp200Response) SetTotalCount(v int32) {
+func (o *ListAppExternalAwsRdsConnections200Response) SetTotalCount(v int32) {
 	o.TotalCount = v
 }
 
 // GetPerPage returns the PerPage field value
-func (o *ListObservationsForApp200Response) GetPerPage() int32 {
+func (o *ListAppExternalAwsRdsConnections200Response) GetPerPage() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -112,7 +112,7 @@ func (o *ListObservationsForApp200Response) GetPerPage() int32 {
 
 // GetPerPageOk returns a tuple with the PerPage field value
 // and a boolean to check if the value has been set.
-func (o *ListObservationsForApp200Response) GetPerPageOk() (*int32, bool) {
+func (o *ListAppExternalAwsRdsConnections200Response) GetPerPageOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,12 +120,12 @@ func (o *ListObservationsForApp200Response) GetPerPageOk() (*int32, bool) {
 }
 
 // SetPerPage sets field value
-func (o *ListObservationsForApp200Response) SetPerPage(v int32) {
+func (o *ListAppExternalAwsRdsConnections200Response) SetPerPage(v int32) {
 	o.PerPage = v
 }
 
 // GetCurrentPage returns the CurrentPage field value
-func (o *ListObservationsForApp200Response) GetCurrentPage() int32 {
+func (o *ListAppExternalAwsRdsConnections200Response) GetCurrentPage() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -136,7 +136,7 @@ func (o *ListObservationsForApp200Response) GetCurrentPage() int32 {
 
 // GetCurrentPageOk returns a tuple with the CurrentPage field value
 // and a boolean to check if the value has been set.
-func (o *ListObservationsForApp200Response) GetCurrentPageOk() (*int32, bool) {
+func (o *ListAppExternalAwsRdsConnections200Response) GetCurrentPageOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -144,12 +144,12 @@ func (o *ListObservationsForApp200Response) GetCurrentPageOk() (*int32, bool) {
 }
 
 // SetCurrentPage sets field value
-func (o *ListObservationsForApp200Response) SetCurrentPage(v int32) {
+func (o *ListAppExternalAwsRdsConnections200Response) SetCurrentPage(v int32) {
 	o.CurrentPage = v
 }
 
 // GetLinks returns the Links field value
-func (o *ListObservationsForApp200Response) GetLinks() ListAppExternalAwsRdsConnections200ResponseLinks {
+func (o *ListAppExternalAwsRdsConnections200Response) GetLinks() ListAppExternalAwsRdsConnections200ResponseLinks {
 	if o == nil {
 		var ret ListAppExternalAwsRdsConnections200ResponseLinks
 		return ret
@@ -160,7 +160,7 @@ func (o *ListObservationsForApp200Response) GetLinks() ListAppExternalAwsRdsConn
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListObservationsForApp200Response) GetLinksOk() (*ListAppExternalAwsRdsConnections200ResponseLinks, bool) {
+func (o *ListAppExternalAwsRdsConnections200Response) GetLinksOk() (*ListAppExternalAwsRdsConnections200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,11 +168,11 @@ func (o *ListObservationsForApp200Response) GetLinksOk() (*ListAppExternalAwsRds
 }
 
 // SetLinks sets field value
-func (o *ListObservationsForApp200Response) SetLinks(v ListAppExternalAwsRdsConnections200ResponseLinks) {
+func (o *ListAppExternalAwsRdsConnections200Response) SetLinks(v ListAppExternalAwsRdsConnections200ResponseLinks) {
 	o.Links = v
 }
 
-func (o ListObservationsForApp200Response) MarshalJSON() ([]byte, error) {
+func (o ListAppExternalAwsRdsConnections200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -180,7 +180,7 @@ func (o ListObservationsForApp200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ListObservationsForApp200Response) ToMap() (map[string]interface{}, error) {
+func (o ListAppExternalAwsRdsConnections200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["_embedded"] = o.Embedded
 	toSerialize["total_count"] = o.TotalCount
@@ -195,7 +195,7 @@ func (o ListObservationsForApp200Response) ToMap() (map[string]interface{}, erro
 	return toSerialize, nil
 }
 
-func (o *ListObservationsForApp200Response) UnmarshalJSON(data []byte) (err error) {
+func (o *ListAppExternalAwsRdsConnections200Response) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -221,15 +221,15 @@ func (o *ListObservationsForApp200Response) UnmarshalJSON(data []byte) (err erro
 		}
 	}
 
-	varListObservationsForApp200Response := _ListObservationsForApp200Response{}
+	varListAppExternalAwsRdsConnections200Response := _ListAppExternalAwsRdsConnections200Response{}
 
-	err = json.Unmarshal(data, &varListObservationsForApp200Response)
+	err = json.Unmarshal(data, &varListAppExternalAwsRdsConnections200Response)
 
 	if err != nil {
 		return err
 	}
 
-	*o = ListObservationsForApp200Response(varListObservationsForApp200Response)
+	*o = ListAppExternalAwsRdsConnections200Response(varListAppExternalAwsRdsConnections200Response)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -245,38 +245,38 @@ func (o *ListObservationsForApp200Response) UnmarshalJSON(data []byte) (err erro
 	return err
 }
 
-type NullableListObservationsForApp200Response struct {
-	value *ListObservationsForApp200Response
+type NullableListAppExternalAwsRdsConnections200Response struct {
+	value *ListAppExternalAwsRdsConnections200Response
 	isSet bool
 }
 
-func (v NullableListObservationsForApp200Response) Get() *ListObservationsForApp200Response {
+func (v NullableListAppExternalAwsRdsConnections200Response) Get() *ListAppExternalAwsRdsConnections200Response {
 	return v.value
 }
 
-func (v *NullableListObservationsForApp200Response) Set(val *ListObservationsForApp200Response) {
+func (v *NullableListAppExternalAwsRdsConnections200Response) Set(val *ListAppExternalAwsRdsConnections200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListObservationsForApp200Response) IsSet() bool {
+func (v NullableListAppExternalAwsRdsConnections200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListObservationsForApp200Response) Unset() {
+func (v *NullableListAppExternalAwsRdsConnections200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListObservationsForApp200Response(val *ListObservationsForApp200Response) *NullableListObservationsForApp200Response {
-	return &NullableListObservationsForApp200Response{value: val, isSet: true}
+func NewNullableListAppExternalAwsRdsConnections200Response(val *ListAppExternalAwsRdsConnections200Response) *NullableListAppExternalAwsRdsConnections200Response {
+	return &NullableListAppExternalAwsRdsConnections200Response{value: val, isSet: true}
 }
 
-func (v NullableListObservationsForApp200Response) MarshalJSON() ([]byte, error) {
+func (v NullableListAppExternalAwsRdsConnections200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListObservationsForApp200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableListAppExternalAwsRdsConnections200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

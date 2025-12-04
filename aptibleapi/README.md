@@ -88,9 +88,15 @@ Class | Method | HTTP request | Description
 *ActivityReportsAPI* | [**GetActivityReport**](docs/ActivityReportsAPI.md#getactivityreport) | **Get** /activity_reports/{id} | show activity_report
 *ActivityReportsAPI* | [**GetActivityReportDownload**](docs/ActivityReportsAPI.md#getactivityreportdownload) | **Get** /activity_reports/{activity_report_id}/download | download activity_report
 *ActivityReportsAPI* | [**ListActivityReportsForAccount**](docs/ActivityReportsAPI.md#listactivityreportsforaccount) | **Get** /accounts/{account_id}/activity_reports | list activity_reports
+*AppExternalAwsRdsConnectionsAPI* | [**DeleteAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#deleteappexternalawsrdsconnection) | **Delete** /app_external_aws_rds_connections/{id} | delete app_external_aws_rds_connection
+*AppExternalAwsRdsConnectionsAPI* | [**GetAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#getappexternalawsrdsconnection) | **Get** /app_external_aws_rds_connections/{id} | show app_external_aws_rds_connection
+*AppExternalAwsRdsConnectionsAPI* | [**PatchAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#patchappexternalawsrdsconnection) | **Patch** /app_external_aws_rds_connections/{id} | update app_external_aws_rds_connection
+*AppExternalAwsRdsConnectionsAPI* | [**UpdateAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#updateappexternalawsrdsconnection) | **Put** /app_external_aws_rds_connections/{id} | update app_external_aws_rds_connection
 *AppsAPI* | [**CreateApp**](docs/AppsAPI.md#createapp) | **Post** /accounts/{account_id}/apps | create app
+*AppsAPI* | [**CreateAppExternalAwsRdsConnection**](docs/AppsAPI.md#createappexternalawsrdsconnection) | **Post** /apps/{id}/app_external_aws_rds_connections | create external aws rds connection
 *AppsAPI* | [**DeleteApp**](docs/AppsAPI.md#deleteapp) | **Delete** /apps/{id} | delete app
 *AppsAPI* | [**GetApp**](docs/AppsAPI.md#getapp) | **Get** /apps/{id} | show app
+*AppsAPI* | [**ListAppExternalAwsRdsConnections**](docs/AppsAPI.md#listappexternalawsrdsconnections) | **Get** /apps/{id}/app_external_aws_rds_connections | list external aws rds connections
 *AppsAPI* | [**ListApps**](docs/AppsAPI.md#listapps) | **Get** /apps | list apps
 *AppsAPI* | [**ListAppsForAccount**](docs/AppsAPI.md#listappsforaccount) | **Get** /accounts/{account_id}/apps | list apps
 *AppsAPI* | [**ListAppsForCertificate**](docs/AppsAPI.md#listappsforcertificate) | **Get** /certificates/{certificate_id}/apps | list apps
@@ -300,6 +306,8 @@ Class | Method | HTTP request | Description
  - [ActivityReportLinks](docs/ActivityReportLinks.md)
  - [App](docs/App.md)
  - [AppEmbedded](docs/AppEmbedded.md)
+ - [AppExternalAwsRdsConnection](docs/AppExternalAwsRdsConnection.md)
+ - [AppExternalAwsRdsConnectionLinks](docs/AppExternalAwsRdsConnectionLinks.md)
  - [AppLinks](docs/AppLinks.md)
  - [Backup](docs/Backup.md)
  - [BackupEmbedded](docs/BackupEmbedded.md)
@@ -316,6 +324,7 @@ Class | Method | HTTP request | Description
  - [Container](docs/Container.md)
  - [ContainerLinks](docs/ContainerLinks.md)
  - [CreateAccountRequest](docs/CreateAccountRequest.md)
+ - [CreateAppExternalAwsRdsConnectionRequest](docs/CreateAppExternalAwsRdsConnectionRequest.md)
  - [CreateAppRequest](docs/CreateAppRequest.md)
  - [CreateBackupRetentionPolicyRequest](docs/CreateBackupRetentionPolicyRequest.md)
  - [CreateCertificateRequest](docs/CreateCertificateRequest.md)
@@ -360,6 +369,10 @@ Class | Method | HTTP request | Description
  - [EphemeralSessionLinks](docs/EphemeralSessionLinks.md)
  - [ExternalAwsAccount](docs/ExternalAwsAccount.md)
  - [ExternalAwsAccountLinks](docs/ExternalAwsAccountLinks.md)
+ - [ExternalAwsDatabaseCredential](docs/ExternalAwsDatabaseCredential.md)
+ - [ExternalAwsDatabaseCredentialLinks](docs/ExternalAwsDatabaseCredentialLinks.md)
+ - [ExternalAwsResource](docs/ExternalAwsResource.md)
+ - [ExternalAwsResourceLinks](docs/ExternalAwsResourceLinks.md)
  - [GetRoot200Response](docs/GetRoot200Response.md)
  - [GetRoot200ResponseLinks](docs/GetRoot200ResponseLinks.md)
  - [Image](docs/Image.md)
@@ -375,6 +388,9 @@ Class | Method | HTTP request | Description
  - [ListActivityReportsForAccount200Response](docs/ListActivityReportsForAccount200Response.md)
  - [ListActivityReportsForAccount200ResponseEmbedded](docs/ListActivityReportsForAccount200ResponseEmbedded.md)
  - [ListActivityReportsForAccount200ResponseLinks](docs/ListActivityReportsForAccount200ResponseLinks.md)
+ - [ListAppExternalAwsRdsConnections200Response](docs/ListAppExternalAwsRdsConnections200Response.md)
+ - [ListAppExternalAwsRdsConnections200ResponseEmbedded](docs/ListAppExternalAwsRdsConnections200ResponseEmbedded.md)
+ - [ListAppExternalAwsRdsConnections200ResponseLinks](docs/ListAppExternalAwsRdsConnections200ResponseLinks.md)
  - [ListAppsForAccount200Response](docs/ListAppsForAccount200Response.md)
  - [ListAppsForAccount200ResponseEmbedded](docs/ListAppsForAccount200ResponseEmbedded.md)
  - [ListAppsForSource200Response](docs/ListAppsForSource200Response.md)
@@ -426,7 +442,6 @@ Class | Method | HTTP request | Description
  - [ListEphemeralSessionsForApp200ResponseLinks](docs/ListEphemeralSessionsForApp200ResponseLinks.md)
  - [ListImagesForApp200Response](docs/ListImagesForApp200Response.md)
  - [ListImagesForApp200ResponseEmbedded](docs/ListImagesForApp200ResponseEmbedded.md)
- - [ListImagesForApp200ResponseLinks](docs/ListImagesForApp200ResponseLinks.md)
  - [ListIntrustionDetectionReportsForStack200Response](docs/ListIntrustionDetectionReportsForStack200Response.md)
  - [ListIntrustionDetectionReportsForStack200ResponseEmbedded](docs/ListIntrustionDetectionReportsForStack200ResponseEmbedded.md)
  - [ListLlmIntegrations200Response](docs/ListLlmIntegrations200Response.md)
@@ -511,6 +526,7 @@ Class | Method | HTTP request | Description
  - [Stack](docs/Stack.md)
  - [StackLinks](docs/StackLinks.md)
  - [UpdateAccountRequest](docs/UpdateAccountRequest.md)
+ - [UpdateAppExternalAwsRdsConnectionRequest](docs/UpdateAppExternalAwsRdsConnectionRequest.md)
  - [UpdateAppRequest](docs/UpdateAppRequest.md)
  - [UpdateCertificateRequest](docs/UpdateCertificateRequest.md)
  - [UpdateDashboardRequest](docs/UpdateDashboardRequest.md)
