@@ -24,7 +24,7 @@ type ListImagesForApp200Response struct {
 	TotalCount int32 `json:"total_count"`
 	PerPage int32 `json:"per_page"`
 	CurrentPage int32 `json:"current_page"`
-	Links ListImagesForApp200ResponseLinks `json:"_links"`
+	Links ListAppExternalAwsRdsConnections200ResponseLinks `json:"_links"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +34,7 @@ type _ListImagesForApp200Response ListImagesForApp200Response
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListImagesForApp200Response(embedded ListImagesForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListImagesForApp200ResponseLinks) *ListImagesForApp200Response {
+func NewListImagesForApp200Response(embedded ListImagesForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppExternalAwsRdsConnections200ResponseLinks) *ListImagesForApp200Response {
 	this := ListImagesForApp200Response{}
 	this.Embedded = embedded
 	this.TotalCount = totalCount
@@ -149,9 +149,9 @@ func (o *ListImagesForApp200Response) SetCurrentPage(v int32) {
 }
 
 // GetLinks returns the Links field value
-func (o *ListImagesForApp200Response) GetLinks() ListImagesForApp200ResponseLinks {
+func (o *ListImagesForApp200Response) GetLinks() ListAppExternalAwsRdsConnections200ResponseLinks {
 	if o == nil {
-		var ret ListImagesForApp200ResponseLinks
+		var ret ListAppExternalAwsRdsConnections200ResponseLinks
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *ListImagesForApp200Response) GetLinks() ListImagesForApp200ResponseLink
 
 // GetLinksOk returns a tuple with the Links field value
 // and a boolean to check if the value has been set.
-func (o *ListImagesForApp200Response) GetLinksOk() (*ListImagesForApp200ResponseLinks, bool) {
+func (o *ListImagesForApp200Response) GetLinksOk() (*ListAppExternalAwsRdsConnections200ResponseLinks, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *ListImagesForApp200Response) GetLinksOk() (*ListImagesForApp200Response
 }
 
 // SetLinks sets field value
-func (o *ListImagesForApp200Response) SetLinks(v ListImagesForApp200ResponseLinks) {
+func (o *ListImagesForApp200Response) SetLinks(v ListAppExternalAwsRdsConnections200ResponseLinks) {
 	o.Links = v
 }
 

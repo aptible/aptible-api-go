@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Configuration** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Image** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Source** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**Setting** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetSource sets Source field to given value.
 `func (o *DeploymentLinks) HasSource() bool`
 
 HasSource returns a boolean if a field has been set.
+
+### GetSetting
+
+`func (o *DeploymentLinks) GetSetting() ListAccountsForStack200ResponseLinksStack`
+
+GetSetting returns the Setting field if non-nil, zero value otherwise.
+
+### GetSettingOk
+
+`func (o *DeploymentLinks) GetSettingOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetSettingOk returns a tuple with the Setting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSetting
+
+`func (o *DeploymentLinks) SetSetting(v ListAccountsForStack200ResponseLinksStack)`
+
+SetSetting sets Setting field to given value.
+
+### HasSetting
+
+`func (o *DeploymentLinks) HasSetting() bool`
+
+HasSetting returns a boolean if a field has been set.
 
 ### GetSelf
 

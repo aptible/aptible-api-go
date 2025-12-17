@@ -12,6 +12,7 @@ security:
 tags:
 - name: Accounts
 - name: ActivityReports
+- name: AppExternalAwsRdsConnections
 - name: Apps
 - name: BackupRetentionPolicies
 - name: Backups
@@ -29,6 +30,8 @@ tags:
 - name: EphemeralContainers
 - name: EphemeralSessions
 - name: ExternalAwsAccounts
+- name: ExternalAwsDatabaseCredentials
+- name: ExternalAwsResources
 - name: Images
 - name: Integrations
 - name: IntrusionDetectionReports
@@ -338,6 +341,113 @@ paths:
       summary: show activity_report
       tags:
       - ActivityReports
+  /app_external_aws_rds_connections/{id}:
+    delete:
+      operationId: DeleteAppExternalAwsRdsConnection
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete app_external_aws_rds_connection
+      tags:
+      - AppExternalAwsRdsConnections
+    get:
+      operationId: GetAppExternalAwsRdsConnection
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/app_external_aws_rds_connection'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show app_external_aws_rds_connection
+      tags:
+      - AppExternalAwsRdsConnections
+    patch:
+      operationId: PatchAppExternalAwsRdsConnection
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAppExternalAwsRdsConnection_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update app_external_aws_rds_connection
+      tags:
+      - AppExternalAwsRdsConnections
+    put:
+      operationId: UpdateAppExternalAwsRdsConnection
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAppExternalAwsRdsConnection_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update app_external_aws_rds_connection
+      tags:
+      - AppExternalAwsRdsConnections
   /accounts/{account_id}/apps:
     get:
       operationId: ListAppsForAccount
@@ -575,6 +685,74 @@ paths:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
       summary: list apps
+      tags:
+      - Apps
+  /apps/{id}/app_external_aws_rds_connections:
+    get:
+      operationId: ListAppExternalAwsRdsConnections
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListAppExternalAwsRdsConnections_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list external aws rds connections
+      tags:
+      - Apps
+    post:
+      operationId: CreateAppExternalAwsRdsConnection
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAppExternalAwsRdsConnection_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/app_external_aws_rds_connection'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create external aws rds connection
       tags:
       - Apps
   /accounts/{account_id}/backup_retention_policies:
@@ -2573,6 +2751,520 @@ paths:
       summary: list ephemeral_sessions
       tags:
       - EphemeralSessions
+  /external_aws_accounts:
+    get:
+      operationId: ListExternalAwsAccounts
+      parameters:
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListExternalAwsAccounts_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list external_aws_accounts
+      tags:
+      - ExternalAwsAccounts
+    post:
+      operationId: CreateExternalAwsAccount
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateExternalAwsAccount_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/external_aws_account'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create external_aws_account
+      tags:
+      - ExternalAwsAccounts
+  /external_aws_accounts/{id}:
+    delete:
+      operationId: DeleteExternalAwsAccount
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete external_aws_account
+      tags:
+      - ExternalAwsAccounts
+    get:
+      operationId: GetExternalAwsAccount
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/external_aws_account'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show external_aws_account
+      tags:
+      - ExternalAwsAccounts
+    patch:
+      operationId: PatchExternalAwsAccount
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateExternalAwsAccount_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update external_aws_account
+      tags:
+      - ExternalAwsAccounts
+    put:
+      operationId: UpdateExternalAwsAccount
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateExternalAwsAccount_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update external_aws_account
+      tags:
+      - ExternalAwsAccounts
+  /external_aws_accounts/{external_aws_account_id}/external_aws_resources:
+    get:
+      operationId: ListExternalAwsResourcesForExternalAwsAccount
+      parameters:
+      - description: external_aws_account_id
+        explode: false
+        in: path
+        name: external_aws_account_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListExternalAwsResourcesForExternalAwsAccount_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list external_aws_resources
+      tags:
+      - ExternalAwsAccounts
+    post:
+      operationId: CreateExternalAwsResource
+      parameters:
+      - description: external_aws_account_id
+        explode: false
+        in: path
+        name: external_aws_account_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateExternalAwsResource_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/external_aws_resource'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create external_aws_resource
+      tags:
+      - ExternalAwsAccounts
+  /external_aws_accounts/{external_aws_account_id}/app_external_aws_rds_connections:
+    get:
+      operationId: ListAppDatabaseConnectionsForExternalAwsAccount
+      parameters:
+      - description: external_aws_account_id
+        explode: false
+        in: path
+        name: external_aws_account_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListAppDatabaseConnectionsForExternalAwsAccount_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list app_external_aws_rds_connections for external_aws_account
+      tags:
+      - ExternalAwsAccounts
+  /external_aws_database_credentials/{id}:
+    get:
+      operationId: GetExternalAwsDatabaseCredential
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/external_aws_database_credential'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show external aws database credential
+      tags:
+      - ExternalAwsDatabaseCredentials
+  /external_aws_resources/{external_aws_resource_id}/external_aws_database_credentials:
+    get:
+      operationId: ListExternalAwsDatabaseCredentialsForExternalAwsResource
+      parameters:
+      - description: external_aws_resource_id
+        explode: false
+        in: path
+        name: external_aws_resource_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListExternalAwsDatabaseCredentialsForExternalAwsResource_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list external aws database credentials for resource
+      tags:
+      - ExternalAwsResources
+    post:
+      operationId: CreateExternalAwsDatabaseCredential
+      parameters:
+      - description: external_aws_resource_id
+        explode: false
+        in: path
+        name: external_aws_resource_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateExternalAwsDatabaseCredential_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/external_aws_database_credential'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create external aws database credential
+      tags:
+      - ExternalAwsDatabaseCredentials
+  /external_aws_resources:
+    get:
+      operationId: ListExternalAwsResources
+      parameters:
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListExternalAwsResources_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list external_aws_resources
+      tags:
+      - ExternalAwsResources
+  /external_aws_resources/{id}:
+    delete:
+      operationId: DeleteExternalAwsResource
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete external_aws_resource
+      tags:
+      - ExternalAwsResources
+    get:
+      operationId: GetExternalAwsResource
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/external_aws_resource'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show external_aws_resource
+      tags:
+      - ExternalAwsResources
+    patch:
+      operationId: PatchExternalAwsResource
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateExternalAwsResource_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update external_aws_resource
+      tags:
+      - ExternalAwsResources
+    put:
+      operationId: UpdateExternalAwsResource
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateExternalAwsResource_request'
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update external_aws_resource
+      tags:
+      - ExternalAwsResources
+  /external_aws_resources/{external_aws_resource_id}/app_external_aws_rds_connections:
+    get:
+      operationId: ListAppDatabaseConnectionsForExternalAwsResource
+      parameters:
+      - description: external_aws_resource_id
+        explode: false
+        in: path
+        name: external_aws_resource_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListAppDatabaseConnectionsForExternalAwsAccount_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list app database connections for external aws resource
+      tags:
+      - ExternalAwsResources
   /:
     get:
       operationId: GetRoot
@@ -4802,6 +5494,66 @@ paths:
       summary: create operation
       tags:
       - Operations
+  /external_aws_database_credentials/{external_aws_database_credential_id}/operations:
+    get:
+      operationId: ListOperationsForExternalAwsDatabaseCredential
+      parameters:
+      - description: external_aws_database_credential_id
+        explode: false
+        in: path
+        name: external_aws_database_credential_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list operations
+      tags:
+      - Operations
+    post:
+      operationId: CreateOperationForExternalAwsDatabaseCredential
+      parameters:
+      - description: external_aws_database_credential_id
+        explode: false
+        in: path
+        name: external_aws_database_credential_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOperationRequest_1'
+      responses:
+        "201":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create operation
+      tags:
+      - Operations
   /accounts/{account_id}/permissions:
     get:
       operationId: ListPermissionsForAccount
@@ -6762,6 +7514,34 @@ components:
       - id
       - starts_at
       - updated_at
+    app_external_aws_rds_connection:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        database_name:
+          type: string
+        database_user:
+          type: string
+        superuser:
+          type: boolean
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        _links:
+          $ref: '#/components/schemas/app_external_aws_rds_connection__links'
+      required:
+      - _type
+      - created_at
+      - database_name
+      - database_user
+      - id
+      - superuser
+      - updated_at
     app:
       properties:
         id:
@@ -7292,6 +8072,9 @@ components:
         source_id:
           type: integer
           x-nullable: true
+        setting_id:
+          type: integer
+          x-nullable: true
         docker_image:
           type: string
           x-nullable: true
@@ -7346,6 +8129,7 @@ components:
       - id
       - image_id
       - operation_id
+      - setting_id
       - source_id
       - status
       - updated_at
@@ -7568,6 +8352,91 @@ components:
       - last_discovery_at
       - organization_id
       - status
+      - updated_at
+    external_aws_database_credential:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        connection_url:
+          type: string
+        type:
+          type: string
+        default:
+          type: boolean
+        _links:
+          $ref: '#/components/schemas/external_aws_database_credential__links'
+      required:
+      - _type
+      - connection_url
+      - created_at
+      - default
+      - id
+      - type
+      - updated_at
+    external_aws_resource:
+      properties:
+        id:
+          type: integer
+        _type:
+          type: string
+        external_aws_account_id:
+          type: integer
+        resource_type:
+          type: string
+        resource_arn:
+          type: string
+        resource_id:
+          type: string
+        resource_name:
+          type: string
+          x-nullable: true
+        region:
+          type: string
+        metadata:
+          type: object
+        tags:
+          type: object
+        discovered_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        last_synced_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        sync_status:
+          type: string
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        _links:
+          $ref: '#/components/schemas/external_aws_resource__links'
+      required:
+      - _type
+      - created_at
+      - discovered_at
+      - external_aws_account_id
+      - id
+      - last_synced_at
+      - metadata
+      - region
+      - resource_arn
+      - resource_id
+      - resource_name
+      - resource_type
+      - sync_status
+      - tags
       - updated_at
     image:
       properties:
@@ -9056,6 +9925,15 @@ components:
       - per_page
       - total_count
       type: object
+    UpdateAppExternalAwsRdsConnection_request:
+      properties:
+        database_name:
+          type: string
+        database_user:
+          type: string
+        superuser:
+          type: boolean
+      type: object
     ListAppsForAccount_200_response__embedded:
       properties:
         apps:
@@ -9101,6 +9979,56 @@ components:
           type: string
         status:
           type: string
+      type: object
+    ListAppExternalAwsRdsConnections_200_response__embedded:
+      properties:
+        app_external_aws_rds_connections:
+          items:
+            $ref: '#/components/schemas/app_external_aws_rds_connection'
+          type: array
+      type: object
+    ListAppExternalAwsRdsConnections_200_response__links:
+      properties:
+        app:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        next:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        prev:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    ListAppExternalAwsRdsConnections_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListAppExternalAwsRdsConnections_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListAppExternalAwsRdsConnections_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateAppExternalAwsRdsConnection_request:
+      properties:
+        external_aws_resource_id:
+          type: integer
+        database_name:
+          description: The name of the database to connect to
+          type: string
+        database_user:
+          description: The user to connect to the database as
+          type: string
+        superuser:
+          type: boolean
       type: object
     ListBackupRetentionPoliciesForAccount_200_response__embedded:
       properties:
@@ -9801,6 +10729,225 @@ components:
       - per_page
       - total_count
       type: object
+    ListExternalAwsAccounts_200_response__embedded:
+      properties:
+        external_aws_accounts:
+          items:
+            $ref: '#/components/schemas/external_aws_account'
+          type: array
+      type: object
+    ListExternalAwsAccounts_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListExternalAwsAccounts_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListDashboards_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateExternalAwsAccount_request:
+      properties:
+        organization_id:
+          type: string
+        aws_account_id:
+          type: string
+        account_name:
+          type: string
+        aws_region_primary:
+          type: string
+        discovery_enabled:
+          type: boolean
+        discovery_frequency:
+          type: string
+      required:
+      - account_name
+      - aws_account_id
+      - aws_region_primary
+      - organization_id
+      type: object
+    UpdateExternalAwsAccount_request:
+      properties:
+        account_name:
+          type: string
+        aws_region_primary:
+          type: string
+        discovery_enabled:
+          type: boolean
+        discovery_frequency:
+          type: string
+      type: object
+    ListExternalAwsResourcesForExternalAwsAccount_200_response__embedded:
+      properties:
+        external_aws_resources:
+          items:
+            $ref: '#/components/schemas/external_aws_resource'
+          type: array
+      type: object
+    ListExternalAwsResourcesForExternalAwsAccount_200_response__links:
+      properties:
+        external_aws_account:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        next:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        prev:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    ListExternalAwsResourcesForExternalAwsAccount_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListExternalAwsResourcesForExternalAwsAccount_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListExternalAwsResourcesForExternalAwsAccount_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateExternalAwsResource_request:
+      properties:
+        resource_type:
+          type: string
+        resource_arn:
+          type: string
+        resource_id:
+          type: string
+        resource_name:
+          type: string
+        region:
+          type: string
+        discovered_at:
+          format: dateTime
+          type: string
+        last_synced_at:
+          format: dateTime
+          type: string
+        sync_status:
+          type: string
+        metadata:
+          type: object
+        tags:
+          type: object
+      required:
+      - metadata
+      - region
+      - resource_arn
+      - resource_id
+      - resource_type
+      - sync_status
+      - tags
+      type: object
+    ListAppDatabaseConnectionsForExternalAwsAccount_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListAppExternalAwsRdsConnections_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListCodeScanResultsForApp_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    ListExternalAwsDatabaseCredentialsForExternalAwsResource_200_response__embedded:
+      properties:
+        external_aws_database_credentials:
+          items:
+            $ref: '#/components/schemas/external_aws_database_credential'
+          type: array
+      type: object
+    ListExternalAwsDatabaseCredentialsForExternalAwsResource_200_response__links:
+      properties:
+        external_aws_resource:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        next:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        prev:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    ListExternalAwsDatabaseCredentialsForExternalAwsResource_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListExternalAwsDatabaseCredentialsForExternalAwsResource_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListExternalAwsDatabaseCredentialsForExternalAwsResource_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    CreateExternalAwsDatabaseCredential_request:
+      properties:
+        type:
+          type: string
+        default:
+          type: boolean
+        connection_url:
+          type: string
+      required:
+      - connection_url
+      - type
+      type: object
+    ListExternalAwsResources_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListExternalAwsResourcesForExternalAwsAccount_200_response__embedded'
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+        _links:
+          $ref: '#/components/schemas/ListDashboards_200_response__links'
+      required:
+      - _embedded
+      - _links
+      - current_page
+      - per_page
+      - total_count
+      type: object
+    UpdateExternalAwsResource_request:
+      properties:
+        resource_name:
+          type: string
+      type: object
     GetRoot_200_response__links:
       properties:
         accounts:
@@ -9828,17 +10975,6 @@ components:
             $ref: '#/components/schemas/image'
           type: array
       type: object
-    ListImagesForApp_200_response__links:
-      properties:
-        app:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-        next:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-        prev:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-        self:
-          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
-      type: object
     ListImagesForApp_200_response:
       properties:
         _embedded:
@@ -9850,7 +10986,7 @@ components:
         current_page:
           type: integer
         _links:
-          $ref: '#/components/schemas/ListImagesForApp_200_response__links'
+          $ref: '#/components/schemas/ListAppExternalAwsRdsConnections_200_response__links'
       required:
       - _embedded
       - _links
@@ -10235,7 +11371,7 @@ components:
         current_page:
           type: integer
         _links:
-          $ref: '#/components/schemas/ListImagesForApp_200_response__links'
+          $ref: '#/components/schemas/ListAppExternalAwsRdsConnections_200_response__links'
       required:
       - _embedded
       - _links
@@ -10545,6 +11681,14 @@ components:
             type: string
           description: Sensitive settings for the operation (encrypted)
           type: object
+      required:
+      - type
+      title: CreateOperationRequest
+      type: object
+    CreateOperationRequest_1:
+      properties:
+        type:
+          type: string
       required:
       - type
       title: CreateOperationRequest
@@ -11262,6 +12406,17 @@ components:
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
+    app_external_aws_rds_connection__links:
+      properties:
+        app:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        external_aws_resource:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        external_aws_account:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
     app__embedded:
       properties:
         services:
@@ -11310,6 +12465,8 @@ components:
         settings:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         current_setting:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        app_external_aws_rds_connections:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
@@ -11453,6 +12610,8 @@ components:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         source:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        setting:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
@@ -11512,6 +12671,30 @@ components:
     external_aws_account__links:
       properties:
         organization:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        external_aws_resources:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        app_external_aws_rds_connections:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    external_aws_database_credential__links:
+      properties:
+        external_aws_resource:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        app_external_aws_rds_connections:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
+    external_aws_resource__links:
+      properties:
+        external_aws_account:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        external_aws_database_credentials:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        app_external_aws_rds_connections:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'

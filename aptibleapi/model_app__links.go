@@ -36,6 +36,7 @@ type AppLinks struct {
 	CurrentDeployment *ListAccountsForStack200ResponseLinksStack `json:"current_deployment,omitempty"`
 	Settings *ListAccountsForStack200ResponseLinksStack `json:"settings,omitempty"`
 	CurrentSetting *ListAccountsForStack200ResponseLinksStack `json:"current_setting,omitempty"`
+	AppExternalAwsRdsConnections *ListAccountsForStack200ResponseLinksStack `json:"app_external_aws_rds_connections,omitempty"`
 	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -603,6 +604,38 @@ func (o *AppLinks) SetCurrentSetting(v ListAccountsForStack200ResponseLinksStack
 	o.CurrentSetting = &v
 }
 
+// GetAppExternalAwsRdsConnections returns the AppExternalAwsRdsConnections field value if set, zero value otherwise.
+func (o *AppLinks) GetAppExternalAwsRdsConnections() ListAccountsForStack200ResponseLinksStack {
+	if o == nil || IsNil(o.AppExternalAwsRdsConnections) {
+		var ret ListAccountsForStack200ResponseLinksStack
+		return ret
+	}
+	return *o.AppExternalAwsRdsConnections
+}
+
+// GetAppExternalAwsRdsConnectionsOk returns a tuple with the AppExternalAwsRdsConnections field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AppLinks) GetAppExternalAwsRdsConnectionsOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+	if o == nil || IsNil(o.AppExternalAwsRdsConnections) {
+		return nil, false
+	}
+	return o.AppExternalAwsRdsConnections, true
+}
+
+// HasAppExternalAwsRdsConnections returns a boolean if a field has been set.
+func (o *AppLinks) HasAppExternalAwsRdsConnections() bool {
+	if o != nil && !IsNil(o.AppExternalAwsRdsConnections) {
+		return true
+	}
+
+	return false
+}
+
+// SetAppExternalAwsRdsConnections gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the AppExternalAwsRdsConnections field.
+func (o *AppLinks) SetAppExternalAwsRdsConnections(v ListAccountsForStack200ResponseLinksStack) {
+	o.AppExternalAwsRdsConnections = &v
+}
+
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *AppLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
@@ -696,6 +729,9 @@ func (o AppLinks) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CurrentSetting) {
 		toSerialize["current_setting"] = o.CurrentSetting
 	}
+	if !IsNil(o.AppExternalAwsRdsConnections) {
+		toSerialize["app_external_aws_rds_connections"] = o.AppExternalAwsRdsConnections
+	}
 	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
@@ -738,6 +774,7 @@ func (o *AppLinks) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "current_deployment")
 		delete(additionalProperties, "settings")
 		delete(additionalProperties, "current_setting")
+		delete(additionalProperties, "app_external_aws_rds_connections")
 		delete(additionalProperties, "self")
 		o.AdditionalProperties = additionalProperties
 	}
