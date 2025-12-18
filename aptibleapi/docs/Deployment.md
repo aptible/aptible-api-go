@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ConfigurationId** | **NullableInt32** |  | 
 **ImageId** | **NullableInt32** |  | 
 **SourceId** | **NullableInt32** |  | 
+**SettingId** | **NullableInt32** |  | 
 **DockerImage** | **NullableString** |  | 
 **DockerRepositoryUrl** | **NullableString** |  | 
 **GitRepositoryUrl** | **NullableString** |  | 
@@ -29,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewDeployment
 
-`func NewDeployment(id int32, metaType string, status string, operationId int32, appId int32, configurationId NullableInt32, imageId NullableInt32, sourceId NullableInt32, dockerImage NullableString, dockerRepositoryUrl NullableString, gitRepositoryUrl NullableString, gitRef NullableString, gitCommitSha NullableString, gitCommitTimestamp NullableString, gitCommitUrl NullableString, gitCommitMessage NullableString, createdAt string, updatedAt string, deletedAt NullableString, ) *Deployment`
+`func NewDeployment(id int32, metaType string, status string, operationId int32, appId int32, configurationId NullableInt32, imageId NullableInt32, sourceId NullableInt32, settingId NullableInt32, dockerImage NullableString, dockerRepositoryUrl NullableString, gitRepositoryUrl NullableString, gitRef NullableString, gitCommitSha NullableString, gitCommitTimestamp NullableString, gitCommitUrl NullableString, gitCommitMessage NullableString, createdAt string, updatedAt string, deletedAt NullableString, ) *Deployment`
 
 NewDeployment instantiates a new Deployment object
 This constructor will assign default values to properties that have it defined,
@@ -234,6 +235,36 @@ SetSourceId sets SourceId field to given value.
 `func (o *Deployment) UnsetSourceId()`
 
 UnsetSourceId ensures that no value is present for SourceId, not even an explicit nil
+### GetSettingId
+
+`func (o *Deployment) GetSettingId() int32`
+
+GetSettingId returns the SettingId field if non-nil, zero value otherwise.
+
+### GetSettingIdOk
+
+`func (o *Deployment) GetSettingIdOk() (*int32, bool)`
+
+GetSettingIdOk returns a tuple with the SettingId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSettingId
+
+`func (o *Deployment) SetSettingId(v int32)`
+
+SetSettingId sets SettingId field to given value.
+
+
+### SetSettingIdNil
+
+`func (o *Deployment) SetSettingIdNil(b bool)`
+
+ SetSettingIdNil sets the value for SettingId to be an explicit nil
+
+### UnsetSettingId
+`func (o *Deployment) UnsetSettingId()`
+
+UnsetSettingId ensures that no value is present for SettingId, not even an explicit nil
 ### GetDockerImage
 
 `func (o *Deployment) GetDockerImage() string`

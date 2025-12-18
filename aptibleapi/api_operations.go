@@ -809,6 +809,126 @@ func (a *OperationsAPIService) CreateOperationForEphemeralSessionExecute(r ApiCr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiCreateOperationForExternalAwsDatabaseCredentialRequest struct {
+	ctx context.Context
+	ApiService *OperationsAPIService
+	externalAwsDatabaseCredentialId int32
+	createOperationRequest1 *CreateOperationRequest1
+}
+
+func (r ApiCreateOperationForExternalAwsDatabaseCredentialRequest) CreateOperationRequest1(createOperationRequest1 CreateOperationRequest1) ApiCreateOperationForExternalAwsDatabaseCredentialRequest {
+	r.createOperationRequest1 = &createOperationRequest1
+	return r
+}
+
+func (r ApiCreateOperationForExternalAwsDatabaseCredentialRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateOperationForExternalAwsDatabaseCredentialExecute(r)
+}
+
+/*
+CreateOperationForExternalAwsDatabaseCredential create operation
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param externalAwsDatabaseCredentialId external_aws_database_credential_id
+ @return ApiCreateOperationForExternalAwsDatabaseCredentialRequest
+*/
+func (a *OperationsAPIService) CreateOperationForExternalAwsDatabaseCredential(ctx context.Context, externalAwsDatabaseCredentialId int32) ApiCreateOperationForExternalAwsDatabaseCredentialRequest {
+	return ApiCreateOperationForExternalAwsDatabaseCredentialRequest{
+		ApiService: a,
+		ctx: ctx,
+		externalAwsDatabaseCredentialId: externalAwsDatabaseCredentialId,
+	}
+}
+
+// Execute executes the request
+func (a *OperationsAPIService) CreateOperationForExternalAwsDatabaseCredentialExecute(r ApiCreateOperationForExternalAwsDatabaseCredentialRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.CreateOperationForExternalAwsDatabaseCredential")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_aws_database_credentials/{external_aws_database_credential_id}/operations"
+	localVarPath = strings.Replace(localVarPath, "{"+"external_aws_database_credential_id"+"}", url.PathEscape(parameterValueToString(r.externalAwsDatabaseCredentialId, "externalAwsDatabaseCredentialId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/hal+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.createOperationRequest1
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type ApiCreateOperationForImageRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService
@@ -2647,6 +2767,128 @@ func (a *OperationsAPIService) ListOperationsForEphemeralSessionExecute(r ApiLis
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiListOperationsForExternalAwsDatabaseCredentialRequest struct {
+	ctx context.Context
+	ApiService *OperationsAPIService
+	externalAwsDatabaseCredentialId int32
+	page *int32
+}
+
+// current page of results for pagination
+func (r ApiListOperationsForExternalAwsDatabaseCredentialRequest) Page(page int32) ApiListOperationsForExternalAwsDatabaseCredentialRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiListOperationsForExternalAwsDatabaseCredentialRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ListOperationsForExternalAwsDatabaseCredentialExecute(r)
+}
+
+/*
+ListOperationsForExternalAwsDatabaseCredential list operations
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param externalAwsDatabaseCredentialId external_aws_database_credential_id
+ @return ApiListOperationsForExternalAwsDatabaseCredentialRequest
+*/
+func (a *OperationsAPIService) ListOperationsForExternalAwsDatabaseCredential(ctx context.Context, externalAwsDatabaseCredentialId int32) ApiListOperationsForExternalAwsDatabaseCredentialRequest {
+	return ApiListOperationsForExternalAwsDatabaseCredentialRequest{
+		ApiService: a,
+		ctx: ctx,
+		externalAwsDatabaseCredentialId: externalAwsDatabaseCredentialId,
+	}
+}
+
+// Execute executes the request
+func (a *OperationsAPIService) ListOperationsForExternalAwsDatabaseCredentialExecute(r ApiListOperationsForExternalAwsDatabaseCredentialRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForExternalAwsDatabaseCredential")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/external_aws_database_credentials/{external_aws_database_credential_id}/operations"
+	localVarPath = strings.Replace(localVarPath, "{"+"external_aws_database_credential_id"+"}", url.PathEscape(parameterValueToString(r.externalAwsDatabaseCredentialId, "externalAwsDatabaseCredentialId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.page != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/hal+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type ApiListOperationsForImageRequest struct {

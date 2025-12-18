@@ -23,6 +23,7 @@ type DeploymentLinks struct {
 	Configuration *ListAccountsForStack200ResponseLinksStack `json:"configuration,omitempty"`
 	Image *ListAccountsForStack200ResponseLinksStack `json:"image,omitempty"`
 	Source *ListAccountsForStack200ResponseLinksStack `json:"source,omitempty"`
+	Setting *ListAccountsForStack200ResponseLinksStack `json:"setting,omitempty"`
 	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -174,6 +175,38 @@ func (o *DeploymentLinks) SetSource(v ListAccountsForStack200ResponseLinksStack)
 	o.Source = &v
 }
 
+// GetSetting returns the Setting field value if set, zero value otherwise.
+func (o *DeploymentLinks) GetSetting() ListAccountsForStack200ResponseLinksStack {
+	if o == nil || IsNil(o.Setting) {
+		var ret ListAccountsForStack200ResponseLinksStack
+		return ret
+	}
+	return *o.Setting
+}
+
+// GetSettingOk returns a tuple with the Setting field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeploymentLinks) GetSettingOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+	if o == nil || IsNil(o.Setting) {
+		return nil, false
+	}
+	return o.Setting, true
+}
+
+// HasSetting returns a boolean if a field has been set.
+func (o *DeploymentLinks) HasSetting() bool {
+	if o != nil && !IsNil(o.Setting) {
+		return true
+	}
+
+	return false
+}
+
+// SetSetting gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Setting field.
+func (o *DeploymentLinks) SetSetting(v ListAccountsForStack200ResponseLinksStack) {
+	o.Setting = &v
+}
+
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *DeploymentLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
@@ -228,6 +261,9 @@ func (o DeploymentLinks) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Source) {
 		toSerialize["source"] = o.Source
 	}
+	if !IsNil(o.Setting) {
+		toSerialize["setting"] = o.Setting
+	}
 	if !IsNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
@@ -257,6 +293,7 @@ func (o *DeploymentLinks) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "configuration")
 		delete(additionalProperties, "image")
 		delete(additionalProperties, "source")
+		delete(additionalProperties, "setting")
 		delete(additionalProperties, "self")
 		o.AdditionalProperties = additionalProperties
 	}
