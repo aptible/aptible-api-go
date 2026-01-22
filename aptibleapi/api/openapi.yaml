@@ -36,6 +36,7 @@ tags:
 - name: Integrations
 - name: IntrusionDetectionReports
 - name: LlmIntegrations
+- name: LlmKeys
 - name: LogDrains
 - name: MetricDrains
 - name: Metrics
@@ -3704,6 +3705,205 @@ paths:
       summary: update llm integration
       tags:
       - LLM Integrations
+  /accounts/{account_id}/llm_keys:
+    get:
+      operationId: ListLlmKeysForAccount
+      parameters:
+      - description: account_id
+        explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListLlmKeysForAccount_200_response'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: organization not enrolled
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list llm_keys
+      tags:
+      - LlmKeys
+    post:
+      operationId: CreateLlmKey
+      parameters:
+      - description: account_id
+        explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLlmKey_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_key'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: organization not enrolled
+        "422":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: validation error
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create llm_key
+      tags:
+      - LlmKeys
+  /llm_keys/{id}:
+    delete:
+      operationId: RevokeLlmKey
+      parameters:
+      - description: LLM Key database ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_key'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: organization not enrolled
+        "404":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: revoke llm_key
+      tags:
+      - LlmKeys
+    get:
+      operationId: GetLlmKey
+      parameters:
+      - description: LLM Key database ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_key'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: organization not enrolled
+        "404":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show llm_key
+      tags:
+      - LlmKeys
+  /llm_keys:
+    get:
+      operationId: ListLlmKeys
+      parameters:
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: number of results per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListLlmKeys_200_response'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: organization not enrolled
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list all llm_keys
+      tags:
+      - LlmKeys
   /accounts/{account_id}/log_drains:
     get:
       operationId: ListLogDrainsForAccount
@@ -5552,6 +5752,42 @@ paths:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
       summary: create operation
+      tags:
+      - Operations
+  /llm_keys/{llm_key_id}/operations:
+    get:
+      operationId: ListOperationsForLlmKey
+      parameters:
+      - description: llm_key_id
+        explode: false
+        in: path
+        name: llm_key_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: current page of results for pagination
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListOperationsForAccount_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list operations
       tags:
       - Operations
   /accounts/{account_id}/permissions:
@@ -8403,7 +8639,9 @@ components:
         metadata:
           type: object
         tags:
-          type: object
+          items:
+            $ref: '#/components/schemas/CreateExternalAwsResource_request_tags_inner'
+          type: array
         discovered_at:
           format: dateTime
           type: string
@@ -8414,6 +8652,8 @@ components:
           x-nullable: true
         sync_status:
           type: string
+        lock_version:
+          type: integer
         created_at:
           format: dateTime
           type: string
@@ -8429,6 +8669,7 @@ components:
       - external_aws_account_id
       - id
       - last_synced_at
+      - lock_version
       - metadata
       - region
       - resource_arn
@@ -8632,6 +8873,66 @@ components:
       - openai_organization
       - organization_id
       - provider_type
+      - updated_at
+    llm_key:
+      properties:
+        id:
+          description: Database ID of the LLM Key
+          type: integer
+        _type:
+          type: string
+        handle:
+          description: User-provided handle for the token (unique within account)
+          type: string
+        note:
+          description: User-provided note (URL-safe base64 encoded)
+          type: string
+          x-nullable: true
+        created_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        updated_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        gateway_url:
+          description: Customer-facing LLM Gateway endpoint URL
+          type: string
+          x-nullable: true
+        created_by:
+          description: User who created the token
+          type: object
+          x-nullable: true
+        revoked_at:
+          description: Timestamp when token was revoked
+          format: dateTime
+          type: string
+          x-nullable: true
+        revoked_by:
+          description: User who revoked the token
+          type: object
+          x-nullable: true
+        status:
+          description: Token status (ACTIVE or REVOKED)
+          type: string
+        token:
+          description: Secret API key value (only present on creation)
+          type: string
+          x-nullable: true
+        _links:
+          $ref: '#/components/schemas/backup_retention_policy__links'
+      required:
+      - _type
+      - created_at
+      - created_by
+      - gateway_url
+      - handle
+      - id
+      - note
+      - revoked_at
+      - revoked_by
+      - status
       - updated_at
     log_drain:
       properties:
@@ -10823,6 +11124,16 @@ components:
       - per_page
       - total_count
       type: object
+    CreateExternalAwsResource_request_tags_inner:
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+      required:
+      - key
+      - value
+      type: object
     CreateExternalAwsResource_request:
       properties:
         resource_type:
@@ -10846,7 +11157,9 @@ components:
         metadata:
           type: object
         tags:
-          type: object
+          items:
+            $ref: '#/components/schemas/CreateExternalAwsResource_request_tags_inner'
+          type: array
       required:
       - metadata
       - region
@@ -10947,6 +11260,8 @@ components:
       properties:
         resource_name:
           type: string
+        lock_version:
+          type: integer
       type: object
     GetRoot_200_response__links:
       properties:
@@ -11130,6 +11445,44 @@ components:
           type: string
         base_url:
           type: string
+      type: object
+    ListLlmKeysForAccount_200_response__embedded:
+      properties:
+        llm_keys:
+          items:
+            $ref: '#/components/schemas/llm_key'
+          type: array
+      type: object
+    ListLlmKeysForAccount_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListLlmKeysForAccount_200_response__embedded'
+        _links:
+          type: object
+      type: object
+    CreateLlmKey_request:
+      properties:
+        handle:
+          description: Unique handle for the token within the account
+          type: string
+        note:
+          description: URL-safe base64 encoded note (max 256 chars decoded)
+          type: string
+      required:
+      - handle
+      type: object
+    ListLlmKeys_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListLlmKeysForAccount_200_response__embedded'
+        _links:
+          type: object
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
       type: object
     ListLogDrainsForAccount_200_response__embedded:
       properties:

@@ -29,7 +29,7 @@ type CreateExternalAwsResourceRequest struct {
 	LastSyncedAt *string `json:"last_synced_at,omitempty"`
 	SyncStatus string `json:"sync_status"`
 	Metadata map[string]interface{} `json:"metadata"`
-	Tags map[string]interface{} `json:"tags"`
+	Tags []CreateExternalAwsResourceRequestTagsInner `json:"tags"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -39,7 +39,7 @@ type _CreateExternalAwsResourceRequest CreateExternalAwsResourceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateExternalAwsResourceRequest(resourceType string, resourceArn string, resourceId string, region string, syncStatus string, metadata map[string]interface{}, tags map[string]interface{}) *CreateExternalAwsResourceRequest {
+func NewCreateExternalAwsResourceRequest(resourceType string, resourceArn string, resourceId string, region string, syncStatus string, metadata map[string]interface{}, tags []CreateExternalAwsResourceRequestTagsInner) *CreateExternalAwsResourceRequest {
 	this := CreateExternalAwsResourceRequest{}
 	this.ResourceType = resourceType
 	this.ResourceArn = resourceArn
@@ -300,9 +300,9 @@ func (o *CreateExternalAwsResourceRequest) SetMetadata(v map[string]interface{})
 }
 
 // GetTags returns the Tags field value
-func (o *CreateExternalAwsResourceRequest) GetTags() map[string]interface{} {
+func (o *CreateExternalAwsResourceRequest) GetTags() []CreateExternalAwsResourceRequestTagsInner {
 	if o == nil {
-		var ret map[string]interface{}
+		var ret []CreateExternalAwsResourceRequestTagsInner
 		return ret
 	}
 
@@ -311,15 +311,15 @@ func (o *CreateExternalAwsResourceRequest) GetTags() map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value
 // and a boolean to check if the value has been set.
-func (o *CreateExternalAwsResourceRequest) GetTagsOk() (map[string]interface{}, bool) {
+func (o *CreateExternalAwsResourceRequest) GetTagsOk() ([]CreateExternalAwsResourceRequestTagsInner, bool) {
 	if o == nil {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // SetTags sets field value
-func (o *CreateExternalAwsResourceRequest) SetTags(v map[string]interface{}) {
+func (o *CreateExternalAwsResourceRequest) SetTags(v []CreateExternalAwsResourceRequestTagsInner) {
 	o.Tags = v
 }
 

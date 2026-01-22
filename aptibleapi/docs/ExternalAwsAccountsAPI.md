@@ -100,7 +100,7 @@ import (
 
 func main() {
 	externalAwsAccountId := int32(56) // int32 | external_aws_account_id
-	createExternalAwsResourceRequest := *openapiclient.NewCreateExternalAwsResourceRequest("ResourceType_example", "ResourceArn_example", "ResourceId_example", "Region_example", "SyncStatus_example", map[string]interface{}(123), map[string]interface{}(123)) // CreateExternalAwsResourceRequest |  (optional)
+	createExternalAwsResourceRequest := *openapiclient.NewCreateExternalAwsResourceRequest("ResourceType_example", "ResourceArn_example", "ResourceId_example", "Region_example", "SyncStatus_example", map[string]interface{}(123), []openapiclient.CreateExternalAwsResourceRequestTagsInner{*openapiclient.NewCreateExternalAwsResourceRequestTagsInner("Key_example", "Value_example")}) // CreateExternalAwsResourceRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

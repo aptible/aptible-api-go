@@ -13,10 +13,11 @@ Name | Type | Description | Notes
 **ResourceName** | **NullableString** |  | 
 **Region** | **string** |  | 
 **Metadata** | **map[string]interface{}** |  | 
-**Tags** | **map[string]interface{}** |  | 
+**Tags** | [**[]CreateExternalAwsResourceRequestTagsInner**](CreateExternalAwsResourceRequestTagsInner.md) |  | 
 **DiscoveredAt** | **NullableString** |  | 
 **LastSyncedAt** | **NullableString** |  | 
 **SyncStatus** | **string** |  | 
+**LockVersion** | **int32** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
 **Links** | Pointer to [**ExternalAwsResourceLinks**](ExternalAwsResourceLinks.md) |  | [optional] 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewExternalAwsResource
 
-`func NewExternalAwsResource(id int32, metaType string, externalAwsAccountId int32, resourceType string, resourceArn string, resourceId string, resourceName NullableString, region string, metadata map[string]interface{}, tags map[string]interface{}, discoveredAt NullableString, lastSyncedAt NullableString, syncStatus string, createdAt string, updatedAt string, ) *ExternalAwsResource`
+`func NewExternalAwsResource(id int32, metaType string, externalAwsAccountId int32, resourceType string, resourceArn string, resourceId string, resourceName NullableString, region string, metadata map[string]interface{}, tags []CreateExternalAwsResourceRequestTagsInner, discoveredAt NullableString, lastSyncedAt NullableString, syncStatus string, lockVersion int32, createdAt string, updatedAt string, ) *ExternalAwsResource`
 
 NewExternalAwsResource instantiates a new ExternalAwsResource object
 This constructor will assign default values to properties that have it defined,
@@ -232,20 +233,20 @@ SetMetadata sets Metadata field to given value.
 
 ### GetTags
 
-`func (o *ExternalAwsResource) GetTags() map[string]interface{}`
+`func (o *ExternalAwsResource) GetTags() []CreateExternalAwsResourceRequestTagsInner`
 
 GetTags returns the Tags field if non-nil, zero value otherwise.
 
 ### GetTagsOk
 
-`func (o *ExternalAwsResource) GetTagsOk() (*map[string]interface{}, bool)`
+`func (o *ExternalAwsResource) GetTagsOk() (*[]CreateExternalAwsResourceRequestTagsInner, bool)`
 
 GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTags
 
-`func (o *ExternalAwsResource) SetTags(v map[string]interface{})`
+`func (o *ExternalAwsResource) SetTags(v []CreateExternalAwsResourceRequestTagsInner)`
 
 SetTags sets Tags field to given value.
 
@@ -328,6 +329,26 @@ and a boolean to check if the value has been set.
 `func (o *ExternalAwsResource) SetSyncStatus(v string)`
 
 SetSyncStatus sets SyncStatus field to given value.
+
+
+### GetLockVersion
+
+`func (o *ExternalAwsResource) GetLockVersion() int32`
+
+GetLockVersion returns the LockVersion field if non-nil, zero value otherwise.
+
+### GetLockVersionOk
+
+`func (o *ExternalAwsResource) GetLockVersionOk() (*int32, bool)`
+
+GetLockVersionOk returns a tuple with the LockVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLockVersion
+
+`func (o *ExternalAwsResource) SetLockVersion(v int32)`
+
+SetLockVersion sets LockVersion field to given value.
 
 
 ### GetCreatedAt

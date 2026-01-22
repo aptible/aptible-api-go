@@ -223,6 +223,11 @@ Class | Method | HTTP request | Description
 *LLMIntegrationsAPI* | [**GetLlmIntegration**](docs/LLMIntegrationsAPI.md#getllmintegration) | **Get** /llm_integrations/{id} | show llm integration
 *LLMIntegrationsAPI* | [**ListLlmIntegrations**](docs/LLMIntegrationsAPI.md#listllmintegrations) | **Get** /llm_integrations | list llm integrations
 *LLMIntegrationsAPI* | [**UpdateLlmIntegration**](docs/LLMIntegrationsAPI.md#updatellmintegration) | **Put** /llm_integrations/{id} | update llm integration
+*LlmKeysAPI* | [**CreateLlmKey**](docs/LlmKeysAPI.md#createllmkey) | **Post** /accounts/{account_id}/llm_keys | create llm_key
+*LlmKeysAPI* | [**GetLlmKey**](docs/LlmKeysAPI.md#getllmkey) | **Get** /llm_keys/{id} | show llm_key
+*LlmKeysAPI* | [**ListLlmKeys**](docs/LlmKeysAPI.md#listllmkeys) | **Get** /llm_keys | list all llm_keys
+*LlmKeysAPI* | [**ListLlmKeysForAccount**](docs/LlmKeysAPI.md#listllmkeysforaccount) | **Get** /accounts/{account_id}/llm_keys | list llm_keys
+*LlmKeysAPI* | [**RevokeLlmKey**](docs/LlmKeysAPI.md#revokellmkey) | **Delete** /llm_keys/{id} | revoke llm_key
 *LogDrainsAPI* | [**CreateLogDrain**](docs/LogDrainsAPI.md#createlogdrain) | **Post** /accounts/{account_id}/log_drains | create log_drain
 *LogDrainsAPI* | [**DeleteLogDrain**](docs/LogDrainsAPI.md#deletelogdrain) | **Delete** /log_drains/{id} | delete log_drain
 *LogDrainsAPI* | [**GetLogDrain**](docs/LogDrainsAPI.md#getlogdrain) | **Get** /log_drains/{id} | show log_drain
@@ -255,6 +260,7 @@ Class | Method | HTTP request | Description
 *OperationsAPI* | [**ListOperationsForEphemeralSession**](docs/OperationsAPI.md#listoperationsforephemeralsession) | **Get** /ephemeral_sessions/{ephemeral_session_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForExternalAwsDatabaseCredential**](docs/OperationsAPI.md#listoperationsforexternalawsdatabasecredential) | **Get** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForImage**](docs/OperationsAPI.md#listoperationsforimage) | **Get** /images/{image_id}/operations | list operations
+*OperationsAPI* | [**ListOperationsForLlmKey**](docs/OperationsAPI.md#listoperationsforllmkey) | **Get** /llm_keys/{llm_key_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForLogDrain**](docs/OperationsAPI.md#listoperationsforlogdrain) | **Get** /log_drains/{log_drain_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForMetricDrain**](docs/OperationsAPI.md#listoperationsformetricdrain) | **Get** /metric_drains/{metric_drain_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForPersistentDisk**](docs/OperationsAPI.md#listoperationsforpersistentdisk) | **Get** /persistent_disks/{persistent_disk_id}/operations | list operations
@@ -357,7 +363,9 @@ Class | Method | HTTP request | Description
  - [CreateExternalAwsAccountRequest](docs/CreateExternalAwsAccountRequest.md)
  - [CreateExternalAwsDatabaseCredentialRequest](docs/CreateExternalAwsDatabaseCredentialRequest.md)
  - [CreateExternalAwsResourceRequest](docs/CreateExternalAwsResourceRequest.md)
+ - [CreateExternalAwsResourceRequestTagsInner](docs/CreateExternalAwsResourceRequestTagsInner.md)
  - [CreateLlmIntegrationRequest](docs/CreateLlmIntegrationRequest.md)
+ - [CreateLlmKeyRequest](docs/CreateLlmKeyRequest.md)
  - [CreateLogDrainRequest](docs/CreateLogDrainRequest.md)
  - [CreateMetricDrainRequest](docs/CreateMetricDrainRequest.md)
  - [CreateMetricDrainRequestDrainConfiguration](docs/CreateMetricDrainRequestDrainConfiguration.md)
@@ -480,6 +488,9 @@ Class | Method | HTTP request | Description
  - [ListIntrustionDetectionReportsForStack200ResponseEmbedded](docs/ListIntrustionDetectionReportsForStack200ResponseEmbedded.md)
  - [ListLlmIntegrations200Response](docs/ListLlmIntegrations200Response.md)
  - [ListLlmIntegrations200ResponseEmbedded](docs/ListLlmIntegrations200ResponseEmbedded.md)
+ - [ListLlmKeys200Response](docs/ListLlmKeys200Response.md)
+ - [ListLlmKeysForAccount200Response](docs/ListLlmKeysForAccount200Response.md)
+ - [ListLlmKeysForAccount200ResponseEmbedded](docs/ListLlmKeysForAccount200ResponseEmbedded.md)
  - [ListLogDrainsForAccount200Response](docs/ListLogDrainsForAccount200Response.md)
  - [ListLogDrainsForAccount200ResponseEmbedded](docs/ListLogDrainsForAccount200ResponseEmbedded.md)
  - [ListMetricDrainsForAccount200Response](docs/ListMetricDrainsForAccount200Response.md)
@@ -528,6 +539,7 @@ Class | Method | HTTP request | Description
  - [ListVpnTunnelsForStack200Response](docs/ListVpnTunnelsForStack200Response.md)
  - [ListVpnTunnelsForStack200ResponseEmbedded](docs/ListVpnTunnelsForStack200ResponseEmbedded.md)
  - [LlmIntegration](docs/LlmIntegration.md)
+ - [LlmKey](docs/LlmKey.md)
  - [LogDrain](docs/LogDrain.md)
  - [LogDrainLinks](docs/LogDrainLinks.md)
  - [MetricDrain](docs/MetricDrain.md)
