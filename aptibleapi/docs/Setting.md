@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | 
 **MetaType** | **string** |  | 
-**Keys** | **map[string]interface{}** |  | 
-**SensitiveKeys** | **map[string]interface{}** |  | 
+**Settings** | **map[string]interface{}** |  | 
+**SensitiveSettings** | **map[string]interface{}** |  | 
 **Links** | Pointer to [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewSetting
 
-`func NewSetting(id int32, metaType string, keys map[string]interface{}, sensitiveKeys map[string]interface{}, ) *Setting`
+`func NewSetting(id int32, metaType string, settings map[string]interface{}, sensitiveSettings map[string]interface{}, ) *Setting`
 
 NewSetting instantiates a new Setting object
 This constructor will assign default values to properties that have it defined,
@@ -69,44 +69,44 @@ and a boolean to check if the value has been set.
 SetMetaType sets MetaType field to given value.
 
 
-### GetKeys
+### GetSettings
 
-`func (o *Setting) GetKeys() map[string]interface{}`
+`func (o *Setting) GetSettings() map[string]interface{}`
 
-GetKeys returns the Keys field if non-nil, zero value otherwise.
+GetSettings returns the Settings field if non-nil, zero value otherwise.
 
-### GetKeysOk
+### GetSettingsOk
 
-`func (o *Setting) GetKeysOk() (*map[string]interface{}, bool)`
+`func (o *Setting) GetSettingsOk() (*map[string]interface{}, bool)`
 
-GetKeysOk returns a tuple with the Keys field if it's non-nil, zero value otherwise
+GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKeys
+### SetSettings
 
-`func (o *Setting) SetKeys(v map[string]interface{})`
+`func (o *Setting) SetSettings(v map[string]interface{})`
 
-SetKeys sets Keys field to given value.
+SetSettings sets Settings field to given value.
 
 
-### GetSensitiveKeys
+### GetSensitiveSettings
 
-`func (o *Setting) GetSensitiveKeys() map[string]interface{}`
+`func (o *Setting) GetSensitiveSettings() map[string]interface{}`
 
-GetSensitiveKeys returns the SensitiveKeys field if non-nil, zero value otherwise.
+GetSensitiveSettings returns the SensitiveSettings field if non-nil, zero value otherwise.
 
-### GetSensitiveKeysOk
+### GetSensitiveSettingsOk
 
-`func (o *Setting) GetSensitiveKeysOk() (*map[string]interface{}, bool)`
+`func (o *Setting) GetSensitiveSettingsOk() (*map[string]interface{}, bool)`
 
-GetSensitiveKeysOk returns a tuple with the SensitiveKeys field if it's non-nil, zero value otherwise
+GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSensitiveKeys
+### SetSensitiveSettings
 
-`func (o *Setting) SetSensitiveKeys(v map[string]interface{})`
+`func (o *Setting) SetSensitiveSettings(v map[string]interface{})`
 
-SetSensitiveKeys sets SensitiveKeys field to given value.
+SetSensitiveSettings sets SensitiveSettings field to given value.
 
 
 ### GetLinks

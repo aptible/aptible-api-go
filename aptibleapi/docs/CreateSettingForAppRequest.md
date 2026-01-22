@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Keys** | Pointer to **map[string]interface{}** | Mapping of non-sensitive key-value pairs | [optional] 
-**SensitiveKeys** | Pointer to **map[string]interface{}** | Mapping of sensitive key-value pairs | [optional] 
+**Settings** | Pointer to **map[string]interface{}** | Mapping of non-sensitive key-value pairs | [optional] 
+**SensitiveSettings** | Pointer to **map[string]interface{}** | Mapping of sensitive key-value pairs | [optional] 
 
 ## Methods
 
@@ -26,55 +26,55 @@ NewCreateSettingForAppRequestWithDefaults instantiates a new CreateSettingForApp
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetKeys
+### GetSettings
 
-`func (o *CreateSettingForAppRequest) GetKeys() map[string]interface{}`
+`func (o *CreateSettingForAppRequest) GetSettings() map[string]interface{}`
 
-GetKeys returns the Keys field if non-nil, zero value otherwise.
+GetSettings returns the Settings field if non-nil, zero value otherwise.
 
-### GetKeysOk
+### GetSettingsOk
 
-`func (o *CreateSettingForAppRequest) GetKeysOk() (*map[string]interface{}, bool)`
+`func (o *CreateSettingForAppRequest) GetSettingsOk() (*map[string]interface{}, bool)`
 
-GetKeysOk returns a tuple with the Keys field if it's non-nil, zero value otherwise
+GetSettingsOk returns a tuple with the Settings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKeys
+### SetSettings
 
-`func (o *CreateSettingForAppRequest) SetKeys(v map[string]interface{})`
+`func (o *CreateSettingForAppRequest) SetSettings(v map[string]interface{})`
 
-SetKeys sets Keys field to given value.
+SetSettings sets Settings field to given value.
 
-### HasKeys
+### HasSettings
 
-`func (o *CreateSettingForAppRequest) HasKeys() bool`
+`func (o *CreateSettingForAppRequest) HasSettings() bool`
 
-HasKeys returns a boolean if a field has been set.
+HasSettings returns a boolean if a field has been set.
 
-### GetSensitiveKeys
+### GetSensitiveSettings
 
-`func (o *CreateSettingForAppRequest) GetSensitiveKeys() map[string]interface{}`
+`func (o *CreateSettingForAppRequest) GetSensitiveSettings() map[string]interface{}`
 
-GetSensitiveKeys returns the SensitiveKeys field if non-nil, zero value otherwise.
+GetSensitiveSettings returns the SensitiveSettings field if non-nil, zero value otherwise.
 
-### GetSensitiveKeysOk
+### GetSensitiveSettingsOk
 
-`func (o *CreateSettingForAppRequest) GetSensitiveKeysOk() (*map[string]interface{}, bool)`
+`func (o *CreateSettingForAppRequest) GetSensitiveSettingsOk() (*map[string]interface{}, bool)`
 
-GetSensitiveKeysOk returns a tuple with the SensitiveKeys field if it's non-nil, zero value otherwise
+GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSensitiveKeys
+### SetSensitiveSettings
 
-`func (o *CreateSettingForAppRequest) SetSensitiveKeys(v map[string]interface{})`
+`func (o *CreateSettingForAppRequest) SetSensitiveSettings(v map[string]interface{})`
 
-SetSensitiveKeys sets SensitiveKeys field to given value.
+SetSensitiveSettings sets SensitiveSettings field to given value.
 
-### HasSensitiveKeys
+### HasSensitiveSettings
 
-`func (o *CreateSettingForAppRequest) HasSensitiveKeys() bool`
+`func (o *CreateSettingForAppRequest) HasSensitiveSettings() bool`
 
-HasSensitiveKeys returns a boolean if a field has been set.
+HasSensitiveSettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

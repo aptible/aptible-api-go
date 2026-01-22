@@ -9655,17 +9655,17 @@ components:
           type: integer
         _type:
           type: string
-        keys:
+        settings:
           type: object
-        sensitive_keys:
+        sensitive_settings:
           type: object
         _links:
           $ref: '#/components/schemas/configuration__links'
       required:
       - _type
       - id
-      - keys
-      - sensitive_keys
+      - sensitive_settings
+      - settings
     source:
       properties:
         id:
@@ -12357,10 +12357,10 @@ components:
       type: object
     CreateSettingForApp_request:
       properties:
-        keys:
+        settings:
           description: Mapping of non-sensitive key-value pairs
           type: object
-        sensitive_keys:
+        sensitive_settings:
           description: Mapping of sensitive key-value pairs
           type: object
       type: object
