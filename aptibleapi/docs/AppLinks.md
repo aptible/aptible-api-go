@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **CurrentDeployment** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Settings** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **CurrentSetting** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**AppExternalAwsRdsConnections** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
@@ -466,6 +467,31 @@ SetCurrentSetting sets CurrentSetting field to given value.
 `func (o *AppLinks) HasCurrentSetting() bool`
 
 HasCurrentSetting returns a boolean if a field has been set.
+
+### GetAppExternalAwsRdsConnections
+
+`func (o *AppLinks) GetAppExternalAwsRdsConnections() ListAccountsForStack200ResponseLinksStack`
+
+GetAppExternalAwsRdsConnections returns the AppExternalAwsRdsConnections field if non-nil, zero value otherwise.
+
+### GetAppExternalAwsRdsConnectionsOk
+
+`func (o *AppLinks) GetAppExternalAwsRdsConnectionsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetAppExternalAwsRdsConnectionsOk returns a tuple with the AppExternalAwsRdsConnections field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppExternalAwsRdsConnections
+
+`func (o *AppLinks) SetAppExternalAwsRdsConnections(v ListAccountsForStack200ResponseLinksStack)`
+
+SetAppExternalAwsRdsConnections sets AppExternalAwsRdsConnections field to given value.
+
+### HasAppExternalAwsRdsConnections
+
+`func (o *AppLinks) HasAppExternalAwsRdsConnections() bool`
+
+HasAppExternalAwsRdsConnections returns a boolean if a field has been set.
 
 ### GetSelf
 

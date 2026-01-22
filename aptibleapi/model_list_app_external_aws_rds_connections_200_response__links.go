@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the ListImagesForApp200ResponseLinks type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ListImagesForApp200ResponseLinks{}
+// checks if the ListAppExternalAwsRdsConnections200ResponseLinks type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ListAppExternalAwsRdsConnections200ResponseLinks{}
 
-// ListImagesForApp200ResponseLinks struct for ListImagesForApp200ResponseLinks
-type ListImagesForApp200ResponseLinks struct {
+// ListAppExternalAwsRdsConnections200ResponseLinks struct for ListAppExternalAwsRdsConnections200ResponseLinks
+type ListAppExternalAwsRdsConnections200ResponseLinks struct {
 	App *ListAccountsForStack200ResponseLinksStack `json:"app,omitempty"`
 	Next *ListAccountsForStack200ResponseLinksStack `json:"next,omitempty"`
 	Prev *ListAccountsForStack200ResponseLinksStack `json:"prev,omitempty"`
@@ -26,27 +26,27 @@ type ListImagesForApp200ResponseLinks struct {
 	AdditionalProperties map[string]interface{}
 }
 
-type _ListImagesForApp200ResponseLinks ListImagesForApp200ResponseLinks
+type _ListAppExternalAwsRdsConnections200ResponseLinks ListAppExternalAwsRdsConnections200ResponseLinks
 
-// NewListImagesForApp200ResponseLinks instantiates a new ListImagesForApp200ResponseLinks object
+// NewListAppExternalAwsRdsConnections200ResponseLinks instantiates a new ListAppExternalAwsRdsConnections200ResponseLinks object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListImagesForApp200ResponseLinks() *ListImagesForApp200ResponseLinks {
-	this := ListImagesForApp200ResponseLinks{}
+func NewListAppExternalAwsRdsConnections200ResponseLinks() *ListAppExternalAwsRdsConnections200ResponseLinks {
+	this := ListAppExternalAwsRdsConnections200ResponseLinks{}
 	return &this
 }
 
-// NewListImagesForApp200ResponseLinksWithDefaults instantiates a new ListImagesForApp200ResponseLinks object
+// NewListAppExternalAwsRdsConnections200ResponseLinksWithDefaults instantiates a new ListAppExternalAwsRdsConnections200ResponseLinks object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListImagesForApp200ResponseLinksWithDefaults() *ListImagesForApp200ResponseLinks {
-	this := ListImagesForApp200ResponseLinks{}
+func NewListAppExternalAwsRdsConnections200ResponseLinksWithDefaults() *ListAppExternalAwsRdsConnections200ResponseLinks {
+	this := ListAppExternalAwsRdsConnections200ResponseLinks{}
 	return &this
 }
 
 // GetApp returns the App field value if set, zero value otherwise.
-func (o *ListImagesForApp200ResponseLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetApp() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.App) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -56,7 +56,7 @@ func (o *ListImagesForApp200ResponseLinks) GetApp() ListAccountsForStack200Respo
 
 // GetAppOk returns a tuple with the App field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImagesForApp200ResponseLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetAppOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.App) {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *ListImagesForApp200ResponseLinks) GetAppOk() (*ListAccountsForStack200R
 }
 
 // HasApp returns a boolean if a field has been set.
-func (o *ListImagesForApp200ResponseLinks) HasApp() bool {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) HasApp() bool {
 	if o != nil && !IsNil(o.App) {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *ListImagesForApp200ResponseLinks) HasApp() bool {
 }
 
 // SetApp gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the App field.
-func (o *ListImagesForApp200ResponseLinks) SetApp(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) SetApp(v ListAccountsForStack200ResponseLinksStack) {
 	o.App = &v
 }
 
 // GetNext returns the Next field value if set, zero value otherwise.
-func (o *ListImagesForApp200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetNext() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Next) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -88,7 +88,7 @@ func (o *ListImagesForApp200ResponseLinks) GetNext() ListAccountsForStack200Resp
 
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImagesForApp200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetNextOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *ListImagesForApp200ResponseLinks) GetNextOk() (*ListAccountsForStack200
 }
 
 // HasNext returns a boolean if a field has been set.
-func (o *ListImagesForApp200ResponseLinks) HasNext() bool {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) HasNext() bool {
 	if o != nil && !IsNil(o.Next) {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *ListImagesForApp200ResponseLinks) HasNext() bool {
 }
 
 // SetNext gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Next field.
-func (o *ListImagesForApp200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) SetNext(v ListAccountsForStack200ResponseLinksStack) {
 	o.Next = &v
 }
 
 // GetPrev returns the Prev field value if set, zero value otherwise.
-func (o *ListImagesForApp200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetPrev() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Prev) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -120,7 +120,7 @@ func (o *ListImagesForApp200ResponseLinks) GetPrev() ListAccountsForStack200Resp
 
 // GetPrevOk returns a tuple with the Prev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImagesForApp200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetPrevOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Prev) {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *ListImagesForApp200ResponseLinks) GetPrevOk() (*ListAccountsForStack200
 }
 
 // HasPrev returns a boolean if a field has been set.
-func (o *ListImagesForApp200ResponseLinks) HasPrev() bool {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) HasPrev() bool {
 	if o != nil && !IsNil(o.Prev) {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *ListImagesForApp200ResponseLinks) HasPrev() bool {
 }
 
 // SetPrev gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Prev field.
-func (o *ListImagesForApp200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) SetPrev(v ListAccountsForStack200ResponseLinksStack) {
 	o.Prev = &v
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *ListImagesForApp200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetSelf() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Self) {
 		var ret ListAccountsForStack200ResponseLinksStack
 		return ret
@@ -152,7 +152,7 @@ func (o *ListImagesForApp200ResponseLinks) GetSelf() ListAccountsForStack200Resp
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListImagesForApp200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) GetSelfOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
 	if o == nil || IsNil(o.Self) {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *ListImagesForApp200ResponseLinks) GetSelfOk() (*ListAccountsForStack200
 }
 
 // HasSelf returns a boolean if a field has been set.
-func (o *ListImagesForApp200ResponseLinks) HasSelf() bool {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) HasSelf() bool {
 	if o != nil && !IsNil(o.Self) {
 		return true
 	}
@@ -169,11 +169,11 @@ func (o *ListImagesForApp200ResponseLinks) HasSelf() bool {
 }
 
 // SetSelf gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the Self field.
-func (o *ListImagesForApp200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) SetSelf(v ListAccountsForStack200ResponseLinksStack) {
 	o.Self = &v
 }
 
-func (o ListImagesForApp200ResponseLinks) MarshalJSON() ([]byte, error) {
+func (o ListAppExternalAwsRdsConnections200ResponseLinks) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -181,7 +181,7 @@ func (o ListImagesForApp200ResponseLinks) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ListImagesForApp200ResponseLinks) ToMap() (map[string]interface{}, error) {
+func (o ListAppExternalAwsRdsConnections200ResponseLinks) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.App) {
 		toSerialize["app"] = o.App
@@ -203,16 +203,16 @@ func (o ListImagesForApp200ResponseLinks) ToMap() (map[string]interface{}, error
 	return toSerialize, nil
 }
 
-func (o *ListImagesForApp200ResponseLinks) UnmarshalJSON(data []byte) (err error) {
-	varListImagesForApp200ResponseLinks := _ListImagesForApp200ResponseLinks{}
+func (o *ListAppExternalAwsRdsConnections200ResponseLinks) UnmarshalJSON(data []byte) (err error) {
+	varListAppExternalAwsRdsConnections200ResponseLinks := _ListAppExternalAwsRdsConnections200ResponseLinks{}
 
-	err = json.Unmarshal(data, &varListImagesForApp200ResponseLinks)
+	err = json.Unmarshal(data, &varListAppExternalAwsRdsConnections200ResponseLinks)
 
 	if err != nil {
 		return err
 	}
 
-	*o = ListImagesForApp200ResponseLinks(varListImagesForApp200ResponseLinks)
+	*o = ListAppExternalAwsRdsConnections200ResponseLinks(varListAppExternalAwsRdsConnections200ResponseLinks)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -227,38 +227,38 @@ func (o *ListImagesForApp200ResponseLinks) UnmarshalJSON(data []byte) (err error
 	return err
 }
 
-type NullableListImagesForApp200ResponseLinks struct {
-	value *ListImagesForApp200ResponseLinks
+type NullableListAppExternalAwsRdsConnections200ResponseLinks struct {
+	value *ListAppExternalAwsRdsConnections200ResponseLinks
 	isSet bool
 }
 
-func (v NullableListImagesForApp200ResponseLinks) Get() *ListImagesForApp200ResponseLinks {
+func (v NullableListAppExternalAwsRdsConnections200ResponseLinks) Get() *ListAppExternalAwsRdsConnections200ResponseLinks {
 	return v.value
 }
 
-func (v *NullableListImagesForApp200ResponseLinks) Set(val *ListImagesForApp200ResponseLinks) {
+func (v *NullableListAppExternalAwsRdsConnections200ResponseLinks) Set(val *ListAppExternalAwsRdsConnections200ResponseLinks) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableListImagesForApp200ResponseLinks) IsSet() bool {
+func (v NullableListAppExternalAwsRdsConnections200ResponseLinks) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableListImagesForApp200ResponseLinks) Unset() {
+func (v *NullableListAppExternalAwsRdsConnections200ResponseLinks) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableListImagesForApp200ResponseLinks(val *ListImagesForApp200ResponseLinks) *NullableListImagesForApp200ResponseLinks {
-	return &NullableListImagesForApp200ResponseLinks{value: val, isSet: true}
+func NewNullableListAppExternalAwsRdsConnections200ResponseLinks(val *ListAppExternalAwsRdsConnections200ResponseLinks) *NullableListAppExternalAwsRdsConnections200ResponseLinks {
+	return &NullableListAppExternalAwsRdsConnections200ResponseLinks{value: val, isSet: true}
 }
 
-func (v NullableListImagesForApp200ResponseLinks) MarshalJSON() ([]byte, error) {
+func (v NullableListAppExternalAwsRdsConnections200ResponseLinks) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableListImagesForApp200ResponseLinks) UnmarshalJSON(src []byte) error {
+func (v *NullableListAppExternalAwsRdsConnections200ResponseLinks) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Organization** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**ExternalAwsResources** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**AppExternalAwsRdsConnections** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +52,56 @@ SetOrganization sets Organization field to given value.
 `func (o *ExternalAwsAccountLinks) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
+
+### GetExternalAwsResources
+
+`func (o *ExternalAwsAccountLinks) GetExternalAwsResources() ListAccountsForStack200ResponseLinksStack`
+
+GetExternalAwsResources returns the ExternalAwsResources field if non-nil, zero value otherwise.
+
+### GetExternalAwsResourcesOk
+
+`func (o *ExternalAwsAccountLinks) GetExternalAwsResourcesOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetExternalAwsResourcesOk returns a tuple with the ExternalAwsResources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalAwsResources
+
+`func (o *ExternalAwsAccountLinks) SetExternalAwsResources(v ListAccountsForStack200ResponseLinksStack)`
+
+SetExternalAwsResources sets ExternalAwsResources field to given value.
+
+### HasExternalAwsResources
+
+`func (o *ExternalAwsAccountLinks) HasExternalAwsResources() bool`
+
+HasExternalAwsResources returns a boolean if a field has been set.
+
+### GetAppExternalAwsRdsConnections
+
+`func (o *ExternalAwsAccountLinks) GetAppExternalAwsRdsConnections() ListAccountsForStack200ResponseLinksStack`
+
+GetAppExternalAwsRdsConnections returns the AppExternalAwsRdsConnections field if non-nil, zero value otherwise.
+
+### GetAppExternalAwsRdsConnectionsOk
+
+`func (o *ExternalAwsAccountLinks) GetAppExternalAwsRdsConnectionsOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetAppExternalAwsRdsConnectionsOk returns a tuple with the AppExternalAwsRdsConnections field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppExternalAwsRdsConnections
+
+`func (o *ExternalAwsAccountLinks) SetAppExternalAwsRdsConnections(v ListAccountsForStack200ResponseLinksStack)`
+
+SetAppExternalAwsRdsConnections sets AppExternalAwsRdsConnections field to given value.
+
+### HasAppExternalAwsRdsConnections
+
+`func (o *ExternalAwsAccountLinks) HasAppExternalAwsRdsConnections() bool`
+
+HasAppExternalAwsRdsConnections returns a boolean if a field has been set.
 
 ### GetSelf
 

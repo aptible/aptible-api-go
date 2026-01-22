@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListImagesForApp200ResponseLinks**](ListImagesForApp200ResponseLinks.md) |  | 
+**Links** | [**ListAppExternalAwsRdsConnections200ResponseLinks**](ListAppExternalAwsRdsConnections200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListImagesForApp200Response
 
-`func NewListImagesForApp200Response(embedded ListImagesForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListImagesForApp200ResponseLinks, ) *ListImagesForApp200Response`
+`func NewListImagesForApp200Response(embedded ListImagesForApp200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListAppExternalAwsRdsConnections200ResponseLinks, ) *ListImagesForApp200Response`
 
 NewListImagesForApp200Response instantiates a new ListImagesForApp200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListImagesForApp200Response) GetLinks() ListImagesForApp200ResponseLinks`
+`func (o *ListImagesForApp200Response) GetLinks() ListAppExternalAwsRdsConnections200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListImagesForApp200Response) GetLinksOk() (*ListImagesForApp200ResponseLinks, bool)`
+`func (o *ListImagesForApp200Response) GetLinksOk() (*ListAppExternalAwsRdsConnections200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListImagesForApp200Response) SetLinks(v ListImagesForApp200ResponseLinks)`
+`func (o *ListImagesForApp200Response) SetLinks(v ListAppExternalAwsRdsConnections200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

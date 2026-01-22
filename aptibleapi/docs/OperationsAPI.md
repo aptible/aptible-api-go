@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**CreateOperationForDatabaseCredential**](OperationsAPI.md#CreateOperationForDatabaseCredential) | **Post** /database_credentials/{database_credential_id}/operations | create operation
 [**CreateOperationForDiskAttachment**](OperationsAPI.md#CreateOperationForDiskAttachment) | **Post** /disk_attachments/{disk_attachment_id}/operations | create operation
 [**CreateOperationForEphemeralSession**](OperationsAPI.md#CreateOperationForEphemeralSession) | **Post** /ephemeral_sessions/{ephemeral_session_id}/operations | create operation
+[**CreateOperationForExternalAwsDatabaseCredential**](OperationsAPI.md#CreateOperationForExternalAwsDatabaseCredential) | **Post** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | create operation
 [**CreateOperationForImage**](OperationsAPI.md#CreateOperationForImage) | **Post** /images/{image_id}/operations | create operation
 [**CreateOperationForLogDrain**](OperationsAPI.md#CreateOperationForLogDrain) | **Post** /log_drains/{log_drain_id}/operations | create operation
 [**CreateOperationForMetricDrain**](OperationsAPI.md#CreateOperationForMetricDrain) | **Post** /metric_drains/{metric_drain_id}/operations | create operation
@@ -24,6 +25,7 @@ Method | HTTP request | Description
 [**ListOperationsForDatabaseCredential**](OperationsAPI.md#ListOperationsForDatabaseCredential) | **Get** /database_credentials/{database_credential_id}/operations | list operations
 [**ListOperationsForDiskAttachment**](OperationsAPI.md#ListOperationsForDiskAttachment) | **Get** /disk_attachments/{disk_attachment_id}/operations | list operations
 [**ListOperationsForEphemeralSession**](OperationsAPI.md#ListOperationsForEphemeralSession) | **Get** /ephemeral_sessions/{ephemeral_session_id}/operations | list operations
+[**ListOperationsForExternalAwsDatabaseCredential**](OperationsAPI.md#ListOperationsForExternalAwsDatabaseCredential) | **Get** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | list operations
 [**ListOperationsForImage**](OperationsAPI.md#ListOperationsForImage) | **Get** /images/{image_id}/operations | list operations
 [**ListOperationsForLogDrain**](OperationsAPI.md#ListOperationsForLogDrain) | **Get** /log_drains/{log_drain_id}/operations | list operations
 [**ListOperationsForMetricDrain**](OperationsAPI.md#ListOperationsForMetricDrain) | **Get** /metric_drains/{metric_drain_id}/operations | list operations
@@ -440,6 +442,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Operation**](Operation.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateOperationForExternalAwsDatabaseCredential
+
+> CreateOperationForExternalAwsDatabaseCredential(ctx, externalAwsDatabaseCredentialId).CreateOperationRequest1(createOperationRequest1).Execute()
+
+create operation
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	externalAwsDatabaseCredentialId := int32(56) // int32 | external_aws_database_credential_id
+	createOperationRequest1 := *openapiclient.NewCreateOperationRequest1("Type_example") // CreateOperationRequest1 |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OperationsAPI.CreateOperationForExternalAwsDatabaseCredential(context.Background(), externalAwsDatabaseCredentialId).CreateOperationRequest1(createOperationRequest1).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForExternalAwsDatabaseCredential``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**externalAwsDatabaseCredentialId** | **int32** | external_aws_database_credential_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateOperationForExternalAwsDatabaseCredentialRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **createOperationRequest1** | [**CreateOperationRequest1**](CreateOperationRequest1.md) |  | 
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 
@@ -1418,6 +1488,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListOperationsForExternalAwsDatabaseCredential
+
+> ListOperationsForExternalAwsDatabaseCredential(ctx, externalAwsDatabaseCredentialId).Page(page).Execute()
+
+list operations
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	externalAwsDatabaseCredentialId := int32(56) // int32 | external_aws_database_credential_id
+	page := int32(56) // int32 | current page of results for pagination (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.OperationsAPI.ListOperationsForExternalAwsDatabaseCredential(context.Background(), externalAwsDatabaseCredentialId).Page(page).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForExternalAwsDatabaseCredential``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**externalAwsDatabaseCredentialId** | **int32** | external_aws_database_credential_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListOperationsForExternalAwsDatabaseCredentialRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **page** | **int32** | current page of results for pagination | 
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 

@@ -88,9 +88,15 @@ Class | Method | HTTP request | Description
 *ActivityReportsAPI* | [**GetActivityReport**](docs/ActivityReportsAPI.md#getactivityreport) | **Get** /activity_reports/{id} | show activity_report
 *ActivityReportsAPI* | [**GetActivityReportDownload**](docs/ActivityReportsAPI.md#getactivityreportdownload) | **Get** /activity_reports/{activity_report_id}/download | download activity_report
 *ActivityReportsAPI* | [**ListActivityReportsForAccount**](docs/ActivityReportsAPI.md#listactivityreportsforaccount) | **Get** /accounts/{account_id}/activity_reports | list activity_reports
+*AppExternalAwsRdsConnectionsAPI* | [**DeleteAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#deleteappexternalawsrdsconnection) | **Delete** /app_external_aws_rds_connections/{id} | delete app_external_aws_rds_connection
+*AppExternalAwsRdsConnectionsAPI* | [**GetAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#getappexternalawsrdsconnection) | **Get** /app_external_aws_rds_connections/{id} | show app_external_aws_rds_connection
+*AppExternalAwsRdsConnectionsAPI* | [**PatchAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#patchappexternalawsrdsconnection) | **Patch** /app_external_aws_rds_connections/{id} | update app_external_aws_rds_connection
+*AppExternalAwsRdsConnectionsAPI* | [**UpdateAppExternalAwsRdsConnection**](docs/AppExternalAwsRdsConnectionsAPI.md#updateappexternalawsrdsconnection) | **Put** /app_external_aws_rds_connections/{id} | update app_external_aws_rds_connection
 *AppsAPI* | [**CreateApp**](docs/AppsAPI.md#createapp) | **Post** /accounts/{account_id}/apps | create app
+*AppsAPI* | [**CreateAppExternalAwsRdsConnection**](docs/AppsAPI.md#createappexternalawsrdsconnection) | **Post** /apps/{id}/app_external_aws_rds_connections | create external aws rds connection
 *AppsAPI* | [**DeleteApp**](docs/AppsAPI.md#deleteapp) | **Delete** /apps/{id} | delete app
 *AppsAPI* | [**GetApp**](docs/AppsAPI.md#getapp) | **Get** /apps/{id} | show app
+*AppsAPI* | [**ListAppExternalAwsRdsConnections**](docs/AppsAPI.md#listappexternalawsrdsconnections) | **Get** /apps/{id}/app_external_aws_rds_connections | list external aws rds connections
 *AppsAPI* | [**ListApps**](docs/AppsAPI.md#listapps) | **Get** /apps | list apps
 *AppsAPI* | [**ListAppsForAccount**](docs/AppsAPI.md#listappsforaccount) | **Get** /accounts/{account_id}/apps | list apps
 *AppsAPI* | [**ListAppsForCertificate**](docs/AppsAPI.md#listappsforcertificate) | **Get** /certificates/{certificate_id}/apps | list apps
@@ -186,6 +192,24 @@ Class | Method | HTTP request | Description
 *EphemeralSessionsAPI* | [**GetEphemeralSession**](docs/EphemeralSessionsAPI.md#getephemeralsession) | **Get** /ephemeral_sessions/{id} | show ephemeral_session
 *EphemeralSessionsAPI* | [**ListEphemeralSessionsForApp**](docs/EphemeralSessionsAPI.md#listephemeralsessionsforapp) | **Get** /apps/{app_id}/ephemeral_sessions | list ephemeral_sessions
 *EphemeralSessionsAPI* | [**ListEphemeralSessionsForOperation**](docs/EphemeralSessionsAPI.md#listephemeralsessionsforoperation) | **Get** /operations/{operation_id}/ephemeral_sessions | list ephemeral_sessions
+*ExternalAwsAccountsAPI* | [**CreateExternalAwsAccount**](docs/ExternalAwsAccountsAPI.md#createexternalawsaccount) | **Post** /external_aws_accounts | create external_aws_account
+*ExternalAwsAccountsAPI* | [**CreateExternalAwsResource**](docs/ExternalAwsAccountsAPI.md#createexternalawsresource) | **Post** /external_aws_accounts/{external_aws_account_id}/external_aws_resources | create external_aws_resource
+*ExternalAwsAccountsAPI* | [**DeleteExternalAwsAccount**](docs/ExternalAwsAccountsAPI.md#deleteexternalawsaccount) | **Delete** /external_aws_accounts/{id} | delete external_aws_account
+*ExternalAwsAccountsAPI* | [**GetExternalAwsAccount**](docs/ExternalAwsAccountsAPI.md#getexternalawsaccount) | **Get** /external_aws_accounts/{id} | show external_aws_account
+*ExternalAwsAccountsAPI* | [**ListAppDatabaseConnectionsForExternalAwsAccount**](docs/ExternalAwsAccountsAPI.md#listappdatabaseconnectionsforexternalawsaccount) | **Get** /external_aws_accounts/{external_aws_account_id}/app_external_aws_rds_connections | list app_external_aws_rds_connections for external_aws_account
+*ExternalAwsAccountsAPI* | [**ListExternalAwsAccounts**](docs/ExternalAwsAccountsAPI.md#listexternalawsaccounts) | **Get** /external_aws_accounts | list external_aws_accounts
+*ExternalAwsAccountsAPI* | [**ListExternalAwsResourcesForExternalAwsAccount**](docs/ExternalAwsAccountsAPI.md#listexternalawsresourcesforexternalawsaccount) | **Get** /external_aws_accounts/{external_aws_account_id}/external_aws_resources | list external_aws_resources
+*ExternalAwsAccountsAPI* | [**PatchExternalAwsAccount**](docs/ExternalAwsAccountsAPI.md#patchexternalawsaccount) | **Patch** /external_aws_accounts/{id} | update external_aws_account
+*ExternalAwsAccountsAPI* | [**UpdateExternalAwsAccount**](docs/ExternalAwsAccountsAPI.md#updateexternalawsaccount) | **Put** /external_aws_accounts/{id} | update external_aws_account
+*ExternalAwsDatabaseCredentialsAPI* | [**CreateExternalAwsDatabaseCredential**](docs/ExternalAwsDatabaseCredentialsAPI.md#createexternalawsdatabasecredential) | **Post** /external_aws_resources/{external_aws_resource_id}/external_aws_database_credentials | create external aws database credential
+*ExternalAwsDatabaseCredentialsAPI* | [**GetExternalAwsDatabaseCredential**](docs/ExternalAwsDatabaseCredentialsAPI.md#getexternalawsdatabasecredential) | **Get** /external_aws_database_credentials/{id} | show external aws database credential
+*ExternalAwsResourcesAPI* | [**DeleteExternalAwsResource**](docs/ExternalAwsResourcesAPI.md#deleteexternalawsresource) | **Delete** /external_aws_resources/{id} | delete external_aws_resource
+*ExternalAwsResourcesAPI* | [**GetExternalAwsResource**](docs/ExternalAwsResourcesAPI.md#getexternalawsresource) | **Get** /external_aws_resources/{id} | show external_aws_resource
+*ExternalAwsResourcesAPI* | [**ListAppDatabaseConnectionsForExternalAwsResource**](docs/ExternalAwsResourcesAPI.md#listappdatabaseconnectionsforexternalawsresource) | **Get** /external_aws_resources/{external_aws_resource_id}/app_external_aws_rds_connections | list app database connections for external aws resource
+*ExternalAwsResourcesAPI* | [**ListExternalAwsDatabaseCredentialsForExternalAwsResource**](docs/ExternalAwsResourcesAPI.md#listexternalawsdatabasecredentialsforexternalawsresource) | **Get** /external_aws_resources/{external_aws_resource_id}/external_aws_database_credentials | list external aws database credentials for resource
+*ExternalAwsResourcesAPI* | [**ListExternalAwsResources**](docs/ExternalAwsResourcesAPI.md#listexternalawsresources) | **Get** /external_aws_resources | list external_aws_resources
+*ExternalAwsResourcesAPI* | [**PatchExternalAwsResource**](docs/ExternalAwsResourcesAPI.md#patchexternalawsresource) | **Patch** /external_aws_resources/{id} | update external_aws_resource
+*ExternalAwsResourcesAPI* | [**UpdateExternalAwsResource**](docs/ExternalAwsResourcesAPI.md#updateexternalawsresource) | **Put** /external_aws_resources/{id} | update external_aws_resource
 *ImagesAPI* | [**GetDatabaseImage**](docs/ImagesAPI.md#getdatabaseimage) | **Get** /database_images/{id} | show database_image
 *ImagesAPI* | [**GetImage**](docs/ImagesAPI.md#getimage) | **Get** /images/{id} | show image
 *ImagesAPI* | [**ListDatabaseImages**](docs/ImagesAPI.md#listdatabaseimages) | **Get** /database_images | list database_images
@@ -214,6 +238,7 @@ Class | Method | HTTP request | Description
 *OperationsAPI* | [**CreateOperationForDatabaseCredential**](docs/OperationsAPI.md#createoperationfordatabasecredential) | **Post** /database_credentials/{database_credential_id}/operations | create operation
 *OperationsAPI* | [**CreateOperationForDiskAttachment**](docs/OperationsAPI.md#createoperationfordiskattachment) | **Post** /disk_attachments/{disk_attachment_id}/operations | create operation
 *OperationsAPI* | [**CreateOperationForEphemeralSession**](docs/OperationsAPI.md#createoperationforephemeralsession) | **Post** /ephemeral_sessions/{ephemeral_session_id}/operations | create operation
+*OperationsAPI* | [**CreateOperationForExternalAwsDatabaseCredential**](docs/OperationsAPI.md#createoperationforexternalawsdatabasecredential) | **Post** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | create operation
 *OperationsAPI* | [**CreateOperationForImage**](docs/OperationsAPI.md#createoperationforimage) | **Post** /images/{image_id}/operations | create operation
 *OperationsAPI* | [**CreateOperationForLogDrain**](docs/OperationsAPI.md#createoperationforlogdrain) | **Post** /log_drains/{log_drain_id}/operations | create operation
 *OperationsAPI* | [**CreateOperationForMetricDrain**](docs/OperationsAPI.md#createoperationformetricdrain) | **Post** /metric_drains/{metric_drain_id}/operations | create operation
@@ -228,6 +253,7 @@ Class | Method | HTTP request | Description
 *OperationsAPI* | [**ListOperationsForDatabaseCredential**](docs/OperationsAPI.md#listoperationsfordatabasecredential) | **Get** /database_credentials/{database_credential_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForDiskAttachment**](docs/OperationsAPI.md#listoperationsfordiskattachment) | **Get** /disk_attachments/{disk_attachment_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForEphemeralSession**](docs/OperationsAPI.md#listoperationsforephemeralsession) | **Get** /ephemeral_sessions/{ephemeral_session_id}/operations | list operations
+*OperationsAPI* | [**ListOperationsForExternalAwsDatabaseCredential**](docs/OperationsAPI.md#listoperationsforexternalawsdatabasecredential) | **Get** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForImage**](docs/OperationsAPI.md#listoperationsforimage) | **Get** /images/{image_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForLogDrain**](docs/OperationsAPI.md#listoperationsforlogdrain) | **Get** /log_drains/{log_drain_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForMetricDrain**](docs/OperationsAPI.md#listoperationsformetricdrain) | **Get** /metric_drains/{metric_drain_id}/operations | list operations
@@ -300,6 +326,8 @@ Class | Method | HTTP request | Description
  - [ActivityReportLinks](docs/ActivityReportLinks.md)
  - [App](docs/App.md)
  - [AppEmbedded](docs/AppEmbedded.md)
+ - [AppExternalAwsRdsConnection](docs/AppExternalAwsRdsConnection.md)
+ - [AppExternalAwsRdsConnectionLinks](docs/AppExternalAwsRdsConnectionLinks.md)
  - [AppLinks](docs/AppLinks.md)
  - [Backup](docs/Backup.md)
  - [BackupEmbedded](docs/BackupEmbedded.md)
@@ -316,6 +344,7 @@ Class | Method | HTTP request | Description
  - [Container](docs/Container.md)
  - [ContainerLinks](docs/ContainerLinks.md)
  - [CreateAccountRequest](docs/CreateAccountRequest.md)
+ - [CreateAppExternalAwsRdsConnectionRequest](docs/CreateAppExternalAwsRdsConnectionRequest.md)
  - [CreateAppRequest](docs/CreateAppRequest.md)
  - [CreateBackupRetentionPolicyRequest](docs/CreateBackupRetentionPolicyRequest.md)
  - [CreateCertificateRequest](docs/CreateCertificateRequest.md)
@@ -325,6 +354,9 @@ Class | Method | HTTP request | Description
  - [CreateDashboardRequest](docs/CreateDashboardRequest.md)
  - [CreateDatabaseRequest](docs/CreateDatabaseRequest.md)
  - [CreateDatadogIntegrationRequest](docs/CreateDatadogIntegrationRequest.md)
+ - [CreateExternalAwsAccountRequest](docs/CreateExternalAwsAccountRequest.md)
+ - [CreateExternalAwsDatabaseCredentialRequest](docs/CreateExternalAwsDatabaseCredentialRequest.md)
+ - [CreateExternalAwsResourceRequest](docs/CreateExternalAwsResourceRequest.md)
  - [CreateLlmIntegrationRequest](docs/CreateLlmIntegrationRequest.md)
  - [CreateLogDrainRequest](docs/CreateLogDrainRequest.md)
  - [CreateMetricDrainRequest](docs/CreateMetricDrainRequest.md)
@@ -333,6 +365,7 @@ Class | Method | HTTP request | Description
  - [CreateObservationForDashboardForAppRequest](docs/CreateObservationForDashboardForAppRequest.md)
  - [CreateObservationForDashboardForContainerRequest](docs/CreateObservationForDashboardForContainerRequest.md)
  - [CreateOperationRequest](docs/CreateOperationRequest.md)
+ - [CreateOperationRequest1](docs/CreateOperationRequest1.md)
  - [CreatePermissionRequest](docs/CreatePermissionRequest.md)
  - [CreateServiceSizingPolicyRequest](docs/CreateServiceSizingPolicyRequest.md)
  - [CreateSettingForAppRequest](docs/CreateSettingForAppRequest.md)
@@ -360,6 +393,10 @@ Class | Method | HTTP request | Description
  - [EphemeralSessionLinks](docs/EphemeralSessionLinks.md)
  - [ExternalAwsAccount](docs/ExternalAwsAccount.md)
  - [ExternalAwsAccountLinks](docs/ExternalAwsAccountLinks.md)
+ - [ExternalAwsDatabaseCredential](docs/ExternalAwsDatabaseCredential.md)
+ - [ExternalAwsDatabaseCredentialLinks](docs/ExternalAwsDatabaseCredentialLinks.md)
+ - [ExternalAwsResource](docs/ExternalAwsResource.md)
+ - [ExternalAwsResourceLinks](docs/ExternalAwsResourceLinks.md)
  - [GetRoot200Response](docs/GetRoot200Response.md)
  - [GetRoot200ResponseLinks](docs/GetRoot200ResponseLinks.md)
  - [Image](docs/Image.md)
@@ -375,6 +412,10 @@ Class | Method | HTTP request | Description
  - [ListActivityReportsForAccount200Response](docs/ListActivityReportsForAccount200Response.md)
  - [ListActivityReportsForAccount200ResponseEmbedded](docs/ListActivityReportsForAccount200ResponseEmbedded.md)
  - [ListActivityReportsForAccount200ResponseLinks](docs/ListActivityReportsForAccount200ResponseLinks.md)
+ - [ListAppDatabaseConnectionsForExternalAwsAccount200Response](docs/ListAppDatabaseConnectionsForExternalAwsAccount200Response.md)
+ - [ListAppExternalAwsRdsConnections200Response](docs/ListAppExternalAwsRdsConnections200Response.md)
+ - [ListAppExternalAwsRdsConnections200ResponseEmbedded](docs/ListAppExternalAwsRdsConnections200ResponseEmbedded.md)
+ - [ListAppExternalAwsRdsConnections200ResponseLinks](docs/ListAppExternalAwsRdsConnections200ResponseLinks.md)
  - [ListAppsForAccount200Response](docs/ListAppsForAccount200Response.md)
  - [ListAppsForAccount200ResponseEmbedded](docs/ListAppsForAccount200ResponseEmbedded.md)
  - [ListAppsForSource200Response](docs/ListAppsForSource200Response.md)
@@ -424,9 +465,17 @@ Class | Method | HTTP request | Description
  - [ListEphemeralSessionsForApp200Response](docs/ListEphemeralSessionsForApp200Response.md)
  - [ListEphemeralSessionsForApp200ResponseEmbedded](docs/ListEphemeralSessionsForApp200ResponseEmbedded.md)
  - [ListEphemeralSessionsForApp200ResponseLinks](docs/ListEphemeralSessionsForApp200ResponseLinks.md)
+ - [ListExternalAwsAccounts200Response](docs/ListExternalAwsAccounts200Response.md)
+ - [ListExternalAwsAccounts200ResponseEmbedded](docs/ListExternalAwsAccounts200ResponseEmbedded.md)
+ - [ListExternalAwsDatabaseCredentialsForExternalAwsResource200Response](docs/ListExternalAwsDatabaseCredentialsForExternalAwsResource200Response.md)
+ - [ListExternalAwsDatabaseCredentialsForExternalAwsResource200ResponseEmbedded](docs/ListExternalAwsDatabaseCredentialsForExternalAwsResource200ResponseEmbedded.md)
+ - [ListExternalAwsDatabaseCredentialsForExternalAwsResource200ResponseLinks](docs/ListExternalAwsDatabaseCredentialsForExternalAwsResource200ResponseLinks.md)
+ - [ListExternalAwsResources200Response](docs/ListExternalAwsResources200Response.md)
+ - [ListExternalAwsResourcesForExternalAwsAccount200Response](docs/ListExternalAwsResourcesForExternalAwsAccount200Response.md)
+ - [ListExternalAwsResourcesForExternalAwsAccount200ResponseEmbedded](docs/ListExternalAwsResourcesForExternalAwsAccount200ResponseEmbedded.md)
+ - [ListExternalAwsResourcesForExternalAwsAccount200ResponseLinks](docs/ListExternalAwsResourcesForExternalAwsAccount200ResponseLinks.md)
  - [ListImagesForApp200Response](docs/ListImagesForApp200Response.md)
  - [ListImagesForApp200ResponseEmbedded](docs/ListImagesForApp200ResponseEmbedded.md)
- - [ListImagesForApp200ResponseLinks](docs/ListImagesForApp200ResponseLinks.md)
  - [ListIntrustionDetectionReportsForStack200Response](docs/ListIntrustionDetectionReportsForStack200Response.md)
  - [ListIntrustionDetectionReportsForStack200ResponseEmbedded](docs/ListIntrustionDetectionReportsForStack200ResponseEmbedded.md)
  - [ListLlmIntegrations200Response](docs/ListLlmIntegrations200Response.md)
@@ -511,10 +560,13 @@ Class | Method | HTTP request | Description
  - [Stack](docs/Stack.md)
  - [StackLinks](docs/StackLinks.md)
  - [UpdateAccountRequest](docs/UpdateAccountRequest.md)
+ - [UpdateAppExternalAwsRdsConnectionRequest](docs/UpdateAppExternalAwsRdsConnectionRequest.md)
  - [UpdateAppRequest](docs/UpdateAppRequest.md)
  - [UpdateCertificateRequest](docs/UpdateCertificateRequest.md)
  - [UpdateDashboardRequest](docs/UpdateDashboardRequest.md)
  - [UpdateDatabaseRequest](docs/UpdateDatabaseRequest.md)
+ - [UpdateExternalAwsAccountRequest](docs/UpdateExternalAwsAccountRequest.md)
+ - [UpdateExternalAwsResourceRequest](docs/UpdateExternalAwsResourceRequest.md)
  - [UpdateLlmIntegrationRequest](docs/UpdateLlmIntegrationRequest.md)
  - [UpdateLogDrainRequest](docs/UpdateLogDrainRequest.md)
  - [UpdateMetricRequest](docs/UpdateMetricRequest.md)

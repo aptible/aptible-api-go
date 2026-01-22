@@ -53,6 +53,8 @@ type APIClient struct {
 
 	ActivityReportsAPI *ActivityReportsAPIService
 
+	AppExternalAwsRdsConnectionsAPI *AppExternalAwsRdsConnectionsAPIService
+
 	AppsAPI *AppsAPIService
 
 	BackupRetentionPoliciesAPI *BackupRetentionPoliciesAPIService
@@ -86,6 +88,12 @@ type APIClient struct {
 	EphemeralContainersAPI *EphemeralContainersAPIService
 
 	EphemeralSessionsAPI *EphemeralSessionsAPIService
+
+	ExternalAwsAccountsAPI *ExternalAwsAccountsAPIService
+
+	ExternalAwsDatabaseCredentialsAPI *ExternalAwsDatabaseCredentialsAPIService
+
+	ExternalAwsResourcesAPI *ExternalAwsResourcesAPIService
 
 	ImagesAPI *ImagesAPIService
 
@@ -144,6 +152,7 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	// API Services
 	c.AccountsAPI = (*AccountsAPIService)(&c.common)
 	c.ActivityReportsAPI = (*ActivityReportsAPIService)(&c.common)
+	c.AppExternalAwsRdsConnectionsAPI = (*AppExternalAwsRdsConnectionsAPIService)(&c.common)
 	c.AppsAPI = (*AppsAPIService)(&c.common)
 	c.BackupRetentionPoliciesAPI = (*BackupRetentionPoliciesAPIService)(&c.common)
 	c.BackupsAPI = (*BackupsAPIService)(&c.common)
@@ -161,6 +170,9 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.DisksAPI = (*DisksAPIService)(&c.common)
 	c.EphemeralContainersAPI = (*EphemeralContainersAPIService)(&c.common)
 	c.EphemeralSessionsAPI = (*EphemeralSessionsAPIService)(&c.common)
+	c.ExternalAwsAccountsAPI = (*ExternalAwsAccountsAPIService)(&c.common)
+	c.ExternalAwsDatabaseCredentialsAPI = (*ExternalAwsDatabaseCredentialsAPIService)(&c.common)
+	c.ExternalAwsResourcesAPI = (*ExternalAwsResourcesAPIService)(&c.common)
 	c.ImagesAPI = (*ImagesAPIService)(&c.common)
 	c.IntrusionDetectionReportsAPI = (*IntrusionDetectionReportsAPIService)(&c.common)
 	c.LLMIntegrationsAPI = (*LLMIntegrationsAPIService)(&c.common)
