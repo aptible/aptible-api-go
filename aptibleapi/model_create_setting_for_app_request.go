@@ -20,9 +20,9 @@ var _ MappedNullable = &CreateSettingForAppRequest{}
 // CreateSettingForAppRequest struct for CreateSettingForAppRequest
 type CreateSettingForAppRequest struct {
 	// Mapping of non-sensitive key-value pairs
-	Keys map[string]interface{} `json:"keys,omitempty"`
+	Settings map[string]interface{} `json:"settings,omitempty"`
 	// Mapping of sensitive key-value pairs
-	SensitiveKeys map[string]interface{} `json:"sensitive_keys,omitempty"`
+	SensitiveSettings map[string]interface{} `json:"sensitive_settings,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,68 +45,68 @@ func NewCreateSettingForAppRequestWithDefaults() *CreateSettingForAppRequest {
 	return &this
 }
 
-// GetKeys returns the Keys field value if set, zero value otherwise.
-func (o *CreateSettingForAppRequest) GetKeys() map[string]interface{} {
-	if o == nil || IsNil(o.Keys) {
+// GetSettings returns the Settings field value if set, zero value otherwise.
+func (o *CreateSettingForAppRequest) GetSettings() map[string]interface{} {
+	if o == nil || IsNil(o.Settings) {
 		var ret map[string]interface{}
 		return ret
 	}
-	return o.Keys
+	return o.Settings
 }
 
-// GetKeysOk returns a tuple with the Keys field value if set, nil otherwise
+// GetSettingsOk returns a tuple with the Settings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateSettingForAppRequest) GetKeysOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Keys) {
+func (o *CreateSettingForAppRequest) GetSettingsOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Settings) {
 		return map[string]interface{}{}, false
 	}
-	return o.Keys, true
+	return o.Settings, true
 }
 
-// HasKeys returns a boolean if a field has been set.
-func (o *CreateSettingForAppRequest) HasKeys() bool {
-	if o != nil && !IsNil(o.Keys) {
+// HasSettings returns a boolean if a field has been set.
+func (o *CreateSettingForAppRequest) HasSettings() bool {
+	if o != nil && !IsNil(o.Settings) {
 		return true
 	}
 
 	return false
 }
 
-// SetKeys gets a reference to the given map[string]interface{} and assigns it to the Keys field.
-func (o *CreateSettingForAppRequest) SetKeys(v map[string]interface{}) {
-	o.Keys = v
+// SetSettings gets a reference to the given map[string]interface{} and assigns it to the Settings field.
+func (o *CreateSettingForAppRequest) SetSettings(v map[string]interface{}) {
+	o.Settings = v
 }
 
-// GetSensitiveKeys returns the SensitiveKeys field value if set, zero value otherwise.
-func (o *CreateSettingForAppRequest) GetSensitiveKeys() map[string]interface{} {
-	if o == nil || IsNil(o.SensitiveKeys) {
+// GetSensitiveSettings returns the SensitiveSettings field value if set, zero value otherwise.
+func (o *CreateSettingForAppRequest) GetSensitiveSettings() map[string]interface{} {
+	if o == nil || IsNil(o.SensitiveSettings) {
 		var ret map[string]interface{}
 		return ret
 	}
-	return o.SensitiveKeys
+	return o.SensitiveSettings
 }
 
-// GetSensitiveKeysOk returns a tuple with the SensitiveKeys field value if set, nil otherwise
+// GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateSettingForAppRequest) GetSensitiveKeysOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.SensitiveKeys) {
+func (o *CreateSettingForAppRequest) GetSensitiveSettingsOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.SensitiveSettings) {
 		return map[string]interface{}{}, false
 	}
-	return o.SensitiveKeys, true
+	return o.SensitiveSettings, true
 }
 
-// HasSensitiveKeys returns a boolean if a field has been set.
-func (o *CreateSettingForAppRequest) HasSensitiveKeys() bool {
-	if o != nil && !IsNil(o.SensitiveKeys) {
+// HasSensitiveSettings returns a boolean if a field has been set.
+func (o *CreateSettingForAppRequest) HasSensitiveSettings() bool {
+	if o != nil && !IsNil(o.SensitiveSettings) {
 		return true
 	}
 
 	return false
 }
 
-// SetSensitiveKeys gets a reference to the given map[string]interface{} and assigns it to the SensitiveKeys field.
-func (o *CreateSettingForAppRequest) SetSensitiveKeys(v map[string]interface{}) {
-	o.SensitiveKeys = v
+// SetSensitiveSettings gets a reference to the given map[string]interface{} and assigns it to the SensitiveSettings field.
+func (o *CreateSettingForAppRequest) SetSensitiveSettings(v map[string]interface{}) {
+	o.SensitiveSettings = v
 }
 
 func (o CreateSettingForAppRequest) MarshalJSON() ([]byte, error) {
@@ -119,11 +119,11 @@ func (o CreateSettingForAppRequest) MarshalJSON() ([]byte, error) {
 
 func (o CreateSettingForAppRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Keys) {
-		toSerialize["keys"] = o.Keys
+	if !IsNil(o.Settings) {
+		toSerialize["settings"] = o.Settings
 	}
-	if !IsNil(o.SensitiveKeys) {
-		toSerialize["sensitive_keys"] = o.SensitiveKeys
+	if !IsNil(o.SensitiveSettings) {
+		toSerialize["sensitive_settings"] = o.SensitiveSettings
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -147,8 +147,8 @@ func (o *CreateSettingForAppRequest) UnmarshalJSON(data []byte) (err error) {
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "keys")
-		delete(additionalProperties, "sensitive_keys")
+		delete(additionalProperties, "settings")
+		delete(additionalProperties, "sensitive_settings")
 		o.AdditionalProperties = additionalProperties
 	}
 

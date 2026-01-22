@@ -22,8 +22,8 @@ var _ MappedNullable = &Setting{}
 type Setting struct {
 	Id int32 `json:"id"`
 	MetaType string `json:"_type"`
-	Keys map[string]interface{} `json:"keys"`
-	SensitiveKeys map[string]interface{} `json:"sensitive_keys"`
+	Settings map[string]interface{} `json:"settings"`
+	SensitiveSettings map[string]interface{} `json:"sensitive_settings"`
 	Links *ConfigurationLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -34,12 +34,12 @@ type _Setting Setting
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSetting(id int32, metaType string, keys map[string]interface{}, sensitiveKeys map[string]interface{}) *Setting {
+func NewSetting(id int32, metaType string, settings map[string]interface{}, sensitiveSettings map[string]interface{}) *Setting {
 	this := Setting{}
 	this.Id = id
 	this.MetaType = metaType
-	this.Keys = keys
-	this.SensitiveKeys = sensitiveKeys
+	this.Settings = settings
+	this.SensitiveSettings = sensitiveSettings
 	return &this
 }
 
@@ -99,52 +99,52 @@ func (o *Setting) SetMetaType(v string) {
 	o.MetaType = v
 }
 
-// GetKeys returns the Keys field value
-func (o *Setting) GetKeys() map[string]interface{} {
+// GetSettings returns the Settings field value
+func (o *Setting) GetSettings() map[string]interface{} {
 	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
 
-	return o.Keys
+	return o.Settings
 }
 
-// GetKeysOk returns a tuple with the Keys field value
+// GetSettingsOk returns a tuple with the Settings field value
 // and a boolean to check if the value has been set.
-func (o *Setting) GetKeysOk() (map[string]interface{}, bool) {
+func (o *Setting) GetSettingsOk() (map[string]interface{}, bool) {
 	if o == nil {
 		return map[string]interface{}{}, false
 	}
-	return o.Keys, true
+	return o.Settings, true
 }
 
-// SetKeys sets field value
-func (o *Setting) SetKeys(v map[string]interface{}) {
-	o.Keys = v
+// SetSettings sets field value
+func (o *Setting) SetSettings(v map[string]interface{}) {
+	o.Settings = v
 }
 
-// GetSensitiveKeys returns the SensitiveKeys field value
-func (o *Setting) GetSensitiveKeys() map[string]interface{} {
+// GetSensitiveSettings returns the SensitiveSettings field value
+func (o *Setting) GetSensitiveSettings() map[string]interface{} {
 	if o == nil {
 		var ret map[string]interface{}
 		return ret
 	}
 
-	return o.SensitiveKeys
+	return o.SensitiveSettings
 }
 
-// GetSensitiveKeysOk returns a tuple with the SensitiveKeys field value
+// GetSensitiveSettingsOk returns a tuple with the SensitiveSettings field value
 // and a boolean to check if the value has been set.
-func (o *Setting) GetSensitiveKeysOk() (map[string]interface{}, bool) {
+func (o *Setting) GetSensitiveSettingsOk() (map[string]interface{}, bool) {
 	if o == nil {
 		return map[string]interface{}{}, false
 	}
-	return o.SensitiveKeys, true
+	return o.SensitiveSettings, true
 }
 
-// SetSensitiveKeys sets field value
-func (o *Setting) SetSensitiveKeys(v map[string]interface{}) {
-	o.SensitiveKeys = v
+// SetSensitiveSettings sets field value
+func (o *Setting) SetSensitiveSettings(v map[string]interface{}) {
+	o.SensitiveSettings = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
@@ -191,8 +191,8 @@ func (o Setting) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["_type"] = o.MetaType
-	toSerialize["keys"] = o.Keys
-	toSerialize["sensitive_keys"] = o.SensitiveKeys
+	toSerialize["settings"] = o.Settings
+	toSerialize["sensitive_settings"] = o.SensitiveSettings
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -211,8 +211,8 @@ func (o *Setting) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"_type",
-		"keys",
-		"sensitive_keys",
+		"settings",
+		"sensitive_settings",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -244,8 +244,8 @@ func (o *Setting) UnmarshalJSON(data []byte) (err error) {
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "_type")
-		delete(additionalProperties, "keys")
-		delete(additionalProperties, "sensitive_keys")
+		delete(additionalProperties, "settings")
+		delete(additionalProperties, "sensitive_settings")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}
