@@ -101,6 +101,8 @@ type APIClient struct {
 
 	LLMIntegrationsAPI *LLMIntegrationsAPIService
 
+	LlmKeysAPI *LlmKeysAPIService
+
 	LogDrainsAPI *LogDrainsAPIService
 
 	MetricDrainsAPI *MetricDrainsAPIService
@@ -176,6 +178,7 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.ImagesAPI = (*ImagesAPIService)(&c.common)
 	c.IntrusionDetectionReportsAPI = (*IntrusionDetectionReportsAPIService)(&c.common)
 	c.LLMIntegrationsAPI = (*LLMIntegrationsAPIService)(&c.common)
+	c.LlmKeysAPI = (*LlmKeysAPIService)(&c.common)
 	c.LogDrainsAPI = (*LogDrainsAPIService)(&c.common)
 	c.MetricDrainsAPI = (*MetricDrainsAPIService)(&c.common)
 	c.OperationsAPI = (*OperationsAPIService)(&c.common)

@@ -20,6 +20,7 @@ var _ MappedNullable = &UpdateExternalAwsResourceRequest{}
 // UpdateExternalAwsResourceRequest struct for UpdateExternalAwsResourceRequest
 type UpdateExternalAwsResourceRequest struct {
 	ResourceName *string `json:"resource_name,omitempty"`
+	LockVersion *int32 `json:"lock_version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -74,6 +75,38 @@ func (o *UpdateExternalAwsResourceRequest) SetResourceName(v string) {
 	o.ResourceName = &v
 }
 
+// GetLockVersion returns the LockVersion field value if set, zero value otherwise.
+func (o *UpdateExternalAwsResourceRequest) GetLockVersion() int32 {
+	if o == nil || IsNil(o.LockVersion) {
+		var ret int32
+		return ret
+	}
+	return *o.LockVersion
+}
+
+// GetLockVersionOk returns a tuple with the LockVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateExternalAwsResourceRequest) GetLockVersionOk() (*int32, bool) {
+	if o == nil || IsNil(o.LockVersion) {
+		return nil, false
+	}
+	return o.LockVersion, true
+}
+
+// HasLockVersion returns a boolean if a field has been set.
+func (o *UpdateExternalAwsResourceRequest) HasLockVersion() bool {
+	if o != nil && !IsNil(o.LockVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetLockVersion gets a reference to the given int32 and assigns it to the LockVersion field.
+func (o *UpdateExternalAwsResourceRequest) SetLockVersion(v int32) {
+	o.LockVersion = &v
+}
+
 func (o UpdateExternalAwsResourceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -86,6 +119,9 @@ func (o UpdateExternalAwsResourceRequest) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.ResourceName) {
 		toSerialize["resource_name"] = o.ResourceName
+	}
+	if !IsNil(o.LockVersion) {
+		toSerialize["lock_version"] = o.LockVersion
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -110,6 +146,7 @@ func (o *UpdateExternalAwsResourceRequest) UnmarshalJSON(data []byte) (err error
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "resource_name")
+		delete(additionalProperties, "lock_version")
 		o.AdditionalProperties = additionalProperties
 	}
 

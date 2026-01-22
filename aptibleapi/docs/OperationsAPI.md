@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**ListOperationsForEphemeralSession**](OperationsAPI.md#ListOperationsForEphemeralSession) | **Get** /ephemeral_sessions/{ephemeral_session_id}/operations | list operations
 [**ListOperationsForExternalAwsDatabaseCredential**](OperationsAPI.md#ListOperationsForExternalAwsDatabaseCredential) | **Get** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | list operations
 [**ListOperationsForImage**](OperationsAPI.md#ListOperationsForImage) | **Get** /images/{image_id}/operations | list operations
+[**ListOperationsForLlmKey**](OperationsAPI.md#ListOperationsForLlmKey) | **Get** /llm_keys/{llm_key_id}/operations | list operations
 [**ListOperationsForLogDrain**](OperationsAPI.md#ListOperationsForLogDrain) | **Get** /log_drains/{log_drain_id}/operations | list operations
 [**ListOperationsForMetricDrain**](OperationsAPI.md#ListOperationsForMetricDrain) | **Get** /metric_drains/{metric_drain_id}/operations | list operations
 [**ListOperationsForPersistentDisk**](OperationsAPI.md#ListOperationsForPersistentDisk) | **Get** /persistent_disks/{persistent_disk_id}/operations | list operations
@@ -1616,6 +1617,76 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiListOperationsForImageRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **page** | **int32** | current page of results for pagination | 
+
+### Return type
+
+[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListOperationsForLlmKey
+
+> ListOperationsForAccount200Response ListOperationsForLlmKey(ctx, llmKeyId).Page(page).Execute()
+
+list operations
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	llmKeyId := int32(56) // int32 | llm_key_id
+	page := int32(56) // int32 | current page of results for pagination (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForLlmKey(context.Background(), llmKeyId).Page(page).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForLlmKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListOperationsForLlmKey`: ListOperationsForAccount200Response
+	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForLlmKey`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**llmKeyId** | **int32** | llm_key_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListOperationsForLlmKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

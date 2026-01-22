@@ -29,10 +29,11 @@ type ExternalAwsResource struct {
 	ResourceName NullableString `json:"resource_name"`
 	Region string `json:"region"`
 	Metadata map[string]interface{} `json:"metadata"`
-	Tags map[string]interface{} `json:"tags"`
+	Tags []CreateExternalAwsResourceRequestTagsInner `json:"tags"`
 	DiscoveredAt NullableString `json:"discovered_at"`
 	LastSyncedAt NullableString `json:"last_synced_at"`
 	SyncStatus string `json:"sync_status"`
+	LockVersion int32 `json:"lock_version"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
 	Links *ExternalAwsResourceLinks `json:"_links,omitempty"`
@@ -45,7 +46,7 @@ type _ExternalAwsResource ExternalAwsResource
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalAwsResource(id int32, metaType string, externalAwsAccountId int32, resourceType string, resourceArn string, resourceId string, resourceName NullableString, region string, metadata map[string]interface{}, tags map[string]interface{}, discoveredAt NullableString, lastSyncedAt NullableString, syncStatus string, createdAt string, updatedAt string) *ExternalAwsResource {
+func NewExternalAwsResource(id int32, metaType string, externalAwsAccountId int32, resourceType string, resourceArn string, resourceId string, resourceName NullableString, region string, metadata map[string]interface{}, tags []CreateExternalAwsResourceRequestTagsInner, discoveredAt NullableString, lastSyncedAt NullableString, syncStatus string, lockVersion int32, createdAt string, updatedAt string) *ExternalAwsResource {
 	this := ExternalAwsResource{}
 	this.Id = id
 	this.MetaType = metaType
@@ -60,6 +61,7 @@ func NewExternalAwsResource(id int32, metaType string, externalAwsAccountId int3
 	this.DiscoveredAt = discoveredAt
 	this.LastSyncedAt = lastSyncedAt
 	this.SyncStatus = syncStatus
+	this.LockVersion = lockVersion
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	return &this
@@ -292,9 +294,9 @@ func (o *ExternalAwsResource) SetMetadata(v map[string]interface{}) {
 }
 
 // GetTags returns the Tags field value
-func (o *ExternalAwsResource) GetTags() map[string]interface{} {
+func (o *ExternalAwsResource) GetTags() []CreateExternalAwsResourceRequestTagsInner {
 	if o == nil {
-		var ret map[string]interface{}
+		var ret []CreateExternalAwsResourceRequestTagsInner
 		return ret
 	}
 
@@ -303,15 +305,15 @@ func (o *ExternalAwsResource) GetTags() map[string]interface{} {
 
 // GetTagsOk returns a tuple with the Tags field value
 // and a boolean to check if the value has been set.
-func (o *ExternalAwsResource) GetTagsOk() (map[string]interface{}, bool) {
+func (o *ExternalAwsResource) GetTagsOk() ([]CreateExternalAwsResourceRequestTagsInner, bool) {
 	if o == nil {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // SetTags sets field value
-func (o *ExternalAwsResource) SetTags(v map[string]interface{}) {
+func (o *ExternalAwsResource) SetTags(v []CreateExternalAwsResourceRequestTagsInner) {
 	o.Tags = v
 }
 
@@ -389,6 +391,30 @@ func (o *ExternalAwsResource) GetSyncStatusOk() (*string, bool) {
 // SetSyncStatus sets field value
 func (o *ExternalAwsResource) SetSyncStatus(v string) {
 	o.SyncStatus = v
+}
+
+// GetLockVersion returns the LockVersion field value
+func (o *ExternalAwsResource) GetLockVersion() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.LockVersion
+}
+
+// GetLockVersionOk returns a tuple with the LockVersion field value
+// and a boolean to check if the value has been set.
+func (o *ExternalAwsResource) GetLockVersionOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.LockVersion, true
+}
+
+// SetLockVersion sets field value
+func (o *ExternalAwsResource) SetLockVersion(v int32) {
+	o.LockVersion = v
 }
 
 // GetCreatedAt returns the CreatedAt field value
@@ -494,6 +520,7 @@ func (o ExternalAwsResource) ToMap() (map[string]interface{}, error) {
 	toSerialize["discovered_at"] = o.DiscoveredAt.Get()
 	toSerialize["last_synced_at"] = o.LastSyncedAt.Get()
 	toSerialize["sync_status"] = o.SyncStatus
+	toSerialize["lock_version"] = o.LockVersion
 	toSerialize["created_at"] = o.CreatedAt
 	toSerialize["updated_at"] = o.UpdatedAt
 	if !IsNil(o.Links) {
@@ -525,6 +552,7 @@ func (o *ExternalAwsResource) UnmarshalJSON(data []byte) (err error) {
 		"discovered_at",
 		"last_synced_at",
 		"sync_status",
+		"lock_version",
 		"created_at",
 		"updated_at",
 	}
@@ -569,6 +597,7 @@ func (o *ExternalAwsResource) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "discovered_at")
 		delete(additionalProperties, "last_synced_at")
 		delete(additionalProperties, "sync_status")
+		delete(additionalProperties, "lock_version")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "_links")

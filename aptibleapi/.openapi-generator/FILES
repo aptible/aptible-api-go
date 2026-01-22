@@ -27,6 +27,7 @@ api_external_aws_resources.go
 api_images.go
 api_intrusion_detection_reports.go
 api_llm_integrations.go
+api_llm_keys.go
 api_log_drains.go
 api_metric_drains.go
 api_operations.go
@@ -94,7 +95,9 @@ docs/CreateDatadogIntegrationRequest.md
 docs/CreateExternalAwsAccountRequest.md
 docs/CreateExternalAwsDatabaseCredentialRequest.md
 docs/CreateExternalAwsResourceRequest.md
+docs/CreateExternalAwsResourceRequestTagsInner.md
 docs/CreateLlmIntegrationRequest.md
+docs/CreateLlmKeyRequest.md
 docs/CreateLogDrainRequest.md
 docs/CreateMetricDrainRequest.md
 docs/CreateMetricDrainRequestDrainConfiguration.md
@@ -232,6 +235,9 @@ docs/ListIntrustionDetectionReportsForStack200Response.md
 docs/ListIntrustionDetectionReportsForStack200ResponseEmbedded.md
 docs/ListLlmIntegrations200Response.md
 docs/ListLlmIntegrations200ResponseEmbedded.md
+docs/ListLlmKeys200Response.md
+docs/ListLlmKeysForAccount200Response.md
+docs/ListLlmKeysForAccount200ResponseEmbedded.md
 docs/ListLogDrainsForAccount200Response.md
 docs/ListLogDrainsForAccount200ResponseEmbedded.md
 docs/ListMetricDrainsForAccount200Response.md
@@ -280,6 +286,8 @@ docs/ListVpcPeersForStack200ResponseEmbedded.md
 docs/ListVpnTunnelsForStack200Response.md
 docs/ListVpnTunnelsForStack200ResponseEmbedded.md
 docs/LlmIntegration.md
+docs/LlmKey.md
+docs/LlmKeysAPI.md
 docs/LogDrain.md
 docs/LogDrainLinks.md
 docs/LogDrainsAPI.md
@@ -392,7 +400,9 @@ model_create_datadog_integration_request.go
 model_create_external_aws_account_request.go
 model_create_external_aws_database_credential_request.go
 model_create_external_aws_resource_request.go
+model_create_external_aws_resource_request_tags_inner.go
 model_create_llm_integration_request.go
+model_create_llm_key_request.go
 model_create_log_drain_request.go
 model_create_metric_drain_request.go
 model_create_metric_drain_request_drain_configuration.go
@@ -516,6 +526,9 @@ model_list_intrustion_detection_reports_for_stack_200_response.go
 model_list_intrustion_detection_reports_for_stack_200_response__embedded.go
 model_list_llm_integrations_200_response.go
 model_list_llm_integrations_200_response__embedded.go
+model_list_llm_keys_200_response.go
+model_list_llm_keys_for_account_200_response.go
+model_list_llm_keys_for_account_200_response__embedded.go
 model_list_log_drains_for_account_200_response.go
 model_list_log_drains_for_account_200_response__embedded.go
 model_list_metric_drains_for_account_200_response.go
@@ -564,6 +577,7 @@ model_list_vpc_peers_for_stack_200_response__embedded.go
 model_list_vpn_tunnels_for_stack_200_response.go
 model_list_vpn_tunnels_for_stack_200_response__embedded.go
 model_llm_integration.go
+model_llm_key.go
 model_log_drain.go
 model_log_drain__links.go
 model_metric_drain.go
