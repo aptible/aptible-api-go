@@ -9,6 +9,9 @@ func aptibleClientVersion() string {
 				return "aptible/aptible-api-go/" + dep.Version
 			}
 		}
+		if info.Main.Version != "" {
+			return "aptible/aptible-api-go/" + info.Main.Version
+		}
 	}
 	return "aptible/aptible-api-go/unknown"
 }
