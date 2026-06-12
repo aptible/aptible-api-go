@@ -89,7 +89,7 @@ type APIConfiguration struct {
 func NewAPIConfiguration() *APIConfiguration {
 	cfg := &APIConfiguration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        aptibleClientVersion(),
+		UserAgent:        "aptible/aptible-api-go/" + aptibleClientVersion(),
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
