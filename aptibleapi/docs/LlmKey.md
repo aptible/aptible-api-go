@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **RevokedBy** | **map[string]interface{}** | User who revoked the token | 
 **Status** | **string** | Token status (ACTIVE or REVOKED) | 
 **Token** | Pointer to **NullableString** | Secret API key value (only present on creation) | [optional] 
+**CurrentUsage** | Pointer to [**NullableLlmKeyCurrentUsage**](LlmKeyCurrentUsage.md) |  | [optional] 
 **Links** | Pointer to [**BackupRetentionPolicyLinks**](BackupRetentionPolicyLinks.md) |  | [optional] 
 
 ## Methods
@@ -362,6 +363,41 @@ HasToken returns a boolean if a field has been set.
 `func (o *LlmKey) UnsetToken()`
 
 UnsetToken ensures that no value is present for Token, not even an explicit nil
+### GetCurrentUsage
+
+`func (o *LlmKey) GetCurrentUsage() LlmKeyCurrentUsage`
+
+GetCurrentUsage returns the CurrentUsage field if non-nil, zero value otherwise.
+
+### GetCurrentUsageOk
+
+`func (o *LlmKey) GetCurrentUsageOk() (*LlmKeyCurrentUsage, bool)`
+
+GetCurrentUsageOk returns a tuple with the CurrentUsage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentUsage
+
+`func (o *LlmKey) SetCurrentUsage(v LlmKeyCurrentUsage)`
+
+SetCurrentUsage sets CurrentUsage field to given value.
+
+### HasCurrentUsage
+
+`func (o *LlmKey) HasCurrentUsage() bool`
+
+HasCurrentUsage returns a boolean if a field has been set.
+
+### SetCurrentUsageNil
+
+`func (o *LlmKey) SetCurrentUsageNil(b bool)`
+
+ SetCurrentUsageNil sets the value for CurrentUsage to be an explicit nil
+
+### UnsetCurrentUsage
+`func (o *LlmKey) UnsetCurrentUsage()`
+
+UnsetCurrentUsage ensures that no value is present for CurrentUsage, not even an explicit nil
 ### GetLinks
 
 `func (o *LlmKey) GetLinks() BackupRetentionPolicyLinks`

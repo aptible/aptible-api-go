@@ -23,6 +23,7 @@ type DiskAttachment struct {
 	Id int32 `json:"id"`
 	MetaType string `json:"_type"`
 	MountPoint string `json:"mount_point"`
+	Status string `json:"status"`
 	CreatedAt string `json:"created_at"`
 	UpdatedAt string `json:"updated_at"`
 	DeletedAt NullableString `json:"deleted_at"`
@@ -37,11 +38,12 @@ type _DiskAttachment DiskAttachment
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDiskAttachment(id int32, metaType string, mountPoint string, createdAt string, updatedAt string, deletedAt NullableString, embedded DiskAttachmentEmbedded) *DiskAttachment {
+func NewDiskAttachment(id int32, metaType string, mountPoint string, status string, createdAt string, updatedAt string, deletedAt NullableString, embedded DiskAttachmentEmbedded) *DiskAttachment {
 	this := DiskAttachment{}
 	this.Id = id
 	this.MetaType = metaType
 	this.MountPoint = mountPoint
+	this.Status = status
 	this.CreatedAt = createdAt
 	this.UpdatedAt = updatedAt
 	this.DeletedAt = deletedAt
@@ -127,6 +129,30 @@ func (o *DiskAttachment) GetMountPointOk() (*string, bool) {
 // SetMountPoint sets field value
 func (o *DiskAttachment) SetMountPoint(v string) {
 	o.MountPoint = v
+}
+
+// GetStatus returns the Status field value
+func (o *DiskAttachment) GetStatus() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value
+// and a boolean to check if the value has been set.
+func (o *DiskAttachment) GetStatusOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Status, true
+}
+
+// SetStatus sets field value
+func (o *DiskAttachment) SetStatus(v string) {
+	o.Status = v
 }
 
 // GetCreatedAt returns the CreatedAt field value
@@ -272,6 +298,7 @@ func (o DiskAttachment) ToMap() (map[string]interface{}, error) {
 	toSerialize["id"] = o.Id
 	toSerialize["_type"] = o.MetaType
 	toSerialize["mount_point"] = o.MountPoint
+	toSerialize["status"] = o.Status
 	toSerialize["created_at"] = o.CreatedAt
 	toSerialize["updated_at"] = o.UpdatedAt
 	toSerialize["deleted_at"] = o.DeletedAt.Get()
@@ -295,6 +322,7 @@ func (o *DiskAttachment) UnmarshalJSON(data []byte) (err error) {
 		"id",
 		"_type",
 		"mount_point",
+		"status",
 		"created_at",
 		"updated_at",
 		"deleted_at",
@@ -331,6 +359,7 @@ func (o *DiskAttachment) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "_type")
 		delete(additionalProperties, "mount_point")
+		delete(additionalProperties, "status")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "deleted_at")

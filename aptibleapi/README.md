@@ -133,34 +133,6 @@ Class | Method | HTTP request | Description
 *ContainersAPI* | [**ListContainersForRelease**](docs/ContainersAPI.md#listcontainersforrelease) | **Get** /releases/{release_id}/containers | list containers
 *ContainersAPI* | [**LogDrainsLogDrainIdContainersGet**](docs/ContainersAPI.md#logdrainslogdrainidcontainersget) | **Get** /log_drains/{log_drain_id}/containers | list containers
 *ContainersAPI* | [**MetricDrainsMetricDrainIdContainersGet**](docs/ContainersAPI.md#metricdrainsmetricdrainidcontainersget) | **Get** /metric_drains/{metric_drain_id}/containers | list containers
-*DashboardsAPI* | [**CreateDashboard**](docs/DashboardsAPI.md#createdashboard) | **Post** /dashboards | create dashboard
-*DashboardsAPI* | [**CreateMetricForIntegration**](docs/DashboardsAPI.md#createmetricforintegration) | **Post** /integrations/{id}/metrics | create metric
-*DashboardsAPI* | [**CreateObservationForDashboardForApp**](docs/DashboardsAPI.md#createobservationfordashboardforapp) | **Post** /apps/{id}/observations | create observation
-*DashboardsAPI* | [**CreateObservationForDashboardForContainer**](docs/DashboardsAPI.md#createobservationfordashboardforcontainer) | **Post** /containers/{id}/observations | create observation
-*DashboardsAPI* | [**CreateObservationForDashboardForDatabase**](docs/DashboardsAPI.md#createobservationfordashboardfordatabase) | **Post** /databases/{id}/observations | create observation
-*DashboardsAPI* | [**CreateObservationForDashboardForDisk**](docs/DashboardsAPI.md#createobservationfordashboardfordisk) | **Post** /disks/{id}/observations | create observation
-*DashboardsAPI* | [**CreateObservationForDashboardForService**](docs/DashboardsAPI.md#createobservationfordashboardforservice) | **Post** /services/{id}/observations | create observation
-*DashboardsAPI* | [**CreateObservationForDashboardForVhost**](docs/DashboardsAPI.md#createobservationfordashboardforvhost) | **Post** /vhosts/{id}/observations | create observation
-*DashboardsAPI* | [**CreateWidgetForDashboard**](docs/DashboardsAPI.md#createwidgetfordashboard) | **Post** /dashboards/{id}/widgets | create widget
-*DashboardsAPI* | [**DeleteDashboard**](docs/DashboardsAPI.md#deletedashboard) | **Delete** /dashboards/{id} | delete dashboard
-*DashboardsAPI* | [**DeleteMetric**](docs/DashboardsAPI.md#deletemetric) | **Delete** /metrics/{id} | delete metric
-*DashboardsAPI* | [**DeleteWidget**](docs/DashboardsAPI.md#deletewidget) | **Delete** /widgets/{id} | delete widget
-*DashboardsAPI* | [**GetDashboard**](docs/DashboardsAPI.md#getdashboard) | **Get** /dashboards/{id} | show dashboard
-*DashboardsAPI* | [**GetMetric**](docs/DashboardsAPI.md#getmetric) | **Get** /metrics/{id} | show metric
-*DashboardsAPI* | [**GetWidget**](docs/DashboardsAPI.md#getwidget) | **Get** /widgets/{id} | show widget
-*DashboardsAPI* | [**ListDashboards**](docs/DashboardsAPI.md#listdashboards) | **Get** /dashboards | list dashboards
-*DashboardsAPI* | [**ListMetricsForIntegration**](docs/DashboardsAPI.md#listmetricsforintegration) | **Get** /integrations/{id}/metrics | list metrics
-*DashboardsAPI* | [**ListObservationsForApp**](docs/DashboardsAPI.md#listobservationsforapp) | **Get** /apps/{id}/observations | list observations
-*DashboardsAPI* | [**ListObservationsForContainer**](docs/DashboardsAPI.md#listobservationsforcontainer) | **Get** /containers/{id}/observations | list observations
-*DashboardsAPI* | [**ListObservationsForDatabase**](docs/DashboardsAPI.md#listobservationsfordatabase) | **Get** /databases/{id}/observations | list observations
-*DashboardsAPI* | [**ListObservationsForDisk**](docs/DashboardsAPI.md#listobservationsfordisk) | **Get** /disks/{id}/observations | list observations
-*DashboardsAPI* | [**ListObservationsForService**](docs/DashboardsAPI.md#listobservationsforservice) | **Get** /services/{id}/observations | list observations
-*DashboardsAPI* | [**ListObservationsForVhost**](docs/DashboardsAPI.md#listobservationsforvhost) | **Get** /vhosts/{id}/observations | list observations
-*DashboardsAPI* | [**ListWidgetsForDashboard**](docs/DashboardsAPI.md#listwidgetsfordashboard) | **Get** /dashboards/{id}/widgets | list widgets
-*DashboardsAPI* | [**ShowObservation**](docs/DashboardsAPI.md#showobservation) | **Get** /observations/{id} | show observation
-*DashboardsAPI* | [**UpdateDashboard**](docs/DashboardsAPI.md#updatedashboard) | **Put** /dashboards/{id} | update dashboard
-*DashboardsAPI* | [**UpdateMetric**](docs/DashboardsAPI.md#updatemetric) | **Put** /metrics/{id} | update metric
-*DashboardsAPI* | [**UpdateWidget**](docs/DashboardsAPI.md#updatewidget) | **Put** /widgets/{id} | update widget
 *DatabaseCredentialsAPI* | [**GetDatabaseCredential**](docs/DatabaseCredentialsAPI.md#getdatabasecredential) | **Get** /database_credentials/{id} | show database_credential
 *DatabaseCredentialsAPI* | [**ListDatabaseCredentialsForDatabase**](docs/DatabaseCredentialsAPI.md#listdatabasecredentialsfordatabase) | **Get** /databases/{database_id}/database_credentials | list database_credentials
 *DatabasesAPI* | [**CreateDatabase**](docs/DatabasesAPI.md#createdatabase) | **Post** /accounts/{account_id}/databases | create database
@@ -171,16 +143,12 @@ Class | Method | HTTP request | Description
 *DatabasesAPI* | [**ListReplicasForDatabase**](docs/DatabasesAPI.md#listreplicasfordatabase) | **Get** /databases/{database_id}/dependents | list databases
 *DatabasesAPI* | [**PatchDatabase**](docs/DatabasesAPI.md#patchdatabase) | **Patch** /databases/{id} | update database
 *DatabasesAPI* | [**UpdateDatabase**](docs/DatabasesAPI.md#updatedatabase) | **Put** /databases/{id} | update database
-*DefaultAPI* | [**CreateDatadogIntegration**](docs/DefaultAPI.md#createdatadogintegration) | **Post** /integrations | create integration
-*DefaultAPI* | [**DeleteDatadogIntegration**](docs/DefaultAPI.md#deletedatadogintegration) | **Delete** /integrations/{id} | delete integration
-*DefaultAPI* | [**GetDatadogIntegration**](docs/DefaultAPI.md#getdatadogintegration) | **Get** /integrations/{id} | show integration
 *DefaultAPI* | [**GetRoot**](docs/DefaultAPI.md#getroot) | **Get** / | show home
-*DefaultAPI* | [**ListDatadogIntegrations**](docs/DefaultAPI.md#listdatadogintegrations) | **Get** /integrations | list integrations
-*DefaultAPI* | [**UpdateDatadogIntegration**](docs/DefaultAPI.md#updatedatadogintegration) | **Put** /integrations/{id} | update integration
 *DeploymentsAPI* | [**GetDeployment**](docs/DeploymentsAPI.md#getdeployment) | **Get** /deployments/{id} | show deployment
 *DeploymentsAPI* | [**ListDeployments**](docs/DeploymentsAPI.md#listdeployments) | **Get** /deployments | list deployments
 *DeploymentsAPI* | [**ListDeploymentsForApp**](docs/DeploymentsAPI.md#listdeploymentsforapp) | **Get** /apps/{app_id}/deployments | list deployments
 *DiskAttachmentsAPI* | [**GetDiskAttachment**](docs/DiskAttachmentsAPI.md#getdiskattachment) | **Get** /disk_attachments/{id} | show disk attachment
+*DiskAttachmentsAPI* | [**ListDiskAttachments**](docs/DiskAttachmentsAPI.md#listdiskattachments) | **Get** /disk_attachments | list disk attachments
 *DiskAttachmentsAPI* | [**ListDiskAttachmentsForAccount**](docs/DiskAttachmentsAPI.md#listdiskattachmentsforaccount) | **Get** /accounts/{account_id}/disk_attachments | list disk attachments
 *DiskAttachmentsAPI* | [**ListDiskAttachmentsForPersistentDisk**](docs/DiskAttachmentsAPI.md#listdiskattachmentsforpersistentdisk) | **Get** /persistent_disks/{persistent_disk_id}/disk_attachments | list disk attachments
 *DiskAttachmentsAPI* | [**ListDiskAttachmentsForService**](docs/DiskAttachmentsAPI.md#listdiskattachmentsforservice) | **Get** /services/{service_id}/disk_attachments | list disk attachments
@@ -218,16 +186,20 @@ Class | Method | HTTP request | Description
 *IntrusionDetectionReportsAPI* | [**GetIntrustionDetectionReportCsvDownload**](docs/IntrusionDetectionReportsAPI.md#getintrustiondetectionreportcsvdownload) | **Get** /intrusion_detection_reports/{intrusion_report_id}/download_csv | download_csv intrusion_detection_report
 *IntrusionDetectionReportsAPI* | [**GetIntrustionDetectionReportPdfDownload**](docs/IntrusionDetectionReportsAPI.md#getintrustiondetectionreportpdfdownload) | **Get** /intrusion_detection_reports/{intrusion_report_id}/download_pdf | download_pdf intrusion_detection_report
 *IntrusionDetectionReportsAPI* | [**ListIntrustionDetectionReportsForStack**](docs/IntrusionDetectionReportsAPI.md#listintrustiondetectionreportsforstack) | **Get** /stacks/{stack_id}/intrusion_detection_reports | list intrusion_detection_reports
-*LLMIntegrationsAPI* | [**CreateLlmIntegration**](docs/LLMIntegrationsAPI.md#createllmintegration) | **Post** /llm_integrations | create llm integration
-*LLMIntegrationsAPI* | [**DeleteLlmIntegration**](docs/LLMIntegrationsAPI.md#deletellmintegration) | **Delete** /llm_integrations/{id} | delete llm integration
-*LLMIntegrationsAPI* | [**GetLlmIntegration**](docs/LLMIntegrationsAPI.md#getllmintegration) | **Get** /llm_integrations/{id} | show llm integration
-*LLMIntegrationsAPI* | [**ListLlmIntegrations**](docs/LLMIntegrationsAPI.md#listllmintegrations) | **Get** /llm_integrations | list llm integrations
-*LLMIntegrationsAPI* | [**UpdateLlmIntegration**](docs/LLMIntegrationsAPI.md#updatellmintegration) | **Put** /llm_integrations/{id} | update llm integration
-*LlmKeysAPI* | [**CreateLlmKey**](docs/LlmKeysAPI.md#createllmkey) | **Post** /accounts/{account_id}/llm_keys | create llm_key
+*LlmGatewayConfigurationsAPI* | [**CreateLlmGatewayConfiguration**](docs/LlmGatewayConfigurationsAPI.md#createllmgatewayconfiguration) | **Post** /llm_gateway_configurations | enroll organization in AI Gateway
+*LlmGatewayConfigurationsAPI* | [**ListLlmGatewayConfigurations**](docs/LlmGatewayConfigurationsAPI.md#listllmgatewayconfigurations) | **Get** /llm_gateway_configurations | list llm_gateway_configurations
+*LlmGatewayConfigurationsAPI* | [**UpdateLlmGatewayConfiguration**](docs/LlmGatewayConfigurationsAPI.md#updatellmgatewayconfiguration) | **Patch** /llm_gateway_configurations/{id} | update llm_gateway_configuration
 *LlmKeysAPI* | [**GetLlmKey**](docs/LlmKeysAPI.md#getllmkey) | **Get** /llm_keys/{id} | show llm_key
+*LlmKeysAPI* | [**GetLlmKeyRequests**](docs/LlmKeysAPI.md#getllmkeyrequests) | **Get** /llm_keys/{id}/requests | list llm key requests
+*LlmKeysAPI* | [**GetLlmKeyUsage**](docs/LlmKeysAPI.md#getllmkeyusage) | **Get** /llm_keys/{id}/usage | get llm key usage
 *LlmKeysAPI* | [**ListLlmKeys**](docs/LlmKeysAPI.md#listllmkeys) | **Get** /llm_keys | list all llm_keys
 *LlmKeysAPI* | [**ListLlmKeysForAccount**](docs/LlmKeysAPI.md#listllmkeysforaccount) | **Get** /accounts/{account_id}/llm_keys | list llm_keys
 *LlmKeysAPI* | [**RevokeLlmKey**](docs/LlmKeysAPI.md#revokellmkey) | **Delete** /llm_keys/{id} | revoke llm_key
+*LlmPoliciesAPI* | [**CreateOrUpdateLlmPolicy**](docs/LlmPoliciesAPI.md#createorupdatellmpolicy) | **Post** /accounts/{account_id}/llm_policies/create_or_update | create or update llm_policy
+*LlmPoliciesAPI* | [**GetLlmPolicy**](docs/LlmPoliciesAPI.md#getllmpolicy) | **Get** /llm_policies/{id} | show llm_policy
+*LlmPoliciesAPI* | [**GetLlmPolicyUsage**](docs/LlmPoliciesAPI.md#getllmpolicyusage) | **Get** /llm_policies/{id}/usage | get llm policy usage
+*LlmPoliciesAPI* | [**ListLlmPolicies**](docs/LlmPoliciesAPI.md#listllmpolicies) | **Get** /llm_policies | list all llm_policies
+*LlmPoliciesAPI* | [**ListLlmPoliciesForAccount**](docs/LlmPoliciesAPI.md#listllmpoliciesforaccount) | **Get** /accounts/{account_id}/llm_policies | list llm_policies for account
 *LogDrainsAPI* | [**CreateLogDrain**](docs/LogDrainsAPI.md#createlogdrain) | **Post** /accounts/{account_id}/log_drains | create log_drain
 *LogDrainsAPI* | [**DeleteLogDrain**](docs/LogDrainsAPI.md#deletelogdrain) | **Delete** /log_drains/{id} | delete log_drain
 *LogDrainsAPI* | [**GetLogDrain**](docs/LogDrainsAPI.md#getlogdrain) | **Get** /log_drains/{id} | show log_drain
@@ -357,30 +329,23 @@ Class | Method | HTTP request | Description
  - [CreateClaimRequest](docs/CreateClaimRequest.md)
  - [CreateCodeScanResultRequest](docs/CreateCodeScanResultRequest.md)
  - [CreateConfigurationForAppRequest](docs/CreateConfigurationForAppRequest.md)
- - [CreateDashboardRequest](docs/CreateDashboardRequest.md)
  - [CreateDatabaseRequest](docs/CreateDatabaseRequest.md)
- - [CreateDatadogIntegrationRequest](docs/CreateDatadogIntegrationRequest.md)
  - [CreateExternalAwsAccountRequest](docs/CreateExternalAwsAccountRequest.md)
  - [CreateExternalAwsDatabaseCredentialRequest](docs/CreateExternalAwsDatabaseCredentialRequest.md)
  - [CreateExternalAwsResourceRequest](docs/CreateExternalAwsResourceRequest.md)
  - [CreateExternalAwsResourceRequestTagsInner](docs/CreateExternalAwsResourceRequestTagsInner.md)
- - [CreateLlmIntegrationRequest](docs/CreateLlmIntegrationRequest.md)
- - [CreateLlmKeyRequest](docs/CreateLlmKeyRequest.md)
+ - [CreateLlmGatewayConfigurationRequest](docs/CreateLlmGatewayConfigurationRequest.md)
  - [CreateLogDrainRequest](docs/CreateLogDrainRequest.md)
  - [CreateMetricDrainRequest](docs/CreateMetricDrainRequest.md)
  - [CreateMetricDrainRequestDrainConfiguration](docs/CreateMetricDrainRequestDrainConfiguration.md)
- - [CreateMetricForIntegrationRequest](docs/CreateMetricForIntegrationRequest.md)
- - [CreateObservationForDashboardForAppRequest](docs/CreateObservationForDashboardForAppRequest.md)
- - [CreateObservationForDashboardForContainerRequest](docs/CreateObservationForDashboardForContainerRequest.md)
  - [CreateOperationRequest](docs/CreateOperationRequest.md)
  - [CreateOperationRequest1](docs/CreateOperationRequest1.md)
+ - [CreateOrUpdateLlmPolicyRequest](docs/CreateOrUpdateLlmPolicyRequest.md)
  - [CreatePermissionRequest](docs/CreatePermissionRequest.md)
  - [CreateServiceSizingPolicyRequest](docs/CreateServiceSizingPolicyRequest.md)
  - [CreateSettingForAppRequest](docs/CreateSettingForAppRequest.md)
  - [CreateSshPortalConnectionRequest](docs/CreateSshPortalConnectionRequest.md)
  - [CreateVhostRequest](docs/CreateVhostRequest.md)
- - [CreateWidgetForDashboardRequest](docs/CreateWidgetForDashboardRequest.md)
- - [Dashboard](docs/Dashboard.md)
  - [Database](docs/Database.md)
  - [DatabaseCredential](docs/DatabaseCredential.md)
  - [DatabaseCredentialLinks](docs/DatabaseCredentialLinks.md)
@@ -405,12 +370,16 @@ Class | Method | HTTP request | Description
  - [ExternalAwsDatabaseCredentialLinks](docs/ExternalAwsDatabaseCredentialLinks.md)
  - [ExternalAwsResource](docs/ExternalAwsResource.md)
  - [ExternalAwsResourceLinks](docs/ExternalAwsResourceLinks.md)
+ - [GetLlmKeyRequests200Response](docs/GetLlmKeyRequests200Response.md)
+ - [GetLlmKeyRequests200ResponseEmbedded](docs/GetLlmKeyRequests200ResponseEmbedded.md)
+ - [GetLlmKeyRequests200ResponseEmbeddedRequestsInner](docs/GetLlmKeyRequests200ResponseEmbeddedRequestsInner.md)
+ - [GetLlmKeyRequests200ResponseLinks](docs/GetLlmKeyRequests200ResponseLinks.md)
+ - [GetLlmKeyRequests200ResponseLinksSelf](docs/GetLlmKeyRequests200ResponseLinksSelf.md)
+ - [GetLlmKeyUsage200Response](docs/GetLlmKeyUsage200Response.md)
  - [GetRoot200Response](docs/GetRoot200Response.md)
  - [GetRoot200ResponseLinks](docs/GetRoot200ResponseLinks.md)
  - [Image](docs/Image.md)
  - [ImageLinks](docs/ImageLinks.md)
- - [Integration](docs/Integration.md)
- - [IntegrationLinks](docs/IntegrationLinks.md)
  - [IntrusionDetectionReport](docs/IntrusionDetectionReport.md)
  - [IntrusionDetectionReportLinks](docs/IntrusionDetectionReportLinks.md)
  - [ListAccountsForStack200Response](docs/ListAccountsForStack200Response.md)
@@ -443,22 +412,19 @@ Class | Method | HTTP request | Description
  - [ListContainersForRelease200Response](docs/ListContainersForRelease200Response.md)
  - [ListContainersForRelease200ResponseEmbedded](docs/ListContainersForRelease200ResponseEmbedded.md)
  - [ListContainersForRelease200ResponseLinks](docs/ListContainersForRelease200ResponseLinks.md)
- - [ListDashboards200Response](docs/ListDashboards200Response.md)
- - [ListDashboards200ResponseEmbedded](docs/ListDashboards200ResponseEmbedded.md)
- - [ListDashboards200ResponseLinks](docs/ListDashboards200ResponseLinks.md)
  - [ListDatabaseCredentialsForDatabase200Response](docs/ListDatabaseCredentialsForDatabase200Response.md)
  - [ListDatabaseCredentialsForDatabase200ResponseEmbedded](docs/ListDatabaseCredentialsForDatabase200ResponseEmbedded.md)
  - [ListDatabaseCredentialsForDatabase200ResponseLinks](docs/ListDatabaseCredentialsForDatabase200ResponseLinks.md)
  - [ListDatabaseImages200Response](docs/ListDatabaseImages200Response.md)
  - [ListDatabaseImages200ResponseEmbedded](docs/ListDatabaseImages200ResponseEmbedded.md)
+ - [ListDatabaseImages200ResponseLinks](docs/ListDatabaseImages200ResponseLinks.md)
  - [ListDatabasesForAccount200Response](docs/ListDatabasesForAccount200Response.md)
  - [ListDatabasesForAccount200ResponseEmbedded](docs/ListDatabasesForAccount200ResponseEmbedded.md)
- - [ListDatadogIntegrations200Response](docs/ListDatadogIntegrations200Response.md)
- - [ListDatadogIntegrations200ResponseEmbedded](docs/ListDatadogIntegrations200ResponseEmbedded.md)
  - [ListDeployments200Response](docs/ListDeployments200Response.md)
  - [ListDeployments200ResponseEmbedded](docs/ListDeployments200ResponseEmbedded.md)
  - [ListDeployments200ResponseLinks](docs/ListDeployments200ResponseLinks.md)
  - [ListDeploymentsForSource200Response](docs/ListDeploymentsForSource200Response.md)
+ - [ListDiskAttachments200Response](docs/ListDiskAttachments200Response.md)
  - [ListDiskAttachmentsForAccount200Response](docs/ListDiskAttachmentsForAccount200Response.md)
  - [ListDiskAttachmentsForAccount200ResponseEmbedded](docs/ListDiskAttachmentsForAccount200ResponseEmbedded.md)
  - [ListDiskAttachmentsForPersistentDisk200Response](docs/ListDiskAttachmentsForPersistentDisk200Response.md)
@@ -486,30 +452,20 @@ Class | Method | HTTP request | Description
  - [ListImagesForApp200ResponseEmbedded](docs/ListImagesForApp200ResponseEmbedded.md)
  - [ListIntrustionDetectionReportsForStack200Response](docs/ListIntrustionDetectionReportsForStack200Response.md)
  - [ListIntrustionDetectionReportsForStack200ResponseEmbedded](docs/ListIntrustionDetectionReportsForStack200ResponseEmbedded.md)
- - [ListLlmIntegrations200Response](docs/ListLlmIntegrations200Response.md)
- - [ListLlmIntegrations200ResponseEmbedded](docs/ListLlmIntegrations200ResponseEmbedded.md)
+ - [ListLlmGatewayConfigurations200Response](docs/ListLlmGatewayConfigurations200Response.md)
+ - [ListLlmGatewayConfigurations200ResponseEmbedded](docs/ListLlmGatewayConfigurations200ResponseEmbedded.md)
  - [ListLlmKeys200Response](docs/ListLlmKeys200Response.md)
  - [ListLlmKeysForAccount200Response](docs/ListLlmKeysForAccount200Response.md)
  - [ListLlmKeysForAccount200ResponseEmbedded](docs/ListLlmKeysForAccount200ResponseEmbedded.md)
+ - [ListLlmPolicies200Response](docs/ListLlmPolicies200Response.md)
+ - [ListLlmPoliciesForAccount200Response](docs/ListLlmPoliciesForAccount200Response.md)
+ - [ListLlmPoliciesForAccount200ResponseEmbedded](docs/ListLlmPoliciesForAccount200ResponseEmbedded.md)
  - [ListLogDrainsForAccount200Response](docs/ListLogDrainsForAccount200Response.md)
  - [ListLogDrainsForAccount200ResponseEmbedded](docs/ListLogDrainsForAccount200ResponseEmbedded.md)
  - [ListMetricDrainsForAccount200Response](docs/ListMetricDrainsForAccount200Response.md)
  - [ListMetricDrainsForAccount200ResponseEmbedded](docs/ListMetricDrainsForAccount200ResponseEmbedded.md)
- - [ListMetricsForIntegration200Response](docs/ListMetricsForIntegration200Response.md)
- - [ListMetricsForIntegration200ResponseEmbedded](docs/ListMetricsForIntegration200ResponseEmbedded.md)
- - [ListMetricsForIntegration200ResponseLinks](docs/ListMetricsForIntegration200ResponseLinks.md)
- - [ListObservationsForApp200Response](docs/ListObservationsForApp200Response.md)
- - [ListObservationsForApp200ResponseEmbedded](docs/ListObservationsForApp200ResponseEmbedded.md)
- - [ListObservationsForContainer200Response](docs/ListObservationsForContainer200Response.md)
- - [ListObservationsForContainer200ResponseLinks](docs/ListObservationsForContainer200ResponseLinks.md)
- - [ListObservationsForDatabase200Response](docs/ListObservationsForDatabase200Response.md)
- - [ListObservationsForDisk200Response](docs/ListObservationsForDisk200Response.md)
- - [ListObservationsForDisk200ResponseLinks](docs/ListObservationsForDisk200ResponseLinks.md)
- - [ListObservationsForService200Response](docs/ListObservationsForService200Response.md)
- - [ListObservationsForVhost200Response](docs/ListObservationsForVhost200Response.md)
- - [ListObservationsForVhost200ResponseLinks](docs/ListObservationsForVhost200ResponseLinks.md)
- - [ListOperationsForAccount200Response](docs/ListOperationsForAccount200Response.md)
- - [ListOperationsForAccount200ResponseEmbedded](docs/ListOperationsForAccount200ResponseEmbedded.md)
+ - [ListOperationsForPersistentDisk200Response](docs/ListOperationsForPersistentDisk200Response.md)
+ - [ListOperationsForPersistentDisk200ResponseEmbedded](docs/ListOperationsForPersistentDisk200ResponseEmbedded.md)
  - [ListPermissionsForAccount200Response](docs/ListPermissionsForAccount200Response.md)
  - [ListPermissionsForAccount200ResponseEmbedded](docs/ListPermissionsForAccount200ResponseEmbedded.md)
  - [ListPersistentDisksForAccount200Response](docs/ListPersistentDisksForAccount200Response.md)
@@ -538,16 +494,18 @@ Class | Method | HTTP request | Description
  - [ListVpcPeersForStack200ResponseEmbedded](docs/ListVpcPeersForStack200ResponseEmbedded.md)
  - [ListVpnTunnelsForStack200Response](docs/ListVpnTunnelsForStack200Response.md)
  - [ListVpnTunnelsForStack200ResponseEmbedded](docs/ListVpnTunnelsForStack200ResponseEmbedded.md)
- - [LlmIntegration](docs/LlmIntegration.md)
+ - [LlmGatewayConfiguration](docs/LlmGatewayConfiguration.md)
+ - [LlmGatewayConfigurationLinks](docs/LlmGatewayConfigurationLinks.md)
  - [LlmKey](docs/LlmKey.md)
+ - [LlmKeyCurrentUsage](docs/LlmKeyCurrentUsage.md)
+ - [LlmPolicy](docs/LlmPolicy.md)
+ - [LlmPolicyCurrentUsage](docs/LlmPolicyCurrentUsage.md)
  - [LogDrain](docs/LogDrain.md)
  - [LogDrainLinks](docs/LogDrainLinks.md)
  - [MetricDrain](docs/MetricDrain.md)
  - [MetricDrainDrainConfiguration](docs/MetricDrainDrainConfiguration.md)
  - [MetricDrainLinks](docs/MetricDrainLinks.md)
- - [Metrics](docs/Metrics.md)
  - [ModelError](docs/ModelError.md)
- - [Observation](docs/Observation.md)
  - [Operation](docs/Operation.md)
  - [OperationLinks](docs/OperationLinks.md)
  - [PatchAccountRequest](docs/PatchAccountRequest.md)
@@ -575,28 +533,24 @@ Class | Method | HTTP request | Description
  - [UpdateAppExternalAwsRdsConnectionRequest](docs/UpdateAppExternalAwsRdsConnectionRequest.md)
  - [UpdateAppRequest](docs/UpdateAppRequest.md)
  - [UpdateCertificateRequest](docs/UpdateCertificateRequest.md)
- - [UpdateDashboardRequest](docs/UpdateDashboardRequest.md)
  - [UpdateDatabaseRequest](docs/UpdateDatabaseRequest.md)
  - [UpdateExternalAwsAccountRequest](docs/UpdateExternalAwsAccountRequest.md)
  - [UpdateExternalAwsResourceRequest](docs/UpdateExternalAwsResourceRequest.md)
- - [UpdateLlmIntegrationRequest](docs/UpdateLlmIntegrationRequest.md)
+ - [UpdateLlmGatewayConfigurationRequest](docs/UpdateLlmGatewayConfigurationRequest.md)
  - [UpdateLogDrainRequest](docs/UpdateLogDrainRequest.md)
- - [UpdateMetricRequest](docs/UpdateMetricRequest.md)
  - [UpdateOperationRequest](docs/UpdateOperationRequest.md)
  - [UpdateServiceRequest](docs/UpdateServiceRequest.md)
  - [UpdateServiceSizingPolicyRequest](docs/UpdateServiceSizingPolicyRequest.md)
  - [UpdateVhostRequest](docs/UpdateVhostRequest.md)
- - [UpdateWidgetRequest](docs/UpdateWidgetRequest.md)
  - [Vhost](docs/Vhost.md)
  - [VhostAcmeConfiguration](docs/VhostAcmeConfiguration.md)
  - [VhostAcmeConfigurationChallengesInner](docs/VhostAcmeConfigurationChallengesInner.md)
+ - [VhostAcmeConfigurationChallengesInnerFrom](docs/VhostAcmeConfigurationChallengesInnerFrom.md)
  - [VhostAcmeConfigurationChallengesInnerToInner](docs/VhostAcmeConfigurationChallengesInnerToInner.md)
  - [VhostLinks](docs/VhostLinks.md)
  - [VpcPeer](docs/VpcPeer.md)
  - [VpcPeerLinks](docs/VpcPeerLinks.md)
  - [VpnTunnel](docs/VpnTunnel.md)
- - [Widget](docs/Widget.md)
- - [WidgetLinks](docs/WidgetLinks.md)
 
 
 ## Documentation For Authorization

@@ -39,6 +39,7 @@ type Database struct {
 	PitrBucket NullableString `json:"pitr_bucket"`
 	OldestPitrTime NullableString `json:"oldest_pitr_time"`
 	EnablePitr bool `json:"enable_pitr"`
+	PitrStatus string `json:"pitr_status"`
 	Embedded DatabaseEmbedded `json:"_embedded"`
 	Links *DatabaseLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -50,7 +51,7 @@ type _Database Database
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, embedded DatabaseEmbedded) *Database {
+func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, pitrStatus string, embedded DatabaseEmbedded) *Database {
 	this := Database{}
 	this.Id = id
 	this.Handle = handle
@@ -71,6 +72,7 @@ func NewDatabase(id int32, handle string, type_ NullableString, passphrase Nulla
 	this.PitrBucket = pitrBucket
 	this.OldestPitrTime = oldestPitrTime
 	this.EnablePitr = enablePitr
+	this.PitrStatus = pitrStatus
 	this.Embedded = embedded
 	return &this
 }
@@ -80,6 +82,8 @@ func NewDatabase(id int32, handle string, type_ NullableString, passphrase Nulla
 // but it doesn't guarantee that properties required by API are set
 func NewDatabaseWithDefaults() *Database {
 	this := Database{}
+	var pitrStatus string = "unsupported"
+	this.PitrStatus = pitrStatus
 	return &this
 }
 
@@ -557,6 +561,30 @@ func (o *Database) SetEnablePitr(v bool) {
 	o.EnablePitr = v
 }
 
+// GetPitrStatus returns the PitrStatus field value
+func (o *Database) GetPitrStatus() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.PitrStatus
+}
+
+// GetPitrStatusOk returns a tuple with the PitrStatus field value
+// and a boolean to check if the value has been set.
+func (o *Database) GetPitrStatusOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.PitrStatus, true
+}
+
+// SetPitrStatus sets field value
+func (o *Database) SetPitrStatus(v string) {
+	o.PitrStatus = v
+}
+
 // GetEmbedded returns the Embedded field value
 func (o *Database) GetEmbedded() DatabaseEmbedded {
 	if o == nil {
@@ -642,6 +670,7 @@ func (o Database) ToMap() (map[string]interface{}, error) {
 	toSerialize["pitr_bucket"] = o.PitrBucket.Get()
 	toSerialize["oldest_pitr_time"] = o.OldestPitrTime.Get()
 	toSerialize["enable_pitr"] = o.EnablePitr
+	toSerialize["pitr_status"] = o.PitrStatus
 	toSerialize["_embedded"] = o.Embedded
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
@@ -678,6 +707,7 @@ func (o *Database) UnmarshalJSON(data []byte) (err error) {
 		"pitr_bucket",
 		"oldest_pitr_time",
 		"enable_pitr",
+		"pitr_status",
 		"_embedded",
 	}
 
@@ -727,6 +757,7 @@ func (o *Database) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "pitr_bucket")
 		delete(additionalProperties, "oldest_pitr_time")
 		delete(additionalProperties, "enable_pitr")
+		delete(additionalProperties, "pitr_status")
 		delete(additionalProperties, "_embedded")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties

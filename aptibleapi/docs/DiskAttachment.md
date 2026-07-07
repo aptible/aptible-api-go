@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | 
 **MetaType** | **string** |  | 
 **MountPoint** | **string** |  | 
+**Status** | **string** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
 **DeletedAt** | **NullableString** |  | 
@@ -17,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewDiskAttachment
 
-`func NewDiskAttachment(id int32, metaType string, mountPoint string, createdAt string, updatedAt string, deletedAt NullableString, embedded DiskAttachmentEmbedded, ) *DiskAttachment`
+`func NewDiskAttachment(id int32, metaType string, mountPoint string, status string, createdAt string, updatedAt string, deletedAt NullableString, embedded DiskAttachmentEmbedded, ) *DiskAttachment`
 
 NewDiskAttachment instantiates a new DiskAttachment object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +91,26 @@ and a boolean to check if the value has been set.
 `func (o *DiskAttachment) SetMountPoint(v string)`
 
 SetMountPoint sets MountPoint field to given value.
+
+
+### GetStatus
+
+`func (o *DiskAttachment) GetStatus() string`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *DiskAttachment) GetStatusOk() (*string, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *DiskAttachment) SetStatus(v string)`
+
+SetStatus sets Status field to given value.
 
 
 ### GetCreatedAt

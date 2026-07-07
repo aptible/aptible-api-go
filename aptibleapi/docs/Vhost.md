@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Type** | **string** |  | 
 **ElasticLoadBalancerName** | **NullableString** |  | 
 **ApplicationLoadBalancerArn** | **NullableString** |  | 
+**NetworkLoadBalancerArn** | **NullableString** |  | 
 **SecurityGroupId** | **NullableString** |  | 
 **ExternalHost** | **NullableString** |  | 
 **ExternalHttpPort** | **NullableInt32** |  | 
@@ -44,7 +45,7 @@ Name | Type | Description | Notes
 
 ### NewVhost
 
-`func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString, loadBalancingAlgorithmType NullableString, ) *Vhost`
+`func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, networkLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString, loadBalancingAlgorithmType NullableString, ) *Vhost`
 
 NewVhost instantiates a new Vhost object
 This constructor will assign default values to properties that have it defined,
@@ -199,6 +200,36 @@ SetApplicationLoadBalancerArn sets ApplicationLoadBalancerArn field to given val
 `func (o *Vhost) UnsetApplicationLoadBalancerArn()`
 
 UnsetApplicationLoadBalancerArn ensures that no value is present for ApplicationLoadBalancerArn, not even an explicit nil
+### GetNetworkLoadBalancerArn
+
+`func (o *Vhost) GetNetworkLoadBalancerArn() string`
+
+GetNetworkLoadBalancerArn returns the NetworkLoadBalancerArn field if non-nil, zero value otherwise.
+
+### GetNetworkLoadBalancerArnOk
+
+`func (o *Vhost) GetNetworkLoadBalancerArnOk() (*string, bool)`
+
+GetNetworkLoadBalancerArnOk returns a tuple with the NetworkLoadBalancerArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkLoadBalancerArn
+
+`func (o *Vhost) SetNetworkLoadBalancerArn(v string)`
+
+SetNetworkLoadBalancerArn sets NetworkLoadBalancerArn field to given value.
+
+
+### SetNetworkLoadBalancerArnNil
+
+`func (o *Vhost) SetNetworkLoadBalancerArnNil(b bool)`
+
+ SetNetworkLoadBalancerArnNil sets the value for NetworkLoadBalancerArn to be an explicit nil
+
+### UnsetNetworkLoadBalancerArn
+`func (o *Vhost) UnsetNetworkLoadBalancerArn()`
+
+UnsetNetworkLoadBalancerArn ensures that no value is present for NetworkLoadBalancerArn, not even an explicit nil
 ### GetSecurityGroupId
 
 `func (o *Vhost) GetSecurityGroupId() string`

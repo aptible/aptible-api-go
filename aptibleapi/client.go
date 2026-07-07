@@ -71,8 +71,6 @@ type APIClient struct {
 
 	ContainersAPI *ContainersAPIService
 
-	DashboardsAPI *DashboardsAPIService
-
 	DatabaseCredentialsAPI *DatabaseCredentialsAPIService
 
 	DatabasesAPI *DatabasesAPIService
@@ -99,9 +97,11 @@ type APIClient struct {
 
 	IntrusionDetectionReportsAPI *IntrusionDetectionReportsAPIService
 
-	LLMIntegrationsAPI *LLMIntegrationsAPIService
+	LlmGatewayConfigurationsAPI *LlmGatewayConfigurationsAPIService
 
 	LlmKeysAPI *LlmKeysAPIService
+
+	LlmPoliciesAPI *LlmPoliciesAPIService
 
 	LogDrainsAPI *LogDrainsAPIService
 
@@ -163,7 +163,6 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.CodeScanResultsAPI = (*CodeScanResultsAPIService)(&c.common)
 	c.ConfigurationsAPI = (*ConfigurationsAPIService)(&c.common)
 	c.ContainersAPI = (*ContainersAPIService)(&c.common)
-	c.DashboardsAPI = (*DashboardsAPIService)(&c.common)
 	c.DatabaseCredentialsAPI = (*DatabaseCredentialsAPIService)(&c.common)
 	c.DatabasesAPI = (*DatabasesAPIService)(&c.common)
 	c.DefaultAPI = (*DefaultAPIService)(&c.common)
@@ -177,8 +176,9 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.ExternalAwsResourcesAPI = (*ExternalAwsResourcesAPIService)(&c.common)
 	c.ImagesAPI = (*ImagesAPIService)(&c.common)
 	c.IntrusionDetectionReportsAPI = (*IntrusionDetectionReportsAPIService)(&c.common)
-	c.LLMIntegrationsAPI = (*LLMIntegrationsAPIService)(&c.common)
+	c.LlmGatewayConfigurationsAPI = (*LlmGatewayConfigurationsAPIService)(&c.common)
 	c.LlmKeysAPI = (*LlmKeysAPIService)(&c.common)
+	c.LlmPoliciesAPI = (*LlmPoliciesAPIService)(&c.common)
 	c.LogDrainsAPI = (*LogDrainsAPIService)(&c.common)
 	c.MetricDrainsAPI = (*MetricDrainsAPIService)(&c.common)
 	c.OperationsAPI = (*OperationsAPIService)(&c.common)

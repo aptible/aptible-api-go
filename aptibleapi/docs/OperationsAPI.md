@@ -1016,7 +1016,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForAccount
 
-> ListOperationsForAccount200Response ListOperationsForAccount(ctx, accountId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForAccount(ctx, accountId).Page(page).Execute()
 
 list operations
 
@@ -1043,7 +1043,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForAccount`: ListOperationsForAccount200Response
+	// response from `ListOperationsForAccount`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForAccount`: %v\n", resp)
 }
 ```
@@ -1068,7 +1068,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1086,7 +1086,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForApp
 
-> ListOperationsForAccount200Response ListOperationsForApp(ctx, appId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForApp(ctx, appId).Page(page).Execute()
 
 list operations
 
@@ -1113,7 +1113,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForApp`: ListOperationsForAccount200Response
+	// response from `ListOperationsForApp`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForApp`: %v\n", resp)
 }
 ```
@@ -1138,7 +1138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1156,7 +1156,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForBackup
 
-> ListOperationsForAccount200Response ListOperationsForBackup(ctx, backupId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForBackup(ctx, backupId).Page(page).Execute()
 
 list operations
 
@@ -1183,7 +1183,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForBackup`: ListOperationsForAccount200Response
+	// response from `ListOperationsForBackup`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForBackup`: %v\n", resp)
 }
 ```
@@ -1208,7 +1208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1226,7 +1226,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDatabase
 
-> ListOperationsForAccount200Response ListOperationsForDatabase(ctx, databaseId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForDatabase(ctx, databaseId).Page(page).Execute()
 
 list operations
 
@@ -1253,7 +1253,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForDatabase`: ListOperationsForAccount200Response
+	// response from `ListOperationsForDatabase`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForDatabase`: %v\n", resp)
 }
 ```
@@ -1278,7 +1278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1296,7 +1296,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDatabaseCredential
 
-> ListOperationsForAccount200Response ListOperationsForDatabaseCredential(ctx, databaseCredentialId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForDatabaseCredential(ctx, databaseCredentialId).Page(page).Execute()
 
 list operations
 
@@ -1323,7 +1323,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDatabaseCredential``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForDatabaseCredential`: ListOperationsForAccount200Response
+	// response from `ListOperationsForDatabaseCredential`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForDatabaseCredential`: %v\n", resp)
 }
 ```
@@ -1348,7 +1348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1366,7 +1366,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDiskAttachment
 
-> ListOperationsForAccount200Response ListOperationsForDiskAttachment(ctx, diskAttachmentId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForDiskAttachment(ctx, diskAttachmentId).Page(page).Execute()
 
 list operations
 
@@ -1393,7 +1393,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDiskAttachment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForDiskAttachment`: ListOperationsForAccount200Response
+	// response from `ListOperationsForDiskAttachment`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForDiskAttachment`: %v\n", resp)
 }
 ```
@@ -1418,7 +1418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1436,7 +1436,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForEphemeralSession
 
-> ListOperationsForAccount200Response ListOperationsForEphemeralSession(ctx, ephemeralSessionId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForEphemeralSession(ctx, ephemeralSessionId).Page(page).Execute()
 
 list operations
 
@@ -1463,7 +1463,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForEphemeralSession``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForEphemeralSession`: ListOperationsForAccount200Response
+	// response from `ListOperationsForEphemeralSession`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForEphemeralSession`: %v\n", resp)
 }
 ```
@@ -1488,7 +1488,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1574,7 +1574,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForImage
 
-> ListOperationsForAccount200Response ListOperationsForImage(ctx, imageId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForImage(ctx, imageId).Page(page).Execute()
 
 list operations
 
@@ -1601,7 +1601,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForImage`: ListOperationsForAccount200Response
+	// response from `ListOperationsForImage`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForImage`: %v\n", resp)
 }
 ```
@@ -1626,7 +1626,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1644,7 +1644,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForLlmKey
 
-> ListOperationsForAccount200Response ListOperationsForLlmKey(ctx, llmKeyId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForLlmKey(ctx, llmKeyId).Page(page).Execute()
 
 list operations
 
@@ -1671,7 +1671,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForLlmKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForLlmKey`: ListOperationsForAccount200Response
+	// response from `ListOperationsForLlmKey`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForLlmKey`: %v\n", resp)
 }
 ```
@@ -1696,7 +1696,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1714,7 +1714,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForLogDrain
 
-> ListOperationsForAccount200Response ListOperationsForLogDrain(ctx, logDrainId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForLogDrain(ctx, logDrainId).Page(page).Execute()
 
 list operations
 
@@ -1741,7 +1741,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForLogDrain`: ListOperationsForAccount200Response
+	// response from `ListOperationsForLogDrain`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForLogDrain`: %v\n", resp)
 }
 ```
@@ -1766,7 +1766,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1784,7 +1784,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForMetricDrain
 
-> ListOperationsForAccount200Response ListOperationsForMetricDrain(ctx, metricDrainId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForMetricDrain(ctx, metricDrainId).Page(page).Execute()
 
 list operations
 
@@ -1811,7 +1811,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForMetricDrain`: ListOperationsForAccount200Response
+	// response from `ListOperationsForMetricDrain`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForMetricDrain`: %v\n", resp)
 }
 ```
@@ -1836,7 +1836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1854,7 +1854,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForPersistentDisk
 
-> ListOperationsForAccount200Response ListOperationsForPersistentDisk(ctx, persistentDiskId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForPersistentDisk(ctx, persistentDiskId).Page(page).Execute()
 
 list operations
 
@@ -1881,7 +1881,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForPersistentDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForPersistentDisk`: ListOperationsForAccount200Response
+	// response from `ListOperationsForPersistentDisk`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForPersistentDisk`: %v\n", resp)
 }
 ```
@@ -1906,7 +1906,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1924,7 +1924,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForService
 
-> ListOperationsForAccount200Response ListOperationsForService(ctx, serviceId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForService(ctx, serviceId).Page(page).Execute()
 
 list operations
 
@@ -1951,7 +1951,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForService`: ListOperationsForAccount200Response
+	// response from `ListOperationsForService`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForService`: %v\n", resp)
 }
 ```
@@ -1976,7 +1976,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 
@@ -1994,7 +1994,7 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForVhost
 
-> ListOperationsForAccount200Response ListOperationsForVhost(ctx, vhostId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForVhost(ctx, vhostId).Page(page).Execute()
 
 list operations
 
@@ -2021,7 +2021,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListOperationsForVhost`: ListOperationsForAccount200Response
+	// response from `ListOperationsForVhost`: ListOperationsForPersistentDisk200Response
 	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.ListOperationsForVhost`: %v\n", resp)
 }
 ```
@@ -2046,7 +2046,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOperationsForAccount200Response**](ListOperationsForAccount200Response.md)
+[**ListOperationsForPersistentDisk200Response**](ListOperationsForPersistentDisk200Response.md)
 
 ### Authorization
 

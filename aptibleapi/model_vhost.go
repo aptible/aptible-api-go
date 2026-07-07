@@ -26,6 +26,7 @@ type Vhost struct {
 	Type string `json:"type"`
 	ElasticLoadBalancerName NullableString `json:"elastic_load_balancer_name"`
 	ApplicationLoadBalancerArn NullableString `json:"application_load_balancer_arn"`
+	NetworkLoadBalancerArn NullableString `json:"network_load_balancer_arn"`
 	SecurityGroupId NullableString `json:"security_group_id"`
 	ExternalHost NullableString `json:"external_host"`
 	ExternalHttpPort NullableInt32 `json:"external_http_port"`
@@ -64,7 +65,7 @@ type _Vhost Vhost
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString, loadBalancingAlgorithmType NullableString) *Vhost {
+func NewVhost(id int32, metaType string, virtualDomain string, type_ string, elasticLoadBalancerName NullableString, applicationLoadBalancerArn NullableString, networkLoadBalancerArn NullableString, securityGroupId NullableString, externalHost NullableString, externalHttpPort NullableInt32, externalHttpsPort NullableInt32, internalHost NullableString, internalHttpPort NullableInt32, internalHttpsPort NullableInt32, internalHealthPort NullableInt32, dockerName NullableString, createdAt string, updatedAt string, status string, platform string, default_ bool, internal bool, containerExposedPorts []int32, hostMappedPorts []int32, ipWhitelist []string, userDomain NullableString, acme bool, acmeStatus NullableString, acmeDnsChallengeHost NullableString, containerPort NullableInt32, containerPorts []int32, acmeConfiguration NullableVhostAcmeConfiguration, shared NullableBool, sharedFingerprint NullableString, loadBalancingAlgorithmType NullableString) *Vhost {
 	this := Vhost{}
 	this.Id = id
 	this.MetaType = metaType
@@ -72,6 +73,7 @@ func NewVhost(id int32, metaType string, virtualDomain string, type_ string, ela
 	this.Type = type_
 	this.ElasticLoadBalancerName = elasticLoadBalancerName
 	this.ApplicationLoadBalancerArn = applicationLoadBalancerArn
+	this.NetworkLoadBalancerArn = networkLoadBalancerArn
 	this.SecurityGroupId = securityGroupId
 	this.ExternalHost = externalHost
 	this.ExternalHttpPort = externalHttpPort
@@ -257,6 +259,32 @@ func (o *Vhost) GetApplicationLoadBalancerArnOk() (*string, bool) {
 // SetApplicationLoadBalancerArn sets field value
 func (o *Vhost) SetApplicationLoadBalancerArn(v string) {
 	o.ApplicationLoadBalancerArn.Set(&v)
+}
+
+// GetNetworkLoadBalancerArn returns the NetworkLoadBalancerArn field value
+// If the value is explicit nil, the zero value for string will be returned
+func (o *Vhost) GetNetworkLoadBalancerArn() string {
+	if o == nil || o.NetworkLoadBalancerArn.Get() == nil {
+		var ret string
+		return ret
+	}
+
+	return *o.NetworkLoadBalancerArn.Get()
+}
+
+// GetNetworkLoadBalancerArnOk returns a tuple with the NetworkLoadBalancerArn field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Vhost) GetNetworkLoadBalancerArnOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.NetworkLoadBalancerArn.Get(), o.NetworkLoadBalancerArn.IsSet()
+}
+
+// SetNetworkLoadBalancerArn sets field value
+func (o *Vhost) SetNetworkLoadBalancerArn(v string) {
+	o.NetworkLoadBalancerArn.Set(&v)
 }
 
 // GetSecurityGroupId returns the SecurityGroupId field value
@@ -1017,6 +1045,7 @@ func (o Vhost) ToMap() (map[string]interface{}, error) {
 	toSerialize["type"] = o.Type
 	toSerialize["elastic_load_balancer_name"] = o.ElasticLoadBalancerName.Get()
 	toSerialize["application_load_balancer_arn"] = o.ApplicationLoadBalancerArn.Get()
+	toSerialize["network_load_balancer_arn"] = o.NetworkLoadBalancerArn.Get()
 	toSerialize["security_group_id"] = o.SecurityGroupId.Get()
 	toSerialize["external_host"] = o.ExternalHost.Get()
 	toSerialize["external_http_port"] = o.ExternalHttpPort.Get()
@@ -1071,6 +1100,7 @@ func (o *Vhost) UnmarshalJSON(data []byte) (err error) {
 		"type",
 		"elastic_load_balancer_name",
 		"application_load_balancer_arn",
+		"network_load_balancer_arn",
 		"security_group_id",
 		"external_host",
 		"external_http_port",
@@ -1134,6 +1164,7 @@ func (o *Vhost) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "elastic_load_balancer_name")
 		delete(additionalProperties, "application_load_balancer_arn")
+		delete(additionalProperties, "network_load_balancer_arn")
 		delete(additionalProperties, "security_group_id")
 		delete(additionalProperties, "external_host")
 		delete(additionalProperties, "external_http_port")

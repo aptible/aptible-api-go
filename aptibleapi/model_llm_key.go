@@ -41,6 +41,7 @@ type LlmKey struct {
 	Status string `json:"status"`
 	// Secret API key value (only present on creation)
 	Token NullableString `json:"token,omitempty"`
+	CurrentUsage NullableLlmKeyCurrentUsage `json:"current_usage,omitempty"`
 	Links *BackupRetentionPolicyLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -395,6 +396,48 @@ func (o *LlmKey) UnsetToken() {
 	o.Token.Unset()
 }
 
+// GetCurrentUsage returns the CurrentUsage field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LlmKey) GetCurrentUsage() LlmKeyCurrentUsage {
+	if o == nil || IsNil(o.CurrentUsage.Get()) {
+		var ret LlmKeyCurrentUsage
+		return ret
+	}
+	return *o.CurrentUsage.Get()
+}
+
+// GetCurrentUsageOk returns a tuple with the CurrentUsage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LlmKey) GetCurrentUsageOk() (*LlmKeyCurrentUsage, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CurrentUsage.Get(), o.CurrentUsage.IsSet()
+}
+
+// HasCurrentUsage returns a boolean if a field has been set.
+func (o *LlmKey) HasCurrentUsage() bool {
+	if o != nil && o.CurrentUsage.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentUsage gets a reference to the given NullableLlmKeyCurrentUsage and assigns it to the CurrentUsage field.
+func (o *LlmKey) SetCurrentUsage(v LlmKeyCurrentUsage) {
+	o.CurrentUsage.Set(&v)
+}
+// SetCurrentUsageNil sets the value for CurrentUsage to be an explicit nil
+func (o *LlmKey) SetCurrentUsageNil() {
+	o.CurrentUsage.Set(nil)
+}
+
+// UnsetCurrentUsage ensures that no value is present for CurrentUsage, not even an explicit nil
+func (o *LlmKey) UnsetCurrentUsage() {
+	o.CurrentUsage.Unset()
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *LlmKey) GetLinks() BackupRetentionPolicyLinks {
 	if o == nil || IsNil(o.Links) {
@@ -454,6 +497,9 @@ func (o LlmKey) ToMap() (map[string]interface{}, error) {
 	toSerialize["status"] = o.Status
 	if o.Token.IsSet() {
 		toSerialize["token"] = o.Token.Get()
+	}
+	if o.CurrentUsage.IsSet() {
+		toSerialize["current_usage"] = o.CurrentUsage.Get()
 	}
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
@@ -523,6 +569,7 @@ func (o *LlmKey) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "revoked_by")
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "token")
+		delete(additionalProperties, "current_usage")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}
