@@ -250,6 +250,34 @@ paths:
       summary: update account
       tags:
       - Accounts
+  /find/account:
+    get:
+      operationId: GetAccountByHandle
+      parameters:
+      - description: account handle
+        explode: true
+        in: query
+        name: handle
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/account'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: find account by handle
+      tags:
+      - Accounts
   /accounts/{account_id}/activity_reports:
     get:
       operationId: ListActivityReportsForAccount
@@ -750,6 +778,43 @@ paths:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
       summary: create external aws rds connection
+      tags:
+      - Apps
+  /find/app:
+    get:
+      operationId: GetAppByHandle
+      parameters:
+      - description: app handle
+        explode: true
+        in: query
+        name: handle
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: account handle to disambiguate when multiple apps share the same
+          handle
+        explode: true
+        in: query
+        name: environment
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/app'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: find app by handle
       tags:
       - Apps
   /accounts/{account_id}/backup_retention_policies:
@@ -2123,6 +2188,43 @@ paths:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
       summary: update database
+      tags:
+      - Databases
+  /find/database:
+    get:
+      operationId: GetDatabaseByHandle
+      parameters:
+      - description: database handle
+        explode: true
+        in: query
+        name: handle
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: account handle to disambiguate when multiple databases share
+          the same handle
+        explode: true
+        in: query
+        name: environment
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/database'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: find database by handle
       tags:
       - Databases
   /deployments:

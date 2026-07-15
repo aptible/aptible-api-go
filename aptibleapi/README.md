@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 *AccountsAPI* | [**CreateAccount**](docs/AccountsAPI.md#createaccount) | **Post** /accounts | create account
 *AccountsAPI* | [**DeleteAccount**](docs/AccountsAPI.md#deleteaccount) | **Delete** /accounts/{id} | delete account
 *AccountsAPI* | [**GetAccount**](docs/AccountsAPI.md#getaccount) | **Get** /accounts/{id} | show account
+*AccountsAPI* | [**GetAccountByHandle**](docs/AccountsAPI.md#getaccountbyhandle) | **Get** /find/account | find account by handle
 *AccountsAPI* | [**ListAccounts**](docs/AccountsAPI.md#listaccounts) | **Get** /accounts | list accounts
 *AccountsAPI* | [**ListAccountsForStack**](docs/AccountsAPI.md#listaccountsforstack) | **Get** /stacks/{stack_id}/accounts | list accounts
 *AccountsAPI* | [**PatchAccount**](docs/AccountsAPI.md#patchaccount) | **Patch** /accounts/{id} | update account
@@ -96,6 +97,7 @@ Class | Method | HTTP request | Description
 *AppsAPI* | [**CreateAppExternalAwsRdsConnection**](docs/AppsAPI.md#createappexternalawsrdsconnection) | **Post** /apps/{id}/app_external_aws_rds_connections | create external aws rds connection
 *AppsAPI* | [**DeleteApp**](docs/AppsAPI.md#deleteapp) | **Delete** /apps/{id} | delete app
 *AppsAPI* | [**GetApp**](docs/AppsAPI.md#getapp) | **Get** /apps/{id} | show app
+*AppsAPI* | [**GetAppByHandle**](docs/AppsAPI.md#getappbyhandle) | **Get** /find/app | find app by handle
 *AppsAPI* | [**ListAppExternalAwsRdsConnections**](docs/AppsAPI.md#listappexternalawsrdsconnections) | **Get** /apps/{id}/app_external_aws_rds_connections | list external aws rds connections
 *AppsAPI* | [**ListApps**](docs/AppsAPI.md#listapps) | **Get** /apps | list apps
 *AppsAPI* | [**ListAppsForAccount**](docs/AppsAPI.md#listappsforaccount) | **Get** /accounts/{account_id}/apps | list apps
@@ -138,6 +140,7 @@ Class | Method | HTTP request | Description
 *DatabasesAPI* | [**CreateDatabase**](docs/DatabasesAPI.md#createdatabase) | **Post** /accounts/{account_id}/databases | create database
 *DatabasesAPI* | [**DeleteDatabase**](docs/DatabasesAPI.md#deletedatabase) | **Delete** /databases/{id} | delete database
 *DatabasesAPI* | [**GetDatabase**](docs/DatabasesAPI.md#getdatabase) | **Get** /databases/{id} | show database
+*DatabasesAPI* | [**GetDatabaseByHandle**](docs/DatabasesAPI.md#getdatabasebyhandle) | **Get** /find/database | find database by handle
 *DatabasesAPI* | [**ListDatabases**](docs/DatabasesAPI.md#listdatabases) | **Get** /databases | list databases
 *DatabasesAPI* | [**ListDatabasesForAccount**](docs/DatabasesAPI.md#listdatabasesforaccount) | **Get** /accounts/{account_id}/databases | list databases
 *DatabasesAPI* | [**ListReplicasForDatabase**](docs/DatabasesAPI.md#listreplicasfordatabase) | **Get** /databases/{database_id}/dependents | list databases

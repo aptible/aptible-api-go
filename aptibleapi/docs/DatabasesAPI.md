@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateDatabase**](DatabasesAPI.md#CreateDatabase) | **Post** /accounts/{account_id}/databases | create database
 [**DeleteDatabase**](DatabasesAPI.md#DeleteDatabase) | **Delete** /databases/{id} | delete database
 [**GetDatabase**](DatabasesAPI.md#GetDatabase) | **Get** /databases/{id} | show database
+[**GetDatabaseByHandle**](DatabasesAPI.md#GetDatabaseByHandle) | **Get** /find/database | find database by handle
 [**ListDatabases**](DatabasesAPI.md#ListDatabases) | **Get** /databases | list databases
 [**ListDatabasesForAccount**](DatabasesAPI.md#ListDatabasesForAccount) | **Get** /accounts/{account_id}/databases | list databases
 [**ListReplicasForDatabase**](DatabasesAPI.md#ListReplicasForDatabase) | **Get** /databases/{database_id}/dependents | list databases
@@ -200,6 +201,72 @@ Other parameters are passed through a pointer to a apiGetDatabaseRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+### Return type
+
+[**Database**](Database.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDatabaseByHandle
+
+> Database GetDatabaseByHandle(ctx).Handle(handle).Environment(environment).Execute()
+
+find database by handle
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	handle := "handle_example" // string | database handle
+	environment := "environment_example" // string | account handle to disambiguate when multiple databases share the same handle (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DatabasesAPI.GetDatabaseByHandle(context.Background()).Handle(handle).Environment(environment).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.GetDatabaseByHandle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDatabaseByHandle`: Database
+	fmt.Fprintf(os.Stdout, "Response from `DatabasesAPI.GetDatabaseByHandle`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDatabaseByHandleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string** | database handle | 
+ **environment** | **string** | account handle to disambiguate when multiple databases share the same handle | 
 
 ### Return type
 
