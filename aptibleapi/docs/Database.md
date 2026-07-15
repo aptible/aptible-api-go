@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **PitrBucket** | **NullableString** |  | 
 **OldestPitrTime** | **NullableString** |  | 
 **EnablePitr** | **bool** |  | 
+**PitrStatus** | **string** |  | [default to "unsupported"]
 **Embedded** | [**DatabaseEmbedded**](DatabaseEmbedded.md) |  | 
 **Links** | Pointer to [**DatabaseLinks**](DatabaseLinks.md) |  | [optional] 
 
@@ -30,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewDatabase
 
-`func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, embedded DatabaseEmbedded, ) *Database`
+`func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, pitrStatus string, embedded DatabaseEmbedded, ) *Database`
 
 NewDatabase instantiates a new Database object
 This constructor will assign default values to properties that have it defined,
@@ -513,6 +514,26 @@ and a boolean to check if the value has been set.
 `func (o *Database) SetEnablePitr(v bool)`
 
 SetEnablePitr sets EnablePitr field to given value.
+
+
+### GetPitrStatus
+
+`func (o *Database) GetPitrStatus() string`
+
+GetPitrStatus returns the PitrStatus field if non-nil, zero value otherwise.
+
+### GetPitrStatusOk
+
+`func (o *Database) GetPitrStatusOk() (*string, bool)`
+
+GetPitrStatusOk returns a tuple with the PitrStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPitrStatus
+
+`func (o *Database) SetPitrStatus(v string)`
+
+SetPitrStatus sets PitrStatus field to given value.
 
 
 ### GetEmbedded

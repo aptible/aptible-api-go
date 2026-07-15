@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **TotalCount** | **int32** |  | 
 **PerPage** | **int32** |  | 
 **CurrentPage** | **int32** |  | 
-**Links** | [**ListDashboards200ResponseLinks**](ListDashboards200ResponseLinks.md) |  | 
+**Links** | [**ListDatabaseImages200ResponseLinks**](ListDatabaseImages200ResponseLinks.md) |  | 
 
 ## Methods
 
 ### NewListSources200Response
 
-`func NewListSources200Response(embedded ListSources200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDashboards200ResponseLinks, ) *ListSources200Response`
+`func NewListSources200Response(embedded ListSources200ResponseEmbedded, totalCount int32, perPage int32, currentPage int32, links ListDatabaseImages200ResponseLinks, ) *ListSources200Response`
 
 NewListSources200Response instantiates a new ListSources200Response object
 This constructor will assign default values to properties that have it defined,
@@ -111,20 +111,20 @@ SetCurrentPage sets CurrentPage field to given value.
 
 ### GetLinks
 
-`func (o *ListSources200Response) GetLinks() ListDashboards200ResponseLinks`
+`func (o *ListSources200Response) GetLinks() ListDatabaseImages200ResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *ListSources200Response) GetLinksOk() (*ListDashboards200ResponseLinks, bool)`
+`func (o *ListSources200Response) GetLinksOk() (*ListDatabaseImages200ResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *ListSources200Response) SetLinks(v ListDashboards200ResponseLinks)`
+`func (o *ListSources200Response) SetLinks(v ListDatabaseImages200ResponseLinks)`
 
 SetLinks sets Links field to given value.
 

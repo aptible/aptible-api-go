@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CreateAppExternalAwsRdsConnection**](AppsAPI.md#CreateAppExternalAwsRdsConnection) | **Post** /apps/{id}/app_external_aws_rds_connections | create external aws rds connection
 [**DeleteApp**](AppsAPI.md#DeleteApp) | **Delete** /apps/{id} | delete app
 [**GetApp**](AppsAPI.md#GetApp) | **Get** /apps/{id} | show app
+[**GetAppByHandle**](AppsAPI.md#GetAppByHandle) | **Get** /find/app | find app by handle
 [**ListAppExternalAwsRdsConnections**](AppsAPI.md#ListAppExternalAwsRdsConnections) | **Get** /apps/{id}/app_external_aws_rds_connections | list external aws rds connections
 [**ListApps**](AppsAPI.md#ListApps) | **Get** /apps | list apps
 [**ListAppsForAccount**](AppsAPI.md#ListAppsForAccount) | **Get** /accounts/{account_id}/apps | list apps
@@ -272,6 +273,72 @@ Other parameters are passed through a pointer to a apiGetAppRequest struct via t
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+### Return type
+
+[**App**](App.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAppByHandle
+
+> App GetAppByHandle(ctx).Handle(handle).Environment(environment).Execute()
+
+find app by handle
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	handle := "handle_example" // string | app handle
+	environment := "environment_example" // string | account handle to disambiguate when multiple apps share the same handle (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AppsAPI.GetAppByHandle(context.Background()).Handle(handle).Environment(environment).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.GetAppByHandle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAppByHandle`: App
+	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.GetAppByHandle`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAppByHandleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string** | app handle | 
+ **environment** | **string** | account handle to disambiguate when multiple apps share the same handle | 
 
 ### Return type
 

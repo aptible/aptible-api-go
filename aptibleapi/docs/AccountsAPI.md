@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CreateAccount**](AccountsAPI.md#CreateAccount) | **Post** /accounts | create account
 [**DeleteAccount**](AccountsAPI.md#DeleteAccount) | **Delete** /accounts/{id} | delete account
 [**GetAccount**](AccountsAPI.md#GetAccount) | **Get** /accounts/{id} | show account
+[**GetAccountByHandle**](AccountsAPI.md#GetAccountByHandle) | **Get** /find/account | find account by handle
 [**ListAccounts**](AccountsAPI.md#ListAccounts) | **Get** /accounts | list accounts
 [**ListAccountsForStack**](AccountsAPI.md#ListAccountsForStack) | **Get** /stacks/{stack_id}/accounts | list accounts
 [**PatchAccount**](AccountsAPI.md#PatchAccount) | **Patch** /accounts/{id} | update account
@@ -193,6 +194,70 @@ Other parameters are passed through a pointer to a apiGetAccountRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+
+### Return type
+
+[**Account**](Account.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAccountByHandle
+
+> Account GetAccountByHandle(ctx).Handle(handle).Execute()
+
+find account by handle
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	handle := "handle_example" // string | account handle
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.AccountsAPI.GetAccountByHandle(context.Background()).Handle(handle).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetAccountByHandle``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAccountByHandle`: Account
+	fmt.Fprintf(os.Stdout, "Response from `AccountsAPI.GetAccountByHandle`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAccountByHandleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string** | account handle | 
 
 ### Return type
 

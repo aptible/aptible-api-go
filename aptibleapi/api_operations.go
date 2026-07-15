@@ -1851,7 +1851,7 @@ func (r ApiListOperationsForAccountRequest) Page(page int32) ApiListOperationsFo
 	return r
 }
 
-func (r ApiListOperationsForAccountRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForAccountRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForAccountExecute(r)
 }
 
@@ -1871,13 +1871,13 @@ func (a *OperationsAPIService) ListOperationsForAccount(ctx context.Context, acc
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForAccountExecute(r ApiListOperationsForAccountRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForAccountExecute(r ApiListOperationsForAccountRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForAccount")
@@ -1984,7 +1984,7 @@ func (r ApiListOperationsForAppRequest) Page(page int32) ApiListOperationsForApp
 	return r
 }
 
-func (r ApiListOperationsForAppRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForAppRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForAppExecute(r)
 }
 
@@ -2004,13 +2004,13 @@ func (a *OperationsAPIService) ListOperationsForApp(ctx context.Context, appId i
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForAppExecute(r ApiListOperationsForAppRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForAppExecute(r ApiListOperationsForAppRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForApp")
@@ -2117,7 +2117,7 @@ func (r ApiListOperationsForBackupRequest) Page(page int32) ApiListOperationsFor
 	return r
 }
 
-func (r ApiListOperationsForBackupRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForBackupRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForBackupExecute(r)
 }
 
@@ -2137,13 +2137,13 @@ func (a *OperationsAPIService) ListOperationsForBackup(ctx context.Context, back
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForBackupExecute(r ApiListOperationsForBackupRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForBackupExecute(r ApiListOperationsForBackupRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForBackup")
@@ -2250,7 +2250,7 @@ func (r ApiListOperationsForDatabaseRequest) Page(page int32) ApiListOperationsF
 	return r
 }
 
-func (r ApiListOperationsForDatabaseRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForDatabaseRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForDatabaseExecute(r)
 }
 
@@ -2270,13 +2270,13 @@ func (a *OperationsAPIService) ListOperationsForDatabase(ctx context.Context, da
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForDatabaseExecute(r ApiListOperationsForDatabaseRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForDatabaseExecute(r ApiListOperationsForDatabaseRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForDatabase")
@@ -2383,7 +2383,7 @@ func (r ApiListOperationsForDatabaseCredentialRequest) Page(page int32) ApiListO
 	return r
 }
 
-func (r ApiListOperationsForDatabaseCredentialRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForDatabaseCredentialRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForDatabaseCredentialExecute(r)
 }
 
@@ -2403,13 +2403,13 @@ func (a *OperationsAPIService) ListOperationsForDatabaseCredential(ctx context.C
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForDatabaseCredentialExecute(r ApiListOperationsForDatabaseCredentialRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForDatabaseCredentialExecute(r ApiListOperationsForDatabaseCredentialRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForDatabaseCredential")
@@ -2516,7 +2516,7 @@ func (r ApiListOperationsForDiskAttachmentRequest) Page(page int32) ApiListOpera
 	return r
 }
 
-func (r ApiListOperationsForDiskAttachmentRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForDiskAttachmentRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForDiskAttachmentExecute(r)
 }
 
@@ -2536,13 +2536,13 @@ func (a *OperationsAPIService) ListOperationsForDiskAttachment(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForDiskAttachmentExecute(r ApiListOperationsForDiskAttachmentRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForDiskAttachmentExecute(r ApiListOperationsForDiskAttachmentRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForDiskAttachment")
@@ -2649,7 +2649,7 @@ func (r ApiListOperationsForEphemeralSessionRequest) Page(page int32) ApiListOpe
 	return r
 }
 
-func (r ApiListOperationsForEphemeralSessionRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForEphemeralSessionRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForEphemeralSessionExecute(r)
 }
 
@@ -2669,13 +2669,13 @@ func (a *OperationsAPIService) ListOperationsForEphemeralSession(ctx context.Con
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForEphemeralSessionExecute(r ApiListOperationsForEphemeralSessionRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForEphemeralSessionExecute(r ApiListOperationsForEphemeralSessionRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForEphemeralSession")
@@ -2904,7 +2904,7 @@ func (r ApiListOperationsForImageRequest) Page(page int32) ApiListOperationsForI
 	return r
 }
 
-func (r ApiListOperationsForImageRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForImageRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForImageExecute(r)
 }
 
@@ -2924,13 +2924,13 @@ func (a *OperationsAPIService) ListOperationsForImage(ctx context.Context, image
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForImageExecute(r ApiListOperationsForImageRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForImageExecute(r ApiListOperationsForImageRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForImage")
@@ -3037,7 +3037,7 @@ func (r ApiListOperationsForLlmKeyRequest) Page(page int32) ApiListOperationsFor
 	return r
 }
 
-func (r ApiListOperationsForLlmKeyRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForLlmKeyRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForLlmKeyExecute(r)
 }
 
@@ -3057,13 +3057,13 @@ func (a *OperationsAPIService) ListOperationsForLlmKey(ctx context.Context, llmK
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForLlmKeyExecute(r ApiListOperationsForLlmKeyRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForLlmKeyExecute(r ApiListOperationsForLlmKeyRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForLlmKey")
@@ -3170,7 +3170,7 @@ func (r ApiListOperationsForLogDrainRequest) Page(page int32) ApiListOperationsF
 	return r
 }
 
-func (r ApiListOperationsForLogDrainRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForLogDrainRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForLogDrainExecute(r)
 }
 
@@ -3190,13 +3190,13 @@ func (a *OperationsAPIService) ListOperationsForLogDrain(ctx context.Context, lo
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForLogDrainExecute(r ApiListOperationsForLogDrainRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForLogDrainExecute(r ApiListOperationsForLogDrainRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForLogDrain")
@@ -3303,7 +3303,7 @@ func (r ApiListOperationsForMetricDrainRequest) Page(page int32) ApiListOperatio
 	return r
 }
 
-func (r ApiListOperationsForMetricDrainRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForMetricDrainRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForMetricDrainExecute(r)
 }
 
@@ -3323,13 +3323,13 @@ func (a *OperationsAPIService) ListOperationsForMetricDrain(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForMetricDrainExecute(r ApiListOperationsForMetricDrainRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForMetricDrainExecute(r ApiListOperationsForMetricDrainRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForMetricDrain")
@@ -3436,7 +3436,7 @@ func (r ApiListOperationsForPersistentDiskRequest) Page(page int32) ApiListOpera
 	return r
 }
 
-func (r ApiListOperationsForPersistentDiskRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForPersistentDiskRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForPersistentDiskExecute(r)
 }
 
@@ -3456,13 +3456,13 @@ func (a *OperationsAPIService) ListOperationsForPersistentDisk(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForPersistentDiskExecute(r ApiListOperationsForPersistentDiskRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForPersistentDiskExecute(r ApiListOperationsForPersistentDiskRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForPersistentDisk")
@@ -3569,7 +3569,7 @@ func (r ApiListOperationsForServiceRequest) Page(page int32) ApiListOperationsFo
 	return r
 }
 
-func (r ApiListOperationsForServiceRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForServiceRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForServiceExecute(r)
 }
 
@@ -3589,13 +3589,13 @@ func (a *OperationsAPIService) ListOperationsForService(ctx context.Context, ser
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForServiceExecute(r ApiListOperationsForServiceRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForServiceExecute(r ApiListOperationsForServiceRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForService")
@@ -3702,7 +3702,7 @@ func (r ApiListOperationsForVhostRequest) Page(page int32) ApiListOperationsForV
 	return r
 }
 
-func (r ApiListOperationsForVhostRequest) Execute() (*ListOperationsForAccount200Response, *http.Response, error) {
+func (r ApiListOperationsForVhostRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	return r.ApiService.ListOperationsForVhostExecute(r)
 }
 
@@ -3722,13 +3722,13 @@ func (a *OperationsAPIService) ListOperationsForVhost(ctx context.Context, vhost
 }
 
 // Execute executes the request
-//  @return ListOperationsForAccount200Response
-func (a *OperationsAPIService) ListOperationsForVhostExecute(r ApiListOperationsForVhostRequest) (*ListOperationsForAccount200Response, *http.Response, error) {
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForVhostExecute(r ApiListOperationsForVhostRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListOperationsForAccount200Response
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForVhost")
