@@ -14,9 +14,11 @@ Method | HTTP request | Description
 
 ## GetBackup
 
-> Backup GetBackup(ctx, id).Execute()
+> Backup GetBackup(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show backup
+
+
 
 ### Example
 
@@ -32,10 +34,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.GetBackup(context.Background(), id).Execute()
+	resp, r, err := apiClient.BackupsAPI.GetBackup(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.GetBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,6 +65,8 @@ Other parameters are passed through a pointer to a apiGetBackupRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -82,9 +88,11 @@ Name | Type | Description  | Notes
 
 ## ListBackups
 
-> ListBackups200Response ListBackups(ctx).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+> ListBackups200Response ListBackups(ctx).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
+
+
 
 ### Example
 
@@ -99,13 +107,15 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
-	perPage := int32(56) // int32 | number of results to return per page (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListBackups(context.Background()).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListBackups(context.Background()).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,9 +136,11 @@ Other parameters are passed through a pointer to a apiListBackupsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
- **perPage** | **int32** | number of results to return per page | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -150,9 +162,11 @@ Name | Type | Description  | Notes
 
 ## ListBackupsForAccount
 
-> ListBackups200Response ListBackupsForAccount(ctx, accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+> ListBackups200Response ListBackupsForAccount(ctx, accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
+
+
 
 ### Example
 
@@ -168,13 +182,15 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
-	perPage := int32(56) // int32 | number of results to return per page (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListBackupsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListBackupsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackupsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -200,9 +216,11 @@ Other parameters are passed through a pointer to a apiListBackupsForAccountReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
- **perPage** | **int32** | number of results to return per page | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -224,9 +242,11 @@ Name | Type | Description  | Notes
 
 ## ListBackupsForDatabase
 
-> ListBackups200Response ListBackupsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+> ListBackups200Response ListBackupsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
+
+
 
 ### Example
 
@@ -242,13 +262,15 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
-	perPage := int32(56) // int32 | number of results to return per page (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListBackupsForDatabase(context.Background(), databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListBackupsForDatabase(context.Background(), databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackupsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -274,9 +296,11 @@ Other parameters are passed through a pointer to a apiListBackupsForDatabaseRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
- **perPage** | **int32** | number of results to return per page | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -298,9 +322,11 @@ Name | Type | Description  | Notes
 
 ## ListCopiesForBackup
 
-> ListBackups200Response ListCopiesForBackup(ctx, backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+> ListBackups200Response ListCopiesForBackup(ctx, backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
+
+
 
 ### Example
 
@@ -316,13 +342,15 @@ import (
 
 func main() {
 	backupId := int32(56) // int32 | backup_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
-	perPage := int32(56) // int32 | number of results to return per page (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListCopiesForBackup(context.Background(), backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListCopiesForBackup(context.Background(), backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListCopiesForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -348,9 +376,11 @@ Other parameters are passed through a pointer to a apiListCopiesForBackupRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
- **perPage** | **int32** | number of results to return per page | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

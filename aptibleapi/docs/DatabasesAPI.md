@@ -18,9 +18,11 @@ Method | HTTP request | Description
 
 ## CreateDatabase
 
-> Database CreateDatabase(ctx, accountId).CreateDatabaseRequest(createDatabaseRequest).Execute()
+> Database CreateDatabase(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).CreateDatabaseRequest(createDatabaseRequest).Execute()
 
 create database
+
+
 
 ### Example
 
@@ -36,11 +38,13 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createDatabaseRequest := *openapiclient.NewCreateDatabaseRequest("Handle_example", "Type_example") // CreateDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatabasesAPI.CreateDatabase(context.Background(), accountId).CreateDatabaseRequest(createDatabaseRequest).Execute()
+	resp, r, err := apiClient.DatabasesAPI.CreateDatabase(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).CreateDatabaseRequest(createDatabaseRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.CreateDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,6 +70,8 @@ Other parameters are passed through a pointer to a apiCreateDatabaseRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createDatabaseRequest** | [**CreateDatabaseRequest**](CreateDatabaseRequest.md) |  | 
 
 ### Return type
@@ -91,6 +97,8 @@ Name | Type | Description  | Notes
 > DeleteDatabase(ctx, id).Execute()
 
 delete database
+
+
 
 ### Example
 
@@ -154,9 +162,11 @@ Name | Type | Description  | Notes
 
 ## GetDatabase
 
-> Database GetDatabase(ctx, id).Execute()
+> Database GetDatabase(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show database
+
+
 
 ### Example
 
@@ -172,10 +182,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatabasesAPI.GetDatabase(context.Background(), id).Execute()
+	resp, r, err := apiClient.DatabasesAPI.GetDatabase(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.GetDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -201,6 +213,8 @@ Other parameters are passed through a pointer to a apiGetDatabaseRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -222,9 +236,11 @@ Name | Type | Description  | Notes
 
 ## GetDatabaseByHandle
 
-> Database GetDatabaseByHandle(ctx).Handle(handle).Environment(environment).Execute()
+> Database GetDatabaseByHandle(ctx).Handle(handle).Environment(environment).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 find database by handle
+
+
 
 ### Example
 
@@ -241,10 +257,12 @@ import (
 func main() {
 	handle := "handle_example" // string | database handle
 	environment := "environment_example" // string | account handle to disambiguate when multiple databases share the same handle (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatabasesAPI.GetDatabaseByHandle(context.Background()).Handle(handle).Environment(environment).Execute()
+	resp, r, err := apiClient.DatabasesAPI.GetDatabaseByHandle(context.Background()).Handle(handle).Environment(environment).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.GetDatabaseByHandle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,6 +285,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string** | database handle | 
  **environment** | **string** | account handle to disambiguate when multiple databases share the same handle | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -288,9 +308,11 @@ Name | Type | Description  | Notes
 
 ## ListDatabases
 
-> ListDatabasesForAccount200Response ListDatabases(ctx).Page(page).Execute()
+> ListDatabasesForAccount200Response ListDatabases(ctx).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list databases
+
+
 
 ### Example
 
@@ -305,11 +327,14 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatabasesAPI.ListDatabases(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.DatabasesAPI.ListDatabases(context.Background()).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.ListDatabases``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -330,7 +355,10 @@ Other parameters are passed through a pointer to a apiListDatabasesRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -352,9 +380,11 @@ Name | Type | Description  | Notes
 
 ## ListDatabasesForAccount
 
-> ListDatabasesForAccount200Response ListDatabasesForAccount(ctx, accountId).Page(page).Execute()
+> ListDatabasesForAccount200Response ListDatabasesForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list databases
+
+
 
 ### Example
 
@@ -370,11 +400,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatabasesAPI.ListDatabasesForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.DatabasesAPI.ListDatabasesForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.ListDatabasesForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +433,10 @@ Other parameters are passed through a pointer to a apiListDatabasesForAccountReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -422,9 +458,11 @@ Name | Type | Description  | Notes
 
 ## ListReplicasForDatabase
 
-> ListDatabasesForAccount200Response ListReplicasForDatabase(ctx, databaseId).Page(page).Execute()
+> ListDatabasesForAccount200Response ListReplicasForDatabase(ctx, databaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list databases
+
+
 
 ### Example
 
@@ -440,11 +478,14 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatabasesAPI.ListReplicasForDatabase(context.Background(), databaseId).Page(page).Execute()
+	resp, r, err := apiClient.DatabasesAPI.ListReplicasForDatabase(context.Background(), databaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.ListReplicasForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -470,7 +511,10 @@ Other parameters are passed through a pointer to a apiListReplicasForDatabaseReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -492,9 +536,11 @@ Name | Type | Description  | Notes
 
 ## PatchDatabase
 
-> PatchDatabase(ctx, id).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+> PatchDatabase(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 
 update database
+
+
 
 ### Example
 
@@ -510,11 +556,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateDatabaseRequest := *openapiclient.NewUpdateDatabaseRequest() // UpdateDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DatabasesAPI.PatchDatabase(context.Background(), id).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+	r, err := apiClient.DatabasesAPI.PatchDatabase(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.PatchDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -538,6 +586,8 @@ Other parameters are passed through a pointer to a apiPatchDatabaseRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateDatabaseRequest** | [**UpdateDatabaseRequest**](UpdateDatabaseRequest.md) |  | 
 
 ### Return type
@@ -560,9 +610,11 @@ Name | Type | Description  | Notes
 
 ## UpdateDatabase
 
-> UpdateDatabase(ctx, id).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+> UpdateDatabase(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 
 update database
+
+
 
 ### Example
 
@@ -578,11 +630,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateDatabaseRequest := *openapiclient.NewUpdateDatabaseRequest() // UpdateDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DatabasesAPI.UpdateDatabase(context.Background(), id).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+	r, err := apiClient.DatabasesAPI.UpdateDatabase(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.UpdateDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -606,6 +660,8 @@ Other parameters are passed through a pointer to a apiUpdateDatabaseRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateDatabaseRequest** | [**UpdateDatabaseRequest**](UpdateDatabaseRequest.md) |  | 
 
 ### Return type

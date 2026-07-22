@@ -14,9 +14,11 @@ Method | HTTP request | Description
 
 ## GetDiskAttachment
 
-> DiskAttachment GetDiskAttachment(ctx, id).WithDeleted(withDeleted).Execute()
+> DiskAttachment GetDiskAttachment(ctx, id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show disk attachment
+
+
 
 ### Example
 
@@ -33,10 +35,12 @@ import (
 func main() {
 	id := int32(56) // int32 | id
 	withDeleted := true // bool | include soft-deleted records (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DiskAttachmentsAPI.GetDiskAttachment(context.Background(), id).WithDeleted(withDeleted).Execute()
+	resp, r, err := apiClient.DiskAttachmentsAPI.GetDiskAttachment(context.Background(), id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiskAttachmentsAPI.GetDiskAttachment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,6 +67,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **withDeleted** | **bool** | include soft-deleted records | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -84,9 +90,11 @@ Name | Type | Description  | Notes
 
 ## ListDiskAttachments
 
-> ListDiskAttachments200Response ListDiskAttachments(ctx).Page(page).Execute()
+> ListDiskAttachments200Response ListDiskAttachments(ctx).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list disk attachments
+
+
 
 ### Example
 
@@ -101,11 +109,14 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachments(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachments(context.Background()).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiskAttachmentsAPI.ListDiskAttachments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,7 +137,10 @@ Other parameters are passed through a pointer to a apiListDiskAttachmentsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -148,9 +162,11 @@ Name | Type | Description  | Notes
 
 ## ListDiskAttachmentsForAccount
 
-> ListDiskAttachmentsForAccount200Response ListDiskAttachmentsForAccount(ctx, accountId).Page(page).Execute()
+> ListDiskAttachmentsForAccount200Response ListDiskAttachmentsForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list disk attachments
+
+
 
 ### Example
 
@@ -166,11 +182,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachmentsForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachmentsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiskAttachmentsAPI.ListDiskAttachmentsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -196,7 +215,10 @@ Other parameters are passed through a pointer to a apiListDiskAttachmentsForAcco
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -218,9 +240,11 @@ Name | Type | Description  | Notes
 
 ## ListDiskAttachmentsForPersistentDisk
 
-> ListDiskAttachmentsForPersistentDisk200Response ListDiskAttachmentsForPersistentDisk(ctx, persistentDiskId).Page(page).Execute()
+> ListDiskAttachmentsForPersistentDisk200Response ListDiskAttachmentsForPersistentDisk(ctx, persistentDiskId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list disk attachments
+
+
 
 ### Example
 
@@ -236,11 +260,14 @@ import (
 
 func main() {
 	persistentDiskId := int32(56) // int32 | persistent_disk_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachmentsForPersistentDisk(context.Background(), persistentDiskId).Page(page).Execute()
+	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachmentsForPersistentDisk(context.Background(), persistentDiskId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiskAttachmentsAPI.ListDiskAttachmentsForPersistentDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -266,7 +293,10 @@ Other parameters are passed through a pointer to a apiListDiskAttachmentsForPers
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -288,9 +318,11 @@ Name | Type | Description  | Notes
 
 ## ListDiskAttachmentsForService
 
-> ListDiskAttachmentsForService200Response ListDiskAttachmentsForService(ctx, serviceId).Page(page).Execute()
+> ListDiskAttachmentsForService200Response ListDiskAttachmentsForService(ctx, serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list disk attachments
+
+
 
 ### Example
 
@@ -306,11 +338,14 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachmentsForService(context.Background(), serviceId).Page(page).Execute()
+	resp, r, err := apiClient.DiskAttachmentsAPI.ListDiskAttachmentsForService(context.Background(), serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DiskAttachmentsAPI.ListDiskAttachmentsForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -336,7 +371,10 @@ Other parameters are passed through a pointer to a apiListDiskAttachmentsForServ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

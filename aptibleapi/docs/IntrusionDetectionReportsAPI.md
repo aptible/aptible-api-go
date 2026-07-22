@@ -13,9 +13,11 @@ Method | HTTP request | Description
 
 ## GetIntrustionDetectionReport
 
-> IntrusionDetectionReport GetIntrustionDetectionReport(ctx, id).Execute()
+> IntrusionDetectionReport GetIntrustionDetectionReport(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show intrusion_detection_report
+
+
 
 ### Example
 
@@ -31,10 +33,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntrusionDetectionReportsAPI.GetIntrustionDetectionReport(context.Background(), id).Execute()
+	resp, r, err := apiClient.IntrusionDetectionReportsAPI.GetIntrustionDetectionReport(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IntrusionDetectionReportsAPI.GetIntrustionDetectionReport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +64,8 @@ Other parameters are passed through a pointer to a apiGetIntrustionDetectionRepo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -81,9 +87,11 @@ Name | Type | Description  | Notes
 
 ## GetIntrustionDetectionReportCsvDownload
 
-> GetIntrustionDetectionReportCsvDownload(ctx, intrusionReportId).Execute()
+> GetIntrustionDetectionReportCsvDownload(ctx, intrusionReportId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 download_csv intrusion_detection_report
+
+
 
 ### Example
 
@@ -99,10 +107,12 @@ import (
 
 func main() {
 	intrusionReportId := int32(56) // int32 | intrusion_report_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.IntrusionDetectionReportsAPI.GetIntrustionDetectionReportCsvDownload(context.Background(), intrusionReportId).Execute()
+	r, err := apiClient.IntrusionDetectionReportsAPI.GetIntrustionDetectionReportCsvDownload(context.Background(), intrusionReportId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IntrusionDetectionReportsAPI.GetIntrustionDetectionReportCsvDownload``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,6 +136,8 @@ Other parameters are passed through a pointer to a apiGetIntrustionDetectionRepo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -147,9 +159,11 @@ Name | Type | Description  | Notes
 
 ## GetIntrustionDetectionReportPdfDownload
 
-> GetIntrustionDetectionReportPdfDownload(ctx, intrusionReportId).Execute()
+> GetIntrustionDetectionReportPdfDownload(ctx, intrusionReportId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 download_pdf intrusion_detection_report
+
+
 
 ### Example
 
@@ -165,10 +179,12 @@ import (
 
 func main() {
 	intrusionReportId := int32(56) // int32 | intrusion_report_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.IntrusionDetectionReportsAPI.GetIntrustionDetectionReportPdfDownload(context.Background(), intrusionReportId).Execute()
+	r, err := apiClient.IntrusionDetectionReportsAPI.GetIntrustionDetectionReportPdfDownload(context.Background(), intrusionReportId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IntrusionDetectionReportsAPI.GetIntrustionDetectionReportPdfDownload``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -192,6 +208,8 @@ Other parameters are passed through a pointer to a apiGetIntrustionDetectionRepo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -213,9 +231,11 @@ Name | Type | Description  | Notes
 
 ## ListIntrustionDetectionReportsForStack
 
-> ListIntrustionDetectionReportsForStack200Response ListIntrustionDetectionReportsForStack(ctx, stackId).Page(page).Execute()
+> ListIntrustionDetectionReportsForStack200Response ListIntrustionDetectionReportsForStack(ctx, stackId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list intrusion_detection_reports
+
+
 
 ### Example
 
@@ -231,11 +251,14 @@ import (
 
 func main() {
 	stackId := int32(56) // int32 | stack_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IntrusionDetectionReportsAPI.ListIntrustionDetectionReportsForStack(context.Background(), stackId).Page(page).Execute()
+	resp, r, err := apiClient.IntrusionDetectionReportsAPI.ListIntrustionDetectionReportsForStack(context.Background(), stackId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IntrusionDetectionReportsAPI.ListIntrustionDetectionReportsForStack``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -261,7 +284,10 @@ Other parameters are passed through a pointer to a apiListIntrustionDetectionRep
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

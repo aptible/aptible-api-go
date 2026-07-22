@@ -12,9 +12,11 @@ Method | HTTP request | Description
 
 ## CreateMetricDrain
 
-> MetricDrain CreateMetricDrain(ctx, accountId).CreateMetricDrainRequest(createMetricDrainRequest).Execute()
+> MetricDrain CreateMetricDrain(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).CreateMetricDrainRequest(createMetricDrainRequest).Execute()
 
 create metric_drain
+
+
 
 ### Example
 
@@ -30,11 +32,13 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createMetricDrainRequest := *openapiclient.NewCreateMetricDrainRequest("Handle_example", "DrainType_example") // CreateMetricDrainRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricDrainsAPI.CreateMetricDrain(context.Background(), accountId).CreateMetricDrainRequest(createMetricDrainRequest).Execute()
+	resp, r, err := apiClient.MetricDrainsAPI.CreateMetricDrain(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).CreateMetricDrainRequest(createMetricDrainRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetricDrainsAPI.CreateMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +64,8 @@ Other parameters are passed through a pointer to a apiCreateMetricDrainRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createMetricDrainRequest** | [**CreateMetricDrainRequest**](CreateMetricDrainRequest.md) |  | 
 
 ### Return type
@@ -82,9 +88,11 @@ Name | Type | Description  | Notes
 
 ## GetMetricDrain
 
-> MetricDrain GetMetricDrain(ctx, id).Execute()
+> MetricDrain GetMetricDrain(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show metric_drain
+
+
 
 ### Example
 
@@ -100,10 +108,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricDrainsAPI.GetMetricDrain(context.Background(), id).Execute()
+	resp, r, err := apiClient.MetricDrainsAPI.GetMetricDrain(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetricDrainsAPI.GetMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,6 +139,8 @@ Other parameters are passed through a pointer to a apiGetMetricDrainRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -150,9 +162,11 @@ Name | Type | Description  | Notes
 
 ## ListMetricDrainsForAccount
 
-> ListMetricDrainsForAccount200Response ListMetricDrainsForAccount(ctx, accountId).Page(page).Execute()
+> ListMetricDrainsForAccount200Response ListMetricDrainsForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list metric_drains
+
+
 
 ### Example
 
@@ -168,11 +182,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricDrainsAPI.ListMetricDrainsForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.MetricDrainsAPI.ListMetricDrainsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetricDrainsAPI.ListMetricDrainsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,7 +215,10 @@ Other parameters are passed through a pointer to a apiListMetricDrainsForAccount
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

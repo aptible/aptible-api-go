@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
 **Status** | **string** |  | 
-**DrainUsername** | **NullableString** |  | 
-**DrainPassword** | **NullableString** |  | 
+**DrainUsername** | Pointer to **NullableString** |  | [optional] 
+**DrainPassword** | Pointer to **NullableString** |  | [optional] 
 **DrainApps** | **bool** |  | 
 **DrainDatabases** | **bool** |  | 
 **DrainEphemeralSessions** | **bool** |  | 
@@ -25,15 +25,15 @@ Name | Type | Description | Notes
 **GentlemanjerryHost** | **NullableString** |  | 
 **GentlemanjerryPortMapping** | **[][]int32** |  | 
 **GentlemanjerryAllocation** | **[]string** |  | 
-**Url** | **NullableString** |  | 
-**LoggingToken** | **NullableString** |  | 
+**Url** | Pointer to **NullableString** |  | [optional] 
+**LoggingToken** | Pointer to **NullableString** |  | [optional] 
 **Links** | Pointer to [**LogDrainLinks**](LogDrainLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewLogDrain
 
-`func NewLogDrain(id int32, metaType string, handle string, drainType string, drainHost string, drainPort int32, createdAt string, updatedAt string, status string, drainUsername NullableString, drainPassword NullableString, drainApps bool, drainDatabases bool, drainEphemeralSessions bool, drainProxies bool, gentlemanjerryCertificate NullableString, gentlemanjerryDockerName NullableString, gentlemanjerryInstanceId NullableString, gentlemanjerryHost NullableString, gentlemanjerryPortMapping [][]int32, gentlemanjerryAllocation []string, url NullableString, loggingToken NullableString, ) *LogDrain`
+`func NewLogDrain(id int32, metaType string, handle string, drainType string, drainHost string, drainPort int32, createdAt string, updatedAt string, status string, drainApps bool, drainDatabases bool, drainEphemeralSessions bool, drainProxies bool, gentlemanjerryCertificate NullableString, gentlemanjerryDockerName NullableString, gentlemanjerryInstanceId NullableString, gentlemanjerryHost NullableString, gentlemanjerryPortMapping [][]int32, gentlemanjerryAllocation []string, ) *LogDrain`
 
 NewLogDrain instantiates a new LogDrain object
 This constructor will assign default values to properties that have it defined,
@@ -247,6 +247,11 @@ and a boolean to check if the value has been set.
 
 SetDrainUsername sets DrainUsername field to given value.
 
+### HasDrainUsername
+
+`func (o *LogDrain) HasDrainUsername() bool`
+
+HasDrainUsername returns a boolean if a field has been set.
 
 ### SetDrainUsernameNil
 
@@ -277,6 +282,11 @@ and a boolean to check if the value has been set.
 
 SetDrainPassword sets DrainPassword field to given value.
 
+### HasDrainPassword
+
+`func (o *LogDrain) HasDrainPassword() bool`
+
+HasDrainPassword returns a boolean if a field has been set.
 
 ### SetDrainPasswordNil
 
@@ -547,6 +557,11 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+### HasUrl
+
+`func (o *LogDrain) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 ### SetUrlNil
 
@@ -577,6 +592,11 @@ and a boolean to check if the value has been set.
 
 SetLoggingToken sets LoggingToken field to given value.
 
+### HasLoggingToken
+
+`func (o *LogDrain) HasLoggingToken() bool`
+
+HasLoggingToken returns a boolean if a field has been set.
 
 ### SetLoggingTokenNil
 

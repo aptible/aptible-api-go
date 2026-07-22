@@ -5,17 +5,19 @@ All URIs are relative to *https://api.aptible.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetContainer**](ContainersAPI.md#GetContainer) | **Get** /containers/{id} | show container
+[**ListContainersForLogDrain**](ContainersAPI.md#ListContainersForLogDrain) | **Get** /log_drains/{log_drain_id}/containers | list containers
+[**ListContainersForMetricDrain**](ContainersAPI.md#ListContainersForMetricDrain) | **Get** /metric_drains/{metric_drain_id}/containers | list containers
 [**ListContainersForRelease**](ContainersAPI.md#ListContainersForRelease) | **Get** /releases/{release_id}/containers | list containers
-[**LogDrainsLogDrainIdContainersGet**](ContainersAPI.md#LogDrainsLogDrainIdContainersGet) | **Get** /log_drains/{log_drain_id}/containers | list containers
-[**MetricDrainsMetricDrainIdContainersGet**](ContainersAPI.md#MetricDrainsMetricDrainIdContainersGet) | **Get** /metric_drains/{metric_drain_id}/containers | list containers
 
 
 
 ## GetContainer
 
-> Container GetContainer(ctx, id).Execute()
+> Container GetContainer(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show container
+
+
 
 ### Example
 
@@ -31,10 +33,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContainersAPI.GetContainer(context.Background(), id).Execute()
+	resp, r, err := apiClient.ContainersAPI.GetContainer(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.GetContainer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,6 +64,8 @@ Other parameters are passed through a pointer to a apiGetContainerRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -79,11 +85,169 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListContainersForRelease
+## ListContainersForLogDrain
 
-> ListContainersForRelease200Response ListContainersForRelease(ctx, releaseId).Page(page).Execute()
+> ListContainersForRelease200Response ListContainersForLogDrain(ctx, logDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list containers
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	logDrainId := int32(56) // int32 | log_drain_id
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ContainersAPI.ListContainersForLogDrain(context.Background(), logDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.ListContainersForLogDrain``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListContainersForLogDrain`: ListContainersForRelease200Response
+	fmt.Fprintf(os.Stdout, "Response from `ContainersAPI.ListContainersForLogDrain`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**logDrainId** | **int32** | log_drain_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListContainersForLogDrainRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
+
+### Return type
+
+[**ListContainersForRelease200Response**](ListContainersForRelease200Response.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListContainersForMetricDrain
+
+> ListContainersForRelease200Response ListContainersForMetricDrain(ctx, metricDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
+
+list containers
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	metricDrainId := int32(56) // int32 | metric_drain_id
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.ContainersAPI.ListContainersForMetricDrain(context.Background(), metricDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.ListContainersForMetricDrain``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListContainersForMetricDrain`: ListContainersForRelease200Response
+	fmt.Fprintf(os.Stdout, "Response from `ContainersAPI.ListContainersForMetricDrain`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**metricDrainId** | **int32** | metric_drain_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListContainersForMetricDrainRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
+
+### Return type
+
+[**ListContainersForRelease200Response**](ListContainersForRelease200Response.md)
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListContainersForRelease
+
+> ListContainersForRelease200Response ListContainersForRelease(ctx, releaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
+
+list containers
+
+
 
 ### Example
 
@@ -99,11 +263,14 @@ import (
 
 func main() {
 	releaseId := int32(56) // int32 | release_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContainersAPI.ListContainersForRelease(context.Background(), releaseId).Page(page).Execute()
+	resp, r, err := apiClient.ContainersAPI.ListContainersForRelease(context.Background(), releaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.ListContainersForRelease``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,147 +296,10 @@ Other parameters are passed through a pointer to a apiListContainersForReleaseRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
-
-### Return type
-
-[**ListContainersForRelease200Response**](ListContainersForRelease200Response.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## LogDrainsLogDrainIdContainersGet
-
-> ListContainersForRelease200Response LogDrainsLogDrainIdContainersGet(ctx, logDrainId).Page(page).Execute()
-
-list containers
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
-)
-
-func main() {
-	logDrainId := int32(56) // int32 | log_drain_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContainersAPI.LogDrainsLogDrainIdContainersGet(context.Background(), logDrainId).Page(page).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.LogDrainsLogDrainIdContainersGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `LogDrainsLogDrainIdContainersGet`: ListContainersForRelease200Response
-	fmt.Fprintf(os.Stdout, "Response from `ContainersAPI.LogDrainsLogDrainIdContainersGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**logDrainId** | **int32** | log_drain_id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiLogDrainsLogDrainIdContainersGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **page** | **int32** | current page of results for pagination | 
-
-### Return type
-
-[**ListContainersForRelease200Response**](ListContainersForRelease200Response.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## MetricDrainsMetricDrainIdContainersGet
-
-> ListContainersForRelease200Response MetricDrainsMetricDrainIdContainersGet(ctx, metricDrainId).Page(page).Execute()
-
-list containers
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
-)
-
-func main() {
-	metricDrainId := int32(56) // int32 | metric_drain_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContainersAPI.MetricDrainsMetricDrainIdContainersGet(context.Background(), metricDrainId).Page(page).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ContainersAPI.MetricDrainsMetricDrainIdContainersGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `MetricDrainsMetricDrainIdContainersGet`: ListContainersForRelease200Response
-	fmt.Fprintf(os.Stdout, "Response from `ContainersAPI.MetricDrainsMetricDrainIdContainersGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**metricDrainId** | **int32** | metric_drain_id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiMetricDrainsMetricDrainIdContainersGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

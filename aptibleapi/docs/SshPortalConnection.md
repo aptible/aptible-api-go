@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **MetaType** | **string** |  | 
 **SshUser** | **string** |  | 
 **SshCertificateBody** | **string** |  | 
-**SshPortForwardSocket** | **NullableInt32** |  | 
+**SshPortForwardSocket** | **NullableString** |  | 
 **SshPty** | **bool** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewSshPortalConnection
 
-`func NewSshPortalConnection(id string, metaType string, sshUser string, sshCertificateBody string, sshPortForwardSocket NullableInt32, sshPty bool, createdAt string, updatedAt string, ) *SshPortalConnection`
+`func NewSshPortalConnection(id string, metaType string, sshUser string, sshCertificateBody string, sshPortForwardSocket NullableString, sshPty bool, createdAt string, updatedAt string, ) *SshPortalConnection`
 
 NewSshPortalConnection instantiates a new SshPortalConnection object
 This constructor will assign default values to properties that have it defined,
@@ -115,20 +115,20 @@ SetSshCertificateBody sets SshCertificateBody field to given value.
 
 ### GetSshPortForwardSocket
 
-`func (o *SshPortalConnection) GetSshPortForwardSocket() int32`
+`func (o *SshPortalConnection) GetSshPortForwardSocket() string`
 
 GetSshPortForwardSocket returns the SshPortForwardSocket field if non-nil, zero value otherwise.
 
 ### GetSshPortForwardSocketOk
 
-`func (o *SshPortalConnection) GetSshPortForwardSocketOk() (*int32, bool)`
+`func (o *SshPortalConnection) GetSshPortForwardSocketOk() (*string, bool)`
 
 GetSshPortForwardSocketOk returns a tuple with the SshPortForwardSocket field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSshPortForwardSocket
 
-`func (o *SshPortalConnection) SetSshPortForwardSocket(v int32)`
+`func (o *SshPortalConnection) SetSshPortForwardSocket(v string)`
 
 SetSshPortForwardSocket sets SshPortForwardSocket field to given value.
 

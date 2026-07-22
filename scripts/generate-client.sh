@@ -14,7 +14,11 @@ PACKAGE_NAME=aptibleapi
 TMP_FILE="$(mktemp)"
 trap 'rm -f "$TMP_FILE"' EXIT
 
-doc_url="https://documentation-${1}.s3.amazonaws.com/openapi/v1/${2}"
+if [ "$1" = "local" ]; then
+  doc_url="/local/${2}"
+else
+  doc_url="https://documentation-${1}.s3.amazonaws.com/openapi/v1/${2}"
+fi
 echo "Generating client from ${doc_url}"
 
 # Save the current openapi-generator managed files

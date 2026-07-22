@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **UpdatedAt** | **string** |  | 
 **Status** | **string** |  | 
 **DrainType** | **string** |  | 
-**DrainConfiguration** | [**MetricDrainDrainConfiguration**](MetricDrainDrainConfiguration.md) |  | 
+**DrainConfiguration** | Pointer to [**MetricDrainDrainConfiguration**](MetricDrainDrainConfiguration.md) |  | [optional] 
 **AggregatorCaCertificate** | **NullableString** |  | 
 **AggregatorCaPrivateKeyBlob** | **NullableString** |  | 
 **AggregatorHost** | **NullableString** |  | 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewMetricDrain
 
-`func NewMetricDrain(id int32, metaType string, handle string, createdAt string, updatedAt string, status string, drainType string, drainConfiguration MetricDrainDrainConfiguration, aggregatorCaCertificate NullableString, aggregatorCaPrivateKeyBlob NullableString, aggregatorHost NullableString, aggregatorPortMapping [][]int32, aggregatorInstanceId NullableString, aggregatorDockerName NullableString, aggregatorAllocation []string, ) *MetricDrain`
+`func NewMetricDrain(id int32, metaType string, handle string, createdAt string, updatedAt string, status string, drainType string, aggregatorCaCertificate NullableString, aggregatorCaPrivateKeyBlob NullableString, aggregatorHost NullableString, aggregatorPortMapping [][]int32, aggregatorInstanceId NullableString, aggregatorDockerName NullableString, aggregatorAllocation []string, ) *MetricDrain`
 
 NewMetricDrain instantiates a new MetricDrain object
 This constructor will assign default values to properties that have it defined,
@@ -199,6 +199,11 @@ and a boolean to check if the value has been set.
 
 SetDrainConfiguration sets DrainConfiguration field to given value.
 
+### HasDrainConfiguration
+
+`func (o *MetricDrain) HasDrainConfiguration() bool`
+
+HasDrainConfiguration returns a boolean if a field has been set.
 
 ### GetAggregatorCaCertificate
 

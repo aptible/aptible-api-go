@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **InitializeFrom** | Pointer to **string** |  | [optional] 
 **DatabaseImage** | Pointer to **int32** | Alternate name for &#x60;database_image_id&#x60; | [optional] 
 **DatabaseImageId** | Pointer to **int32** |  | [optional] 
-**CurrentKmsArn** | Pointer to **int32** |  | [optional] 
+**CurrentKmsArn** | Pointer to **string** |  | [optional] 
 **EnableBackups** | Pointer to **bool** |  | [optional] 
 **EnablePitr** | Pointer to **bool** |  | [optional] 
 
@@ -201,20 +201,20 @@ HasDatabaseImageId returns a boolean if a field has been set.
 
 ### GetCurrentKmsArn
 
-`func (o *CreateDatabaseRequest) GetCurrentKmsArn() int32`
+`func (o *CreateDatabaseRequest) GetCurrentKmsArn() string`
 
 GetCurrentKmsArn returns the CurrentKmsArn field if non-nil, zero value otherwise.
 
 ### GetCurrentKmsArnOk
 
-`func (o *CreateDatabaseRequest) GetCurrentKmsArnOk() (*int32, bool)`
+`func (o *CreateDatabaseRequest) GetCurrentKmsArnOk() (*string, bool)`
 
 GetCurrentKmsArnOk returns a tuple with the CurrentKmsArn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentKmsArn
 
-`func (o *CreateDatabaseRequest) SetCurrentKmsArn(v int32)`
+`func (o *CreateDatabaseRequest) SetCurrentKmsArn(v string)`
 
 SetCurrentKmsArn sets CurrentKmsArn field to given value.
 

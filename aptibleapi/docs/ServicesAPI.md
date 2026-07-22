@@ -14,9 +14,11 @@ Method | HTTP request | Description
 
 ## GetServiceWithOperationStatus
 
-> Service GetServiceWithOperationStatus(ctx, id).IncludeOperationStatus(includeOperationStatus).Execute()
+> Service GetServiceWithOperationStatus(ctx, id).IncludeOperationStatus(includeOperationStatus).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show service with operation status
+
+
 
 ### Example
 
@@ -33,10 +35,12 @@ import (
 func main() {
 	id := int32(56) // int32 | id
 	includeOperationStatus := true // bool | Include release_operation_in_progress status (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServicesAPI.GetServiceWithOperationStatus(context.Background(), id).IncludeOperationStatus(includeOperationStatus).Execute()
+	resp, r, err := apiClient.ServicesAPI.GetServiceWithOperationStatus(context.Background(), id).IncludeOperationStatus(includeOperationStatus).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.GetServiceWithOperationStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,6 +67,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **includeOperationStatus** | **bool** | Include release_operation_in_progress status | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -84,9 +90,11 @@ Name | Type | Description  | Notes
 
 ## ListServicesForAccount
 
-> ListServicesForAccount200Response ListServicesForAccount(ctx, accountId).Page(page).Execute()
+> ListServicesForAccount200Response ListServicesForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list services
+
+
 
 ### Example
 
@@ -102,11 +110,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServicesAPI.ListServicesForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.ServicesAPI.ListServicesForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.ListServicesForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +143,10 @@ Other parameters are passed through a pointer to a apiListServicesForAccountRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -154,9 +168,11 @@ Name | Type | Description  | Notes
 
 ## ListServicesForApp
 
-> ListServicesForAccount200Response ListServicesForApp(ctx, appId).Page(page).Execute()
+> ListServicesForAccount200Response ListServicesForApp(ctx, appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list services
+
+
 
 ### Example
 
@@ -172,11 +188,14 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServicesAPI.ListServicesForApp(context.Background(), appId).Page(page).Execute()
+	resp, r, err := apiClient.ServicesAPI.ListServicesForApp(context.Background(), appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.ListServicesForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,7 +221,10 @@ Other parameters are passed through a pointer to a apiListServicesForAppRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -224,9 +246,11 @@ Name | Type | Description  | Notes
 
 ## PatchService
 
-> PatchService(ctx, id).UpdateServiceRequest(updateServiceRequest).Execute()
+> PatchService(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceRequest(updateServiceRequest).Execute()
 
 update service
+
+
 
 ### Example
 
@@ -242,11 +266,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateServiceRequest := *openapiclient.NewUpdateServiceRequest() // UpdateServiceRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ServicesAPI.PatchService(context.Background(), id).UpdateServiceRequest(updateServiceRequest).Execute()
+	r, err := apiClient.ServicesAPI.PatchService(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceRequest(updateServiceRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.PatchService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -270,6 +296,8 @@ Other parameters are passed through a pointer to a apiPatchServiceRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateServiceRequest** | [**UpdateServiceRequest**](UpdateServiceRequest.md) |  | 
 
 ### Return type
@@ -292,9 +320,11 @@ Name | Type | Description  | Notes
 
 ## UpdateService
 
-> UpdateService(ctx, id).UpdateServiceRequest(updateServiceRequest).Execute()
+> UpdateService(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceRequest(updateServiceRequest).Execute()
 
 update service
+
+
 
 ### Example
 
@@ -310,11 +340,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateServiceRequest := *openapiclient.NewUpdateServiceRequest() // UpdateServiceRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ServicesAPI.UpdateService(context.Background(), id).UpdateServiceRequest(updateServiceRequest).Execute()
+	r, err := apiClient.ServicesAPI.UpdateService(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceRequest(updateServiceRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServicesAPI.UpdateService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -338,6 +370,8 @@ Other parameters are passed through a pointer to a apiUpdateServiceRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateServiceRequest** | [**UpdateServiceRequest**](UpdateServiceRequest.md) |  | 
 
 ### Return type

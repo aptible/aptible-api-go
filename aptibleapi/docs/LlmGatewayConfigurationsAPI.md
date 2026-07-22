@@ -12,9 +12,11 @@ Method | HTTP request | Description
 
 ## CreateLlmGatewayConfiguration
 
-> LlmGatewayConfiguration CreateLlmGatewayConfiguration(ctx).CreateLlmGatewayConfigurationRequest(createLlmGatewayConfigurationRequest).Execute()
+> LlmGatewayConfiguration CreateLlmGatewayConfiguration(ctx).NoEmbed(noEmbed).Prefer(prefer).CreateLlmGatewayConfigurationRequest(createLlmGatewayConfigurationRequest).Execute()
 
 enroll organization in AI Gateway
+
+
 
 ### Example
 
@@ -29,11 +31,13 @@ import (
 )
 
 func main() {
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createLlmGatewayConfigurationRequest := *openapiclient.NewCreateLlmGatewayConfigurationRequest("OrganizationId_example") // CreateLlmGatewayConfigurationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmGatewayConfigurationsAPI.CreateLlmGatewayConfiguration(context.Background()).CreateLlmGatewayConfigurationRequest(createLlmGatewayConfigurationRequest).Execute()
+	resp, r, err := apiClient.LlmGatewayConfigurationsAPI.CreateLlmGatewayConfiguration(context.Background()).NoEmbed(noEmbed).Prefer(prefer).CreateLlmGatewayConfigurationRequest(createLlmGatewayConfigurationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmGatewayConfigurationsAPI.CreateLlmGatewayConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,6 +58,8 @@ Other parameters are passed through a pointer to a apiCreateLlmGatewayConfigurat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createLlmGatewayConfigurationRequest** | [**CreateLlmGatewayConfigurationRequest**](CreateLlmGatewayConfigurationRequest.md) |  | 
 
 ### Return type
@@ -76,9 +82,11 @@ Name | Type | Description  | Notes
 
 ## ListLlmGatewayConfigurations
 
-> ListLlmGatewayConfigurations200Response ListLlmGatewayConfigurations(ctx).OrganizationId(organizationId).Execute()
+> ListLlmGatewayConfigurations200Response ListLlmGatewayConfigurations(ctx).OrganizationId(organizationId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list llm_gateway_configurations
+
+
 
 ### Example
 
@@ -94,10 +102,12 @@ import (
 
 func main() {
 	organizationId := "organizationId_example" // string | Filter by organization ID (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmGatewayConfigurationsAPI.ListLlmGatewayConfigurations(context.Background()).OrganizationId(organizationId).Execute()
+	resp, r, err := apiClient.LlmGatewayConfigurationsAPI.ListLlmGatewayConfigurations(context.Background()).OrganizationId(organizationId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmGatewayConfigurationsAPI.ListLlmGatewayConfigurations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,6 +129,8 @@ Other parameters are passed through a pointer to a apiListLlmGatewayConfiguratio
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **string** | Filter by organization ID | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -140,9 +152,11 @@ Name | Type | Description  | Notes
 
 ## UpdateLlmGatewayConfiguration
 
-> LlmGatewayConfiguration UpdateLlmGatewayConfiguration(ctx, id).UpdateLlmGatewayConfigurationRequest(updateLlmGatewayConfigurationRequest).Execute()
+> LlmGatewayConfiguration UpdateLlmGatewayConfiguration(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateLlmGatewayConfigurationRequest(updateLlmGatewayConfigurationRequest).Execute()
 
 update llm_gateway_configuration
+
+
 
 ### Example
 
@@ -158,11 +172,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | LLM Gateway Configuration database ID
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateLlmGatewayConfigurationRequest := *openapiclient.NewUpdateLlmGatewayConfigurationRequest() // UpdateLlmGatewayConfigurationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmGatewayConfigurationsAPI.UpdateLlmGatewayConfiguration(context.Background(), id).UpdateLlmGatewayConfigurationRequest(updateLlmGatewayConfigurationRequest).Execute()
+	resp, r, err := apiClient.LlmGatewayConfigurationsAPI.UpdateLlmGatewayConfiguration(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateLlmGatewayConfigurationRequest(updateLlmGatewayConfigurationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmGatewayConfigurationsAPI.UpdateLlmGatewayConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,6 +204,8 @@ Other parameters are passed through a pointer to a apiUpdateLlmGatewayConfigurat
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateLlmGatewayConfigurationRequest** | [**UpdateLlmGatewayConfigurationRequest**](UpdateLlmGatewayConfigurationRequest.md) |  | 
 
 ### Return type

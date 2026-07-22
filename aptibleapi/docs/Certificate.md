@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | 
 **MetaType** | **string** |  | 
 **CertificateBody** | **string** |  | 
-**PrivateKey** | **string** |  | 
+**PrivateKey** | Pointer to **string** |  | [optional] 
 **CommonName** | **string** |  | 
 **NotBefore** | **string** |  | 
 **NotAfter** | **string** |  | 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewCertificate
 
-`func NewCertificate(id int32, metaType string, certificateBody string, privateKey string, commonName string, notBefore string, notAfter string, issuerCountry string, issuerOrganization string, issuerWebsite NullableString, issuerCommonName string, subjectCountry NullableString, subjectState NullableString, subjectLocale NullableString, subjectOrganization NullableString, acme bool, leafCertificate string, certificateChain string, sha256Fingerprint string, trusted bool, selfSigned bool, certificateArn NullableString, subjectAlternativeNames []string, privateKeyAlgorithm string, createdAt string, updatedAt string, ) *Certificate`
+`func NewCertificate(id int32, metaType string, certificateBody string, commonName string, notBefore string, notAfter string, issuerCountry string, issuerOrganization string, issuerWebsite NullableString, issuerCommonName string, subjectCountry NullableString, subjectState NullableString, subjectLocale NullableString, subjectOrganization NullableString, acme bool, leafCertificate string, certificateChain string, sha256Fingerprint string, trusted bool, selfSigned bool, certificateArn NullableString, subjectAlternativeNames []string, privateKeyAlgorithm string, createdAt string, updatedAt string, ) *Certificate`
 
 NewCertificate instantiates a new Certificate object
 This constructor will assign default values to properties that have it defined,
@@ -130,6 +130,11 @@ and a boolean to check if the value has been set.
 
 SetPrivateKey sets PrivateKey field to given value.
 
+### HasPrivateKey
+
+`func (o *Certificate) HasPrivateKey() bool`
+
+HasPrivateKey returns a boolean if a field has been set.
 
 ### GetCommonName
 

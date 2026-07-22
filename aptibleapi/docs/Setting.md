@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | 
 **MetaType** | **string** |  | 
 **Settings** | **map[string]interface{}** |  | 
-**SensitiveSettings** | **map[string]interface{}** |  | 
+**SensitiveSettings** | Pointer to **map[string]interface{}** |  | [optional] 
 **Links** | Pointer to [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewSetting
 
-`func NewSetting(id int32, metaType string, settings map[string]interface{}, sensitiveSettings map[string]interface{}, ) *Setting`
+`func NewSetting(id int32, metaType string, settings map[string]interface{}, ) *Setting`
 
 NewSetting instantiates a new Setting object
 This constructor will assign default values to properties that have it defined,
@@ -108,6 +108,11 @@ and a boolean to check if the value has been set.
 
 SetSensitiveSettings sets SensitiveSettings field to given value.
 
+### HasSensitiveSettings
+
+`func (o *Setting) HasSensitiveSettings() bool`
+
+HasSensitiveSettings returns a boolean if a field has been set.
 
 ### GetLinks
 

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | 
 **Handle** | **string** |  | 
 **Type** | **NullableString** |  | 
-**Passphrase** | **NullableString** |  | 
-**ConnectionUrl** | **NullableString** |  | 
+**Passphrase** | Pointer to **NullableString** |  | [optional] 
+**ConnectionUrl** | Pointer to **NullableString** |  | [optional] 
 **Provisioned** | **bool** |  | 
 **MetaType** | **string** |  | 
 **CreatedAt** | **string** |  | 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewDatabase
 
-`func NewDatabase(id int32, handle string, type_ NullableString, passphrase NullableString, connectionUrl NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, pitrStatus string, embedded DatabaseEmbedded, ) *Database`
+`func NewDatabase(id int32, handle string, type_ NullableString, provisioned bool, metaType string, createdAt string, updatedAt string, status string, dockerRepo NullableString, portMapping [][]int32, initialDiskSize NullableInt32, initialContainerSize NullableInt32, currentKmsArn NullableString, enableBackups bool, pitrBucket NullableString, oldestPitrTime NullableString, enablePitr bool, pitrStatus string, embedded DatabaseEmbedded, ) *Database`
 
 NewDatabase instantiates a new Database object
 This constructor will assign default values to properties that have it defined,
@@ -135,6 +135,11 @@ and a boolean to check if the value has been set.
 
 SetPassphrase sets Passphrase field to given value.
 
+### HasPassphrase
+
+`func (o *Database) HasPassphrase() bool`
+
+HasPassphrase returns a boolean if a field has been set.
 
 ### SetPassphraseNil
 
@@ -165,6 +170,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionUrl sets ConnectionUrl field to given value.
 
+### HasConnectionUrl
+
+`func (o *Database) HasConnectionUrl() bool`
+
+HasConnectionUrl returns a boolean if a field has been set.
 
 ### SetConnectionUrlNil
 

@@ -17,9 +17,11 @@ Method | HTTP request | Description
 
 ## CreateAccount
 
-> Account CreateAccount(ctx).CreateAccountRequest(createAccountRequest).Execute()
+> Account CreateAccount(ctx).NoEmbed(noEmbed).Prefer(prefer).CreateAccountRequest(createAccountRequest).Execute()
 
 create account
+
+
 
 ### Example
 
@@ -34,11 +36,13 @@ import (
 )
 
 func main() {
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createAccountRequest := *openapiclient.NewCreateAccountRequest("Type_example", "Handle_example", "OrganizationId_example") // CreateAccountRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountsAPI.CreateAccount(context.Background()).CreateAccountRequest(createAccountRequest).Execute()
+	resp, r, err := apiClient.AccountsAPI.CreateAccount(context.Background()).NoEmbed(noEmbed).Prefer(prefer).CreateAccountRequest(createAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.CreateAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,6 +63,8 @@ Other parameters are passed through a pointer to a apiCreateAccountRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createAccountRequest** | [**CreateAccountRequest**](CreateAccountRequest.md) |  | 
 
 ### Return type
@@ -84,6 +90,8 @@ Name | Type | Description  | Notes
 > DeleteAccount(ctx, id).Execute()
 
 delete account
+
+
 
 ### Example
 
@@ -147,9 +155,11 @@ Name | Type | Description  | Notes
 
 ## GetAccount
 
-> Account GetAccount(ctx, id).Execute()
+> Account GetAccount(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show account
+
+
 
 ### Example
 
@@ -165,10 +175,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountsAPI.GetAccount(context.Background(), id).Execute()
+	resp, r, err := apiClient.AccountsAPI.GetAccount(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,6 +206,8 @@ Other parameters are passed through a pointer to a apiGetAccountRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -215,9 +229,11 @@ Name | Type | Description  | Notes
 
 ## GetAccountByHandle
 
-> Account GetAccountByHandle(ctx).Handle(handle).Execute()
+> Account GetAccountByHandle(ctx).Handle(handle).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 find account by handle
+
+
 
 ### Example
 
@@ -233,10 +249,12 @@ import (
 
 func main() {
 	handle := "handle_example" // string | account handle
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountsAPI.GetAccountByHandle(context.Background()).Handle(handle).Execute()
+	resp, r, err := apiClient.AccountsAPI.GetAccountByHandle(context.Background()).Handle(handle).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.GetAccountByHandle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,6 +276,8 @@ Other parameters are passed through a pointer to a apiGetAccountByHandleRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string** | account handle | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -279,9 +299,11 @@ Name | Type | Description  | Notes
 
 ## ListAccounts
 
-> ListAccountsForStack200Response ListAccounts(ctx).Page(page).Execute()
+> ListAccountsForStack200Response ListAccounts(ctx).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list accounts
+
+
 
 ### Example
 
@@ -296,11 +318,14 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountsAPI.ListAccounts(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.AccountsAPI.ListAccounts(context.Background()).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.ListAccounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -321,7 +346,10 @@ Other parameters are passed through a pointer to a apiListAccountsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -343,9 +371,11 @@ Name | Type | Description  | Notes
 
 ## ListAccountsForStack
 
-> ListAccountsForStack200Response ListAccountsForStack(ctx, stackId).Page(page).Execute()
+> ListAccountsForStack200Response ListAccountsForStack(ctx, stackId).Page(page).NoEmbed(noEmbed).Prefer(prefer).PerPage(perPage).Execute()
 
 list accounts
+
+
 
 ### Example
 
@@ -361,11 +391,14 @@ import (
 
 func main() {
 	stackId := int32(56) // int32 | stack_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AccountsAPI.ListAccountsForStack(context.Background(), stackId).Page(page).Execute()
+	resp, r, err := apiClient.AccountsAPI.ListAccountsForStack(context.Background(), stackId).Page(page).NoEmbed(noEmbed).Prefer(prefer).PerPage(perPage).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.ListAccountsForStack``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -391,7 +424,10 @@ Other parameters are passed through a pointer to a apiListAccountsForStackReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
+ **perPage** | **int32** | Number of results to return per page | 
 
 ### Return type
 
@@ -413,9 +449,11 @@ Name | Type | Description  | Notes
 
 ## PatchAccount
 
-> PatchAccount(ctx, id).PatchAccountRequest(patchAccountRequest).Execute()
+> PatchAccount(ctx, id).NoEmbed(noEmbed).Prefer(prefer).PatchAccountRequest(patchAccountRequest).Execute()
 
 update account
+
+
 
 ### Example
 
@@ -431,11 +469,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	patchAccountRequest := *openapiclient.NewPatchAccountRequest() // PatchAccountRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountsAPI.PatchAccount(context.Background(), id).PatchAccountRequest(patchAccountRequest).Execute()
+	r, err := apiClient.AccountsAPI.PatchAccount(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).PatchAccountRequest(patchAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.PatchAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -459,6 +499,8 @@ Other parameters are passed through a pointer to a apiPatchAccountRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **patchAccountRequest** | [**PatchAccountRequest**](PatchAccountRequest.md) |  | 
 
 ### Return type
@@ -481,9 +523,11 @@ Name | Type | Description  | Notes
 
 ## UpdateAccount
 
-> UpdateAccount(ctx, id).UpdateAccountRequest(updateAccountRequest).Execute()
+> UpdateAccount(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateAccountRequest(updateAccountRequest).Execute()
 
 update account
+
+
 
 ### Example
 
@@ -499,11 +543,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateAccountRequest := *openapiclient.NewUpdateAccountRequest() // UpdateAccountRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AccountsAPI.UpdateAccount(context.Background(), id).UpdateAccountRequest(updateAccountRequest).Execute()
+	r, err := apiClient.AccountsAPI.UpdateAccount(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateAccountRequest(updateAccountRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AccountsAPI.UpdateAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -527,6 +573,8 @@ Other parameters are passed through a pointer to a apiUpdateAccountRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateAccountRequest** | [**UpdateAccountRequest**](UpdateAccountRequest.md) |  | 
 
 ### Return type

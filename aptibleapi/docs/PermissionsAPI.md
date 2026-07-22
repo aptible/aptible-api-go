@@ -14,9 +14,11 @@ Method | HTTP request | Description
 
 ## CreatePermission
 
-> Permission CreatePermission(ctx, accountId).CreatePermissionRequest(createPermissionRequest).Execute()
+> Permission CreatePermission(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).CreatePermissionRequest(createPermissionRequest).Execute()
 
 create permission
+
+
 
 ### Example
 
@@ -32,11 +34,13 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createPermissionRequest := *openapiclient.NewCreatePermissionRequest("Role_example", "Scope_example") // CreatePermissionRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PermissionsAPI.CreatePermission(context.Background(), accountId).CreatePermissionRequest(createPermissionRequest).Execute()
+	resp, r, err := apiClient.PermissionsAPI.CreatePermission(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).CreatePermissionRequest(createPermissionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PermissionsAPI.CreatePermission``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,6 +66,8 @@ Other parameters are passed through a pointer to a apiCreatePermissionRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createPermissionRequest** | [**CreatePermissionRequest**](CreatePermissionRequest.md) |  | 
 
 ### Return type
@@ -87,6 +93,8 @@ Name | Type | Description  | Notes
 > DeletePermission(ctx, id).Execute()
 
 delete permission
+
+
 
 ### Example
 
@@ -150,9 +158,11 @@ Name | Type | Description  | Notes
 
 ## GetPermission
 
-> Permission GetPermission(ctx, id).Execute()
+> Permission GetPermission(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show permission
+
+
 
 ### Example
 
@@ -168,10 +178,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PermissionsAPI.GetPermission(context.Background(), id).Execute()
+	resp, r, err := apiClient.PermissionsAPI.GetPermission(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PermissionsAPI.GetPermission``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -197,6 +209,8 @@ Other parameters are passed through a pointer to a apiGetPermissionRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -218,9 +232,11 @@ Name | Type | Description  | Notes
 
 ## ListPermissions
 
-> ListPermissionsForAccount200Response ListPermissions(ctx).Page(page).Execute()
+> ListPermissionsForAccount200Response ListPermissions(ctx).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list permissions
+
+
 
 ### Example
 
@@ -235,11 +251,14 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PermissionsAPI.ListPermissions(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.PermissionsAPI.ListPermissions(context.Background()).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PermissionsAPI.ListPermissions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -260,7 +279,10 @@ Other parameters are passed through a pointer to a apiListPermissionsRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -282,9 +304,11 @@ Name | Type | Description  | Notes
 
 ## ListPermissionsForAccount
 
-> ListPermissionsForAccount200Response ListPermissionsForAccount(ctx, accountId).Page(page).Execute()
+> ListPermissionsForAccount200Response ListPermissionsForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list permissions
+
+
 
 ### Example
 
@@ -300,11 +324,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PermissionsAPI.ListPermissionsForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.PermissionsAPI.ListPermissionsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PermissionsAPI.ListPermissionsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -330,7 +357,10 @@ Other parameters are passed through a pointer to a apiListPermissionsForAccountR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

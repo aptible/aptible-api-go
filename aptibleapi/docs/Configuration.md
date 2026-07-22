@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | 
 **MetaType** | **string** |  | 
-**Env** | **map[string]interface{}** |  | 
+**Env** | Pointer to **map[string]interface{}** |  | [optional] 
 **Links** | Pointer to [**ConfigurationLinks**](ConfigurationLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewConfiguration
 
-`func NewConfiguration(id int32, metaType string, env map[string]interface{}, ) *Configuration`
+`func NewConfiguration(id int32, metaType string, ) *Configuration`
 
 NewConfiguration instantiates a new Configuration object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetEnv sets Env field to given value.
 
+### HasEnv
+
+`func (o *Configuration) HasEnv() bool`
+
+HasEnv returns a boolean if a field has been set.
 
 ### GetLinks
 

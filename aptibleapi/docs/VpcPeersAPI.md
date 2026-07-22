@@ -11,9 +11,11 @@ Method | HTTP request | Description
 
 ## GetVpcPeer
 
-> VpcPeer GetVpcPeer(ctx, id).Execute()
+> VpcPeer GetVpcPeer(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show vpc_peer
+
+
 
 ### Example
 
@@ -29,10 +31,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpcPeersAPI.GetVpcPeer(context.Background(), id).Execute()
+	resp, r, err := apiClient.VpcPeersAPI.GetVpcPeer(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpcPeersAPI.GetVpcPeer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,6 +62,8 @@ Other parameters are passed through a pointer to a apiGetVpcPeerRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -79,9 +85,11 @@ Name | Type | Description  | Notes
 
 ## ListVpcPeersForStack
 
-> ListVpcPeersForStack200Response ListVpcPeersForStack(ctx, stackId).Page(page).Execute()
+> ListVpcPeersForStack200Response ListVpcPeersForStack(ctx, stackId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list vpc_peers
+
+
 
 ### Example
 
@@ -97,11 +105,14 @@ import (
 
 func main() {
 	stackId := int32(56) // int32 | stack_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VpcPeersAPI.ListVpcPeersForStack(context.Background(), stackId).Page(page).Execute()
+	resp, r, err := apiClient.VpcPeersAPI.ListVpcPeersForStack(context.Background(), stackId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VpcPeersAPI.ListVpcPeersForStack``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -127,7 +138,10 @@ Other parameters are passed through a pointer to a apiListVpcPeersForStackReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

@@ -14,9 +14,11 @@ Method | HTTP request | Description
 
 ## CreateOrUpdateLlmPolicy
 
-> LlmPolicy CreateOrUpdateLlmPolicy(ctx, accountId).CreateOrUpdateLlmPolicyRequest(createOrUpdateLlmPolicyRequest).Execute()
+> LlmPolicy CreateOrUpdateLlmPolicy(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).CreateOrUpdateLlmPolicyRequest(createOrUpdateLlmPolicyRequest).Execute()
 
 create or update llm_policy
+
+
 
 ### Example
 
@@ -32,11 +34,13 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOrUpdateLlmPolicyRequest := *openapiclient.NewCreateOrUpdateLlmPolicyRequest() // CreateOrUpdateLlmPolicyRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmPoliciesAPI.CreateOrUpdateLlmPolicy(context.Background(), accountId).CreateOrUpdateLlmPolicyRequest(createOrUpdateLlmPolicyRequest).Execute()
+	resp, r, err := apiClient.LlmPoliciesAPI.CreateOrUpdateLlmPolicy(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).CreateOrUpdateLlmPolicyRequest(createOrUpdateLlmPolicyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmPoliciesAPI.CreateOrUpdateLlmPolicy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,6 +66,8 @@ Other parameters are passed through a pointer to a apiCreateOrUpdateLlmPolicyReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOrUpdateLlmPolicyRequest** | [**CreateOrUpdateLlmPolicyRequest**](CreateOrUpdateLlmPolicyRequest.md) |  | 
 
 ### Return type
@@ -84,9 +90,11 @@ Name | Type | Description  | Notes
 
 ## GetLlmPolicy
 
-> LlmPolicy GetLlmPolicy(ctx, id).Execute()
+> LlmPolicy GetLlmPolicy(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show llm_policy
+
+
 
 ### Example
 
@@ -102,10 +110,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | LLM Policy database ID
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmPoliciesAPI.GetLlmPolicy(context.Background(), id).Execute()
+	resp, r, err := apiClient.LlmPoliciesAPI.GetLlmPolicy(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmPoliciesAPI.GetLlmPolicy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,6 +141,8 @@ Other parameters are passed through a pointer to a apiGetLlmPolicyRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -152,9 +164,11 @@ Name | Type | Description  | Notes
 
 ## GetLlmPolicyUsage
 
-> GetLlmKeyUsage200Response GetLlmPolicyUsage(ctx, id).StartDate(startDate).EndDate(endDate).Execute()
+> GetLlmKeyUsage200Response GetLlmPolicyUsage(ctx, id).StartDate(startDate).EndDate(endDate).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 get llm policy usage
+
+
 
 ### Example
 
@@ -172,10 +186,12 @@ func main() {
 	id := int32(56) // int32 | LLM Policy database ID
 	startDate := "startDate_example" // string | Start date for the usage period (YYYY-MM-DD)
 	endDate := "endDate_example" // string | End date for the usage period (YYYY-MM-DD, exclusive)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmPoliciesAPI.GetLlmPolicyUsage(context.Background(), id).StartDate(startDate).EndDate(endDate).Execute()
+	resp, r, err := apiClient.LlmPoliciesAPI.GetLlmPolicyUsage(context.Background(), id).StartDate(startDate).EndDate(endDate).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmPoliciesAPI.GetLlmPolicyUsage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -203,6 +219,8 @@ Name | Type | Description  | Notes
 
  **startDate** | **string** | Start date for the usage period (YYYY-MM-DD) | 
  **endDate** | **string** | End date for the usage period (YYYY-MM-DD, exclusive) | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -224,9 +242,11 @@ Name | Type | Description  | Notes
 
 ## ListLlmPolicies
 
-> ListLlmPolicies200Response ListLlmPolicies(ctx).Page(page).PerPage(perPage).Execute()
+> ListLlmPolicies200Response ListLlmPolicies(ctx).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list all llm_policies
+
+
 
 ### Example
 
@@ -241,12 +261,14 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
-	perPage := int32(56) // int32 | number of results per page (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmPoliciesAPI.ListLlmPolicies(context.Background()).Page(page).PerPage(perPage).Execute()
+	resp, r, err := apiClient.LlmPoliciesAPI.ListLlmPolicies(context.Background()).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmPoliciesAPI.ListLlmPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,8 +289,10 @@ Other parameters are passed through a pointer to a apiListLlmPoliciesRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
- **perPage** | **int32** | number of results per page | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -290,9 +314,11 @@ Name | Type | Description  | Notes
 
 ## ListLlmPoliciesForAccount
 
-> ListLlmPoliciesForAccount200Response ListLlmPoliciesForAccount(ctx, accountId).Execute()
+> ListLlmPoliciesForAccount200Response ListLlmPoliciesForAccount(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list llm_policies for account
+
+
 
 ### Example
 
@@ -308,10 +334,12 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmPoliciesAPI.ListLlmPoliciesForAccount(context.Background(), accountId).Execute()
+	resp, r, err := apiClient.LlmPoliciesAPI.ListLlmPoliciesForAccount(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmPoliciesAPI.ListLlmPoliciesForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -337,6 +365,8 @@ Other parameters are passed through a pointer to a apiListLlmPoliciesForAccountR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
