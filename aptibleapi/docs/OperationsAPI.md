@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**CreateOperationForDatabaseCredential**](OperationsAPI.md#CreateOperationForDatabaseCredential) | **Post** /database_credentials/{database_credential_id}/operations | create operation
 [**CreateOperationForDiskAttachment**](OperationsAPI.md#CreateOperationForDiskAttachment) | **Post** /disk_attachments/{disk_attachment_id}/operations | create operation
 [**CreateOperationForEphemeralSession**](OperationsAPI.md#CreateOperationForEphemeralSession) | **Post** /ephemeral_sessions/{ephemeral_session_id}/operations | create operation
-[**CreateOperationForExternalAwsDatabaseCredential**](OperationsAPI.md#CreateOperationForExternalAwsDatabaseCredential) | **Post** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | create operation
 [**CreateOperationForImage**](OperationsAPI.md#CreateOperationForImage) | **Post** /images/{image_id}/operations | create operation
 [**CreateOperationForLogDrain**](OperationsAPI.md#CreateOperationForLogDrain) | **Post** /log_drains/{log_drain_id}/operations | create operation
 [**CreateOperationForMetricDrain**](OperationsAPI.md#CreateOperationForMetricDrain) | **Post** /metric_drains/{metric_drain_id}/operations | create operation
@@ -18,6 +17,7 @@ Method | HTTP request | Description
 [**CreateOperationForService**](OperationsAPI.md#CreateOperationForService) | **Post** /services/{service_id}/operations | create operation
 [**CreateOperationForVhost**](OperationsAPI.md#CreateOperationForVhost) | **Post** /vhosts/{vhost_id}/operations | create operation
 [**GetOperation**](OperationsAPI.md#GetOperation) | **Get** /operations/{id} | show operation
+[**GetOperationLogs**](OperationsAPI.md#GetOperationLogs) | **Get** /operations/{operation_id}/logs | get operation logs
 [**ListOperationsForAccount**](OperationsAPI.md#ListOperationsForAccount) | **Get** /accounts/{account_id}/operations | list operations
 [**ListOperationsForApp**](OperationsAPI.md#ListOperationsForApp) | **Get** /apps/{app_id}/operations | list operations
 [**ListOperationsForBackup**](OperationsAPI.md#ListOperationsForBackup) | **Get** /backups/{backup_id}/operations | list operations
@@ -25,7 +25,6 @@ Method | HTTP request | Description
 [**ListOperationsForDatabaseCredential**](OperationsAPI.md#ListOperationsForDatabaseCredential) | **Get** /database_credentials/{database_credential_id}/operations | list operations
 [**ListOperationsForDiskAttachment**](OperationsAPI.md#ListOperationsForDiskAttachment) | **Get** /disk_attachments/{disk_attachment_id}/operations | list operations
 [**ListOperationsForEphemeralSession**](OperationsAPI.md#ListOperationsForEphemeralSession) | **Get** /ephemeral_sessions/{ephemeral_session_id}/operations | list operations
-[**ListOperationsForExternalAwsDatabaseCredential**](OperationsAPI.md#ListOperationsForExternalAwsDatabaseCredential) | **Get** /external_aws_database_credentials/{external_aws_database_credential_id}/operations | list operations
 [**ListOperationsForImage**](OperationsAPI.md#ListOperationsForImage) | **Get** /images/{image_id}/operations | list operations
 [**ListOperationsForLlmKey**](OperationsAPI.md#ListOperationsForLlmKey) | **Get** /llm_keys/{llm_key_id}/operations | list operations
 [**ListOperationsForLogDrain**](OperationsAPI.md#ListOperationsForLogDrain) | **Get** /log_drains/{log_drain_id}/operations | list operations
@@ -40,9 +39,11 @@ Method | HTTP request | Description
 
 ## CreateOperationForApp
 
-> Operation CreateOperationForApp(ctx, appId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForApp(ctx, appId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -58,11 +59,13 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForApp(context.Background(), appId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForApp(context.Background(), appId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -88,6 +91,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForAppReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -110,9 +115,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForBackup
 
-> Operation CreateOperationForBackup(ctx, backupId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForBackup(ctx, backupId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -128,11 +135,13 @@ import (
 
 func main() {
 	backupId := int32(56) // int32 | backup_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForBackup(context.Background(), backupId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForBackup(context.Background(), backupId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -158,6 +167,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForBackupRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -180,9 +191,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDatabase
 
-> Operation CreateOperationForDatabase(ctx, databaseId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForDatabase(ctx, databaseId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -198,11 +211,13 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabase(context.Background(), databaseId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabase(context.Background(), databaseId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -228,6 +243,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForDatabase
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -250,9 +267,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDatabaseCredential
 
-> Operation CreateOperationForDatabaseCredential(ctx, databaseCredentialId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForDatabaseCredential(ctx, databaseCredentialId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -268,11 +287,13 @@ import (
 
 func main() {
 	databaseCredentialId := int32(56) // int32 | database_credential_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabaseCredential(context.Background(), databaseCredentialId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDatabaseCredential(context.Background(), databaseCredentialId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDatabaseCredential``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -298,6 +319,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForDatabase
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -320,9 +343,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForDiskAttachment
 
-> Operation CreateOperationForDiskAttachment(ctx, diskAttachmentId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForDiskAttachment(ctx, diskAttachmentId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -338,11 +363,13 @@ import (
 
 func main() {
 	diskAttachmentId := int32(56) // int32 | disk_attachment_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForDiskAttachment(context.Background(), diskAttachmentId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForDiskAttachment(context.Background(), diskAttachmentId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForDiskAttachment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -368,6 +395,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForDiskAtta
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -390,9 +419,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForEphemeralSession
 
-> Operation CreateOperationForEphemeralSession(ctx, ephemeralSessionId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForEphemeralSession(ctx, ephemeralSessionId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -408,11 +439,13 @@ import (
 
 func main() {
 	ephemeralSessionId := int32(56) // int32 | ephemeral_session_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForEphemeralSession(context.Background(), ephemeralSessionId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForEphemeralSession(context.Background(), ephemeralSessionId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForEphemeralSession``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -438,6 +471,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForEphemera
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -458,79 +493,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateOperationForExternalAwsDatabaseCredential
-
-> CreateOperationForExternalAwsDatabaseCredential(ctx, externalAwsDatabaseCredentialId).CreateOperationRequest1(createOperationRequest1).Execute()
-
-create operation
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
-)
-
-func main() {
-	externalAwsDatabaseCredentialId := int32(56) // int32 | external_aws_database_credential_id
-	createOperationRequest1 := *openapiclient.NewCreateOperationRequest1("Type_example") // CreateOperationRequest1 |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.OperationsAPI.CreateOperationForExternalAwsDatabaseCredential(context.Background(), externalAwsDatabaseCredentialId).CreateOperationRequest1(createOperationRequest1).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForExternalAwsDatabaseCredential``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalAwsDatabaseCredentialId** | **int32** | external_aws_database_credential_id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateOperationForExternalAwsDatabaseCredentialRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **createOperationRequest1** | [**CreateOperationRequest1**](CreateOperationRequest1.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## CreateOperationForImage
 
-> Operation CreateOperationForImage(ctx, imageId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForImage(ctx, imageId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -546,11 +515,13 @@ import (
 
 func main() {
 	imageId := int32(56) // int32 | image_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForImage(context.Background(), imageId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForImage(context.Background(), imageId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -576,6 +547,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForImageReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -598,9 +571,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForLogDrain
 
-> Operation CreateOperationForLogDrain(ctx, logDrainId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForLogDrain(ctx, logDrainId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -616,11 +591,13 @@ import (
 
 func main() {
 	logDrainId := int32(56) // int32 | log_drain_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForLogDrain(context.Background(), logDrainId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForLogDrain(context.Background(), logDrainId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -646,6 +623,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForLogDrain
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -668,9 +647,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForMetricDrain
 
-> Operation CreateOperationForMetricDrain(ctx, metricDrainId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForMetricDrain(ctx, metricDrainId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -686,11 +667,13 @@ import (
 
 func main() {
 	metricDrainId := int32(56) // int32 | metric_drain_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForMetricDrain(context.Background(), metricDrainId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForMetricDrain(context.Background(), metricDrainId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -716,6 +699,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForMetricDr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -738,9 +723,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForPersistentDisk
 
-> Operation CreateOperationForPersistentDisk(ctx, persistentDiskId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForPersistentDisk(ctx, persistentDiskId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -756,11 +743,13 @@ import (
 
 func main() {
 	persistentDiskId := int32(56) // int32 | persistent_disk_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForPersistentDisk(context.Background(), persistentDiskId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForPersistentDisk(context.Background(), persistentDiskId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForPersistentDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -786,6 +775,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForPersiste
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -808,9 +799,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForService
 
-> Operation CreateOperationForService(ctx, serviceId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForService(ctx, serviceId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -826,11 +819,13 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForService(context.Background(), serviceId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForService(context.Background(), serviceId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -856,6 +851,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForServiceR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -878,9 +875,11 @@ Name | Type | Description  | Notes
 
 ## CreateOperationForVhost
 
-> Operation CreateOperationForVhost(ctx, vhostId).CreateOperationRequest(createOperationRequest).Execute()
+> Operation CreateOperationForVhost(ctx, vhostId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 
 create operation
+
+
 
 ### Example
 
@@ -896,11 +895,13 @@ import (
 
 func main() {
 	vhostId := int32(56) // int32 | vhost_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createOperationRequest := *openapiclient.NewCreateOperationRequest("Type_example") // CreateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.CreateOperationForVhost(context.Background(), vhostId).CreateOperationRequest(createOperationRequest).Execute()
+	resp, r, err := apiClient.OperationsAPI.CreateOperationForVhost(context.Background(), vhostId).NoEmbed(noEmbed).Prefer(prefer).CreateOperationRequest(createOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.CreateOperationForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -926,6 +927,8 @@ Other parameters are passed through a pointer to a apiCreateOperationForVhostReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createOperationRequest** | [**CreateOperationRequest**](CreateOperationRequest.md) |  | 
 
 ### Return type
@@ -948,9 +951,11 @@ Name | Type | Description  | Notes
 
 ## GetOperation
 
-> Operation GetOperation(ctx, id).Execute()
+> Operation GetOperation(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show operation
+
+
 
 ### Example
 
@@ -966,10 +971,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.GetOperation(context.Background(), id).Execute()
+	resp, r, err := apiClient.OperationsAPI.GetOperation(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.GetOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -995,6 +1002,8 @@ Other parameters are passed through a pointer to a apiGetOperationRequest struct
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1014,11 +1023,83 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetOperationLogs
+
+> string GetOperationLogs(ctx, operationId).Execute()
+
+get operation logs
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	operationId := int32(56) // int32 | operation_id
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.OperationsAPI.GetOperationLogs(context.Background(), operationId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.GetOperationLogs``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOperationLogs`: string
+	fmt.Fprintf(os.Stdout, "Response from `OperationsAPI.GetOperationLogs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**operationId** | **int32** | operation_id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOperationLogsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListOperationsForAccount
 
-> ListOperationsForPersistentDisk200Response ListOperationsForAccount(ctx, accountId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1034,11 +1115,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1064,7 +1148,10 @@ Other parameters are passed through a pointer to a apiListOperationsForAccountRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1086,9 +1173,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForApp
 
-> ListOperationsForPersistentDisk200Response ListOperationsForApp(ctx, appId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForApp(ctx, appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1104,11 +1193,14 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForApp(context.Background(), appId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForApp(context.Background(), appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1134,7 +1226,10 @@ Other parameters are passed through a pointer to a apiListOperationsForAppReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1156,9 +1251,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForBackup
 
-> ListOperationsForPersistentDisk200Response ListOperationsForBackup(ctx, backupId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForBackup(ctx, backupId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1174,11 +1271,14 @@ import (
 
 func main() {
 	backupId := int32(56) // int32 | backup_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForBackup(context.Background(), backupId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForBackup(context.Background(), backupId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1204,7 +1304,10 @@ Other parameters are passed through a pointer to a apiListOperationsForBackupReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1226,9 +1329,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDatabase
 
-> ListOperationsForPersistentDisk200Response ListOperationsForDatabase(ctx, databaseId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1244,11 +1349,14 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForDatabase(context.Background(), databaseId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForDatabase(context.Background(), databaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1274,7 +1382,10 @@ Other parameters are passed through a pointer to a apiListOperationsForDatabaseR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1296,9 +1407,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDatabaseCredential
 
-> ListOperationsForPersistentDisk200Response ListOperationsForDatabaseCredential(ctx, databaseCredentialId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForDatabaseCredential(ctx, databaseCredentialId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1314,11 +1427,14 @@ import (
 
 func main() {
 	databaseCredentialId := int32(56) // int32 | database_credential_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForDatabaseCredential(context.Background(), databaseCredentialId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForDatabaseCredential(context.Background(), databaseCredentialId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDatabaseCredential``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1344,7 +1460,10 @@ Other parameters are passed through a pointer to a apiListOperationsForDatabaseC
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1366,9 +1485,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForDiskAttachment
 
-> ListOperationsForPersistentDisk200Response ListOperationsForDiskAttachment(ctx, diskAttachmentId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForDiskAttachment(ctx, diskAttachmentId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1384,11 +1505,14 @@ import (
 
 func main() {
 	diskAttachmentId := int32(56) // int32 | disk_attachment_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForDiskAttachment(context.Background(), diskAttachmentId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForDiskAttachment(context.Background(), diskAttachmentId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForDiskAttachment``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1414,7 +1538,10 @@ Other parameters are passed through a pointer to a apiListOperationsForDiskAttac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1436,9 +1563,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForEphemeralSession
 
-> ListOperationsForPersistentDisk200Response ListOperationsForEphemeralSession(ctx, ephemeralSessionId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForEphemeralSession(ctx, ephemeralSessionId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1454,11 +1583,14 @@ import (
 
 func main() {
 	ephemeralSessionId := int32(56) // int32 | ephemeral_session_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForEphemeralSession(context.Background(), ephemeralSessionId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForEphemeralSession(context.Background(), ephemeralSessionId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForEphemeralSession``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1484,7 +1616,10 @@ Other parameters are passed through a pointer to a apiListOperationsForEphemeral
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1504,79 +1639,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListOperationsForExternalAwsDatabaseCredential
-
-> ListOperationsForExternalAwsDatabaseCredential(ctx, externalAwsDatabaseCredentialId).Page(page).Execute()
-
-list operations
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
-)
-
-func main() {
-	externalAwsDatabaseCredentialId := int32(56) // int32 | external_aws_database_credential_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.OperationsAPI.ListOperationsForExternalAwsDatabaseCredential(context.Background(), externalAwsDatabaseCredentialId).Page(page).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForExternalAwsDatabaseCredential``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalAwsDatabaseCredentialId** | **int32** | external_aws_database_credential_id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListOperationsForExternalAwsDatabaseCredentialRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **page** | **int32** | current page of results for pagination | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ListOperationsForImage
 
-> ListOperationsForPersistentDisk200Response ListOperationsForImage(ctx, imageId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForImage(ctx, imageId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1592,11 +1661,14 @@ import (
 
 func main() {
 	imageId := int32(56) // int32 | image_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForImage(context.Background(), imageId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForImage(context.Background(), imageId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForImage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1622,7 +1694,10 @@ Other parameters are passed through a pointer to a apiListOperationsForImageRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1644,9 +1719,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForLlmKey
 
-> ListOperationsForPersistentDisk200Response ListOperationsForLlmKey(ctx, llmKeyId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForLlmKey(ctx, llmKeyId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1662,11 +1739,14 @@ import (
 
 func main() {
 	llmKeyId := int32(56) // int32 | llm_key_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForLlmKey(context.Background(), llmKeyId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForLlmKey(context.Background(), llmKeyId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForLlmKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1692,7 +1772,10 @@ Other parameters are passed through a pointer to a apiListOperationsForLlmKeyReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1714,9 +1797,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForLogDrain
 
-> ListOperationsForPersistentDisk200Response ListOperationsForLogDrain(ctx, logDrainId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForLogDrain(ctx, logDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1732,11 +1817,14 @@ import (
 
 func main() {
 	logDrainId := int32(56) // int32 | log_drain_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForLogDrain(context.Background(), logDrainId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForLogDrain(context.Background(), logDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForLogDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1762,7 +1850,10 @@ Other parameters are passed through a pointer to a apiListOperationsForLogDrainR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1784,9 +1875,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForMetricDrain
 
-> ListOperationsForPersistentDisk200Response ListOperationsForMetricDrain(ctx, metricDrainId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForMetricDrain(ctx, metricDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1802,11 +1895,14 @@ import (
 
 func main() {
 	metricDrainId := int32(56) // int32 | metric_drain_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForMetricDrain(context.Background(), metricDrainId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForMetricDrain(context.Background(), metricDrainId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForMetricDrain``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1832,7 +1928,10 @@ Other parameters are passed through a pointer to a apiListOperationsForMetricDra
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1854,9 +1953,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForPersistentDisk
 
-> ListOperationsForPersistentDisk200Response ListOperationsForPersistentDisk(ctx, persistentDiskId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForPersistentDisk(ctx, persistentDiskId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1872,11 +1973,14 @@ import (
 
 func main() {
 	persistentDiskId := int32(56) // int32 | persistent_disk_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForPersistentDisk(context.Background(), persistentDiskId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForPersistentDisk(context.Background(), persistentDiskId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForPersistentDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1902,7 +2006,10 @@ Other parameters are passed through a pointer to a apiListOperationsForPersisten
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1924,9 +2031,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForService
 
-> ListOperationsForPersistentDisk200Response ListOperationsForService(ctx, serviceId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForService(ctx, serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -1942,11 +2051,14 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForService(context.Background(), serviceId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForService(context.Background(), serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1972,7 +2084,10 @@ Other parameters are passed through a pointer to a apiListOperationsForServiceRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -1994,9 +2109,11 @@ Name | Type | Description  | Notes
 
 ## ListOperationsForVhost
 
-> ListOperationsForPersistentDisk200Response ListOperationsForVhost(ctx, vhostId).Page(page).Execute()
+> ListOperationsForPersistentDisk200Response ListOperationsForVhost(ctx, vhostId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list operations
+
+
 
 ### Example
 
@@ -2012,11 +2129,14 @@ import (
 
 func main() {
 	vhostId := int32(56) // int32 | vhost_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OperationsAPI.ListOperationsForVhost(context.Background(), vhostId).Page(page).Execute()
+	resp, r, err := apiClient.OperationsAPI.ListOperationsForVhost(context.Background(), vhostId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.ListOperationsForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2042,7 +2162,10 @@ Other parameters are passed through a pointer to a apiListOperationsForVhostRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -2064,9 +2187,11 @@ Name | Type | Description  | Notes
 
 ## PatchOperation
 
-> PatchOperation(ctx, id).UpdateOperationRequest(updateOperationRequest).Execute()
+> PatchOperation(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateOperationRequest(updateOperationRequest).Execute()
 
 update operation
+
+
 
 ### Example
 
@@ -2082,11 +2207,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateOperationRequest := *openapiclient.NewUpdateOperationRequest() // UpdateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.OperationsAPI.PatchOperation(context.Background(), id).UpdateOperationRequest(updateOperationRequest).Execute()
+	r, err := apiClient.OperationsAPI.PatchOperation(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateOperationRequest(updateOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.PatchOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2110,6 +2237,8 @@ Other parameters are passed through a pointer to a apiPatchOperationRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateOperationRequest** | [**UpdateOperationRequest**](UpdateOperationRequest.md) |  | 
 
 ### Return type
@@ -2132,9 +2261,11 @@ Name | Type | Description  | Notes
 
 ## UpdateOperation
 
-> UpdateOperation(ctx, id).UpdateOperationRequest(updateOperationRequest).Execute()
+> UpdateOperation(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateOperationRequest(updateOperationRequest).Execute()
 
 update operation
+
+
 
 ### Example
 
@@ -2150,11 +2281,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateOperationRequest := *openapiclient.NewUpdateOperationRequest() // UpdateOperationRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.OperationsAPI.UpdateOperation(context.Background(), id).UpdateOperationRequest(updateOperationRequest).Execute()
+	r, err := apiClient.OperationsAPI.UpdateOperation(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateOperationRequest(updateOperationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OperationsAPI.UpdateOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2178,6 +2311,8 @@ Other parameters are passed through a pointer to a apiUpdateOperationRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateOperationRequest** | [**UpdateOperationRequest**](UpdateOperationRequest.md) |  | 
 
 ### Return type

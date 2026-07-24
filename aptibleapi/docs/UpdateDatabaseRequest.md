@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **InitialDiskSize** | Pointer to **int32** |  | [optional] 
 **InitialContinerSize** | Pointer to **int32** |  | [optional] 
 **DatabaseImageId** | Pointer to **int32** |  | [optional] 
-**CurrentKmsArn** | Pointer to **int32** |  | [optional] 
+**CurrentKmsArn** | Pointer to **string** |  | [optional] 
 **EnableBackups** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -158,20 +158,20 @@ HasDatabaseImageId returns a boolean if a field has been set.
 
 ### GetCurrentKmsArn
 
-`func (o *UpdateDatabaseRequest) GetCurrentKmsArn() int32`
+`func (o *UpdateDatabaseRequest) GetCurrentKmsArn() string`
 
 GetCurrentKmsArn returns the CurrentKmsArn field if non-nil, zero value otherwise.
 
 ### GetCurrentKmsArnOk
 
-`func (o *UpdateDatabaseRequest) GetCurrentKmsArnOk() (*int32, bool)`
+`func (o *UpdateDatabaseRequest) GetCurrentKmsArnOk() (*string, bool)`
 
 GetCurrentKmsArnOk returns a tuple with the CurrentKmsArn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrentKmsArn
 
-`func (o *UpdateDatabaseRequest) SetCurrentKmsArn(v int32)`
+`func (o *UpdateDatabaseRequest) SetCurrentKmsArn(v string)`
 
 SetCurrentKmsArn sets CurrentKmsArn field to given value.
 

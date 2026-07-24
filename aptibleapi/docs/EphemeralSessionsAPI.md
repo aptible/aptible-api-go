@@ -12,9 +12,11 @@ Method | HTTP request | Description
 
 ## GetEphemeralSession
 
-> EphemeralSession GetEphemeralSession(ctx, id).Execute()
+> EphemeralSession GetEphemeralSession(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show ephemeral_session
+
+
 
 ### Example
 
@@ -30,10 +32,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EphemeralSessionsAPI.GetEphemeralSession(context.Background(), id).Execute()
+	resp, r, err := apiClient.EphemeralSessionsAPI.GetEphemeralSession(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EphemeralSessionsAPI.GetEphemeralSession``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,6 +63,8 @@ Other parameters are passed through a pointer to a apiGetEphemeralSessionRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -80,9 +86,11 @@ Name | Type | Description  | Notes
 
 ## ListEphemeralSessionsForApp
 
-> ListEphemeralSessionsForApp200Response ListEphemeralSessionsForApp(ctx, appId).Page(page).Execute()
+> ListEphemeralSessionsForApp200Response ListEphemeralSessionsForApp(ctx, appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list ephemeral_sessions
+
+
 
 ### Example
 
@@ -98,11 +106,14 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EphemeralSessionsAPI.ListEphemeralSessionsForApp(context.Background(), appId).Page(page).Execute()
+	resp, r, err := apiClient.EphemeralSessionsAPI.ListEphemeralSessionsForApp(context.Background(), appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EphemeralSessionsAPI.ListEphemeralSessionsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,7 +139,10 @@ Other parameters are passed through a pointer to a apiListEphemeralSessionsForAp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -150,9 +164,11 @@ Name | Type | Description  | Notes
 
 ## ListEphemeralSessionsForOperation
 
-> ListEphemeralSessionsForApp200Response ListEphemeralSessionsForOperation(ctx, operationId).Page(page).Execute()
+> ListEphemeralSessionsForApp200Response ListEphemeralSessionsForOperation(ctx, operationId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list ephemeral_sessions
+
+
 
 ### Example
 
@@ -168,11 +184,14 @@ import (
 
 func main() {
 	operationId := int32(56) // int32 | operation_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.EphemeralSessionsAPI.ListEphemeralSessionsForOperation(context.Background(), operationId).Page(page).Execute()
+	resp, r, err := apiClient.EphemeralSessionsAPI.ListEphemeralSessionsForOperation(context.Background(), operationId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EphemeralSessionsAPI.ListEphemeralSessionsForOperation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,7 +217,10 @@ Other parameters are passed through a pointer to a apiListEphemeralSessionsForOp
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

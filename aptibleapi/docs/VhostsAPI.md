@@ -18,9 +18,11 @@ Method | HTTP request | Description
 
 ## CreateVhost
 
-> Vhost CreateVhost(ctx, serviceId).CreateVhostRequest(createVhostRequest).Execute()
+> Vhost CreateVhost(ctx, serviceId).NoEmbed(noEmbed).Prefer(prefer).CreateVhostRequest(createVhostRequest).Execute()
 
 create vhost
+
+
 
 ### Example
 
@@ -36,11 +38,13 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createVhostRequest := *openapiclient.NewCreateVhostRequest("Type_example") // CreateVhostRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VhostsAPI.CreateVhost(context.Background(), serviceId).CreateVhostRequest(createVhostRequest).Execute()
+	resp, r, err := apiClient.VhostsAPI.CreateVhost(context.Background(), serviceId).NoEmbed(noEmbed).Prefer(prefer).CreateVhostRequest(createVhostRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.CreateVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,6 +70,8 @@ Other parameters are passed through a pointer to a apiCreateVhostRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createVhostRequest** | [**CreateVhostRequest**](CreateVhostRequest.md) |  | 
 
 ### Return type
@@ -91,6 +97,8 @@ Name | Type | Description  | Notes
 > DeleteVhost(ctx, id).Execute()
 
 delete vhost
+
+
 
 ### Example
 
@@ -154,9 +162,11 @@ Name | Type | Description  | Notes
 
 ## GetVhost
 
-> Vhost GetVhost(ctx, id).Execute()
+> Vhost GetVhost(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show vhost
+
+
 
 ### Example
 
@@ -172,10 +182,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VhostsAPI.GetVhost(context.Background(), id).Execute()
+	resp, r, err := apiClient.VhostsAPI.GetVhost(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.GetVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -201,6 +213,8 @@ Other parameters are passed through a pointer to a apiGetVhostRequest struct via
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -222,9 +236,11 @@ Name | Type | Description  | Notes
 
 ## ListVhostsForAccount
 
-> ListVhostsForAccount200Response ListVhostsForAccount(ctx, accountId).Page(page).Execute()
+> ListVhostsForAccount200Response ListVhostsForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list vhosts
+
+
 
 ### Example
 
@@ -240,11 +256,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VhostsAPI.ListVhostsForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.VhostsAPI.ListVhostsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.ListVhostsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -270,7 +289,10 @@ Other parameters are passed through a pointer to a apiListVhostsForAccountReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -292,9 +314,11 @@ Name | Type | Description  | Notes
 
 ## ListVhostsForApp
 
-> ListVhostsForAccount200Response ListVhostsForApp(ctx, appId).Page(page).Execute()
+> ListVhostsForAccount200Response ListVhostsForApp(ctx, appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list vhosts
+
+
 
 ### Example
 
@@ -310,11 +334,14 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VhostsAPI.ListVhostsForApp(context.Background(), appId).Page(page).Execute()
+	resp, r, err := apiClient.VhostsAPI.ListVhostsForApp(context.Background(), appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.ListVhostsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -340,7 +367,10 @@ Other parameters are passed through a pointer to a apiListVhostsForAppRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -362,9 +392,11 @@ Name | Type | Description  | Notes
 
 ## ListVhostsForCertificate
 
-> ListVhostsForAccount200Response ListVhostsForCertificate(ctx, certificateId).Page(page).Execute()
+> ListVhostsForAccount200Response ListVhostsForCertificate(ctx, certificateId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list vhosts
+
+
 
 ### Example
 
@@ -380,11 +412,14 @@ import (
 
 func main() {
 	certificateId := int32(56) // int32 | certificate_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VhostsAPI.ListVhostsForCertificate(context.Background(), certificateId).Page(page).Execute()
+	resp, r, err := apiClient.VhostsAPI.ListVhostsForCertificate(context.Background(), certificateId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.ListVhostsForCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -410,7 +445,10 @@ Other parameters are passed through a pointer to a apiListVhostsForCertificateRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -432,9 +470,11 @@ Name | Type | Description  | Notes
 
 ## ListVhostsForService
 
-> ListVhostsForAccount200Response ListVhostsForService(ctx, serviceId).Page(page).Execute()
+> ListVhostsForAccount200Response ListVhostsForService(ctx, serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list vhosts
+
+
 
 ### Example
 
@@ -450,11 +490,14 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VhostsAPI.ListVhostsForService(context.Background(), serviceId).Page(page).Execute()
+	resp, r, err := apiClient.VhostsAPI.ListVhostsForService(context.Background(), serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.ListVhostsForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -480,7 +523,10 @@ Other parameters are passed through a pointer to a apiListVhostsForServiceReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -502,9 +548,11 @@ Name | Type | Description  | Notes
 
 ## PatchVhost
 
-> PatchVhost(ctx, id).UpdateVhostRequest(updateVhostRequest).Execute()
+> PatchVhost(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateVhostRequest(updateVhostRequest).Execute()
 
 update vhost
+
+
 
 ### Example
 
@@ -520,11 +568,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateVhostRequest := *openapiclient.NewUpdateVhostRequest() // UpdateVhostRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.VhostsAPI.PatchVhost(context.Background(), id).UpdateVhostRequest(updateVhostRequest).Execute()
+	r, err := apiClient.VhostsAPI.PatchVhost(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateVhostRequest(updateVhostRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.PatchVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -548,6 +598,8 @@ Other parameters are passed through a pointer to a apiPatchVhostRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateVhostRequest** | [**UpdateVhostRequest**](UpdateVhostRequest.md) |  | 
 
 ### Return type
@@ -570,9 +622,11 @@ Name | Type | Description  | Notes
 
 ## UpdateVhost
 
-> UpdateVhost(ctx, id).UpdateVhostRequest(updateVhostRequest).Execute()
+> UpdateVhost(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateVhostRequest(updateVhostRequest).Execute()
 
 update vhost
+
+
 
 ### Example
 
@@ -588,11 +642,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateVhostRequest := *openapiclient.NewUpdateVhostRequest() // UpdateVhostRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.VhostsAPI.UpdateVhost(context.Background(), id).UpdateVhostRequest(updateVhostRequest).Execute()
+	r, err := apiClient.VhostsAPI.UpdateVhost(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateVhostRequest(updateVhostRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VhostsAPI.UpdateVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -616,6 +672,8 @@ Other parameters are passed through a pointer to a apiUpdateVhostRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateVhostRequest** | [**UpdateVhostRequest**](UpdateVhostRequest.md) |  | 
 
 ### Return type

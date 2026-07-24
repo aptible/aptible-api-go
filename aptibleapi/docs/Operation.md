@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Aborted** | **bool** |  | 
 **GitRef** | **NullableString** |  | 
 **DockerRef** | **NullableString** |  | 
-**Env** | **map[string]interface{}** |  | 
+**Env** | Pointer to **map[string]interface{}** |  | [optional] 
 **ContainerSize** | **NullableInt32** |  | 
 **ContainerCount** | **NullableInt32** |  | 
 **DiskSize** | **int32** |  | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
 **Certificate** | **NullableString** |  | 
-**PrivateKey** | **NullableString** |  | 
+**PrivateKey** | Pointer to **NullableString** |  | [optional] 
 **UserName** | **string** |  | 
 **UserEmail** | **string** |  | 
 **DestinationRegion** | **NullableString** |  | 
@@ -37,14 +37,14 @@ Name | Type | Description | Notes
 **EnableBackups** | **NullableBool** |  | 
 **EnablePitr** | **NullableBool** |  | 
 **Settings** | **map[string]interface{}** |  | 
-**SensitiveSettings** | **map[string]interface{}** |  | 
+**SensitiveSettings** | Pointer to **map[string]interface{}** |  | [optional] 
 **Links** | Pointer to [**OperationLinks**](OperationLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewOperation
 
-`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, env map[string]interface{}, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, privateKey NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool, settings map[string]interface{}, sensitiveSettings map[string]interface{}, ) *Operation`
+`func NewOperation(id int32, metaType string, type_ string, status string, cancelled bool, aborted bool, gitRef NullableString, dockerRef NullableString, containerSize NullableInt32, containerCount NullableInt32, diskSize int32, command NullableString, handle NullableString, createdAt string, updatedAt string, certificate NullableString, userName string, userEmail string, destinationRegion NullableString, interactive NullableBool, instanceProfile NullableString, mountPoint NullableString, daily NullableInt32, monthly NullableInt32, yearly NullableInt32, pitrDays NullableInt32, makeCopy NullableBool, keepFinal NullableBool, enableBackups NullableBool, enablePitr NullableBool, settings map[string]interface{}, ) *Operation`
 
 NewOperation instantiates a new Operation object
 This constructor will assign default values to properties that have it defined,
@@ -258,6 +258,11 @@ and a boolean to check if the value has been set.
 
 SetEnv sets Env field to given value.
 
+### HasEnv
+
+`func (o *Operation) HasEnv() bool`
+
+HasEnv returns a boolean if a field has been set.
 
 ### SetEnvNil
 
@@ -498,6 +503,11 @@ and a boolean to check if the value has been set.
 
 SetPrivateKey sets PrivateKey field to given value.
 
+### HasPrivateKey
+
+`func (o *Operation) HasPrivateKey() bool`
+
+HasPrivateKey returns a boolean if a field has been set.
 
 ### SetPrivateKeyNil
 
@@ -948,6 +958,11 @@ and a boolean to check if the value has been set.
 
 SetSensitiveSettings sets SensitiveSettings field to given value.
 
+### HasSensitiveSettings
+
+`func (o *Operation) HasSensitiveSettings() bool`
+
+HasSensitiveSettings returns a boolean if a field has been set.
 
 ### GetLinks
 

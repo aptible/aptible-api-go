@@ -15,9 +15,11 @@ Method | HTTP request | Description
 
 ## CreateCertificate
 
-> Certificate CreateCertificate(ctx, accountId).CreateCertificateRequest(createCertificateRequest).Execute()
+> Certificate CreateCertificate(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).CreateCertificateRequest(createCertificateRequest).Execute()
 
 create certificate
+
+
 
 ### Example
 
@@ -33,11 +35,13 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createCertificateRequest := *openapiclient.NewCreateCertificateRequest("CertificateBody_example", "PrivateKey_example") // CreateCertificateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CertificatesAPI.CreateCertificate(context.Background(), accountId).CreateCertificateRequest(createCertificateRequest).Execute()
+	resp, r, err := apiClient.CertificatesAPI.CreateCertificate(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).CreateCertificateRequest(createCertificateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesAPI.CreateCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,6 +67,8 @@ Other parameters are passed through a pointer to a apiCreateCertificateRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createCertificateRequest** | [**CreateCertificateRequest**](CreateCertificateRequest.md) |  | 
 
 ### Return type
@@ -88,6 +94,8 @@ Name | Type | Description  | Notes
 > DeleteCertificate(ctx, id).Execute()
 
 delete certificate
+
+
 
 ### Example
 
@@ -151,9 +159,11 @@ Name | Type | Description  | Notes
 
 ## GetCertificate
 
-> Certificate GetCertificate(ctx, id).Execute()
+> Certificate GetCertificate(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show certificate
+
+
 
 ### Example
 
@@ -169,10 +179,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CertificatesAPI.GetCertificate(context.Background(), id).Execute()
+	resp, r, err := apiClient.CertificatesAPI.GetCertificate(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesAPI.GetCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,6 +210,8 @@ Other parameters are passed through a pointer to a apiGetCertificateRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -219,9 +233,11 @@ Name | Type | Description  | Notes
 
 ## ListCertificatesForAccount
 
-> ListCertificatesForAccount200Response ListCertificatesForAccount(ctx, accountId).Page(page).Execute()
+> ListCertificatesForAccount200Response ListCertificatesForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list certificates
+
+
 
 ### Example
 
@@ -237,11 +253,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CertificatesAPI.ListCertificatesForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.CertificatesAPI.ListCertificatesForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesAPI.ListCertificatesForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,7 +286,10 @@ Other parameters are passed through a pointer to a apiListCertificatesForAccount
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -289,9 +311,11 @@ Name | Type | Description  | Notes
 
 ## PatchCertificate
 
-> PatchCertificate(ctx, id).UpdateCertificateRequest(updateCertificateRequest).Execute()
+> PatchCertificate(ctx, id).NoEmbed(noEmbed).Prefer(prefer).PatchCertificateRequest(patchCertificateRequest).Execute()
 
 update certificate
+
+
 
 ### Example
 
@@ -307,11 +331,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateCertificateRequest := *openapiclient.NewUpdateCertificateRequest() // UpdateCertificateRequest |  (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
+	patchCertificateRequest := *openapiclient.NewPatchCertificateRequest() // PatchCertificateRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CertificatesAPI.PatchCertificate(context.Background(), id).UpdateCertificateRequest(updateCertificateRequest).Execute()
+	r, err := apiClient.CertificatesAPI.PatchCertificate(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).PatchCertificateRequest(patchCertificateRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesAPI.PatchCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -335,7 +361,9 @@ Other parameters are passed through a pointer to a apiPatchCertificateRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateCertificateRequest** | [**UpdateCertificateRequest**](UpdateCertificateRequest.md) |  | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
+ **patchCertificateRequest** | [**PatchCertificateRequest**](PatchCertificateRequest.md) |  | 
 
 ### Return type
 
@@ -357,9 +385,11 @@ Name | Type | Description  | Notes
 
 ## UpdateCertificate
 
-> UpdateCertificate(ctx, id).UpdateCertificateRequest(updateCertificateRequest).Execute()
+> UpdateCertificate(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Body(body).Execute()
 
 update certificate
+
+
 
 ### Example
 
@@ -375,11 +405,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
-	updateCertificateRequest := *openapiclient.NewUpdateCertificateRequest() // UpdateCertificateRequest |  (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
+	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CertificatesAPI.UpdateCertificate(context.Background(), id).UpdateCertificateRequest(updateCertificateRequest).Execute()
+	r, err := apiClient.CertificatesAPI.UpdateCertificate(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CertificatesAPI.UpdateCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -403,7 +435,9 @@ Other parameters are passed through a pointer to a apiUpdateCertificateRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updateCertificateRequest** | [**UpdateCertificateRequest**](UpdateCertificateRequest.md) |  | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
+ **body** | **map[string]interface{}** |  | 
 
 ### Return type
 

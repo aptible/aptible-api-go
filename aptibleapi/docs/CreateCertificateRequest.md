@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Acme** | Pointer to **bool** |  | [optional] 
 **CertificateBody** | **string** |  | 
 **PrivateKey** | **string** |  | 
 
@@ -26,31 +25,6 @@ will change when the set of required properties is changed
 NewCreateCertificateRequestWithDefaults instantiates a new CreateCertificateRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAcme
-
-`func (o *CreateCertificateRequest) GetAcme() bool`
-
-GetAcme returns the Acme field if non-nil, zero value otherwise.
-
-### GetAcmeOk
-
-`func (o *CreateCertificateRequest) GetAcmeOk() (*bool, bool)`
-
-GetAcmeOk returns a tuple with the Acme field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAcme
-
-`func (o *CreateCertificateRequest) SetAcme(v bool)`
-
-SetAcme sets Acme field to given value.
-
-### HasAcme
-
-`func (o *CreateCertificateRequest) HasAcme() bool`
-
-HasAcme returns a boolean if a field has been set.
 
 ### GetCertificateBody
 

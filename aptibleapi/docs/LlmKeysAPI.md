@@ -15,9 +15,11 @@ Method | HTTP request | Description
 
 ## GetLlmKey
 
-> LlmKey GetLlmKey(ctx, id).Execute()
+> LlmKey GetLlmKey(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show llm_key
+
+
 
 ### Example
 
@@ -33,10 +35,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | LLM Key database ID
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmKeysAPI.GetLlmKey(context.Background(), id).Execute()
+	resp, r, err := apiClient.LlmKeysAPI.GetLlmKey(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmKeysAPI.GetLlmKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,6 +66,8 @@ Other parameters are passed through a pointer to a apiGetLlmKeyRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -83,9 +89,11 @@ Name | Type | Description  | Notes
 
 ## GetLlmKeyRequests
 
-> GetLlmKeyRequests200Response GetLlmKeyRequests(ctx, id).StartTime(startTime).EndTime(endTime).Page(page).PerPage(perPage).RequestId(requestId).Status(status).Model(model).SortBy(sortBy).SortOrder(sortOrder).Execute()
+> GetLlmKeyRequests200Response GetLlmKeyRequests(ctx, id).StartTime(startTime).EndTime(endTime).Page(page).PerPage(perPage).RequestId(requestId).Status(status).Model(model).SortBy(sortBy).SortOrder(sortOrder).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list llm key requests
+
+
 
 ### Example
 
@@ -110,10 +118,12 @@ func main() {
 	model := "model_example" // string | Filter by model name (optional)
 	sortBy := "sortBy_example" // string | Sort field: 'spend', 'total_tokens', 'start_time', or 'end_time'. Default: 'start_time' (optional)
 	sortOrder := "sortOrder_example" // string | Sort order: 'asc' or 'desc'. Default: 'desc' (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmKeysAPI.GetLlmKeyRequests(context.Background(), id).StartTime(startTime).EndTime(endTime).Page(page).PerPage(perPage).RequestId(requestId).Status(status).Model(model).SortBy(sortBy).SortOrder(sortOrder).Execute()
+	resp, r, err := apiClient.LlmKeysAPI.GetLlmKeyRequests(context.Background(), id).StartTime(startTime).EndTime(endTime).Page(page).PerPage(perPage).RequestId(requestId).Status(status).Model(model).SortBy(sortBy).SortOrder(sortOrder).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmKeysAPI.GetLlmKeyRequests``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -148,6 +158,8 @@ Name | Type | Description  | Notes
  **model** | **string** | Filter by model name | 
  **sortBy** | **string** | Sort field: &#39;spend&#39;, &#39;total_tokens&#39;, &#39;start_time&#39;, or &#39;end_time&#39;. Default: &#39;start_time&#39; | 
  **sortOrder** | **string** | Sort order: &#39;asc&#39; or &#39;desc&#39;. Default: &#39;desc&#39; | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -169,9 +181,11 @@ Name | Type | Description  | Notes
 
 ## GetLlmKeyUsage
 
-> GetLlmKeyUsage200Response GetLlmKeyUsage(ctx, id).StartDate(startDate).EndDate(endDate).Execute()
+> GetLlmKeyUsage200Response GetLlmKeyUsage(ctx, id).StartDate(startDate).EndDate(endDate).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 get llm key usage
+
+
 
 ### Example
 
@@ -189,10 +203,12 @@ func main() {
 	id := int32(56) // int32 | LLM Key database ID
 	startDate := "startDate_example" // string | Start date for the usage period (YYYY-MM-DD)
 	endDate := "endDate_example" // string | End date for the usage period (YYYY-MM-DD, exclusive)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmKeysAPI.GetLlmKeyUsage(context.Background(), id).StartDate(startDate).EndDate(endDate).Execute()
+	resp, r, err := apiClient.LlmKeysAPI.GetLlmKeyUsage(context.Background(), id).StartDate(startDate).EndDate(endDate).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmKeysAPI.GetLlmKeyUsage``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -220,6 +236,8 @@ Name | Type | Description  | Notes
 
  **startDate** | **string** | Start date for the usage period (YYYY-MM-DD) | 
  **endDate** | **string** | End date for the usage period (YYYY-MM-DD, exclusive) | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -241,9 +259,11 @@ Name | Type | Description  | Notes
 
 ## ListLlmKeys
 
-> ListLlmKeys200Response ListLlmKeys(ctx).Page(page).PerPage(perPage).Execute()
+> ListLlmKeys200Response ListLlmKeys(ctx).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list all llm_keys
+
+
 
 ### Example
 
@@ -258,12 +278,14 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
-	perPage := int32(56) // int32 | number of results per page (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmKeysAPI.ListLlmKeys(context.Background()).Page(page).PerPage(perPage).Execute()
+	resp, r, err := apiClient.LlmKeysAPI.ListLlmKeys(context.Background()).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmKeysAPI.ListLlmKeys``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -284,8 +306,10 @@ Other parameters are passed through a pointer to a apiListLlmKeysRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
- **perPage** | **int32** | number of results per page | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -307,9 +331,11 @@ Name | Type | Description  | Notes
 
 ## ListLlmKeysForAccount
 
-> ListLlmKeysForAccount200Response ListLlmKeysForAccount(ctx, accountId).Execute()
+> ListLlmKeysForAccount200Response ListLlmKeysForAccount(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list llm_keys
+
+
 
 ### Example
 
@@ -325,10 +351,12 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LlmKeysAPI.ListLlmKeysForAccount(context.Background(), accountId).Execute()
+	resp, r, err := apiClient.LlmKeysAPI.ListLlmKeysForAccount(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LlmKeysAPI.ListLlmKeysForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -354,6 +382,8 @@ Other parameters are passed through a pointer to a apiListLlmKeysForAccountReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -378,6 +408,8 @@ Name | Type | Description  | Notes
 > LlmKey RevokeLlmKey(ctx, id).Execute()
 
 revoke llm_key
+
+
 
 ### Example
 

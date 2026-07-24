@@ -15,9 +15,11 @@ Method | HTTP request | Description
 
 ## CreateServiceSizingPolicy
 
-> CreateServiceSizingPolicy(ctx, serviceId).CreateServiceSizingPolicyRequest(createServiceSizingPolicyRequest).Execute()
+> CreateServiceSizingPolicy(ctx, serviceId).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceSizingPolicyRequest(updateServiceSizingPolicyRequest).Execute()
 
 create service_sizing_policy
+
+
 
 ### Example
 
@@ -33,11 +35,13 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	createServiceSizingPolicyRequest := *openapiclient.NewCreateServiceSizingPolicyRequest() // CreateServiceSizingPolicyRequest |  (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
+	updateServiceSizingPolicyRequest := *openapiclient.NewUpdateServiceSizingPolicyRequest() // UpdateServiceSizingPolicyRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ServiceSizingPoliciesAPI.CreateServiceSizingPolicy(context.Background(), serviceId).CreateServiceSizingPolicyRequest(createServiceSizingPolicyRequest).Execute()
+	r, err := apiClient.ServiceSizingPoliciesAPI.CreateServiceSizingPolicy(context.Background(), serviceId).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceSizingPolicyRequest(updateServiceSizingPolicyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServiceSizingPoliciesAPI.CreateServiceSizingPolicy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,7 +65,9 @@ Other parameters are passed through a pointer to a apiCreateServiceSizingPolicyR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **createServiceSizingPolicyRequest** | [**CreateServiceSizingPolicyRequest**](CreateServiceSizingPolicyRequest.md) |  | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
+ **updateServiceSizingPolicyRequest** | [**UpdateServiceSizingPolicyRequest**](UpdateServiceSizingPolicyRequest.md) |  | 
 
 ### Return type
 
@@ -86,6 +92,8 @@ Name | Type | Description  | Notes
 > DeleteServiceSizingPolicy(ctx, serviceId).Execute()
 
 delete service_sizing_policy
+
+
 
 ### Example
 
@@ -149,9 +157,11 @@ Name | Type | Description  | Notes
 
 ## GetServiceSizingPolicy
 
-> ServiceSizingPolicy GetServiceSizingPolicy(ctx, id).Execute()
+> ServiceSizingPolicy GetServiceSizingPolicy(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show service_sizing_policy
+
+
 
 ### Example
 
@@ -167,10 +177,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServiceSizingPoliciesAPI.GetServiceSizingPolicy(context.Background(), id).Execute()
+	resp, r, err := apiClient.ServiceSizingPoliciesAPI.GetServiceSizingPolicy(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServiceSizingPoliciesAPI.GetServiceSizingPolicy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -196,6 +208,8 @@ Other parameters are passed through a pointer to a apiGetServiceSizingPolicyRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -217,9 +231,11 @@ Name | Type | Description  | Notes
 
 ## ListServiceSizingPoliciesForAccount
 
-> ListServiceSizingPoliciesForAccount200Response ListServiceSizingPoliciesForAccount(ctx, accountId).Page(page).Execute()
+> ListServiceSizingPoliciesForAccount200Response ListServiceSizingPoliciesForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list service_sizing_policies
+
+
 
 ### Example
 
@@ -235,11 +251,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -265,7 +284,10 @@ Other parameters are passed through a pointer to a apiListServiceSizingPoliciesF
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -287,9 +309,11 @@ Name | Type | Description  | Notes
 
 ## ListServiceSizingPoliciesForService
 
-> ListServiceSizingPoliciesForAccount200Response ListServiceSizingPoliciesForService(ctx, serviceId).Page(page).Execute()
+> ListServiceSizingPoliciesForAccount200Response ListServiceSizingPoliciesForService(ctx, serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list service_sizing_policies
+
+
 
 ### Example
 
@@ -305,11 +329,14 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForService(context.Background(), serviceId).Page(page).Execute()
+	resp, r, err := apiClient.ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForService(context.Background(), serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServiceSizingPoliciesAPI.ListServiceSizingPoliciesForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -335,7 +362,10 @@ Other parameters are passed through a pointer to a apiListServiceSizingPoliciesF
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -357,9 +387,11 @@ Name | Type | Description  | Notes
 
 ## UpdateServiceSizingPolicy
 
-> UpdateServiceSizingPolicy(ctx, serviceId).UpdateServiceSizingPolicyRequest(updateServiceSizingPolicyRequest).Execute()
+> UpdateServiceSizingPolicy(ctx, serviceId).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceSizingPolicyRequest(updateServiceSizingPolicyRequest).Execute()
 
 update service_sizing_policy
+
+
 
 ### Example
 
@@ -375,11 +407,13 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateServiceSizingPolicyRequest := *openapiclient.NewUpdateServiceSizingPolicyRequest() // UpdateServiceSizingPolicyRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ServiceSizingPoliciesAPI.UpdateServiceSizingPolicy(context.Background(), serviceId).UpdateServiceSizingPolicyRequest(updateServiceSizingPolicyRequest).Execute()
+	r, err := apiClient.ServiceSizingPoliciesAPI.UpdateServiceSizingPolicy(context.Background(), serviceId).NoEmbed(noEmbed).Prefer(prefer).UpdateServiceSizingPolicyRequest(updateServiceSizingPolicyRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ServiceSizingPoliciesAPI.UpdateServiceSizingPolicy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -403,6 +437,8 @@ Other parameters are passed through a pointer to a apiUpdateServiceSizingPolicyR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateServiceSizingPolicyRequest** | [**UpdateServiceSizingPolicyRequest**](UpdateServiceSizingPolicyRequest.md) |  | 
 
 ### Return type

@@ -5,11 +5,9 @@ All URIs are relative to *https://api.aptible.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateApp**](AppsAPI.md#CreateApp) | **Post** /accounts/{account_id}/apps | create app
-[**CreateAppExternalAwsRdsConnection**](AppsAPI.md#CreateAppExternalAwsRdsConnection) | **Post** /apps/{id}/app_external_aws_rds_connections | create external aws rds connection
 [**DeleteApp**](AppsAPI.md#DeleteApp) | **Delete** /apps/{id} | delete app
 [**GetApp**](AppsAPI.md#GetApp) | **Get** /apps/{id} | show app
 [**GetAppByHandle**](AppsAPI.md#GetAppByHandle) | **Get** /find/app | find app by handle
-[**ListAppExternalAwsRdsConnections**](AppsAPI.md#ListAppExternalAwsRdsConnections) | **Get** /apps/{id}/app_external_aws_rds_connections | list external aws rds connections
 [**ListApps**](AppsAPI.md#ListApps) | **Get** /apps | list apps
 [**ListAppsForAccount**](AppsAPI.md#ListAppsForAccount) | **Get** /accounts/{account_id}/apps | list apps
 [**ListAppsForCertificate**](AppsAPI.md#ListAppsForCertificate) | **Get** /certificates/{certificate_id}/apps | list apps
@@ -20,9 +18,11 @@ Method | HTTP request | Description
 
 ## CreateApp
 
-> App CreateApp(ctx, accountId).CreateAppRequest(createAppRequest).Execute()
+> App CreateApp(ctx, accountId).NoEmbed(noEmbed).Prefer(prefer).CreateAppRequest(createAppRequest).Execute()
 
 create app
+
+
 
 ### Example
 
@@ -38,11 +38,13 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createAppRequest := *openapiclient.NewCreateAppRequest("Handle_example") // CreateAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.CreateApp(context.Background(), accountId).CreateAppRequest(createAppRequest).Execute()
+	resp, r, err := apiClient.AppsAPI.CreateApp(context.Background(), accountId).NoEmbed(noEmbed).Prefer(prefer).CreateAppRequest(createAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.CreateApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,6 +70,8 @@ Other parameters are passed through a pointer to a apiCreateAppRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createAppRequest** | [**CreateAppRequest**](CreateAppRequest.md) |  | 
 
 ### Return type
@@ -88,81 +92,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateAppExternalAwsRdsConnection
-
-> AppExternalAwsRdsConnection CreateAppExternalAwsRdsConnection(ctx, id).CreateAppExternalAwsRdsConnectionRequest(createAppExternalAwsRdsConnectionRequest).Execute()
-
-create external aws rds connection
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
-)
-
-func main() {
-	id := int32(56) // int32 | id
-	createAppExternalAwsRdsConnectionRequest := *openapiclient.NewCreateAppExternalAwsRdsConnectionRequest() // CreateAppExternalAwsRdsConnectionRequest |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.CreateAppExternalAwsRdsConnection(context.Background(), id).CreateAppExternalAwsRdsConnectionRequest(createAppExternalAwsRdsConnectionRequest).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.CreateAppExternalAwsRdsConnection``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CreateAppExternalAwsRdsConnection`: AppExternalAwsRdsConnection
-	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.CreateAppExternalAwsRdsConnection`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateAppExternalAwsRdsConnectionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **createAppExternalAwsRdsConnectionRequest** | [**CreateAppExternalAwsRdsConnectionRequest**](CreateAppExternalAwsRdsConnectionRequest.md) |  | 
-
-### Return type
-
-[**AppExternalAwsRdsConnection**](AppExternalAwsRdsConnection.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## DeleteApp
 
 > DeleteApp(ctx, id).Execute()
 
 delete app
+
+
 
 ### Example
 
@@ -226,9 +162,11 @@ Name | Type | Description  | Notes
 
 ## GetApp
 
-> App GetApp(ctx, id).Execute()
+> App GetApp(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show app
+
+
 
 ### Example
 
@@ -244,10 +182,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.GetApp(context.Background(), id).Execute()
+	resp, r, err := apiClient.AppsAPI.GetApp(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.GetApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -273,6 +213,8 @@ Other parameters are passed through a pointer to a apiGetAppRequest struct via t
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -294,9 +236,11 @@ Name | Type | Description  | Notes
 
 ## GetAppByHandle
 
-> App GetAppByHandle(ctx).Handle(handle).Environment(environment).Execute()
+> App GetAppByHandle(ctx).Handle(handle).Environment(environment).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 find app by handle
+
+
 
 ### Example
 
@@ -313,10 +257,12 @@ import (
 func main() {
 	handle := "handle_example" // string | app handle
 	environment := "environment_example" // string | account handle to disambiguate when multiple apps share the same handle (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.GetAppByHandle(context.Background()).Handle(handle).Environment(environment).Execute()
+	resp, r, err := apiClient.AppsAPI.GetAppByHandle(context.Background()).Handle(handle).Environment(environment).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.GetAppByHandle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -339,6 +285,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string** | app handle | 
  **environment** | **string** | account handle to disambiguate when multiple apps share the same handle | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -358,82 +306,14 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListAppExternalAwsRdsConnections
-
-> ListAppExternalAwsRdsConnections200Response ListAppExternalAwsRdsConnections(ctx, id).Page(page).Execute()
-
-list external aws rds connections
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
-)
-
-func main() {
-	id := int32(56) // int32 | id
-	page := int32(56) // int32 | current page of results for pagination (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.ListAppExternalAwsRdsConnections(context.Background(), id).Page(page).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ListAppExternalAwsRdsConnections``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListAppExternalAwsRdsConnections`: ListAppExternalAwsRdsConnections200Response
-	fmt.Fprintf(os.Stdout, "Response from `AppsAPI.ListAppExternalAwsRdsConnections`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListAppExternalAwsRdsConnectionsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **page** | **int32** | current page of results for pagination | 
-
-### Return type
-
-[**ListAppExternalAwsRdsConnections200Response**](ListAppExternalAwsRdsConnections200Response.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/hal+json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ListApps
 
-> ListAppsForAccount200Response ListApps(ctx).Page(page).Execute()
+> ListAppsForAccount200Response ListApps(ctx).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list apps
 
+
+
 ### Example
 
 ```go
@@ -447,11 +327,14 @@ import (
 )
 
 func main() {
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.ListApps(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.AppsAPI.ListApps(context.Background()).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ListApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -472,7 +355,10 @@ Other parameters are passed through a pointer to a apiListAppsRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -494,9 +380,11 @@ Name | Type | Description  | Notes
 
 ## ListAppsForAccount
 
-> ListAppsForAccount200Response ListAppsForAccount(ctx, accountId).Page(page).Execute()
+> ListAppsForAccount200Response ListAppsForAccount(ctx, accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list apps
+
+
 
 ### Example
 
@@ -512,11 +400,14 @@ import (
 
 func main() {
 	accountId := int32(56) // int32 | account_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.ListAppsForAccount(context.Background(), accountId).Page(page).Execute()
+	resp, r, err := apiClient.AppsAPI.ListAppsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ListAppsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -542,7 +433,10 @@ Other parameters are passed through a pointer to a apiListAppsForAccountRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -564,9 +458,11 @@ Name | Type | Description  | Notes
 
 ## ListAppsForCertificate
 
-> ListAppsForAccount200Response ListAppsForCertificate(ctx, certificateId).Page(page).Execute()
+> ListAppsForAccount200Response ListAppsForCertificate(ctx, certificateId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list apps
+
+
 
 ### Example
 
@@ -582,11 +478,14 @@ import (
 
 func main() {
 	certificateId := int32(56) // int32 | certificate_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AppsAPI.ListAppsForCertificate(context.Background(), certificateId).Page(page).Execute()
+	resp, r, err := apiClient.AppsAPI.ListAppsForCertificate(context.Background(), certificateId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.ListAppsForCertificate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -612,7 +511,10 @@ Other parameters are passed through a pointer to a apiListAppsForCertificateRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -634,9 +536,11 @@ Name | Type | Description  | Notes
 
 ## PatchApp
 
-> PatchApp(ctx, id).UpdateAppRequest(updateAppRequest).Execute()
+> PatchApp(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateAppRequest(updateAppRequest).Execute()
 
 update app
+
+
 
 ### Example
 
@@ -652,11 +556,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateAppRequest := *openapiclient.NewUpdateAppRequest() // UpdateAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AppsAPI.PatchApp(context.Background(), id).UpdateAppRequest(updateAppRequest).Execute()
+	r, err := apiClient.AppsAPI.PatchApp(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateAppRequest(updateAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.PatchApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -680,6 +586,8 @@ Other parameters are passed through a pointer to a apiPatchAppRequest struct via
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateAppRequest** | [**UpdateAppRequest**](UpdateAppRequest.md) |  | 
 
 ### Return type
@@ -702,9 +610,11 @@ Name | Type | Description  | Notes
 
 ## UpdateApp
 
-> UpdateApp(ctx, id).UpdateAppRequest(updateAppRequest).Execute()
+> UpdateApp(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateAppRequest(updateAppRequest).Execute()
 
 update app
+
+
 
 ### Example
 
@@ -720,11 +630,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateAppRequest := *openapiclient.NewUpdateAppRequest() // UpdateAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AppsAPI.UpdateApp(context.Background(), id).UpdateAppRequest(updateAppRequest).Execute()
+	r, err := apiClient.AppsAPI.UpdateApp(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateAppRequest(updateAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AppsAPI.UpdateApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -748,6 +660,8 @@ Other parameters are passed through a pointer to a apiUpdateAppRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateAppRequest** | [**UpdateAppRequest**](UpdateAppRequest.md) |  | 
 
 ### Return type

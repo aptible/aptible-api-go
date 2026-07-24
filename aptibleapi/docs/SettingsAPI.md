@@ -18,9 +18,11 @@ Method | HTTP request | Description
 
 ## CreateSettingForApp
 
-> Setting CreateSettingForApp(ctx, appId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+> Setting CreateSettingForApp(ctx, appId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 
 create setting
+
+
 
 ### Example
 
@@ -36,11 +38,13 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createSettingForAppRequest := *openapiclient.NewCreateSettingForAppRequest() // CreateSettingForAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.CreateSettingForApp(context.Background(), appId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+	resp, r, err := apiClient.SettingsAPI.CreateSettingForApp(context.Background(), appId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateSettingForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,6 +70,8 @@ Other parameters are passed through a pointer to a apiCreateSettingForAppRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createSettingForAppRequest** | [**CreateSettingForAppRequest**](CreateSettingForAppRequest.md) |  | 
 
 ### Return type
@@ -88,9 +94,11 @@ Name | Type | Description  | Notes
 
 ## CreateSettingForDatabase
 
-> Setting CreateSettingForDatabase(ctx, databaseId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+> Setting CreateSettingForDatabase(ctx, databaseId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 
 create setting
+
+
 
 ### Example
 
@@ -106,11 +114,13 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createSettingForAppRequest := *openapiclient.NewCreateSettingForAppRequest() // CreateSettingForAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.CreateSettingForDatabase(context.Background(), databaseId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+	resp, r, err := apiClient.SettingsAPI.CreateSettingForDatabase(context.Background(), databaseId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateSettingForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -136,6 +146,8 @@ Other parameters are passed through a pointer to a apiCreateSettingForDatabaseRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createSettingForAppRequest** | [**CreateSettingForAppRequest**](CreateSettingForAppRequest.md) |  | 
 
 ### Return type
@@ -158,9 +170,11 @@ Name | Type | Description  | Notes
 
 ## CreateSettingForService
 
-> Setting CreateSettingForService(ctx, serviceId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+> Setting CreateSettingForService(ctx, serviceId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 
 create setting
+
+
 
 ### Example
 
@@ -176,11 +190,13 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createSettingForAppRequest := *openapiclient.NewCreateSettingForAppRequest() // CreateSettingForAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.CreateSettingForService(context.Background(), serviceId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+	resp, r, err := apiClient.SettingsAPI.CreateSettingForService(context.Background(), serviceId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateSettingForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -206,6 +222,8 @@ Other parameters are passed through a pointer to a apiCreateSettingForServiceReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createSettingForAppRequest** | [**CreateSettingForAppRequest**](CreateSettingForAppRequest.md) |  | 
 
 ### Return type
@@ -228,9 +246,11 @@ Name | Type | Description  | Notes
 
 ## CreateSettingForVhost
 
-> Setting CreateSettingForVhost(ctx, vhostId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+> Setting CreateSettingForVhost(ctx, vhostId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 
 create setting
+
+
 
 ### Example
 
@@ -246,11 +266,13 @@ import (
 
 func main() {
 	vhostId := int32(56) // int32 | vhost_id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	createSettingForAppRequest := *openapiclient.NewCreateSettingForAppRequest() // CreateSettingForAppRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.CreateSettingForVhost(context.Background(), vhostId).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
+	resp, r, err := apiClient.SettingsAPI.CreateSettingForVhost(context.Background(), vhostId).NoEmbed(noEmbed).Prefer(prefer).CreateSettingForAppRequest(createSettingForAppRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.CreateSettingForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -276,6 +298,8 @@ Other parameters are passed through a pointer to a apiCreateSettingForVhostReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **createSettingForAppRequest** | [**CreateSettingForAppRequest**](CreateSettingForAppRequest.md) |  | 
 
 ### Return type
@@ -298,9 +322,11 @@ Name | Type | Description  | Notes
 
 ## GetSetting
 
-> Setting GetSetting(ctx, id).Execute()
+> Setting GetSetting(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show setting
+
+
 
 ### Example
 
@@ -316,10 +342,12 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.GetSetting(context.Background(), id).Execute()
+	resp, r, err := apiClient.SettingsAPI.GetSetting(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetSetting``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -345,6 +373,8 @@ Other parameters are passed through a pointer to a apiGetSettingRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -366,9 +396,11 @@ Name | Type | Description  | Notes
 
 ## ListSettingsForApp
 
-> ListSettingsForApp200Response ListSettingsForApp(ctx, appId).Page(page).Execute()
+> ListSettingsForApp200Response ListSettingsForApp(ctx, appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list settings
+
+
 
 ### Example
 
@@ -384,11 +416,14 @@ import (
 
 func main() {
 	appId := int32(56) // int32 | app_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.ListSettingsForApp(context.Background(), appId).Page(page).Execute()
+	resp, r, err := apiClient.SettingsAPI.ListSettingsForApp(context.Background(), appId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ListSettingsForApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -414,7 +449,10 @@ Other parameters are passed through a pointer to a apiListSettingsForAppRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -436,9 +474,11 @@ Name | Type | Description  | Notes
 
 ## ListSettingsForDatabase
 
-> ListSettingsForApp200Response ListSettingsForDatabase(ctx, databaseId).Page(page).Execute()
+> ListSettingsForApp200Response ListSettingsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list settings
+
+
 
 ### Example
 
@@ -454,11 +494,14 @@ import (
 
 func main() {
 	databaseId := int32(56) // int32 | database_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.ListSettingsForDatabase(context.Background(), databaseId).Page(page).Execute()
+	resp, r, err := apiClient.SettingsAPI.ListSettingsForDatabase(context.Background(), databaseId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ListSettingsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -484,7 +527,10 @@ Other parameters are passed through a pointer to a apiListSettingsForDatabaseReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -506,9 +552,11 @@ Name | Type | Description  | Notes
 
 ## ListSettingsForService
 
-> ListSettingsForApp200Response ListSettingsForService(ctx, serviceId).Page(page).Execute()
+> ListSettingsForApp200Response ListSettingsForService(ctx, serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list settings
+
+
 
 ### Example
 
@@ -524,11 +572,14 @@ import (
 
 func main() {
 	serviceId := int32(56) // int32 | service_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.ListSettingsForService(context.Background(), serviceId).Page(page).Execute()
+	resp, r, err := apiClient.SettingsAPI.ListSettingsForService(context.Background(), serviceId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ListSettingsForService``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -554,7 +605,10 @@ Other parameters are passed through a pointer to a apiListSettingsForServiceRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 
@@ -576,9 +630,11 @@ Name | Type | Description  | Notes
 
 ## ListSettingsForVhost
 
-> ListSettingsForApp200Response ListSettingsForVhost(ctx, vhostId).Page(page).Execute()
+> ListSettingsForApp200Response ListSettingsForVhost(ctx, vhostId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list settings
+
+
 
 ### Example
 
@@ -594,11 +650,14 @@ import (
 
 func main() {
 	vhostId := int32(56) // int32 | vhost_id
-	page := int32(56) // int32 | current page of results for pagination (optional)
+	page := int32(56) // int32 | Current page of paginated results (optional)
+	perPage := int32(56) // int32 | Number of results to return per page (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SettingsAPI.ListSettingsForVhost(context.Background(), vhostId).Page(page).Execute()
+	resp, r, err := apiClient.SettingsAPI.ListSettingsForVhost(context.Background(), vhostId).Page(page).PerPage(perPage).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.ListSettingsForVhost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -624,7 +683,10 @@ Other parameters are passed through a pointer to a apiListSettingsForVhostReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | current page of results for pagination | 
+ **page** | **int32** | Current page of paginated results | 
+ **perPage** | **int32** | Number of results to return per page | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
 ### Return type
 

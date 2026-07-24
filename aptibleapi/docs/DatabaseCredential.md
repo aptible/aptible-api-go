@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **MetaType** | **string** |  | 
 **CreatedAt** | **string** |  | 
 **UpdatedAt** | **string** |  | 
-**ConnectionUrl** | **string** |  | 
+**ConnectionUrl** | Pointer to **string** |  | [optional] 
 **Type** | **string** |  | 
 **Default** | **bool** |  | 
 **Links** | Pointer to [**DatabaseCredentialLinks**](DatabaseCredentialLinks.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewDatabaseCredential
 
-`func NewDatabaseCredential(id int32, metaType string, createdAt string, updatedAt string, connectionUrl string, type_ string, default_ bool, ) *DatabaseCredential`
+`func NewDatabaseCredential(id int32, metaType string, createdAt string, updatedAt string, type_ string, default_ bool, ) *DatabaseCredential`
 
 NewDatabaseCredential instantiates a new DatabaseCredential object
 This constructor will assign default values to properties that have it defined,
@@ -131,6 +131,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionUrl sets ConnectionUrl field to given value.
 
+### HasConnectionUrl
+
+`func (o *DatabaseCredential) HasConnectionUrl() bool`
+
+HasConnectionUrl returns a boolean if a field has been set.
 
 ### GetType
 
