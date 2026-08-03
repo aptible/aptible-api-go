@@ -18,6 +18,14 @@ func GetAuthURL() string {
 	return "https://auth.aptible.com"
 }
 
+// GetAPIRoot returns the Aptible Deploy API root URL from APTIBLE_API_ROOT_URL or the default.
+func GetAPIRoot() string {
+	if v := os.Getenv("APTIBLE_API_ROOT_URL"); v != "" {
+		return v
+	}
+	return "https://api.aptible.com"
+}
+
 // GetToken resolves an Aptible access token using the following precedence:
 // 1. APTIBLE_USERNAME + APTIBLE_PASSWORD environment variables (login to auth API)
 // 2. APTIBLE_ACCESS_TOKEN environment variable

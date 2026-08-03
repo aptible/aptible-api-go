@@ -20,9 +20,9 @@ func ExtractIDFromHref(href string) int32 {
 	return int32(val)
 }
 
-// GetOrgIDFromStackLinks extracts the organization ID string from a stack's HAL links.
-// Returns empty string if the link is not present.
-func GetOrgIDFromStackLinks(stack *aptibleapi.Stack) string {
+// GetStackOrganizationID returns the organization ID for a stack, extracted from its HAL links.
+// Returns empty string if the organization link is not present.
+func GetStackOrganizationID(stack *aptibleapi.Stack) string {
 	if stack.Links == nil || stack.Links.Organization == nil || stack.Links.Organization.Href == nil {
 		return ""
 	}
