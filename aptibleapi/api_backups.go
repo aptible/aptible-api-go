@@ -175,6 +175,7 @@ type ApiListBackupsRequest struct {
 	page *int32
 	perPage *int32
 	withDeleted *bool
+	orphaned *bool
 	noEmbed *bool
 	prefer *string
 }
@@ -194,6 +195,12 @@ func (r ApiListBackupsRequest) PerPage(perPage int32) ApiListBackupsRequest {
 // wether deleted records should be returned or not
 func (r ApiListBackupsRequest) WithDeleted(withDeleted bool) ApiListBackupsRequest {
 	r.withDeleted = &withDeleted
+	return r
+}
+
+// when true, only returns backups whose associated database has been deleted
+func (r ApiListBackupsRequest) Orphaned(orphaned bool) ApiListBackupsRequest {
+	r.orphaned = &orphaned
 	return r
 }
 
@@ -257,6 +264,9 @@ func (a *BackupsAPIService) ListBackupsExecute(r ApiListBackupsRequest) (*ListBa
 	}
 	if r.withDeleted != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
+	if r.orphaned != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orphaned", r.orphaned, "form", "")
 	}
 	if r.noEmbed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
@@ -347,6 +357,7 @@ type ApiListBackupsForAccountRequest struct {
 	page *int32
 	perPage *int32
 	withDeleted *bool
+	orphaned *bool
 	noEmbed *bool
 	prefer *string
 }
@@ -366,6 +377,12 @@ func (r ApiListBackupsForAccountRequest) PerPage(perPage int32) ApiListBackupsFo
 // wether deleted records should be returned or not
 func (r ApiListBackupsForAccountRequest) WithDeleted(withDeleted bool) ApiListBackupsForAccountRequest {
 	r.withDeleted = &withDeleted
+	return r
+}
+
+// when true, only returns backups whose associated database has been deleted
+func (r ApiListBackupsForAccountRequest) Orphaned(orphaned bool) ApiListBackupsForAccountRequest {
+	r.orphaned = &orphaned
 	return r
 }
 
@@ -432,6 +449,9 @@ func (a *BackupsAPIService) ListBackupsForAccountExecute(r ApiListBackupsForAcco
 	}
 	if r.withDeleted != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
+	if r.orphaned != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orphaned", r.orphaned, "form", "")
 	}
 	if r.noEmbed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
@@ -522,6 +542,7 @@ type ApiListBackupsForDatabaseRequest struct {
 	page *int32
 	perPage *int32
 	withDeleted *bool
+	orphaned *bool
 	noEmbed *bool
 	prefer *string
 }
@@ -541,6 +562,12 @@ func (r ApiListBackupsForDatabaseRequest) PerPage(perPage int32) ApiListBackupsF
 // wether deleted records should be returned or not
 func (r ApiListBackupsForDatabaseRequest) WithDeleted(withDeleted bool) ApiListBackupsForDatabaseRequest {
 	r.withDeleted = &withDeleted
+	return r
+}
+
+// when true, only returns backups whose associated database has been deleted
+func (r ApiListBackupsForDatabaseRequest) Orphaned(orphaned bool) ApiListBackupsForDatabaseRequest {
+	r.orphaned = &orphaned
 	return r
 }
 
@@ -607,6 +634,9 @@ func (a *BackupsAPIService) ListBackupsForDatabaseExecute(r ApiListBackupsForDat
 	}
 	if r.withDeleted != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
+	if r.orphaned != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orphaned", r.orphaned, "form", "")
 	}
 	if r.noEmbed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
@@ -697,6 +727,7 @@ type ApiListCopiesForBackupRequest struct {
 	page *int32
 	perPage *int32
 	withDeleted *bool
+	orphaned *bool
 	noEmbed *bool
 	prefer *string
 }
@@ -716,6 +747,12 @@ func (r ApiListCopiesForBackupRequest) PerPage(perPage int32) ApiListCopiesForBa
 // wether deleted records should be returned or not
 func (r ApiListCopiesForBackupRequest) WithDeleted(withDeleted bool) ApiListCopiesForBackupRequest {
 	r.withDeleted = &withDeleted
+	return r
+}
+
+// when true, only returns backups whose associated database has been deleted
+func (r ApiListCopiesForBackupRequest) Orphaned(orphaned bool) ApiListCopiesForBackupRequest {
+	r.orphaned = &orphaned
 	return r
 }
 
@@ -782,6 +819,9 @@ func (a *BackupsAPIService) ListCopiesForBackupExecute(r ApiListCopiesForBackupR
 	}
 	if r.withDeleted != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
+	if r.orphaned != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "orphaned", r.orphaned, "form", "")
 	}
 	if r.noEmbed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
