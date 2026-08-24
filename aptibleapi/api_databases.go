@@ -181,6 +181,13 @@ type ApiDeleteDatabaseRequest struct {
 	ctx context.Context
 	ApiService *DatabasesAPIService
 	id int32
+	withDeleted *bool
+}
+
+// when true, returns a database even if it has been deleted
+func (r ApiDeleteDatabaseRequest) WithDeleted(withDeleted bool) ApiDeleteDatabaseRequest {
+	r.withDeleted = &withDeleted
+	return r
 }
 
 func (r ApiDeleteDatabaseRequest) Execute() (*http.Response, error) {
@@ -224,6 +231,9 @@ func (a *DatabasesAPIService) DeleteDatabaseExecute(r ApiDeleteDatabaseRequest) 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -295,8 +305,15 @@ type ApiGetDatabaseRequest struct {
 	ctx context.Context
 	ApiService *DatabasesAPIService
 	id int32
+	withDeleted *bool
 	noEmbed *bool
 	prefer *string
+}
+
+// when true, returns a database even if it has been deleted
+func (r ApiGetDatabaseRequest) WithDeleted(withDeleted bool) ApiGetDatabaseRequest {
+	r.withDeleted = &withDeleted
+	return r
 }
 
 // When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present.
@@ -354,6 +371,9 @@ func (a *DatabasesAPIService) GetDatabaseExecute(r ApiGetDatabaseRequest) (*Data
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
 	if r.noEmbed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
 	}
@@ -1093,9 +1113,16 @@ type ApiPatchDatabaseRequest struct {
 	ctx context.Context
 	ApiService *DatabasesAPIService
 	id int32
+	withDeleted *bool
 	noEmbed *bool
 	prefer *string
 	updateDatabaseRequest *UpdateDatabaseRequest
+}
+
+// when true, returns a database even if it has been deleted
+func (r ApiPatchDatabaseRequest) WithDeleted(withDeleted bool) ApiPatchDatabaseRequest {
+	r.withDeleted = &withDeleted
+	return r
 }
 
 // When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present.
@@ -1156,6 +1183,9 @@ func (a *DatabasesAPIService) PatchDatabaseExecute(r ApiPatchDatabaseRequest) (*
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
 	if r.noEmbed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
 	}
@@ -1235,9 +1265,16 @@ type ApiUpdateDatabaseRequest struct {
 	ctx context.Context
 	ApiService *DatabasesAPIService
 	id int32
+	withDeleted *bool
 	noEmbed *bool
 	prefer *string
 	updateDatabaseRequest *UpdateDatabaseRequest
+}
+
+// when true, returns a database even if it has been deleted
+func (r ApiUpdateDatabaseRequest) WithDeleted(withDeleted bool) ApiUpdateDatabaseRequest {
+	r.withDeleted = &withDeleted
+	return r
 }
 
 // When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present.
@@ -1298,6 +1335,9 @@ func (a *DatabasesAPIService) UpdateDatabaseExecute(r ApiUpdateDatabaseRequest) 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.withDeleted != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "with_deleted", r.withDeleted, "form", "")
+	}
 	if r.noEmbed != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
 	}

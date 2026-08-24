@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ## DeleteDatabase
 
-> DeleteDatabase(ctx, id).Execute()
+> DeleteDatabase(ctx, id).WithDeleted(withDeleted).Execute()
 
 delete database
 
@@ -114,10 +114,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	withDeleted := true // bool | when true, returns a database even if it has been deleted (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DatabasesAPI.DeleteDatabase(context.Background(), id).Execute()
+	r, err := apiClient.DatabasesAPI.DeleteDatabase(context.Background(), id).WithDeleted(withDeleted).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.DeleteDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -141,6 +142,7 @@ Other parameters are passed through a pointer to a apiDeleteDatabaseRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **withDeleted** | **bool** | when true, returns a database even if it has been deleted | 
 
 ### Return type
 
@@ -162,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## GetDatabase
 
-> Database GetDatabase(ctx, id).NoEmbed(noEmbed).Prefer(prefer).Execute()
+> Database GetDatabase(ctx, id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 show database
 
@@ -182,12 +184,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	withDeleted := true // bool | when true, returns a database even if it has been deleted (optional)
 	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
 	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DatabasesAPI.GetDatabase(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	resp, r, err := apiClient.DatabasesAPI.GetDatabase(context.Background(), id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.GetDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -213,6 +216,7 @@ Other parameters are passed through a pointer to a apiGetDatabaseRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **withDeleted** | **bool** | when true, returns a database even if it has been deleted | 
  **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
  **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
@@ -536,7 +540,7 @@ Name | Type | Description  | Notes
 
 ## PatchDatabase
 
-> PatchDatabase(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+> PatchDatabase(ctx, id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 
 update database
 
@@ -556,13 +560,14 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	withDeleted := true // bool | when true, returns a database even if it has been deleted (optional)
 	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
 	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateDatabaseRequest := *openapiclient.NewUpdateDatabaseRequest() // UpdateDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DatabasesAPI.PatchDatabase(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+	r, err := apiClient.DatabasesAPI.PatchDatabase(context.Background(), id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.PatchDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -586,6 +591,7 @@ Other parameters are passed through a pointer to a apiPatchDatabaseRequest struc
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **withDeleted** | **bool** | when true, returns a database even if it has been deleted | 
  **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
  **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateDatabaseRequest** | [**UpdateDatabaseRequest**](UpdateDatabaseRequest.md) |  | 
@@ -610,7 +616,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDatabase
 
-> UpdateDatabase(ctx, id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+> UpdateDatabase(ctx, id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 
 update database
 
@@ -630,13 +636,14 @@ import (
 
 func main() {
 	id := int32(56) // int32 | id
+	withDeleted := true // bool | when true, returns a database even if it has been deleted (optional)
 	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
 	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 	updateDatabaseRequest := *openapiclient.NewUpdateDatabaseRequest() // UpdateDatabaseRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DatabasesAPI.UpdateDatabase(context.Background(), id).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
+	r, err := apiClient.DatabasesAPI.UpdateDatabase(context.Background(), id).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).UpdateDatabaseRequest(updateDatabaseRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DatabasesAPI.UpdateDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -660,6 +667,7 @@ Other parameters are passed through a pointer to a apiUpdateDatabaseRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **withDeleted** | **bool** | when true, returns a database even if it has been deleted | 
  **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
  **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
  **updateDatabaseRequest** | [**UpdateDatabaseRequest**](UpdateDatabaseRequest.md) |  | 
