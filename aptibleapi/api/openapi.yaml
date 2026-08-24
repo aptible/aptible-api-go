@@ -3259,6 +3259,14 @@ paths:
         schema:
           type: integer
         style: simple
+      - description: "when true, returns a database even if it has been deleted"
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
       responses:
         "204":
           description: successful
@@ -3283,6 +3291,14 @@ paths:
         schema:
           type: integer
         style: simple
+      - description: "when true, returns a database even if it has been deleted"
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
       - description: "When true, omits embedded resources from the response. Also\
           \ triggered when the Prefer: no_sensitive_extras=true header is present."
         explode: true
@@ -3331,6 +3347,14 @@ paths:
         schema:
           type: integer
         style: simple
+      - description: "when true, returns a database even if it has been deleted"
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
       - description: "When true, omits embedded resources from the response. Also\
           \ triggered when the Prefer: no_sensitive_extras=true header is present."
         explode: true
@@ -3380,6 +3404,14 @@ paths:
         schema:
           type: integer
         style: simple
+      - description: "when true, returns a database even if it has been deleted"
+        explode: true
+        in: query
+        name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
       - description: "When true, omits embedded resources from the response. Also\
           \ triggered when the Prefer: no_sensitive_extras=true header is present."
         explode: true
