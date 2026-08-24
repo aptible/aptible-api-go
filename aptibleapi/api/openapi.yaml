@@ -1268,6 +1268,15 @@ paths:
         schema:
           type: boolean
         style: form
+      - description: "when true, only returns backups whose associated database has\
+          \ been deleted"
+        explode: true
+        in: query
+        name: orphaned
+        required: false
+        schema:
+          type: boolean
+        style: form
       - description: "When true, omits embedded resources from the response. Also\
           \ triggered when the Prefer: no_sensitive_extras=true header is present."
         explode: true
@@ -1337,6 +1346,15 @@ paths:
         explode: true
         in: query
         name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "when true, only returns backups whose associated database has\
+          \ been deleted"
+        explode: true
+        in: query
+        name: orphaned
         required: false
         schema:
           type: boolean
@@ -1414,6 +1432,15 @@ paths:
         schema:
           type: boolean
         style: form
+      - description: "when true, only returns backups whose associated database has\
+          \ been deleted"
+        explode: true
+        in: query
+        name: orphaned
+        required: false
+        schema:
+          type: boolean
+        style: form
       - description: "When true, omits embedded resources from the response. Also\
           \ triggered when the Prefer: no_sensitive_extras=true header is present."
         explode: true
@@ -1483,6 +1510,15 @@ paths:
         explode: true
         in: query
         name: with_deleted
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "when true, only returns backups whose associated database has\
+          \ been deleted"
+        explode: true
+        in: query
+        name: orphaned
         required: false
         schema:
           type: boolean

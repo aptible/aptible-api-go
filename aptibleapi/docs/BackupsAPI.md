@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## ListBackups
 
-> ListBackups200Response ListBackups(ctx).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+> ListBackups200Response ListBackups(ctx).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
 
@@ -110,12 +110,13 @@ func main() {
 	page := int32(56) // int32 | Current page of paginated results (optional)
 	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	orphaned := true // bool | when true, only returns backups whose associated database has been deleted (optional)
 	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
 	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListBackups(context.Background()).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListBackups(context.Background()).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -139,6 +140,7 @@ Name | Type | Description  | Notes
  **page** | **int32** | Current page of paginated results | 
  **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **orphaned** | **bool** | when true, only returns backups whose associated database has been deleted | 
  **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
  **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
@@ -162,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## ListBackupsForAccount
 
-> ListBackups200Response ListBackupsForAccount(ctx, accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+> ListBackups200Response ListBackupsForAccount(ctx, accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
 
@@ -185,12 +187,13 @@ func main() {
 	page := int32(56) // int32 | Current page of paginated results (optional)
 	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	orphaned := true // bool | when true, only returns backups whose associated database has been deleted (optional)
 	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
 	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListBackupsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListBackupsForAccount(context.Background(), accountId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackupsForAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -219,6 +222,7 @@ Name | Type | Description  | Notes
  **page** | **int32** | Current page of paginated results | 
  **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **orphaned** | **bool** | when true, only returns backups whose associated database has been deleted | 
  **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
  **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
@@ -242,7 +246,7 @@ Name | Type | Description  | Notes
 
 ## ListBackupsForDatabase
 
-> ListBackups200Response ListBackupsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+> ListBackups200Response ListBackupsForDatabase(ctx, databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
 
@@ -265,12 +269,13 @@ func main() {
 	page := int32(56) // int32 | Current page of paginated results (optional)
 	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	orphaned := true // bool | when true, only returns backups whose associated database has been deleted (optional)
 	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
 	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListBackupsForDatabase(context.Background(), databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListBackupsForDatabase(context.Background(), databaseId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListBackupsForDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,6 +304,7 @@ Name | Type | Description  | Notes
  **page** | **int32** | Current page of paginated results | 
  **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **orphaned** | **bool** | when true, only returns backups whose associated database has been deleted | 
  **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
  **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
@@ -322,7 +328,7 @@ Name | Type | Description  | Notes
 
 ## ListCopiesForBackup
 
-> ListBackups200Response ListCopiesForBackup(ctx, backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+> ListBackups200Response ListCopiesForBackup(ctx, backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 
 list backups
 
@@ -345,12 +351,13 @@ func main() {
 	page := int32(56) // int32 | Current page of paginated results (optional)
 	perPage := int32(56) // int32 | Number of results to return per page (optional)
 	withDeleted := true // bool | wether deleted records should be returned or not (optional)
+	orphaned := true // bool | when true, only returns backups whose associated database has been deleted (optional)
 	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
 	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupsAPI.ListCopiesForBackup(context.Background(), backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	resp, r, err := apiClient.BackupsAPI.ListCopiesForBackup(context.Background(), backupId).Page(page).PerPage(perPage).WithDeleted(withDeleted).Orphaned(orphaned).NoEmbed(noEmbed).Prefer(prefer).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupsAPI.ListCopiesForBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -379,6 +386,7 @@ Name | Type | Description  | Notes
  **page** | **int32** | Current page of paginated results | 
  **perPage** | **int32** | Number of results to return per page | 
  **withDeleted** | **bool** | wether deleted records should be returned or not | 
+ **orphaned** | **bool** | when true, only returns backups whose associated database has been deleted | 
  **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
  **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
 
