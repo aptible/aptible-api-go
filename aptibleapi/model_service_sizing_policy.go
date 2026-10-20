@@ -47,6 +47,7 @@ type ServiceSizingPolicy struct {
 	ScaleUpStep NullableInt32 `json:"scale_up_step"`
 	ScaleDownStep NullableInt32 `json:"scale_down_step"`
 	UseHorizontalScale bool `json:"use_horizontal_scale"`
+	ServiceId NullableInt32 `json:"service_id"`
 	Links *BackupRetentionPolicyLinks `json:"_links,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -57,7 +58,7 @@ type _ServiceSizingPolicy ServiceSizingPolicy
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool) *ServiceSizingPolicy {
+func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool, serviceId NullableInt32) *ServiceSizingPolicy {
 	this := ServiceSizingPolicy{}
 	this.Id = id
 	this.MetaType = metaType
@@ -85,6 +86,7 @@ func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updated
 	this.ScaleUpStep = scaleUpStep
 	this.ScaleDownStep = scaleDownStep
 	this.UseHorizontalScale = useHorizontalScale
+	this.ServiceId = serviceId
 	return &this
 }
 
@@ -736,6 +738,32 @@ func (o *ServiceSizingPolicy) SetUseHorizontalScale(v bool) {
 	o.UseHorizontalScale = v
 }
 
+// GetServiceId returns the ServiceId field value
+// If the value is explicit nil, the zero value for int32 will be returned
+func (o *ServiceSizingPolicy) GetServiceId() int32 {
+	if o == nil || o.ServiceId.Get() == nil {
+		var ret int32
+		return ret
+	}
+
+	return *o.ServiceId.Get()
+}
+
+// GetServiceIdOk returns a tuple with the ServiceId field value
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ServiceSizingPolicy) GetServiceIdOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ServiceId.Get(), o.ServiceId.IsSet()
+}
+
+// SetServiceId sets field value
+func (o *ServiceSizingPolicy) SetServiceId(v int32) {
+	o.ServiceId.Set(&v)
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *ServiceSizingPolicy) GetLinks() BackupRetentionPolicyLinks {
 	if o == nil || IsNil(o.Links) {
@@ -804,6 +832,7 @@ func (o ServiceSizingPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize["scale_up_step"] = o.ScaleUpStep.Get()
 	toSerialize["scale_down_step"] = o.ScaleDownStep.Get()
 	toSerialize["use_horizontal_scale"] = o.UseHorizontalScale
+	toSerialize["service_id"] = o.ServiceId.Get()
 	if !IsNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
@@ -846,6 +875,7 @@ func (o *ServiceSizingPolicy) UnmarshalJSON(data []byte) (err error) {
 		"scale_up_step",
 		"scale_down_step",
 		"use_horizontal_scale",
+		"service_id",
 	}
 
 	allProperties := make(map[string]interface{})
@@ -901,6 +931,7 @@ func (o *ServiceSizingPolicy) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "scale_up_step")
 		delete(additionalProperties, "scale_down_step")
 		delete(additionalProperties, "use_horizontal_scale")
+		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "_links")
 		o.AdditionalProperties = additionalProperties
 	}

@@ -90,11 +90,15 @@ type APIClient struct {
 
 	LlmGatewayConfigurationsAPI *LlmGatewayConfigurationsAPIService
 
+	LlmGatewayKeysAPI *LlmGatewayKeysAPIService
+
 	LlmKeysAPI *LlmKeysAPIService
 
 	LlmPoliciesAPI *LlmPoliciesAPIService
 
 	LogDrainsAPI *LogDrainsAPIService
+
+	MaintenanceWindowsAPI *MaintenanceWindowsAPIService
 
 	MaintenancesAPI *MaintenancesAPIService
 
@@ -167,9 +171,11 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.ImagesAPI = (*ImagesAPIService)(&c.common)
 	c.IntrusionDetectionReportsAPI = (*IntrusionDetectionReportsAPIService)(&c.common)
 	c.LlmGatewayConfigurationsAPI = (*LlmGatewayConfigurationsAPIService)(&c.common)
+	c.LlmGatewayKeysAPI = (*LlmGatewayKeysAPIService)(&c.common)
 	c.LlmKeysAPI = (*LlmKeysAPIService)(&c.common)
 	c.LlmPoliciesAPI = (*LlmPoliciesAPIService)(&c.common)
 	c.LogDrainsAPI = (*LogDrainsAPIService)(&c.common)
+	c.MaintenanceWindowsAPI = (*MaintenanceWindowsAPIService)(&c.common)
 	c.MaintenancesAPI = (*MaintenancesAPIService)(&c.common)
 	c.MetricDrainsAPI = (*MetricDrainsAPIService)(&c.common)
 	c.OperationsAPI = (*OperationsAPIService)(&c.common)

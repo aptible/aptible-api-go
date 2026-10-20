@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **SshPortalConnections** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **EphemeralSessions** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **CodeScanResult** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
+**DeployImage** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Service** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 **Self** | Pointer to [**ListAccountsForStack200ResponseLinksStack**](ListAccountsForStack200ResponseLinksStack.md) |  | [optional] 
 
@@ -207,6 +208,31 @@ SetCodeScanResult sets CodeScanResult field to given value.
 `func (o *OperationLinks) HasCodeScanResult() bool`
 
 HasCodeScanResult returns a boolean if a field has been set.
+
+### GetDeployImage
+
+`func (o *OperationLinks) GetDeployImage() ListAccountsForStack200ResponseLinksStack`
+
+GetDeployImage returns the DeployImage field if non-nil, zero value otherwise.
+
+### GetDeployImageOk
+
+`func (o *OperationLinks) GetDeployImageOk() (*ListAccountsForStack200ResponseLinksStack, bool)`
+
+GetDeployImageOk returns a tuple with the DeployImage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeployImage
+
+`func (o *OperationLinks) SetDeployImage(v ListAccountsForStack200ResponseLinksStack)`
+
+SetDeployImage sets DeployImage field to given value.
+
+### HasDeployImage
+
+`func (o *OperationLinks) HasDeployImage() bool`
+
+HasDeployImage returns a boolean if a field has been set.
 
 ### GetService
 

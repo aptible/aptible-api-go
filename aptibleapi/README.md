@@ -164,16 +164,21 @@ Class | Method | HTTP request | Description
 *IntrusionDetectionReportsAPI* | [**GetIntrustionDetectionReportCsvDownload**](docs/IntrusionDetectionReportsAPI.md#getintrustiondetectionreportcsvdownload) | **Get** /intrusion_detection_reports/{intrusion_report_id}/download_csv | download_csv intrusion_detection_report
 *IntrusionDetectionReportsAPI* | [**GetIntrustionDetectionReportPdfDownload**](docs/IntrusionDetectionReportsAPI.md#getintrustiondetectionreportpdfdownload) | **Get** /intrusion_detection_reports/{intrusion_report_id}/download_pdf | download_pdf intrusion_detection_report
 *IntrusionDetectionReportsAPI* | [**ListIntrustionDetectionReportsForStack**](docs/IntrusionDetectionReportsAPI.md#listintrustiondetectionreportsforstack) | **Get** /stacks/{stack_id}/intrusion_detection_reports | list intrusion_detection_reports
+*LlmGatewayConfigurationsAPI* | [**CreateLlmGatewayAccessRequest**](docs/LlmGatewayConfigurationsAPI.md#createllmgatewayaccessrequest) | **Post** /llm_gateway_configurations/access_request | request AI Gateway access
 *LlmGatewayConfigurationsAPI* | [**CreateLlmGatewayConfiguration**](docs/LlmGatewayConfigurationsAPI.md#createllmgatewayconfiguration) | **Post** /llm_gateway_configurations | enroll organization in AI Gateway
 *LlmGatewayConfigurationsAPI* | [**ListLlmGatewayConfigurations**](docs/LlmGatewayConfigurationsAPI.md#listllmgatewayconfigurations) | **Get** /llm_gateway_configurations | list llm_gateway_configurations
 *LlmGatewayConfigurationsAPI* | [**UpdateLlmGatewayConfiguration**](docs/LlmGatewayConfigurationsAPI.md#updatellmgatewayconfiguration) | **Patch** /llm_gateway_configurations/{id} | update llm_gateway_configuration
+*LlmGatewayKeysAPI* | [**CreateLlmGatewayKey**](docs/LlmGatewayKeysAPI.md#createllmgatewaykey) | **Post** /llm_gateway_keys | create llm_gateway_key
+*LlmGatewayKeysAPI* | [**GetLlmGatewayKey**](docs/LlmGatewayKeysAPI.md#getllmgatewaykey) | **Get** /llm_gateway_keys/{id} | show llm_gateway_key
+*LlmGatewayKeysAPI* | [**ListLlmGatewayKeys**](docs/LlmGatewayKeysAPI.md#listllmgatewaykeys) | **Get** /llm_gateway_keys | list llm_gateway_keys
+*LlmGatewayKeysAPI* | [**RevokeLlmGatewayKey**](docs/LlmGatewayKeysAPI.md#revokellmgatewaykey) | **Delete** /llm_gateway_keys/{id} | revoke llm_gateway_key
+*LlmGatewayKeysAPI* | [**UpdateLlmGatewayKey**](docs/LlmGatewayKeysAPI.md#updatellmgatewaykey) | **Patch** /llm_gateway_keys/{id} | update llm_gateway_key
 *LlmKeysAPI* | [**GetLlmKey**](docs/LlmKeysAPI.md#getllmkey) | **Get** /llm_keys/{id} | show llm_key
 *LlmKeysAPI* | [**GetLlmKeyRequests**](docs/LlmKeysAPI.md#getllmkeyrequests) | **Get** /llm_keys/{id}/requests | list llm key requests
 *LlmKeysAPI* | [**GetLlmKeyUsage**](docs/LlmKeysAPI.md#getllmkeyusage) | **Get** /llm_keys/{id}/usage | get llm key usage
 *LlmKeysAPI* | [**ListLlmKeys**](docs/LlmKeysAPI.md#listllmkeys) | **Get** /llm_keys | list all llm_keys
 *LlmKeysAPI* | [**ListLlmKeysForAccount**](docs/LlmKeysAPI.md#listllmkeysforaccount) | **Get** /accounts/{account_id}/llm_keys | list llm_keys
 *LlmKeysAPI* | [**RevokeLlmKey**](docs/LlmKeysAPI.md#revokellmkey) | **Delete** /llm_keys/{id} | revoke llm_key
-*LlmPoliciesAPI* | [**CreateOrUpdateLlmPolicy**](docs/LlmPoliciesAPI.md#createorupdatellmpolicy) | **Post** /accounts/{account_id}/llm_policies/create_or_update | create or update llm_policy
 *LlmPoliciesAPI* | [**GetLlmPolicy**](docs/LlmPoliciesAPI.md#getllmpolicy) | **Get** /llm_policies/{id} | show llm_policy
 *LlmPoliciesAPI* | [**GetLlmPolicyUsage**](docs/LlmPoliciesAPI.md#getllmpolicyusage) | **Get** /llm_policies/{id}/usage | get llm policy usage
 *LlmPoliciesAPI* | [**ListLlmPolicies**](docs/LlmPoliciesAPI.md#listllmpolicies) | **Get** /llm_policies | list all llm_policies
@@ -184,6 +189,17 @@ Class | Method | HTTP request | Description
 *LogDrainsAPI* | [**ListLogDrainsForAccount**](docs/LogDrainsAPI.md#listlogdrainsforaccount) | **Get** /accounts/{account_id}/log_drains | list log_drains
 *LogDrainsAPI* | [**PatchLogDrain**](docs/LogDrainsAPI.md#patchlogdrain) | **Patch** /log_drains/{id} | update log_drain
 *LogDrainsAPI* | [**UpdateLogDrain**](docs/LogDrainsAPI.md#updatelogdrain) | **Put** /log_drains/{id} | update log_drain
+*MaintenanceWindowsAPI* | [**CreateMaintenanceWindowForApp**](docs/MaintenanceWindowsAPI.md#createmaintenancewindowforapp) | **Post** /apps/{app_id}/maintenance_window | create maintenance_window
+*MaintenanceWindowsAPI* | [**CreateMaintenanceWindowForDatabase**](docs/MaintenanceWindowsAPI.md#createmaintenancewindowfordatabase) | **Post** /databases/{database_id}/maintenance_window | create maintenance_window
+*MaintenanceWindowsAPI* | [**DeleteMaintenanceWindowForApp**](docs/MaintenanceWindowsAPI.md#deletemaintenancewindowforapp) | **Delete** /apps/{app_id}/maintenance_window | delete maintenance_window
+*MaintenanceWindowsAPI* | [**DeleteMaintenanceWindowForDatabase**](docs/MaintenanceWindowsAPI.md#deletemaintenancewindowfordatabase) | **Delete** /databases/{database_id}/maintenance_window | delete maintenance_window
+*MaintenanceWindowsAPI* | [**GetMaintenanceWindow**](docs/MaintenanceWindowsAPI.md#getmaintenancewindow) | **Get** /maintenance_windows/{id} | show maintenance_window
+*MaintenanceWindowsAPI* | [**GetMaintenanceWindowForApp**](docs/MaintenanceWindowsAPI.md#getmaintenancewindowforapp) | **Get** /apps/{app_id}/maintenance_window | show maintenance_window
+*MaintenanceWindowsAPI* | [**GetMaintenanceWindowForDatabase**](docs/MaintenanceWindowsAPI.md#getmaintenancewindowfordatabase) | **Get** /databases/{database_id}/maintenance_window | show maintenance_window
+*MaintenanceWindowsAPI* | [**PatchMaintenanceWindowForApp**](docs/MaintenanceWindowsAPI.md#patchmaintenancewindowforapp) | **Patch** /apps/{app_id}/maintenance_window | update maintenance_window
+*MaintenanceWindowsAPI* | [**PatchMaintenanceWindowForDatabase**](docs/MaintenanceWindowsAPI.md#patchmaintenancewindowfordatabase) | **Patch** /databases/{database_id}/maintenance_window | update maintenance_window
+*MaintenanceWindowsAPI* | [**UpdateMaintenanceWindowForApp**](docs/MaintenanceWindowsAPI.md#updatemaintenancewindowforapp) | **Put** /apps/{app_id}/maintenance_window | update maintenance_window
+*MaintenanceWindowsAPI* | [**UpdateMaintenanceWindowForDatabase**](docs/MaintenanceWindowsAPI.md#updatemaintenancewindowfordatabase) | **Put** /databases/{database_id}/maintenance_window | update maintenance_window
 *MaintenancesAPI* | [**GetMaintenanceApps**](docs/MaintenancesAPI.md#getmaintenanceapps) | **Get** /maintenances/apps | list apps with maintenance info
 *MaintenancesAPI* | [**GetMaintenanceDatabases**](docs/MaintenancesAPI.md#getmaintenancedatabases) | **Get** /maintenances/databases | list databases with maintenance info
 *MetricDrainsAPI* | [**CreateMetricDrain**](docs/MetricDrainsAPI.md#createmetricdrain) | **Post** /accounts/{account_id}/metric_drains | create metric_drain
@@ -211,6 +227,7 @@ Class | Method | HTTP request | Description
 *OperationsAPI* | [**ListOperationsForDiskAttachment**](docs/OperationsAPI.md#listoperationsfordiskattachment) | **Get** /disk_attachments/{disk_attachment_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForEphemeralSession**](docs/OperationsAPI.md#listoperationsforephemeralsession) | **Get** /ephemeral_sessions/{ephemeral_session_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForImage**](docs/OperationsAPI.md#listoperationsforimage) | **Get** /images/{image_id}/operations | list operations
+*OperationsAPI* | [**ListOperationsForLlmGatewayKey**](docs/OperationsAPI.md#listoperationsforllmgatewaykey) | **Get** /llm_gateway_keys/{llm_gateway_key_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForLlmKey**](docs/OperationsAPI.md#listoperationsforllmkey) | **Get** /llm_keys/{llm_key_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForLogDrain**](docs/OperationsAPI.md#listoperationsforlogdrain) | **Get** /log_drains/{log_drain_id}/operations | list operations
 *OperationsAPI* | [**ListOperationsForMetricDrain**](docs/OperationsAPI.md#listoperationsformetricdrain) | **Get** /metric_drains/{metric_drain_id}/operations | list operations
@@ -308,11 +325,12 @@ Class | Method | HTTP request | Description
  - [CreateConfigurationForAppRequest](docs/CreateConfigurationForAppRequest.md)
  - [CreateDatabaseRequest](docs/CreateDatabaseRequest.md)
  - [CreateLlmGatewayConfigurationRequest](docs/CreateLlmGatewayConfigurationRequest.md)
+ - [CreateLlmGatewayKeyRequest](docs/CreateLlmGatewayKeyRequest.md)
  - [CreateLogDrainRequest](docs/CreateLogDrainRequest.md)
+ - [CreateMaintenanceWindowForAppRequest](docs/CreateMaintenanceWindowForAppRequest.md)
  - [CreateMetricDrainRequest](docs/CreateMetricDrainRequest.md)
  - [CreateMetricDrainRequestDrainConfiguration](docs/CreateMetricDrainRequestDrainConfiguration.md)
  - [CreateOperationRequest](docs/CreateOperationRequest.md)
- - [CreateOrUpdateLlmPolicyRequest](docs/CreateOrUpdateLlmPolicyRequest.md)
  - [CreatePermissionRequest](docs/CreatePermissionRequest.md)
  - [CreateSettingForAppRequest](docs/CreateSettingForAppRequest.md)
  - [CreateSshPortalConnectionRequest](docs/CreateSshPortalConnectionRequest.md)
@@ -413,6 +431,8 @@ Class | Method | HTTP request | Description
  - [ListIntrustionDetectionReportsForStack200ResponseEmbedded](docs/ListIntrustionDetectionReportsForStack200ResponseEmbedded.md)
  - [ListLlmGatewayConfigurations200Response](docs/ListLlmGatewayConfigurations200Response.md)
  - [ListLlmGatewayConfigurations200ResponseEmbedded](docs/ListLlmGatewayConfigurations200ResponseEmbedded.md)
+ - [ListLlmGatewayKeys200Response](docs/ListLlmGatewayKeys200Response.md)
+ - [ListLlmGatewayKeys200ResponseEmbedded](docs/ListLlmGatewayKeys200ResponseEmbedded.md)
  - [ListLlmKeys200Response](docs/ListLlmKeys200Response.md)
  - [ListLlmKeysForAccount200Response](docs/ListLlmKeysForAccount200Response.md)
  - [ListLlmKeysForAccount200ResponseEmbedded](docs/ListLlmKeysForAccount200ResponseEmbedded.md)
@@ -455,12 +475,16 @@ Class | Method | HTTP request | Description
  - [ListVpnTunnelsForStack200ResponseEmbedded](docs/ListVpnTunnelsForStack200ResponseEmbedded.md)
  - [LlmGatewayConfiguration](docs/LlmGatewayConfiguration.md)
  - [LlmGatewayConfigurationLinks](docs/LlmGatewayConfigurationLinks.md)
+ - [LlmGatewayKey](docs/LlmGatewayKey.md)
+ - [LlmGatewayKeyLinks](docs/LlmGatewayKeyLinks.md)
  - [LlmKey](docs/LlmKey.md)
  - [LlmKeyCurrentUsage](docs/LlmKeyCurrentUsage.md)
  - [LlmPolicy](docs/LlmPolicy.md)
  - [LlmPolicyCurrentUsage](docs/LlmPolicyCurrentUsage.md)
  - [LogDrain](docs/LogDrain.md)
  - [LogDrainLinks](docs/LogDrainLinks.md)
+ - [MaintenanceWindow](docs/MaintenanceWindow.md)
+ - [MaintenanceWindowLinks](docs/MaintenanceWindowLinks.md)
  - [MetricDrain](docs/MetricDrain.md)
  - [MetricDrainDrainConfiguration](docs/MetricDrainDrainConfiguration.md)
  - [MetricDrainLinks](docs/MetricDrainLinks.md)
@@ -493,7 +517,9 @@ Class | Method | HTTP request | Description
  - [UpdateAppRequest](docs/UpdateAppRequest.md)
  - [UpdateDatabaseRequest](docs/UpdateDatabaseRequest.md)
  - [UpdateLlmGatewayConfigurationRequest](docs/UpdateLlmGatewayConfigurationRequest.md)
+ - [UpdateLlmGatewayKeyRequest](docs/UpdateLlmGatewayKeyRequest.md)
  - [UpdateLogDrainRequest](docs/UpdateLogDrainRequest.md)
+ - [UpdateMaintenanceWindowForAppRequest](docs/UpdateMaintenanceWindowForAppRequest.md)
  - [UpdateOperationRequest](docs/UpdateOperationRequest.md)
  - [UpdateServiceRequest](docs/UpdateServiceRequest.md)
  - [UpdateServiceSizingPolicyRequest](docs/UpdateServiceSizingPolicyRequest.md)

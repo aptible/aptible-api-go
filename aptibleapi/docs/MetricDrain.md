@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **UpdatedAt** | **string** |  | 
 **Status** | **string** |  | 
 **DrainType** | **string** |  | 
+**Unified** | Pointer to **bool** |  | [optional] 
 **DrainConfiguration** | Pointer to [**MetricDrainDrainConfiguration**](MetricDrainDrainConfiguration.md) |  | [optional] 
 **AggregatorCaCertificate** | **NullableString** |  | 
 **AggregatorCaPrivateKeyBlob** | **NullableString** |  | 
@@ -179,6 +180,31 @@ and a boolean to check if the value has been set.
 
 SetDrainType sets DrainType field to given value.
 
+
+### GetUnified
+
+`func (o *MetricDrain) GetUnified() bool`
+
+GetUnified returns the Unified field if non-nil, zero value otherwise.
+
+### GetUnifiedOk
+
+`func (o *MetricDrain) GetUnifiedOk() (*bool, bool)`
+
+GetUnifiedOk returns a tuple with the Unified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnified
+
+`func (o *MetricDrain) SetUnified(v bool)`
+
+SetUnified sets Unified field to given value.
+
+### HasUnified
+
+`func (o *MetricDrain) HasUnified() bool`
+
+HasUnified returns a boolean if a field has been set.
 
 ### GetDrainConfiguration
 

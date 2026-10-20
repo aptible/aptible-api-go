@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Aborted** | **bool** |  | 
 **GitRef** | **NullableString** |  | 
 **DockerRef** | **NullableString** |  | 
+**DeployImageId** | Pointer to **NullableInt32** |  | [optional] 
 **Env** | Pointer to **map[string]interface{}** |  | [optional] 
 **ContainerSize** | **NullableInt32** |  | 
 **ContainerCount** | **NullableInt32** |  | 
@@ -239,6 +240,41 @@ SetDockerRef sets DockerRef field to given value.
 `func (o *Operation) UnsetDockerRef()`
 
 UnsetDockerRef ensures that no value is present for DockerRef, not even an explicit nil
+### GetDeployImageId
+
+`func (o *Operation) GetDeployImageId() int32`
+
+GetDeployImageId returns the DeployImageId field if non-nil, zero value otherwise.
+
+### GetDeployImageIdOk
+
+`func (o *Operation) GetDeployImageIdOk() (*int32, bool)`
+
+GetDeployImageIdOk returns a tuple with the DeployImageId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeployImageId
+
+`func (o *Operation) SetDeployImageId(v int32)`
+
+SetDeployImageId sets DeployImageId field to given value.
+
+### HasDeployImageId
+
+`func (o *Operation) HasDeployImageId() bool`
+
+HasDeployImageId returns a boolean if a field has been set.
+
+### SetDeployImageIdNil
+
+`func (o *Operation) SetDeployImageIdNil(b bool)`
+
+ SetDeployImageIdNil sets the value for DeployImageId to be an explicit nil
+
+### UnsetDeployImageId
+`func (o *Operation) UnsetDeployImageId()`
+
+UnsetDeployImageId ensures that no value is present for DeployImageId, not even an explicit nil
 ### GetEnv
 
 `func (o *Operation) GetEnv() map[string]interface{}`

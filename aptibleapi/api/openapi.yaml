@@ -35,10 +35,12 @@ tags:
 - name: Images
 - name: IntrusionDetectionReports
 - name: LlmGatewayConfigurations
+- name: LlmGatewayKeys
 - name: LlmKeys
 - name: LlmPolicies
 - name: LogDrains
 - name: Maintenances
+- name: MaintenanceWindows
 - name: MetricDrains
 - name: Operations
 - name: Permissions
@@ -4925,6 +4927,64 @@ paths:
       summary: enroll organization in AI Gateway
       tags:
       - LlmGatewayConfigurations
+  /llm_gateway_configurations/access_request:
+    post:
+      description: |
+        Records an organization's interest in an AI Gateway trial. Grants nothing:
+        access is decided by a human afterwards, so a success response means the
+        request was recorded, not that the gateway is usable. Available only while
+        self-service enrollment is disabled; while it is enabled this returns 404
+        and the organization enrolls itself instead.
+      operationId: CreateLlmGatewayAccessRequest
+      parameters:
+      - description: "The organization requesting access. Required unless the caller\
+          \ belongs to exactly one organization, in which case it is inferred from\
+          \ the token."
+        explode: true
+        in: query
+        name: organization_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "202":
+          content:
+            application/json:
+              schema:
+                type: object
+          description: request recorded
+        "204":
+          description: "organization is already enrolled, so no request was recorded"
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: request AI Gateway access
+      tags:
+      - LlmGatewayConfigurations
   /llm_gateway_configurations/{id}:
     patch:
       description: Partially updates an LLM Gateway configuration's attributes.
@@ -4985,6 +5045,346 @@ paths:
       summary: update llm_gateway_configuration
       tags:
       - LlmGatewayConfigurations
+  /llm_gateway_keys:
+    get:
+      description: "Returns a paginated list of the LLM Gateway keys the caller can\
+        \ see, optionally filtered by organization."
+      operationId: ListLlmGatewayKeys
+      parameters:
+      - description: Filter by organization ID
+        explode: true
+        in: query
+        name: organization_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Current page of paginated results
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: Number of results to return per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListLlmGatewayKeys_200_response'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: organization not enrolled
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list llm_gateway_keys
+      tags:
+      - LlmGatewayKeys
+    post:
+      description: |
+        Creates a key for an organization. The secret token is returned in this response
+        only and cannot be retrieved afterwards.
+      operationId: CreateLlmGatewayKey
+      parameters:
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateLlmGatewayKey_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_gateway_key'
+          description: created
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: "organization not enrolled, or the caller has not accepted\
+            \ the LLM usage agreement"
+        "422":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: invalid handle or spend_limit
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create llm_gateway_key
+      tags:
+      - LlmGatewayKeys
+  /llm_gateway_keys/{id}:
+    delete:
+      description: |
+        Revokes the specified LLM Gateway key. Available to the organization's owners and to
+        whoever created the key. Revoking a key that is already revoked returns it unchanged.
+      operationId: RevokeLlmGatewayKey
+      parameters:
+      - description: LLM Gateway Key database ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_gateway_key'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: "organization not enrolled, or the caller may not revoke this\
+            \ key"
+        "404":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: revoke llm_gateway_key
+      tags:
+      - LlmGatewayKeys
+    get:
+      description: Returns the details of a specific LLM Gateway key by ID.
+      operationId: GetLlmGatewayKey
+      parameters:
+      - description: LLM Gateway Key database ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_gateway_key'
+          description: successful
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: organization not enrolled
+        "404":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show llm_gateway_key
+      tags:
+      - LlmGatewayKeys
+    patch:
+      description: |
+        Changes a key's handle and/or spend_limit. Nothing else about a key can be changed.
+        Available to the organization's owners and to whoever created the key.
+
+        At least one of handle and spend_limit must be sent, and only what is sent changes.
+        Sending a null or blank spend_limit removes the key's limit.
+      operationId: UpdateLlmGatewayKey
+      parameters:
+      - description: LLM Gateway Key database ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateLlmGatewayKey_request'
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/llm_gateway_key'
+          description: successful
+        "400":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: neither handle nor spend_limit was sent
+        "403":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: "organization not enrolled, or the caller may not update this\
+            \ key"
+        "404":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: not found
+        "422":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: "handle is blank or already used by another key in the organization,\
+            \ or spend_limit is negative or exceeds the organization's spend_limit"
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update llm_gateway_key
+      tags:
+      - LlmGatewayKeys
   /accounts/{account_id}/llm_keys:
     get:
       description: Returns a list of LLM keys for the specified account.
@@ -5486,66 +5886,6 @@ paths:
       summary: list llm_policies for account
       tags:
       - LlmPolicies
-  /accounts/{account_id}/llm_policies/create_or_update:
-    post:
-      description: Creates or updates the LLM policy for the specified account.
-      operationId: CreateOrUpdateLlmPolicy
-      parameters:
-      - description: account_id
-        explode: false
-        in: path
-        name: account_id
-        required: true
-        schema:
-          type: integer
-        style: simple
-      - description: "When true, omits embedded resources from the response. Also\
-          \ triggered when the Prefer: no_sensitive_extras=true header is present."
-        explode: true
-        in: query
-        name: no_embed
-        required: false
-        schema:
-          type: boolean
-        style: form
-      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
-          \ and embedded resources from the response."
-        explode: false
-        in: header
-        name: Prefer
-        required: false
-        schema:
-          enum:
-          - no_sensitive_extras=true
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateOrUpdateLlmPolicy_request'
-      responses:
-        "200":
-          content:
-            application/hal+json:
-              schema:
-                $ref: '#/components/schemas/llm_policy'
-          description: successful
-        "403":
-          content:
-            application/hal+json:
-              schema:
-                $ref: '#/components/schemas/error'
-          description: organization not enrolled
-        default:
-          content:
-            application/hal+json:
-              schema:
-                $ref: '#/components/schemas/error'
-          description: Error response. Often a 4xx or 5xx status code
-      summary: create or update llm_policy
-      tags:
-      - LlmPolicies
   /llm_policies:
     get:
       description: Returns a paginated list of all LLM policies.
@@ -6043,6 +6383,519 @@ paths:
       summary: update log_drain
       tags:
       - LogDrains
+  /apps/{app_id}/maintenance_window:
+    delete:
+      description: Deletes the maintenance window for the specified app.
+      operationId: DeleteMaintenanceWindowForApp
+      parameters:
+      - description: app_id
+        explode: false
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete maintenance_window
+      tags:
+      - MaintenanceWindows
+    get:
+      description: Returns the maintenance window configured for the specified app.
+      operationId: GetMaintenanceWindowForApp
+      parameters:
+      - description: app_id
+        explode: false
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show maintenance_window
+      tags:
+      - MaintenanceWindows
+    patch:
+      description: Partially updates the maintenance window's attributes.
+      operationId: PatchMaintenanceWindowForApp
+      parameters:
+      - description: app_id
+        explode: false
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMaintenanceWindowForApp_request'
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update maintenance_window
+      tags:
+      - MaintenanceWindows
+    post:
+      description: Creates the maintenance window for the specified app.
+      operationId: CreateMaintenanceWindowForApp
+      parameters:
+      - description: app_id
+        explode: false
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMaintenanceWindowForApp_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create maintenance_window
+      tags:
+      - MaintenanceWindows
+    put:
+      description: Updates the maintenance window's attributes.
+      operationId: UpdateMaintenanceWindowForApp
+      parameters:
+      - description: app_id
+        explode: false
+        in: path
+        name: app_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMaintenanceWindowForApp_request'
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update maintenance_window
+      tags:
+      - MaintenanceWindows
+  /databases/{database_id}/maintenance_window:
+    delete:
+      description: Deletes the maintenance window for the specified database.
+      operationId: DeleteMaintenanceWindowForDatabase
+      parameters:
+      - description: database_id
+        explode: false
+        in: path
+        name: database_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: delete maintenance_window
+      tags:
+      - MaintenanceWindows
+    get:
+      description: Returns the maintenance window configured for the specified database.
+      operationId: GetMaintenanceWindowForDatabase
+      parameters:
+      - description: database_id
+        explode: false
+        in: path
+        name: database_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show maintenance_window
+      tags:
+      - MaintenanceWindows
+    patch:
+      description: Partially updates the maintenance window's attributes.
+      operationId: PatchMaintenanceWindowForDatabase
+      parameters:
+      - description: database_id
+        explode: false
+        in: path
+        name: database_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMaintenanceWindowForApp_request'
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update maintenance_window
+      tags:
+      - MaintenanceWindows
+    post:
+      description: Creates the maintenance window for the specified database.
+      operationId: CreateMaintenanceWindowForDatabase
+      parameters:
+      - description: database_id
+        explode: false
+        in: path
+        name: database_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMaintenanceWindowForApp_request'
+      responses:
+        "201":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: create maintenance_window
+      tags:
+      - MaintenanceWindows
+    put:
+      description: Updates the maintenance window's attributes.
+      operationId: UpdateMaintenanceWindowForDatabase
+      parameters:
+      - description: database_id
+        explode: false
+        in: path
+        name: database_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateMaintenanceWindowForApp_request'
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: update maintenance_window
+      tags:
+      - MaintenanceWindows
+  /maintenance_windows/{id}:
+    get:
+      description: Returns the details of a specific maintenance window by ID.
+      operationId: GetMaintenanceWindow
+      parameters:
+      - description: id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/maintenance_window'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: show maintenance_window
+      tags:
+      - MaintenanceWindows
   /accounts/{account_id}/metric_drains:
     get:
       description: Returns a paginated list of metric drains for the specified account.
@@ -7947,6 +8800,72 @@ paths:
                 $ref: '#/components/schemas/error'
           description: Error response. Often a 4xx or 5xx status code
       summary: create operation
+      tags:
+      - Operations
+  /llm_gateway_keys/{llm_gateway_key_id}/operations:
+    get:
+      description: Returns a paginated list of operations for the specified LLM Gateway
+        key.
+      operationId: ListOperationsForLlmGatewayKey
+      parameters:
+      - description: llm_gateway_key_id
+        explode: false
+        in: path
+        name: llm_gateway_key_id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: Current page of paginated results
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: Number of results to return per page
+        explode: true
+        in: query
+        name: per_page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: "When true, omits embedded resources from the response. Also\
+          \ triggered when the Prefer: no_sensitive_extras=true header is present."
+        explode: true
+        in: query
+        name: no_embed
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "When set to no_sensitive_extras=true, omits sensitive fields\
+          \ and embedded resources from the response."
+        explode: false
+        in: header
+        name: Prefer
+        required: false
+        schema:
+          enum:
+          - no_sensitive_extras=true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/ListOperationsForPersistentDisk_200_response'
+          description: successful
+        default:
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: Error response. Often a 4xx or 5xx status code
+      summary: list operations
       tags:
       - Operations
   /llm_keys/{llm_key_id}/operations:
@@ -11967,6 +12886,83 @@ components:
       - team_id
       - trial
       - updated_at
+    llm_gateway_key:
+      properties:
+        id:
+          description: Database ID of the LLM Gateway Key
+          type: integer
+        _type:
+          type: string
+        handle:
+          description: User-provided handle for the key (unique within the organization)
+          type: string
+        note:
+          description: User-provided note
+          type: string
+          x-nullable: true
+        spend_limit:
+          description: "Spend limit in USD for this key (decimal, serialized as string).\
+            \ Null means the key has no limit of its own. Never exceeds the organization's\
+            \ spend_limit: lowering that lowers any key that was above it."
+          type: string
+          x-nullable: true
+        organization_id:
+          description: The organization this key belongs to
+          type: string
+        created_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        updated_at:
+          format: dateTime
+          type: string
+          x-nullable: true
+        gateway_url:
+          description: Customer-facing LLM Gateway endpoint URL
+          type: string
+          x-nullable: true
+        token_prefix:
+          description: "The first characters of the key's token, safe to display and\
+            \ enough to tell keys apart"
+          type: string
+          x-nullable: true
+        created_by:
+          description: User who created the key
+          type: object
+          x-nullable: true
+        revoked_at:
+          description: Timestamp when the key was revoked
+          format: dateTime
+          type: string
+          x-nullable: true
+        revoked_by:
+          description: User who revoked the key
+          type: object
+          x-nullable: true
+        status:
+          description: Key status (ACTIVE or REVOKED)
+          type: string
+        token:
+          description: Secret API key value (only present on creation)
+          type: string
+          x-nullable: true
+        _links:
+          $ref: '#/components/schemas/llm_gateway_key__links'
+      required:
+      - _type
+      - created_at
+      - created_by
+      - gateway_url
+      - handle
+      - id
+      - note
+      - organization_id
+      - revoked_at
+      - revoked_by
+      - spend_limit
+      - status
+      - token_prefix
+      - updated_at
     llm_key:
       properties:
         id:
@@ -12150,6 +13146,32 @@ components:
       - id
       - status
       - updated_at
+    maintenance_window:
+      properties:
+        id:
+          type: integer
+        account_id:
+          type: integer
+        day_of_week:
+          type: integer
+          x-nullable: true
+        start_time_utc:
+          description: "Start of the window, in UTC, as HH:MM (e.g. \"22:00\")"
+          type: string
+        duration_hours:
+          type: integer
+        enabled:
+          type: boolean
+        created_at:
+          format: dateTime
+          type: string
+        updated_at:
+          format: dateTime
+          type: string
+        _links:
+          $ref: '#/components/schemas/maintenance_window__links'
+      required:
+      - id
     metric_drain:
       properties:
         id:
@@ -12168,6 +13190,8 @@ components:
           type: string
         drain_type:
           type: string
+        unified:
+          type: boolean
         drain_configuration:
           $ref: '#/components/schemas/metric_drain_drain_configuration'
         aggregator_ca_certificate:
@@ -12231,6 +13255,9 @@ components:
           x-nullable: true
         docker_ref:
           type: string
+          x-nullable: true
+        deploy_image_id:
+          type: integer
           x-nullable: true
         env:
           type: object
@@ -12613,6 +13640,9 @@ components:
           x-nullable: true
         use_horizontal_scale:
           type: boolean
+        service_id:
+          type: integer
+          x-nullable: true
         _links:
           $ref: '#/components/schemas/backup_retention_policy__links'
       required:
@@ -12640,6 +13670,7 @@ components:
       - scale_down_step
       - scale_up_step
       - scaling_enabled
+      - service_id
       - updated_at
       - use_horizontal_scale
     service:
@@ -14064,8 +15095,68 @@ components:
     UpdateLlmGatewayConfiguration_request:
       properties:
         spend_limit:
-          description: New monthly spend limit in USD
+          description: "New monthly spend limit in USD. Lowering it also lowers the\
+            \ spend_limit of any of the organization's keys that are above the new\
+            \ limit, to match."
           type: number
+        models:
+          description: List of permitted model identifiers
+          items:
+            type: string
+          type: array
+      type: object
+    ListLlmGatewayKeys_200_response__embedded:
+      properties:
+        llm_gateway_keys:
+          items:
+            $ref: '#/components/schemas/llm_gateway_key'
+          type: array
+      type: object
+    ListLlmGatewayKeys_200_response:
+      properties:
+        _embedded:
+          $ref: '#/components/schemas/ListLlmGatewayKeys_200_response__embedded'
+        _links:
+          type: object
+        total_count:
+          type: integer
+        per_page:
+          type: integer
+        current_page:
+          type: integer
+      type: object
+    CreateLlmGatewayKey_request:
+      properties:
+        handle:
+          description: "Handle for the key, unique within the organization"
+          type: string
+        note:
+          description: "Note about the key, up to 256 characters"
+          type: string
+        spend_limit:
+          description: "Spend limit in USD for this key. Must not exceed the organization's\
+            \ spend_limit. Omit it, or send null, for a key with no limit of its own."
+          type: number
+          x-nullable: true
+        organization_id:
+          description: "The organization to create the key in. Required unless the\
+            \ caller belongs to exactly one organization, in which case it is inferred\
+            \ from the token."
+          type: string
+      required:
+      - handle
+      type: object
+    UpdateLlmGatewayKey_request:
+      minProperties: 1
+      properties:
+        handle:
+          description: "New handle for the key, unique within the organization"
+          type: string
+        spend_limit:
+          description: "New spend limit in USD for this key, or null to remove it.\
+            \ Must not exceed the organization's spend_limit."
+          type: number
+          x-nullable: true
       type: object
     ListLlmKeysForAccount_200_response__embedded:
       properties:
@@ -14179,14 +15270,6 @@ components:
         _links:
           type: object
       type: object
-    CreateOrUpdateLlmPolicy_request:
-      properties:
-        models:
-          description: List of allowed model identifiers
-          items:
-            type: string
-          type: array
-      type: object
     ListLlmPolicies_200_response:
       properties:
         _embedded:
@@ -14288,6 +15371,41 @@ components:
         drain_proxies:
           type: boolean
           x-omitempty: false
+      type: object
+    UpdateMaintenanceWindowForApp_request:
+      properties:
+        day_of_week:
+          type: integer
+          x-nullable: true
+          x-omitempty: false
+        start_time_utc:
+          type: string
+          x-omitempty: false
+        duration_hours:
+          type: integer
+          x-omitempty: false
+        enabled:
+          type: boolean
+          x-omitempty: false
+      type: object
+    CreateMaintenanceWindowForApp_request:
+      properties:
+        day_of_week:
+          description: Day of week the window applies to (0 = Sunday .. 6 = Saturday).
+            Omit to apply every day.
+          type: integer
+          x-nullable: true
+        start_time_utc:
+          description: "Start of the window, in UTC (e.g. \"22:00\")"
+          type: string
+        duration_hours:
+          description: Length of the window in hours (2-24)
+          type: integer
+        enabled:
+          type: boolean
+      required:
+      - duration_hours
+      - start_time_utc
       type: object
     ListMetricDrainsForAccount_200_response__embedded:
       properties:
@@ -14489,8 +15607,9 @@ components:
         type: type
         docker_ref: docker_ref
         container_count: 6
-        pitr_days: 3
+        pitr_days: 2
         keep_final: true
+        deploy_image_id: 5
         make_copy: true
         key_arn: key_arn
         destination_account: https://openapi-generator.tech
@@ -14508,12 +15627,12 @@ components:
           key: env
         command: command
         automated: true
-        provisioned_iops: 5
-        daily: 2
+        provisioned_iops: 2
+        daily: 7
         enable_backups: true
         git_ref: git_ref
-        monthly: 7
-        yearly: 9
+        monthly: 9
+        yearly: 3
       properties:
         type:
           type: string
@@ -14547,6 +15666,8 @@ components:
           format: uri
           type: string
         destination_account_id:
+          type: integer
+        deploy_image_id:
           type: integer
         docker_ref:
           type: string
@@ -15497,6 +16618,13 @@ components:
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
+    llm_gateway_key__links:
+      properties:
+        operations:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
     llm_key_current_usage:
       description: Month-to-date usage metrics for this key
       properties:
@@ -15552,6 +16680,15 @@ components:
         self:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
       type: object
+    maintenance_window__links:
+      properties:
+        self:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        account:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        resource:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+      type: object
     metric_drain_drain_configuration:
       properties:
         address:
@@ -15597,6 +16734,8 @@ components:
         ephemeral_sessions:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         code_scan_result:
+          $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
+        deploy_image:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'
         service:
           $ref: '#/components/schemas/ListAccountsForStack_200_response__links_stack'

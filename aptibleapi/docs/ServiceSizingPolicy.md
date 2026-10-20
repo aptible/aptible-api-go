@@ -30,13 +30,14 @@ Name | Type | Description | Notes
 **ScaleUpStep** | **NullableInt32** |  | 
 **ScaleDownStep** | **NullableInt32** |  | 
 **UseHorizontalScale** | **bool** |  | 
+**ServiceId** | **NullableInt32** |  | 
 **Links** | Pointer to [**BackupRetentionPolicyLinks**](BackupRetentionPolicyLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewServiceSizingPolicy
 
-`func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool, ) *ServiceSizingPolicy`
+`func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool, serviceId NullableInt32, ) *ServiceSizingPolicy`
 
 NewServiceSizingPolicy instantiates a new ServiceSizingPolicy object
 This constructor will assign default values to properties that have it defined,
@@ -651,6 +652,36 @@ and a boolean to check if the value has been set.
 SetUseHorizontalScale sets UseHorizontalScale field to given value.
 
 
+### GetServiceId
+
+`func (o *ServiceSizingPolicy) GetServiceId() int32`
+
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+
+### GetServiceIdOk
+
+`func (o *ServiceSizingPolicy) GetServiceIdOk() (*int32, bool)`
+
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceId
+
+`func (o *ServiceSizingPolicy) SetServiceId(v int32)`
+
+SetServiceId sets ServiceId field to given value.
+
+
+### SetServiceIdNil
+
+`func (o *ServiceSizingPolicy) SetServiceIdNil(b bool)`
+
+ SetServiceIdNil sets the value for ServiceId to be an explicit nil
+
+### UnsetServiceId
+`func (o *ServiceSizingPolicy) UnsetServiceId()`
+
+UnsetServiceId ensures that no value is present for ServiceId, not even an explicit nil
 ### GetLinks
 
 `func (o *ServiceSizingPolicy) GetLinks() BackupRetentionPolicyLinks`

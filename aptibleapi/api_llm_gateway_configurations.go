@@ -24,6 +24,162 @@ import (
 // LlmGatewayConfigurationsAPIService LlmGatewayConfigurationsAPI service
 type LlmGatewayConfigurationsAPIService service
 
+type ApiCreateLlmGatewayAccessRequestRequest struct {
+	ctx context.Context
+	ApiService *LlmGatewayConfigurationsAPIService
+	organizationId *string
+	noEmbed *bool
+	prefer *string
+}
+
+// The organization requesting access. Required unless the caller belongs to exactly one organization, in which case it is inferred from the token.
+func (r ApiCreateLlmGatewayAccessRequestRequest) OrganizationId(organizationId string) ApiCreateLlmGatewayAccessRequestRequest {
+	r.organizationId = &organizationId
+	return r
+}
+
+// When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present.
+func (r ApiCreateLlmGatewayAccessRequestRequest) NoEmbed(noEmbed bool) ApiCreateLlmGatewayAccessRequestRequest {
+	r.noEmbed = &noEmbed
+	return r
+}
+
+// When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response.
+func (r ApiCreateLlmGatewayAccessRequestRequest) Prefer(prefer string) ApiCreateLlmGatewayAccessRequestRequest {
+	r.prefer = &prefer
+	return r
+}
+
+func (r ApiCreateLlmGatewayAccessRequestRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CreateLlmGatewayAccessRequestExecute(r)
+}
+
+/*
+CreateLlmGatewayAccessRequest request AI Gateway access
+
+Records an organization's interest in an AI Gateway trial. Grants nothing:
+access is decided by a human afterwards, so a success response means the
+request was recorded, not that the gateway is usable. Available only while
+self-service enrollment is disabled; while it is enabled this returns 404
+and the organization enrolls itself instead.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateLlmGatewayAccessRequestRequest
+*/
+func (a *LlmGatewayConfigurationsAPIService) CreateLlmGatewayAccessRequest(ctx context.Context) ApiCreateLlmGatewayAccessRequestRequest {
+	return ApiCreateLlmGatewayAccessRequestRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *LlmGatewayConfigurationsAPIService) CreateLlmGatewayAccessRequestExecute(r ApiCreateLlmGatewayAccessRequestRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LlmGatewayConfigurationsAPIService.CreateLlmGatewayAccessRequest")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/llm_gateway_configurations/access_request"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.organizationId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "organization_id", r.organizationId, "form", "")
+	}
+	if r.noEmbed != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/hal+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.prefer != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Prefer", r.prefer, "simple", "")
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiCreateLlmGatewayConfigurationRequest struct {
 	ctx context.Context
 	ApiService *LlmGatewayConfigurationsAPIService

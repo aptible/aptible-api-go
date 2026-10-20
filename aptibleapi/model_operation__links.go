@@ -27,6 +27,7 @@ type OperationLinks struct {
 	SshPortalConnections *ListAccountsForStack200ResponseLinksStack `json:"ssh_portal_connections,omitempty"`
 	EphemeralSessions *ListAccountsForStack200ResponseLinksStack `json:"ephemeral_sessions,omitempty"`
 	CodeScanResult *ListAccountsForStack200ResponseLinksStack `json:"code_scan_result,omitempty"`
+	DeployImage *ListAccountsForStack200ResponseLinksStack `json:"deploy_image,omitempty"`
 	Service *ListAccountsForStack200ResponseLinksStack `json:"service,omitempty"`
 	Self *ListAccountsForStack200ResponseLinksStack `json:"self,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -275,6 +276,38 @@ func (o *OperationLinks) SetCodeScanResult(v ListAccountsForStack200ResponseLink
 	o.CodeScanResult = &v
 }
 
+// GetDeployImage returns the DeployImage field value if set, zero value otherwise.
+func (o *OperationLinks) GetDeployImage() ListAccountsForStack200ResponseLinksStack {
+	if o == nil || IsNil(o.DeployImage) {
+		var ret ListAccountsForStack200ResponseLinksStack
+		return ret
+	}
+	return *o.DeployImage
+}
+
+// GetDeployImageOk returns a tuple with the DeployImage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OperationLinks) GetDeployImageOk() (*ListAccountsForStack200ResponseLinksStack, bool) {
+	if o == nil || IsNil(o.DeployImage) {
+		return nil, false
+	}
+	return o.DeployImage, true
+}
+
+// HasDeployImage returns a boolean if a field has been set.
+func (o *OperationLinks) HasDeployImage() bool {
+	if o != nil && !IsNil(o.DeployImage) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeployImage gets a reference to the given ListAccountsForStack200ResponseLinksStack and assigns it to the DeployImage field.
+func (o *OperationLinks) SetDeployImage(v ListAccountsForStack200ResponseLinksStack) {
+	o.DeployImage = &v
+}
+
 // GetService returns the Service field value if set, zero value otherwise.
 func (o *OperationLinks) GetService() ListAccountsForStack200ResponseLinksStack {
 	if o == nil || IsNil(o.Service) {
@@ -370,6 +403,9 @@ func (o OperationLinks) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CodeScanResult) {
 		toSerialize["code_scan_result"] = o.CodeScanResult
 	}
+	if !IsNil(o.DeployImage) {
+		toSerialize["deploy_image"] = o.DeployImage
+	}
 	if !IsNil(o.Service) {
 		toSerialize["service"] = o.Service
 	}
@@ -405,6 +441,7 @@ func (o *OperationLinks) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "ssh_portal_connections")
 		delete(additionalProperties, "ephemeral_sessions")
 		delete(additionalProperties, "code_scan_result")
+		delete(additionalProperties, "deploy_image")
 		delete(additionalProperties, "service")
 		delete(additionalProperties, "self")
 		o.AdditionalProperties = additionalProperties

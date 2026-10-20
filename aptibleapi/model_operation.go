@@ -29,6 +29,7 @@ type Operation struct {
 	Aborted bool `json:"aborted"`
 	GitRef NullableString `json:"git_ref"`
 	DockerRef NullableString `json:"docker_ref"`
+	DeployImageId NullableInt32 `json:"deploy_image_id,omitempty"`
 	Env map[string]interface{} `json:"env,omitempty"`
 	ContainerSize NullableInt32 `json:"container_size"`
 	ContainerCount NullableInt32 `json:"container_count"`
@@ -303,6 +304,48 @@ func (o *Operation) GetDockerRefOk() (*string, bool) {
 // SetDockerRef sets field value
 func (o *Operation) SetDockerRef(v string) {
 	o.DockerRef.Set(&v)
+}
+
+// GetDeployImageId returns the DeployImageId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Operation) GetDeployImageId() int32 {
+	if o == nil || IsNil(o.DeployImageId.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.DeployImageId.Get()
+}
+
+// GetDeployImageIdOk returns a tuple with the DeployImageId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Operation) GetDeployImageIdOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.DeployImageId.Get(), o.DeployImageId.IsSet()
+}
+
+// HasDeployImageId returns a boolean if a field has been set.
+func (o *Operation) HasDeployImageId() bool {
+	if o != nil && o.DeployImageId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeployImageId gets a reference to the given NullableInt32 and assigns it to the DeployImageId field.
+func (o *Operation) SetDeployImageId(v int32) {
+	o.DeployImageId.Set(&v)
+}
+// SetDeployImageIdNil sets the value for DeployImageId to be an explicit nil
+func (o *Operation) SetDeployImageIdNil() {
+	o.DeployImageId.Set(nil)
+}
+
+// UnsetDeployImageId ensures that no value is present for DeployImageId, not even an explicit nil
+func (o *Operation) UnsetDeployImageId() {
+	o.DeployImageId.Unset()
 }
 
 // GetEnv returns the Env field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1048,6 +1091,9 @@ func (o Operation) ToMap() (map[string]interface{}, error) {
 	toSerialize["aborted"] = o.Aborted
 	toSerialize["git_ref"] = o.GitRef.Get()
 	toSerialize["docker_ref"] = o.DockerRef.Get()
+	if o.DeployImageId.IsSet() {
+		toSerialize["deploy_image_id"] = o.DeployImageId.Get()
+	}
 	if o.Env != nil {
 		toSerialize["env"] = o.Env
 	}
@@ -1164,6 +1210,7 @@ func (o *Operation) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "aborted")
 		delete(additionalProperties, "git_ref")
 		delete(additionalProperties, "docker_ref")
+		delete(additionalProperties, "deploy_image_id")
 		delete(additionalProperties, "env")
 		delete(additionalProperties, "container_size")
 		delete(additionalProperties, "container_count")
