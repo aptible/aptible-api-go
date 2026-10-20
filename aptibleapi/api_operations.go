@@ -3450,6 +3450,171 @@ func (a *OperationsAPIService) ListOperationsForImageExecute(r ApiListOperations
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiListOperationsForLlmGatewayKeyRequest struct {
+	ctx context.Context
+	ApiService *OperationsAPIService
+	llmGatewayKeyId int32
+	page *int32
+	perPage *int32
+	noEmbed *bool
+	prefer *string
+}
+
+// Current page of paginated results
+func (r ApiListOperationsForLlmGatewayKeyRequest) Page(page int32) ApiListOperationsForLlmGatewayKeyRequest {
+	r.page = &page
+	return r
+}
+
+// Number of results to return per page
+func (r ApiListOperationsForLlmGatewayKeyRequest) PerPage(perPage int32) ApiListOperationsForLlmGatewayKeyRequest {
+	r.perPage = &perPage
+	return r
+}
+
+// When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present.
+func (r ApiListOperationsForLlmGatewayKeyRequest) NoEmbed(noEmbed bool) ApiListOperationsForLlmGatewayKeyRequest {
+	r.noEmbed = &noEmbed
+	return r
+}
+
+// When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response.
+func (r ApiListOperationsForLlmGatewayKeyRequest) Prefer(prefer string) ApiListOperationsForLlmGatewayKeyRequest {
+	r.prefer = &prefer
+	return r
+}
+
+func (r ApiListOperationsForLlmGatewayKeyRequest) Execute() (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
+	return r.ApiService.ListOperationsForLlmGatewayKeyExecute(r)
+}
+
+/*
+ListOperationsForLlmGatewayKey list operations
+
+Returns a paginated list of operations for the specified LLM Gateway key.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param llmGatewayKeyId llm_gateway_key_id
+ @return ApiListOperationsForLlmGatewayKeyRequest
+*/
+func (a *OperationsAPIService) ListOperationsForLlmGatewayKey(ctx context.Context, llmGatewayKeyId int32) ApiListOperationsForLlmGatewayKeyRequest {
+	return ApiListOperationsForLlmGatewayKeyRequest{
+		ApiService: a,
+		ctx: ctx,
+		llmGatewayKeyId: llmGatewayKeyId,
+	}
+}
+
+// Execute executes the request
+//  @return ListOperationsForPersistentDisk200Response
+func (a *OperationsAPIService) ListOperationsForLlmGatewayKeyExecute(r ApiListOperationsForLlmGatewayKeyRequest) (*ListOperationsForPersistentDisk200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ListOperationsForPersistentDisk200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OperationsAPIService.ListOperationsForLlmGatewayKey")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/llm_gateway_keys/{llm_gateway_key_id}/operations"
+	localVarPath = strings.Replace(localVarPath, "{"+"llm_gateway_key_id"+"}", url.PathEscape(parameterValueToString(r.llmGatewayKeyId, "llmGatewayKeyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.page != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	}
+	if r.perPage != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "per_page", r.perPage, "form", "")
+	}
+	if r.noEmbed != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "no_embed", r.noEmbed, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/hal+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.prefer != nil {
+		parameterAddToHeaderOrQuery(localVarHeaderParams, "Prefer", r.prefer, "simple", "")
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiListOperationsForLlmKeyRequest struct {
 	ctx context.Context
 	ApiService *OperationsAPIService

@@ -20,8 +20,10 @@ var _ MappedNullable = &UpdateLlmGatewayConfigurationRequest{}
 
 // UpdateLlmGatewayConfigurationRequest struct for UpdateLlmGatewayConfigurationRequest
 type UpdateLlmGatewayConfigurationRequest struct {
-	// New monthly spend limit in USD
+	// New monthly spend limit in USD. Lowering it also lowers the spend_limit of any of the organization's keys that are above the new limit, to match.
 	SpendLimit *float32 `json:"spend_limit,omitempty"`
+	// List of permitted model identifiers
+	Models []string `json:"models,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,6 +78,38 @@ func (o *UpdateLlmGatewayConfigurationRequest) SetSpendLimit(v float32) {
 	o.SpendLimit = &v
 }
 
+// GetModels returns the Models field value if set, zero value otherwise.
+func (o *UpdateLlmGatewayConfigurationRequest) GetModels() []string {
+	if o == nil || IsNil(o.Models) {
+		var ret []string
+		return ret
+	}
+	return o.Models
+}
+
+// GetModelsOk returns a tuple with the Models field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UpdateLlmGatewayConfigurationRequest) GetModelsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Models) {
+		return nil, false
+	}
+	return o.Models, true
+}
+
+// HasModels returns a boolean if a field has been set.
+func (o *UpdateLlmGatewayConfigurationRequest) HasModels() bool {
+	if o != nil && !IsNil(o.Models) {
+		return true
+	}
+
+	return false
+}
+
+// SetModels gets a reference to the given []string and assigns it to the Models field.
+func (o *UpdateLlmGatewayConfigurationRequest) SetModels(v []string) {
+	o.Models = v
+}
+
 func (o UpdateLlmGatewayConfigurationRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -88,6 +122,9 @@ func (o UpdateLlmGatewayConfigurationRequest) ToMap() (map[string]interface{}, e
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.SpendLimit) {
 		toSerialize["spend_limit"] = o.SpendLimit
+	}
+	if !IsNil(o.Models) {
+		toSerialize["models"] = o.Models
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -112,6 +149,7 @@ func (o *UpdateLlmGatewayConfigurationRequest) UnmarshalJSON(data []byte) (err e
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "spend_limit")
+		delete(additionalProperties, "models")
 		o.AdditionalProperties = additionalProperties
 	}
 

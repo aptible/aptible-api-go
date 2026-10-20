@@ -28,6 +28,7 @@ type MetricDrain struct {
 	UpdatedAt string `json:"updated_at"`
 	Status string `json:"status"`
 	DrainType string `json:"drain_type"`
+	Unified *bool `json:"unified,omitempty"`
 	DrainConfiguration *MetricDrainDrainConfiguration `json:"drain_configuration,omitempty"`
 	AggregatorCaCertificate NullableString `json:"aggregator_ca_certificate"`
 	AggregatorCaPrivateKeyBlob NullableString `json:"aggregator_ca_private_key_blob"`
@@ -239,6 +240,38 @@ func (o *MetricDrain) GetDrainTypeOk() (*string, bool) {
 // SetDrainType sets field value
 func (o *MetricDrain) SetDrainType(v string) {
 	o.DrainType = v
+}
+
+// GetUnified returns the Unified field value if set, zero value otherwise.
+func (o *MetricDrain) GetUnified() bool {
+	if o == nil || IsNil(o.Unified) {
+		var ret bool
+		return ret
+	}
+	return *o.Unified
+}
+
+// GetUnifiedOk returns a tuple with the Unified field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MetricDrain) GetUnifiedOk() (*bool, bool) {
+	if o == nil || IsNil(o.Unified) {
+		return nil, false
+	}
+	return o.Unified, true
+}
+
+// HasUnified returns a boolean if a field has been set.
+func (o *MetricDrain) HasUnified() bool {
+	if o != nil && !IsNil(o.Unified) {
+		return true
+	}
+
+	return false
+}
+
+// SetUnified gets a reference to the given bool and assigns it to the Unified field.
+func (o *MetricDrain) SetUnified(v bool) {
+	o.Unified = &v
 }
 
 // GetDrainConfiguration returns the DrainConfiguration field value if set, zero value otherwise.
@@ -500,6 +533,9 @@ func (o MetricDrain) ToMap() (map[string]interface{}, error) {
 	toSerialize["updated_at"] = o.UpdatedAt
 	toSerialize["status"] = o.Status
 	toSerialize["drain_type"] = o.DrainType
+	if !IsNil(o.Unified) {
+		toSerialize["unified"] = o.Unified
+	}
 	if !IsNil(o.DrainConfiguration) {
 		toSerialize["drain_configuration"] = o.DrainConfiguration
 	}
@@ -576,6 +612,7 @@ func (o *MetricDrain) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "drain_type")
+		delete(additionalProperties, "unified")
 		delete(additionalProperties, "drain_configuration")
 		delete(additionalProperties, "aggregator_ca_certificate")
 		delete(additionalProperties, "aggregator_ca_private_key_blob")

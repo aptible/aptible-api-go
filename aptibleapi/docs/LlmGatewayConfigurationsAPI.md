@@ -4,10 +4,81 @@ All URIs are relative to *https://api.aptible.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateLlmGatewayAccessRequest**](LlmGatewayConfigurationsAPI.md#CreateLlmGatewayAccessRequest) | **Post** /llm_gateway_configurations/access_request | request AI Gateway access
 [**CreateLlmGatewayConfiguration**](LlmGatewayConfigurationsAPI.md#CreateLlmGatewayConfiguration) | **Post** /llm_gateway_configurations | enroll organization in AI Gateway
 [**ListLlmGatewayConfigurations**](LlmGatewayConfigurationsAPI.md#ListLlmGatewayConfigurations) | **Get** /llm_gateway_configurations | list llm_gateway_configurations
 [**UpdateLlmGatewayConfiguration**](LlmGatewayConfigurationsAPI.md#UpdateLlmGatewayConfiguration) | **Patch** /llm_gateway_configurations/{id} | update llm_gateway_configuration
 
+
+
+## CreateLlmGatewayAccessRequest
+
+> map[string]interface{} CreateLlmGatewayAccessRequest(ctx).OrganizationId(organizationId).NoEmbed(noEmbed).Prefer(prefer).Execute()
+
+request AI Gateway access
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/aptible/aptible-api-go/aptibleapi"
+)
+
+func main() {
+	organizationId := "organizationId_example" // string | The organization requesting access. Required unless the caller belongs to exactly one organization, in which case it is inferred from the token. (optional)
+	noEmbed := true // bool | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras=true header is present. (optional)
+	prefer := "prefer_example" // string | When set to no_sensitive_extras=true, omits sensitive fields and embedded resources from the response. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.LlmGatewayConfigurationsAPI.CreateLlmGatewayAccessRequest(context.Background()).OrganizationId(organizationId).NoEmbed(noEmbed).Prefer(prefer).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `LlmGatewayConfigurationsAPI.CreateLlmGatewayAccessRequest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateLlmGatewayAccessRequest`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `LlmGatewayConfigurationsAPI.CreateLlmGatewayAccessRequest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateLlmGatewayAccessRequestRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **string** | The organization requesting access. Required unless the caller belongs to exactly one organization, in which case it is inferred from the token. | 
+ **noEmbed** | **bool** | When true, omits embedded resources from the response. Also triggered when the Prefer: no_sensitive_extras&#x3D;true header is present. | 
+ **prefer** | **string** | When set to no_sensitive_extras&#x3D;true, omits sensitive fields and embedded resources from the response. | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[token](../README.md#token)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/hal+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## CreateLlmGatewayConfiguration

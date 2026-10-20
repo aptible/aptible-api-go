@@ -35,6 +35,7 @@ type CreateOperationRequest struct {
 	Interactive *bool `json:"interactive,omitempty"`
 	DestinationAccount *string `json:"destination_account,omitempty"`
 	DestinationAccountId *int32 `json:"destination_account_id,omitempty"`
+	DeployImageId *int32 `json:"deploy_image_id,omitempty"`
 	DockerRef *string `json:"docker_ref,omitempty"`
 	Automated *bool `json:"automated,omitempty"`
 	KeyArn *string `json:"key_arn,omitempty"`
@@ -513,6 +514,38 @@ func (o *CreateOperationRequest) HasDestinationAccountId() bool {
 // SetDestinationAccountId gets a reference to the given int32 and assigns it to the DestinationAccountId field.
 func (o *CreateOperationRequest) SetDestinationAccountId(v int32) {
 	o.DestinationAccountId = &v
+}
+
+// GetDeployImageId returns the DeployImageId field value if set, zero value otherwise.
+func (o *CreateOperationRequest) GetDeployImageId() int32 {
+	if o == nil || IsNil(o.DeployImageId) {
+		var ret int32
+		return ret
+	}
+	return *o.DeployImageId
+}
+
+// GetDeployImageIdOk returns a tuple with the DeployImageId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CreateOperationRequest) GetDeployImageIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.DeployImageId) {
+		return nil, false
+	}
+	return o.DeployImageId, true
+}
+
+// HasDeployImageId returns a boolean if a field has been set.
+func (o *CreateOperationRequest) HasDeployImageId() bool {
+	if o != nil && !IsNil(o.DeployImageId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeployImageId gets a reference to the given int32 and assigns it to the DeployImageId field.
+func (o *CreateOperationRequest) SetDeployImageId(v int32) {
+	o.DeployImageId = &v
 }
 
 // GetDockerRef returns the DockerRef field value if set, zero value otherwise.
@@ -1045,6 +1078,9 @@ func (o CreateOperationRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DestinationAccountId) {
 		toSerialize["destination_account_id"] = o.DestinationAccountId
 	}
+	if !IsNil(o.DeployImageId) {
+		toSerialize["deploy_image_id"] = o.DeployImageId
+	}
 	if !IsNil(o.DockerRef) {
 		toSerialize["docker_ref"] = o.DockerRef
 	}
@@ -1147,6 +1183,7 @@ func (o *CreateOperationRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "interactive")
 		delete(additionalProperties, "destination_account")
 		delete(additionalProperties, "destination_account_id")
+		delete(additionalProperties, "deploy_image_id")
 		delete(additionalProperties, "docker_ref")
 		delete(additionalProperties, "automated")
 		delete(additionalProperties, "key_arn")

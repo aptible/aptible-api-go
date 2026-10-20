@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Interactive** | Pointer to **bool** |  | [optional] 
 **DestinationAccount** | Pointer to **string** |  | [optional] 
 **DestinationAccountId** | Pointer to **int32** |  | [optional] 
+**DeployImageId** | Pointer to **int32** |  | [optional] 
 **DockerRef** | Pointer to **string** |  | [optional] 
 **Automated** | Pointer to **bool** |  | [optional] 
 **KeyArn** | Pointer to **string** |  | [optional] 
@@ -397,6 +398,31 @@ SetDestinationAccountId sets DestinationAccountId field to given value.
 `func (o *CreateOperationRequest) HasDestinationAccountId() bool`
 
 HasDestinationAccountId returns a boolean if a field has been set.
+
+### GetDeployImageId
+
+`func (o *CreateOperationRequest) GetDeployImageId() int32`
+
+GetDeployImageId returns the DeployImageId field if non-nil, zero value otherwise.
+
+### GetDeployImageIdOk
+
+`func (o *CreateOperationRequest) GetDeployImageIdOk() (*int32, bool)`
+
+GetDeployImageIdOk returns a tuple with the DeployImageId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeployImageId
+
+`func (o *CreateOperationRequest) SetDeployImageId(v int32)`
+
+SetDeployImageId sets DeployImageId field to given value.
+
+### HasDeployImageId
+
+`func (o *CreateOperationRequest) HasDeployImageId() bool`
+
+HasDeployImageId returns a boolean if a field has been set.
 
 ### GetDockerRef
 
