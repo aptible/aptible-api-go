@@ -13670,7 +13670,6 @@ components:
       - scale_down_step
       - scale_up_step
       - scaling_enabled
-      - service_id
       - updated_at
       - use_horizontal_scale
     service:

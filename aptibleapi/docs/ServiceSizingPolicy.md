@@ -30,14 +30,14 @@ Name | Type | Description | Notes
 **ScaleUpStep** | **NullableInt32** |  | 
 **ScaleDownStep** | **NullableInt32** |  | 
 **UseHorizontalScale** | **bool** |  | 
-**ServiceId** | **NullableInt32** |  | 
+**ServiceId** | Pointer to **NullableInt32** |  | [optional] 
 **Links** | Pointer to [**BackupRetentionPolicyLinks**](BackupRetentionPolicyLinks.md) |  | [optional] 
 
 ## Methods
 
 ### NewServiceSizingPolicy
 
-`func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool, serviceId NullableInt32, ) *ServiceSizingPolicy`
+`func NewServiceSizingPolicy(id int32, metaType string, createdAt string, updatedAt string, scalingEnabled bool, defaultPolicy bool, metricLookbackSeconds int32, percentile float32, postScaleUpCooldownSeconds int32, postScaleDownCooldownSeconds int32, postReleaseCooldownSeconds int32, memCpuRatioRThreshold float32, memCpuRatioCThreshold float32, memScaleUpThreshold float32, memScaleDownThreshold float32, minimumMemory int32, accountId NullableInt32, maximumMemory NullableInt32, autoscaling string, minCpuThreshold NullableFloat32, maxCpuThreshold NullableFloat32, minContainers NullableInt32, maxContainers NullableInt32, scaleUpStep NullableInt32, scaleDownStep NullableInt32, useHorizontalScale bool, ) *ServiceSizingPolicy`
 
 NewServiceSizingPolicy instantiates a new ServiceSizingPolicy object
 This constructor will assign default values to properties that have it defined,
@@ -671,6 +671,11 @@ and a boolean to check if the value has been set.
 
 SetServiceId sets ServiceId field to given value.
 
+### HasServiceId
+
+`func (o *ServiceSizingPolicy) HasServiceId() bool`
+
+HasServiceId returns a boolean if a field has been set.
 
 ### SetServiceIdNil
 
